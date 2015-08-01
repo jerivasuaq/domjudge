@@ -1,0 +1,358 @@
+# MySQL application password for domjudge-domserver:
+domjudge-domserver	domjudge-domserver/mysql/app-pass	password	
+# Password confirmation:
+phpmyadmin	phpmyadmin/app-password-confirm	password	
+# New password for the MySQL "root" user:
+mysql-server-5.5	mysql-server/root_password	password	
+# Password of the database's administrative user:
+domjudge-domserver	domjudge-domserver/mysql/admin-pass	password	
+# Password confirmation:
+domjudge-domserver	domjudge-domserver/password-confirm	password	
+# Password confirmation:
+dbconfig-common	dbconfig-common/password-confirm	password	
+# Repeat password for the MySQL "root" user:
+mysql-server-5.5	mysql-server/root_password_again	password	
+# Password of the database's administrative user:
+phpmyadmin	phpmyadmin/mysql/admin-pass	password	
+# Dummy template
+domjudge-judgehost	domjudge/api_endpoint_pass	password	1234
+# Password of the database's administrative user:
+dbconfig-common	dbconfig-common/mysql/admin-pass	password	
+# Password of your database's administrative user:
+dbconfig-common	dbconfig-common/pgsql/admin-pass	password	
+# MySQL application password for phpmyadmin:
+phpmyadmin	phpmyadmin/mysql/app-pass	password	
+# PostgreSQL application password for :
+dbconfig-common	dbconfig-common/pgsql/app-pass	password	
+# Password confirmation:
+dbconfig-common	dbconfig-common/app-password-confirm	password	
+# Password confirmation:
+domjudge-domserver	domjudge-domserver/app-password-confirm	password	
+# Password confirmation:
+phpmyadmin	phpmyadmin/password-confirm	password	
+# MySQL application password for :
+dbconfig-common	dbconfig-common/mysql/app-pass	password	
+# Password for web-based setup system:
+phpmyadmin	phpmyadmin/setup-password	password	
+# Failure restarting some services for OpenSSL upgrade
+# Database type to be used by :
+# Choices: 
+dbconfig-common	dbconfig-common/database-type	select	
+# Perform upgrade on database for  with dbconfig-common?
+dbconfig-common	dbconfig-common/dbconfig-upgrade	boolean	true
+# for internal use.
+dbconfig-common	dbconfig-common/internal/skip-preseed	boolean	false
+# Connection method for MySQL database of :
+# Choices: unix socket, tcp/ip
+dbconfig-common	dbconfig-common/mysql/method	select	unix socket
+# Connection method for PostgreSQL database of :
+# Choices: unix socket, tcp/ip, tcp/ip + ssl
+dbconfig-common	dbconfig-common/pgsql/method	select	unix socket
+# Time zone:
+# Choices: Apia, Auckland, Bougainville, Chatham, Chuuk, Easter, Efate, Enderbury, Fakaofo, Fiji, Funafuti, Galapagos, Gambier, Guadalcanal, Guam, Honolulu, Johnston, Kiritimati, Kosrae, Kwajalein, Majuro, Marquesas, Midway, Nauru, Niue, Norfolk, Noumea, Pago_Pago, Palau, Pitcairn, Pohnpei, Ponape, Port_Moresby, Rarotonga, Saipan, Samoa, Tahiti, Tarawa, Tongatapu, Truk, Wake, Wallis, Yap
+tzdata	tzdata/Zones/Pacific	select	
+# Unable to set password for the MySQL "root" user
+# Next step for database installation:
+# Choices: abort, retry, retry (skip questions), ignore
+# Configure database for domjudge-domserver with dbconfig-common?
+domjudge-domserver	domjudge-domserver/dbconfig-install	boolean	true
+# Password mismatch
+# Revert PostgreSQL configuration automatically?
+dbconfig-common	dbconfig-common/pgsql/revertconf	boolean	false
+# Perform upgrade on database for domjudge-domserver with dbconfig-common?
+domjudge-domserver	domjudge-domserver/dbconfig-upgrade	boolean	true
+# Next step for database installation:
+# Choices: abort, retry, retry (skip questions), ignore
+# Time zone:
+# Choices: AST4, AST4ADT, CST6, CST6CDT, EST5, EST5EDT, HST10, MST7, MST7MDT, PST8, PST8PDT, YST9, YST9YDT
+tzdata	tzdata/Zones/SystemV	select	
+# Services to restart to make them use the new libraries:
+libssl1.0.0:amd64	libssl1.0.0/restart-services	string	
+# Do you want to remove the group ?
+base-passwd	base-passwd/group-remove	boolean	true
+#  username for :
+dbconfig-common	dbconfig-common/db/app-user	string	
+# Change PostgreSQL configuration automatically?
+dbconfig-common	dbconfig-common/pgsql/changeconf	boolean	false
+# Enable bitmapped fonts by default?
+fontconfig-config	fontconfig/enable_bitmaps	boolean	false
+# Use dash as the default system shell (/bin/sh)?
+dash	dash/sh	boolean	true
+# for internal use.
+domjudge-domserver	domjudge-domserver/internal/reconfiguring	boolean	false
+# Next step for database upgrade:
+# Choices: abort, retry, retry (skip questions)
+# Dummy template
+domjudge-judgehost	domjudge/api_endpoint_user	string	judgehost
+# Do you want to change the GID of user ?
+base-passwd	base-passwd/user-change-gid	boolean	true
+# Dummy template
+domjudge-judgehost	domjudge/api_endpoint	string	http://localhost/domjudge/api/
+# PAM profiles to enable:
+# Choices: Unix authentication
+libpam-runtime	libpam-runtime/profiles	multiselect	unix
+# Name of the database's administrative user:
+domjudge-domserver	domjudge-domserver/mysql/admin-user	string	root
+# Method for authenticating PostgreSQL user:
+# Choices: ident, password
+dbconfig-common	dbconfig-common/pgsql/authmethod-user	select	
+# Do you want to remove the user ?
+base-passwd	base-passwd/user-remove	boolean	true
+# Do you want to add the group ?
+base-passwd	base-passwd/group-add	boolean	true
+# Restart services during package upgrades without asking?
+libc6	libraries/restart-without-asking	boolean	false
+libc6:amd64	libraries/restart-without-asking	boolean	false
+libpam0g:amd64	libraries/restart-without-asking	boolean	false
+# Web server to reconfigure automatically:
+# Choices: apache2, lighttpd
+phpmyadmin	phpmyadmin/reconfigure-webserver	multiselect	apache2
+# Do you want to back up the database for phpmyadmin before upgrading?
+phpmyadmin	phpmyadmin/upgrade-backup	boolean	true
+# Host name of the  database server for :
+# Choices: 
+dbconfig-common	dbconfig-common/remote/host	select	
+# Deconfigure database for  with dbconfig-common?
+dbconfig-common	dbconfig-common/dbconfig-remove	boolean	true
+# Do you want to purge the database for phpmyadmin?
+phpmyadmin	phpmyadmin/purge	boolean	false
+# Really proceed with downgrade?
+mysql-server-5.5	mysql-server-5.5/really_downgrade	boolean	false
+# Host running the  server for :
+dbconfig-common	dbconfig-common/remote/newhost	string	
+# Connection method for MySQL database of phpmyadmin:
+# Choices: unix socket, tcp/ip
+phpmyadmin	phpmyadmin/mysql/method	select	unix socket
+# Port number for the MySQL service:
+phpmyadmin	phpmyadmin/remote/port	string	
+# Time zone:
+# Choices: Abidjan, Accra, Addis_Ababa, Algiers, Asmara, Bamako, Bangui, Banjul, Bissau, Blantyre, Brazzaville, Bujumbura, Cairo, Casablanca, Ceuta, Conakry, Dakar, Dar_es_Salaam, Djibouti, Douala, El_Aaiun, Freetown, Gaborone, Harare, Johannesburg, Juba, Kampala, Khartoum, Kigali, Kinshasa, Lagos, Libreville, Lome, Luanda, Lubumbashi, Lusaka, Malabo, Maputo, Maseru, Mbabane, Mogadishu, Monrovia, Nairobi, Ndjamena, Niamey, Nouakchott, Ouagadougou, Porto-Novo, Sao_Tome, Timbuktu, Tripoli, Tunis, Windhoek
+tzdata	tzdata/Zones/Africa	select	
+#  storage directory for :
+dbconfig-common	dbconfig-common/db/basepath	string	
+# Next step:
+# Choices: abort, retry, ignore
+domjudge-domserver	domjudge-domserver/missing-db-package-error	select	abort
+# Trust new certificates from certificate authorities?
+# Choices: yes, no, ask
+ca-certificates	ca-certificates/trust_new_crts	select	yes
+# Name of the database's administrative user:
+phpmyadmin	phpmyadmin/mysql/admin-user	string	root
+# Time zone:
+# Choices: Casey, Davis, DumontDUrville, Macquarie, Mawson, McMurdo, Palmer, Rothera, Syowa, Troll, Vostok
+tzdata	tzdata/Zones/Antarctica	select	
+# Time zone:
+# Choices: Longyearbyen
+tzdata	tzdata/Zones/Arctic	select	
+# The running kernel has incompatible options enabled
+# Connection method for MySQL database of domjudge-domserver:
+# Choices: unix socket, tcp/ip
+domjudge-domserver	domjudge-domserver/mysql/method	select	unix socket
+# NDB Cluster seems to be in use
+# Host running the MySQL server for domjudge-domserver:
+domjudge-domserver	domjudge-domserver/remote/newhost	string	
+# Port number for the  service:
+dbconfig-common	dbconfig-common/remote/port	string	
+# Failure restarting some services for PAM upgrade
+# Reinstall database for ?
+dbconfig-common	dbconfig-common/dbconfig-reinstall	boolean	false
+# What do you want to do about modified configuration file domserver.dbconfig.php?
+# Choices: install the package maintainer's version, keep the local version currently installed, show the differences between the versions, show a side-by-side difference between the versions, start a new shell to examine the situation
+ucf	ucf/changeprompt	select	keep_current
+#  database name for :
+dbconfig-common	dbconfig-common/db/dbname	string	
+# Override local changes to /etc/pam.d/common-*?
+libpam-runtime	libpam-runtime/override	boolean	false
+# Important note for NIS/YP users
+mysql-server-5.5	mysql-server-5.5/nis_warning	note	
+# Database type to be used by domjudge-domserver:
+# Choices: 
+domjudge-domserver	domjudge-domserver/database-type	select	mysql
+# Services to restart for GNU libc library upgrade:
+libc6	glibc/restart-services	string	
+libc6:amd64	glibc/restart-services	string	
+# Proceed with the udev upgrade despite the kernel incompatibility?
+udev	udev/new_kernel_needed	boolean	false
+# Do you want to upgrade glibc now?
+libc6	glibc/upgrade	boolean	true
+libc6:amd64	glibc/upgrade	boolean	true
+# Next step for database upgrade:
+# Choices: abort, retry, retry (skip questions)
+phpmyadmin	phpmyadmin/upgrade-error	select	abort
+# MySQL database name for phpmyadmin:
+phpmyadmin	phpmyadmin/db/dbname	string	
+# MySQL database name for domjudge-domserver:
+domjudge-domserver	domjudge-domserver/db/dbname	string	domjudge
+# Certificates to activate:
+# Choices: mozilla/A-Trust-nQual-03.crt, mozilla/ACCVRAIZ1.crt, mozilla/ACEDICOM_Root.crt, mozilla/AC_Raíz_Certicámara_S.A..crt, mozilla/Actalis_Authentication_Root_CA.crt, mozilla/AddTrust_External_Root.crt, mozilla/AddTrust_Low-Value_Services_Root.crt, mozilla/AddTrust_Public_Services_Root.crt, mozilla/AddTrust_Qualified_Certificates_Root.crt, mozilla/AffirmTrust_Commercial.crt, mozilla/AffirmTrust_Networking.crt, mozilla/AffirmTrust_Premium.crt, mozilla/AffirmTrust_Premium_ECC.crt, mozilla/America_Online_Root_Certification_Authority_1.crt, mozilla/America_Online_Root_Certification_Authority_2.crt, mozilla/ApplicationCA_-_Japanese_Government.crt, mozilla/Atos_TrustedRoot_2011.crt, mozilla/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt, mozilla/Baltimore_CyberTrust_Root.crt, mozilla/Buypass_Class_2_CA_1.crt, mozilla/Buypass_Class_2_Root_CA.crt, mozilla/Buypass_Class_3_CA_1.crt, mozilla/Buypass_Class_3_Root_CA.crt, mozilla/CA_Disig.crt, mozilla/CA_Disig_Root_R1.crt, mozilla/CA_Disig_Root_R2.crt, mozilla/CNNIC_ROOT.crt, mozilla/COMODO_Certification_Authority.crt, mozilla/COMODO_ECC_Certification_Authority.crt, mozilla/Camerfirma_Chambers_of_Commerce_Root.crt, mozilla/Camerfirma_Global_Chambersign_Root.crt, mozilla/Certigna.crt, mozilla/Certinomis_-_Autorité_Racine.crt, mozilla/Certplus_Class_2_Primary_CA.crt, mozilla/Certum_Root_CA.crt, mozilla/Certum_Trusted_Network_CA.crt, mozilla/Chambers_of_Commerce_Root_-_2008.crt, mozilla/China_Internet_Network_Information_Center_EV_Certificates_Root.crt, mozilla/ComSign_CA.crt, mozilla/ComSign_Secured_CA.crt, mozilla/Comodo_AAA_Services_root.crt, mozilla/Comodo_Secure_Services_root.crt, mozilla/Comodo_Trusted_Services_root.crt, mozilla/Cybertrust_Global_Root.crt, mozilla/D-TRUST_Root_Class_3_CA_2_2009.crt, mozilla/D-TRUST_Root_Class_3_CA_2_EV_2009.crt, mozilla/DST_ACES_CA_X6.crt, mozilla/DST_Root_CA_X3.crt, mozilla/Deutsche_Telekom_Root_CA_2.crt, mozilla/DigiCert_Assured_ID_Root_CA.crt, mozilla/DigiCert_Assured_ID_Root_G2.crt, mozilla/DigiCert_Assured_ID_Root_G3.crt, mozilla/DigiCert_Global_Root_CA.crt, mozilla/DigiCert_Global_Root_G2.crt, mozilla/DigiCert_Global_Root_G3.crt, mozilla/DigiCert_High_Assurance_EV_Root_CA.crt, mozilla/DigiCert_Trusted_Root_G4.crt, mozilla/Digital_Signature_Trust_Co._Global_CA_1.crt, mozilla/Digital_Signature_Trust_Co._Global_CA_3.crt, mozilla/E-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi.crt, mozilla/E-Tugra_Certification_Authority.crt, mozilla/EBG_Elektronik_Sertifika_Hizmet_Sağlayıcısı.crt, mozilla/EC-ACC.crt, mozilla/EE_Certification_Centre_Root_CA.crt, mozilla/Entrust.net_Premium_2048_Secure_Server_CA.crt, mozilla/Entrust_Root_Certification_Authority.crt, mozilla/Equifax_Secure_CA.crt, mozilla/Equifax_Secure_Global_eBusiness_CA.crt, mozilla/Equifax_Secure_eBusiness_CA_1.crt, mozilla/GTE_CyberTrust_Global_Root.crt, mozilla/GeoTrust_Global_CA.crt, mozilla/GeoTrust_Global_CA_2.crt, mozilla/GeoTrust_Primary_Certification_Authority.crt, mozilla/GeoTrust_Primary_Certification_Authority_-_G2.crt, mozilla/GeoTrust_Primary_Certification_Authority_-_G3.crt, mozilla/GeoTrust_Universal_CA.crt, mozilla/GeoTrust_Universal_CA_2.crt, mozilla/GlobalSign_Root_CA.crt, mozilla/GlobalSign_Root_CA_-_R2.crt, mozilla/GlobalSign_Root_CA_-_R3.crt, mozilla/Global_Chambersign_Root_-_2008.crt, mozilla/Go_Daddy_Class_2_CA.crt, mozilla/Go_Daddy_Root_Certificate_Authority_-_G2.crt, mozilla/Hellenic_Academic_and_Research_Institutions_RootCA_2011.crt, mozilla/Hongkong_Post_Root_CA_1.crt, mozilla/IGC_A.crt, mozilla/Izenpe.com.crt, mozilla/Juur-SK.crt, mozilla/Microsec_e-Szigno_Root_CA.crt, mozilla/Microsec_e-Szigno_Root_CA_2009.crt, mozilla/NetLock_Arany_=Class_Gold=_Főtanúsítvány.crt, mozilla/NetLock_Business_=Class_B=_Root.crt, mozilla/NetLock_Express_=Class_C=_Root.crt, mozilla/NetLock_Notary_=Class_A=_Root.crt, mozilla/NetLock_Qualified_=Class_QA=_Root.crt, mozilla/Network_Solutions_Certificate_Authority.crt, mozilla/OISTE_WISeKey_Global_Root_GA_CA.crt, mozilla/PSCProcert.crt, mozilla/QuoVadis_Root_CA.crt, mozilla/QuoVadis_Root_CA_1_G3.crt, mozilla/QuoVadis_Root_CA_2.crt, mozilla/QuoVadis_Root_CA_2_G3.crt, mozilla/QuoVadis_Root_CA_3.crt, mozilla/QuoVadis_Root_CA_3_G3.crt, mozilla/RSA_Security_2048_v3.crt, mozilla/Root_CA_Generalitat_Valenciana.crt, mozilla/S-TRUST_Authentication_and_Encryption_Root_CA_2005_PN.crt, mozilla/SG_TRUST_SERVICES_RACINE.crt, mozilla/SecureSign_RootCA11.crt, mozilla/SecureTrust_CA.crt, mozilla/Secure_Global_CA.crt, mozilla/Security_Communication_EV_RootCA1.crt, mozilla/Security_Communication_RootCA2.crt, mozilla/Security_Communication_Root_CA.crt, mozilla/Sonera_Class_1_Root_CA.crt, mozilla/Sonera_Class_2_Root_CA.crt, mozilla/Staat_der_Nederlanden_Root_CA.crt, mozilla/Staat_der_Nederlanden_Root_CA_-_G2.crt, mozilla/Starfield_Class_2_CA.crt, mozilla/Starfield_Root_Certificate_Authority_-_G2.crt, mozilla/Starfield_Services_Root_Certificate_Authority_-_G2.crt, mozilla/StartCom_Certification_Authority.crt, mozilla/StartCom_Certification_Authority_2.crt, mozilla/StartCom_Certification_Authority_G2.crt, mozilla/SwissSign_Gold_CA_-_G2.crt, mozilla/SwissSign_Platinum_CA_-_G2.crt, mozilla/SwissSign_Silver_CA_-_G2.crt, mozilla/Swisscom_Root_CA_1.crt, mozilla/Swisscom_Root_CA_2.crt, mozilla/Swisscom_Root_EV_CA_2.crt, mozilla/T-TeleSec_GlobalRoot_Class_2.crt, mozilla/T-TeleSec_GlobalRoot_Class_3.crt, mozilla/TC_TrustCenter_Class_2_CA_II.crt, mozilla/TC_TrustCenter_Class_3_CA_II.crt, mozilla/TC_TrustCenter_Universal_CA_I.crt, mozilla/TURKTRUST_Certificate_Services_Provider_Root_1.crt, mozilla/TURKTRUST_Certificate_Services_Provider_Root_2.crt, mozilla/TURKTRUST_Certificate_Services_Provider_Root_2007.crt, mozilla/TWCA_Global_Root_CA.crt, mozilla/TWCA_Root_Certification_Authority.crt, mozilla/Taiwan_GRCA.crt, mozilla/TeliaSonera_Root_CA_v1.crt, mozilla/Thawte_Premium_Server_CA.crt, mozilla/Thawte_Server_CA.crt, mozilla/Trustis_FPS_Root_CA.crt, mozilla/TÜBİTAK_UEKAE_Kök_Sertifika_Hizmet_Sağlayıcısı_-_Sürüm_3.crt, mozilla/UTN_DATACorp_SGC_Root_CA.crt, mozilla/UTN_USERFirst_Email_Root_CA.crt, mozilla/UTN_USERFirst_Hardware_Root_CA.crt, mozilla/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.crt, mozilla/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.crt, mozilla/VeriSign_Universal_Root_Certification_Authority.crt, mozilla/Verisign_Class_1_Public_Primary_Certification_Authority.crt, mozilla/Verisign_Class_1_Public_Primary_Certification_Authority_-_G2.crt, mozilla/Verisign_Class_1_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Verisign_Class_2_Public_Primary_Certification_Authority_-_G2.crt, mozilla/Verisign_Class_2_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Verisign_Class_3_Public_Primary_Certification_Authority.crt, mozilla/Verisign_Class_3_Public_Primary_Certification_Authority_-_G2.crt, mozilla/Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Verisign_Class_3_Public_Primary_Certification_Authority_2.crt, mozilla/Verisign_Class_4_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Visa_eCommerce_Root.crt, mozilla/WellsSecure_Public_Root_Certificate_Authority.crt, mozilla/WoSign.crt, mozilla/WoSign_China.crt, mozilla/XRamp_Global_CA_Root.crt, mozilla/certSIGN_ROOT_CA.crt, mozilla/ePKI_Root_Certification_Authority.crt, mozilla/thawte_Primary_Root_CA.crt, mozilla/thawte_Primary_Root_CA_-_G2.crt, mozilla/thawte_Primary_Root_CA_-_G3.crt, spi-inc.org/spi-cacert-2008.crt
+ca-certificates	ca-certificates/enable_crts	multiselect	mozilla/A-Trust-nQual-03.crt, mozilla/ACCVRAIZ1.crt, mozilla/ACEDICOM_Root.crt, mozilla/AC_Raíz_Certicámara_S.A..crt, mozilla/Actalis_Authentication_Root_CA.crt, mozilla/AddTrust_External_Root.crt, mozilla/AddTrust_Low-Value_Services_Root.crt, mozilla/AddTrust_Public_Services_Root.crt, mozilla/AddTrust_Qualified_Certificates_Root.crt, mozilla/AffirmTrust_Commercial.crt, mozilla/AffirmTrust_Networking.crt, mozilla/AffirmTrust_Premium.crt, mozilla/AffirmTrust_Premium_ECC.crt, mozilla/America_Online_Root_Certification_Authority_1.crt, mozilla/America_Online_Root_Certification_Authority_2.crt, mozilla/ApplicationCA_-_Japanese_Government.crt, mozilla/Atos_TrustedRoot_2011.crt, mozilla/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt, mozilla/Baltimore_CyberTrust_Root.crt, mozilla/Buypass_Class_2_CA_1.crt, mozilla/Buypass_Class_2_Root_CA.crt, mozilla/Buypass_Class_3_CA_1.crt, mozilla/Buypass_Class_3_Root_CA.crt, mozilla/CA_Disig.crt, mozilla/CA_Disig_Root_R1.crt, mozilla/CA_Disig_Root_R2.crt, mozilla/CNNIC_ROOT.crt, mozilla/COMODO_Certification_Authority.crt, mozilla/COMODO_ECC_Certification_Authority.crt, mozilla/Camerfirma_Chambers_of_Commerce_Root.crt, mozilla/Camerfirma_Global_Chambersign_Root.crt, mozilla/Certigna.crt, mozilla/Certinomis_-_Autorité_Racine.crt, mozilla/Certplus_Class_2_Primary_CA.crt, mozilla/Certum_Root_CA.crt, mozilla/Certum_Trusted_Network_CA.crt, mozilla/Chambers_of_Commerce_Root_-_2008.crt, mozilla/China_Internet_Network_Information_Center_EV_Certificates_Root.crt, mozilla/ComSign_CA.crt, mozilla/ComSign_Secured_CA.crt, mozilla/Comodo_AAA_Services_root.crt, mozilla/Comodo_Secure_Services_root.crt, mozilla/Comodo_Trusted_Services_root.crt, mozilla/Cybertrust_Global_Root.crt, mozilla/D-TRUST_Root_Class_3_CA_2_2009.crt, mozilla/D-TRUST_Root_Class_3_CA_2_EV_2009.crt, mozilla/DST_ACES_CA_X6.crt, mozilla/DST_Root_CA_X3.crt, mozilla/Deutsche_Telekom_Root_CA_2.crt, mozilla/DigiCert_Assured_ID_Root_CA.crt, mozilla/DigiCert_Assured_ID_Root_G2.crt, mozilla/DigiCert_Assured_ID_Root_G3.crt, mozilla/DigiCert_Global_Root_CA.crt, mozilla/DigiCert_Global_Root_G2.crt, mozilla/DigiCert_Global_Root_G3.crt, mozilla/DigiCert_High_Assurance_EV_Root_CA.crt, mozilla/DigiCert_Trusted_Root_G4.crt, mozilla/Digital_Signature_Trust_Co._Global_CA_1.crt, mozilla/Digital_Signature_Trust_Co._Global_CA_3.crt, mozilla/E-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi.crt, mozilla/E-Tugra_Certification_Authority.crt, mozilla/EBG_Elektronik_Sertifika_Hizmet_Sağlayıcısı.crt, mozilla/EC-ACC.crt, mozilla/EE_Certification_Centre_Root_CA.crt, mozilla/Entrust.net_Premium_2048_Secure_Server_CA.crt, mozilla/Entrust_Root_Certification_Authority.crt, mozilla/Equifax_Secure_CA.crt, mozilla/Equifax_Secure_Global_eBusiness_CA.crt, mozilla/Equifax_Secure_eBusiness_CA_1.crt, mozilla/GTE_CyberTrust_Global_Root.crt, mozilla/GeoTrust_Global_CA.crt, mozilla/GeoTrust_Global_CA_2.crt, mozilla/GeoTrust_Primary_Certification_Authority.crt, mozilla/GeoTrust_Primary_Certification_Authority_-_G2.crt, mozilla/GeoTrust_Primary_Certification_Authority_-_G3.crt, mozilla/GeoTrust_Universal_CA.crt, mozilla/GeoTrust_Universal_CA_2.crt, mozilla/GlobalSign_Root_CA.crt, mozilla/GlobalSign_Root_CA_-_R2.crt, mozilla/GlobalSign_Root_CA_-_R3.crt, mozilla/Global_Chambersign_Root_-_2008.crt, mozilla/Go_Daddy_Class_2_CA.crt, mozilla/Go_Daddy_Root_Certificate_Authority_-_G2.crt, mozilla/Hellenic_Academic_and_Research_Institutions_RootCA_2011.crt, mozilla/Hongkong_Post_Root_CA_1.crt, mozilla/IGC_A.crt, mozilla/Izenpe.com.crt, mozilla/Juur-SK.crt, mozilla/Microsec_e-Szigno_Root_CA.crt, mozilla/Microsec_e-Szigno_Root_CA_2009.crt, mozilla/NetLock_Arany_=Class_Gold=_Főtanúsítvány.crt, mozilla/NetLock_Business_=Class_B=_Root.crt, mozilla/NetLock_Express_=Class_C=_Root.crt, mozilla/NetLock_Notary_=Class_A=_Root.crt, mozilla/NetLock_Qualified_=Class_QA=_Root.crt, mozilla/Network_Solutions_Certificate_Authority.crt, mozilla/OISTE_WISeKey_Global_Root_GA_CA.crt, mozilla/PSCProcert.crt, mozilla/QuoVadis_Root_CA.crt, mozilla/QuoVadis_Root_CA_1_G3.crt, mozilla/QuoVadis_Root_CA_2.crt, mozilla/QuoVadis_Root_CA_2_G3.crt, mozilla/QuoVadis_Root_CA_3.crt, mozilla/QuoVadis_Root_CA_3_G3.crt, mozilla/RSA_Security_2048_v3.crt, mozilla/Root_CA_Generalitat_Valenciana.crt, mozilla/S-TRUST_Authentication_and_Encryption_Root_CA_2005_PN.crt, mozilla/SG_TRUST_SERVICES_RACINE.crt, mozilla/SecureSign_RootCA11.crt, mozilla/SecureTrust_CA.crt, mozilla/Secure_Global_CA.crt, mozilla/Security_Communication_EV_RootCA1.crt, mozilla/Security_Communication_RootCA2.crt, mozilla/Security_Communication_Root_CA.crt, mozilla/Sonera_Class_1_Root_CA.crt, mozilla/Sonera_Class_2_Root_CA.crt, mozilla/Staat_der_Nederlanden_Root_CA.crt, mozilla/Staat_der_Nederlanden_Root_CA_-_G2.crt, mozilla/Starfield_Class_2_CA.crt, mozilla/Starfield_Root_Certificate_Authority_-_G2.crt, mozilla/Starfield_Services_Root_Certificate_Authority_-_G2.crt, mozilla/StartCom_Certification_Authority.crt, mozilla/StartCom_Certification_Authority_2.crt, mozilla/StartCom_Certification_Authority_G2.crt, mozilla/SwissSign_Gold_CA_-_G2.crt, mozilla/SwissSign_Platinum_CA_-_G2.crt, mozilla/SwissSign_Silver_CA_-_G2.crt, mozilla/Swisscom_Root_CA_1.crt, mozilla/Swisscom_Root_CA_2.crt, mozilla/Swisscom_Root_EV_CA_2.crt, mozilla/T-TeleSec_GlobalRoot_Class_2.crt, mozilla/T-TeleSec_GlobalRoot_Class_3.crt, mozilla/TC_TrustCenter_Class_2_CA_II.crt, mozilla/TC_TrustCenter_Class_3_CA_II.crt, mozilla/TC_TrustCenter_Universal_CA_I.crt, mozilla/TURKTRUST_Certificate_Services_Provider_Root_1.crt, mozilla/TURKTRUST_Certificate_Services_Provider_Root_2.crt, mozilla/TURKTRUST_Certificate_Services_Provider_Root_2007.crt, mozilla/TWCA_Global_Root_CA.crt, mozilla/TWCA_Root_Certification_Authority.crt, mozilla/Taiwan_GRCA.crt, mozilla/TeliaSonera_Root_CA_v1.crt, mozilla/Thawte_Premium_Server_CA.crt, mozilla/Thawte_Server_CA.crt, mozilla/Trustis_FPS_Root_CA.crt, mozilla/TÜBİTAK_UEKAE_Kök_Sertifika_Hizmet_Sağlayıcısı_-_Sürüm_3.crt, mozilla/UTN_DATACorp_SGC_Root_CA.crt, mozilla/UTN_USERFirst_Email_Root_CA.crt, mozilla/UTN_USERFirst_Hardware_Root_CA.crt, mozilla/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.crt, mozilla/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.crt, mozilla/VeriSign_Universal_Root_Certification_Authority.crt, mozilla/Verisign_Class_1_Public_Primary_Certification_Authority.crt, mozilla/Verisign_Class_1_Public_Primary_Certification_Authority_-_G2.crt, mozilla/Verisign_Class_1_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Verisign_Class_2_Public_Primary_Certification_Authority_-_G2.crt, mozilla/Verisign_Class_2_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Verisign_Class_3_Public_Primary_Certification_Authority.crt, mozilla/Verisign_Class_3_Public_Primary_Certification_Authority_-_G2.crt, mozilla/Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Verisign_Class_3_Public_Primary_Certification_Authority_2.crt, mozilla/Verisign_Class_4_Public_Primary_Certification_Authority_-_G3.crt, mozilla/Visa_eCommerce_Root.crt, mozilla/WellsSecure_Public_Root_Certificate_Authority.crt, mozilla/WoSign.crt, mozilla/WoSign_China.crt, mozilla/XRamp_Global_CA_Root.crt, mozilla/certSIGN_ROOT_CA.crt, mozilla/ePKI_Root_Certification_Authority.crt, mozilla/thawte_Primary_Root_CA.crt, mozilla/thawte_Primary_Root_CA_-_G2.crt, mozilla/thawte_Primary_Root_CA_-_G3.crt, spi-inc.org/spi-cacert-2008.crt
+# Time zone:
+# Choices: GMT, GMT+0, GMT+1, GMT+10, GMT+11, GMT+12, GMT+2, GMT+3, GMT+4, GMT+5, GMT+6, GMT+7, GMT+8, GMT+9, GMT-0, GMT-1, GMT-10, GMT-11, GMT-12, GMT-13, GMT-14, GMT-2, GMT-3, GMT-4, GMT-5, GMT-6, GMT-7, GMT-8, GMT-9, GMT0, Greenwich, UCT, UTC, Universal, Zulu
+tzdata	tzdata/Zones/Etc	select	UTC
+# MySQL username for domjudge-domserver:
+domjudge-domserver	domjudge-domserver/db/app-user	string	domjudge_sql
+# Keep "administrative" database passwords?
+dbconfig-common	dbconfig-common/remember-admin-pass	boolean	false
+# New certificates to activate:
+# Choices: 
+ca-certificates	ca-certificates/new_crts	multiselect	
+# Database type to be used by phpmyadmin:
+# Choices: 
+phpmyadmin	phpmyadmin/database-type	select	mysql
+# Do you want to change the GID of group ?
+base-passwd	base-passwd/group-change-gid	boolean	true
+# Host name of the MySQL database server for phpmyadmin:
+# Choices: 
+phpmyadmin	phpmyadmin/remote/host	select	
+# Configure database for  with dbconfig-common?
+dbconfig-common	dbconfig-common/dbconfig-install	boolean	true
+# Time zone:
+# Choices: Alaska, Aleutian, Arizona, Central, Eastern, Hawaii, Starke County (Indiana), Michigan, Mountain, Pacific Ocean, Pacific-New, Samoa
+tzdata	tzdata/Zones/US	select	
+# xscreensaver and xlockmore must be restarted before upgrading
+# Ignore questions with a priority less than:
+# Choices: critical, high, medium, low
+debconf	debconf/priority	select	high
+# Time zone:
+# Choices: Amsterdam, Andorra, Athens, Belfast, Belgrade, Berlin, Bratislava, Brussels, Bucharest, Budapest, Busingen, Chisinau, Copenhagen, Dublin, Gibraltar, Guernsey, Helsinki, Isle_of_Man, Istanbul, Jersey, Kaliningrad, Kiev, Lisbon, Ljubljana, London, Luxembourg, Madrid, Malta, Mariehamn, Minsk, Monaco, Moscow, Nicosia, Oslo, Paris, Podgorica, Prague, Riga, Rome, Samara, San_Marino, Sarajevo, Simferopol, Skopje, Sofia, Stockholm, Tallinn, Tirane, Tiraspol, Uzhgorod, Vaduz, Vatican, Vienna, Vilnius, Volgograd, Warsaw, Zagreb, Zaporozhye, Zurich
+tzdata	tzdata/Zones/Europe	select	
+# Method for authenticating the PostgreSQL administrator:
+# Choices: ident, password
+dbconfig-common	dbconfig-common/pgsql/authmethod-admin	select	ident
+# Enable subpixel rendering for screen:
+# Choices: Automatic, Always, Never
+fontconfig-config	fontconfig/subpixel_rendering	select	Automatic
+# Next step for database removal:
+# Choices: abort, retry
+dbconfig-common	dbconfig-common/remove-error	select	abort
+# Name of the database's administrative user:
+dbconfig-common	dbconfig-common/pgsql/admin-user	string	postgres
+# Start the MySQL server on boot?
+mysql-server-5.5	mysql-server-5.5/start_on_boot	boolean	true
+# Do you want to back up the database for domjudge-domserver before upgrading?
+domjudge-domserver	domjudge-domserver/upgrade-backup	boolean	true
+# Will this server be used to access remote databases?
+dbconfig-common	dbconfig-common/remote-questions-default	boolean	false
+# Reinstall database for domjudge-domserver?
+domjudge-domserver	domjudge-domserver/dbconfig-reinstall	boolean	false
+# Empty passwords unsupported with PostgreSQL
+# Password mismatch
+# Services to restart for PAM library upgrade:
+libpam0g:amd64	libpam0g/restart-services	string	
+# Incompatible PAM profiles selected.
+# Host name of the MySQL database server for domjudge-domserver:
+# Choices: 
+domjudge-domserver	domjudge-domserver/remote/host	select	
+# Next step for database installation:
+# Choices: abort, retry, retry (skip questions), ignore
+dbconfig-common	dbconfig-common/install-error	select	abort
+# Time zone:
+# Choices: Adak, Anchorage, Anguilla, Antigua, Araguaina, Argentina/Buenos_Aires, Argentina/Catamarca, Argentina/Cordoba, Argentina/Jujuy, Argentina/La_Rioja, Argentina/Mendoza, Argentina/Rio_Gallegos, Argentina/Salta, Argentina/San_Juan, Argentina/San_Luis, Argentina/Tucuman, Argentina/Ushuaia, Aruba, Asuncion, Atikokan, Atka, Bahia, Bahia_Banderas, Barbados, Belem, Belize, Blanc-Sablon, Boa_Vista, Bogota, Boise, Cambridge_Bay, Campo_Grande, Cancun, Caracas, Cayenne, Cayman, Chicago, Chihuahua, Coral_Harbour, Costa_Rica, Creston, Cuiaba, Curacao, Danmarkshavn, Dawson, Dawson_Creek, Denver, Detroit, Dominica, Edmonton, Eirunepe, El_Salvador, Ensenada, Fortaleza, Glace_Bay, Godthab, Goose_Bay, Grand_Turk, Grenada, Guadeloupe, Guatemala, Guayaquil, Guyana, Halifax, Havana, Hermosillo, Indiana/Indianapolis, Indiana/Knox, Indiana/Marengo, Indiana/Petersburg, Indiana/Tell_City, Indiana/Vevay, Indiana/Vincennes, Indiana/Winamac, Inuvik, Iqaluit, Jamaica, Juneau, Kentucky/Louisville, Kentucky/Monticello, Kralendijk, La_Paz, Lima, Los_Angeles, Lower_Princes, Maceio, Managua, Manaus, Marigot, Martinique, Matamoros, Mazatlan, Menominee, Merida, Metlakatla, Mexico_City, Miquelon, Moncton, Monterrey, Montevideo, Montreal, Montserrat, Nassau, New_York, Nipigon, Nome, Noronha, North_Dakota/Beulah, North_Dakota/Center, North_Dakota/New_Salem, Ojinaga, Panama, Pangnirtung, Paramaribo, Phoenix, Port-au-Prince, Port_of_Spain, Porto_Acre, Porto_Velho, Puerto_Rico, Rainy_River, Rankin_Inlet, Recife, Regina, Resolute, Rio_Branco, Santa_Isabel, Santarem, Santiago, Santo_Domingo, Sao_Paulo, Scoresbysund, Shiprock, Sitka, St_Barthelemy, St_Johns, St_Kitts, St_Lucia, St_Thomas, St_Vincent, Swift_Current, Tegucigalpa, Thule, Thunder_Bay, Tijuana, Toronto, Tortola, Vancouver, Virgin, Whitehorse, Winnipeg, Yakutat, Yellowknife
+tzdata	tzdata/Zones/America	select	
+# Password input error
+# Do you want to move the user ?
+base-passwd	base-passwd/user-move	boolean	true
+# Username for web-based setup system:
+phpmyadmin	phpmyadmin/setup-username	string	admin
+# Name of the database's administrative user:
+dbconfig-common	dbconfig-common/mysql/admin-user	string	root
+# for internal use.
+phpmyadmin	phpmyadmin/internal/reconfiguring	boolean	false
+# MySQL username for phpmyadmin:
+phpmyadmin	phpmyadmin/db/app-user	string	
+# Do you want to change the UID of user ?
+base-passwd	base-passwd/user-change-uid	boolean	true
+# Do you want to change the shell of user ?
+base-passwd	base-passwd/user-change-shell	boolean	true
+# for internal use.
+dbconfig-common	dbconfig-common/internal/reconfiguring	boolean	false
+# Do you want to purge the database for domjudge-domserver?
+domjudge-domserver	domjudge-domserver/purge	boolean	false
+# Time zone:
+# Choices: Azores, Bermuda, Canary, Cape Verde, Faroe, Jan Mayen, Madeira, Reykjavik, South Georgia, St. Helena, Stanley
+tzdata	tzdata/Zones/Atlantic	select	
+# Time zone:
+# Choices: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldives, Mauritius, Mayotte, Reunion
+tzdata	tzdata/Zones/Indian	select	
+# Host running the MySQL server for phpmyadmin:
+phpmyadmin	phpmyadmin/remote/newhost	string	
+# xscreensaver and xlockmore must be restarted before upgrading
+# Modifications needed in /etc/postgresql/pg_hba.conf
+dbconfig-common	dbconfig-common/pgsql/manualconf	note	
+# Deconfigure database for phpmyadmin with dbconfig-common?
+phpmyadmin	phpmyadmin/dbconfig-remove	boolean	
+# Interface to use:
+# Choices: Dialog, Readline, Gnome, Kde, Editor, Noninteractive
+debconf	debconf/frontend	select	Dialog
+# Install beep as:
+# Choices: usable for all, usable for group audio, usable only for root
+beep	beep/suid_option	select	usable for all
+# Next step for database removal:
+# Choices: abort, retry
+domjudge-domserver	domjudge-domserver/remove-error	select	abort
+# for internal use.
+phpmyadmin	phpmyadmin/internal/skip-preseed	boolean	true
+# No PAM profiles have been selected.
+# Port number for the MySQL service:
+domjudge-domserver	domjudge-domserver/remote/port	string	
+# PostgreSQL connection method error
+dbconfig-common	dbconfig-common/pgsql/no-user-choose-other-method	note	
+# Remove all MySQL databases?
+mysql-server-5.5	mysql-server-5.5/postrm_remove_databases	boolean	false
+# Do you want to back up the database for  before upgrading?
+dbconfig-common	dbconfig-common/upgrade-backup	boolean	true
+# Display manager must be restarted manually
+# Time zone:
+# Choices: Adelaide, Brisbane, Broken Hill, Canberra, Currie, Darwin, Eucla, Hobart, Lindeman, Lord Howe, Melbourne, Perth, Sydney, Yancowinna
+tzdata	tzdata/Zones/Australia	select	
+# Next step:
+# Choices: abort, retry, ignore
+phpmyadmin	phpmyadmin/missing-db-package-error	select	abort
+# Deconfigure database for domjudge-domserver with dbconfig-common?
+domjudge-domserver	domjudge-domserver/dbconfig-remove	boolean	
+# Failure restarting some services for GNU libc upgrade
+# Do you want system-wide readable home directories?
+adduser	adduser/homedir-permission	boolean	true
+# Geographic area:
+# Choices: Africa, America, Antarctica, Australia, Arctic Ocean, Asia, Atlantic Ocean, Europe, Indian Ocean, Pacific Ocean, System V timezones, US, None of the above
+tzdata	tzdata/Areas	select	Etc
+# Line by line differences between versions
+ucf	ucf/show_diff	note	
+# Font tuning method for screen (system default):
+# Choices: Native, Autohinter, None
+fontconfig-config	fontconfig/hinting_type	select	Native
+# Reinstall database for phpmyadmin?
+phpmyadmin	phpmyadmin/dbconfig-reinstall	boolean	false
+# Do you want to change the home directory of user ?
+base-passwd	base-passwd/user-change-home	boolean	true
+# Do you want to move the group ?
+base-passwd	base-passwd/group-move	boolean	true
+# Configure database for phpmyadmin with dbconfig-common?
+phpmyadmin	phpmyadmin/dbconfig-install	boolean	false
+# Do you want to purge the database for ?
+dbconfig-common	dbconfig-common/purge	boolean	false
+# Perform upgrade on database for phpmyadmin with dbconfig-common?
+phpmyadmin	phpmyadmin/dbconfig-upgrade	boolean	true
+# Password mismatch
+# Next step for database removal:
+# Choices: abort, retry
+phpmyadmin	phpmyadmin/remove-error	select	abort
+# Do you want to add the user ?
+base-passwd	base-passwd/user-add	boolean	true
+# What do you want to do about modified configuration file ?
+# Choices: install the package maintainer's version, keep the local version currently installed, show the differences between the versions, show a side-by-side difference between the versions, show a 3-way difference between available versions, do a 3-way merge between available versions (experimental), start a new shell to examine the situation
+ucf	ucf/changeprompt_threeway	select	keep_current
+# Next step:
+# Choices: abort, retry, ignore
+dbconfig-common	dbconfig-common/missing-db-package-error	select	abort
+# Time zone:
+# Choices: Aden, Almaty, Amman, Anadyr, Aqtau, Aqtobe, Ashgabat, Baghdad, Bahrain, Baku, Bangkok, Beirut, Bishkek, Brunei, Chita, Choibalsan, Chongqing, Colombo, Damascus, Dhaka, Dili, Dubai, Dushanbe, Gaza, Harbin, Hebron, Ho_Chi_Minh, Hong_Kong, Hovd, Irkutsk, Istanbul, Jakarta, Jayapura, Jerusalem, Kabul, Kamchatka, Karachi, Kashgar, Kathmandu, Khandyga, Kolkata, Krasnoyarsk, Kuala_Lumpur, Kuching, Kuwait, Macau, Magadan, Makassar, Manila, Muscat, Nicosia, Novokuznetsk, Novosibirsk, Omsk, Oral, Phnom_Penh, Pontianak, Pyongyang, Qatar, Qyzylorda, Rangoon, Riyadh, Sakhalin, Samarkand, Seoul, Shanghai, Singapore, Srednekolymsk, Taipei, Tashkent, Tbilisi, Tehran, Tel_Aviv, Thimphu, Tokyo, Ujung_Pandang, Ulaanbaatar, Urumqi, Ust-Nera, Vientiane, Vladivostok, Yakutsk, Yekaterinburg, Yerevan
+tzdata	tzdata/Zones/Asia	select	
+# for internal use.
+domjudge-domserver	domjudge-domserver/internal/skip-preseed	boolean	false
+# Do you want to change the GECOS of user ?
+base-passwd	base-passwd/user-change-gecos	boolean	true
+# Reboot needed after this upgrade
+# Next step for database upgrade:
+# Choices: abort, retry, retry (skip questions)
+domjudge-domserver	domjudge-domserver/upgrade-error	select	abort

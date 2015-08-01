@@ -1,0 +1,292 @@
+> # Password for web-based setup system:
+> phpmyadmin	phpmyadmin/setup-password	password	
+> # Repeat password for the MySQL "root" user:
+> mysql-server-5.5	mysql-server/root_password_again	domjudge
+> # Password confirmation:
+> phpmyadmin	phpmyadmin/password-confirm	password	
+> # Password confirmation:
+> dbconfig-common	dbconfig-common/password-confirm	domjudge
+> # Password confirmation:
+> dbconfig-common	dbconfig-common/app-password-confirm	password	
+> # Password of the database's administrative user:
+> dbconfig-common	dbconfig-common/mysql/admin-pass	password	
+> # MySQL application password for phpmyadmin:
+> phpmyadmin	phpmyadmin/mysql/app-pass	password	
+> # MySQL application password for domjudge-domserver:
+> domjudge-domserver	domjudge-domserver/mysql/app-pass	password	
+> # MySQL application password for :
+> dbconfig-common	dbconfig-common/mysql/app-pass	password	
+> # Password of the database's administrative user:
+> domjudge-domserver	domjudge-domserver/mysql/admin-pass	password	
+> # Password confirmation:
+> domjudge-domserver	domjudge-domserver/password-confirm	password	
+> # Password of your database's administrative user:
+> dbconfig-common	dbconfig-common/pgsql/admin-pass	password	
+> # Password of the database's administrative user:
+> phpmyadmin	phpmyadmin/mysql/admin-pass	password	
+> # Password confirmation:
+> domjudge-domserver	domjudge-domserver/app-password-confirm	password	
+> # Password confirmation:
+> phpmyadmin	phpmyadmin/app-password-confirm	password	
+> # New password for the MySQL "root" user:
+> mysql-server-5.5	mysql-server/root_password	password	
+> # PostgreSQL application password for :
+> dbconfig-common	dbconfig-common/pgsql/app-pass	password	
+> # Do you want to purge the database for ?
+> dbconfig-common	dbconfig-common/purge	boolean	false
+> # for internal use.
+> domjudge-domserver	domjudge-domserver/internal/reconfiguring	boolean	false
+> # Next step for database installation:
+> # Choices: abort, retry, retry (skip questions), ignore
+> dbconfig-common	dbconfig-common/install-error	select	abort
+
+
+> # MySQL username for domjudge-domserver:
+> domjudge-domserver	domjudge-domserver/db/app-user	string	domjudge_sql
+> # Services to restart for PAM library upgrade:
+> libpam0g:amd64	libpam0g/restart-services	string	
+> # Do you want to back up the database for  before upgrading?
+> dbconfig-common	dbconfig-common/upgrade-backup	boolean	true
+> # Connection method for MySQL database of :
+> # Choices: unix socket, tcp/ip
+> dbconfig-common	dbconfig-common/mysql/method	select	unix socket
+> # Do you want to move the user ?
+> base-passwd	base-passwd/user-move	boolean	true
+> # Name of the database's administrative user:
+> phpmyadmin	phpmyadmin/mysql/admin-user	string	root
+> # Geographic area:
+> # Choices: Africa, America, Antarctica, Australia, Arctic Ocean, Asia, Atlantic Ocean, Europe, Indian Ocean, Pacific Ocean, System V timezones, US, None of the above
+> tzdata	tzdata/Areas	select	Etc
+> # Failure restarting some services for GNU libc upgrade
+> libc6	glibc/restart-failed	error	
+> libc6:amd64	glibc/restart-failed	error	
+> # Time zone:
+> # Choices: GMT, GMT+0, GMT+1, GMT+10, GMT+11, GMT+12, GMT+2, GMT+3, GMT+4, GMT+5, GMT+6, GMT+7, GMT+8, GMT+9, GMT-0, GMT-1, GMT-10, GMT-11, GMT-12, GMT-13, GMT-14, GMT-2, GMT-3, GMT-4, GMT-5, GMT-6, GMT-7, GMT-8, GMT-9, GMT0, Greenwich, UCT, UTC, Universal, Zulu
+> tzdata	tzdata/Zones/Etc	select	UTC
+> # Next step for database upgrade:
+> # Choices: abort, retry, retry (skip questions)
+> dbconfig-common	dbconfig-common/upgrade-error	select	abort
+> # Empty passwords unsupported with PostgreSQL
+> dbconfig-common	dbconfig-common/pgsql/no-empty-passwords	error	
+> # Do you want to add the group ?
+> base-passwd	base-passwd/group-add	boolean	true
+> # Next step:
+> # Choices: abort, retry, ignore
+> phpmyadmin	phpmyadmin/missing-db-package-error	select	abort
+> # Services to restart to make them use the new libraries:
+> libssl1.0.0:amd64	libssl1.0.0/restart-services	string	
+> # Install beep as:
+> # Choices: usable for all, usable for group audio, usable only for root
+> beep	beep/suid_option	select	usable for all
+> # Next step for database removal:
+> # Choices: abort, retry
+> domjudge-domserver	domjudge-domserver/remove-error	select	abort
+> # Do you want to change the GECOS of user ?
+> base-passwd	base-passwd/user-change-gecos	boolean	true
+> # Do you want to change the GID of group ?
+> base-passwd	base-passwd/group-change-gid	boolean	true
+> # Next step for database upgrade:
+> # Choices: abort, retry, retry (skip questions)
+> phpmyadmin	phpmyadmin/upgrade-error	select	abort
+> # PAM profiles to enable:
+> # Choices: Unix authentication
+> libpam-runtime	libpam-runtime/profiles	multiselect	unix
+> # Reinstall database for domjudge-domserver?
+> domjudge-domserver	domjudge-domserver/dbconfig-reinstall	boolean	false
+> # Trust new certificates from certificate authorities?
+> # Choices: yes, no, ask
+> ca-certificates	ca-certificates/trust_new_crts	select	yes
+> # Perform upgrade on database for domjudge-domserver with dbconfig-common?
+> domjudge-domserver	domjudge-domserver/dbconfig-upgrade	boolean	true
+> # Time zone:
+> # Choices: Antananarivo, Chagos, Christmas, Cocos, Comoro, Kerguelen, Mahe, Maldives, Mauritius, Mayotte, Reunion
+> tzdata	tzdata/Zones/Indian	select	
+> #  username for :
+> dbconfig-common	dbconfig-common/db/app-user	string	
+> # What do you want to do about modified configuration file ?
+> # Choices: install the package maintainer's version, keep the local version currently installed, show the differences between the versions, show a side-by-side difference between the versions, show a 3-way difference between available versions, do a 3-way merge between available versions (experimental), start a new shell to examine the situation
+> ucf	ucf/changeprompt_threeway	select	keep_current
+> # Remove all MySQL databases?
+> mysql-server-5.5	mysql-server-5.5/postrm_remove_databases	boolean	false
+> # Do you want to change the UID of user ?
+> base-passwd	base-passwd/user-change-uid	boolean	true
+> # Font tuning method for screen (system default):
+> # Choices: Native, Autohinter, None
+> fontconfig-config	fontconfig/hinting_type	select	Native
+> # Do you want to purge the database for domjudge-domserver?
+> domjudge-domserver	domjudge-domserver/purge	boolean	false
+> # Start the MySQL server on boot?
+> mysql-server-5.5	mysql-server-5.5/start_on_boot	boolean	true
+
+> domjudge-domserver	domjudge-domserver/missing-db-package-error	select	abort
+> # Host name of the MySQL database server for phpmyadmin:
+> # Choices: 
+> phpmyadmin	phpmyadmin/remote/host	select	
+> # Username for web-based setup system:
+> phpmyadmin	phpmyadmin/setup-username	string	admin
+> # Next step for database upgrade:
+> # Choices: abort, retry, retry (skip questions)
+> domjudge-domserver	domjudge-domserver/upgrade-error	select	abort
+> # Password mismatch
+> dbconfig-common	dbconfig-common/passwords-do-not-match	error	
+> # for internal use.
+> dbconfig-common	dbconfig-common/internal/skip-preseed	boolean	false
+> # Deconfigure database for domjudge-domserver with dbconfig-common?
+> domjudge-domserver	domjudge-domserver/dbconfig-remove	boolean	
+> # Name of the database's administrative user:
+> dbconfig-common	dbconfig-common/mysql/admin-user	string	root
+> # Reinstall database for phpmyadmin?
+> phpmyadmin	phpmyadmin/dbconfig-reinstall	boolean	false
+
+> # Port number for the MySQL service:
+> domjudge-domserver	domjudge-domserver/remote/port	string	
+> # Password input error
+> mysql-server-5.5	mysql-server/password_mismatch	error	
+> # Do you want system-wide readable home directories?
+> adduser	adduser/homedir-permission	boolean	true
+> # Do you want to remove the user ?
+> base-passwd	base-passwd/user-remove	boolean	true
+> # Do you want to purge the database for phpmyadmin?
+> phpmyadmin	phpmyadmin/purge	boolean	false
+
+> # Next step for database installation:
+> # Choices: abort, retry, retry (skip questions), ignore
+> domjudge-domserver	domjudge-domserver/install-error	select	ignore
+104,107c260,285
+< # Do you want to change the GECOS of user ?
+< base-passwd	base-passwd/user-change-gecos	boolean	true
+< # Failure restarting some services for OpenSSL upgrade
+< libssl1.0.0:amd64	libssl1.0.0/restart-failed	error	
+---
+> # Reboot needed after this upgrade
+> udev	udev/reboot_needed	error	
+> # Connection method for PostgreSQL database of :
+> # Choices: unix socket, tcp/ip, tcp/ip + ssl
+> dbconfig-common	dbconfig-common/pgsql/method	select	unix socket
+> # Configure database for domjudge-domserver with dbconfig-common?
+> domjudge-domserver	domjudge-domserver/dbconfig-install	boolean	true
+> # Do you want to back up the database for domjudge-domserver before upgrading?
+> domjudge-domserver	domjudge-domserver/upgrade-backup	boolean	true
+> # Change PostgreSQL configuration automatically?
+> dbconfig-common	dbconfig-common/pgsql/changeconf	boolean	false
+> # Next step for database removal:
+> # Choices: abort, retry
+> phpmyadmin	phpmyadmin/remove-error	select	abort
+> # Host name of the  database server for :
+> # Choices: 
+> dbconfig-common	dbconfig-common/remote/host	select	
+> # Reinstall database for ?
+> dbconfig-common	dbconfig-common/dbconfig-reinstall	boolean	false
+> # Proceed with the udev upgrade despite the kernel incompatibility?
+> udev	udev/new_kernel_needed	boolean	false
+> # What do you want to do about modified configuration file ?
+> # Choices: install the package maintainer's version, keep the local version currently installed, show the differences between the versions, show a side-by-side difference between the versions, start a new shell to examine the situation
+> ucf	ucf/changeprompt	select	keep_current
+> # Important note for NIS/YP users
+> mysql-server-5.5	mysql-server-5.5/nis_warning	note	
+111,113c289,290
+< # Geographic area:
+< # Choices: Africa, America, Antarctica, Australia, Arctic Ocean, Asia, Atlantic Ocean, Europe, Indian Ocean, Pacific Ocean, System V timezones, US, None of the above
+< tzdata	tzdata/Areas	select	Etc
+---
+> # Configure database for phpmyadmin with dbconfig-common?
+> phpmyadmin	phpmyadmin/dbconfig-install	boolean	true
+115,122c292,336
+< # Choices: Alaska, Aleutian, Arizona, Central, Eastern, Hawaii, Starke County (Indiana), Michigan, Mountain, Pacific Ocean, Pacific-New, Samoa
+< tzdata	tzdata/Zones/US	select	
+< # Services to restart to make them use the new libraries:
+< libssl1.0.0:amd64	libssl1.0.0/restart-services	string	
+< # Proceed with the udev upgrade despite the kernel incompatibility?
+< udev	udev/new_kernel_needed	boolean	false
+< # Do you want to remove the user ?
+< base-passwd	base-passwd/user-remove	boolean	true
+---
+> # Choices: Abidjan, Accra, Addis_Ababa, Algiers, Asmara, Bamako, Bangui, Banjul, Bissau, Blantyre, Brazzaville, Bujumbura, Cairo, Casablanca, Ceuta, Conakry, Dakar, Dar_es_Salaam, Djibouti, Douala, El_Aaiun, Freetown, Gaborone, Harare, Johannesburg, Juba, Kampala, Khartoum, Kigali, Kinshasa, Lagos, Libreville, Lome, Luanda, Lubumbashi, Lusaka, Malabo, Maputo, Maseru, Mbabane, Mogadishu, Monrovia, Nairobi, Ndjamena, Niamey, Nouakchott, Ouagadougou, Porto-Novo, Sao_Tome, Timbuktu, Tripoli, Tunis, Windhoek
+> tzdata	tzdata/Zones/Africa	select	
+> # Host running the MySQL server for domjudge-domserver:
+> domjudge-domserver	domjudge-domserver/remote/newhost	string	
+> #  database name for :
+> dbconfig-common	dbconfig-common/db/dbname	string	
+> # Deconfigure database for phpmyadmin with dbconfig-common?
+> phpmyadmin	phpmyadmin/dbconfig-remove	boolean	
+> # Modifications needed in /etc/postgresql/pg_hba.conf
+> dbconfig-common	dbconfig-common/pgsql/manualconf	note	
+> # Database type to be used by domjudge-domserver:
+> # Choices: 
+> domjudge-domserver	domjudge-domserver/database-type	select	mysql
+> # Really proceed with downgrade?
+> mysql-server-5.5	mysql-server-5.5/really_downgrade	boolean	false
+> # Alternative name(s):
+> ssl-cert	make-ssl-cert/altname	string	
+> # Deconfigure database for  with dbconfig-common?
+> dbconfig-common	dbconfig-common/dbconfig-remove	boolean	true
+> # Unable to set password for the MySQL "root" user
+> mysql-server-5.5	mysql-server/error_setting_password	error	
+> # Failure restarting some services for OpenSSL upgrade
+> libssl1.0.0:amd64	libssl1.0.0/restart-failed	error	
+> # MySQL database name for domjudge-domserver:
+> domjudge-domserver	domjudge-domserver/db/dbname	string	domjudge
+> # Next step for database removal:
+> # Choices: abort, retry
+> dbconfig-common	dbconfig-common/remove-error	select	abort
+> # Disable SSH password authentication for root?
+> openssh-server	openssh-server/permit-root-login	boolean	false
+> # Database type to be used by phpmyadmin:
+> # Choices: 
+> phpmyadmin	phpmyadmin/database-type	select	mysql
+> # Database type to be used by :
+> # Choices: 
+> dbconfig-common	dbconfig-common/database-type	select	
+> # Will this server be used to access remote databases?
+> dbconfig-common	dbconfig-common/remote-questions-default	boolean	false
+> # Time zone:
+> # Choices: Apia, Auckland, Bougainville, Chatham, Chuuk, Easter, Efate, Enderbury, Fakaofo, Fiji, Funafuti, Galapagos, Gambier, Guadalcanal, Guam, Honolulu, Johnston, Kiritimati, Kosrae, Kwajalein, Majuro, Marquesas, Midway, Nauru, Niue, Norfolk, Noumea, Pago_Pago, Palau, Pitcairn, Pohnpei, Ponape, Port_Moresby, Rarotonga, Saipan, Samoa, Tahiti, Tarawa, Tongatapu, Truk, Wake, Wallis, Yap
+> tzdata	tzdata/Zones/Pacific	select	
+> # Override local changes to /etc/pam.d/common-*?
+> libpam-runtime	libpam-runtime/override	boolean	false
+> # Do you want to change the shell of user ?
+> base-passwd	base-passwd/user-change-shell	boolean	true
+125a340,349
+> # Configure database for  with dbconfig-common?
+> dbconfig-common	dbconfig-common/dbconfig-install	boolean	true
+> # MySQL username for phpmyadmin:
+> phpmyadmin	phpmyadmin/db/app-user	string	phpmyadmin
+> # Revert PostgreSQL configuration automatically?
+> dbconfig-common	dbconfig-common/pgsql/revertconf	boolean	false
+> # Do you want to back up the database for phpmyadmin before upgrading?
+> phpmyadmin	phpmyadmin/upgrade-backup	boolean	true
+> # No PAM profiles have been selected.
+> libpam-runtime	libpam-runtime/no_profiles_chosen	error	
+128a353,384
+> # Next step for database installation:
+> # Choices: abort, retry, retry (skip questions), ignore
+> phpmyadmin	phpmyadmin/install-error	select	ignore
+> # Local SSL certificates must be replaced
+> ssl-cert	make-ssl-cert/vulnerable_prng	note	
+> # Method for authenticating the PostgreSQL administrator:
+> # Choices: ident, password
+> dbconfig-common	dbconfig-common/pgsql/authmethod-admin	select	ident
+> # Port number for the  service:
+> dbconfig-common	dbconfig-common/remote/port	string	
+> # for internal use.
+> dbconfig-common	dbconfig-common/internal/reconfiguring	boolean	false
+> # Connection method for MySQL database of domjudge-domserver:
+> # Choices: unix socket, tcp/ip
+> domjudge-domserver	domjudge-domserver/mysql/method	select	unix socket
+> # Next step:
+> # Choices: abort, retry, ignore
+> dbconfig-common	dbconfig-common/missing-db-package-error	select	abort
+> # Name of the database's administrative user:
+> domjudge-domserver	domjudge-domserver/mysql/admin-user	string	root
+> # PostgreSQL connection method error
+> dbconfig-common	dbconfig-common/pgsql/no-user-choose-other-method	note	
+> # Incompatible PAM profiles selected.
+> libpam-runtime	libpam-runtime/conflicts	error	
+> # Host name:
+> ssl-cert	make-ssl-cert/hostname	string	localhost
+> # Password mismatch
+> domjudge-domserver	domjudge-domserver/passwords-do-not-match	error	
+> # Enable bitmapped fonts by default?
+> fontconfig-config	fontconfig/enable_bitmaps	boolean	false
+> # Host running the MySQL server for phpmyadmin:
+> phpmyadmin	phpmyadmin/remote/newhost	string	
