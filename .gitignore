@@ -1,3 +1,5 @@
 db/data/*
 web/src/*
+*.swp
+
 
