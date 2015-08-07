@@ -38,4 +38,8 @@ domjudge-domserver domjudge-domserver/upgrade-backup boolean true
 # Database type to be used by domjudge-domserver:
 domjudge-domserver domjudge-domserver/database-type select mysql
 
+domjudge-judgehost domjudge/api_endpoint_pass password 
+domjudge-judgehost domjudge/api_endpoint_user string  
+domjudge-judgehost domjudge/api_endpoint string 
+
 

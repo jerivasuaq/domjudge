@@ -16,8 +16,8 @@ echo ""
 echo ""
 sleep 1
 
-echo "docker run -ti --rm -p $WEB_PORT:80 --name $CONTAINER_WEB --link $CONTAINER_DB:$CONTAINER_DB \
+docker run -ti --rm -p $WEB_PORT:80 --name $CONTAINER_WEB --link $CONTAINER_DB:$CONTAINER_DB \
     -v `pwd`/web/src/:/var/www/html \
-    $CONTAINER_IMAGE "
+    $CONTAINER_IMAGE 
      
 

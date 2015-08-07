@@ -36,16 +36,15 @@ RUN \
     echo "deb     https://domjudge.org/debian unstable/" > /etc/apt/sources.list.d/domjudge.list && \
     echo "deb-src https://domjudge.org/debian unstable/" >> /etc/apt/sources.list.d/domjudge.list && \
     apt-get update && \
-    apt-get install -y --no-install-recommends domjudge-common domjudge-domserver 
+    apt-get install -y --no-install-recommends domjudge-common domjudge-domserver domjudge-judgehost
 
 COPY domserver.dbconfig.php /etc/domjudge/domserver.dbconfig.php
 COPY restapi.secret  /etc/domjudge/restapi.secret
 
 RUN \
-    chown -R www-data:www-data /etc/domjudge/*.php && \
-    apache2ctl graceful && sleep 2
+    chown -R www-data:www-data /etc/domjudge/*.php 
 
 
-
- 
 VOLUME /var/www/html
+
+
