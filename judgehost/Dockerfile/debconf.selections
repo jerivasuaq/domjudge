@@ -1,0 +1,6 @@
+
+domjudge-judgehost domjudge/api_endpoint_pass password 
+domjudge-judgehost domjudge/api_endpoint_user string  
+domjudge-judgehost domjudge/api_endpoint string 
+
+
