@@ -12,11 +12,12 @@ echo ""
 echo ""
 sleep 1
 
-docker run -ti --rm --name $CONTAINER_IMAGE --link $CONTAINER_WEB:$CONTAINER_WEB \
-    --privileged \
+docker run -ti --rm --link $CONTAINER_WEB:$CONTAINER_WEB \
+    --cap-add SYS_ADMIN \
     -v `pwd`/judgehost/Dockerfile/restapi.secret:/etc/domjudge/restapi.secret \
     $CONTAINER_IMAGE 
-#     --cap-add SYS_ADMIN \
+
+#     --privileged \
 
      
 

@@ -39,7 +39,6 @@ RUN \
     apt-get install -y --no-install-recommends domjudge-common domjudge-domserver domjudge-judgehost
 
 COPY domserver.dbconfig.php /etc/domjudge/domserver.dbconfig.php
-COPY restapi.secret  /etc/domjudge/restapi.secret
 
 RUN \
     chown -R www-data:www-data /etc/domjudge/*.php 
@@ -47,4 +46,7 @@ RUN \
 
 VOLUME /var/www/html
 
+COPY start_foreground.sh /start_foreground.sh
+
+ENTRYPOINT ["/start_foreground.sh"]
 
