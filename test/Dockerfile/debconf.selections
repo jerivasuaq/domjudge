@@ -1,0 +1,45 @@
+
+domjudge-domserver domjudge-domserver/mysql/admin-pass password domjudge
+domjudge-domserver domjudge-domserver/app-password-confirm password domjudge
+domjudge-domserver domjudge-domserver/password-confirm password    
+# MySQL application password for domjudge-domserver:
+domjudge-domserver domjudge-domserver/mysql/app-pass password    
+domjudge-domserver domjudge-domserver/install-error select abort
+# Host running the MySQL server for domjudge-domserver:
+domjudge-domserver domjudge-domserver/remote/newhost string  
+# Host name of the MySQL database server for domjudge-domserver:
+domjudge-domserver domjudge-domserver/remote/host select  
+# MySQL database name for domjudge-domserver:
+domjudge-domserver domjudge-domserver/db/dbname string domjudge
+# Configure database for domjudge-domserver with dbconfig-common?
+domjudge-domserver domjudge-domserver/dbconfig-install boolean false
+domjudge-domserver domjudge-domserver/remove-error select abort
+# Deconfigure database for domjudge-domserver with dbconfig-common?
+domjudge-domserver domjudge-domserver/dbconfig-remove boolean 
+#domjudge-domserver domjudge-domserver/passwords-do-not-match   error   
+domjudge-domserver domjudge-domserver/upgrade-error select abort
+domjudge-domserver domjudge-domserver/internal/skip-preseed boolean true
+# Reinstall database for domjudge-domserver?
+domjudge-domserver domjudge-domserver/dbconfig-reinstall boolean false
+domjudge-domserver domjudge-domserver/internal/reconfiguring boolean false
+domjudge-domserver domjudge-domserver/remote/port string  
+# Do you want to purge the database for domjudge-domserver?
+domjudge-domserver domjudge-domserver/purge boolean false
+domjudge-domserver domjudge-domserver/missing-db-package-error select abort
+# MySQL username for domjudge-domserver:
+domjudge-domserver domjudge-domserver/db/app-user string domjudge_sql
+domjudge-domserver domjudge-domserver/mysql/admin-user string root
+# Connection method for MySQL database of domjudge-domserver:
+domjudge-domserver domjudge-domserver/mysql/method select unix socket
+# Perform upgrade on database for domjudge-domserver with dbconfig-common?
+domjudge-domserver domjudge-domserver/dbconfig-upgrade boolean true
+# Do you want to back up the database for domjudge-domserver before upgrading?
+domjudge-domserver domjudge-domserver/upgrade-backup boolean true
+# Database type to be used by domjudge-domserver:
+domjudge-domserver domjudge-domserver/database-type select mysql
+
+domjudge-judgehost domjudge/api_endpoint_pass password 
+domjudge-judgehost domjudge/api_endpoint_user string  
+domjudge-judgehost domjudge/api_endpoint string 
+
+

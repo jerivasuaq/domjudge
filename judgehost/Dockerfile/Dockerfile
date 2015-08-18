@@ -18,7 +18,7 @@ RUN \
     apt-get update && \
     apt-get install -y domjudge-judgehost
 
-RUN dj_make_chroot 
+RUN /usr/sbin/dj_make_chroot
 
 RUN rm -r /var/lib/apt/lists/*
 
