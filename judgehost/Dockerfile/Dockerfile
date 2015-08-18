@@ -18,16 +18,14 @@ RUN \
     apt-get update && \
     apt-get install -y domjudge-judgehost
 
-# RUN dj_make_chroot 
+RUN dj_make_chroot 
 
-# RUN rm -r /var/lib/apt/lists/*
+RUN rm -r /var/lib/apt/lists/*
 
 
 COPY restapi.secret  /etc/domjudge/restapi.secret
 
-# USER domjudge-run
 
-# ENTRYPOINT ["/usr/sbin/judgedaemon"]
-# CMD["-d", "-v3", "-n", "0"]
+ENTRYPOINT ["/usr/sbin/judgedaemon"]
 
 
