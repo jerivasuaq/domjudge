@@ -17,23 +17,6 @@ EXTRA=/tmp/extra-files.tgz
 
 CHROOTDIR=/var/lib/domjudge/javachroot
 
-# Check if this script is started from the host:
-if [ "$1" != "ON_TARGET" ]; then
-	if [ -z "$1" ]; then
-		echo "Error: no target hostname specified."
-		exit 1
-	fi
-	TARGET="$1"
-	shift
-	make -C `dirname $0` `basename $EXTRA`
-	scp "$0" `dirname $0`/`basename $EXTRA` "root@$TARGET:`dirname $EXTRA`"
-	ssh "root@$TARGET" "/tmp/`basename $0` ON_TARGET $@"
-	exit 0
-fi
-
-# We're on the target system here, skip first argument 'ON_TARGET':
-shift
-
 while getopts ':p:v:' OPT ; do
 	case $OPT in
 		p)	DEBPROXY="$OPTARG" ;;
@@ -59,7 +42,7 @@ export DEBPROXY DJDEBVERSION
 # Unpack extra files:
 cd /
 tar xzf $EXTRA
-rm -f $EXTRA
+# rm -f $EXTRA
 
 export DEBIAN_FRONTEND=noninteractive
 
@@ -71,14 +54,6 @@ apt-get -q -y upgrade
 
 echo 'APT::Install-Recommends "false";' >> /etc/apt/apt.conf
 
-# Fix some GRUB boot loader settings:
-sed -i -e 's/^\(GRUB_DEFAULT\)=.*/\1=2/' \
-       -e 's/^\(GRUB_TIMEOUT\)=.*/\1=15/' \
-       -e 's/^#\(GRUB_\(DISABLE.*_RECOVERY\|INIT_TUNE\)\)/\1/' \
-       -e '/GRUB_GFXMODE/a GRUB_GFXPAYLOAD_LINUX=1024x786,640x480' \
-	/etc/default/grub
-update-grub
-
 # Mount /tmp as tmpfs:
 sed -i '/^proc/a tmpfs		/tmp		tmpfs	size=512M,mode=1777	0	0' /etc/fstab
 
@@ -88,8 +63,8 @@ sed -i '/^# *export LS_OPTIONS/,/^# *alias ls=/ s/^# *//' /root/.bashrc
 
 # Disable persistent storage and network udev rules:
 cd /lib/udev/rules.d
-mkdir disabled
-mv 75-persistent-net-generator.rules disabled
+mkdir -p disabled
+# mv 75-persistent-net-generator.rules disabled
 cd -
 
 # Pregenerate random password for DOMjudge database, so that we can
@@ -128,6 +103,8 @@ apt-get install -q -y \
 	mono-gmcs ntp phpmyadmin debootstrap cgroup-bin libcgroup1 \
 	enscript lpr zip unzip
 
+/etc/init.d/mysql start
+
 USEVERSION="${DJDEBVERSION:+=$DJDEBVERSION}"
 apt-get install -q -y \
 	domjudge-domserver${USEVERSION} domjudge-doc${USEVERSION} \
@@ -143,7 +120,7 @@ sed -i 's/-t proc //' /etc/sudoers.d/domjudge
 # Fix judgedaemon init script, fixed in Debian packaging:
 sed -i '/^# Should-/a  apache2/' /etc/init.d/domjudge-judgehost
 
-# Generate REST API password and set it for judgehost user:
+echo "Generate REST API password and set it for judgehost user:"
 cd /etc/domjudge/
 ./genrestapicredentials > restapi.secret
 RESTPW=`tail -n1 restapi.secret | sed 's/.*[[:space:]]//'`
@@ -151,7 +128,7 @@ echo "UPDATE \`user\` SET \`password\` = MD5('judgehost#$RESTPW') \
 WHERE \`username\` = 'judgehost';" >> /tmp/mysql_db_livedata.sql
 cd -
 
-# Add DOMjudge-live specific and sample DB content:
+echo "Add DOMjudge-live specific and sample DB content:"
 cat /tmp/mysql_db_livedata.sql \
     /usr/share/domjudge/sql/mysql_db_examples.sql \
     /usr/share/domjudge/sql/mysql_db_files_examples.sql \
@@ -168,9 +145,10 @@ ln -s /usr/share/domjudge/www/images/DOMjudgelogo.png /var/www/html/
 # Fix chroot build script to use current Jessie release
 sed -i 's/^RELEASE=.*$/RELEASE="jessie"/' /usr/sbin/dj_make_chroot
 
-# Build DOMjudge chroot environment:
+echo "Build DOMjudge chroot environment:"
 dj_make_chroot
 
+echo "Add packages to chroot for additional language support"
 # Add packages to chroot for additional language support
 mount --bind /proc $CHROOTDIR/proc
 chroot $CHROOTDIR /bin/sh -c \

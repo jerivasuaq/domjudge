@@ -17,6 +17,7 @@ echo ""
 sleep 1
 
 docker run -ti --rm -p $WEB_PORT:80 --link $CONTAINER_DB:$CONTAINER_DB \
+    --privileged \
     $CONTAINER_IMAGE
      
 
