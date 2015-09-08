@@ -16,8 +16,9 @@ echo ""
 echo ""
 sleep 1
 
-docker run -ti --rm -p $WEB_PORT:80 --link $CONTAINER_DB:$CONTAINER_DB \
+docker run -ti --rm -p $WEB_PORT:80 \
     --privileged \
     $CONTAINER_IMAGE
      
+# --link $CONTAINER_DB:$CONTAINER_DB \
 

@@ -32,5 +32,8 @@ RUN rm -r /var/lib/apt/lists/*
 
 COPY install.sh /tmp/install.sh
 COPY extra-files.tgz /tmp/extra-files.tgz
+RUN /tmp/install.sh
+
+
 
 
