@@ -33,10 +33,11 @@ COPY debconf.selections /tmp/debconf.selections
 RUN cat /tmp/debconf.selections | debconf-set-selections
 
 RUN \
-    echo "deb     https://domjudge.org/debian unstable/" > /etc/apt/sources.list.d/domjudge.list && \
-    echo "deb-src https://domjudge.org/debian unstable/" >> /etc/apt/sources.list.d/domjudge.list && \
+    echo "deb     https://domjudge.org/debian unstable/ " > /etc/apt/sources.list.d/domjudge.list && \
+    echo "deb-src https://domjudge.org/debian unstable/ " >> /etc/apt/sources.list.d/domjudge.list && \
     apt-get update && \
-    apt-get install -y --no-install-recommends domjudge-common domjudge-domserver domjudge-judgehost
+    apt-cache search  domjudge && \
+    apt-get install -y --no-install-recommends  domjudge-common domjudge-domserver
 
 COPY domserver.dbconfig.php /etc/domjudge/domserver.dbconfig.php
 

@@ -20,6 +20,8 @@ echo ""
 
 sleep 1
 
+mkdir -p db/data
+
 docker run -ti --rm -p $DB_PORT:3306 --name $CONTAINER_NAME \
     -v `pwd`/db/data:/var/lib/mysql \
     -e "MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD" -e "MYSQL_USER=$MYSQL_USER" -e "MYSQL_PASSWORD=$MYSQL_PASSWORD" -e "MYSQL_DATABASE=$MYSQL_DATABASE" \

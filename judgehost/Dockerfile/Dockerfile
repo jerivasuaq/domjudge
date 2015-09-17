@@ -16,16 +16,17 @@ RUN \
     echo "deb     https://domjudge.org/debian unstable/" > /etc/apt/sources.list.d/domjudge.list && \
     echo "deb-src https://domjudge.org/debian unstable/" >> /etc/apt/sources.list.d/domjudge.list && \
     apt-get update && \
-    apt-get install -y domjudge-judgehost
+    apt-get install -y libcgroup-dev domjudge-common domjudge-judgehost
 
-RUN /usr/sbin/dj_make_chroot
+#RUN /usr/sbin/dj_make_chroot
 
 RUN rm -r /var/lib/apt/lists/*
 
 
 COPY restapi.secret  /etc/domjudge/restapi.secret
+COPY start.sh  /tmp/start.sh
 
 
-ENTRYPOINT ["/usr/sbin/judgedaemon"]
+ENTRYPOINT ["/tmp/start.sh"]
 
 
