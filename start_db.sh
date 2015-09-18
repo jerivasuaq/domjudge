@@ -24,6 +24,7 @@ mkdir -p db/data
 
 docker run -ti --rm -p $DB_PORT:3306 --name $CONTAINER_NAME \
     -v `pwd`/db/data:/var/lib/mysql \
+    -v `pwd`/db/30-domjudge.cnf:/etc/mysql/conf.d/30-domjudge.cnf \
     -e "MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD" -e "MYSQL_USER=$MYSQL_USER" -e "MYSQL_PASSWORD=$MYSQL_PASSWORD" -e "MYSQL_DATABASE=$MYSQL_DATABASE" \
     mysql
 
