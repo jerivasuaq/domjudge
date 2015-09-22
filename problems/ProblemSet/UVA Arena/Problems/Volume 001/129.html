@@ -1,0 +1,90 @@
+
+
+<html>
+<head>
+<title>Krypton Factor</title>
+<meta name="description" content="Krypton Factor">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Krypton Factor</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You have been employed by the organisers of a Super Krypton Factor Contest 
+in which contestants have very high mental and physical abilities.  In one 
+section of the contest the contestants are tested on their ability to recall a 
+sequence of characters which has been read to them by the Quiz Master.  
+Many of the contestants are very good at recognising patterns.  Therefore, in 
+order to add some difficulty to this test, the organisers have decided that 
+sequences containing certain types of repeated subsequences should not be 
+used.  However, they do not wish to remove all subsequences that are 
+repeated, since in that case no single character could be repeated.  This in 
+itself would make the problem too easy for the contestants.  Instead it is 
+decided to eliminate all sequences containing an occurrence of two 
+adjoining identical subsequences.  Sequences containing such an occurrence 
+will be called ``easy''.  Other sequences will be called ``hard''.
+<p>
+For example, the sequence ABACBCBAD is easy, since it contains an 
+adjoining repetition of the subsequence CB.  Other examples of easy 
+sequences are:
+<p>
+<ul><li> BB<li> ABCDACABCAB<li> ABCDABCD
+</li></li></li></ul>
+<p>
+Some examples of hard sequences are:
+<p>
+<ul><li> D<li> DC<li> ABDAB<li> CBABCBA
+</li></li></li></li></ul><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+In order to provide the Quiz Master with a potentially unlimited source of 
+questions you are asked to write a program that will read input lines that 
+contain integers <i>n</i> and <i>L</i> (in that order), where <i>n</i> &gt; 0 and <i>L</i> is in the 
+range  <img width="83" height="26" align="MIDDLE" alt="tex2html_wrap_inline39" src="129img1.gif"> , and for each input line prints out the <i>n</i>th hard 
+sequence (composed of letters drawn from the first <i>L</i> letters in the 
+alphabet), in increasing alphabetical order (alphabetical ordering here corresponds to the normal ordering encountered in a dictionary), 
+followed (on the next line) by the length of that sequence.  The first 
+sequence in this ordering is A.  You may assume that for given <i>n</i> and <i>L</i> 
+there do exist at least <i>n</i> hard sequences.
+<p>
+For example, with <i>L</i> = 3, the first 7 hard sequences are:
+<p>
+<blockquote> 
+A <br> 
+AB <br> 
+ABA <br> 
+ABAC <br> 
+ABACA <br> 
+ABACAB <br> 
+ABACABA
+</blockquote>
+<p>
+As each sequence is potentially very long, split it into groups of four (4) 
+characters separated by a space.  If there are more than 16 such groups, 
+please start a new line for the 17th group.
+<p>
+Therefore, if the integers 7 and 3 appear on an input line, the output lines 
+produced should be
+<p>
+<pre>ABAC ABA
+7</pre>
+<p>
+Input is terminated by a line containing two zeroes.  Your program may 
+assume a maximum sequence length of 80.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>30 3
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>ABAC ABCA CBAB CABA CABC ACBA CABA
+28</pre>
+<p>
+
+<pre>
+</pre> 
+</body>
+</html>

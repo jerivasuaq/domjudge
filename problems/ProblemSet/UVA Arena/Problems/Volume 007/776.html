@@ -1,0 +1,104 @@
+
+
+<html>
+<head>
+<title>Monkeys in a Regular Forest</title>
+<meta name="description" content="Monkeys in a Regular Forest">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Monkeys in a Regular Forest</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Consider the situation of an ideal forest, where trees grow on a regular finite euclidean lattice.
+At every site only one tree grows, and it can be of one among <i>n</i> species. Each species is
+denoted by a single character ({
+
+<img width="88" height="32" align="MIDDLE" border="0" src="776img1.gif" alt="$A, B, C, \dots$">} are valid species, for instance). Two trees of
+the same species are considered neighbors if the maximum absolute difference between their
+coordinates is one.
+
+<p>
+Families of (rather specialized) monkeys are released, one at a time, in this euclidean
+forest. Each family will occupy all neighboring tress of a single species which have not been
+taken yet by another family. The monkeys are released from left to right and from top to bottom.
+
+<p>
+Given the map of the forest, build the map of the monkeys families, starting with ``1''
+and numbering them consecutively.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input file has the lines of a matrix of single characters, separated by single blank spaces.
+
+<p>
+Next matrices (each matrix is a different instance to the problem) will be preceded by a
+line with a single ``<tt>%</tt>'' character and then the same structure as before.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output file has to show lines of integers separated by as many blank spaces as required
+to align columns to the right.
+
+<p>
+The solution to each instance must be finished by a line with a single ``<tt>%</tt>'' character.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+A B D E C C D
+F F W D D D D
+P W E W W W W
+%
+a A b B c d E t
+a a a a a c c t
+e f g h c a a t
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 2 3 4 5 5 3
+6 6 7 3 3 3 3
+8 7 9 7 7 7 7
+%
+1  2  3  4 5 6 7 8
+1  1  1  1 1 5 5 8
+9 10 11 12 5 1 1 8
+%
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+

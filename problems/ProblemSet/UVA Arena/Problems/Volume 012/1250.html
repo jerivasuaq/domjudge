@@ -1,0 +1,96 @@
+
+<p>
+You have entered a robot in a Robot Challenge. A course is set up in a 100m by 100m space. 
+Certain points are identified within the space as targets. They are ordered -- there is a 
+target 1, a target 2, etc. Your robot must start at (0,0). From there, it should go to 
+target 1, stop for 1 second, go to target 2, stop for 1 second, and so on. It must 
+finally end up at, and stop for a second on, (100,100). 
+
+<p>
+Each target except (0,0) and 
+(100,100) has a time penalty for missing it. So, if your robot went straight from target 1 
+to target 3, skipping target 2, it would incur target 2's penalty. Note that once it hits 
+target 3, it cannot go back to target 2. It must hit the targets in order. Since your robot
+ must stop for 1 second on each target point, it is not in danger of hitting a target 
+accidentally too soon. For example, if target point 3 lies directly between target points 
+1 and 2, your robot can go straight from 1 to 2, right over 3, without stopping. Since it 
+didn't stop, the judges will not mistakenly think that it hit target 3 too soon, so they 
+won't assess target 2's penalty. Your final score is the amount of time (in seconds) your 
+robot takes to reach (100,100), completing the course, plus all penalties. Smaller scores 
+are better. 
+
+<p>
+Your robot is very maneuverable, but a bit slow. It moves at 1 m/s, but can turn 
+very quickly. During the 1 second it stops on a target point, it can easily turn to face the 
+next target point. Thus, it can always move in a straight line between target points. 
+
+<p>
+Because your robot is a bit slow, it might be advantageous to skip some targets, and incur their 
+penalty, rather than actually maneuvering to them. Given a description of a course, determine
+your robot's best (lowest) possible score. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+There will be several test cases. Each test case will begin with a line with one integer, <span class="MATH"><i>N</i></span> 
+
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4607img1.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4607img1.png" alt="$ \le$">1000)</span> which is the number of targets on the course. Each of the next <span class="MATH"><i>N</i></span> lines 
+will describe a target with three integers, <span class="MATH"><i>X</i></span>, <span class="MATH"><i>Y</i></span> and <span class="MATH"><i>P</i></span>, where <span class="MATH">(<i>X</i>, <i>Y</i>)</span> is a location on 
+the course (
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4607img1.png" alt="$ \le$"><i>X</i>, <i>Y</i><img width="18" height="31" align="MIDDLE" border="0" src="4607img1.png" alt="$ \le$">99</span>, <span class="MATH"><i>X</i></span> and <span class="MATH"><i>Y</i></span> in meters) and <span class="MATH"><i>P</i></span> is the penalty incurred if the 
+robot misses that target 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4607img1.png" alt="$ \le$"><i>P</i><img width="18" height="31" align="MIDDLE" border="0" src="4607img1.png" alt="$ \le$">100)</span>. The targets will be given in order -- the first 
+line after <span class="MATH"><i>N</i></span> is target 1, the next is target 2, and so on. All the targets on a given course 
+will be unique -- there will be at most one target point at any location on the course. End of 
+input will be marked by a line with a single `<tt>0</tt>'. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+For each test case, output a single decimal number, indicating the smallest 
+possible score for that course. Output this number rounded (NOT truncated) to three decimal 
+places. Print each answer on its own line, and do not print any blank lines between answers.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+1 
+50 50 20 
+3 
+30 30 90 
+60 60 80 
+10 90 100 
+3 
+30 30 90 
+60 60 80 
+10 90 10 
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+143.421 
+237.716 
+154.421
+</pre> 
+
+<p>

@@ -1,0 +1,169 @@
+
+
+<html>
+<head>
+<title>Hares and Foxes</title>
+<meta name="description" content="Hares and Foxes">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Hares and Foxes</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The Antique Comedians of Malidinesia play an interesting comedy
+where many animals occur. Because they want their plays to be as true as
+possible, a specialist studies the behaviour of various animals.
+Recently, he is interested in a binary dynamic ecological
+system hares-foxes (SHF). As a part of this project, you are asked to design
+and implement intelligent automatic target evaluation simulator
+(IATES) for this system. The behaviour of the SHF follows so
+called <em>standard model</em>, described by the following set of
+difference equations.
+
+<p>
+<br><p>
+<div align="CENTER">
+<img width="162" height="58" src="720img1.gif" alt="\begin{eqnarray*}h_{y+1} & = & a.h_y - b.f_y \\
+f_{y+1} & = & c.f_y + d.h_y
+\end{eqnarray*}">
+</div><p>
+<br clear="ALL">
+where <i>h</i><sub><i>y</i></sub> resp. <i>f</i><sub><i>y</i></sub> represent the difference of the
+number of hares resp. foxes in year<sub><i>y</i></sub> and the reference count
+determined at the beginning of the experiment. The units of <i>h</i><sub><i>y</i></sub>
+and <i>f</i><sub><i>y</i></sub> are unknown. Therefore, <i>h</i><sub><i>y</i></sub> and <i>f</i><sub><i>y</i></sub> are to be treated as real numbers.
+Your task is to write a program to determine the long term evolution of SHF.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of <i>N</i> cases. The first line of the input
+contains only positive integer <i>N</i>. Then follow the cases.
+Each case consists of six real numbers 
+
+<i>a</i>, <i>b</i>, <i>c</i>, <i>d</i>,
+<i>h</i><sub>1</sub>998 and <i>f</i><sub>1</sub>998,
+written in this order on three lines, two numbers per line, separated
+by one or more spaces. The numbers are given in the classical format,
+i.e. optional sign, sequence of digits, optional dot and optional
+sequence of digits. The text form of a number
+does not exceed 10 characters. Each case is followed by one empty line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each case, print one of the following sentences:
+
+<p>
+<ul>
+<li>`<tt>Ecological balance will develop.</tt>' -
+if after sufficiently long time the population of both hares and foxes 
+approaches the reference count with an arbitrary a priori given
+precision, i.e. 
+
+<img width="82" height="32" align="MIDDLE" border="0" src="720img2.gif" alt="$\lim h_y=0$">
+and 
+
+<img width="80" height="32" align="MIDDLE" border="0" src="720img3.gif" alt="$\lim f_y=0$">.
+
+<p>
+<li>`<tt>Hares will die out while foxes will overgrow.</tt>' -
+if after sufficiently long time the population of hares resp. foxes 
+falls under resp. exceeds any a priori given threshold, i.e.
+
+
+<img width="151" height="32" align="MIDDLE" border="0" src="720img4.gif" alt="$\lim h_y=-infinity$">
+and 
+
+<img width="150" height="32" align="MIDDLE" border="0" src="720img5.gif" alt="$\lim f_y=+infinity$">.
+
+<p>
+<li>`<tt>Hares will overgrow while foxes will die out.</tt>' -
+if after sufficiently long time the population of foxes resp. hares
+falls under resp. exceeds any a priori given threshold, i.e.
+
+
+<img width="151" height="32" align="MIDDLE" border="0" src="720img6.gif" alt="$\lim h_y=+infinity$">
+and 
+
+<img width="150" height="32" align="MIDDLE" border="0" src="720img7.gif" alt="$\lim f_y=-infinity$">.
+
+<p>
+<li>`<tt>Both hares and foxes will die out.</tt>' -
+if after sufficiently long time the population of both hares and foxes
+falls under any a priori given threshold, i.e.
+
+
+<img width="151" height="32" align="MIDDLE" border="0" src="720img4.gif" alt="$\lim h_y=-infinity$">
+and 
+
+<img width="150" height="32" align="MIDDLE" border="0" src="720img7.gif" alt="$\lim f_y=-infinity$">.
+
+<p>
+<li>`<tt>Both hares and foxes will overgrow.</tt>' -
+if after sufficiently long time the population of both hares and foxes
+exceeds any a priori given threshold, i.e.
+
+
+<img width="151" height="32" align="MIDDLE" border="0" src="720img6.gif" alt="$\lim h_y=+infinity$">
+and 
+
+<img width="150" height="32" align="MIDDLE" border="0" src="720img5.gif" alt="$\lim f_y=+infinity$">.
+
+<p>
+<li>`<tt>Chaos will develop.</tt>' - if none of the above mentioned 
+description fits.
+</li></li></li></li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+2
+2 0.5
+0.5 0.6
+2 3
+
+0.1 1 
+2 0.1
+1 1
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Both hares and foxes will overgrow.
+Hares will die out while foxes will overgrow.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-15</i>
+</address>
+</body>
+</html>
+

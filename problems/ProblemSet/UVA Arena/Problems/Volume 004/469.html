@@ -1,0 +1,86 @@
+
+
+<html>
+<head>
+<title>Wetlands of Florida</title>
+<meta name="description" content="Wetlands of Florida">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center></center></h1>
+ <table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Wetlands of Florida</a></font>&nbsp;</b></td></tr></table>
+<p>
+A construction company owns a large piece of real estate within the state
+of Florida.
+Recently, the company decided to develop this property.
+Upon inspection of the property, however, it was revealed that the
+land, at various locations, contained bodies of water.
+This came as a shock to the owners of the company, for they were from
+out of state and not familiar with wetlands of Florida.
+The situation was very grave and the owners
+not knowing that such bodies of water can be converted to beautiful lakes
+that will increase the value of the land around them, were about to abandon the
+construction project. Fortunately, this fact was brought to the owners'
+attention by a smart FIU graduate who worked for the company and consequently
+the construction project started.
+<p>
+<p>
+The engineers divided the construction site by a grid into uniform square
+cells such that each square cell entirely contained either
+water or land. (How they did it, of course, is anybody's guess.)
+Now, the question that the engineers are to answer is the following:
+``Given the row and column number of a grid cell that contains water, what is the area of the
+lake containing that cell.'' (an area is measured by number of grid cells it contains. Diagonal cells are considered to be adjacent.)
+<p>
+<p>
+You are to write a program to answer this question!
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>The input begins with a single positive integer on a line by itself
+indicating the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.</p>
+<p>
+Each input set consists of  <img width="81" height="25" align="MIDDLE" alt="tex2html_wrap_inline40" src="469img1.gif">  lines each containing
+ <img width="86" height="25" align="MIDDLE" alt="tex2html_wrap_inline42" src="469img2.gif">  character long sequence of ``<tt>L</tt>''s and ``<tt>W</tt>''s
+followed by <i>k</i> &gt; 0 lines each containing a pair of integers <em>i</em> and <em>j</em>.
+The first <i>n</i> lines will represent the  <img width="46" height="18" align="MIDDLE" alt="tex2html_wrap_inline48" src="469img3.gif">  grid covering the land where a ``<tt>W</tt>''/``<tt>L</tt>''
+at the  <img width="19" height="15" align="BOTTOM" alt="tex2html_wrap_inline50" src="469img4.gif">  character of the  <img width="19" height="15" align="BOTTOM" alt="tex2html_wrap_inline52" src="469img5.gif">  line indicates water/land within the cell at row
+<em>r</em> and column <em>c</em> of the grid.
+The pairs of integers on the last <em>k</em> lines, each represent the row and column numbers of
+some grid cell that contains water.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>For each test case, the output must follow the description below. The outputs
+of two consecutive cases will be separated by a blank line.</p>
+<p>
+The output for each pair of integers, <em>i</em> and <em>j</em>, on the last <i>k</i> lines of input, 
+consists of an integer, on a separate line, indicating the area of the lake containing the grid cell,
+at row <em>i</em> and  column <em>j</em> of the grid.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<pre>1
+
+LLLLLLLLL
+LLWWLLWLL
+LWWLLLLLL
+LWWWLWWLL
+LLLWWWLLL
+LLLLLLLLL
+LLLWWLLWL
+LLWLWLLLL
+LLLLLLLLL
+3 2
+7 5</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+12
+4
+</pre>
+</body>
+</html>

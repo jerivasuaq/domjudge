@@ -1,0 +1,124 @@
+
+
+<html>
+<head>
+<title>Stacking Boxes</title>
+<meta name="description" content="Stacking Boxes">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Stacking Boxes</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+Some concepts in Mathematics and Computer Science are simple in one or
+two dimensions but
+become more complex when extended to arbitrary dimensions.  Consider
+solving differential equations in several dimensions and analyzing the
+topology of an <i>n</i>-dimensional hypercube.  The former is much more
+complicated than its one dimensional relative while the latter bears a
+remarkable resemblance to its ``lower-class'' cousin.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+Consider an <i>n</i>-dimensional ``box'' given by its dimensions.  In two
+dimensions the box (2,3) might represent a box with length 2 units and
+width 3 units.  In three dimensions the box (4,8,9) can represent a box
+ <img width="68" height="24" align="MIDDLE" alt="tex2html_wrap_inline40" src="103img1.gif">  (length, width, and height).  In 6 dimensions it
+is, perhaps, unclear what the box (4,5,6,7,8,9) represents; but we can
+analyze properties of the box such as the sum of its dimensions.
+<p>
+In this problem you will
+analyze a property of a group of <i>n</i>-dimensional boxes.
+You are to determine the longest <em>nesting string</em> of boxes, that
+is a sequence of boxes  <img width="91" height="25" align="MIDDLE" alt="tex2html_wrap_inline44" src="103img2.gif">  such that each box  <img width="11" height="25" align="MIDDLE" alt="tex2html_wrap_inline46" src="103img3.gif"> 
+nests in box  <img width="28" height="26" align="MIDDLE" alt="tex2html_wrap_inline48" src="103img4.gif">  ( <img width="75" height="27" align="MIDDLE" alt="tex2html_wrap_inline50" src="103img5.gif"> .
+<p>
+A box D = ( <img width="96" height="25" align="MIDDLE" alt="tex2html_wrap_inline52" src="103img6.gif"> ) 
+nests in a box E = ( <img width="93" height="17" align="MIDDLE" alt="tex2html_wrap_inline54" src="103img7.gif"> )
+if there is some rearrangement of the  <img width="13" height="25" align="MIDDLE" alt="tex2html_wrap_inline56" src="103img8.gif">  
+such that when rearranged
+each dimension is less than the corresponding dimension in box E. 
+This loosely corresponds to turning box D to see if it will fit in box
+E. However, since any rearrangement suffices, box D can be contorted, not just
+turned (see examples below).
+<p>
+For example, the box D = (2,6) nests in the box E = (7,3) since D can be
+rearranged as (6,2) so that each dimension is less than the
+corresponding dimension in E.  The box D = (9,5,7,3) does NOT nest in the
+box E = (2,10,6,8) since no rearrangement of D results in a box that
+satisfies the nesting property, but F = (9,5,7,1) does nest in box E since
+F can be rearranged as (1,9,5,7) which nests in E.
+<p>
+Formally, we define nesting as follows:
+box D = ( <img width="96" height="25" align="MIDDLE" alt="tex2html_wrap_inline52" src="103img6.gif"> ) <em>nests</em> in  box E = ( <img width="93" height="17" align="MIDDLE" alt="tex2html_wrap_inline54" src="103img7.gif"> ) if there is a permutation  <img width="8" height="8" align="BOTTOM" alt="tex2html_wrap_inline62" src="103img9.gif">  of  <img width="44" height="12" align="BOTTOM" alt="tex2html_wrap_inline64" src="103img10.gif">  such that 
+( <img width="151" height="26" align="MIDDLE" alt="tex2html_wrap_inline66" src="103img11.gif"> ) ``fits'' in ( <img width="93" height="17" align="MIDDLE" alt="tex2html_wrap_inline54" src="103img7.gif"> ) i.e., if  <img width="68" height="26" align="MIDDLE" alt="tex2html_wrap_inline70" src="103img12.gif">  for all  <img width="70" height="25" align="MIDDLE" alt="tex2html_wrap_inline72" src="103img13.gif"> .
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input consists of a series of box sequences.  Each box sequence
+begins with a line consisting of the the number of boxes <i>k</i>
+in the sequence
+followed by the dimensionality of the boxes, <i>n</i> (on the same line.)
+<p>
+This line is followed by <i>k</i> lines, one line per box
+with the <i>n</i> measurements of each box on
+one line separated by one or more spaces.  The  <img width="18" height="15" align="BOTTOM" alt="tex2html_wrap_inline82" src="103img14.gif">  line in the
+sequence ( <img width="69" height="26" align="MIDDLE" alt="tex2html_wrap_inline84" src="103img15.gif"> ) gives the measurements for the  <img width="18" height="15" align="BOTTOM" alt="tex2html_wrap_inline82" src="103img14.gif">  box.
+<p>
+There may be several box sequences in
+the input file. Your program should process all of them and determine,
+for each sequence, which of the <i>k</i> 
+boxes determine the longest nesting
+string and the length of that nesting string (the number of
+boxes in the string).
+<p>
+In this problem the maximum dimensionality is 10 and the minimum
+dimensionality is 1.  The maximum number of boxes in a sequence is 30.
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+For each box sequence in the input file, output the length of the
+longest nesting string on one line followed on the next line
+by a list of the boxes
+that comprise this string in order. 
+The ``smallest'' or ``innermost'' box of the nesting string should be
+listed first, the next box (if there is one) should be listed second,
+etc.
+<p>
+The boxes should be
+numbered according to the order in which they appeared in the input file
+(first box is box 1, etc.).
+<p>
+If there is more than one longest nesting string then any one
+of them can be output.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5 2
+3 7
+8 10
+5 2
+9 11
+21 18
+8 6
+5 2 20 1 30 10
+23 15 7 9 11 3
+40 50 34 24 14 4
+9 10 11 12 13 14
+31 4 18 8 27 17
+44 32 13 19 41 19
+1 2 3 4 5 6
+80 37 47 18 21 9</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>5
+3 1 2 4 5
+4
+7 2 5 6</pre>
+<p>
+</body>
+</html>

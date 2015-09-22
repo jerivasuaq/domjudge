@@ -1,0 +1,177 @@
+
+
+<html>
+<head>
+<title>Keeps Going and Going and ...</title>
+<meta name="description" content="Keeps Going and Going and ...">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Keeps Going and Going and ...</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Lazy functional languages like Haskell and Miranda support features that are
+not found in other
+programming languages, including infinite lists. Consider the following
+simple (and useful) recursive declaration:
+
+<p>
+<pre>
+letrec
+  count n = cons n (count (n+1))
+in
+  count 0
+</pre>
+
+<p>
+The function <tt>cons</tt> <em>cons</em>tructs lists, so the above declaration creates the following structure:
+
+<p>
+<pre>
+cons 0 (count 1)
+= cons 0 (cons 1 (count 2))
+= cons 0 (cons 1 (cons 2 ...))
+= [0,1,2,...]
+</pre>
+
+<p>
+Lazy languages can do this because they only evaluate expressions that are
+actually used. If a
+program creates an infinite list and only looks at items 2 and 3 in it,
+the values in positions 0
+and 1 are never evaluated and the list structure is only evaluated so far
+as the fourth node.
+
+<p>
+
+<p>
+<br>
+It is also possible to use more than one function to build an infinite list.
+Here is a declaration
+that creates the list <tt>["even","odd","even",...]</tt>:
+
+<p>
+<pre>
+letrec
+  even = cons "even" odd
+  odd = cons "odd" even
+in
+  even
+</pre>
+
+<p>
+There are also functions that manipulate infinite lists. The functions <tt>take</tt> and <tt>drop</tt> can be
+used to remove elements from the start of the list, returning the (removed) front elements or
+the remainder of the list, respectively. Another useful function is <tt>zip</tt>, which combines two lists
+like the slider on a zipper combines the teeth. For example,
+
+<p>
+<pre>
+zip (count 0) (count 10) = [0,10,1,11,2,12,...]
+</pre>
+
+<p>
+Your task is to implement a subset of this functionality.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input is an integer N, then a blank lsne followed by
+N datasets. There is a blank line between datasets.
+<p>
+The first line of each dataset consists of two positive integers, <i>n</i> and <i>m</i>. <i>n</i> is
+the number of declarations to follow and <i>m</i> is the number of test cases.
+
+<p>
+
+<p>
+<br>
+Each declaration takes the form <em>name = expr</em>. There are two forms for <em>expr</em> : <tt>zip</tt> <em>name1 name2</em>
+and 
+
+<img width="145" height="30" align="MIDDLE" border="0" src="606img1.gif" alt="$x_0\ x_1 \dots x_i\ name3$">.
+In the first case, <em>name</em> is the result of zipping <em>name1</em> and <em>name2</em>
+together. The other case defines the first <i>i</i> + 1 non-negative integers in the
+list <em>name</em> (where <i>i</i> is at least 0) and <em>name3</em> is the name of the list that continues it (mandatory--all lists will be infinite).
+
+<p>
+
+<p>
+<br>
+The test cases take the form 
+
+<img width="76" height="16" align="BOTTOM" border="0" src="606img2.gif" alt="$name\ s\ e$">,
+where <i>s</i> and <i>e</i> are non-negative
+integers, <img width="44" height="30" align="MIDDLE" border="0" src="606img3.gif" alt="$s \le e$">
+and 
+
+<i>e</i> - <i>s</i> &lt; 250.
+
+<p>
+
+<p>
+<br>
+No line of input will be longer than 80 characters. Names consist of a single
+capital letter.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, print the integers in positions <i>s</i> to <i>e</i> of the list <em>name</em>.
+List elements are numbered starting with 0. Print a blank line between datasets.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+5 3
+S = 4 3 2 1 A
+O = 1 O
+E = 0 E
+A = zip E O
+Z = zip Z S
+A 43455436 43455438
+S 2 5
+Z 1 10
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+0 1 0
+2 1 0 1
+4 4 3 4 2 3 1 4 0 2
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-24</i>
+</address>
+</body>
+</html>
+

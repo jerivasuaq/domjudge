@@ -1,0 +1,100 @@
+
+
+<html>
+<head>
+<title>Intervals</title>
+<meta name="description" content="Intervals">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Intervals</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In the ceiling in the basement of a newly open developers building a light
+source has been
+installed. Unfortunately, the material used to cover the floor is very
+sensitive to light. It turned
+out that its expected life time is decreasing dramatically. To avoid this,
+authorities have decided
+to protect light sensitive areas from strong light by covering them. The
+solution was not very easy
+because, as it is common, in the basement there are different pipelines under
+the ceiling and the
+authorities want to install the covers just on those parts of the floor that
+are not shielded from the
+light by pipes. To cope with the situation, the first decision was to simplify
+the real situation and,
+instead of solving the problem in 3D space, to construct a 2D model first.
+<p>
+Within this model, the <i>x</i>-axis has been aligned with the level of the floor.
+The light is
+considered to be a point light source with integer co-ordinates  <img width="46" height="28" align="MIDDLE" alt="tex2html_wrap_inline36" src="313img1.gif"> .
+The pipes are represented
+by circles. The center of the circle <i>i</i> has the integer co-ordinates
+ <img width="63" height="28" align="MIDDLE" alt="tex2html_wrap_inline40" src="313img2.gif">  and an integer radius  <img width="11" height="17" align="MIDDLE" alt="tex2html_wrap_inline42" src="313img3.gif"> .
+As pipes are made from solid material, circles cannot overlap. Pipes cannot
+reflect the light
+and the light cannot go through the pipes. You have to write a program
+which will determine the
+non-overlapping intervals on the <i>x</i>-axis where there is, due to the pipes,
+no light from the light source.
+<p>
+<center><img src="313img9.gif"></center>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file consists of blocks of lines, each of which except the last
+describes one situation
+in the basement. The first line of each block contains a positive integer
+number <i>N</i> &lt; 500 expressing
+the number of pipes. The second line of the block contains two
+integers  <img width="14" height="25" align="MIDDLE" alt="tex2html_wrap_inline48" src="313img4.gif">  and  <img width="13" height="26" align="MIDDLE" alt="tex2html_wrap_inline50" src="313img5.gif">  separated by one
+space. Each of the next <i>N</i> lines of the block contains integers
+ <img width="23" height="17" align="MIDDLE" alt="tex2html_wrap_inline54" src="313img6.gif">  ,  <img width="21" height="17" align="MIDDLE" alt="tex2html_wrap_inline56" src="313img7.gif">  and  <img width="11" height="17" align="MIDDLE" alt="tex2html_wrap_inline42" src="313img3.gif"> , where  <img width="94" height="26" align="MIDDLE" alt="tex2html_wrap_inline60" src="313img8.gif"> .
+Integers in individual lines are separated by one space. The last block
+consists of one line containing <i>n</i> = 0.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output file consists of blocks of lines, corresponding to the blocks
+in the file (except the
+last one). One empty line must be put after each block in the output file.
+Each of the individual
+lines of the blocks in the output file will contain two real numbers, the
+endpoints of the interval
+where there is no light from the given point light source. The reals are
+exact to two decimal places
+and separated by one space. The intervals are sorted according to increasing
+<i>x</i>-coordinate.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>6
+300 450
+70 50 30
+120 20 20
+270 40 10
+250 85 20
+220 30 30
+380 100 100
+1
+300 300
+300 150 90
+1
+300 300
+390 150 90
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>0.72 78.86
+88.50 133.94
+181.04 549.93
+
+75.00 525.00
+
+300.00 862.50</pre>
+<p>
+</body>
+</html>

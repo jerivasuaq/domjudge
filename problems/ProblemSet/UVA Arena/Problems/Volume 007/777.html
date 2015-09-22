@@ -1,0 +1,118 @@
+
+<html>
+<head>
+
+  <title>Codebreakers</title>
+  <meta name="description" content="Codebreakers">
+  <meta name="keywords" content="htmlatex">
+  <meta name="resource-type" content="document">
+  <meta name="distribution" content="global">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#ffffff">
+<h1><br clear="all">
+<center>
+<table bgcolor="#0060f0">
+  <tbody>
+    <tr>
+      <td><b><font size="5" color="#c0ffff">&nbsp;<a name="SECTION0001000000000000000000">
+Codebreakers</a>&nbsp;</font></b></td>
+    </tr>
+  </tbody>
+</table>
+</center>
+</h1>
+<p>
+Alice and Bob use a key, a code, to communicate in privacy. This code
+is just an ordered
+sequence of <i>m</i> different characters out of a set S of <i>n</i>
+characters. For example, if S =
+{1, 2, 3, 4, 5, 6, 7, 8, 9} and <i>m</i> = 4, then one possible key is
+(3, 8, 1, 5).
+</p>
+<p>No one knows the key except Alice and Bob. However, Steve the Spy
+knows the set S
+and length <i>m</i> of the key, and he will try to deduce the key by
+posing different guesses of the
+code. To each guess, Alice or Bob will reply with an answer of the form
+(<i>c</i>, <i>w</i>), where <i>c</i> is
+the number of correctly placed characters in Steve's guess, and w is the
+number of characters in the
+guess which are present in the code but in the wrong position, i.e.,
+they are misplaced.
+</p>
+<p>For instance, these are guesses and answers for the aforementioned
+code.
+</p>
+<p>
+<pre>(1,1,1,1) -&gt; (1,0)<br>(2,2,2,2) -&gt; (0,0)<br>(9,8,3,1) -&gt; (1,2)<br></pre>
+<p>
+Note that a correct guess will produce the answer (<i>m</i>, 0). You
+will be given S, <i>m</i> and a
+list (of arbitrary length) of trials and answers, and your program has
+to take either one of
+the following courses of action:
+</p>
+<dl compact="compact">
+  <dt>1. </dt>
+  <dd>claim that the given information is not enough to find out the
+correct code, or </dd>
+  <dt>2. </dt>
+  <dd>give the correct code, i.e., the code for which the answer is (<i>m</i>,
+0). </dd>
+</dl>
+<p>
+</p>
+<h2><font color="#0070e8"><a name="SECTION0001001000000000000000">Input</a>&nbsp;</font>
+</h2>
+First line of input file has the set S with its elements separated by
+blank spaces (without
+brackets). Second line has the value of <i>m</i>. The following lines
+are the guesses, in the form
+``(
+<img width="80" height="30" align="middle" border="0" src="777img1.gif" alt="$g_1, \dots, g_m$">)''
+with <img width="35" height="30" align="middle" border="0" src="777img2.gif" alt="$g_i \in $">
+S for all <img width="81" height="31" align="middle" border="0" src="777img3.gif" alt="$1 \le i \le m$">,
+the ``<tt>-&gt;</tt>'' symbol
+and the answer, in the form
+``(<i>c</i>, <i>w</i>)''. Each instance ends with a line with a single
+``<tt>%</tt>'' character; next instance has the
+same presentation structure as the previous one. Note that n is less
+than or equal to 10, and m is less than or equal to n.
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001002000000000000000">Output</a>&nbsp;</font>
+</h2>
+Either the solution in the form ``(
+<img width="80" height="30" align="middle" border="0" src="777img4.gif" alt="$s_1, \dots, s_m$">)''
+with <img width="35" height="30" align="middle" border="0" src="777img5.gif" alt="$s_i \in $">
+S for
+all <img width="81" height="31" align="middle" border="0" src="777img3.gif" alt="$1 \le i \le m$">
+or the character
+``<tt>N</tt>'' to denote the impossibility of finding a solution.
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001003000000000000000">Sample
+Input</a>&nbsp;</font>
+</h2>
+<p>
+</p>
+<pre>1 2 3 4 5 6 7 8 9<br>3<br>(1,1,1) -&gt; (0,0)<br>(2,2,2) -&gt; (0,0)<br>(3,3,3) -&gt; (0,0)<br>(4,4,4) -&gt; (1,0)<br>(5,5,5) -&gt; (0,0)<br>(6,6,6) -&gt; (0,0)<br>(7,7,7) -&gt; (1,0)<br>(8,8,8) -&gt; (1,0)<br>(4,7,8) -&gt; (1,2)<br>(4,8,7) -&gt; (0,3)<br>(8,7,4) -&gt; (0,3)<br>(7,8,4) -&gt; (1,2)<br>(8,4,7) -&gt; (1,2)<br>%<br>1 2 3 4 5 6 7 8 9<br>3<br>(1,1,1) -&gt; (0,0)<br>(2,2,2) -&gt; (0,0)<br>(3,3,3) -&gt; (0,0)<br>(4,4,4) -&gt; (1,0)<br>(5,5,5) -&gt; (0,0)<br>(6,6,6) -&gt; (0,0)<br>(7,7,7) -&gt; (1,0)<br>(8,8,8) -&gt; (1,0)<br>(9,9,9) -&gt; (0,0)<br>%<br></pre>
+<p>
+</p>
+<h2><font color="#0070e8"><a name="SECTION0001004000000000000000">Sample
+Output</a>&nbsp;</font>
+</h2>
+<p>
+</p>
+<pre>(7,4,8)<br>N<br></pre>
+<p>
+</p>
+<p><br>
+</p>
+<hr>
+<address><i>Miguel Revilla</i>
+<br>
+<i>2000-12-30</i>
+</address>
+</body>
+</html>

@@ -1,0 +1,89 @@
+
+
+<html>
+<head>
+<title>Stamping Out Stamps</title>
+<meta name="description" content="Stamping Out Stamps">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Stamping Out Stamps</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The mail clerk for Sirius Cybernetics just received a new postal scale which
+will display the cost (in cents) to send a given parcel. The postal scale
+is medium duty, and will only handle parcels requiring up to $29.99 in postage.
+She has requested you to write a program that will convert the postage into
+the number of stamps needed to cover the required postage such that the
+cost is minimized.
+<p>
+The mailroom stocks up to ten different types of stamps, and only ten stamps
+will fit on any given parcel.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+For each dataset, your program would read in a number N, indicating the number of different stamps. The next line contains the list of stamp values stocked by the mailroom
+(all separated by single spaces) followed by a sequence of amounts to convert
+(one amount per line) ended by a 0. If it is impossible to reach the given amount exactly,
+you are to exceed the amount by as little as possible. If there are many
+sets of stamps that cover the amount for the same cost, you should pick
+the set with the least number of stamps. If there's still a tie, choose the stamps as expensive as possible.
+
+A value of N=0 indicates the end of the input.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output for each dataset should consist of the given stamp values on a single line 
+(in increasing order) followed by a blank line, then, for each amount given, 
+the amount that needs to be covered on a single line, followed by the stamps needed 
+for the coverage on the next line (in non-increasing order), followed by a blank line.
+(So the last line of stamp values in the output is followed by one
+blank line, used to separate different datasets). All numbers are separated by single spaces. If no
+solution exists, print
+<p>
+<pre>NO SOLUTION EXISTS</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+7
+2 7 14 17 22 63 98
+72
+86
+143
+5
+0
+6
+16 7 6 5 4 3
+18
+0
+0
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+STAMP VALUES 2 7 14 17 22 63 98
+
+AMOUNT 72
+STAMPS USED 63 7 2
+
+AMOUNT 86
+STAMPS USED 63 14 7 2
+
+AMOUNT 143
+STAMPS USED 63 63 17
+
+AMOUNT 5
+STAMPS USED 2 2 2
+
+STAMP VALUES 3 4 5 6 7 16
+
+AMOUNT 18
+STAMPS USED 7 7 4
+</pre>
+<p>
+</body>
+</html>

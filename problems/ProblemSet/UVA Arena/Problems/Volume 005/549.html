@@ -1,0 +1,141 @@
+
+
+<html>
+<head>
+<title>Evaluating an Equations Board</title>
+<meta name="description" content="Evaluating an Equations Board">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Evaluating an Equations Board</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Equations is a game that is played competitively in several parts (The
+game as described below is only a subset of the actual game). You are to
+write a program which evaluates an Equations board.
+
+<p>
+
+<p>
+<br>
+The game equations is played with 13 cubes. Each cube will contain six of
+the following symbols, one symbol on each side:
+
+<p>
+<pre>
+0 1 2 3 4 5 6 7 8 9 + - x
+</pre>
+
+<p>
+
+(Each symbol can be found on six of the cubes.) The symbols <tt>+</tt> ,<tt>-</tt>  and <tt>x</tt>
+stand for the binary operations addition, subtraction, and multiplication,
+respectively. 
+
+<p>
+
+<p>
+<br>
+There are two sections to an Equation board: Resources and Goal. At the
+beginning of a game of Equations, all of the cubes are rolled and placed
+into Resources section. For all examples below, assume that the following
+was rolled:
+
+<p>
+<pre>
+0 1 4 5 6 7 9 + + + - x x
+</pre>
+
+<p>
+One of the players then sets a goal by taking one or two of the digits in
+the Resources section and placing them into the Goal section. (assume that
+you cannot have a goal with a leading 0 such as 09.) For all the examples
+below, the goal is 56.
+
+<p>
+
+<p>
+<br>
+The central idea of the game is to make a solution which equals the goal
+and uses a subset of the other cubes. There are two main restrictions to
+the solution:
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>it can use only one-digit numbers. For instance, <tt>49 + 7</tt> is not a
+valid solution, since 49 is a two-digit number.
+<p>
+<dt>2.
+<dd>Parentheses may be used wherever valid in standard arithmetic.
+This means that <tt>7 x (9 - 1)</tt> is a valid solution for the above goal, using
+the aboves cubes. However, the parenteheses cannot be used for implied
+multiplication, so <tt>7 (9 - 1)</tt> is not a valid solution.
+</dd></dt></dd></dt></dl>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+Your program will read two lines at a time (until end of file) from the
+input file. This two lines represent the Resource and the Goal sections of
+an Equations board. There will be no embedded, leading or trailing blanks
+on each line; you may also assume that the two lines contain only the 13
+symbols which are legal symbols in Equations.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each situation, the program should output ``<tt>no solution</tt>" when you
+cannot make a solution which equals the goal using some or all cubes from
+Resources, or should output ``<tt>solution</tt>" when you can make a solution that
+uses some or all cubes in Resource.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+999999+++++
+54
+0149++-7+xx
+56
+0149++-7+--
+56
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+solution
+solution
+no solution
+</pre>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

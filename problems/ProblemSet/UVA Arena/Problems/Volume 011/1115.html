@@ -1,0 +1,79 @@
+<p>
+During the next century certain regions on earth will experience
+severe water shortages. The old town of Uqbar has already started
+to prepare itself for the worst. Recently they created a network of pipes
+connecting the cisterns that distribute water in each neighborhood, making
+it easier to fill them at once from a single source of water. But, in
+case of water shortage, the cisterns above a certain level will be
+empty since the water will flow to the cisterns bellow.
+<div align="CENTER">
+
+<img width="451" height="356" align="BOTTOM" border="0" src="p2428.gif" alt="\includegraphics[width=10cm]{pipes}">
+</div>
+
+<p>
+You have been asked to write a program to compute the level to which
+cisterns will be filled with a certain volume of water, given the
+dimensions and position of each cistern. To simplify we will neglect the
+volume of water in the pipes.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<p>
+ As input you receive the number of
+cisterns, followed by one line per cistern with 4 floating point
+values: its base level, height, width and depth in meters. The last
+input line gives you the volume in cubic meters to be injected into
+the network.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+<p>
+ Your program must output the level that the water will
+reach, in meters, truncated to two fractional digits. If the volume of water
+exceeds the total capacity of the cisterns then your program must
+write ``<tt>OVERFLOW</tt>''.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+1
+
+4
+11.0 7.0 5.0 1.0
+15.0 6.0 4.0 1.0
+ 5.0 8.0 5.0 1.0
+19.0 4.0 8.0 1.0
+78.0
+</pre>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>
+17.00
+</pre>
+
+<p>

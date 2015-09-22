@@ -1,0 +1,91 @@
+
+
+<html>
+<head>
+<title>Tree Summing</title>
+<meta name="description" content="Tree Summing">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Tree Summing</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+LISP was one of the earliest high-level programming languages and, with
+FORTRAN, is one of the oldest languages currently being used.  Lists,
+which are the fundamental data structures in LISP, can easily be adapted
+to represent other important data structures such as trees.
+<p>
+This problem deals with determining whether binary trees represented as
+LISP S-expressions possess a certain property.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+Given a binary tree of integers, you are to write a program that
+determines whether there exists a root-to-leaf path whose
+nodes sum to a specified integer.  For example, in the tree shown below
+there are exactly four root-to-leaf paths.
+The sums of the paths are 27, 22, 26, and 18.
+<p> <img width="290" height="226" align="BOTTOM" alt="picture25" src="112img1.gif"> <p>
+<p>
+Binary trees are represented in the input file as LISP S-expressions
+having the following form.
+<pre><tt> 
+<em>empty tree</em> 		 ::= 		 ()
+<p>
+<em>tree</em> 		 ::= 		 <em>empty tree</em>  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline118" src="112img2.gif">  (integer <em>tree</em> <em>tree</em>)
+<p>
+</tt></pre>
+<p>
+The tree diagrammed above is represented by the expression
+(5 (4 (11 (7 () ()) (2 () ()) ) ())  (8 (13 () ()) (4 ()  (1 () ()) ) )  )
+<p>
+Note that with this formulation all leaves of a tree are of the form
+(integer () () )
+<p>
+Since an empty tree has no root-to-leaf paths, any query as to whether a
+path exists whose sum is a specified integer in an empty tree
+must be answered negatively.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input consists of a sequence of test cases in the
+form of integer/tree pairs.  Each test case
+consists of an integer followed by one or more spaces followed by a
+binary tree formatted as an S-expression as described above.  All
+binary tree S-expressions will be valid, but expressions may be
+spread over several lines and may contain spaces.
+There will be one or more test cases in an  input file, and input is
+terminated by end-of-file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+There should be one line of output for each test case (integer/tree
+pair) in the input file.  For each pair <i>I</i>,<i>T</i> (<i>I</i> represents the
+integer, <i>T</i> represents the tree) the output is the string <em>yes</em> if
+there is a root-to-leaf path in <i>T</i> whose sum is <i>I</i> and <em>no</em> if
+there is no path in <i>T</i> whose sum is <i>I</i>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>22 (5(4(11(7()())(2()()))()) (8(13()())(4()(1()()))))
+20 (5(4(11(7()())(2()()))()) (8(13()())(4()(1()()))))
+10 (3 
+     (2 (4 () () )
+        (8 () () ) )
+     (1 (6 () () )
+        (4 () () ) ) )
+5 ()</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>yes
+no
+yes
+no</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,141 @@
+
+
+<html>
+<head>
+<title>Inventory Maintenance</title>
+<meta name="description" content="Inventory Maintenance">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Inventory Maintenance</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+     Madam Phoenix is moving to the southwest to open
+a  ``Fun  In  The  Sun&quot;  store  selling  sunglasses,  sunscreen,  and  other
+such items. She's  decided  to  employ  you  to write an inventory program
+for her new store.  Here's how it will work.
+<p>
+<p>
+Each ``activity&quot; your program is to process will appear as  a  separate
+line  in   the   input   file.  The  end  of  the input is marked by a line
+containing an asterisk in column one; no  other  activity  lines  will   be
+so   marked.   Activity  lines begin with a lower-case keyword  identifying
+the  action  to  be  performed.  The  names  of  the items in her inventory
+are  case  sensitive,  and each contains no  more  than  ten  non-blank
+characters.  All fields in the activity lines are separated by blanks,  and
+Madam   Phoenix   guarantees   you   that  there  will  be no errors in the
+input.  Here are the various types of activity lines  your  program  is  to
+process.
+<p>
+<dl><dt><strong><tt>new</tt> <em>item-name item-cost item-selling-price</em></strong>
+<dd> 
+<p>
+     This line adds a new item (not previously  carried   in   the   store)
+     to   the   potential   inventory.  The <em>item-cost</em>   and   
+<em>item-selling-price</em>   
+are   given    as    normal    dollar     amounts,     without
+     the  dollar  sign.   That  is,  they  will contain one or more decimal
+     digits,  a  decimal  point,  and  two  more decimal digits.  Note that
+     this  activity  line doesn't actually result in a change in the inventory,  but is used in anticipation of adding units of  the  new   item
+     to  the  store's  offerings.   <em>item-cost</em>  is what  Madam  Phoenix  pays
+     for  each  unit  of  the  item,  and   <em>item-selling-price</em>    is    the
+     price  for  which  she  sells the item.  There will be  no  more  than
+     100  total  item-names  ever  included  in the list  of  items.  
+<em>item-cost</em> and <em>item-selling-price</em> will never be larger than 100.00.
+<p>
+<dt><strong><tt>delete</tt> <em>item-name</em></strong>
+<dd> 
+<p>
+     If an item isn't selling well, Madam Phoenix  can   remove   it   from
+     the   inventory   by   including  this line in the program input.  All
+     units of <em>item-name</em> in the inventory are written off as a loss.
+<p>
+<dt><strong><tt>buy</tt> <em>item-name quantity</em></strong>
+<dd> 
+<p>
+     When  Madam  Phoenix  buys  some  units  (at  the  <em>unit-cost</em>,   previously   indicated)   of   an    <em>item-name</em> to offer for sale,  she'll
+     indicate  that  with  one  of  these  lines  in  the  pregrain  input.
+     <em>quantity</em>   indicates   the   number  of  units  she   purchased.   The
+     quantity   she   purchases   will never be larger than 5000 at a time,
+     but  the  number  of  units in  the  inventory  may  be  as  large  as
+     10,000.
+<p>
+<dt><strong><tt>sell</tt> <em>item-name quantity</em></strong>
+<dd> 
+<p>
+     When one or more units of an item are sold, that fact is  recorded  by
+     placing  one  of  these  lines  in the   input.   <em>quantity</em>   indicates
+     the   number   of   units   sold   (at   the   <em>item-selling-price</em> previously   indicated).  Obviously,  the  quantity  sold  cannot  exceed
+     the  number   of   items   in stock.
+<p>
+<dt><strong><tt>report</tt></strong>
+<dd> 
+<p>
+     This line in the input requests a report.  This is the only input line
+     for   which   output   is   expected.   Your   program   will  display
+     columns,   with   suitable   headings,    showing    item-name,    the
+     buying price, the selling price, the number of units in the inventory,
+     and the  value  of  the  units  in  the inventory (that is,  the  product  of  the  number  of  units  in  the  inventory  and  the  buying
+     price).  The lines in the report  should  be  sorted  in  alphabetical
+     order   on  item  name.  Following  the  last  item the total value of
+     all units in the inventory should be displayed.  Then finally, a  line
+     should   appear  showing  the  total  profit since the last report was
+     issued.  Profit is defined as total sales,   less   the  cost  of  the
+     items  sold,  less  the  cost of items  written  off  (by  the  
+<tt>delete</tt>
+     activity). Print a blank line after every report. The  sample output shown  illustrates  the  desired   format   for  the  report.  All  numbers  in  the  report  must naturally
+     be  exact.
+<p>
+ </dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dl><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>new Shade01 0.50 3.79
+new Towel01 1.47 6.98
+new Shade02 0.63 4.29
+new BluBlock 1.00 4.98
+buy BluBlock 100
+sell BluBlock 2
+buy Towel01 500
+buy Shade01 100
+buy Shade02 100
+sell Towel01 1
+sell Towel01 1
+sell BluBlock 2
+report
+delete Shade01
+sell BluBlock 5
+new Shade03 0.51 1.98
+buy Shade03 250
+sell Towel01 5
+sell Shade03 4
+sell Shade02 10
+report
+*</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>                  INVENTORY REPORT
+Item Name     Buy At      Sell At      On Hand        Value
+---------     ------      -------      -------        -----
+BluBlock        1.00         4.98           96        96.00
+Shade01         0.50         3.79          100        50.00
+Shade02         0.63         4.29          100        63.00
+Towel01         1.47         6.98          498       732.06
+------------------------
+Total value of inventory                             941.06
+Profit since last report                              26.94
+
+                  INVENTORY REPORT
+Item Name     Buy At      Sell At      On Hand        Value
+---------     ------      -------      -------        -----
+BluBlock        1.00         4.98           91        91.00
+Shade02         0.63         4.29           90        56.70
+Shade03         0.51         1.98          246       125.46
+Towel01         1.47         6.98          493       724.71
+------------------------
+Total value of inventory                             997.87
+Profit since last report                              39.93</pre>
+<p>
+</body>
+</html>

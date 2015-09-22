@@ -1,0 +1,151 @@
+
+
+<html>
+<head>
+<title>Scatter Point Plot</title>
+<meta name="description" content="Scatter Point Plot">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Scatter Point Plot</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+This problem deals with generating a plot of points that fit on the display
+screen.  The Y axis is vertical and contains 20 lines (one <i>Y</i> value for each
+row); the X axis is horizontal and contains 12 positions (each <i>X</i> value
+takes 5 columns).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>Input consistes of several datasets. The first line of the input indicates the number of test cases.
+The second line is void, and the datasets follow.
+Each dataset is defined as follows:
+<p><pre><tt>
+1st line 		 low <i>X</i> value and X axis increment 
+2nd line 		 low <i>Y</i> value and Y axis increment
+		 Followed by one <i>X</i> value and one <i>Y</i> value per line.
+		  They will be positive integers up to 4 digits.
+</tt></pre>
+
+<p>There is a blank line between datasets.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each dataset, character display a X,Y plot including grid lines and
+axis labelling as shown in the sample below. Print <i>Y</i>-values right-justified
+in a field of width 4 ans `<tt>:</tt>' in column number five. None of the lines 
+in the output file will contain trailing blanks. That is, every line will end
+with the last non-blank character in it.
+
+<p>
+
+<p>
+<br>
+All pairs of <i>X</i>, <i>Y</i> values will be inputted and the lowest and highest needs
+to be found to determine scaling values.  The increment for each row or
+column will be based on 20 positions for the Y axis and 12 for the X axis.
+When establishing what position a value will fall on rounding is to be done
+up at the halfway point to the next increment value.  
+
+<p>
+If only one <i>X</i>, <i>Y</i>
+value falls at a particular point display the character 1.  If two <i>X</i>, <i>Y</i>
+values fall at a particular point display the character 2; if three <i>X</i>, <i>Y</i>
+values fall at a particular point display the character 3; etc.
+
+<p>
+In case that there were ten or more <i>X</i>, <i>Y</i> values falling at a point, the
+numbers have to be <em>centered</em> on the cross-marks in the following way:
+
+<p>
+<pre>
+                          1000
+                           100
+                           10
+                            1
+                    ...+----+----+...
+</pre>
+<p>Print a blank line between datasets.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+100 50
+0 5
+100,20
+101,22
+100,23
+100,0
+100,3
+649,0
+649,3
+647,2
+500,85
+206,21
+325,43
+612,8
+129,19
+501,83
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+   95:
+   90:
+   85:                                            2
+   80:
+   75:
+   70:
+   65:
+   60:
+   55:
+   50:
+   45:                             1
+   40:
+   35:
+   30:
+   25:    1
+   20:    2    1    1
+   15:
+   10:                                                      1
+    5:    1                                                      1
+    0:    1                                                      2
+     +----+----+----+----+----+----+----+----+----+----+----+----+
+         100  150  200  250  300  350  400  450  500  550  600  650
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-31</i>
+</address>
+</body>
+</html>
+

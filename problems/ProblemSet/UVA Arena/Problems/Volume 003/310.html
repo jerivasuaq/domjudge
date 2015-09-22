@@ -1,0 +1,80 @@
+
+
+<html>
+<head>
+<title>L-system</title>
+<meta name="description" content="L-system">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">L-system</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A D0L (Deterministic Lindenmayer system without interaction) system consists
+of a finite set  <img width="11" height="12" align="BOTTOM" alt="tex2html_wrap_inline36" src="310img1.gif"> 
+of symbols (the alphabet), a finite set <i>P</i> of productions and a starting
+string  <img width="11" height="8" align="BOTTOM" alt="tex2html_wrap_inline40" src="310img2.gif"> . The productions in
+<i>P</i> are of the form  <img width="45" height="10" align="BOTTOM" alt="tex2html_wrap_inline44" src="310img3.gif"> , where  <img width="42" height="25" align="MIDDLE" alt="tex2html_wrap_inline46" src="310img4.gif">  and
+ <img width="52" height="29" align="MIDDLE" alt="tex2html_wrap_inline48" src="310img5.gif">  (<i>u</i> is called the right side of the production),  <img width="21" height="14" align="BOTTOM" alt="tex2html_wrap_inline52" src="310img6.gif"> 
+is the set of all strings of symbols from  <img width="11" height="12" align="BOTTOM" alt="tex2html_wrap_inline36" src="310img1.gif">  excluding the empty string.
+Such productions represent
+the transformation of the symbol <i>x</i> into the string <i>u</i>. For each
+symbol  <img width="42" height="25" align="MIDDLE" alt="tex2html_wrap_inline46" src="310img4.gif"> , <i>P</i> contains exactly
+one production of the form  <img width="45" height="10" align="BOTTOM" alt="tex2html_wrap_inline44" src="310img3.gif"> . Direct derivation from
+string  <img width="15" height="17" align="MIDDLE" alt="tex2html_wrap_inline66" src="310img7.gif">  to  <img width="15" height="17" align="MIDDLE" alt="tex2html_wrap_inline68" src="310img8.gif">  consists of replacing
+each occurrence of the symbol  <img width="42" height="25" align="MIDDLE" alt="tex2html_wrap_inline46" src="310img4.gif">  in  <img width="15" height="17" align="MIDDLE" alt="tex2html_wrap_inline66" src="310img7.gif">  by the string on
+the right side of the production for
+that symbol. The language of the D0L system consists of all strings
+which can be derived from
+the starting string  <img width="11" height="8" align="BOTTOM" alt="tex2html_wrap_inline40" src="310img2.gif">  by a sequence of the direct derivations.
+<p>
+<p>
+Suppose that the alphabet consists of two symbols <tt><b>a</b></tt> and <tt>b</tt>.
+So the set of productions includes
+two productions of the form <tt>a</tt> <img width="30" height="10" align="BOTTOM" alt="tex2html_wrap_inline76" src="310img9.gif"> , <tt>b</tt> <img width="30" height="10" align="BOTTOM" alt="tex2html_wrap_inline78" src="310img10.gif"> ,
+where <i>u</i> and  <img width="82" height="33" align="MIDDLE" alt="tex2html_wrap_inline82" src="310img11.gif"> , and the starting string
+ <img width="85" height="33" align="MIDDLE" alt="tex2html_wrap_inline84" src="310img12.gif"> . Can you answer whether there exists a string
+in the language of the D0L system of
+the form <i>xzy</i> for a given string <i>z</i>? (<i>x</i> and <i>y</i> are some strings
+from  <img width="18" height="12" align="BOTTOM" alt="tex2html_wrap_inline94" src="310img13.gif"> ,  <img width="18" height="12" align="BOTTOM" alt="tex2html_wrap_inline94" src="310img13.gif">  is the set of all strings of
+symbols from  <img width="11" height="12" align="BOTTOM" alt="tex2html_wrap_inline36" src="310img1.gif"> , including the empty string.). Certainly you can.
+Write the program which will solve this problem.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file of the program consists of several blocks of lines. Each
+block includes four lines.
+There are no empty lines between any successive two blocks. The first
+line of a block contains
+the right side of the production for the symbol <tt>a</tt>. The second one
+contains the right side of the
+production for the symbol <tt>b</tt> and the third one contains the starting
+string  <img width="11" height="8" align="BOTTOM" alt="tex2html_wrap_inline40" src="310img2.gif">  and the fourth line
+the given string <i>z</i>. The right sides of the productions, the given
+string <i>z</i> and the starting string  <img width="11" height="8" align="BOTTOM" alt="tex2html_wrap_inline40" src="310img2.gif">  are at most 15 characters long.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each block in the input file there is one line in the output file
+containing <tt>YES</tt> or <tt>NO</tt> according to the solution of the given problem.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>aa
+bb
+ab
+aaabb
+a
+b
+ab
+ba</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>YES
+NO</pre>
+<p>
+</body>
+</html>

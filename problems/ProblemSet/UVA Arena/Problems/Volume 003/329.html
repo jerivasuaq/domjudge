@@ -1,0 +1,159 @@
+
+
+<html>
+<head>
+<title>PostScript Emulation</title>
+<meta name="description" content="PostScript Emulation">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">PostScript Emulation</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+     PostScript(R) is  widely  used  as   a   page   description   language
+for   laser   printers.   The  basic  unit  of measurement in PostScript is
+the point, and there  are  assumed  to  be  exactly  72  points  per  inch.
+The default coordinate system used at the beginning of a PostScript program
+is  the  familiar  Cartesian  system, with the origin (the point with <i>x</i> and
+<i>y</i> coordinates both equal to zero) at the lower left comer of the page.
+<p>
+<p>
+     In this problem you are required to recognize a  small  part  of   the
+PostScript   language.   Specifically,   the  commands listed below must be
+recognized.  All  commands  will  be  given  in  lower-case  letters.  When
+the  word number appears in  the  command  description,  a  floating  point
+value,  with  an  optional  sign  and decimal point will be present in  the
+input  data.   When two numbers appear  in  a  command,  the  first  refers
+to the <i>x</i> coordinate, and the second to the <i>y</i> coordinate.  For   simplicity,
+each   command  will  appear  on  a line by itself, and a single blank will
+separate each component of the command.  The  end  of  line  character will
+immediately  follow  each  command,  and  a  line with a single asterisk in
+column  one  will  terminate  the input. You should preserve the order of
+operations.
+<p>
+<dl><dt><strong><em>number</em> <tt>rotate</tt></strong>
+<dd> 
+<p>
+     <tt>number</tt> represents the  measure  of  an  angle.  This  command  rotates
+     the   coordinate  system  that many degrees counterclockwise about the
+     current origin.  This does not affect  any  lines  that  have  already
+     been   drawn  on  the  page.  Example:  <tt>90 rotate</tt>  will  rotate   the
+     axes   90   degrees counterclockwise,  so  the  positive  <i>y</i>  axis  now
+     points to the left, and the positive <i>x</i> axis points up.
+<p>
+<dt><strong><em>number number</em> <tt>translate</tt></strong>
+<dd> 
+<p>
+     Moves the origin of the coordinate system to the position   specified.
+     The   values   are   interpreted  relative  to   the  current  origin.
+     Example:  <tt>612 792 translate</tt>  would  move  the  origin  of  the coordinate system to the upper right comer of the page.  Now  only  points
+     with  negative  <i>x</i>  and  <i>y</i> components will correspond to points on  the
+     physical  page  (assuming  an  8.5&quot;  by  11&quot;  page  in  the &quot;portrait&quot;
+     orientation).
+<p>
+<dt><strong><em>number number</em> <tt>scale</tt></strong>
+<dd> 
+<p>
+     This command applies the scaling factors given to the <i>x</i> and <i>y</i>  coordinates.   In  effect,  the  actual  <i>x</i> and <i>y</i> sizes of objects are multiplied by the respective scale factors. Scaling will affect everything on that directions no matter you rotate later. Example:  <tt>3 2 scale</tt>   would
+     cause  a line drawn from (0,0) to (72,72) to appear as if it was drawn
+     from the lower left corner  of the page to a point three inches to the
+     right  of the left edge of the paper and two inches  up  from the bottom edge of the paper, assuming the original coordinate system was
+     in  effect just before the command.
+<p>
+<dt><strong><em>number number</em> <tt>moveto</tt></strong>
+<dd> 
+<p>
+     The  current  point   is   moved   to   the   coordinates   specified.
+     Example:   <tt>72 144 moveto</tt>   would move the current point to one inch
+     from the left edge of the paper,  and  two  inches  up  from  the bottom edge, assuming the original coordinate system was in effect.
+<p>
+<dt><strong><em>number number</em> <tt>rmoveto</tt></strong>
+<dd> 
+<p>
+     This command is like  <tt>moveto</tt>,  except  the  numbers   specified   give
+     the   coordinates   of   the   new  current   point  relafive  to  the
+     current  position.  Example:  <tt>144 -36 rmoveto</tt>   would   move   the
+     current  point  set  by the previous example two inches further to the
+     right and  one-half  inch  lower on the page.  Thus the coordinates of
+     the   current  point  become  (216,108).  Notice  that  numbers can be
+     negative!
+<p>
+<dt><strong><em>number number</em> <tt>lineto</tt></strong>
+<dd> 
+<p>
+     Draws a line from the current position to   the   position   specified
+     by   the   numbers.   The   current  position   becomes  the  position
+     specified  in  the  command.  Example:   216    144    lineto    would
+     draw  a  line  from  the  current position to the point (216,144), and
+     leave the current point there.  If we assume the current position from
+     the  previous  example,  this  would  be  a  line  from  (216,108)  to
+     (216,144), or a half-inch vertical line.
+<p>
+<dt><strong><em>number number</em> <tt>rlineto</tt></strong>
+<dd> 
+<p>
+     This is similar to <tt>lineto</tt>, but the coordinates given  in  the  command
+     are   relative  to  the  current position.  Again, the end of the line
+     that is drawn becomes the  new  current  position.   
+Example:   <tt>0 144 rlineto</tt>  will  draw  a  
+two  inch  horizontal line  from  the  current
+     position  two  inches  to  the right.  Using the current position left
+     in  the  previous  example,  this  draws  a  line  from  (216,144)  to
+     (216,288), and leaves the current point at (216,288).
+<p>
+ </dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dl><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+     Your task is to read one of these small  PostScript  programs  and  to
+display  a  program  that   will  produce  the same  effect  without  using
+the  <tt>rotate</tt>,   <tt>translate</tt>    or    <tt>scale</tt>    commands.    That    is,    each
+<tt>moveto</tt>,  <tt>rmoveto</tt>,   <tt>lineto</tt>,   and   <tt>rlineto</tt>   command   in   the   original
+(input)   program   should   appear   in   your output (most  likely   with
+modified  numbers),  but  the  <tt>rotate</tt>,  <tt>translate</tt>  and  <tt>scale</tt>  commands  in
+the input must not appear in the output.  Assume  the  original  coordinate
+system is in effect at the  beginning  of execution.  The numbers used with
+the commands in the program  you   produce   must   be   accurate   to   at
+least two fractional digits.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>300 300 moveto
+0 72 rlineto
+2 1 scale
+36 0 rlineto
+1 -4 scale
+0 18 rlineto
+1 -0.25 scale
+0.5 1 scale
+300 300 translate
+90 rotate
+0 0 moveto
+0 72 rlineto
+2 1 scale
+36 0 rlineto
+1 -4 scale
+0 18 rlineto
+*</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>300 300 moveto
+0 72 rlineto
+72 0 rlineto
+0 -72 rlineto
+300 300 moveto
+-72 0 rlineto
+0 72 rlineto
+72 0 rlineto</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Note</a></font></h2>
+<p>
+ The  figure  drawn  by  these  commands  is
+ illustrated below.  Each of the lines is
+ exactly one inch long.
+<p>
+<center><img src="329img1.gif"></center>
+<p>
+</body>
+</html>

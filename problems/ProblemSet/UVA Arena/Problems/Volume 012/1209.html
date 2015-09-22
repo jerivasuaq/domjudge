@@ -1,0 +1,63 @@
+<p>
+You have been tasked to infiltrate a tight-lipped society for fun and profit: the ACM ICPC regional judges. Through the PC<span class="MATH"><sup>2</sup></span> ``submission" software, you know that classified information is accessible through the log-ins of the judges tasked to a particular ``regional site". However, you are not certain that any particular judge has access to all the relevant information, so several log-ins will be required. You have been handed down a list of usernames, and the passwords used can be derived from these usernames, as follows: 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The input will only have capital letters (denoting the usernames) and carriage returns. Each line (thus each username) will not be longer than twenty characters, and there will not be more than 12 ``judges" whose log-ins you will need to infiltrate. Strangely, no username uses any letter more than once. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+For each username, you must produce a line containing the password which that username uses. The password for a given username is determined from the twenty-one lexicographically consecutive permutations of the username, the eleventh (middle) of which is the username itself. For example, if the username is <tt>WORDFISH</tt>, the lexicographic permutations of WORDFISH contain, in order: 
+
+<p>
+
+<p>
+<br>
+<tt>..., WOISHRFD, WOISRDFH, WOISRDHF, WOISRFDH, WOISRFHD, WOISRHDF, WOISRHFD, WORDFHIS, WORDFHSI, WORDFIHS, WORDFISH, WORDFSHI, WORDFSIH, WORDHFIS, WORDHFSI, WORDHIFS, WORDHISF, WORDHSFI, WORDHSIF, WORDIFHS, WORDIFSH, ... </tt>
+
+<p>
+
+<p>
+<br>
+The password is then the permutation among the twenty-one lexicographically consecutive permutations of the username which has the largest minimum absolute distance between consecutive letters (and the first amongst the lexicographically ordered, if several permutations have the largest minimum absolute distance), followed by that minimum absolute distance. For the username <tt>WORDFISH</tt>, the password is WORDHSFI3<span class="MATH"><sup>1</sup></span> .
+
+<p>
+
+<p>
+<br>
+
+<span class="MATH"><sup>1</sup></span> <span class="textbf">Disclaimer:</span> The above story is completely fictional, and in no way represents any fact, regarding ACM regional judges, their passwords or world domination.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+WORDFISH
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+WORDHSFI3
+</pre> 
+
+<p>

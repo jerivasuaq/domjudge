@@ -1,0 +1,108 @@
+
+
+<html>
+<head>
+<title>Hole Cutter</title>
+<meta name="description" content="Hole Cutter">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Hole Cutter</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A factory which specialises in making cuts in the interior of flat sheets has just acquired a new cutter
+which can make cuts much more freely than any of their previous machines, and they want you to write a program
+to calculate exactly what has happened when a complex series of cuts are made.  In particular, they need to
+know the number of holes which are formed in the sheet by the cuts.
+
+<p>
+A cut is a simple straight line, parallel to either the <span class="MATH"><i>x</i></span> or <span class="MATH"><i>y</i></span> axis.  A hole is an area completely surrounded
+by cuts.  Note that a hole must have positive area (thus a single cut cannot form a hole on its own).
+
+<p>
+Here are some examples of situations that can arise after cutting:
+
+<p>
+<div align="CENTER">
+
+<img width="731" height="206" align="BOTTOM" border="0" src="p898.gif" alt="\epsfbox{p898.eps}">
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input will consist of several cutting
+operation descriptions.  Each description starts with a number, <span class="MATH"><i>N</i></span>, giving the number of cuts in the operation,
+followed by <span class="MATH"><i>N</i></span> lines (
+<span class="MATH">1 &lt; <i>N</i> &lt; 100</span>) giving the actual cuts.  Each cut will be given by four whole numbers
+separated by one or more spaces, the first two giving the <span class="MATH">(<i>x</i>, <i>y</i>)</span> coordinates of the start of the cut line
+and the second two defining the end of the cut line; the coordinate values will always be whole numbers
+between 0 and 9999 inclusive.  You may assume that the metal sheet extends beyond this range, so that all
+points are within the sheet's interior.  The input will be terminated by a line consisting of a single 0,
+ie a cutting operation description with <span class="MATH"><i>N</i> = 0</span>.  The first example given below describes the left hand picture above.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each cutting operation description in the input,
+one line of output should be produced.  This line should contain the number of distinct holes in the sheet after
+the cuts.  Note that the minimum area of any hole is 1 square unit.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+6
+1 0 1 1
+2 0 2 2
+3 1 3 2
+1 0 2 0
+1 1 3 1
+2 2 3 2
+2
+0 1 2 1
+1 2 1 0
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+2
+0
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-07-08
+</address>
+</body>
+</html>
+

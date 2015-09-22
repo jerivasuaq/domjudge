@@ -1,0 +1,119 @@
+
+
+<html>
+<head>
+<title>Polygon</title>
+<meta name="description" content="Polygon">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Polygon</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Modern graphic computer programs can, among other, even more stunning
+capabilities, fill a closed region. Though not all of them can protect the
+user from accidentally choosing to fill the background rather than the inner
+part. Besides being a channel hopper at home your boss' favourite
+hobby is colouring the pictures, you cannot protest long about adding this
+magnificent protection feature to his graphic program.
+
+<p>
+
+<p>
+<br>
+This means that your job is to write a program, which determines whether a
+point belong to a polygon, given the array of its vertices.
+
+<p>
+
+<p>
+<br>
+To make life a bit simpler you may assume that:
+<ul>
+<li>all edges of the polygon are vertical or horizontal segments
+<li>lengths of all the edges of the polygon are even integer numbers
+<li>co-ordinates of at least one vertex are odd integer numbers
+<li>both co-ordinates of any vortex cannot be divisible by 7 at the same time
+<li>the investigated point P has both co-ordinates being even integer numbers
+<li>the polygon has at most 1000 vertices
+<li>co-ordinates of the vertices lay in the range: -10000..10000.
+</li></li></li></li></li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input data may consist of several data sets, each beginning with a number
+of polygon's vertices (<i>n</i>). Consecutive <i>n</i> lines contain co-ordinates of
+the vertices (<i>x</i> followed by <i>y</i>). Then go the co-ordinates of investigated
+point P. Input data end when you find 0 the number of polygon's vertices.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each polygon and each point P you should print one character (in
+separate lines): <tt>T</tt> when P belongs to the polygon or <tt>F</tt> otherwise.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4
+1 1
+1 3
+3 3
+3 1
+2 2
+12
+1 1
+1 9
+3 9
+3 5
+5 5
+5 9
+7 9
+7 1
+5 1
+5 3
+3 3
+3 1
+4 2
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+T
+F
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+</body>
+</html>
+

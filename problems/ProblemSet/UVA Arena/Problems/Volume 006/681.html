@@ -1,0 +1,242 @@
+
+
+<html>
+<head>
+<title>Convex Hull Finding</title>
+<meta name="description" content="Convex Hull Finding">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Convex Hull Finding</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Given a single connected contour, which is either convex or non-convex 
+(concave), use any algorithm to find its <b>Convex Hull</b>, i.e., the smallest
+convex contour enclosing the given shape. If the given contour is convex, then
+its convex hull is the original contour itself. The maximal size of the shape
+is 512<img width="18" height="30" align="MIDDLE" border="0" src="681img1.gif" alt="$\times$">512, and the maximal number of the vertices of the shape is 512.
+Write a program to read the input data (the given shapes) from a disk file,
+implement your convex hull finding algorithm, and then output the shape data
+of the results to the standard output.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The order of the vertices is counterclockwise in <i>X</i>-<i>Y</i> Cartesian Plane (if you
+consider the origin of the display window is on the upper-left corner, then
+the orientation of the vertices is clockwise), and none of the neighboring
+vertices are co-linear. Since all the shapes are closed contours, therefore,
+the last vertex should be identical to the first vertex. There are several
+sets of data within a given data file. The negative number <tt>-1</tt> is used to
+separate the data set. 
+
+<p>
+
+<p>
+<br>
+
+<table cellpadding="3" border="1">
+<tr><td align="CENTER"><b> Line</b></td>
+<td align="LEFT"><b> Data in</b></td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+<tr><td align="CENTER"><b> Number</b></td>
+<td align="LEFT"><b> the File</b></td>
+<td align="LEFT"><b> Explanation</b></td>
+</tr>
+<tr><td align="CENTER">1</td>
+<td align="LEFT"><i>K</i></td>
+<td align="LEFT">a positive integer showing how many sets of data in this file</td>
+</tr>
+<tr><td align="CENTER">2</td>
+<td align="LEFT"><i>N</i></td>
+<td align="LEFT">a positive integer showing the number of vertices for the shape</td>
+</tr>
+<tr><td align="CENTER">3</td>
+<td align="LEFT"><img width="50" height="32" align="MIDDLE" border="0" src="681img2.gif" alt="$X_1 \ Y_1$"></td>
+<td align="LEFT">two positive integers for the first vertex 
+
+(<i>X</i><sub>1</sub>, <i>Y</i><sub>1</sub>)</td>
+</tr>
+<tr><td align="CENTER">4</td>
+<td align="LEFT"><img width="50" height="32" align="MIDDLE" border="0" src="681img3.gif" alt="$X_2 \ Y_2$"></td>
+<td align="LEFT">two positive integers for the next neighboring vertex 
+
+(<i>X</i><sub>2</sub>,
+<i>Y</i><sub>2</sub>)</td>
+</tr>
+<tr><td align="CENTER">...</td>
+<td align="LEFT">&nbsp;</td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+<tr><td align="CENTER"><i>N</i>+2</td>
+<td align="LEFT"><img width="61" height="32" align="MIDDLE" border="0" src="681img4.gif" alt="$X_N \ Y_N$"></td>
+<td align="LEFT">two positive integers for the last vertex 
+
+(<i>X</i><sub><i>N</i></sub>, <i>Y</i><sub><i>N</i></sub>)</td>
+</tr>
+<tr><td align="CENTER"><i>N</i>+3</td>
+<td align="LEFT"><tt> -1</tt></td>
+<td align="LEFT">Delimiter</td>
+</tr>
+<tr><td align="CENTER"><i>N</i>+4</td>
+<td align="LEFT"><i>M</i></td>
+<td align="LEFT">a positive integer showing the number of vertices for the next
+shape</td>
+</tr>
+<tr><td align="CENTER"><i>N</i>+5</td>
+<td align="LEFT">
+
+<img width="80" height="32" align="MIDDLE" border="0" src="681img5.gif" alt="$XX_1 \ YY_1$"></td>
+<td align="LEFT">two positive integers for the first vertex</td>
+</tr>
+<tr><td align="CENTER">...</td>
+<td align="LEFT">&nbsp;</td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+</table>
+
+<p>
+
+<p><p>
+<br>
+
+<b>Note:</b> Please note that the <b>Line Number</b>, <b>Data in the File</b> and
+<b>Explanation</b> are not given in the file. They are shown here only to assist
+you in reading the data.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output the convex hull of all <i>K</i> input shapes to the standard output. The
+data format should be the same as the input file. In addition, the vertex with
+the smallest <i>Y</i> value should  be  the  first  point  and  if  there  are 
+points  with  the  same  <i>Y</i> value,  then  the smallest <i>X</i> value within those
+points should be the first point.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+15
+30 30
+50 60
+60 20
+70 45
+86 39
+112 60
+200 113
+250 50
+300 200
+130 240
+76 150
+47 76
+36 40
+33 35
+30 30
+-1
+12
+50 60
+60 20
+70 45
+100 70
+125 90
+200 113
+250 140
+180 170
+105 140
+79 140
+60 85
+50 60
+-1
+6
+60 20
+250 140
+180 170
+79 140
+50 60
+60 20
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+3
+8
+60 20
+250 50
+300 200
+130 240
+76 150
+47 76
+30 30
+60 20
+-1
+6
+60 20
+250 140
+180 170
+79 140
+50 60
+60 20
+-1
+6
+60 20
+250 140
+180 170
+79 140
+50 60
+60 20
+</pre>
+
+<p>
+<br>
+<br>
+<br>
+<img width="343" height="348" align="MIDDLE" border="0" src="681img6.gif" alt="$\textstyle \parbox{.44\textwidth}{
+\begin{center}
+The contour shape of the firs...
+...n in figure as follows:
+\mbox{}
+\epsfysize 2in \epsfbox{p681.eps}
+\end{center}}$">
+
+<img width="305" height="348" align="MIDDLE" border="0" src="681img7.gif" alt="$\textstyle \parbox{.44\textwidth}{
+\begin{center}
+The convex hull of the above ...
+... the following figure:
+\mbox{}
+\epsfysize 2in \epsfbox{p681b.eps}
+\end{center}}$">
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-14</i>
+</address>
+</body>
+</html>
+

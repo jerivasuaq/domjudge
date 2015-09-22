@@ -1,0 +1,109 @@
+
+
+<html>
+<head>
+<title>Treasure Hunt</title>
+<meta name="description" content="Treasure Hunt">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Treasure Hunt</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Archeologists from the Antiquities and Curios Museum (ACM) have flown to Egypt to examine the
+great pyramid of Key-Ops. Using state-of-the-art technology they are able to determine that the lower
+floor of the pyramid is constructed from a series of straightline walls, which intersect to form numerous
+enclosed chambers. Currently, no doors exist to allow access to any chamber. This state-of-the-art
+technology has also pinpointed the location of the treasure room. What these dedicated (and greedy)
+archeologists want to do is blast doors through the walls to get to the treasure room. However, to
+minimize the damage to the artwork in the intervening chambers (and stay under their government
+grant for dynamite) they want to blast through the minimum number of doors. For structural integrity
+purposes, doors should only be blasted at the midpoint of the wall of the room being entered. You are
+to write a program which determines this minimum number of doors.
+
+<p>
+
+<p>
+<br>
+An example is shown below:
+
+<p>
+<div align="CENTER">
+
+<img src="p754.gif">
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input will consist of several cases.The first line of the input contains the number of cases, and it's followed bya blank line.
+
+<p>The first line of each case will be an integer <i>n</i> (
+
+<img width="88" height="30" align="MIDDLE" border="0" src="754img1.gif" alt="$0 \leY n \leY 30$">)
+specifying number of
+interior walls, followed by <i>n</i> lines containing integer endpoints of each wall 
+
+<i>x</i><sub>1</sub> <i>y</i><sub>1</sub> <i>x</i><sub>2</sub> <i>y</i><sub>2</sub>. The 4 enclosing
+walls of the pyramid have fixed endpoints at (0,0), (0,100), (100,100) and (100,0) and are <em>not</em> included
+in the list of walls. The interior walls always span from one exterior wall to another exterior wall and
+are arranged such that no more than two walls intersect at any point. You may assume that no two
+given walls coincide. After the listing of the interior walls there will be one final line containing the
+floating point coordinates of the treasure in the treasure room (guaranteed not to lie on a wall).
+
+<p>Different cases are separated by a blank line.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each case, print a single line listing the minimum number of doors which need to be created, in the format shown below. Print a blank line between cases.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+7
+20 0 37 100
+40 0 76 100
+85 0 0 75
+100 90 0 90
+0 71 100 61
+0 14 100 38
+100 47 47 100
+54.5 55.4
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Number of doors = 2
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

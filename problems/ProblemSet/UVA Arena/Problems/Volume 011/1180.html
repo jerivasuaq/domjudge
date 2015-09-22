@@ -1,0 +1,104 @@
+<p>
+The early Greeks have made great contributions to the field of mathematics. Among the great mathematicians of this times were Euclid and Pythagoras. The 23 volume Elements of Euclid is still regarded as on of the cornerstones in the study of mathematics.
+
+<p>
+Euclid made an important contributions to a problem posed by Pythagoras - that of finding all the perfect numbers. The number 6 is called a perfect number because 
+<span class="MATH">6 = 1 + 2 + 3</span>, the sum of all its proper divisors, (i.e. divisors less than 6). Another example of a perfect number is 28, because 
+<span class="MATH">28 = 1 + 2 + 4 + 7 + 14</span>, and 1, 2, 4, 7 and 14 are the divisors of 28 less than 28.
+
+<p>
+In Book IX of the `Elements' Euclid found all the even perfect numbers. (It has been proven later  much later, in the 20-th century  that all perfect numbers are even.) Euclid proved that an even number is perfect if it has the form 
+
+<p>
+<p>
+</p>
+<div align="CENTER" class="mathdisplay">
+2<sup>p-1</sup>(2<sup>p</sup> - 1)
+</div><p>
+where both <span class="MATH"><i>p</i></span> and <span class="MATH">2<sup>p</sup> - 1</span> are prime numbers.
+
+<p>
+Two thousand years later, Leonhard Euler proved the converse of Euclid's theorem. That is every even perfect number must be of Euclid's type. For example, for 6 and 28, we have
+
+<p>
+<p>
+</p>
+<div align="CENTER" class="mathdisplay">
+6 = 2<sup>2-1</sup>(2<sup>2</sup> -1), and 28 = 2<sup>3-1</sup>(2<sup>3</sup> - 1)
+</div><p>
+
+<p>
+Perfect numbers are very rare. By 1975, only 24 perfect numbers have been discovered. The first four perfect numbers are
+
+<p>
+
+<p>
+<br>
+6, 28, 496, and 8128
+
+<p>
+
+<p>
+<br>
+which correspond to the following values of <em>p</em>
+
+<p>
+
+<p>
+<br>
+2, 3, 5, and 7.
+
+<p>
+
+<p>
+<br>
+You would be given several integer numbers <span class="MATH"><i>p</i></span>, which would not necessarily be prime numbers. You have to determine if 
+<span class="MATH">2<sup>p-1</sup>(2<sup>p</sup> - 1)</span> is a perfect number. The largest perfect number in this problem will not exceed <span class="MATH">2<sup>33</sup></span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input contains two lines of integers. The first line contains the number of integers appearing on the second line. The second line contains the values of <span class="MATH"><i>p</i></span> that should be tested.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each integer value to be tested output ``<tt>Yes</tt>" or ``<tt>No</tt>" on a line of its own. The output will be ``<tt>Yes</tt>" if the integer value <span class="MATH"><i>p</i></span> generates a perfect number and ``<tt>No</tt>" otherwise.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>  
+6 
+2,3,4,5,6,7
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>  
+Yes 
+Yes 
+No 
+Yes 
+No 
+Yes
+</pre>
+
+<p>

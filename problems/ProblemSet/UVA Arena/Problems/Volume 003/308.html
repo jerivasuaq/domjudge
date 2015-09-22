@@ -1,0 +1,81 @@
+
+
+<html>
+<head>
+<title>Tin Cutter</title>
+<meta name="description" content="Tin Cutter">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Tin Cutter</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In a Tin Cutting factory there is a machine for cutting parts from tin plates. It has an
+extraordinarily sharp knife able to make horizontal or vertical segment cuts in the tin plates. Each
+cutting process consists of a sequence of such cuts. Each segment cut is given by its endpoints that
+are always located inside the tin plate. During the cutting process some parts of tin plate can fall
+out and so some holes in the plate can emerge.
+<p>
+<p>
+Factory management needs to predict the number of holes in the plate at the end of the
+given sequence of cuts. Write a program that answers this question. Single segment cuts are not
+considered to be holes.
+<p>
+<p>
+Here there are examples of some situations that can arise after cutting:
+<p>
+<center><img src="308img5.gif"></center>
+<p>
+two holes two holes one hole one hole
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file consists of blocks of lines. Each block except the last
+describes one cutting
+process. In the first line of the block there is a number  <img width="64" height="26" align="MIDDLE" alt="tex2html_wrap_inline33" src="308img1.gif"> 
+indicating the number of segment
+cuts in the cutting process. These cuts are defined by the following <i>N</i>
+lines. The line defining one
+segment cut has the form  <img width="78" height="25" align="MIDDLE" alt="tex2html_wrap_inline37" src="308img2.gif">  where  <img width="46" height="25" align="MIDDLE" alt="tex2html_wrap_inline39" src="308img3.gif">  and  <img width="46" height="25" align="MIDDLE" alt="tex2html_wrap_inline41" src="308img4.gif"> 
+are the co-ordinates of the end
+points of the segment cut. They are separated by one space. The co-ordinates
+are integers and
+always define horizontal or vertical segment (i.e. segment parallel
+with <i>x</i> or <i>y</i> axis).
+<p>
+<p>
+The last block consists of just one line containing 0.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output file contains the lines corresponding to the blocks in the input
+file. Each such line
+contains the number of holes that remain in the tin plate after the
+execution of the corresponding
+cuts.
+<p>
+<p>
+There is no line in the output file corresponding to the
+last ``null'' block of the input file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>4
+0 1 1 1
+1 1 1 0
+1 0 0 0
+0 0 0 1
+2
+0 1 2 1
+1 2 1 0
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1
+0</pre>
+<p>
+</body>
+</html>

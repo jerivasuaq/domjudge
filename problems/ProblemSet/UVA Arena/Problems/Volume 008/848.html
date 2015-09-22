@@ -1,0 +1,111 @@
+
+
+<html>
+<head>
+<title>Fmt</title>
+<meta name="description" content="Fmt">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Fmt</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The unix <em>fmt</em> program reads lines of text, combining and breaking lines
+so as to create an output file with lines as close to without exceeding
+72 characters long as possible.  The rules for combining and breaking
+lines are as follows.
+
+<p>
+
+<ul>
+<li>A new line may be started anywhere there is a space in the input.
+       If a new line is started, there will be no trailing blanks at the
+       end of the previous line or at the beginning of the new line.
+
+<p>
+</li>
+<li>A line break in the input may be eliminated in the output, provided
+       it is not at the end of a blank or empty line and is not followed by a space or another line break.  If a line
+       break is eliminated, it is replaced by a space.
+
+<p>
+</li>
+<li>Spaces never appear at the end of a line.
+
+<p>
+</li>
+<li>If a sequence of characters longer than 72 characters appears without
+   a space or line break, it appears by itself on a line.
+</li>
+</ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+   Unix fmt
+
+The unix fmt program reads lines of text, combining
+and breaking lines so as to create an
+output file with lines as close to without exceeding
+72 characters long as possible.  The rules for combining and breaking
+lines are as follows.
+
+   1.  A new line may be started anywhere there is a space in the input.
+If a new line is started, there will be no trailing blanks at the
+end of the previous line or at the beginning of the new line.
+
+   2.  A line break in the input may be eliminated in the output, provided
+it is not followed by a space or another line break.  If a line
+break is eliminated, it is replaced by a space.
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+   Unix fmt
+
+The unix fmt program reads lines of text, combining and breaking lines
+so as to create an output file with lines as close to without exceeding
+72 characters long as possible.  The rules for combining and breaking
+lines are as follows.
+
+   1.  A new line may be started anywhere there is a space in the input.
+If a new line is started, there will be no trailing blanks at the end of
+the previous line or at the beginning of the new line.
+
+   2.  A line break in the input may be eliminated in the output,
+provided it is not followed by a space or another line break.  If a line
+break is eliminated, it is replaced by a space.
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2002-06-15
+</address>
+</body>
+</html>
+

@@ -1,0 +1,76 @@
+
+
+<html>
+<head>
+<title>Code Breaking</title>
+<meta name="description" content="Code Breaking">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Code Breaking</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Periodic permutation is a simple encryption technique which involves
+choosing a period, <i>k</i>, and a permutation of the first <i>k</i> numbers. To
+encrypt a message, split the message into groups of <i>k</i> characters
+(padding if necessary) and apply the given permutation. Decryption
+involves taking groups of <i>k</i> characters and performing the inverse
+permutation. Thus for <i>k</i> = 4, a permutation could be 2431. This would
+encrypt `<tt>Mary</tt>' to `<tt>yMra</tt>' and `<tt>Maryan</tt>' to `<tt>yMra?a?n</tt>'.
+Once one knows
+the permutation, one can apply its inverse to other encrypted messages
+(cyphertext) to recover the original text (plaintext).
+<p>
+<p>
+Write a program that will read (plaintext, cyphertext1, cyphertext2)
+triples, and for each (plaintext, cyphertext1) pair determine whether
+or not a periodic permutation encryption method has been used. If it
+has, determine the value of <i>k</i> and the permutation function and apply
+the reverse permutation to cyphertext2 to recover the corresponding
+plaintext.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will consist of a series of (plaintext, cyphertext1,
+cyphertext2) triples. Lines will be no more than 80 characters long.
+The first two strings (of length <i>n</i>) represent the first <i>n</i> characters
+of the plaintext and cyphertext. There is no implication that <i>n</i> is a
+multiple of <i>k</i>. The file will be terminated by a line consisting of a
+single <tt>#</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output will consist of a series of lines, one for each triple in the
+input. If a permutation cycle has been found, apply the inverse
+permutation to cyphertext2, padding it if necessary with `<tt>?</tt>'. If no
+periodic permutation can be found (with period less than or equal to
+the length of the plain and cyphertext1 strings) that transforms the
+plaintext into the cyphertext, then print cyphertext2 unchanged. If
+more than one periodic permutation could have mapped the plain text to
+the cyphertext1, then apply the periodic permutation that has the
+smallest value for <i>k</i>. There will never be more than one shortest
+permutation function that matches the data.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>Mary had a little lamb!!
+aMyrh daa l tilt ealbm!!
+hTsii  s aetts
+Foobar
+blargg
+No cycle
+abc
+bca
+abcd
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>This is a test
+No cycle
+cab?d?</pre>
+<p>
+</body>
+</html>

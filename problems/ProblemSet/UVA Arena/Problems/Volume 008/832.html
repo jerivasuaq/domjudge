@@ -1,0 +1,166 @@
+
+
+<html>
+<head>
+<title>Financial Risk</title>
+<meta name="description" content="Financial Risk">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Financial Risk</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+As a rule the ACME Corporation clients pay within 30 days from shipment.
+Nevertheless, there is the risk that a client
+may be unable to fulfill its responsibility. The ACME Corporation transfered
+this risk to a financial insurance company
+that covers the responsibility of each customer up to a certain debt ceiling,
+depending on the customer financial record.
+
+<p>
+In order not to displease its clients the policy of the ACME Corporation is
+to continue selling to a client after reaching
+the debt ceiling imposed by the financial insurance company. In this case the
+risk above the debt ceiling is assumed by
+the ACME Corporation.
+
+<p>
+The CEO of the ACME Corporation has to decide if the client's debt ceiling
+needs to be renegotiated with the financial
+insurance company. For that she wants to know what percentage of the client's
+debt is not being covered by the
+insurance company in the present deal.
+
+<p>
+The ACME Financial Department came up with a formula to measure a client risk.
+Consider the step function <span class="MATH"><i>D</i><sub>c</sub>(<i>t</i>)</span>
+- the debt of client <span class="MATH"><i>c</i></span> at time <span class="MATH"><i>t</i></span>, as exemplified bellow.
+
+<p>
+<div align="CENTER">
+
+<img src="p832.png" alt="\epsfbox{p832.eps}">
+</div>
+
+<p>
+The risk associated with a debt is the area defined by function and
+the <span class="MATH"><i>x</i></span> axis, i.e. the risk between time <span class="MATH"><i>t</i><sub>0</sub></span> and <span class="MATH"><i>t</i><sub>1</sub></span> the
+integral 
+<span class="MATH"><img width="27" height="40" align="MIDDLE" border="0" src="832img2.png" alt="$ \int^{t_{1}}_{t_{0}}$"><i>D</i><sub>c</sub>(<i>t</i>)</span>.
+Considering that each client <span class="MATH"><i>c</i></span> has a debt ceiling <span class="MATH"><i>L</i><sub>c</sub></span> the
+uncovered risk is just the area above the
+debt ceiling that can be defined as the integral
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<img width="33" height="57" align="MIDDLE" border="0" src="832img3.png" alt="$\displaystyle \int^{t_{1}}_{t_{0}}$"><i>p</i>(<i>D</i><sub>c</sub>(<i>t</i>) - <i>L</i><sub>c</sub>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>p</i>(<i>x</i>) = <img width="130" height="55" align="MIDDLE" border="0" src="832img4.png" alt="$\displaystyle \cases{x &amp; if \quad $x \ge 0$ \cr 0 &amp; if \quad $x &lt; 0$ \cr}
+$">
+</div><p>
+
+<p>
+Thus, the percentage of uncovered risk for all clients is the quotient
+of the sum of all uncovered risks by the sum of all
+risks, as given by the following formula:
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<img width="171" height="67" align="MIDDLE" border="0" src="832img5.png" alt="$\displaystyle {\frac{\sum _{c}\: \int ^{t_{1}}_{t_{0}}\: p(D_{c}(t)-L_{c})}{\sum _{c}\:
+\int ^{t_{1}}_{t_{0}}\: D_{c}(t)}}$">
+</div><p>
+
+<p>
+Your task is to write a program to compute the percentage of uncovered
+risk in the last fiscal year, using the formula
+above and the data provided by a listing of the ACME's ERP.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The listing you will use as input starts with the number of clients with
+sales in the last fiscal year. For each client the
+first line has the debt limit and the number of sales. In the following
+lines, one for each sale, there is the sale's value,
+the day of the year of the invoice and the day of the year of the receipt.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+Your program must write the percentage of uncovered risk, truncated to 2
+fractional digits. Note that the output must
+include the percent sign (`<tt>%</tt>').
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+2
+40000 3
+35000 32 61
+15000 45 72
+40000 97 123
+55000 4
+12000 10 52
+30000 32 64
+33000 44 73
+50000 62 94
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+11.85%
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Jose Paulo Leal, MIUP'2001
+</address>
+</body>
+</html>
+

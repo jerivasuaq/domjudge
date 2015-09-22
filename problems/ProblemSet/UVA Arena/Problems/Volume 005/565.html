@@ -1,0 +1,214 @@
+
+
+<html>
+<head>
+<title>Pizza Anyone?</title>
+<meta name="description" content="Pizza Anyone?">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Pizza Anyone?</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+You are responsible for ordering a large pizza for you and your friends. Each
+of them has told you
+what he wants on a pizza and what he does not; of course they all understand
+that since there is only
+going to be one pizza, no one is likely to have all their requirements
+satisfied. Can you order a pizza
+that will satisfy at least one request from all your friends?
+
+<p>
+
+<p>
+<br>
+The pizza parlor you are calling offers the following pizza toppings; you
+can include or omit any of them in a pizza:
+
+<p>
+<div align="CENTER">
+<table cellpadding="3" border="1">
+<tr><td align="CENTER"><b> Input Code</b></td>
+<td align="LEFT"><b> Topping</b></td>
+</tr>
+<tr><td align="CENTER">A</td>
+<td align="LEFT">Anchovies</td>
+</tr>
+<tr><td align="CENTER">B</td>
+<td align="LEFT">Black Olives</td>
+</tr>
+<tr><td align="CENTER">C</td>
+<td align="LEFT">Canadian Bacon</td>
+</tr>
+<tr><td align="CENTER">D</td>
+<td align="LEFT">Diced Garlic</td>
+</tr>
+<tr><td align="CENTER">E</td>
+<td align="LEFT">Extra Cheese</td>
+</tr>
+<tr><td align="CENTER">F</td>
+<td align="LEFT">Fresh Broccoli</td>
+</tr>
+<tr><td align="CENTER">G</td>
+<td align="LEFT">Green Peppers</td>
+</tr>
+<tr><td align="CENTER">H</td>
+<td align="LEFT">Ham</td>
+</tr>
+<tr><td align="CENTER">I</td>
+<td align="LEFT">Italian Sausage</td>
+</tr>
+<tr><td align="CENTER">J</td>
+<td align="LEFT">Jalapeno Peppers</td>
+</tr>
+<tr><td align="CENTER">K</td>
+<td align="LEFT">Kielbasa</td>
+</tr>
+<tr><td align="CENTER">L</td>
+<td align="LEFT">Lean Ground Beef</td>
+</tr>
+<tr><td align="CENTER">M</td>
+<td align="LEFT">Mushrooms</td>
+</tr>
+<tr><td align="CENTER">N</td>
+<td align="LEFT">Nonfat Feta Cheese</td>
+</tr>
+<tr><td align="CENTER">O</td>
+<td align="LEFT">Onions</td>
+</tr>
+<tr><td align="CENTER">P</td>
+<td align="LEFT">Pepperoni</td>
+</tr>
+</table></div>
+
+<p>
+Your friends provide you with a line of text that describes their pizza
+preferences. For example, the line
+
+<p>
+<pre>
++O-H+P;
+</pre>
+
+<p>
+reveals that someone will accept a pizza with onion, or without ham, or
+with pepperoni, and the line
+
+<p>
+<pre>
+-E-I-D+A+J;
+</pre>
+
+<p>
+indicates that someone else will accept a pizza that omits extra cheese, or
+Italian sausage, or diced garlic, or that includes anchovies or jalapenos.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of a series of pizza constraints.
+
+<p>
+A pizza constraint is a list of 1 to 12 topping constraint lists each on a
+line by itself followed by a period on a line by itself.
+
+<p>
+A topping constraint list is a series of topping requests terminated by a
+single semicolon.
+
+<p>
+An topping request is a sign character <tt>(+/-)</tt> and then an uppercase letter from <tt>A</tt> to <tt>P</tt>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each pizza constraint, provide a description of a pizza that satisfies
+it. A description is the string
+``<tt>Toppings: </tt>" in columns 1 through 10 and then a series of letters, in
+alphabetical order, listing the
+toppings on the pizza. So, a pizza with onion, anchovies, fresh broccoli and
+Canadian bacon would be described by:
+
+<p>
+<pre>
+Toppings: ACFO
+</pre>
+
+<p>
+If no combination toppings can be found which satisfies at least one request
+of every person, your program should print the string
+
+<p>
+<pre>
+No pizza can satisfy these requests.
+</pre>
+
+<p>
+on a line by itself starting in column 1.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
++A+B+C+D-E-F-G-H;
+-A-B+C+D-E-F+G+H;
+-A+B-C+D-E+F-G+H;
+.
++A+B+C+D;
++E+F+F+H;
++A+B-G;
++O+J-F;
++H+I+C;
++P;
++O+M+L;
++M-L+P;
+.
++A+B+C+D;
++E+F+F+H;
++A+B-G;
++P-O;
++O+J-F;
++H+I+C;
++P;
++O;
++O+M+L;
+-O-P;
++M-L+P;
+.
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Toppings:
+Toppings: CELP
+No pizza can satisfy these requests.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

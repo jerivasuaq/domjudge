@@ -1,0 +1,163 @@
+
+
+<html>
+<head>
+<title>Bulk Mailing</title>
+<meta name="description" content="Bulk Mailing">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Bulk Mailing</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+ 
+An organization that wishes to make a large mailing can save postage by following U.S. Postal 
+Service rules for a bulk mailing. Letters in zip code order are bundled into packets of 10-15 letters 
+each.  Bundles may consist of letters in which all 5 digits of zip code are the same (5-digit bundles), or they may consist of letters in which only the first 3 digits of zip code are the same (3-digit bundles).  If there are fewer than 10 letters to make up a bundle of either type, those letters are mailed first class.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input &amp; Output</a>&nbsp;</font>
+</h2>
+You are to write a program to read a data set of 5-digit zip codes, one per line, until end of file.  
+Your program should count the number of 5-digit bundles, 3-digit
+bundles, and first class letters.  You should include as many letters as possible in 5-digit bundles first, then as many as possible in 3-digit bundles, with as few bundles of 10 to 15 letters as possible. For example, if there are 31 letters with the same zip code, they must be combined into 
+exactly three 5-digit bundles.  If there are 16 letters and you have to make a 3-digit bundle, you should combine the 15 with lowest zip code.
+
+<p>
+
+<p>
+<br>
+Not all zip codes in the data set will be valid.  A valid zip code consists of exactly 5 digits (0-9), all of which cannot be 0.  Non-numeric characters are not allowed.  At the end of your output, print the invalid zip codes found.  (Duplicates need only be printed once.)
+
+<p>
+
+<p>
+<br>
+Print a report that lists 5-digit zip code bundles first, with the number of letters and number of 
+bundles for each zip code.  Next list all 3-digit zip code bundles with the same two counts, followed 
+by all zip codes that are not bundled and to be sent first class.  At the end print totals of letters and 
+bundles, followed by a list of invalid zip codes.  Single space the report, 
+and print blank lines following the heading, before the total line, and between the three groups of 
+zip codes.  
+
+<p>
+For 3-digit bundles, print the zip codes in the form <tt>dddxx</tt>, where <tt>ddd</tt> represents the 
+three significant digits and <tt>xx</tt> represents the last two digits to be omitted. 
+
+<p>
+
+<p>
+<br>
+Your output should be similar to that shown in the sample. Valid zip codes should be printed in ascending order, and
+invalid zip codes should be printed in the order in which they appear in the input.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+95864
+95864
+95864
+95867
+95920
+9j876
+95616                 
+95616                 
+95747                 
+95814                 
+95818                 
+95818                 
+8976
+95818                 
+95818                 
+95819                 
+95819                 
+00000
+95819                 
+95819                 
+95819                 
+95819                 
+95819                 
+95825
+95825
+95825
+95825
+95825
+95826
+95826
+95826
+95826
+95826
+95826
+95827
+8976
+95833
+95833
+95833
+95833
+95819                 
+95819
+95819
+95819
+95833
+95833
+95833
+95864
+95864
+95864
+123456
+95864
+95864
+95864
+95864
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+ZIP         LETTERS     BUNDLES
+
+95819         11           1
+95864         10           1
+
+958xx         25           2
+
+95616          2           0
+95747          1           0
+95920          1           0
+
+TOTALS        50           4
+
+INVALID ZIP CODES
+9j876
+8976
+00000
+123456
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-17</i>
+</address>
+</body>
+</html>
+

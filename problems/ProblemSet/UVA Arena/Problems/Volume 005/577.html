@@ -1,0 +1,271 @@
+
+
+<html>
+<head>
+<title>WIMP</title>
+<meta name="description" content="WIMP">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+WIMP</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A window manager takes care of the details of creating, displaying, moving,
+and resizing a
+collection of windows in a graphical user interface. It also handles input
+events (like mouse
+clicks) related to these window management tasks. Your project is to write
+a WIndow Manager Program (WIMP).
+
+<p>
+
+<p>
+<br>
+The WIMP controls a screen of size 
+
+<img width="96" height="30" align="MIDDLE" border="0" src="577img1.gif" alt="$1024 \times 1024$">
+(measured in pixels),
+with the upper left-hand
+pixel at (0,0). The <i>x</i>-coordinates range from 0 at the left edge of the
+screen to 1023 at the right
+edge, and the <i>y</i>-coordinates range from 0 at the top of the screen to 1023
+at the bottom. All
+coordinates are integers. The user can create and manipulate rectangular
+windows by moving
+the mouse and clicking the mouse button. A window has 4 distinct areas:
+
+<p>
+<div align="CENTER">
+<table cellpadding="3" border="1">
+<tr><td align="LEFT"><em> Area</em></td>
+<td align="LEFT"><em> Location and Size</em></td>
+</tr>
+<tr><td align="LEFT">Close box</td>
+<td align="LEFT">upper left hand corner of the window (
+
+<img width="61" height="30" align="MIDDLE" border="0" src="577img2.gif" alt="$25 \times 25$">
+pixels)</td>
+</tr>
+<tr><td align="LEFT">Zoom box</td>
+<td align="LEFT">upper right hand corner of the window (
+
+<img width="61" height="30" align="MIDDLE" border="0" src="577img2.gif" alt="$25 \times 25$">
+pixels)</td>
+</tr>
+<tr><td align="LEFT">Motion bar</td>
+<td align="LEFT">fills the top 25 pixels of the window, excluding zoom and close
+boxes</td>
+</tr>
+<tr><td align="LEFT">Data area</td>
+<td align="LEFT">remainder of the window</td>
+</tr>
+</table></div>
+
+<p>
+A window will always be at least 
+
+<img width="61" height="30" align="MIDDLE" border="0" src="577img3.gif" alt="$51 \times 26$">
+so that all four areas are
+nonempty. Each window is
+assigned a unique integer identifier, starting at 0 (the first window
+created has id 0, the second
+one created has id 1, and so on). Identifiers are not reused.
+
+<p>
+
+<p>
+<br>
+The WIMP accepts the following events:
+
+<p>
+<div align="CENTER">
+<table cellpadding="3" border="1">
+<tr><td align="LEFT"><em> Event</em></td>
+<td align="LEFT"><em> Meaning</em></td>
+</tr>
+<tr><td align="LEFT"><tt> DN</tt> <i>x</i> <i>y</i></td>
+<td align="LEFT">user pressed mouse button at location (<i>x</i>,<i>y</i>)</td>
+</tr>
+<tr><td align="LEFT"><tt> UP</tt> <i>x</i> <i>y</i></td>
+<td align="LEFT">user released mouse button at location (<i>x</i>,<i>y</i>)</td>
+</tr>
+<tr><td align="LEFT"><tt> AT</tt> <i>x</i> <i>y</i></td>
+<td align="LEFT">user moved mouse to location (<i>x</i>,<i>y</i>)</td>
+</tr>
+<tr><td align="LEFT"><tt> CR</tt> <i>l</i> <i>t</i> <i>r</i> <i>b</i></td>
+<td align="LEFT">create new window with positions left, top, right, and bottom</td>
+</tr>
+<tr><td align="LEFT"><tt> RE</tt></td>
+<td align="LEFT">redraw all windows from back to front</td>
+</tr>
+<tr><td align="LEFT"><tt> ZZ</tt></td>
+<td align="LEFT">exit the WIMP</td>
+</tr>
+</table></div>
+
+<p>
+The values <i>x</i>, <i>y</i>, <i>l</i>, <i>t</i>, <i>r</i> and <i>b</i> are all nonnegative integers within the dimensions of the screen.
+
+<p>
+The <tt>CR</tt> event always generates a properly formed window. Because windows
+can overlap, on a <tt>RE</tt> event they must be redrawn from back (least recently on top) to front (most recently on top). This ensures that they appear correctly
+overlapped to the user.
+
+<p>
+
+<p>
+<br>
+It is the job of the WIMP to keep track of all windows, even if some are
+overlapping. The rules it uses are:
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>A new window is <em>always</em> completely visible (`on top' of all other windows).
+<p>
+<dt>2.
+<dd>A <tt>DN</tt> event anywhere on a visible part of a window selects that window and puts it on top, making the entire window visible. A <tt>DN</tt> event that is not in the visible part of any window does not affect the currently selected window.
+
+<p>
+<dt>3.
+<dd>Closing and zooming both require a <tt>DN</tt> event followed by an <tt>UP</tt> event in the appropriate box. There may be one or more <tt>AT</tt> events in between. The <tt>DN</tt> and <tt>UP</tt> events must be in the
+same box, but they don't have to be in the exact same location.
+
+<p>
+<dt>4.
+<dd>Closing a window removes it from the screen.
+
+<p>
+<dt>5.
+<dd>Zooming is a toggle that either makes the window occupy the entire screen, or returns the window to its initial size.
+
+<p>
+<dt>6.
+<dd>A <tt>DN</tt> event in the motion bar allows the window to be relocated. The motion stops with an <tt>UP</tt> event. The window moves the same distance and direction that the mouse moved between the <tt>DN</tt> and <tt>UP</tt> events.
+
+<p>
+<dt>7.
+<dd><tt>AT</tt> events while moving a window must output the window's current position. <tt>AT</tt> events
+at any other time do not generate any output.
+<dt>8.
+<dd>Windows occupying the full screen cannot be moved.
+<dt>9.
+<dd>Windows can partially move off the visible screen.
+<dt>10.
+<dd><tt>AT</tt> events happen.
+</dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains one or more lines, each of which contains a single
+event. A <tt>ZZ</tt> event
+signals the end of the input. The events are all part of the same session.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each user action,
+output the corresponding message. On an <tt>RE</tt> event, the location of all windows must be output from back-to-front using the format shown.
+
+<p>
+<div align="CENTER">
+<table cellpadding="3" border="1">
+<tr><td align="LEFT"><em> Action</em></td>
+<td align="LEFT"><em> Message</em></td>
+</tr>
+<tr><td align="LEFT">Create window</td>
+<td align="LEFT">`<tt> Created window </tt><i>n</i><tt>  at </tt><i>l</i>, <i>t</i>, <i>r</i>, <i>b</i>'</td>
+</tr>
+<tr><td align="LEFT">Select window</td>
+<td align="LEFT">`<tt> Selected window </tt><i>n</i>'</td>
+</tr>
+<tr><td align="LEFT">Close window</td>
+<td align="LEFT">`<tt> Closed window </tt><i>n</i>'</td>
+</tr>
+<tr><td align="LEFT">Move window</td>
+<td align="LEFT">`<tt> Moved window </tt><i>n</i><tt>  to </tt><i>l</i>, <i>t</i>, <i>r</i>, <i>b</i>'</td>
+</tr>
+<tr><td align="LEFT">Zoom window</td>
+<td align="LEFT">`<tt> Resized window </tt><i>n</i><tt>  to </tt><i>l</i>, <i>t</i>, <i>r</i>, <i>b</i>'</td>
+</tr>
+<tr><td align="LEFT">Redraw</td>
+<td align="LEFT">`<tt> Window </tt><i>n</i><tt>  at </tt><i>l</i>, <i>t</i>, <i>r</i>, <i>b</i>'</td>
+</tr>
+</table></div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+CR 0 0 200 200
+CR 50 50 250 250
+RE
+DN 195 5
+AT 50 50
+UP 198 6
+AT 100 100
+AT 1000 1000
+DN 1020 10
+UP 1020 10
+RE
+DN 100 100
+UP 800 0
+DN 0 700
+UP 1023 1023
+DN 50 10
+AT 70 70
+UP 100 100
+DN 60 60
+UP 60 60
+RE
+ZZ
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Created window 0 at 0, 0, 200, 200
+Created window 1 at 50, 50, 250, 250
+Window 0 at 0, 0, 200, 200
+Window 1 at 50, 50, 250, 250
+Selected window 0
+Resized window 0 to 0, 0, 1023, 1023
+Selected window 0
+Resized window 0 to 0, 0, 200, 200
+Window 1 at 50, 50, 250, 250
+Window 0 at 0, 0, 200, 200
+Selected window 0
+Selected window 0
+Moved window 0 to 20, 60, 220, 260
+Moved window 0 to 50, 90, 250, 290
+Selected window 1
+Closed window 1
+Window 0 at 50, 90, 250, 290
+</pre>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,107 @@
+
+<p>
+The designers at Gazillion Games Inc. have come up with a new, 
+relatively simple game called ``Stake Your Claim".  Two players - 0 and 1 - initially 
+select two values <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark> and an 
+<span class="MATH"><i>n</i>&#215;<i>n</i></span>
+<tex2html_verbatim_mark> board is created with <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark> 0's 
+and <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark> 1's randomly placed on the board.  Starting with player 0, each player puts his/her 
+number in one of the empty squares on the board.  After the board is filled, 
+each player's score is equal to the largest connected region on the board 
+filled with that player's number (where a connected region is one where for 
+any two squares in the region a path exists consisting of only N/S/E/W moves).  
+The player with the highest score wins, and is
+awarded the difference between his/her score and the score of the other 
+player. Two examples of
+finished games are shown below, with the largest connected regions for 
+each player outlined.
+Note in the second example that the two sections with 2 0's each are 
+not connected.
+
+<p>
+<div align="CENTER">
+
+<img width="715" height="307" align="BOTTOM" border="0" src="p3731.jpg" alt="\epsfbox{p3731.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+
+<p>
+In order to test how good this game is, the gang at Gazillion has hired 
+you to write a program which can play the game.  Specifically, given any starting 
+configuration, they would like a
+program to determine the best move for the current player, i.e., the 
+score which maximizes the points awarded to that player (or minimizes those awarded to the 
+player's opponent).
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input will consist of multiple test cases. Each test case will start 
+with a line containing a positive integer <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> (<span class="MATH"><img width="18" height="31" align="MIDDLE" border="0" src="3731img2.png" alt="$ \leq$"> 8</span>
+<tex2html_verbatim_mark>) indicating the size of the 
+board.  Next will come
+<span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> lines describing the current board layout (row 0 first, followed by 
+row 1, etc).  Each of
+these lines will contain <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> characters taken from <tt>`0'</tt>, <tt>`1'</tt> 
+and <tt>`.'</tt>, where <tt>`.'</tt>
+represents an empty square.  The first character will be in column 0, 
+the second in column 1, etc.  The number of 0's on the board will either be equal to the number 
+of 1's or one greater, and there will be between 1 and 10 (inclusive) empty squares.
+The last case is followed by a line containing 0 which indicates 
+end-of-input and should not be processed.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, output a single line containing two items: the 
+coordinates of the best move for the player and the best point total achieved by that 
+player.  In case of ties, print the move which comes first lexicographically.  Use the format 
+shown in the sample output.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4
+01.1
+00..
+.01.
+...1
+4
+0.01
+0.01
+1..0
+.1..
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+(1,2) 2
+(2,2) -1
+</pre></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

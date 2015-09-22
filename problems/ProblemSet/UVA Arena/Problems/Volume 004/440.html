@@ -1,0 +1,73 @@
+
+
+<html>
+<head>
+<title>Eeny Meeny Moo</title>
+<meta name="description" content="Eeny Meeny Moo">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Eeny Meeny Moo</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Surely you have made the experience that when too many people use the Internet simultaneously,
+the net becomes very, very slow.
+<p>
+<p>
+To put an end to this problem, the University of Ulm has developed a contingency scheme for times
+of peak load to cut off net access for some cities of the country in a systematic, totally fair manner.
+Germany's cities were enumerated randomly from 1 to <i>n</i>. Freiburg was number 1, Ulm was number
+2, Karlsruhe was number 3, and so on in a purely random order.
+<p>
+<p>
+Then a number <i>m</i> would be picked at random, and Internet access would first be cut off in city 1
+(clearly the fairest starting point) and then in every <i>m</i>th city after that, wrapping around to 1 after <i>n</i>,
+and ignoring cities already cut off. For example, if <i>n</i>=17 and <i>m</i>=5, net access would be cut off to the
+cities in the order [1,6,11,16,5,12,2,9,17,10,4,15,14,3,8,13,7]. The problem is that it is clearly
+fairest to cut off Ulm last (after all, this is where the best programmers come from), so for a given
+n, the random number m needs to be carefully chosen so that city 2 is the last city selected.
+<p>
+<p>
+Your job is to write a program that will read in a number of cities <i>n</i> and then determine the smallest integer <i>m</i> that will ensure that Ulm can surf the net while the rest of the country is cut off.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input Specification</a></font></h2>
+<p>
+The input file will contain one or more lines, each line containing one integer <i>n</i> with  <img width="90" height="25" align="MIDDLE" alt="tex2html_wrap_inline43" src="440img1.gif"> , representing the number of cities in the country.
+<p>
+Input is terminated by a value of zero (0) for <i>n</i>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output Specification</a></font></h2>
+<p>
+For each line of the input, print one line containing the integer <i>m</i> fulfilling the requirement specified above.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>2
+5
+2
+4
+3
+11
+2
+3
+8
+16</pre>
+<p>
+</body>
+</html>

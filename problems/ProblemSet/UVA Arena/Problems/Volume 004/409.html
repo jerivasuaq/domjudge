@@ -1,0 +1,92 @@
+
+
+<html>
+<head>
+<title>Excuses, Excuses!</title>
+<meta name="description" content="Excuses, Excuses!">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Excuses, Excuses!</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Judge Ito is having a problem with people subpoenaed for jury duty
+giving rather lame excuses in order to avoid serving. In order to
+reduce the amount of time required listening to goofy excuses, Judge Ito
+has asked that you write a program that will search for a list of
+keywords in a list of excuses identifying lame excuses. Keywords can be
+matched in an excuse regardless of case.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input to your program will consist of multiple sets of data.
+<p>
+<ul><li> Line 1 of
+each set will contain exactly two integers. The first number ( <img width="87" height="26" align="MIDDLE" alt="tex2html_wrap_inline30" src="409img1.gif"> )
+defines the number of keywords to be used in the search. The second
+number ( <img width="85" height="26" align="MIDDLE" alt="tex2html_wrap_inline32" src="409img2.gif"> ) defines the number of excuses in the set to be
+searched.<li> Lines 2 through <i>K</i>+1 each contain exactly one keyword.<li> Lines
+<i>K</i>+2 through <i>K</i>+1+<i>E</i> each contain exactly one excuse.<li> All keywords in the
+keyword list will contain only contiguous lower case alphabetic
+characters of length <i>L</i> ( <img width="83" height="26" align="MIDDLE" alt="tex2html_wrap_inline42" src="409img3.gif"> ) and will occupy columns 1 through
+<i>L</i> in the input line.<li> All excuses can contain any upper or lower case
+alphanumeric character, a space, or any of the following punctuation
+marks [<code>SPMamp</code>&quot;.,!?&amp;] not including the square brackets and will not exceed 70
+characters in length.<li> Excuses will contain at least 1 non-space character.
+</li></li></li></li></li></li></ul><h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each input set, you are to print the worst excuse(s) from the list.
+<p>
+<ul><li> The worst excuse(s) is/are defined as the excuse(s) which contains the
+largest number of incidences of keywords.<li> If a keyword occurs more than
+once in an excuse, each occurrance is considered a separate incidence.<li> A keyword ``occurs&quot; in an excuse if and only if it exists in the string
+in contiguous form and is delimited by the beginning or end of the line
+or any non-alphabetic character or a space.
+</li></li></li></ul>
+<p>
+For each set of input, you are to print a single line with the number of
+the set immediately after the string ``<tt>Excuse Set #</tt>&quot;. (See the Sample
+Output). The following line(s) is/are to contain the worst excuse(s)
+one per line exactly as read in. If there is more than one worst
+excuse, you may print them in any order.
+<p>
+<p>
+After each set of output, you should print a blank line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5 3
+dog
+ate
+homework
+canary
+died
+My dog ate my homework.
+Can you believe my dog died after eating my canary... AND MY HOMEWORK?
+This excuse is so good that it contain 0 keywords.
+6 5
+superhighway
+crazy
+thermonuclear
+bedroom
+war
+building
+I am having a superhighway built in my bedroom.
+I am actually crazy.
+1234567890.....,,,,,0987654321?????!!!!!!
+There was a thermonuclear war!
+I ate my dog, my canary, and my homework ... note outdated keywords?</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Excuse Set #1
+Can you believe my dog died after eating my canary... AND MY HOMEWORK?
+
+Excuse Set #2
+I am having a superhighway built in my bedroom.
+There was a thermonuclear war!</pre>
+<p>
+</body>
+</html>

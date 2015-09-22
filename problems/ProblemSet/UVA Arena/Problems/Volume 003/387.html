@@ -1,0 +1,139 @@
+
+
+<html>
+<head>
+<title>A Puzzling Problem</title>
+<meta name="description" content="A Puzzling Problem">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">A Puzzling Problem</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The goal of this problem is to write a program which will take from 1 to 5
+puzzle pieces such as
+those shown below and arrange them, if possible, to form a square.
+An example set of pieces is shown here.
+<p>
+<center><img src="387img3.gif"></center>
+<p>
+The pieces cannot be rotated or flipped from their original orientation
+in an attempt to form a
+square from the set. All of the pieces must be used to form the
+square. There may be more than
+one possible solution for a set of pieces, and not every arrangement
+will work even with a set for
+which a solution can be found. Examples using the above set of
+pieces are shown here.
+<p>
+<center><img src="387img4.gif"></center>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file for this program contains several puzzles (i.e. sets of
+puzzle pieces) to be solved.
+The first line of the file is the number of pieces in the first puzzle.
+Each piece is then specified by
+listing a single line with two integers, the number of rows and
+columns in the piece, followed by
+one or more lines which specify the shape of the piece.
+The shape specification consists of `0' and
+`1' characters, with the `1' characters indicating the solid shape
+of the puzzle (the `0' characters
+are merely placeholders). For example, piece `A' above would be
+specified as follows:
+<p>
+<pre>2 3
+111
+101</pre>
+<p>
+The pieces should be numbered by the order they are encountered in the
+puzzle. That is, the first
+piece in a puzzle is piece #1, the next is piece #2, etc. All pieces
+may be assumed to be valid and no larger than 4 rows by 4 columns.
+<p>
+<p>
+The line following the final line of the last piece contains the
+number of pieces in the next puzzle,
+again followed by the puzzle pieces and so on. The end of the input file
+is indicated by a zero in place of the number of puzzle pieces.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Your program should report a solution, if one is possible, in the
+format shown by the examples
+below. A 4-row by 4-column square should be created, with each piece
+occupying its location in
+the solution. The solid portions of piece #1 should be replaced
+with `1' characters, of piece #2
+with `2' characters, etc. The solutions for each puzzle should be
+separated by a single blank line.
+<p>
+<p>
+If there are multiple solutions, any of them is acceptable. 
+For puzzles which have no possible solution simply
+report ``<tt>No solution possible</tt>''.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>4
+2 3
+111
+101
+4 2
+01
+01
+11
+01
+2 1
+1
+1
+3 2
+10
+10
+11
+4
+1 4
+1111
+1 4
+1111
+1 4
+1111
+2 3
+111
+001
+5
+2 2
+11
+11
+2 3
+111
+100
+3 2
+11
+01
+01
+1 3
+111
+1 1
+1
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1112
+1412
+3422
+3442
+
+No solution possible
+
+1133
+1153
+2223
+2444</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,175 @@
+
+
+<html>
+<head>
+<title>Optimal Programs</title>
+<meta name="description" content="Optimal Programs">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Optimal Programs</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+As you know, writing programs is often far from being easy. Things become even harder if your
+programs have to be as fast as possible. And sometimes there is reason for them to be. Many large
+programs such as operating systems or databases have ``bottlenecks'' - segments of code that get
+executed over and over again, and make up for a large portion of the total running time. Here it
+usually pays to rewrite that code portion in assembly language, since even small gains in running time
+will matter a lot if the code is executed billions of times.
+
+<p>
+In this problem we will consider the task of automating the generation of optimal assembly code.
+Given a function (as a series of input/output pairs), you are to come up with the shortest assembly
+program that computes this function.
+
+<p>
+The programs you produce will have to run on a stack based machine, that supports only five
+commands: <tt>ADD</tt>, <tt>SUB</tt>, <tt>MUL</tt>, <tt>DIV</tt> and <tt>DUP</tt>. The first
+four commands pop the two top elements from the stack and push their sum,
+difference, product or integer quotient<a name="tex2html1" href="#foot75"><sup>1
+</sup></a>, respectively, on the
+stack. The <tt>DUP</tt> command pushes an additional copy of the top-most stack
+element on the stack.
+
+<p>
+So if the commands are applied to a stack with the two top elements <i>a</i> and <i>b</i>
+(shown to the left), the resulting stacks look as follows:
+
+<p>
+<div align="CENTER">
+
+<img src="p656.gif">
+</div>
+
+<p>
+At the beginning of the execution of a program, the stack will contain a single integer only: the
+input. At the end of the computation, the stack must also contain only one integer; this number is the
+result of the computation.
+
+<p>
+There are three cases in which the stack machine enters an error state:
+
+<p>
+<ul>
+<li>A <tt>DIV</tt>-command is executed, and the top-most element of the stack
+is 0.
+
+<p>
+<li>A <tt>ADD</tt>, <tt>SUB</tt>, <tt>MUL</tt> or <tt>DIV</tt>-command is executed when
+the stack contains only one element.
+
+<p>
+<li>An operation produces a value greater than 30000 in absolute value.
+</li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of a series of function descriptions. Each description starts with a line containing a
+single integer <i>n</i> (<img width="56" height="30" align="MIDDLE" border="0" src="656img2.gif" alt="$n \leY 10$">), the number of input/output pairs to follow.
+The following two lines contains <i>n</i> integers each: 
+
+<img width="105" height="30" align="MIDDLE" border="0" src="656img3.gif" alt="$x_1, x_2, \dots, x_n$">
+in
+the first line (all different), and 
+
+<img width="101" height="30" align="MIDDLE" border="0" src="656img4.gif" alt="$y_1, y_2, \dots, y_n$">
+in the second
+line. The numbers will be no more than 30000 in absolute value. 
+
+<p>
+The input is
+terminated by a test case starting with <i>n</i> = 0. This test case should not be
+processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+You are to find the shortest program that computes a function <i>f</i> , such that
+
+
+<i>f</i>(<i>x</i><sub><i>i</i></sub>) = <i>y</i><sub><i>i</i></sub> for all 
+
+<img width="107" height="34" align="MIDDLE" border="0" src="656img5.gif" alt="$i \in \{1, \dots, n\}$">.
+This implies that the program
+you output may not enter an error state if executed on the inputs <i>x</i><sub><i>i</i></sub>
+(although it may enter an error state for other inputs). Consider only
+programs that have at most 10 statements.
+
+<p>
+For each function description, output first the number of the description. Then print out the se-
+quence of commands that make up the shortest program to compute the given function. If there is
+more than one such program, print the lexicographically smallest. If there is no program of at most
+10 statements that computes the function, print the string ``<tt>Impossible</tt>''. If the shortest
+program consists of zero commands, print ``<tt>Empty sequence</tt>''. 
+
+<p>
+Output a blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4
+1 2 3 4
+0 -2 -6 -12
+3
+1 2 3
+1 11 1998
+1
+1998
+1998
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Program 1
+DUP DUP MUL SUB
+
+Program 2
+Impossible
+
+Program 3
+Empty sequence
+</pre>
+
+<p>
+
+<p>
+<br><hr><h4>Footnotes</h4>
+<dl>
+<dt>... quotient<a name="foot75" href="656.html#tex2html1"><sup>1
+ </sup></a>
+<dd>This corresponds to / applied
+to two integers in C/C++, and <tt>DIV</tt> in Pascal.
+
+</dd></dt></dl>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

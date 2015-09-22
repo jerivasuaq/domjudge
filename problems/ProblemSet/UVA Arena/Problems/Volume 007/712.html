@@ -1,0 +1,194 @@
+
+
+<html>
+<head>
+<title>S-Trees</title>
+<meta name="description" content="S-Trees">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+S-Trees</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A Strange Tree (S-tree) over the variable set 
+
+<img width="169" height="34" align="MIDDLE" border="0" src="712img1.gif" alt="$X_n = \{x_1, x_2, \dots, x_n\}$">
+is a binary tree representing a Boolean function 
+
+<img width="151" height="34" align="MIDDLE" border="0" src="712img2.gif" alt="$f: \{0, 1\}^n \rightarrow \{ 0, 1\}$">.
+Each path of the S-tree begins at the <em>root</em> node and consists of <i>n</i>+1 nodes. Each of the S-tree's nodes has a <em>depth</em>, which is the amount of nodes between itself and the root (so the root has depth 0). The nodes with depth less than <i>n</i> are called <em>non-terminal</em> nodes. All non-terminal nodes have two children: the <em>right child</em> and the <em>left child</em>. Each non-terminal node is marked with some variable <i>x</i><sub><i>i</i></sub> from the variable set <i>X</i><sub><i>n</i></sub>. All non-terminal nodes with the same depth are marked with the same variable, and non-terminal nodes with different depth are marked with different variables. So, there is a unique variable <i>x</i><sub><i>i</i><sub>1</sub></sub> corresponding to the root, a unique variable <i>x</i><sub><i>i</i><sub>2</sub></sub> corresponding to the nodes with depth 1, and
+so on. The sequence of the variables 
+
+<img width="119" height="30" align="MIDDLE" border="0" src="712img3.gif" alt="$x_{i_1}, x_{i_2}, \dots, x_{i_n}$">
+is called the <em>variable ordering</em>. The nodes having depth <i>n</i> are called <em>terminal</em> nodes. They have no children and are marked with either 0 or 1. Note that the variable ordering and the distribution of 0's and 1's on terminal nodes are sufficient to completely describe an S-tree.
+
+<p>
+As stated earlier, each S-tree represents a Boolean function <i>f</i>. If you have an S-tree and values for the variables 
+
+<img width="105" height="30" align="MIDDLE" border="0" src="712img4.gif" alt="$x_1, x_2, \dots, x_n$">,
+then it is quite simple to find out what 
+
+<img width="129" height="34" align="MIDDLE" border="0" src="712img5.gif" alt="$f(x_1, x_2, \dots, x_n)$">
+is: start with the root. Now repeat the following: if the node you are at is labelled with a variable
+<i>x</i><sub><i>i</i></sub>, then depending on whether the value of the variable is 1 or 0, you go its right or left child, respectively. Once you reach a terminal node, its label gives the value of the function.
+
+<p>
+<div align="CENTER">
+
+<img src="p712.gif">
+
+<p>
+
+<p>
+Figure 1: S-trees for the function 
+
+<img width="109" height="34" align="MIDDLE" border="0" src="712img6.gif" alt="$x_1 \wedge (x_2 \vee x_3)$"></div>
+
+<p>
+On the picture, two S-trees representing the same Boolean function, 
+
+
+<img width="225" height="34" align="MIDDLE" border="0" src="712img7.gif" alt="$f(x_1, x_2, x_3) = x_1 \wedge (x_2 \vee x_3)$">,
+are shown. For the left tree, the variable ordering is 
+
+<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, <i>x</i><sub>3</sub>, and for the right tree it is
+
+
+<i>x</i><sub>3</sub>, <i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>.
+
+<p>
+The values of the variables 
+
+<img width="105" height="30" align="MIDDLE" border="0" src="712img4.gif" alt="$x_1, x_2, \dots, x_n$">,
+are given as a <em>Variable Values Assignment</em> (VVA)
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="227" height="31" src="712img8.gif" alt="\begin{displaymath}(x_1 = b_1, x_2 = b_2, \dots, x_n = b_n)
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+with 
+
+<img width="161" height="34" align="MIDDLE" border="0" src="712img9.gif" alt="$b_1, b_2, \dots, b_n \in \{0,1\}$">.
+For instance, (
+
+<i>x</i><sub>1</sub> = 1, <i>x</i><sub>2</sub> = 1 <i>x</i><sub>3</sub> = 0) would be a valid VVA for <i>n</i> = 3, resulting for the sample function above in the value 
+
+<img width="204" height="34" align="MIDDLE" border="0" src="712img10.gif" alt="$f(1, 1, 0) = 1 \wedge (1 \vee 0) = 1$">.
+The corresponding paths are shown bold in the picture.
+
+<p>
+Your task is to write a program which takes an S-tree and some VVAs and computes
+
+
+<img width="129" height="34" align="MIDDLE" border="0" src="712img5.gif" alt="$f(x_1, x_2, \dots, x_n)$">
+as described above.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains the description of several S-trees with associated VVAs which you have to process. Each description begins with a line containing a single integer <i>n</i>, 
+
+<img width="79" height="30" align="MIDDLE" border="0" src="712img11.gif" alt="$1 \le n \le 7$">,
+the depth of the S-tree. This is followed by a line describing the variable ordering of the S-tree. The format of that line is <tt>x</tt><i>i</i><sub>1</sub> <tt>x</tt><i>i</i><sub>2</sub> ...<tt>x</tt><i>i</i><sub><i>n</i></sub>. (There will be exactly <i>n</i> different space-separated strings).
+So, for <i>n</i> = 3 and the variable ordering 
+
+<i>x</i><sub>3</sub>, <i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, this line would look as follows:
+
+<p>
+<tt>x3 x1 x2</tt>
+
+<p>
+In the next line the distribution of 0's and 1's over the terminal nodes is given. There will be exactly 2<sup><i>n</i></sup> characters (each of which can be 0 or 1), followed by the new-line character.
+The characters are given in the order in which they appear in the S-tree, the first character corresponds to the leftmost terminal node of the S-tree, the last one to its rightmost terminal node.
+
+<p>
+The next line contains a single integer <i>m</i>, the number of VVAs, followed by <i>m</i> lines describing them. Each of the <i>m</i> lines contains exactly <i>n</i> characters (each of which can be 0 or 1), followed by a new-line character. Regardless of the variable ordering of the S-tree, the first character always describes the value of <i>x</i><sub>1</sub>, the second character describes the value of <i>x</i><sub>2</sub>, and so on. So, the line
+
+<p>
+<tt>110</tt>
+
+<p>
+corresponds to the VVA (
+
+<i>x</i><sub>1</sub> = 1, <i>x</i><sub>2</sub> = 1, <i>x</i><sub>3</sub> = 0).
+
+<p>
+The input is terminated by a test case starting with <i>n</i> = 0. This test case should not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each S-tree, output the line ``<tt>S-Tree #</tt><i>j</i><tt>:</tt>", where <i>j</i> is the number of the S-tree. Then print a line that contains the value of 
+
+<img width="129" height="34" align="MIDDLE" border="0" src="712img5.gif" alt="$f(x_1, x_2, \dots, x_n)$">
+for each of the given <i>m</i> VVAs, where <i>f</i> is the
+function defined by the S-tree.
+
+<p>
+Output a blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+x1 x2 x3
+00000111
+4
+000
+010
+111
+110
+3
+x3 x1 x2
+00010011
+4
+000
+010
+111
+110
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+S-Tree #1:
+0011
+
+S-Tree #2:
+0011
+</pre>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

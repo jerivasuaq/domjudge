@@ -1,0 +1,81 @@
+
+
+<html>
+<head>
+<title>Uniform Generator</title>
+<meta name="description" content="Uniform Generator">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Uniform Generator</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Computer simulations often require random numbers. One way to generate
+pseudo-random numbers is via a function of the form
+<p>
+<p> <img width="404" height="18" align="BOTTOM" alt="displaymath29" src="408img1.gif"> <p>
+<p>
+where `` <img width="13" height="27" align="MIDDLE" alt="tex2html_wrap_inline31" src="408img2.gif"> &quot; is the modulus operator.
+<p>
+Such a function will generate pseudo-random numbers (<i>seed</i>) between 0 and
+<i>MOD</i>-1. One problem with functions of this form is that they will always
+generate the same pattern over and over. In order to minimize this
+effect, selecting the <i>STEP</i> and <i>MOD</i> values carefully can result in a
+uniform distribution of all values between (and including) 0 and <i>MOD</i>-1.
+<p>
+<p>
+For example, if <i>STEP</i> = 3 and <i>MOD</i> = 5, the function will generate the
+series of pseudo-random numbers 0, 3, 1, 4, 2 in a repeating cycle. In this
+example, all of the numbers between and including 0 and <i>MOD</i>-1 will be
+generated every <i>MOD</i> iterations of the function. Note that by the nature
+of the function to generate the same <i>seed</i>(<i>x</i>+1) every time <i>seed</i>(<i>x</i>)
+occurs means that if a function will generate all the numbers between 0 and
+<i>MOD</i>-1, it will generate pseudo-random numbers uniformly with
+every <i>MOD</i> iterations.
+<p>
+If <i>STEP</i> = 15 and <i>MOD</i> = 20, the function generates the series
+0, 15, 10, 5 (or any other repeating series if the initial seed is other than 0).
+This is a poor selection of <i>STEP</i> and <i>MOD</i> because no initial seed
+will generate all of the numbers from 0 and <i>MOD</i>-1.
+<p>
+<p>
+Your program will determine if choices of <i>STEP</i> and <i>MOD</i> will
+generate a uniform distribution of pseudo-random numbers.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Each line of input will contain a pair of integers for <i>STEP</i>
+and <i>MOD</i> in that order ( <img width="211" height="25" align="MIDDLE" alt="tex2html_wrap_inline77" src="408img3.gif"> ).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each line of input, your program should print the <i>STEP</i> value right-
+justified in columns 1 through 10, the <i>MOD</i> value right-justified in
+columns 11 through 20 and either ``<tt>Good Choice</tt>&quot; or ``<tt>Bad Choice</tt>&quot;
+left-justified starting in column 25. The ``<tt>Good Choice</tt>&quot; message should
+be printed when the selection of <i>STEP</i> and <i>MOD</i> will generate all
+the numbers between and including 0 and <i>MOD</i>-1 when MOD numbers are
+generated. Otherwise, your program should print the message ``<tt>Bad Choice</tt>&quot;.
+After each output test set, your program should print exactly one blank line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3 5
+15 20
+63923 99999</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+         3         5    Good Choice
+
+        15        20    Bad Choice
+
+     63923     99999    Good Choice
+
+</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<p>
+In combinational logic design, a Boolean function is classically expressed as sum of minterms. For example, 
+<span class="MATH"><i>F</i>(<i>x</i>, <i>y</i>, <i>z</i>) = <img width="23" height="31" align="MIDDLE" border="0" src="2349img1.png" alt="$ \overline{{xy}}$"><i>z</i> + <img width="14" height="15" align="BOTTOM" border="0" src="2349img2.png" alt="$ \overline{{x}}$"><i>yz</i> + <i>xy</i><img width="13" height="15" align="BOTTOM" border="0" src="2349img3.png" alt="$ \overline{{z}}$"> + <i>xyz</i></span> is a Boolean function, where 
+<span class="MATH"><img width="23" height="31" align="MIDDLE" border="0" src="2349img1.png" alt="$ \overline{{xy}}$"><i>z</i>,<img width="14" height="15" align="BOTTOM" border="0" src="2349img2.png" alt="$ \overline{{x}}$"><i>yz</i>, <i>xy</i><img width="13" height="15" align="BOTTOM" border="0" src="2349img3.png" alt="$ \overline{{z}}$"></span> , and <span class="MATH"><i>xyz</i></span> are the <em>minterms (MTs)</em> of the function. Usually, minterms are represented using their binary or decimal representation. For example, minterm 
+<span class="MATH"><img width="23" height="31" align="MIDDLE" border="0" src="2349img1.png" alt="$ \overline{{xy}}$"><i>z</i></span> can be represented as 001(binary) or simply as 1(decimal) and minterm 
+<span class="MATH"><img width="14" height="15" align="BOTTOM" border="0" src="2349img2.png" alt="$ \overline{{x}}$"><i>yz</i></span> can be represented as 011(binary) or 3(decimal). Using this numeric representation of minterms, the above function can be expressed as 
+<span class="MATH"><i>F</i>(<i>x</i>, <i>y</i>, <i>z</i>) = <i>S</i>(1, 3, 6, 7)</span> or 
+<span class="MATH"><i>F</i>(<i>x</i>, <i>y</i>, <i>z</i>) = <i>S</i>(001, 011, 110, 111)</span>. Very often, the binary representation of minterms are used for computer based processing of Boolean function.
+
+<p>
+Using the Boolean algebra theorem 
+<span class="MATH"><i>Ax</i> + <i>A</i><img width="14" height="15" align="BOTTOM" border="0" src="2349img2.png" alt="$ \overline{{x}}$"> = <i>A</i></span>, we can combine two product terms to generate a reduced product term. For example, 
+<span class="MATH"><img width="23" height="31" align="MIDDLE" border="0" src="2349img1.png" alt="$ \overline{{xy}}$"><i>z</i> + <img width="14" height="15" align="BOTTOM" border="0" src="2349img2.png" alt="$ \overline{{x}}$"><i>yz</i> = <img width="14" height="15" align="BOTTOM" border="0" src="2349img2.png" alt="$ \overline{{x}}$"><i>z</i></span> and 
+<span class="MATH"><i>xy</i><img width="13" height="15" align="BOTTOM" border="0" src="2349img3.png" alt="$ \overline{{z}}$"> + <i>xyz</i> = <i>xy</i></span>. The reduced product terms of a function are called <em>prime implicants (PIs)</em> of the function. Therefore, a Boolean function can be expressed as sum of prime implicants. For example, the above function can be expressed as 
+<span class="MATH"><i>F</i>(<i>x</i>, <i>y</i>, <i>z</i>) = <img width="14" height="15" align="BOTTOM" border="0" src="2349img2.png" alt="$ \overline{{x}}$"><i>z</i> + <i>xy</i></span>. Very often, the prime implicants are represented using binary notation, where a missing variable is represented by `<span class="MATH">-</span>' . For example, the prime implicant 
+<span class="MATH"><img width="14" height="15" align="BOTTOM" border="0" src="2349img2.png" alt="$ \overline{{x}}$"><i>z</i></span> is represented as 0<span class="MATH">-</span>1 and <span class="MATH"><i>xy</i></span> is represented as 11<span class="MATH">-</span>. Then the above function can be expressed as 
+<span class="MATH"><i>F</i>(<i>x</i>, <i>y</i>, <i>z</i>) = <i>S</i>(0</span><span class="MATH">-</span><span class="MATH">1, 11 -)</span>.
+
+<p>
+Most of the prime implicant generation algorithms generate more prime implicants than the minimum requirement. For example, for the above function, minterms 001 and 011 generate the prime implicant 0<span class="MATH">-</span>1, minterms 110 and 111 generate the prime implicant 11<span class="MATH">-</span> , and minterms 011 and 111 generate the prime implicant <span class="MATH">-</span>11. But the prime implicant <span class="MATH">-</span>11 is not required for expressing the function. Therefore, given a set of minterms and a set of prime implicants for a function, it is required to find a minimal subset of the prime implicants that covers all the minterms of the function. The problem is indeed an optimization problem. An algorithm exists for this problem called <em>cover most algorithm</em>, which is discussed below.
+
+<p>
+<em>Cost</em> of a prime implicant is the number of 0's and 1's in the prime implicant. For example, the cost of the prime implicant 0<span class="MATH">-</span>1 is 2. A prime implicant <em>covers</em> a minterm if and only if the prime implicant can be expanded to produce the minterm. For example, the prime implicant 0<span class="MATH">-</span>1 covers the minterms 001 and 011.
+
+<p>
+In cover most algorithm, the <em>first choice</em> is a prime implicant that covers maximum number of minterms. If more than one prime implicant cover the same number of minterms, the choice is the prime implicant with the minimum cost. Tie is broken by selecting the first prime implicant in order. The algorithm is illustrated below for the above function using the following table. A `x' in the table indicates covering.
+
+<p>
+<div align="CENTER">
+</div>
+<p>
+<br>
+<div align="CENTER"><table cols="7" border="" frame="BOX" rules="GROUPS">
+<colgroup><col align="LEFT"><colgroup><col align="LEFT"><colgroup><col align="LEFT"><colgroup><col align="LEFT"><colgroup><col align="LEFT"><colgroup><col align="LEFT"><colgroup><col align="LEFT">
+<tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap="">
+MT </td><td valign="BASELINE" align="LEFT" nowrap=""> 001 </td><td valign="BASELINE" align="LEFT" nowrap=""> 011 </td><td valign="BASELINE" align="LEFT" nowrap=""> 110 </td><td valign="BASELINE" align="LEFT" nowrap=""> 111 </td><td valign="BASELINE" align="LEFT" nowrap=""> Cost </td><td valign="BASELINE" align="LEFT" nowrap=""> No of </td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td valign="BASELINE" align="LEFT" nowrap="">  minterms </td></tr>
+<tr><td valign="BASELINE" align="LEFT" nowrap="">  
+PI </td><td></td><td></td><td></td><td></td><td></td><td valign="BASELINE" align="LEFT" nowrap="">   covered </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap="">0<span class="MATH">-</span>1 </td><td valign="BASELINE" align="LEFT" nowrap=""> X </td><td valign="BASELINE" align="LEFT" nowrap=""> x </td><td></td><td></td><td valign="BASELINE" align="LEFT" nowrap=""> 2 </td><td valign="BASELINE" align="LEFT" nowrap=""> 2 </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap="">11<span class="MATH">-</span> </td><td></td><td></td><td valign="BASELINE" align="LEFT" nowrap=""> X </td><td valign="BASELINE" align="LEFT" nowrap=""> x </td><td valign="BASELINE" align="LEFT" nowrap=""> 2 </td><td valign="BASELINE" align="LEFT" nowrap=""> 2 </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><span class="MATH">-</span>11 </td><td></td><td valign="BASELINE" align="LEFT" nowrap=""> x </td><td></td><td valign="BASELINE" align="LEFT" nowrap=""> x </td><td valign="BASELINE" align="LEFT" nowrap=""> 2 </td><td valign="BASELINE" align="LEFT" nowrap=""> 2 </td></tr>
+</tbody>
+</colgroup></colgroup></colgroup></colgroup></colgroup></colgroup></colgroup></table>
+
+</div>
+
+<p>
+
+<p>
+<br>
+The first choice is the prime implicant 0<span class="MATH">-</span>1. Then the problem reduces to the following table.
+
+<p>
+<div align="CENTER">
+</div>
+<p>
+<br>
+<div align="CENTER"><table cols="5" border="" frame="BOX" rules="GROUPS">
+<colgroup><col align="LEFT"><colgroup><col align="LEFT"><colgroup><col align="LEFT"><colgroup><col align="LEFT"><colgroup><col align="LEFT">
+<tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap="">
+MT </td><td valign="BASELINE" align="LEFT" nowrap=""> 110 </td><td valign="BASELINE" align="LEFT" nowrap=""> 111 </td><td valign="BASELINE" align="LEFT" nowrap=""> Cost </td><td valign="BASELINE" align="LEFT" nowrap=""> No of </td></tr>
+<tr><td></td><td></td><td></td><td></td><td valign="BASELINE" align="LEFT" nowrap="">       minterms </td></tr>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""> 
+PI </td><td></td><td></td><td></td><td valign="BASELINE" align="LEFT" nowrap="">      covered </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap="">11<span class="MATH">-</span> </td><td valign="BASELINE" align="LEFT" nowrap=""> x </td><td valign="BASELINE" align="LEFT" nowrap=""> X </td><td valign="BASELINE" align="LEFT" nowrap=""> 2 </td><td valign="BASELINE" align="LEFT" nowrap=""> 2 </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><span class="MATH">-</span>11 </td><td></td><td valign="BASELINE" align="LEFT" nowrap=""> X </td><td valign="BASELINE" align="LEFT" nowrap=""> 2 </td><td valign="BASELINE" align="LEFT" nowrap=""> 1 </td></tr>
+</tbody>
+</colgroup></colgroup></colgroup></colgroup></colgroup></table>
+
+</div>
+
+<p>
+
+<p>
+<br>
+The next choice is the prime implicant 11<span class="MATH">-</span>. Then the problem reduces to null and the minimum cover of the given prime implicants is 0<span class="MATH">-</span>1 and 11<span class="MATH">-</span>.
+
+<p>
+You need to write a program to find the minimal cover of prime implicants for a given set of prime implicants and a set of minterms for a function. You also need to identify whether the given set of prime implicants covers all the minterms of the function or not. If the given set of prime implicants does not cover all the minterms, the minimal cover produced by this algorithm will not cover the given function.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input may contain multiple test cases. Each test case starts with three integers in a line for <em>number of variables</em>, <em>number of minterms</em>, and <em>number of prime implicants</em> as shown in the sample input. In the next line(s) minterms are listed separated by space or new line as shown in the sample input. In the following line(s) prime implicants are listed separated by space or new line. The range of number of variables is 2 to 20. Number of minterms and number of prime implicants will not exceed 200. The input terminates with three zeros for number of variables, number of minterms, and number of prime implicants.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case in the input, print the test case number followed by either `<tt>No of required PIs = <span class="MATH">&lt; <i>value</i> &gt;</span></tt>' or `<tt>PIs don't cover all MTs</tt>' depending on the input case as shown in the sample output. Print a blank line between two successive test cases.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>  
+4 7 5 
+0001 0010 0101 0110 1001 1101 1110 
+--01 -11- 0-1- 0--1 -1-1 
+4 8 5 
+0000 0010 0100 1000 
+1010 1011 1100 1101 
+---0 -10- 101- 01-- 0-0- 
+4 9 5 
+0000 0010 0011 0100 1000 1010 1011 1100 1101 
+---0 -10- 101- 01-- 0-0- 
+5 15 6 
+00110 00100 01110 01100 11000 11010 11110 11100 10110 10100 
+01111 01101 11111 11101 10001 
+-11-- --1-0 001-- 11--0 10001 01-11 
+0 0 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>  
+Test #1: No of required PIs = 3 
+Test #2: No of required PIs = 3 
+Test #3: PIs don't cover all MTs 
+Test #4: No of required PIs = 4
+</pre>
+
+<p>

@@ -1,0 +1,112 @@
+
+
+<html>
+<head>
+<title>Simulation Wizardry</title>
+<meta name="description" content="Simulation Wizardry">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Simulation Wizardry</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+Simulation is an important application area in computer science
+involving the development of computer models to provide insight into
+real-world events.  There are many kinds of simulation including (and
+certainly not limited to) discrete event simulation and clock-driven
+simulation.  Simulation often involves approximating observed behavior
+in order to develop a practical approach.
+<p>
+This problem involves the simulation of a simplistic <em>pinball</em>
+machine. In a pinball machine, a steel ball rolls around a surface,
+hitting various objects (<em>bumpers</em>) and accruing points until the
+ball ``disappears'' from the surface.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+You are to write a program that simulates an idealized pinball machine.
+This machine has a flat surface that has some obstacles (bumpers and
+walls). The surface is modeled as an  <img width="46" height="18" align="MIDDLE" alt="tex2html_wrap_inline32" src="114img1.gif">  grid with the origin
+in the lower-left corner. Each bumper occupies a grid point.  The grid
+positions on the edge of the surface are walls.  Balls are shot (appear)
+one at a time on the grid, with an initial position, direction, and
+lifetime.  In this simulation, all positions are integral, and the
+ball's direction is one of: up, down, left, or right. The ball bounces
+around the grid, hitting bumpers (which accumulates points) and walls
+(which does not add any points).  The number of points accumulated by
+hitting a given bumper is the <em>value</em> of that bumper.  The speed
+of all balls is one grid space per timestep.  A ball ``hits'' an
+obstacle during a timestep when it would otherwise move on top of the
+bumper or wall grid point. A hit causes the ball to ``rebound'' by
+turning right (clockwise) 90 degrees, without ever moving on top of the
+obstacle and without changing position (only the direction changes as a
+result of a rebound).  Note that by this definition sliding along a wall
+does not constitute ``hitting'' that wall.
+<p>
+A ball's lifetime indicates how many time units the ball will live
+before disappearing from the surface. The ball uses one unit of lifetime
+for each grid step it moves. It also uses some units of lifetime for
+each bumper or wall that it hits. The lifetime used by a hit is the <em>
+cost</em> of that bumper or wall.  As long as the ball has a positive
+lifetime when it hits a bumper, it obtains the full score for that
+bumper. Note that a ball with lifetime one will ``die'' during its next
+move and thus cannot obtain points for hitting a bumper during this last
+move.  Once the lifetime is non-positive (less than or equal to zero),
+the ball disappears and the game continues with the next ball.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+Your program should simulate one game of pinball.  There are several
+input lines that describe the game. The first line gives integers <i>m</i>
+and <i>n</i>, separated by a space. This describes a cartesian grid where  <img width="79" height="25" align="MIDDLE" alt="tex2html_wrap_inline38" src="114img2.gif">  and  <img width="73" height="25" align="MIDDLE" alt="tex2html_wrap_inline40" src="114img3.gif">  on which the game is ``played''.
+It will be the case that 2 &lt; <i>m</i> &lt; 51 and 2 &lt; <i>n</i> &lt; 51.  The next line
+gives the integer cost for hitting a wall. The next line gives the
+number of bumpers, an integer  <img width="41" height="25" align="MIDDLE" alt="tex2html_wrap_inline46" src="114img4.gif"> . The next <i>p</i> lines give the <i>x</i> 
+position, <i>y</i> position, value, and cost, of each bumper, as four
+integers per line separated by space(s).  The <i>x</i> and <i>y</i> positions of all 
+bumpers will be in the range of the grid.  The value and cost may be
+any integer (i.e., they may be negative; a negative cost <em>adds</em>
+lifetime to a ball that hits the bumper).  The remaining lines of the
+file represent the balls. Each line represents one ball, and contains
+four integers separated by space(s): the initial <i>x</i> and <i>y</i> position
+of the ball, the direction of movement, and its lifetime. The position
+will be in range (and not on top of any bumper or wall).  The direction
+will be one of four values: 0 for increasing <i>x</i> (right), 1 for
+increasing <i>y</i> (up), 2 for decreasing <i>x</i> (left), and 3 for decreasing
+<i>y</i> (down).  The lifetime will be some positive integer.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+There should be one line of output for each ball giving an integer
+number of points accumulated by that ball in the same order as the balls
+appear in the input. After all of these lines, the total points for all
+balls should be printed.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>4 4
+0
+2
+2 2 1 0
+3 3 1 0
+2 3 1 1
+2 3 1 2
+2 3 1 3
+2 3 1 4
+2 3 1 5</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>0
+0
+1
+2
+2
+5</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,111 @@
+
+
+<html>
+<head>
+<title>Logic</title>
+<meta name="description" content="Logic">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Logic</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Consider a  <img width="54" height="24" align="MIDDLE" alt="tex2html_wrap_inline47" src="284img1.gif">  grid. Cells in this grid can contain one of
+five logic operations (AND, OR, NOT,
+Input, Output). These can be joined together to form a logic circuit.
+Given a description of a circuit
+and a set of boolean values, build the logic circuit and execute the input
+stream against it.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line of the input contains a single integer <i>n</i>, which specifies the number of circuits to be
+processed. There will then be <i>n</i> groups of circuit descriptions and test values.
+<p>
+<p>
+A circuit is made up of a number of operations. Each line describing an operation begins with three
+characters: the co-ordinates for a cell, 0-9 on the <i>X</i>-axis then 0-9 on the <i>Y</i>-axis, followed by a single
+character to represent the operation of that cell (`<tt>&amp;</tt>' for AND, `<tt>|</tt>' for OR,
+`<tt>!</tt>' for NOT, `<tt>i</tt>' for Input and `<tt>o</tt>'
+for Output). Optionally following each triple is a set of co-ordinate
+pairs which represent the <i>x</i> and <i>y</i>
+co-ordinates of cells that take the output of this cells operation as an input for theirs. This (possibly
+empty) output list is terminated by `<tt>..</tt>'. The list of operations is terminated by a line containing the
+word `<tt>end</tt>'.
+<p>
+<p>
+Next, for each circuit, comes the set of test values. The first line contains
+an integer <i>t</i> which gives the number of test cases your program must run. Next, there are <i>t</i> lines, each line containing a
+sequence of `<tt>0</tt>' and `<tt>1</tt>' characters symbolising the input values for one test case. The number of inputs will always correspond to the number of inputs defined by the circuit description. The input
+values are to be applied to the inputs in the order in which the input
+operations were defined in the circuit description.
+<p>
+<p>
+The next circuit description, if any, will then follow.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each circuit, your program should output one line for each test case given in the input. The line
+should contain one `<tt>0</tt>' or `<tt>1</tt>' character for each output defined by the circuit description in the order in
+which the outputs were defined.
+<p>
+<p>
+Your program should output a blank line after each set of test cases.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+00i 11 13 ..
+02i 11 13 ..
+11&amp; 21 ..
+21o ..
+13| 23 ..
+23o ..
+end
+4
+00
+01
+10
+11</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>00
+01
+01
+11</pre>
+<p>
+<p>
+<p>
+<b>Notes:</b>
+<ul><li> i, o and ! operations will always have exactly one input.<li> &amp; and <tt>|</tt> operations will always have exactly two inputs.<li> Even if an operation can feed others, it does not have to.<li> No recursive circuits.
+</li></li></li></li></ul>
+<p>
+<p>
+<p>
+<b>Hint:</b>
+Sample input specifies a circuit consiting of an `AND' and an `OR' operation
+in parallel both fed from the same two inputs:
+<p>
+<pre>               +---------\
+3              |          |OR #----------OUT(2)
+               |     +---/
+               |     |
+2     IN(2)----------+
+               |     |
+               +---------\
+1                    |    |AND#----------OUT(1)
+                     +---/
+                     |
+0      IN(1)---------+
+
+         0                 1              2</pre>
+<p>
+In grid terms this is two inputs at 0,0 and 1,0. The first input feeds the <tt>AND</tt> operation at 1,1 and the
+<tt>OR</tt> operation at 1,3. The second input operation feeds the second input for the same <tt>AND</tt> and <tt>OR</tt>
+operations. The <tt>AND</tt> operation then feeds an output operation at 2,1. The <tt>OR</tt> operation also feeds an output operation, this one at 2,4.
+<p>
+</body>
+</html>

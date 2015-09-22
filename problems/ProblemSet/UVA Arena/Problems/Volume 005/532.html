@@ -1,0 +1,135 @@
+
+
+<html>
+<head>
+<title>Dungeon Master</title>
+<meta name="description" content="Dungeon Master">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Dungeon Master</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+You are trapped in a 3D dungeon and need to find the quickest way out!
+The dungeon is composed
+of unit cubes which may or may not be filled with rock. It takes one minute
+to move one unit north,
+south, east, west, up or down. You cannot move diagonally and the maze is
+surrounded by solid rock on all sides.
+
+<p>
+
+<p>
+<br>
+Is an escape possible? If yes, how long will it take?
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input Specification</a>&nbsp;</font>
+</h2>
+The input file consists of a number of dungeons. Each dungeon description
+starts with a line
+containing three integers <i>L</i>, <i>R</i> and <i>C</i> (all limited to 30 in size).
+
+<p>
+
+<p>
+<br>
+
+<i>L</i> is the number of levels making up the dungeon.
+
+<p>
+<i>R</i> and <i>C</i> are the number of rows and columns making up the plan of each level.
+
+<p>
+
+<p>
+<br>
+Then there will follow <i>L</i> blocks of <i>R</i> lines each containing <i>C</i> characters. Each character describes
+one cell of the dungeon. A cell full of rock is indicated by a `<tt>#</tt>' and empty cells are represented by a
+`<tt>.</tt>'. Your starting position is indicated by `<tt>S</tt>' and the exit by the letter '<tt>E</tt>'. There's a single blank
+line after each level. Input is terminated by three zeroes for <i>L</i>, <i>R</i> and <i>C</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output Specification</a>&nbsp;</font>
+</h2>
+Each maze generates one line of output. If it is possible to reach the exit, print a line of the form
+
+<p>
+
+<p>
+<br>
+
+<tt>Escaped in </tt><i>x</i><tt> minute(s).</tt>
+
+<p>
+
+<p>
+<br>
+where <i>x</i> is replaced by the shortest time it takes to escape.
+
+<p>
+If it is not possible to escape, print the line
+
+<p>
+
+<p>
+<br>
+
+<tt>Trapped!</tt>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+3 4 5
+S....
+.###.
+.##..
+###.#
+
+#####
+#####
+##.##
+##...
+
+#####
+#####
+#.###
+####E
+
+1 3 3
+S##
+#E#
+###
+
+0 0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Escaped in 11 minute(s).
+Trapped!
+</pre>
+
+<p>
+
+<p>
+</body>
+</html>

@@ -1,0 +1,165 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Problem</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1><font color="#0000FF">Problem I</font></h1>
+
+<h1 align="center"><font color="#0000FF">Entropy Text Analyzer </font></h1>
+
+<p> </p>
+
+<p>Claude Shannon, mathematician and computer scientist, born on
+April 30 1916, and died on February 24 2001, was the one who
+create the mathematical foundations which laid down the general
+rules of modern information theory. In his fundamental paper of
+1948, <em>A Mathematical Theory of Communication</em>, a measure
+of the uncertainty associated with a random memoryless source,
+called <em>entropy</em>, is proposed. Here we are interested in
+the use of the entropy concept to analyze texts at the level of
+its words variety. </p>
+
+<p>We define the entropy of a text <i>T</i>, with
+<img border="0" src="p860a.png">
+words and <i>n</i> different ones, by the formula <br clear="all">
+</p>
+
+<p><img border="0" src="p860b.png">
+</p>
+
+<p> 
+</p>
+
+<p>where <i>p<sub>i</sub></i>, <i>i</i> = 1,...,n, is
+the frequency of each <i>i</i>-word in the text <i>T</i>, that is,
+<i>p<sub>i</sub></i>
+is the number of times that the <i>i</i>-word happens to occur in the
+given text. If we consider that a text of length <img border="0" src="p860a.png"> (a text with <img border="0" src="p860a.png">
+words) is as much richer as much larger is the number <i>n</i> of
+different words and, among the texts with the same number <img border="0" src="p860a.png"> of words and the same number <i>n</i> of
+different words, is richer the one where the words have less
+variation in frequency, one can easily conclude that the entropy
+is indeed a very useful measure to compare the richness of two or
+more texts. To compare texts with different number of words <img border="0" src="p860a.png">, we introduce a kind of ``relative
+entropy'' <i>E<sub>rel</sub></i>, defined as the quotient between the
+entropy <i>E<sub>T</sub></i> of the text and the
+maximum entropy <i>E<sub>max</sub></i>,
+and multiplying by 100 if one wants a percentage: <br clear="all">
+</p>
+
+<table border="0" width="100%">
+    <tr>
+        <th><table border="0">
+            <tr>
+                <th align="center" nowrap="">E<sub>rel</sub> = </th>
+                <th align="center" nowrap=""> E<sub>T</sub> <hr size="1" noshade="">
+                <p>E<sub>max</sub><br>
+                </p>
+                </th>
+                <th align="center" nowrap="">×100  .</th>
+            </tr>
+        </table>
+        </th>
+    </tr>
+</table>
+
+<p>The maximum entropy <i>E<sub>max</sub></i> is just the entropy of a
+text with the same number <img border="0" src="p860a.png"> of words
+and in which each word occurs exactly once (<span class="roman">i.e.</span>,
+<i>n</i> : = <img border="0" src="p860a.png">,
+<i>p<sub>i</sub></i> : = 1):
+</p>
+
+<p> <br clear="all">
+<img border="0" src="p860c.png">
+</p>
+
+<p><font color="#0000FF"></font> </p>
+
+<h2><font color="#0000FF">Problem</font></h2>
+
+<p>Given a text T, write a program that computes the total number
+ <img border="0" src="p860a.png"> of words in <i>T</i>,
+the entropy <i>E<sub>T</sub></i> of the text, and its relative entropy
+<i>E<sub>rel</sub></i>. In order
+to determine the required numbers, your program must be case
+insensitive (for example, words like ``House'', ``house'' or
+``HOUSE'' must be considered to be the same). Also, in the
+context of this program, a word is a consecutive sequence of
+characters different of the punctuation marks <tt>, . : ; ! ? &quot; ( ) </tt>as well as spaces, tabs and newlines (<tt>'\n'</tt>). Words with only one
+letter are to be considered.</p>
+
+<h2><font color="#0000FF">Input</font></h2>
+
+<p>The input contains several texts <i>T</i>, each one
+necessarily with more than one
+word (<img border="0" src="p860a.png"> > 1). You can assume that
+the maximum length of the words is 20 characters long and that a single
+text does not have more than 100 000 words.</p>
+
+<p>A line containing only <tt>****END_OF_TEXT***</tt> marks the end of
+each text, and a line containing <tt>****END_OF_INPUT****</tt> marks the end of input. You can be certain that these reserved words wil not appear inside
+a text. Besides thats, everything can appear on a text, including blank
+lines.</p>
+
+
+
+<h2><font color="#0000FF">Output</font></h2>
+
+<p>In the output write one line for each test, each one containing
+three numbers: the first with the total
+number <img border="0" src="p860a.png"> of words in <i>T</i>; the second
+with the text entropy <i>E<sub>T</sub></i> rounded to one decimal digit;
+and the last one with the relative entropy <i>E<sub>rel</sub></i>, in
+percentage, and rounded to be an integer. </p>
+
+<p> </p>
+
+<h2><font color="#0000FF">Sample Input</font><a href="#tthFtNtAAB" name="tthFrefAAB"><font color="#0000FF"><sup>1</sup></font></a></h2>
+
+<pre>Midnight, not a sound from the pavement
+Has the moon lost her memory?
+She is smiling alone
+In the lamplight, the withered leaves collect at my feet
+And the wind begins to moan
+****END_OF_TEXT****
+Memory, all alone in the moonlight
+I can dream of the old days
+Life was beautiful then
+I remember the time I knew what happiness was
+Let the memory live again
+****END_OF_TEXT****
+****END_OF_INPUT****
+</pre>
+
+<h2><font color="#0000FF">Sample Output</font></h2>
+
+<pre>
+33 1.4 93
+31 1.3 89
+</pre>
+
+<p> </p>
+
+<h3>Footnotes:</h3>
+
+<p><a name="tthFtNtAAB"></a><a href="#tthFrefAAB"><sup>1</sup></a>Barbra
+Streisand, <i>Memory</i> (first two verses). <br>
+<br>
+</p>
+
+<p>
+<br><hr>
+<address>
+
+Delfim Marado Torres, MIUP'2002
+</address>
+
+</body>
+</html>

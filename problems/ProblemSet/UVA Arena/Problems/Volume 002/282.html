@@ -1,0 +1,106 @@
+
+
+<html>
+<head>
+<title>Rename</title>
+<meta name="description" content="Rename">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Rename</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In MS-DOS there exists a `<tt>rename</tt>' command that allows you to change the name of a file. There is an
+equivalent command in Unix called `<tt>mv</tt>'. Both commands take arguments in the same way:
+<p>
+<pre>rename oldname newname
+mv oldname newname</pre>
+<p>
+However, the two commands treat the wild-card character `<tt>*</tt>' quite differently. In MS-DOS, you can say:
+<p>
+<pre>rename old* new*</pre>
+<p>
+and you will find that any filenames you have that previously began with
+the three characters `<tt>old</tt>' have
+those characters replaces by `<tt>new</tt>'. Try the equivalent under Unix and
+you will probably get an error
+message <tt>:-(</tt> `<tt>mv</tt>' will only take the simple two argument, no wild-card form.
+<p>
+<p>
+To rectify this discrepancy, your program must convert a `<tt>rename</tt>' command
+in to a series of `<tt>mv</tt>'s'.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Each dataset starts with a list of filenames. These appear one per line. The list is terminated by a line containing
+the word `<tt>end</tt>'. Following the list of filenames is the sequence of `<tt>rename</tt>' commands. Each
+command appears on one line in the form:
+<p>
+<p>
+<p>
+<tt>rename</tt> <em>wildfrom</em> <em>wildto</em>
+<p>
+<p>
+<p>
+<i>from</i> and <i>to</i> will both contain one wild-card character, `<tt>*</tt>'.
+After the last `<tt>rename</tt>' command will be a line containing only the word `<tt>end</tt>'. There won't be two files with the same name.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each rename command in the input, you program should first echo the rename command itself, in
+the same form as the input:
+<p>
+<p>
+<p>
+<tt>rename</tt> <em>wildfrom</em> <em>wildto</em>
+<p>
+<p>
+Following that, your program should output the set of `<tt>mv</tt>' commands needed to perform the
+equivalent renaming. Each `<tt>mv</tt>' should appear on its own line in the form:
+<p>
+<p>
+<p>
+<tt>mv</tt> <em>from</em> <em>to</em>
+<p>
+<p>
+The order of the mv-commands in the output should be the order of the filenames in the input. Print a blank line after each dataset.
+<p>
+<b>Notes:</b>
+The real MS-DOS `<tt>*</tt>' has some odd properties which do not concern us here. For example, an MS-DOS `<tt>*</tt>' will match at most eight characters, none of which is a period `<tt>.</tt>'. No such restrictions apply
+to our idealised `<tt>*</tt>' which will match any number of any printable character. MS-DOS treats upper and
+lower case letters the same. Unix treats the two cases as distinct, as should your program. MS-DOS limits filenames to 12 characters, including a `<tt>.</tt>' fixed at the 9th position. Some versions of Unix
+limit filenames to 14 characters. This is the limit your program should assume. Each `<tt>rename</tt>' command should be performed on the original list of filenames, not on the results of the previous command.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>abFile001.c
+abFile001.cxx
+abprog001.c
+abfile.c
+abFile.c
+abFileprog.c
+end
+rename abFile*.c bprog*.cxx
+end
+acm.c
+end
+rename ac*.c ib*.cpp
+end
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>rename abFile*.c bprog*.cxx
+mv abFile001.c bprog001.cxx
+mv abFile.c bprog.cxx
+mv abFileprog.c bprogprog.cxx
+
+rename ac*.c ib*.cpp
+mv acm.c ibm.cpp
+
+<pre>
+<p>
+</pre></pre></body>
+</html>

@@ -1,0 +1,146 @@
+
+
+<html>
+<head>
+<title>Robbery</title>
+<meta name="description" content="Robbery">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Robbery</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Inspector Robstop is very angry. Last night, a bank has been robbed and the robber has not been caught. And this happened already for the third time this year, even though he did everything in his power to stop the robber: as quickly as possible, all roads leading out of the city were blocked, making it impossible for the robber to escape. Then, the inspector
+asked all the people in the city to watch out for the robber, but the only messages he got were of the form ``We don't see him."
+
+<p>
+But this time, he has had enough! Inspector Robstop decides to analyze how the robber could have escaped. To do that, he asks you to write a program which takes all the information the inspector could get about the robber in order to find out where the robber has been at which time.
+
+<p>
+Coincidentally, the city in which the bank was robbed has a rectangular shape. The roads leaving the city are blocked for a certain period of time <i>t</i>, and during that time, several observations of the form ``The robber isn't in the 
+rectangle <i>R</i><sub><i>i</i></sub> at time <i>t</i><sub><i>i</i></sub>'' are reported. Assuming that the robber
+can move at most one unit per time step, your 
+program must try to find the exact position of the robber at each
+time step.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file contains the description of several robberies.
+The first line of each description consists of three numbers <i>W</i>, <i>H</i>, <i>t</i> 
+(
+
+<img width="139" height="32" align="MIDDLE" border="0" src="707img1.gif" alt="$1 \le W, H, t \le 100$">)
+where <i>W</i> is the width, <i>H</i> the height of the city and
+<i>t</i> is the time during which the city is locked.
+
+<p>
+The next contains a single  integer <i>n</i> (
+
+<img width="96" height="30" align="MIDDLE" border="0" src="707img2.gif" alt="$0 \le n \le 100$">),
+the number of messages the inspector received. The next <i>n</i> lines (one for
+each of the messages) consist of five integers 
+
+<i>t</i><sub><i>i</i></sub>, <i>L</i><sub><i>i</i></sub>, <i>T</i><sub><i>i</i></sub>,
+<i>R</i><sub><i>i</i></sub>, <i>B</i><sub><i>i</i></sub> each. The integer <i>t</i><sub><i>i</i></sub> is the time at which the observation
+has been made (
+
+<img width="78" height="30" align="MIDDLE" border="0" src="707img3.gif" alt="$1 \le t_i \le t$">), and 
+
+<i>L</i><sub><i>i</i></sub>, <i>T</i><sub><i>i</i></sub>, <i>R</i><sub><i>i</i></sub>, <i>B</i><sub><i>i</i></sub> are the left, top,
+right and bottom respectively of the (rectangular) area which has been
+observed. (
+
+<img width="271" height="32" align="MIDDLE" border="0" src="707img4.gif" alt="$1 \le L_i \le R_i \le W, 1 \le T_i \le B_i \le H$">;
+the point (1, 1) is the upper left hand corner, and (<i>W</i>,<i>H</i>) is the lower right hand corner  of the city.)
+The messages mean that the robber was not in the given rectangle at time <i>t</i><sub><i>i</i></sub>.
+
+<p>
+The input is terminated by a test case starting with 
+
+<i>W</i> = <i>H</i> = <i>t</i> = 0. This case should not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each robbery, first output the line
+``<tt>Robbery #</tt><i>k</i><tt>:</tt>'', where <i>k</i> is the number of the robbery.
+Then, there are three possibilities:
+
+<p>
+If it is impossible that the robber is still in the city considering the messages, output the line ``<tt>The robber has escaped.</tt>''
+
+<p>
+In all other cases, assume that the robber really is in the city. Output one line of the form ``<tt>Time step </tt><img width="14" height="16" align="BOTTOM" border="0" src="707img5.gif" alt="$\tau$"><tt>: The robber has been at </tt><i>x</i><tt>,</tt><i>y</i><tt>.</tt>" for each time step, in which the exact location can be deduced. (<i>x</i> and <i>y</i> are the column resp. row of the robber in time step  <img width="14" height="16" align="BOTTOM" border="0" src="707img5.gif" alt="$\tau$">.)
+Output these lines ordered by time  <img width="14" height="16" align="BOTTOM" border="0" src="707img5.gif" alt="$\tau$">.
+
+<p>
+If nothing can be deduced, output the line ``<tt>Nothing known.</tt>" and hope that the inspector will not get even more angry.
+
+<p>
+Output a blank line after each processed case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4 4 5
+4
+1 1 1 4 3
+1 1 1 3 4
+4 1 1 3 4
+4 4 2 4 4
+10 10 3
+1
+2 1 1 10 10
+0 0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Robbery #1:
+Time step 1: The robber has been at 4,4.
+Time step 2: The robber has been at 4,3.
+Time step 3: The robber has been at 4,2.
+Time step 4: The robber has been at 4,1.
+
+Robbery #2:
+The robber has escaped.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

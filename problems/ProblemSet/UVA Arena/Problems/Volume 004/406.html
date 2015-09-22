@@ -1,0 +1,63 @@
+
+
+<html>
+<head>
+<title>Prime Cuts</title>
+<meta name="description" content="Prime Cuts">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Prime Cuts</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A prime number is a counting number ( <img width="69" height="25" align="MIDDLE" alt="tex2html_wrap_inline26" src="406img1.gif"> ) that is evenly
+divisible only by 1 and itself. In this problem you are to write a
+program that will cut some number of prime numbers from the list of
+prime numbers between (and including) 1 and <i>N</i>. Your program will read
+in a number <i>N</i>; determine the list of prime numbers between 1 and <i>N</i>; and
+print the <i>C</i>*2 prime numbers from the center of the list if there are an
+even number of prime numbers or (<i>C</i>*2)-1 prime numbers from the center of
+the list if there are an odd number of prime numbers in the list.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Each input set will be on a line by itself and will consist of 2
+numbers. The first number ( <img width="105" height="26" align="MIDDLE" alt="tex2html_wrap_inline38" src="406img2.gif"> ) is the maximum number in the
+complete list of prime numbers between 1 and <i>N</i>. The second number
+( <img width="83" height="26" align="MIDDLE" alt="tex2html_wrap_inline42" src="406img3.gif"> ) defines the <i>C</i>*2 prime numbers to be printed from the center of
+the list if the length of the list is even; or the (<i>C</i>*2)-1 numbers to be
+printed from the center of the list if the length of the list is odd.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each input set, you should print the number <i>N</i> beginning in column 1
+followed by a space, then by the number <i>C</i>, then by a colon (<tt>:</tt>), and then
+by the center numbers from the list of prime numbers as defined above.
+If the size of the center list exceeds the limits of the list of prime
+numbers between 1 and <i>N</i>, the list of prime numbers between 1 and <i>N</i>
+(inclusive) should be printed. Each number from the center of the list
+should be preceded by exactly one blank. Each line of output should be
+followed by a blank line. Hence, your output should follow the exact
+format shown in the sample output.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>21 2
+18 2
+18 18
+100 7</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>21 2: 5 7 11
+
+18 2: 3 5 7 11
+
+18 18: 1 2 3 5 7 11 13 17
+
+100 7: 13 17 19 23 29 31 37 41 43 47 53 59 61 67</pre>
+<p>
+</body>
+</html>

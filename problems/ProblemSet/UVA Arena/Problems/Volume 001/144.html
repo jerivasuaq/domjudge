@@ -1,0 +1,79 @@
+
+
+<html>
+<head>
+<title>Student Grants</title>
+<meta name="description" content="Student Grants">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Student Grants</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The Government of Impecunia has decided to discourage tertiary
+students by making the payments of tertiary grants a long and
+time-consuming process. Each student is issued a student ID card which
+has a magnetically encoded strip on the back which records the payment
+of the student grant. This is initially set to zero. The grant has
+been set at $40 per year and is paid to the student on the working
+day nearest to his birthday. (Impecunian society is still somewhat
+medieval and only males continue with tertiary education.) Thus on any
+given working day up to 25 students will appear at the nearest office
+of the Department of Student Subsidies to collect their grant.
+<p>
+<p>
+The grant is paid by an Automatic Teller Machine which is driven by a
+reprogrammed  <img width="43" height="31" align="MIDDLE" alt="tex2html_wrap_inline26" src="144img1.gif"> 
+chip originally designed to run the state slot machine. The ATM was
+built in the State Workshops and is designed to be difficult to rob.
+It consists of an interior vault where it holds a large stock of $1
+coins and an output store from which these coins are dispensed. To
+limit possible losses it will only move coins from the vault to the
+output store when that is empty. When the machine is switched on in
+the morning, with an empty output store, it immediately moves 1 coin
+into the output store. When that has been dispensed it will then move
+2 coins, then 3, and so on until it reaches some preset limit k. It
+then recycles back to 1, then 2 and so on.
+<p>
+<p>
+The students form a queue at this machine and, in turn, each student
+inserts his card. The machine dispenses what it has in its output
+store and updates the amount paid to that student by writing the new
+total on the card. If the student has not received his full grant, he
+removes his card and rejoins the queue at the end. If the amount in
+the store plus what the student has already received comes to more
+than $40, the machine only pays out enough to make the total up to
+$40. Since this fact is recorded on the card, it is pointless for the
+student to continue queuing and he leaves. The amount remaining in the
+store is then available for the next student.
+<p>
+<p>
+Write a program that will read in values of N (the number of students,
+1  <img width="11" height="24" align="MIDDLE" alt="tex2html_wrap_inline28" src="144img2.gif">  N  <img width="11" height="24" align="MIDDLE" alt="tex2html_wrap_inline28" src="144img2.gif">  25) and k (the limit for that machine, 1  <img width="11" height="24" align="MIDDLE" alt="tex2html_wrap_inline28" src="144img2.gif">  k  <img width="11" height="24" align="MIDDLE" alt="tex2html_wrap_inline28" src="144img2.gif"> 
+40) and calculate the order in which the students leave the queue.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Input will consist of a series of lines each containing a value for N
+and k as integers. The list will be terminated by two zeroes (0 0).
+<p>
+<p>
+Output will consist of a line for each line of input and will contain
+the list of students in the order in which they leave the queue.
+Students are ordered according to their position in the queue at the
+start of the day. All numbers must be right justified in a field of
+width 3.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample input</a></font></h2>
+<p>
+<pre>5 3
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample output</a></font></h2>
+<p>
+<pre>  1  3  5  2  4</pre>
+<p>
+</body>
+</html>

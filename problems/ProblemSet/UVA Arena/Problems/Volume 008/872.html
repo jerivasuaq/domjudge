@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>ACM - 2ª Sessão - 4º Problema</title>
+<style>a:hover {color:#FA1F00}</style>
+</head>
+
+<body alink="#00a8b8" background="Imagens/back_main.jpg" link="#00a8b8" topmargin="5" vlink="#00a8b8">
+
+
+
+<p align="center"><b><font size="3" face="Arial" color="#000000">Ordering
+</font></b></p>
+
+<p>
+<b><font size="3"><a name="back">Background</a></font></b></p>
+
+<p>&nbsp;&nbsp; Order is an important concept in mathematics and in computer
+science. For example, Zorns Lemma states: <i>a partially ordered set in which
+every chain has an upper bound contains a maximal element</i>. Order is also
+important in reasoning about the fix-point semantics of programs.<br>&nbsp;
+&nbsp; This problem involves neither Zorns Lemma nor fix-point semantics, but
+does involve order.</p>
+
+<p>
+<b><font size="3"><a name="problem">Problem</a></font></b></p>
+
+<p>&nbsp;&nbsp; Given a list of variable constraints of the form <i>A <></i>,
+you are to write a program that prints all orderings of the variables that are
+consistent with the constraints. For example, given the contraints <i>A <></i>
+and <i>A <></i> there are two orderings of the variables <i>A</i>, <i>B</i>
+and <i>C</i> that are consistent with these constraints: <i>ABC</i> and
+<i>ACB</i>.</p>
+
+<p> 
+<b><font size="3"><a name="input">Input</a></font></b></p>
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<p>&nbsp;&nbsp; The input consists of two lines: a list of variables on one
+line, followed by a list of constraints of the form <i>A <></i> on the
+next line. Variables and contraints are separated by single spaces.<br>
+&nbsp;&nbsp; All variables are single character, upper-case letters. There
+will be at least two variables, and no more than 20 variables. There will be
+at least one constraint, and no more than 50 constraints. There will be no
+more than 300 orderings consistent with the contraints in a specification.
+
+<p>
+<b><font size="3"><a name="output">Output</a></font></b></p>
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+
+<p>&nbsp;&nbsp; All orderings consistent with the constraints should be
+printed. Orderings are printed in alphabetical order, one per line. Characters
+on a line are separated by a space. If no ordering is possible, the output is
+a single line with the word NO.
+
+
+<p><b>Sample Input</b><br><br>1<br><br>A B F G<br>A&lt;B B&lt;F
+
+<p><b>Sample Output</b><br><br>A B F G<br>A B G F<br>A G B F<br>G A B F 
+
+<p>&nbsp;</p>
+
+
+<hr>
+<i>
+Gabriel David, CPUP'2000 Round 2<br>
+Concurso de Programação da Universidade do Porto
+</i>
+
+</body>
+
+</html>

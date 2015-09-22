@@ -1,0 +1,81 @@
+
+<p>
+You're the key programmer employed by a flight control center, and you've just been assigned a task which is to monitor the activity of aircrafts in a particular area. 
+
+<p>
+Since some of the aircrafts in that area are so far away from the control that the sensors can't get a lock on them, it is impossible to determine the actual number of aircrafts in that area; however, the scanning of the flight control's sensor arrays has shown the amount of energy sensed in each grid of that area, and by analyzing that data, you will be able to get a general view of that area. 
+
+<p>
+You have decided to first in order to write a program to simplify the calculation of the minimum number of aircrafts. you need to follow the following rules: 
+
+<p>
+
+<ol>
+<li>A grid from which the sensor arrays get no reading indicates a grid without any aircraft; 
+</li>
+<li>A grid with a positive value indicates a trace of an aircraft, and in that grid, a) An aircraft may be present, or b) It is the trace of exactly one aircraft traveling either horizontal or vertical (notice the aircraft can't change the flying direction halfway); 
+</li>
+<li>If a series of adjacent grids on a row or a column are the trace of one aircraft, then the amount of energy in them (from top to bottom or from left to right) must be either strictly increasing or strictly decreasing.
+</li>
+</ol>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+There are multiple test cases in the input file. Each test case starts with two integers, <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4018img1.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4018img1.png" alt="$ \le$">50, 1<img width="18" height="31" align="MIDDLE" border="0" src="4018img1.png" alt="$ \le$"><i>M</i><img width="18" height="31" align="MIDDLE" border="0" src="4018img1.png" alt="$ \le$">9)</span>
+<tex2html_verbatim_mark>, the length and width of the area that the you're monitoring. Each of the following <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> lines consists of <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark> integers, the <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark>-th integer on the <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th line representing the amount of heat sensed by the flight control's sensor array. It is guaranteed that every integer in the input will fit into a 32-bit signed integer. 
+
+<p>
+There is a blank line after each test case. A single line with <span class="MATH"><i>N</i> = 0</span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>M</i> = 0</span>
+<tex2html_verbatim_mark> indicates the end of input file.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, print one integer on a separate line, the minimum possible number of aircrafts, in the format as indicated in the sample output.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 3 
+1 2 3
+4 5 6
+7 8 9
+
+0 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case 1: 3
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

@@ -1,0 +1,96 @@
+
+
+<html>
+<head>
+<title>Synching Signals</title>
+<meta name="description" content="Synching Signals">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Synching Signals</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+On your way to work wach morning you travel down a main traffic artery
+regulated by a number of traffic signals. On some mornings, you have
+noticed that all of the lights up ahead simultaneously turn green in
+your direction. But on other mornings, it seems that a random
+combination of red, yellow, and green is facing you.
+<p>
+<p>
+After recently observing all of the lights ahead of you turn green
+simultaneously, you began to wonder how long after any one of
+them turns to yellow it would take before they
+all would be displaying green in your direction again. Write a program
+to figure out how long it will take such a set of traffic signals to
+all be displaying green again,  given the cycle times for each traffic
+signal in the set.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file will consist of an unknown number of
+traffic signal datasets. Each signal dataset will consist of one line
+of integers (separated by spaces) giving the total cycle time (in
+seconds) for each signal. The <em>cycle time</em> is the total time that
+a signal will stay green and yellow in one direction and red in the
+opposite direction. In this problem, you may assume that a green
+signal will turn yellow for the last 5 seconds of its cycle. If one
+set of signals was given as:
+<p> <img width="280" height="13" align="BOTTOM" alt="displaymath27" src="467img1.gif"> <p>
+your program would need to recognize that there are three signals in
+the set, that the first signal lasts 30 seconds, that the second
+signal cycles every 25 seconds, and that the thirs signal takes 35
+seconds to start a new cycle. Specifically, the first signal will be
+red for 30 seconds in one direction, then green for 25 seconds, then
+yellow for 5.
+<p>
+Each set of signals will involve at least two and as many as 10
+signals. Each signal will have a minimum cycle time of 10 seconds and
+a maximum cycle time of 90 seconds.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Your output will consist of a summary line for each
+set of signals.  Your program should assign an ID number to each set
+of signals, beginning with set 1.  The output line will begin with
+the signal set ID number and state the number of minutes ( <img width="35" height="25" align="MIDDLE" alt="tex2html_wrap_inline29" src="467img2.gif"> )
+and seconds (&lt; 60)
+it will take from when all of the signals simultaneously turn green
+initially to the first time they will all be showing green again in
+your direction after any of them has turned yellow. Note that this
+time may or may not be a time when all of the signals in the set
+simultaneously change back to green -- for this problem you need only
+indicate how long it will be before all signals in the set are once
+again simultaneously <em>showing</em> green in your direction after any
+of them has turned to yellow, even if this condition will only exist
+for a second or a very few seconds.
+<p>
+If the signals will never
+simultaneously display green in your direction again within an hour,
+you should print a message that states that the signals in the set are
+not able to synchronize after one hour (note that an output of 60
+minutes and 0 seconds should, however, be considered a successful
+synchronization).
+<p>
+<p>
+Look at the sample output below for the exact format.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>30 25 35
+25 25 25 25 25
+15 30
+20 21 30 23 29 25 27 22
+19 20</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Set 1 synchs again at 5 minute(s) and 0 second(s) after all turning green.
+Set 2 synchs again at 0 minute(s) and 50 second(s) after all turning green.
+Set 3 synchs again at 1 minute(s) and 0 second(s) after all turning green.
+Set 4 is unable to synch after one hour.
+Set 5 synchs again at 0 minute(s) and 40 second(s) after all turning green.</pre>
+<p>
+</body>
+</html>

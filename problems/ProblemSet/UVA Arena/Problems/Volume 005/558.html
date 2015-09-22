@@ -1,0 +1,145 @@
+
+
+<html>
+<head>
+<title>Wormholes</title>
+<meta name="description" content="Wormholes">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Wormholes</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In the year 2163, wormholes  were discovered. A wormhole is a subspace tunnel
+through space and time connecting two star systems. Wormholes have a few
+peculiar properties:
+
+<p>
+<ul>
+<li>Wormholes are <em>one-way</em>  only.
+
+<p>
+<li>The time it takes to travel through a wormhole is negligible.
+
+<p>
+<li>A wormhole has two end points, each situated in a star system.
+
+<p>
+<li>A star system may have more than one wormhole end point within its boundaries.
+
+<p>
+<li>For some unknown reason, starting from our solar system, it is always possible to end up in any star system by following a sequence of wormholes (maybe Earth is  the centre of the universe).
+
+<p>
+<li>Between any pair of star systems, there is at most one wormhole in either direction.
+
+<p>
+<li>There are no wormholes with both end points in the same star system.
+</li></li></li></li></li></li></li></ul>
+
+<p>
+All wormholes have a constant time difference between their end points. For
+example, a specific wormhole may cause the person travelling through it to
+end up 15 years in the future. Another wormhole may cause the person to end
+up 42 years in the past.
+
+<p>
+
+<p>
+<br>
+A brilliant physicist, living on earth, wants to use wormholes to study the
+Big Bang. Since warp drive has not been invented yet, it is not possible for
+her to travel from one star system to another one directly. This <em>can</em>  be done using wormholes, of course.
+
+<p>
+
+<p>
+<br>
+The scientist wants to reach a cycle of wormholes somewhere in the universe
+that causes her to end up in the past. By travelling along this cycle a lot
+of times, the scientist is able to go back as far in time as necessary to
+reach the beginning of the universe and see the Big Bang with her
+own eyes. Write a program to find out whether such a cycle exists.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file starts with a line containing the number of cases <i>c</i> to be
+analysed. Each case starts with a line with two numbers <i>n</i> and <i>m</i> . These
+indicate the number of star systems (
+
+<img width="105" height="30" align="MIDDLE" border="0" src="558img2.gif" alt="$1 \le n \le 1000$">)
+and the number of
+wormholes (
+
+<img width="110" height="30" align="MIDDLE" border="0" src="558img3.gif" alt="$0 \le m \le 2000$">)
+. The star systems are numbered from 0  (our solar
+system) through <i>n</i>-1 . For each wormhole a line containing three integer
+numbers <i>x</i>, <i>y</i> and <i>t</i> is given. These numbers indicate that this wormhole
+allows someone to travel from the star system numbered <i>x</i> to the star system
+numbered <i>y</i>, thereby ending up <i>t</i> (
+
+<img width="141" height="30" align="MIDDLE" border="0" src="558img4.gif" alt="$-1000 \le t \le 1000$">)
+years in the future.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output consists of <i>c</i> lines, one line for each case, containing the word
+<tt>possible</tt> if it is indeed possible to go back in time indefinitely, or <tt>not possible</tt> if this is not possible with the given set of star systems and
+wormholes.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+3 3
+0 1 1000
+1 2 15
+2 1 -42
+4 4
+0 1 10
+1 2 20
+2 3 30
+3 0 -60
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+possible
+not possible
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

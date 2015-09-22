@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Clock</title>
+<meta name="description" content="Building Bridges">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0000ff"><tr><td><b><font size="5" color="#FFff00">&nbsp;<a name="SECTION0001000000000000000000">
+Clock</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+You are given a standard 12-hour clock with analog display, an hour hand and a minute hand. How many times does
+the minute hand pass the hour hand in a given time interval?
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains an indefinite number of lines; each line contains four numbers. The first pair of numbers
+represents an "initial time"; the second pair represents a "final time". In each such number pair, the first number
+represents hours, second number represents minutes. The hours will be in the range 1..12, the minutes in the range
+0..59. No initial time and no final time will be an instant at which the minute hand just passes the hour hand.
+(In particular, 12 00 will not occur as an initial or final time). No initial time will be the same as the
+corresponding final time. Between each initial time and corresponding final time, the hour hand will have turned
+less than one full revolution (360 degrees). As the hour hand turns from its initial position to its final position,
+it may or may not sweep past the number 12 on the clock's dial. If  it does, then either the initial time is an
+"A.M." time and the final time a "P.M." time, or vice versa. If it does not, then either both times (initial and
+final) are "A.M." or both are "P.M.".
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Each line of input gives rise to one line of output, containing the initial and final times, and the number of
+times the minute hand passes the hour hand between the initial time and the final time. Observe all details of
+formatting, such as upper/lower case letters, punctuation, blank spaces, and the absence of blank lines. In each
+time display, the hours and minutes are displayed in fields of width 2, separated by a colon. The ten's digit
+(of hours or minutes) is displayed as a zero if it is zero.
+
+<p>
+Here is a formatting template shown between two lines of the above output:
+
+<p>
+<pre>
+Initial time  Final time  Passes
+12345678901234567890123456789012
+       12:50       01:02       0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+12 50  1  2
+ 3  8  3 20
+ 2 45 11  0
+11  0  3 20
+ 1  2 12 50
+ 3 20  3  8
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Program 3 by team X
+Initial time  Final time  Passes
+       12:50       01:02       0
+       03:08       03:20       1
+       02:45       11:00       8
+       11:00       03:20       4
+       01:02       12:50      11
+       03:20       03:08      10
+End of program 3 by team X
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Mountain Region'2000
+</address>
+</body>
+</html>
+

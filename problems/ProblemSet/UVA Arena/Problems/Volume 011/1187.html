@@ -1,0 +1,114 @@
+<p>
+Consider a planer grid of <span class="MATH"><i>M</i></span> rows and <span class="MATH"><i>N</i></span> columns. This grid has exactly <span class="MATH"><i>MN</i></span>
+intersections, each of which is denoted by a pair of coordinates <span class="MATH">(<i>i</i>, <i>j</i>)</span>
+where 
+<span class="MATH"><i>i</i> = 0, 1,...<i>N</i> - 1</span> and 
+<span class="MATH"><i>j</i> = 0, 1,...<i>M</i> - 1</span>.
+
+<p>
+Suppose <span class="MATH"><i>K</i> <img width="18" height="30" align="MIDDLE" border="0" src="2699img1.gif" alt="$ \leq$"> <i>MN</i></span> points are now placed on <span class="MATH"><i>K</i></span> distinct grid intersections.
+
+<p>
+Consider a diamond shaped area 
+<span class="MATH"><i>D</i>(<i>i</i>, <i>j</i>, <i>r</i>)</span> such that the centre of the area is at
+intersection <span class="MATH">(<i>i</i>, <i>j</i>)</span> and the shape itself is a square of diagonal length <span class="MATH">2<i>r</i></span>,
+rotated 45 degree clockwise, where 
+<span class="MATH"><i>i</i> = 0, 1,...<i>N</i> - 1</span>, 
+<span class="MATH"><i>j</i> = 0, 1,...<i>M</i> - 1</span>,
+and <span class="MATH"><i>r</i></span>, the radius of the diamond shape, is any integer greater than 0.
+
+<p>
+Manoranjan is interested in finding the minimum radius, 
+<span class="MATH"><i>R</i><sub>min</sub>(<i>P</i><sub>min</sub>)</span>, of
+such a diamond shape that would guarantee of covering at least <span class="MATH"><i>P</i><sub>min</sub></span> points
+no matter at which grid intersection the centre of the shape resides, where
+
+<span class="MATH"><i>P</i><sub>min</sub> = 1, 2,...<i>K</i></span>. Let 
+<span class="MATH"><i>P</i><sub>max</sub>(<i>P</i><sub>min</sub>)</span> be the maximum number of points
+that can be covered by a diamond shape of radius 
+<span class="MATH"><i>R</i><sub>min</sub>(<i>P</i><sub>min</sub>)</span>.
+
+<p>
+Consider the example in the figure below. Five points at intersections <span class="MATH">(0, 0)</span>,
+<span class="MATH">(4, 0)</span>, <span class="MATH">(2, 2)</span>, <span class="MATH">(0, 4)</span>, and <span class="MATH">(4, 4)</span> are placed on a planer grid of 5 rows and
+7 columns. The diamond shape <span class="MATH"><i>D</i>(2, 4, 1)</span> covers none of the points, <span class="MATH"><i>D</i>(2, 1, 2)</span> covers
+one point, and <span class="MATH"><i>D</i>(3, 3, 4)</span> covers four points.
+
+<p>
+<div align="CENTER">
+
+<img width="274" height="243" align="BOTTOM" border="0" src="p2699.gif" alt="\epsfbox{p2699.eps}">
+</div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The number of rows, <span class="MATH"><i>M</i></span>, and columns, <span class="MATH"><i>N</i></span>, of the grid are given in line 1. <span class="MATH"><i>K</i></span> number
+of points are then given in the next one or more lines, where <span class="MATH"><i>K</i> <img width="18" height="30" align="MIDDLE" border="0" src="2699img1.gif" alt="$ \leq$"> <i>MN</i></span>. You may
+assume that 
+<span class="MATH">1 <img width="18" height="30" align="MIDDLE" border="0" src="2699img1.gif" alt="$ \leq$"> <i>M</i> <img width="18" height="30" align="MIDDLE" border="0" src="2699img1.gif" alt="$ \leq$"> 100</span> and 
+<span class="MATH">1 <img width="18" height="30" align="MIDDLE" border="0" src="2699img1.gif" alt="$ \leq$"> <i>N</i> <img width="18" height="30" align="MIDDLE" border="0" src="2699img1.gif" alt="$ \leq$"> 100</span>. A pair of integers,
+representing <span class="MATH"><i>x</i> -</span> and <span class="MATH"><i>y</i> -</span>coordinates of the point respectively, denotes each point.
+
+<p>
+All the values given in any of the input lines are separated from each other by one or
+more white spaces including tabs.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Any given point outside the grid is discarded as `<em>invalid</em>' entries, e.g., the
+last point given in the sample input is discarded. For each possible <span class="MATH"><i>P</i><sub>min</sub></span> value,
+corresponding 
+<span class="MATH"><i>R</i><sub>min</sub>(<i>P</i><sub>min</sub>)</span> and 
+<span class="MATH"><i>P</i><sub>max</sub>(<i>P</i><sub>min</sub>)</span> values are written in a
+separate line as per the format shown in the sample output. However, a line of
+output should only be generated if a diamond shape of radius 
+<span class="MATH"><i>R</i><sub>min</sub>(<i>P</i><sub>min</sub>)</span>
+guarantees to cover exactly <span class="MATH"><i>P</i><sub>min</sub></span> points. In the sample output, no line is
+generated for 
+<span class="MATH"><i>P</i><sub>min</sub> = 2</span> as 
+<span class="MATH"><i>R</i><sub>min</sub>(2) = <i>R</i><sub>min</sub>(3) = 6</span>.
+
+<p>
+All values are written right aligned to their column headings.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5      7
+0      0 0     4
+4 0
+4 4           2 2
+       0 5
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Pmin  Rmin(Pmin)  Pmax(Pmin)
+   1           4           5
+   3           6           5
+   4           8           5
+   5          10           5
+</pre>
+
+<p>

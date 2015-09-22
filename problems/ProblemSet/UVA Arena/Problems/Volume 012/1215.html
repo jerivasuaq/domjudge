@@ -1,0 +1,63 @@
+<p>
+Let's consider a string <span class="MATH"><i>s</i></span> of length <span class="MATH"><i>n</i></span> 
+<span class="MATH">(0 &lt; <i>n</i> &lt; 10000)</span> containing only characters from <tt>a</tt> to <tt>z</tt>. We define a cut <span class="MATH"><i>c</i><sub>i</sub></span> 
+<span class="MATH">(0 &lt; <i>i</i> &lt; <i>n</i>)</span> is an action splitting the string s into 2 substrings <span class="MATH"><i>s</i><sub>1</sub></span> and <span class="MATH"><i>s</i><sub>2</sub></span> so that <span class="MATH"><i>s</i><sub>1</sub></span> consists of first <span class="MATH"><i>i</i></span> characters of <span class="MATH"><i>s</i></span> and <span class="MATH"><i>s</i><sub>2</sub></span> consists of remaining characters from <span class="MATH"><i>s</i></span>. Each cut is associated with a cost which equals to the total number of characters consisted in either <span class="MATH"><i>s</i><sub>1</sub></span> or <span class="MATH"><i>s</i><sub>2</sub></span> but not in both. For example, let <span class="MATH"><i>s</i> =</span> `<tt>abcbacbd</tt>', the cut <span class="MATH"><i>c</i><sub>5</sub></span> will break <span class="MATH"><i>s</i></span> into <span class="MATH"><i>s</i><sub>1</sub> =</span> `<tt>abcba</tt>' and <span class="MATH"><i>s</i><sub>2</sub> =</span> `<tt>cbd</tt>' with the cost of 2. 
+
+<p>
+The original string can be cut into <span class="MATH"><i>k</i> + 1</span> substrings after applying <span class="MATH"><i>k</i></span> cuts sequentially to the string and its subsequent substrings. In order to simply describe these <span class="MATH"><i>k</i></span> cuts, we specify the position of the cuts with regard to the original string. 
+
+<p>
+Let's consider an example where we sequentially apply 3 cuts at positions 5, 3 and 6 to the string <span class="MATH"><i>s</i> =</span> `<tt>ababccd</tt>'. After the first cut at position 5, we have two substrings <span class="MATH"><i>s</i><sub>1</sub> =</span> `<tt>ababc</tt>' and <span class="MATH"><i>s</i><sub>2</sub> =</span> `<tt>cd</tt>' with the cost of 3. The second cut at position 3 breaks <span class="MATH"><i>s</i><sub>1</sub></span> into two substrings <span class="MATH"><i>s</i><sub>11</sub> =</span> `<tt>aba</tt>' and <span class="MATH"><i>s</i><sub>12</sub> =</span> `<tt>bc</tt>' with the cost of 2. The last cut at position 6 breaks <span class="MATH"><i>s</i><sub>2</sub></span> into two substrings <span class="MATH"><i>s</i><sub>21</sub> =</span> `<tt>c</tt>' and <span class="MATH"><i>s</i><sub>22</sub> =</span> `<tt>d</tt>' with the cost of 2. The total cost for the 3 cuts is 3+2+2=7. Given a string and their cuts, your task is to write a program to compute the total cost for the cut.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of several data sets. The first line of the input file contains the number of data sets which is a positive integer and is not bigger than 20. The following lines describe the data sets. 
+
+<p>
+For each data set, the first line contains the integer number <span class="MATH"><i>k</i></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="3669img1.png" alt="$ \le$"><i>k</i><img width="18" height="31" align="MIDDLE" border="0" src="3669img1.png" alt="$ \le$">1000)</span>. The second line contains <span class="MATH"><i>k</i></span> positive integer numbers describing the position of <span class="MATH"><i>k</i></span> cuts. The third line contains the string which will be cut.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, write in one line the total cost of the cuts.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 
+3 
+5 3 6 
+ababccd 
+2 
+4 2 
+ababcd
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+7 
+4
+</pre> 
+
+<p>

@@ -1,0 +1,70 @@
+<p>
+A robot has to patrol around a rectangular area which is in a form of 
+<span class="MATH"><i>m</i> <tt>x</tt> <i>n</i></span> grid (<span class="MATH"><i>m</i></span> rows and <span class="MATH"><i>n</i></span> columns). The rows are labeled from 1 to <span class="MATH"><i>m</i></span>. The columns are labeled from 1 to <span class="MATH"><i>n</i></span>. A cell <span class="MATH">(<i>i</i>, <i>j</i>)</span> denotes the cell in row <span class="MATH"><i>i</i></span> and column <span class="MATH"><i>j</i></span> in the grid. At each step, the robot can only move from one cell to an adjacent cell, i.e. from <span class="MATH">(<i>x</i>, <i>y</i>)</span> to <span class="MATH">(<i>x</i> + 1, <i>y</i>)</span>, <span class="MATH">(<i>x</i>, <i>y</i> + 1)</span>, <span class="MATH">(<i>x</i> - 1, <i>y</i>)</span> or <span class="MATH">(<i>x</i>, <i>y</i> - 1)</span>. Some of the cells in the grid contain obstacles. In order to move to a cell containing obstacle, the robot has to switch to turbo mode. Therefore, the robot cannot move continuously to more than <span class="MATH"><i>k</i></span> cells containing obstacles. 
+
+<p>
+Your task is to write a program to find the shortest path (with the minimum number of cells) from cell (1, 1) to cell <span class="MATH">(<i>m</i>, <i>n</i>)</span>. It is assumed that both these cells do not contain obstacles.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of several data sets. The first line of the input file contains the number of data sets which is a positive integer and is not bigger than 20. The following lines describe the data sets. 
+
+<p>
+For each data set, the first line contains two positive integer numbers <span class="MATH"><i>m</i></span> and <span class="MATH"><i>n</i></span> separated by space 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="3670img1.png" alt="$ \le$"><i>m</i>, <i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="3670img1.png" alt="$ \le$">20)</span>. The second line contains an integer number <span class="MATH"><i>k</i></span> 
+<span class="MATH">(0<img width="18" height="31" align="MIDDLE" border="0" src="3670img1.png" alt="$ \le$"><i>k</i><img width="18" height="31" align="MIDDLE" border="0" src="3670img1.png" alt="$ \le$">20)</span>. The <span class="MATH"><i>i</i><sup>th</sup></span> line of the next <span class="MATH"><i>m</i></span> lines contains <span class="MATH"><i>n</i></span> integer <span class="MATH"><i>a</i><sub>ij</sub></span> separated by space 
+<span class="MATH">(<i>i</i> = 1, 2,..., <i>m</i>;<i>j</i> = 1, 2,..., <i>n</i>)</span>. The value of <span class="MATH"><i>a</i><sub>ij</sub></span> is <tt>1</tt> if there is an obstacle on the cell <span class="MATH">(<i>i</i>, <i>j</i>)</span>, and is <tt>0</tt> otherwise.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each data set, if there exists a way for the robot to reach the cell <span class="MATH">(<i>m</i>, <i>n</i>)</span>, write in one line the integer number <span class="MATH"><i>s</i></span>, which is the number of moves the robot has to make; <tt>-1</tt> otherwise.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 
+2 5 
+0 
+0 1 0 0 0 
+0 0 0 1 0 
+4 6 
+1 
+0 1 1 0 0 0
+0 0 1 0 1 1
+0 1 1 1 1 0
+0 1 1 1 0 0
+2 2 
+0 
+0 1 
+1 0
+</pre>  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+7 
+10 
+-1
+</pre> 
+
+<p>

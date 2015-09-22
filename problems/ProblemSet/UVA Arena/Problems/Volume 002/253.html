@@ -1,0 +1,77 @@
+
+
+<html>
+<head>
+<title>Cube painting</title>
+<meta name="description" content="Cube painting">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Cube painting</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+We have a machine for painting cubes.  It is supplied with
+three different colors: blue,
+red and green.  Each face of the cube gets one
+of these colors.  The cube's faces are
+numbered as in Figure 1.
+<p>
+<p> <img width="255" height="240" align="BOTTOM" alt="picture21" src="253img1.gif"> <p>
+<p>
+<p>
+Figure 1.
+<p>
+Since a cube has 6 faces, our machine can
+paint a face-numbered cube in  <img width="64" height="15" align="BOTTOM" alt="tex2html_wrap_inline126" src="253img2.gif"> 
+different ways.  When ignoring the face-numbers,
+the number of different paintings is
+much less, because a cube can be rotated.  See example below.
+We denote a painted cube by a string of 6 characters,
+where each character is a <tt>b</tt>, <tt>r</tt>,
+or <tt>g</tt>. The   <img width="17" height="15" align="BOTTOM" alt="tex2html_wrap_inline128" src="253img3.gif">  character ( <img width="68" height="25" align="MIDDLE" alt="tex2html_wrap_inline130" src="253img4.gif"> ) from
+the left gives the color of face <i>i</i>. For example,
+Figure 2 is a picture of <tt>rbgggr</tt> and Figure 3
+corresponds to <tt>rggbgr</tt>.  Notice that both
+cubes are painted in the same way: by
+rotating it around the vertical axis by 90 <img width="5" height="6" align="BOTTOM" alt="tex2html_wrap_inline134" src="253img5.gif"> , the
+one changes into the other.
+<p>
+ <img width="257" height="282" align="BOTTOM" alt="tex2html_wrap138" src="253img6.gif"> 
+ <img width="257" height="282" align="BOTTOM" alt="tex2html_wrap140" src="253img7.gif"> <h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input of your program is a textfile that
+ends with the standard end-of-file marker.
+Each line is a string of 12 characters.
+The first 6 characters of this string are the
+representation of a painted cube, the
+remaining 6 characters give you the representation
+of another cube.  Your program determines whether
+these two cubes are painted in the
+same way, that is, whether by any combination
+of rotations one can be turned into the
+other. (Reflections are not allowed.)
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output is a file of boolean.
+For each line of input, output contains <tt>TRUE</tt> if the
+second half can be obtained from the first
+half by rotation as describes above, <tt>FALSE</tt>
+otherwise.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>rbgggrrggbgr
+rrrbbbrrbbbr
+rbgrbgrrrrrg</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>TRUE
+FALSE
+FALSE</pre>
+<p>
+</body>
+</html>

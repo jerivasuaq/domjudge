@@ -1,0 +1,141 @@
+
+
+<html>
+<head>
+<title>Ecosystem</title>
+<meta name="description" content="Ecosystem">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Ecosystem</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+There are various food chains in any ecosystem, hawk, mouse and corn to name
+one. Mice feed on corn, hawks eat mice and life goes on. Given the relations
+between the species one can easily create food chains. 
+
+<p>
+One can also determine
+whether a chain is a cyclic one with caterpillars, plants, fungi and bacteria,
+as an example of cyclic chain. Caterpillars feed on plants, plants use organic
+substances produced by bacteria and fungi by decomposition of dead bodies of
+organisms such as caterpillars.
+These constitute a 3-member cyclic food chain.
+
+<p>
+
+<p>
+<br>
+Your task is to find 3-member cyclic food chains.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Unlimited number of tests. Each test consists of: number of observer
+species (<i>n</i>), consecutive <i>n</i> lines containing coincidence matrix describing
+food relations between species. There is 0 in the (<i>i</i>,<i>k</i>)-th element when <i>i</i>-th
+species does not eat <i>k</i>-th species and respectively 1 when it does so.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Outputted cyclic chains, followed by word ``<tt>total:</tt>" and then number of cyclic
+chains. The chain consists of three species separated by spaces, for
+example 1 2 4 means that 1 eats 2, which eats 4, and 1 is a food for 4.
+With such a rule the chain 1 2 4 is identical with 4 1 2 and 2 4 1 but
+not with 4 2 1 (inverted sequence of prey and predator).
+
+<p>
+You should not print all identical chain (only that one with species sorted
+with ascend or descend order). Chains should be sorted. This means that the
+chains 1 2 4, 1 2 3 and 3 2 1 should be printed in the following order:
+
+<p>
+<pre>
+1 2 3
+1 2 4
+3 2 1
+</pre>
+
+<p>Output a blank line after each test case.
+<p>
+
+<b>Assumptions:</b> number of species in one test belongs to a range [3, 100]
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+0 1 0
+0 0 1
+1 0 0
+3
+0 0 1
+1 0 0
+0 1 0
+3
+0 1 1
+1 0 1
+1 1 0
+4
+0 1 1 1
+1 0 1 1
+1 1 0 1
+1 1 1 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+1 2 3
+total:1
+
+3 2 1
+total:1
+
+1 2 3
+3 2 1
+total:2
+
+1 2 3
+1 2 4
+1 3 4
+2 3 4
+3 2 1
+4 2 1
+4 3 1
+4 3 2
+total:8
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+</body>
+</html>
+

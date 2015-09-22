@@ -1,0 +1,93 @@
+
+
+<html>
+<head>
+<title>Grammar Evaluation</title>
+<meta name="description" content="Grammar Evaluation">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Grammar Evaluation</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Using the following grammar:
+
+<p>
+<pre>
+&lt;expression&gt; := &lt;component&gt; | &lt;component&gt; + &lt;expression&gt;
+&lt;component&gt; := &lt;factor&gt; | &lt;factor&gt; + &lt;component&gt;
+&lt;factor&gt; := &lt;positive integer&gt; | (&lt;expression&gt;)
+</pre>
+
+<p>
+write a program which analyses expressions conforming to 
+the rules of this grammar and evaluates them, 
+if the analysis has been successfully completed. 
+It may be assumed that there is no overflow of float(C)/real(Pascal) 
+numbers range.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+A integer <i>n</i> stating the number of expressions, then
+consecutive <i>n</i> lines, each containingan expression given as a character
+string.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each line value of the expression or output message <tt>ERROR</tt>
+if the expression does not follow the grammar.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5
+32
+12+34
+1*(2+3)+3
+1(2+3)+3
+qwe323
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+32
+46
+8
+ERROR
+ERROR
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+</body>
+</html>
+

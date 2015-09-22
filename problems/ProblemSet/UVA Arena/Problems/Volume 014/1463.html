@@ -1,0 +1,96 @@
+
+<p>
+We are given <span class="MATH"><i>N</i></span> line segments on the 2D plane. We want to find the 
+maximum radius of an empty circle whose center coordinates 
+
+<span class="MATH">(<i>x</i><sub>c</sub>, <i>y</i><sub>c</sub>)</span> are constrained as follows: 
+
+<p>
+
+<p>
+<br>
+
+<ul>
+<li>
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="4818img1.png" alt="$ \le$"><i>x</i><sub>c</sub><img width="18" height="31" align="MIDDLE" border="0" src="4818img1.png" alt="$ \le$"><i>L</i></span> 
+</li>
+<li><span class="MATH"><i>y</i><sub>c</sub> = 0</span>
+</li>
+</ul>
+
+<p>
+
+<p>
+<br>
+A circle is empty if no part of a segment is located strictly inside 
+of it (thus, a segment may touch the circle, but may not intersect 
+with the interior of the circle). 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The first line of the input file contains the number of test cases 
+<span class="MATH"><i>T</i></span>. The test cases are described next. The first line of a test case 
+contains the integer numbers <span class="MATH"><i>N</i></span> and <span class="MATH"><i>L</i></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4818img1.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4818img1.png" alt="$ \le$">2000</span> and 
+
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="4818img1.png" alt="$ \le$"><i>L</i><img width="18" height="31" align="MIDDLE" border="0" src="4818img1.png" alt="$ \le$">10000)</span>. The next <span class="MATH"><i>N</i></span> lines of the test case contain 4 
+integers each, describing the coordinates of the endpoints of a segment: 
+<span class="MATH"><i>x</i><sub>a</sub></span>, <span class="MATH"><i>y</i><sub>a</sub></span>, <span class="MATH"><i>x</i><sub>b</sub></span> and <span class="MATH"><i>y</i><sub>b</sub></span>. The coordinates of the endpoints 
+of the segment are 
+<span class="MATH">(<i>x</i><sub>a</sub>, <i>y</i><sub>a</sub>)</span> and 
+<span class="MATH">(<i>x</i><sub>b</sub>, <i>y</i><sub>b</sub>)</span>. All the 
+coordinates are between -20000 and +20000. Every two consecutive 
+numbers on the same line are separated by a single blank. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case print a line containing a real number <span class="MATH"><i>R</i></span>, denoting 
+the maximum radius of an empty circle whose center obeys the 
+constraints. The number must be printed with 3 decimal digits 
+(the number must be rounded up or down according to the usual 
+rounding rules). 
+
+<p>
+<div align="CENTER">
+
+<img width="450" height="260" align="BOTTOM" border="0" src="p4818.png" alt="\epsfbox{p4818.eps}">
+</div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+1 
+4 10 
+1 1 10 3 
+5 3 9 1 
+3 1 4 1 
+8 3 11 -3
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2.118
+</pre>  
+
+<p>

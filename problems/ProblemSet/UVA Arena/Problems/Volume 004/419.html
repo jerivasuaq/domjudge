@@ -1,0 +1,118 @@
+
+
+<html>
+<head>
+<title>Matching Meetings</title>
+<meta name="description" content="Matching Meetings">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Matching Meetings</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+``Argh! I can't stand it anymore!'' exclaimed Dan Hanson, CS Department
+administrative assistant, as he slammed down the phone.
+<p>
+``What's the matter, Dan?'' asked Valentine McKee, who happened to be in
+the office making some copies.
+<p>
+``Professors and scheduling. I'm trying to schedule this SSC meeting but as
+soon as I pick a
+time and start making calls to confirm it, one of the committee members has
+a conflict. I feel like this is going to go on forever!'' He Said.
+<p>
+``Maybe the computer can help,'' suggested Valentine. ``This is the computer
+science department, after all,'' she Said.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line of input will be the ``current'' date.
+<p>
+<p>
+All dates will be specified in the form: <tt>dayname month date</tt>, where:
+<p>
+<ul><li> <tt>dayname</tt> is single character from the set <tt>{ M, T, W, R, F }</tt>
+representing Monday, Tuesday, Wednesday, Thursday, and Friday, respectively.<li> <tt>month</tt> is an integer such that  <img width="24" height="25" align="MIDDLE" alt="tex2html_wrap_inline43" src="419img1.gif">  <tt>month</tt>  <img width="35" height="25" align="MIDDLE" alt="tex2html_wrap_inline45" src="419img2.gif"> .<li> <tt>date</tt> is an integer such that  <img width="24" height="25" align="MIDDLE" alt="tex2html_wrap_inline43" src="419img1.gif">  <tt>date</tt>  <img width="34" height="25" align="MIDDLE" alt="tex2html_wrap_inline49" src="419img3.gif"> .
+</li></li></li></ul>
+<p>
+The next line of input will contain two integers, <i>n</i> and <i>t</i>. <i>n</i> specifies
+how many meetings
+should be scheduled, while <i>t</i> indicates how long each meeting will last.
+<i>t</i> will be specified in increments of 15 minutes.
+<p>
+<p>
+All times will be specified as zero padded 4 digit integers in military time.
+The first two
+digits indicate the <tt>hour</tt> (00 corresponds to midnight). The appointment
+times in the input will
+be in the range of  <img width="33" height="25" align="MIDDLE" alt="tex2html_wrap_inline61" src="419img4.gif">  <tt>hour</tt>  <img width="34" height="25" align="MIDDLE" alt="tex2html_wrap_inline63" src="419img5.gif"> . The last two digits indicate
+the minute, and will be in the
+be from the set <tt>{ 00, 15, 30, 45 }</tt> .
+<p>
+<p>
+You may assume that <tt>date</tt>, while formally bounded by 31, will not be
+greater than the
+number of days in the <tt>month</tt>. You may also assume that all years
+will <em>not</em> be leap years.
+<p>
+<p>
+The rest of the input will contain the schedules for at most 100 individuals.
+Each schedule
+will begin with a line specifying the individual's name, followed by a list
+of appointments for
+that individual, ending with the word ``<tt>done</tt>'' on a line by itself.
+No individual will have more
+than 100 appointments scheduled. Each appointment will be a date followed by
+a start time
+and an end time. No appointment will extend before 9am or after 5pm.
+<p>
+<p>
+The last line of input will be the word ``<tt>done</tt>'' on a line by itself.
+<p>
+<p>
+No appointment will be before the current date, or more than 1 year after
+the current date.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Your program should output the first <i>n</i> possible meeting times when all the
+people from the
+input can meet for the specified amount of time (<i>t</i>). Each line of output
+should contain one
+meeting date and time. Once a common meeting time is found, it should be
+considered allocated
+for all people, and cannot be used to schedule other meetings.
+<p>
+<p>
+The meetings should be sorted by date and time, with the earliest meeting first.
+<p>
+<p>
+If less than <i>n</i> meeting times are available, print all possible meeting
+times followed by ``<tt>No more times available</tt>''.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>M 8 21
+2 60
+Jack Casey
+M 8 21 0900 1015
+done
+Jack Ross
+M 8 21 1000 1100
+M 8 21 1200 1700
+done
+Jack Swigert
+M 8 21 1600 1700
+T 8 22 0900 1000
+done
+done</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>M 8 21 1100
+T 8 22 1000</pre>
+<p>
+</body>
+</html>

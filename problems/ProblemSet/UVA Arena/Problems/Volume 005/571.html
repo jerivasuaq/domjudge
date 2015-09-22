@@ -1,0 +1,137 @@
+
+
+<html>
+<head>
+<title>Jugs</title>
+<meta name="description" content="Jugs">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Jugs</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In the movie ``Die Hard 3", Bruce Willis and Samuel L. Jackson were confronted
+with the following
+puzzle. They were given a 3-gallon jug and a 5-gallon jug and were asked to
+fill the 5-gallon jug
+with exactly 4 gallons. This problem generalizes that puzzle.
+
+<p>
+
+<p>
+<br>
+You have two jugs, A and B, and an infinite supply of water. There are
+three types of actions that
+you can use: (1) you can fill a jug, (2) you can empty a jug, and (3) you
+can pour from one jug to
+the other. Pouring from one jug to the other stops when the first jug is
+empty or the second jug is
+full, whichever comes first. For example, if A has 5 gallons and B has 6
+gallons and a capacity of 8,
+then pouring from A to B leaves B full and 3 gallons in A.
+
+<p>
+
+<p>
+<br>
+A problem is given by a triple (<i>Ca</i>,<i>Cb</i>,<i>N</i>), where <i>Ca</i> and <i>Cb</i> are the capacities of the jugs A and B,
+respectively, and <i>N</i> is the goal. A solution is a sequence of steps that
+leaves exactly <i>N</i> gallons in jug B. The possible steps are
+
+<p>
+<pre>
+fill A
+fill B
+empty A
+empty B
+pour A B
+pour B A
+success
+</pre>
+
+<p>
+where ``<tt>pour A B</tt>" means ``pour the contents of jug A into jug B", and
+``<tt>success</tt>" means that the goal has been accomplished.
+
+<p>
+
+<p>
+<br>
+You may assume that the input you are given does have a solution.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input to your program consists of a series of input lines each defining one
+puzzle. Input for each
+puzzle is a single line of three positive integers: <i>Ca</i>, <i>Cb</i>, and <i>N</i>. <i>Ca</i> and <i>Cb</i> are the capacities of jugs
+A and B, and <i>N</i> is the goal. You can assume 
+
+<img width="104" height="32" align="MIDDLE" border="0" src="571img1.gif" alt="$0 < Ca \le Cb$">
+and 
+
+<img width="123" height="32" align="MIDDLE" border="0" src="571img2.gif" alt="$N \le Cb \le 1000$">
+and that A and B are relatively prime to one another.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output from your program will consist of a series of instructions from the
+list of the potential output
+lines which will result in either of the jugs containing exactly <i>N</i> gallons of
+water. The last line of
+output for each puzzle should be the line ``success". Output lines start in
+column 1 and there should be no empty lines nor any trailing spaces.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+3 5 4
+5 7 3
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+fill B
+pour B A
+empty A
+pour B A
+fill B
+pour B A
+success
+fill A
+pour A B
+fill A
+pour A B
+empty B
+pour A B
+success
+</pre>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,171 @@
+
+
+<html>
+<head>
+<title>Formatting Text</title>
+<meta name="description" content="Formatting Text">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Formatting Text</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Writings e-mails is fun, but, unfortunately, they do not look very nice,
+mainly because not all lines have the same lengths.  In this problem, your task is to write an e-mail formatting program which reformats a paragraph of an e-mail (e.g. by inserting spaces) so that, afterwards, all lines have the same
+length (even the last one of each paragraph).
+
+<p>
+The easiest way to perform this task would be to insert more spaces 
+between the words in lines which are too short. But this is not the best
+way. Consider the following example:
+
+<p>
+<pre>
+****************************
+This is the example you are
+actually considering.
+</pre>
+
+<p>
+Let us assume that we want to get lines as long as the row of
+stars. Then, by simply inserting spaces, we would get
+
+<p>
+<pre>
+****************************
+This is the example you  are
+actually        considering.
+</pre>
+
+<p>
+But this looks rather odd because of the big gap in the second line. By
+moving the word ``<tt>are</tt>'' from the first to the second line,
+we get a better result:
+
+<p>
+<pre>
+****************************
+This  is  the  example   you
+are  actually   considering.
+</pre>
+
+<p>
+Of course, this has to be formalized. To do this, we assign a
+<em>badness</em> to each gap between words.
+The badness assigned to a gap of <i>n</i> spaces is (<i>n</i> - 1)<sup>2</sup>.
+The goal of the program is to minimize the sum of all badnesses.
+For example, the badness of the first example is
+
+
+1 + 7<sup>2</sup> = 50
+whereas the badness of the second one is only 
+
+
+1 + 1 + 1 + 4 + 1 + 4 = 12.
+
+<p>
+In the output, every line has to start and to end with a word. (I.e.
+there cannot be a gap at the beginning or the end of a line.) The only 
+exception to this is the following:
+
+<p>
+If a line contains only one word this word shall be put at the beginning
+of the line, and a badness of 500 is assigned to this line if it is shorter 
+than it should be. (Of course, in this case, the length of the line is simply
+the length of the word.)
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file contains a text consisting of several
+paragraphs. Each paragraph is preceded by a line containing a single integer
+<i>n</i>, the desired width of the paragraph (
+
+<img width="88" height="30" align="MIDDLE" border="0" src="709img1.gif" alt="$1 \le n \le 80$">).
+
+<p>
+Paragraphs consist of one or more lines which contain one or more words each. Words consist of characters with ASCII codes between 33 and 126, inclusive, and are separated by spaces (possibly more than one). No word will be longer than the desired width of the paragraph. The total length of all words of one paragraph will not be more than 10000 characters.
+
+<p>
+Each paragraph is terminated by exactly one blank line. There is no  limit on
+the number of paragraphs in the input file.
+
+<p>
+The input file will be terminated by a paragraph description starting with <i>n</i>=0. This paragraph should not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Output the same text, formatted in the way described above (processing 
+each paragraph separately). 
+
+<p>
+If there are several ways to format a paragraph with the same badness, 
+use the following algorithm to choose which one to output: Let <i>A</i> and <i>B</i> be
+two solutions. Find the first gap which has not the same length in <i>A</i> and <i>B</i>.
+Do <em>not</em> output the solution in which this gap is bigger.
+
+<p>
+Output a blank line after each paragraph.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+28
+This is the example you are
+actually considering.
+
+25
+Writing e-mails is fun, and with this program,
+they even look nice.
+
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+This  is  the  example   you
+are  actually   considering.
+
+Writing e-mails  is  fun,
+and  with  this  program,
+they  even   look   nice.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

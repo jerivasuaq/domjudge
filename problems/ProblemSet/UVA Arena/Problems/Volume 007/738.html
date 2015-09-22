@@ -1,0 +1,232 @@
+
+
+<html>
+<head>
+<title>A Logical Problem</title>
+<meta name="description" content="A Logical Problem">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+A Logical Problem</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file for this program contains several logic circuit diagrams composed
+of zero or more  dual-input AND and/or OR gates (with possible inversions of
+input and/or output values), one or more inputs, and a single output.  The goal
+of this problem is to write a program which will determine what the output should be for a given
+circuit diagram and for a specified set of input values.
+
+<p>
+
+<p>
+<br>
+The logic circuits are drawn using printable ASCII characters and
+are allowed to be a maximum of 100 by 100 characters in size. The
+AND and OR gates are represented by the following arrangements of
+ASCII characters, respectively
+
+<p>
+<pre>
+                               :\                  :\
+                               : )                 : &gt;
+                               :/                  :/
+</pre>
+
+<p>
+Note that the only difference is that the AND gate has a right parenthesis
+character in the rightmost column of the center row, while the OR gate has a
+greater-than symbol in that same position. The gates in the data file will
+always be oriented as shown (i.e. they will not be flipped, rotated, or
+otherwise modified in any way from the arrangements shown above).
+
+<p>
+
+<p>
+<br>
+The ``circuit" paths used to connect the gates are represented using the dash
+character (ASCII code 45 decimal) for horizontal paths, and the vertical bar
+character (ASCII code 124 decimal) for vertical paths. A path always travels in
+a straight line (either horizontally or vertically) unless altered by a
+junction, represented by a plus character (ASCII code 43 decimal), at which
+point it may make a 90 degree turn only. No two junctions may be adjacent to
+one another in horizontal or vertical direction, and no two paths may cross at
+any point.
+
+<p>
+
+<p>
+<br>
+The following circuits illustrate some legal and illegal circuit paths
+
+<p>
+<pre><tt>
+<code>   ---+</code> 		 		                                <code>      |</code> 
+<code>   --+|</code> 		 These two paths are both legal 		 <code>   ---+</code> 		 Illegal, only one 90 degree 
+<code>     ||</code> 		 		                                <code>      |</code> 		 turn at each junction
+		 
+<code>      |</code> 		 
+<code>   ---+</code> 		 Illegal, no two junctions may 		         <code>      |   </code>      
+<code>   ---+</code> 		 be adjacent to one another 		               <code>   ---+---</code> 		  Illegal, no 2 paths    
+<code>      |</code> 		 in a horizontal or vertical direction 		  <code>      |   </code> 		  may cross
+</tt></pre>
+
+<p>
+The two inputs for a specific logic gate always approach horizontally from the
+left. One input is adjacent to the leftmost character of the first row of the
+gate, and the other input is adjacent to the leftmost character of the third
+row.  The output for a gate always leaves horizontally to the right and is
+adjacent to the rightmost character of the second row of the gate. The positions
+of these inputs and output locations are indicated by the dash characters (`<tt>-</tt>')
+in the diagram below:
+
+<p>
+<pre>
+     -:\
+      : )-
+     -:/
+</pre>
+
+<p>
+It is possible for either of the two inputs or the output to be inverted. That
+is, if the input or output is a <tt>1</tt>, it is changed to a <tt>0</tt>, or if it
+was to be a <tt>0</tt>,
+it is changed to a <tt>1</tt>. To indicate inversion, a lowercase ``<tt>o</tt>" character (ASCII
+code 111 decimal) is placed in the appropriate input or output position adjacent
+to the gate. If an input or output is inverted, it will always be preceded (in
+the case of an input) or followed (in the case of an output) by at least a
+single dash character. As an example, consider the diagram below which shows an
+AND gate with its top input and its output inverted:
+
+<p>
+<pre>
+    -o:\
+      : )o-
+     -:/
+</pre>
+
+<p>
+As previously stated, there are one or more inputs and a single output in the
+complete logic circuit. Each input is indicated by one of the capital letters <tt>A</tt>
+through <tt>Z</tt>, and the output is indicated by a question mark character.  So, a
+simple circuit consisting only of a single OR gate with two inputs labeled <tt>A</tt> and
+<tt>B</tt> could be represented as shown here:
+
+<p>
+<pre>
+    A-:\
+      : &gt;-?
+    B-:/
+</pre>
+
+<p>
+You may assume that the input data obeys all of the rules outlined above (ie.
+there are no illegal circuits). The bottom end of a logic diagram is indicated
+by line containing only a single asterisk in the first column. After this are
+several lines each of which indicate the state of the inputs in the previous
+logic diagram. Each line is a string of 26 ``<tt>0</tt>" and/or ``<tt>1</tt>" characters, with the
+first position representing the state of input <tt>A</tt>, the second position
+representing the state of input <tt>B</tt>, etc.  Note that input values which are not
+actually used in the circuit may simply be ignored. The list of input states is
+terminated by a line containing only a single asterisk character in the first
+column.
+
+<p>
+
+<p>
+<br>
+Following the asterisk which terminates the list of input states is another
+circuit diagram followed by an asterisk and a list of input states terminated by
+an asterisk, which is then followed by another circuit diagram and another list
+of input states, and so on until the end of the file. The file will always
+contain at least one circuit and one set of inputs for that circuit.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each logic circuit diagram, the program is to report the value of the output
+(<tt>0</tt> or <tt>1</tt>), one value per line, for each input state in the list which follows the
+circuit. The list of outputs for a given circuit should be followed by a single
+blank line to separate it from the lists for subsequent circuits.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+A-:\
+  : )-?
+B-:/
+*
+00000000000000000000000000
+10000000000000000000000000
+01000000000000000000000000
+11000000000000000000000000
+*
+  +-A
+  |
+  +-:\
+    : &gt;o-:\
+  +-:/   : )-?
+  |+----o:/
+B-+|
+ C-+
+*
+00000000000000000000000000
+11100000000000000000000000
+*
+A-:\
+  : )-?
+A-:/
+*
+00000000000000000000000000
+10000000000000000000000000
+*
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+0
+0
+0
+1
+
+1
+0
+
+0
+1
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-31</i>
+</address>
+</body>
+</html>
+

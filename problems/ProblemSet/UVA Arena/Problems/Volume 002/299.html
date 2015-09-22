@@ -1,0 +1,68 @@
+
+
+<html>
+<head>
+<title>Train Swapping</title>
+<meta name="description" content="Train Swapping">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Train Swapping</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+At an old railway station, you may still encounter one of the last
+remaining ``train swappers''. A train swapper is an employee of
+the railroad, whose sole job it is to rearrange the
+carriages of trains.
+<p>
+Once the carriages are arranged in the optimal order, all the train driver has to do, is
+drop the carriages off, one by one, at the stations for which the load is meant.
+<p>
+<p>
+The title ``train swapper'' stems from the first person who performed this task, at a station
+close to a railway bridge. Instead of opening up vertically, the bridge rotated around a pillar
+in the center of the river. After rotating the bridge 90 degrees, boats could pass left or right.
+<p>
+The first train swapper had discovered that the bridge could be operated with at most two
+carriages on it. By rotating the bridge 180 degrees, the carriages switched place, allowing him
+to rearrange the carriages (as a side effect, the carriages then faced the opposite direction,
+but train carriages can move either way, so who cares).
+<p>
+Now that almost all train swappers have died out, the railway company would like to
+automate their operation. Part of the program to be developed, is a routine which decides
+for a given train the least number of swaps of two adjacent carriages necessary to order the
+train. Your assignment is to create that routine.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input Specification</a></font></h2>
+<p>
+The input contains on the first line the number of test cases (<i>N</i>). Each test case consists of
+two input lines. The first line of a test case contains an integer <i>L</i>, determining the length of
+the train ( <img width="83" height="26" align="MIDDLE" alt="tex2html_wrap_inline30" src="299img1.gif"> ). The second line of a test case contains a permutation of the numbers
+1 through <i>L</i>, indicating the current order of the carriages. The carriages should be ordered
+such that carriage 1 comes first, then 2, etc. with carriage <i>L</i> coming last.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output Specification</a></font></h2>
+<p>
+For each test case output the
+sentence: '<tt>Optimal train swapping takes <i>S</i> swaps.</tt>' where <i>S</i> is an integer.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Example Input</a></font></h2>
+<p>
+<pre>3
+3
+1 3 2
+4
+4 3 2 1
+2
+2 1</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Example Output</a></font></h2>
+<p>
+<pre>Optimal train swapping takes 1 swaps.
+Optimal train swapping takes 6 swaps.
+Optimal train swapping takes 1 swaps.</pre>
+<p>
+</body>
+</html>

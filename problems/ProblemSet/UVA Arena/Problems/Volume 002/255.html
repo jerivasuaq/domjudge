@@ -1,0 +1,129 @@
+
+
+<html>
+<head>
+<title>Correct Move</title>
+<meta name="description" content="Correct Move">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Correct Move</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+We have a square board with 64 places, numbered
+from 0 to 63, see Figure 1. There
+are two pieces: A king and a queen.
+The pair of king's place and queen's place is called
+the <i>state</i>.  A state is <i>legal</i> if the pieces
+are not at the same place.  The king and queen
+move alternatingly.  The king can move one
+step in a horizontal or vertical direction, as
+long as it does not arrive at the place
+of the queen.  The queen can move one ore more
+steps in a horizontal or vertical direction,
+as long as it does not encounter the king.  All
+these moves are called <i>legal</i>.  Please note
+that the pieces may not move diagonally.
+<p>
+<p> <img width="292" height="277" align="BOTTOM" alt="tabular24" src="255img1.gif"> <p>
+<p>
+<p>
+Figure 1.
+<p>
+For example, suppose we have a state with
+a king at place 17 and a queen at place 49,
+as in Figure 2. The legal moves of
+the king are to places 9, 16, 18, and 25 and the
+queen can legally move to place
+25, 33, 41, 48, 50, 51, 52, 53, 54, 55, or 57.  We impose,
+however, an extra restriction: A piece
+may not move to a place where the other one can
+also move to.  Legal moves satisfying this
+restriction are called <i>allowed</i>.  In Figure 2, all
+possible places the king and the queen
+can move to by an <i>allowed</i> move, are denoted
+with a circle ( <img width="7" height="8" align="BOTTOM" alt="tex2html_wrap_inline187" src="255img2.gif"> ) and a dot ( <img width="7" height="8" align="BOTTOM" alt="tex2html_wrap_inline189" src="255img3.gif"> ), respectively.
+In Figure 3, the king cannot move, it is
+locked in.
+<p>
+ <img width="268" height="304" align="BOTTOM" alt="tex2html_wrap215" src="255img4.gif">  \
+ <img width="269" height="304" align="BOTTOM" alt="tex2html_wrap217" src="255img5.gif"> 
+<p>
+This problem requires you to write a program
+that does some checking related to the movement of the queen.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input for your program resides in a
+textfile that ends with the standard end-of-file
+marker.  Each line ends with the standard
+end-of-line marker and contains a sequence of
+three integers in the range O..63, separated
+by one space.  The first two integers denote
+the place of the king and the queen,
+respectively.  Together they form a state.  The third
+integer denotes a new place for the queen.
+You may think of it as computed by some
+function <tt>movequeen</tt>.  Your program determines whether:
+<p>
+<ul><li> the given state is legal<li> the queen's move is legal<li> the queen's move is allowed.
+</li></li></li></ul>
+<p>
+Furthermore, if these requirements are met,
+your program determines whether the move
+of the queen results in a state where the king is locked in.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output is also a textflle.  For each
+input line, your program produces one output
+line with one of the following messages:
+<p>
+<ul><li> <tt>Illegal state</tt><li> <tt>Illegal move</tt><li> <tt>Move not allowed</tt><li> <tt>Continue</tt><li> <tt>Stop</tt>
+</li></li></li></li></li></ul>
+<p>
+`<tt>Illegal state</tt>' indicates that the given
+state is not legal, i.e. the pieces are at the
+same place.
+<p>
+`<tt>Illegal move</tt>' means that the given state is
+legal, but the queen's move is illegal.
+<p>
+`<tt>Move not allowed</tt>' applies if both the
+given state and the queen's move are legal, but
+the queen's move is not allowed.
+<p>
+Both `<tt>Continue</tt>' and `<tt>Stop</tt>' mean that the
+given state is legal and the queen's move
+is allowed.  If the king can do an allowed
+move in the resulting state, the message is
+`<tt>Continue</tt>', otherwise the king is locked in and you reply `<tt>Stop</tt>'.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre> 17 17 49
+ 17 49 56
+ 17 49 9
+ 17 49 17
+ 17 49 25
+ 17 49 33
+ 17 49 41
+ 17 49 49
+ 56 48 49</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Illegal state
+Illegal move
+Illegal move
+Illegal move
+Move not allowed
+Continue
+Continue
+Illegal move
+Stop</pre>
+<p>
+</body>
+</html>

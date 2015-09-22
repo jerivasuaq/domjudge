@@ -1,0 +1,106 @@
+<p>
+Tomato Automata are small cool programs. You give them an infinite sequence of ones and zeros, and they give you a sequence of numbers. They are widely used in the Stanescu Operating System (SOS). They are written in Tomato Programming Language that is very simple. Here is its specification, tutorial and reference: 
+
+<p>
+
+<ol>
+<li>Tomato is a very simple but powerful language. 
+</li>
+<li>Lines in a Tomato program are numerated with integers from 1 to <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(<i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="3310img1.png" alt="$ \le$">100000)</span>
+<tex2html_verbatim_mark> in the order they appear in the input. 
+</tex2html_verbatim_mark></tex2html_verbatim_mark></li>
+<li>There is exactly one command on a line. 
+</li>
+<li>The execution starts from the first line. 
+</li>
+<li>There are exactly five Tomato commands - <span class="textbf">ifgo</span>, <span class="textbf">jump</span>, <span class="textbf">pass</span>, <span class="textbf">loop</span>, and <span class="textbf">die</span>. 
+</li>
+<li>When executed, each command prints its line number (into the output sequence). 
+</li>
+<li>The <span class="textbf">ifgo</span> command has one argument - the line number of another instruction. It reads one bit from the input stream. If the bit is one, the execution jumps to the line with the given as argument line number. Otherwise the execution continues with the next line. 
+</li>
+<li>The <span class="textbf">jump</span> command has one argument - the line number of another instruction. When executed, the execution jumps to the line with the given line number. 
+</li>
+<li>The <span class="textbf">pass</span> command has no arguments. It does nothing (except printing its line number like all other commands). Then the execution continues with the next line. 
+</li>
+<li>The <span class="textbf">die</span> command has no arguments. It terminates the execution of the program (printing its line number before that). The <span class="textbf">die</span> command can not be used inside a loop. 
+</li>
+<li>The <span class="textbf">loop</span> command is the only one with two arguments. It may be used to construct loops. The first argument is the starting line number <span class="MATH">&lt; <i>line</i> &gt;</span>
+<tex2html_verbatim_mark> (less than the line number of the <span class="textbf">loop</span> command), and the second is a positive integer <span class="MATH">&lt; <i>count</i> &gt;</span>
+<tex2html_verbatim_mark>. When executed, it loops from the start line a <span class="MATH">&lt; <i>count</i> &gt; - 1</span>
+<tex2html_verbatim_mark> number of times (because it is already executed once). When the loop is executed the given number of times, the execution continues with the next line. 
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></li>
+<li>The <span class="textbf">jump</span> and <span class="textbf">ifgo</span> commands must be used only with line numbers in the scope of the innermost loop containing them (they can not jump outside of the innermost loop or inside loops nested in the innermost loop that does not contain the command). 
+</li>
+<li>The loop command can not be used to create overlapping loops. Nested loops must be strictly nested (they can not use the same starting line). 
+</li>
+<li>When the last line of the program is executed, the execution continues from the first except when the last line is <span class="textbf">die</span> command. 
+</li>
+<li>White spaces may occur freely before or after the command name and their arguments. 
+</li>
+<li>The maximal length of a line in Tomato Programming Language is 80 characters including spaces. 
+</li>
+</ol>
+
+<p>
+Stanescu has lots of Tomato programs. He is interested in maximal length of output sequence that specific program can generate, where the length is the number of printed line numbers. Obviously, it is not possible to test each possible input sequence (of ones and zeros), so he needs a program that computes this. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input contains several programs, separated with an empty line. Each of them is a correct Tomato program. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each given program your solution has to print on a separate line the maximal length ofthe output sequence the program could generate. Print `<tt>infinity</tt>' if there is no maximal length for the 9 output sequence. When finite, the maximal length will not exceed <span class="MATH">10<sup>9</sup></span>
+<tex2html_verbatim_mark>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+<pre>
+Ifgo 2 
+loop 1 3 
+die 
+
+ifgo 2 
+ifgo 3 
+pass 
+die 
+
+      pass 
+            ifgo 4 
+            jump 5 
+            ifgo 3 
+      loop 2 2 
+      pass 
+loop 1 2 
+die
+</pre>  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+7 
+4 
+23
+</pre> 
+</tex2html_verbatim_mark>

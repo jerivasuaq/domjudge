@@ -1,0 +1,135 @@
+
+<div align="CENTER">
+
+
+<img width="422" height="596" align="BOTTOM" border="0" src="p3602.jpg" alt="\epsfbox{p3602.eps}">
+<tex2html_verbatim_mark>
+
+Figure 1.
+
+</tex2html_verbatim_mark></div>
+DNA (Deoxyribonucleic Acid) is the molecule which contains the genetic instructions. It consists of four different nucleotides, namely Adenine, Thymine, Guanine, and Cytosine as shown in Figure 1. If we represent a nucleotide by its initial character, a DNA strand can be regarded as a long string (sequence of characters) consisting of the four characters A, T, G, and C. For example, assume we are given some part of a DNA strand which is composed of the following sequence of nucleotides:
+
+<p>
+<br>
+
+``Thymine-Adenine-Adenine-Cytosine-Thymine-Guanine-Cytosine-Cytosine-Guanine-Adenine-Thymine"
+
+<p>
+<br>
+Then we can represent the above DNA strand with the string ``TAACTGCCGAT." 
+
+The biologist Prof. Ahn found that a gene X commonly exists in the DNA strands of five different kinds of animals, namely dogs, cats, horses, cows, and monkeys. He also discovered that the DNA sequences of the gene X from each animal were very alike. See Figure 2.
+
+<p>
+<br>
+
+<div align="CENTER">
+<table cols="2">
+<col align="LEFT"><col align="CENTER">
+<tr><td></td><td valign="BASELINE" align="CENTER" nowrap="">    DNA sequence of gene X  </td></tr>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""> 
+Cat:   </td><td valign="BASELINE" align="CENTER" nowrap="">  <span class="textbf">GCATATGGCTGTGCA</span> </td></tr>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""> 
+Dog:   </td><td valign="BASELINE" align="CENTER" nowrap="">  <span class="textbf">GCAAATGGCTGTGCA</span> </td></tr>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""> 
+Horse: </td><td valign="BASELINE" align="CENTER" nowrap="">  <span class="textbf">GCTAATGGGTGTCCA</span> </td></tr>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""> 
+Cow:   </td><td valign="BASELINE" align="CENTER" nowrap="">  <span class="textbf">GCAAATGGCTGTGCA</span> </td></tr>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""> 
+Monkey: </td><td valign="BASELINE" align="CENTER" nowrap=""> <span class="textbf">GCAAATCGGTGAGCA</span> </td></tr>
+</table>
+
+</div>
+<p>
+<br>
+<div align="CENTER">
+Figure 2. DNA sequences of gene X in five animals.
+
+</div>
+
+<p>
+<br>
+Prof. Ahn thought that humans might also have the gene X and decided to search for the DNA sequence of X in human DNA. However, before searching, he should define a representative DNA sequence of gene X because its sequences are not exactly the same in the DNA of the five animals. He decided to use the Hamming distance to define the representative sequence. 
+
+The Hamming distance is the number of different characters at each position from two strings of equal length. 
+For example, assume we are given the two strings ``<tt>AGCAT</tt>" and ``<tt>GGAAT</tt>." The Hamming distance of these two strings is 2 because the 1st and the 3rd characters of the two strings are different. Using the Hamming distance, we can define a representative string for a set of multiple strings of equal length. Given a set of strings 
+<span class="MATH"><i>S</i> = <i>s</i><sub>1</sub>,..., <i>s</i><sub>m</sub></span>
+<tex2html_verbatim_mark> of length <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark>, the consensus error between a string <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> of length <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> and the set <span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark> is the sum of the Hamming distances between <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> and each <span class="MATH"><i>s</i><sub>i</sub></span>
+<tex2html_verbatim_mark> in <span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark>. If the consensus error between <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark> is the minimum among all possible strings <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> of length <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> is called a consensus string of <span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark>. For example, given the three strings ``<tt>AGCAT</tt>" ``<tt>AGACT</tt>" and ``<tt>GGAAT</tt>" the consensus string of the given strings is ``<tt>AGAAT</tt>" because the sum of the Hamming distances between ``<tt>AGAAT</tt>" and the three strings is 3 which is minimal. (In this case, the consensus string is unique, but in general, there can be more than one consensus string.) We use the consensus string as a representative of the DNA sequence. For the example of Figure 2 above, a consensus string of gene X is ``<tt>GCAAATGGCTGTGCA</tt>" and the consensus error is 7.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+Your program is to read from standard input. The input consists of <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> test cases. The number of test cases <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> is given in the first line of the input. Each test case starts with a line containing two integers <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> which are separated by a single space. The integer <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(4<img width="18" height="31" align="MIDDLE" border="0" src="3602img2.png" alt="$ \le$"><i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="3602img2.png" alt="$ \le$">50)</span>
+<tex2html_verbatim_mark> represents the number of DNA sequences and <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(4<img width="18" height="31" align="MIDDLE" border="0" src="3602img2.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="3602img2.png" alt="$ \le$">1000)</span>
+<tex2html_verbatim_mark> represents the length of the DNA sequences, respectively. In each of the next <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark> lines, each DNA sequence is given.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+Your program is to write to standard output. Print the consensus string in the first line of each case and the consensus error in the second line of each case. If there exists more than one consensus string, print the lexicographically smallest consensus string. 
+
+The following shows sample input and output for three test cases.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+3 
+5 8 
+TATGATAC 
+TAAGCTAC 
+AAAGATCC 
+TGAGATAC 
+TAAGATGT 
+4 10 
+ACGTACGTAC 
+CCGTACGTAG 
+GCGTACGTAT 
+TCGTACGTAA 
+6 10 
+ATGTTACCAT 
+AAGTTACGAT 
+AACAAAGCAA 
+AAGTTACCTT 
+AAGTTACCAA 
+TACTTACCAA
+</pre>
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<pre>
+TAAGATAC 
+7 
+ACGTACGTAA 
+6 
+AAGTTACCAA 
+12
+</pre>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

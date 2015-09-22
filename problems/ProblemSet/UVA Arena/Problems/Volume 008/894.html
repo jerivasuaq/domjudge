@@ -1,0 +1,248 @@
+
+
+<html>
+<head>
+<title>Juggling Trams</title>
+<meta name="description" content="Juggling Trams">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Juggling Trams</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+After many years of faithful service, the good city of Melbourne has decided to upgrade all of its aged green
+and gold trams to newer, more fashionable models.  But alas, the pursuit of fashion has not been without its costs.
+The newer trams, whilst looking stunning, can only travel in straight lines.
+
+<p>
+
+<p>
+<br>
+But this has not deterred the Melbourne City Council.  In order to deal with this problem, they have laid more tracks
+and built more trams, so that the city is now a vast grid of tram tracks criss-crossing throughout the city.
+
+<p>
+
+<p>
+<br>
+For simplification, consider the city to be a large grid of roads running north-south and east-west.  Each road has a
+tram line running along it.  You, the humble traveller, wish to travel south and west through this grid using the new
+tram system.
+
+<p>
+
+<p>
+<br>
+Trams run along each road at <span class="MATH"><i>t</i></span>-minute intervals, where <span class="MATH"><i>t</i></span> is a fixed time that has been determined by the Melbourne
+City Council.  Thus, if you stand at any street intersection, you will see a tram travelling south every <span class="MATH"><i>t</i></span> minutes,
+and a tram travelling west every <span class="MATH"><i>t</i></span> minutes (although the trams will not necessarily pass by at the same times).
+We will assume that trams run at a constant speed, and take no time to pick up or drop off passengers.
+
+<p>
+
+<p>
+<br>
+Based on your training in city traversal optimisation theory, you wish to write a computer program that will find
+the fastest route from your starting point to your finishing point through the grid.  You can hop on or off a tram
+at any intersection, and you may need to wait at some intersections for a tram to come along.  You may assume that
+hopping on or off a tram takes no time at all.  So, for instance, if a southward tram passes through an intersection
+at the same time as a westward tram, you may hop off the southward tram and immediately hop onto the westward tram.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input will consist of a number of data sets.  The first line of each data set will be of the form
+
+<p>
+
+<p>
+<br>
+
+<span class="MATH"><i>t</i>&nbsp;<i>m</i></span>
+
+<p>
+
+<p>
+<br>
+where <span class="MATH"><i>t</i></span> and <span class="MATH"><i>m</i></span> are both integers.  <span class="MATH"><i>t</i></span> represents the number of minutes between each tram travelling down a
+street, as described earlier, with 
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="894img1.png" alt="$ \le$"><i>t</i><img width="18" height="30" align="MIDDLE" border="0" src="894img1.png" alt="$ \le$">60</span> inclusive.  <span class="MATH"><i>m</i></span> represents the number of minutes it takes a
+tram to move from one intersection to the next, with <span class="MATH"><i>m</i> &gt; 0</span>.  The second line of the data set will be of the form
+
+<p>
+
+<p>
+<br>
+
+<span class="MATH"><i>n</i>&nbsp;<i>e</i></span>
+
+<p>
+
+<p>
+<br>
+where <span class="MATH"><i>n</i></span> is the number of north-south streets and <span class="MATH"><i>e</i></span> is the number of east-west streets.  Both <span class="MATH"><i>n</i></span> and <span class="MATH"><i>e</i></span> will be
+between 1 and 200 inclusive.  North-south streets will be numbered from 1 to <span class="MATH"><i>n</i></span>, where 1 is the eastmost street
+and <span class="MATH"><i>n</i></span> is the westmost street.  East-west streets will be numbered from 1 to <span class="MATH"><i>e</i></span>, where 1 is the northmost street
+and <span class="MATH"><i>e</i></span> is the southmost street.  The third line will be of the form
+
+<p>
+
+<p>
+<br>
+
+
+<span class="MATH"><i>sx</i>&nbsp;<i>sy</i>&nbsp;<i>fx</i>&nbsp;<i>fy</i></span>
+
+<p>
+
+<p>
+<br>
+and will describe the start and end points of your journey.  Your journey must begin at the intersection of
+north-south street <span class="MATH"><i>sx</i></span> and east-west street <span class="MATH"><i>sy</i></span>, and must end at the intersection of north-south street <span class="MATH"><i>fx</i></span> and
+east-west street <span class="MATH"><i>fy</i></span>.  The fourth line will contain a single integer representing the number of minutes after
+midnight when your journey begins.
+
+<p>
+
+<p>
+<br>
+Following this will be a line for each north-south street of the form
+
+<p>
+
+<p>
+<br>
+
+<span class="MATH"><i>first</i>&nbsp;<i>k</i></span>
+
+<p>
+
+<p>
+<br>
+where <span class="MATH"><i>first</i></span> is the number of minutes after midnight when the first tram leaves the eastmost intersection
+along that street, and <span class="MATH"><i>k</i></span> is the total number of southward trams that will travel down that street throughout
+the day (<span class="MATH"><i>k</i> &gt; 0</span>).  Note that these <span class="MATH"><i>k</i></span> trams will be spaced by intervals of <span class="MATH"><i>t</i></span> minutes.  A line
+
+<p>
+
+<p>
+<br>
+
+<span class="MATH"><i>first</i>&nbsp;<i>k</i></span>
+
+<p>
+
+<p>
+<br>
+will then be given for each east-west street, where <span class="MATH"><i>first</i></span> is the number of minutes after midnight when the
+first tram leaves the northmost intersection along that street, and <span class="MATH"><i>k</i></span> is the total number of westward trams
+that will travel down that street throughout the day (<span class="MATH"><i>k</i> &gt; 0</span>).
+
+<p>
+
+<p>
+<br>
+Input will finish with <span class="MATH"><i>t</i> = 0</span> and <span class="MATH"><i>m</i> = 0</span>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output must be one line for each case of input.
+If it is possible to travel from the start point to the finish point, you must output a line of the form:
+
+<p>
+
+<p>
+<br>
+
+<tt>You arrive at <span class="MATH"><i>hh</i></span>:<span class="MATH"><i>mm</i></span>.</tt>
+
+<p>
+
+<p>
+<br>
+where <span class="MATH"><i>hh</i> : <i>mm</i></span> is the earliest time of day (using a 24-hour clock) at which you can arrive at your destination.
+Both hours and minutes must be two digits; use a leading `<tt>0</tt>' if necessary.  You may assume that if a solution exists,
+the time of arrival will be before the next midnight.
+
+<p>
+
+<p>
+<br>
+If it is impossible to reach the destination, output the line: `<tt>Impossible.</tt>'
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+30 3
+5 4
+2 2 5 4 
+93 
+30 5 
+100 6 
+115 4 
+100 7 
+30 8 
+10 10 
+0 11 
+20 9 
+10 10 
+30 3 
+5 4 
+2 2 5 4 
+300 
+30 5 
+100 6 
+115 4 
+100 7 
+30 8 
+10 10 
+0 11 
+20 9 
+10 10 
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+You arrive at 01:52.
+Impossible.
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+<b>Testsetter:</b> Joachim Wulff (Little Joey)
+<br>
+<b>Special thanks:</b> Ruben Spaans
+</address>
+</body>
+</html>
+

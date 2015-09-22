@@ -1,0 +1,134 @@
+
+
+<html>
+<head>
+<title>Machined Surfaces</title>
+<meta name="description" content="Machined Surfaces">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Machined Surfaces</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+An imaging device furnishes digital images of two machined surfaces that
+eventually will be assembled in
+contact with each other. The roughness of this final contact is to be estimated.
+<p>
+<p>
+A digital image is composed of the two characters, <tt>&quot;X&quot;</tt> and <tt>&quot; &quot;</tt>
+(space). There are always 25 columns to an
+image, but the number of rows, <i>N</i>, is variable. Column one (1) will always
+have an <tt>&quot;X&quot;</tt> in it and will be
+part of the left surface. The left surface can extend to the right from
+column one (1) as contiguous <tt>X</tt>'s.
+<p>
+<p>
+Similarly, column 25 will always have an <tt>&quot;X&quot;</tt> in it and will be part
+of the right surface. The right surface
+can extend to the left from column 25 as contiguous <tt>X</tt>'s.
+<p>
+Digital-Image View of Surfaces
+<p>
+<pre><tt> 
+		 Left     		                           Right
+<p>
+
+<p>
+		 <code>XXXX                                              XXXXX</code>	 <img width="29" height="13" align="BOTTOM" alt="tex2html_wrap_inline50" src="414img1.gif">
+<p>
+		 <code>XXX                                             XXXXXXX</code>
+<p>
+		 <code>XXXXX                                              XXXX</code>
+<p>
+		 <code>XX                                               XXXXXX</code>
+<p>
+		 <code>.                                                     .</code>
+<p>
+		 <code>.                                                     .</code>
+<p>
+		 <code>.                                                     .</code>
+<p>
+		 <code>XXXX                                               XXXX</code>
+<p>
+		 <code>XXX                                              XXXXXX</code>	 <img width="37" height="13" align="BOTTOM" alt="tex2html_wrap_inline52" src="414img2.gif"> 
+<p>
+		  <img width="8" height="25" align="MIDDLE" alt="tex2html_wrap_inline54" src="414img3.gif">  		   		                    <img width="8" height="25" align="MIDDLE" alt="tex2html_wrap_inline56" src="414img3.gif"> 
+<p>
+		 1         					    25
+<p>
+</tt></pre>
+<p>
+In each row of the image, there can be zero or more space characters
+separating the left surface from the right surface.
+There will never be more than a single blank <i>region</i> in any row.
+<p>
+<p>
+For each image given, you are to determine the total ``void&quot; that will
+exist after the left surface has been
+brought into contact with the right surface. The ``void&quot; is the total
+count of the spaces that remains between
+the left and right surfaces after theyhave been brought into contact.
+<p>
+<p>
+The two surfaces are brought into contact by displacing them strictly
+horizontally towards each other until a
+rightmost <tt>&quot;X&quot;</tt> of the left surface of some row is immediately to the
+left of the leftmost <tt>&quot;X&quot;</tt> of the right surface of that row.
+There is no rotation or twisting of these two surfaces as they are brought
+into contact; they remain rigid, and only move horizontally.
+<p>
+<p>
+<p>
+<b>Note:</b> The original image may show the two surfaces already in contact,
+in which case no displacement enters into the contact roughness estimation.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input consists of a series of digital images. Each image data set has
+the following format:
+<p>
+<dl><dt><strong>First line -</strong>
+<dd> A single unsigned integer, <i>N</i>, with value greater than
+zero (0) and less than 13. The
+first digit of <i>N</i> will be the first character on a line.
+<p>
+<dt><strong>Next <i>N</i> lines -</strong>
+<dd> Each line has exactly 25 characters; one or more <tt>X</tt>'s, then zero or more spaces, then one or more <tt>X</tt>'s.
+<p>
+ </dd></dt></dd></dt></dl>
+<p>
+The end of data is signaled by a null data set having a zero on the first
+line of an image data set and no further data.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each image you receive as a data set, you are to reply with the total
+void (count of spaces remaining
+after the surfaces are brought into contact). Use the default output for
+a single integer on a line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input
+<font size="3">(character <tt>&quot;B&quot;</tt> for ease of reading.
+The actual input file will use the ASCII-space character, not <tt>&quot;B&quot;</tt>).</font></a></font></h2>
+<p>
+<pre>4
+XXXXBBBBBBBBBBBBBBBBXXXXX
+XXXBBBBBBBBBBBBBBBXXXXXXX
+XXXXXBBBBBBBBBBBBBBBBXXXX
+XXBBBBBBBBBBBBBBBBBXXXXXX
+2
+XXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXX
+1
+XXXXXXXXXBBBBBBBBBBBBBBXX
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>4
+0
+0</pre>
+</body>
+</html>

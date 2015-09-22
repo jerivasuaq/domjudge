@@ -1,0 +1,92 @@
+
+
+<html>
+<head>
+<title>Project Scheduling</title>
+<meta name="description" content="Project Scheduling">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Project Scheduling</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+   A project management technique called Pert involves breaking a large
+project into a number of tasks, estimating the time required to perform each
+task, and determining which tasks can not be started until others have been
+completed. The project is then summarized in chart form. For example, the
+chart (which corresponds to the sample input below)
+<p>
+<center><img src="452img2.gif"></center>
+<p>
+indicates that tasks A, B, C, D, E and F each take 5, 3, 2, 2, 4, and 2 days respectively, that task E cannot complete until C and D are both completed, but that D can be performed in parallel with B and C.
+<p>
+<p>
+   Write a program that accepts a Pert chart and computes the amount
+of time required to complete a project.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+<b>
+The input begins with a single positive integer on a line by itself indicating 
+the number of the cases following, each of them as described below. 
+This line is followed by a blank line, and there is also a blank line between 
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+
+Input will be from 1 to 27 lines, each corresponding to a different task. Each line will contain:
+<p>
+<ol><li> A single upper case letter serving as the name of a task. 
+
+
+<li> An integer indicating the number of days required to complete
+          that task.<li> 0-26 additional uppercase letters, each indicating another task
+          that must complete before this one can begin.
+</li></li></li></ol>
+<p>
+<p>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Output</a></font></h2>
+
+<p>
+
+<b>
+For each test case, the output must follow the description below. 
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+The output is a single integer indicating the amount of time that will pass before all tasks can complete.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+2
+
+A 5
+B 3 A
+D 2 A
+C 2 B
+F 2 CE
+E 4 DC
+
+A 5
+B 3 A
+D 2 A
+C 2 B
+F 2 CE
+E 4 DC
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>16
+
+16</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<p>
+The figure shown on the left is <em>left-right symmetric</em> as it is possible to fold the sheet of paper along a <em>vertical line</em>, drawn as a dashed line, and to cut the figure into two identical halves. The figure on the right is not left-right symmetric as it is impossible to find such a vertical line. 
+
+<p>
+<div align="CENTER">
+
+<img align="BOTTOM" border="0" src="p3226.jpg" alt="\epsfbox{p3226.eps}">
+</div>
+
+<p>
+Write a program that determines whether a figure, drawn with dots, is left-right symmetric or not. The dots are all distinct. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of <span class="MATH"><i>T</i></span> test cases. The number of test cases <span class="MATH"><i>T</i></span> is given in the first line of the input file. The 
+first line of each test case contains an integer  <span class="MATH"><i>N</i></span> , where  <span class="MATH"><i>N</i></span> 
+(
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="3226img2.gif" alt="$ \le$"><i>N</i><img width="18" height="30" align="MIDDLE" border="0" src="3226img2.gif" alt="$ \le$">1, 000</span>) is the number of dots in a figure. 
+Each of the following <span class="MATH"><i>N</i></span> lines contains the <span class="MATH"><i>x</i></span>-coordinate and <span class="MATH"><i>y</i></span>-coordinate of a dot. Both <span class="MATH"><i>x</i></span>-coordinates
+and <span class="MATH"><i>y</i></span>-coordinates are integers between -10,000 and 10,000, both inclusive.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Print exactly one line for each test case. The line should contain `<tt>YES</tt>' if the figure is left-right symmetric. and `<tt>NO</tt>', otherwise.
+
+<p>
+The following shows sample input and output for three test cases.               
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3                                            
+5                                            
+-2 5                                         
+0 0 
+6 5 
+4 0 
+2 3 
+4 
+2 3 
+0 4 
+4 0 
+0 0 
+4 
+5 14 
+6 10
+5 10 
+6 14
+</pre>  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+YES 
+NO 
+YES
+</pre>  
+
+<p>

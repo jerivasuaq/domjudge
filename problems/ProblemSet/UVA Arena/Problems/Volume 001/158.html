@@ -1,0 +1,93 @@
+
+
+<html>
+<head>
+<title>Calendar</title>
+<meta name="description" content="Calendar">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Calendar</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Most of us have a calendar on which we scribble details of important
+events in our lives--visits to the dentist, the Regent 24 hour
+book sale, Programming Contests and so on. However there are also the
+fixed dates: partner's birthdays, wedding anniversaries and the
+like; and we also need to keep track of these. Typically we need to be
+reminded of when these important dates are approaching--the
+more important the event, the further in advance we wish to have our
+memories jogged.
+<p>
+<p>
+Write a program that will provide such a service. The input will
+specify the year for which the calendar is relevant (in the range 1901
+to 1999). Bear in mind that, within the range specified, all years
+that are divisible by 4 are leap years and hence have an extra day
+(February 29th) added. The output will specify ``today's'' date, a
+list of forthcoming events and an indication of their relative
+importance.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line of input
+will contain an integer representing the year (in the range 1901
+to 1999). This will be followed by a series of lines representing
+anniversaries or days for which the service is requested.
+<p>
+An anniversary line will consist of the letter `<tt>A</tt>'; three
+integer numbers (<i>D</i>, <i>M</i>, <i>P</i>) representing the date, the month and the
+importance of the event; and a string describing the event, all
+separated by one or more spaces. P will be a number between 1 and 7
+(both inclusive) and represents the number of days before the event
+that the reminder service should start. The string describing the
+event will always be present and will start at the first non-blank
+character after the priority.
+<p>
+A date line will consist of the letter
+`<tt>D</tt>' and the date and month as above.
+<p>
+All anniversary
+lines will precede any date lines. No line will be longer than 255
+characters in total. The file will be terminated by a line consisting
+of a single <tt>#</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output will consist of a series of blocks of lines, one for each date
+line in the input. Each block will consist of the requested date
+followed by the list of events for that day and as many following days
+as necessary.
+<p>
+The output should specify the date of the event (<i>D</i> and
+<i>M</i>), right justified in fields of width 3, and the relative
+importance of the event. Events that happen today should be flagged as
+shown below, events that happen tomorrow should have P stars, events
+that happen the day after tomorrow should have P-1 stars, and so on.
+If several events are scheduled for the same day, order them by
+relative importance (number of stars).
+<p>
+If there is still a conflict,
+order them by their appearance in the input stream. Follow the format
+used in the example below. Leave 1 blank line between blocks.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>1993
+A 23 12 5 Partner's birthday
+A 25 12 7    Christmas
+A 20 12 1 Unspecified Anniversary
+D 20 12
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>Today is: 20 12
+ 20 12 *TODAY* Unspecified Anniversary
+ 23 12 ***     Partner's birthday
+ 25 12 ***     Christmas</pre>
+<p>
+</body>
+</html>

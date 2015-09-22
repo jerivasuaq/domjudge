@@ -1,0 +1,244 @@
+
+
+<html>
+<head>
+<title>Compression (II)</title>
+<meta name="description" content="Compression (II)">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Compression (II)</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The fast growth of program sizes and amount of stored data raises the need
+for efficient compression algorithms. They can significantly reduce the
+amount of storage space. Also the ``Internet boom", still suppressed by slow
+links has big influence on new developments in this field.
+
+<p>
+
+<p>
+<br>
+One of the most modern methods is block sorting. Its first step performed on
+the data is Burrows-Wheeler transform (BWT). The idea, used by the authors,
+comes from well-established in image compression Fourier transform and it says:
+transform the data to the form which is easier to compress and then
+compress it using one of the well-known algorithms.
+
+<p>
+
+<p>
+<br>
+Let's assume that as input we have a character string <i>S</i> of length <i>N</i>. The
+first step of the transform is to generate from string <i>S</i>, <i>N</i>
+strings <i>S</i><sub>0</sub>, <i>S</i><sub>1</sub>, ..., <i>S</i><sub><i>N</i>-1</sub> in the following way:
+
+<p>
+<ul>
+<li>string <i>S</i><sub>0</sub> is identical to <i>S</i>
+<li>string <i>S</i><sub><i>k</i></sub> is generated from string <i>S</i><sub><i>k</i>-1</sub> by moving the first character to the end.
+</li></li></ul>
+
+<p>
+
+<p>
+<br>
+The example that illustrates this algorithm is shown below:
+
+<p>
+<div align="CENTER">
+S = PASCAL
+
+<p>
+
+<p>
+<br>
+
+<table cellpadding="3" border="1">
+<tr><td align="CENTER"><b> <i>S</i><sub>0</sub></b></td>
+<td align="CENTER">P</td>
+<td align="CENTER">A</td>
+<td align="CENTER">S</td>
+<td align="CENTER">C</td>
+<td align="CENTER">A</td>
+<td align="CENTER">L</td>
+</tr>
+<tr><td align="CENTER"><b> <i>S</i><sub>1</sub></b></td>
+<td align="CENTER">A</td>
+<td align="CENTER">S</td>
+<td align="CENTER">C</td>
+<td align="CENTER">A</td>
+<td align="CENTER">L</td>
+<td align="CENTER">P</td>
+</tr>
+<tr><td align="CENTER"><b> <i>S</i><sub>2</sub></b></td>
+<td align="CENTER">S</td>
+<td align="CENTER">C</td>
+<td align="CENTER">A</td>
+<td align="CENTER">L</td>
+<td align="CENTER">P</td>
+<td align="CENTER">A</td>
+</tr>
+<tr><td align="CENTER"><b> <i>S</i><sub>3</sub></b></td>
+<td align="CENTER">C</td>
+<td align="CENTER">A</td>
+<td align="CENTER">L</td>
+<td align="CENTER">P</td>
+<td align="CENTER">A</td>
+<td align="CENTER">S</td>
+</tr>
+<tr><td align="CENTER"><b> <i>S</i><sub>4</sub></b></td>
+<td align="CENTER">A</td>
+<td align="CENTER">L</td>
+<td align="CENTER">P</td>
+<td align="CENTER">A</td>
+<td align="CENTER">S</td>
+<td align="CENTER">C</td>
+</tr>
+<tr><td align="CENTER"><b> <i>S</i><sub>5</sub></b></td>
+<td align="CENTER">L</td>
+<td align="CENTER">P</td>
+<td align="CENTER">A</td>
+<td align="CENTER">S</td>
+<td align="CENTER">C</td>
+<td align="CENTER">A</td>
+</tr>
+</table></div>
+
+<p>
+In the second step all the strings are sorted to give:
+
+<p>
+<div align="CENTER">
+<table cellpadding="3" border="1">
+<tr><td align="CENTER"><b> <i>S</i><sub>4</sub></b></td>
+<td align="CENTER">A</td>
+<td align="CENTER">L</td>
+<td align="CENTER">P</td>
+<td align="CENTER">A</td>
+<td align="CENTER">S</td>
+<td align="CENTER">C</td>
+</tr>
+<tr><td align="CENTER"><b> <i>S</i><sub>1</sub></b></td>
+<td align="CENTER">A</td>
+<td align="CENTER">S</td>
+<td align="CENTER">C</td>
+<td align="CENTER">A</td>
+<td align="CENTER">L</td>
+<td align="CENTER">P</td>
+</tr>
+<tr><td align="CENTER"><b> <i>S</i><sub>3</sub></b></td>
+<td align="CENTER">C</td>
+<td align="CENTER">A</td>
+<td align="CENTER">L</td>
+<td align="CENTER">P</td>
+<td align="CENTER">A</td>
+<td align="CENTER">S</td>
+</tr>
+<tr><td align="CENTER"><b> <i>S</i><sub>5</sub></b></td>
+<td align="CENTER">L</td>
+<td align="CENTER">P</td>
+<td align="CENTER">A</td>
+<td align="CENTER">S</td>
+<td align="CENTER">C</td>
+<td align="CENTER">A</td>
+</tr>
+<tr><td align="CENTER"><b> <i>S</i><sub>0</sub></b></td>
+<td align="CENTER">P</td>
+<td align="CENTER">A</td>
+<td align="CENTER">S</td>
+<td align="CENTER">C</td>
+<td align="CENTER">A</td>
+<td align="CENTER">L</td>
+</tr>
+<tr><td align="CENTER"><b> <i>S</i><sub>2</sub></b></td>
+<td align="CENTER">S</td>
+<td align="CENTER">C</td>
+<td align="CENTER">A</td>
+<td align="CENTER">L</td>
+<td align="CENTER">P</td>
+<td align="CENTER">A</td>
+</tr>
+</table></div>
+
+<p>
+The results of the transform, which are used in further work are:
+
+<p>
+<ul>
+<li>last column of just created array (CPSALA in this case)
+<li>number of the row (starting from 0) in which S1 is placed
+</li></li></ul>
+
+<p>
+It appears that such data are easier to perform an inverse transform and easier to compress by other methods than original input data.
+
+<p>
+
+<p>
+<br>
+Your task is to write a program, which performs above-described BWT transform on input string.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input is an integer M, then a blank line followed by M datasets. There is a blank line between datasets.
+
+<p>In the first line of each dataset comes an integer <i>N</i> &lt; 1997 which stands for string length.
+Subsequent lines contain a string to transform. Each line (besides the last
+one) contains exactly 50 characters.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, there should be position of <i>S</i><sub>1</sub> string in the first line. Subsequent lines
+should contain a string to transform. Each line (besides the last one) should
+contain exactly 50 characters. Print a blank line between datasets.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+6
+pascal
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+1
+cpsala
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+</body>
+</html>
+

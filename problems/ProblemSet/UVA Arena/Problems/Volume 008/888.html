@@ -1,0 +1,133 @@
+
+
+<html>
+<head>
+<title>Donkey</title>
+<meta name="description" content="Donkey">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Donkey</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Long ago, a number of farmers wanted to sell their donkeys. These farmers lived in a small
+village and the marketplace was in the capital. There was only one small road from the village
+the farmers lived in to the capital, and one day the farmers left for the long journey towards the
+capital. Every farmer wanted to travel as fast as possible to be the first to sell his donkey, but
+there was one major problem: the donkeys were very stubborn; everytime a donkey reached a
+river there was a chance that he would stay there for some time, not willing to cross the river.
+However, two donkeys never rested at the same river.
+
+<p>
+
+<p>
+<br>
+The game 'Donkey' is derived from this legend: <span class="MATH"><i>N</i></span> players (numbered from <span class="MATH">1...<i>N</i></span>) start with
+their donkey in the village. Between the village and the capital are <span class="MATH"><i>M</i></span> rivers. The players take
+turns in throwing a fair, 6-sided die and move their donkey the thrown number of rivers towards
+the capital. Since only one donkey can rest at a river, the donkey is placed at the next free river
+if necessary. After player 1 has thrown the die, it is player 2's turn, etc. After <span class="MATH"><i>N</i></span> comes 1. The
+player that passes all rivers first wins the game.
+
+<p>
+This is an example of a 'Donkey' gameboard, where <span class="MATH"><i>N</i> = 2</span> and <span class="MATH"><i>M</i> = 6</span>. Player 1's donkey is
+located at river 4 and player 2's donkey is located at river 1.
+
+<p>
+<div align="CENTER">
+
+<img width="1166" height="160" align="BOTTOM" border="0" src="p888.gif" alt="\epsfbox{p888.eps}">
+</div>
+
+<p>
+Your task is to give the probability that player 1 wins the game, given a certain board position.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The first line contains a single integer which equals the number of test cases that follow. Each of
+the following lines contains one test case. The first integer on a line gives the number of rivers
+<span class="MATH"><i>M</i></span>, the second integer gives the number of players <span class="MATH"><i>N</i></span> (
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="888img2.png" alt="$ \le$"><i>N</i><img width="18" height="30" align="MIDDLE" border="0" src="888img2.png" alt="$ \le$">4</span> and 
+<span class="MATH"><i>N</i>&#215;<i>M</i><img width="18" height="30" align="MIDDLE" border="0" src="888img2.png" alt="$ \le$">50</span>). Then follow
+<span class="MATH"><i>N</i></span> integers <span class="MATH"><i>P</i><sub>i</sub></span> (
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="888img2.png" alt="$ \le$"><i>P</i><sub>i</sub><img width="18" height="30" align="MIDDLE" border="0" src="888img2.png" alt="$ \le$"><i>M</i></span>, 
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="888img2.png" alt="$ \le$"><i>i</i><img width="18" height="30" align="MIDDLE" border="0" src="888img2.png" alt="$ \le$"><i>N</i></span>), representing the position of the <span class="MATH"><i>i</i></span>-th player. The river
+closest to the village has number 1, the river closest to the capital has number <span class="MATH"><i>M</i></span>. The village
+has number 0. Two donkeys may not be positioned at the same river. However, more than one
+donkey may be standing in the village. The last integer on the line gives the player, whose turn
+it is.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For every situation you have to print the following line, giving the game number (1 for the first,
+2 for the second, ...) and the probability player 1 wins with an accuracy of 3 decimals:
+
+<p>
+
+<p>
+<br>
+
+<tt>Game <span class="MATH"><i>N</i></span>:the probability that player 1 wins = <span class="MATH"><i>D</i>.<i>DDD</i></span></tt>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+3 2 1 2 1
+6 3 1 2 3 2
+6 3 4 1 3 2
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Game 1:the probability that player 1 wins = 0.667
+Game 2:the probability that player 1 wins = 0.093
+Game 3:the probability that player 1 wins = 0.366
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-09-16
+</address>
+</body>
+</html>
+

@@ -1,0 +1,97 @@
+
+<p>
+<span class="textit">An antique machine with 
+<span class="MATH"><i>(</i><img width="30" height="50" align="MIDDLE" border="0" src="4352img1b.png" alt="$ \choose3$"><i>)</i></span>
+<tex2html_verbatim_mark> switches capable of processing integers in the range 
+<span class="MATH">0..2<sup>N</sup> - 1</span>
+<tex2html_verbatim_mark> has just been discovered. Each switch is associated to a distinct integer in 
+<span class="MATH">0..2<sup>N</sup> - 1</span>
+<tex2html_verbatim_mark> with exactly three ones in its binary representation. By setting switches associated with number 
+<span class="MATH"><i>X</i><sub>0</sub>, <i>X</i><sub>1</sub>,..., <i>X</i><sub>M-1</sub></span>
+<tex2html_verbatim_mark> to on, any integer <span class="MATH"><i>Y</i></span>
+<tex2html_verbatim_mark> passing through the machine will render a result of 
+<span class="MATH"><i>Y</i> <img width="18" height="31" align="MIDDLE" border="0" src="4352img2.png" alt="$ \oplus$"> <i>X</i><sub>0</sub> <img width="18" height="31" align="MIDDLE" border="0" src="4352img2.png" alt="$ \oplus$"> <i>X</i><sub>1</sub> <img width="18" height="31" align="MIDDLE" border="0" src="4352img2.png" alt="$ \oplus$">...<img width="18" height="31" align="MIDDLE" border="0" src="4352img2.png" alt="$ \oplus$"> <i>X</i><sub>M-1</sub></span>
+<tex2html_verbatim_mark> (here ``<span class="MATH"><img width="18" height="31" align="MIDDLE" border="0" src="4352img2.png" alt="$ \oplus$"></span>
+<tex2html_verbatim_mark>" stands for bitwise-XOR)</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></span>. 
+
+<p>
+
+<p>
+<br>
+We are interested in the number of configurations capable of transforming integer <span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark> into <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> with exactly <span class="MATH"><i>K</i></span>
+<tex2html_verbatim_mark> switches set to on. Could you write a program to help us? 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+There are multiple test cases in the input file. 
+
+<p>
+Each test case starts with two integers, <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>K</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4352img3.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4352img3.png" alt="$ \le$">40, 0<img width="18" height="31" align="MIDDLE" border="0" src="4352img3.png" alt="$ \le$"><i>K</i><img width="18" height="31" align="MIDDLE" border="0" src="4352img3.png" alt="$ \le$">min{20, <i>(</i><img width="30" height="50" align="MIDDLE" border="0" src="4352img1b.png" alt="$ \choose3$"><i>)</i>})</span>
+<tex2html_verbatim_mark> followed by two binary integers, <span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark>, each containing exactly <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> bits. 
+
+<p>
+Two successive test cases are separated by a blank line. A case with <span class="MATH"><i>N</i> = 0</span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>K</i> = 0</span>
+<tex2html_verbatim_mark> indicates the end of the input file, and should not be processed by your program. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, please print a single integer, the total number of ways to transform the first integer into the second one. Since the answer could be quite large, you are only required to find the result <span class="MATH">%10007</span>
+<tex2html_verbatim_mark>. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4 3 
+1101 
+1001 
+
+3 1 
+101 
+010 
+
+5 3 
+11010 
+10111
+
+0 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case #1: 1 
+Case #2: 1 
+Case #3: 6
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

@@ -1,0 +1,123 @@
+
+
+<html>
+<head>
+<title>Numbering Paths</title>
+<meta name="description" content="Numbering Paths">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Numbering Paths</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+Problems that process input and generate a simple ``yes'' or ``no''
+answer are called decision problems.  One class of decision problems,
+the NP-complete problems, are not amenable to general efficient
+solutions.  Other problems may be simple as decision problems, but
+enumerating all possible ``yes'' answers may be very difficult (or at
+least time-consuming).
+<p>
+This problem involves determining the number of routes available to
+an emergency vehicle operating in a city of one-way streets.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+Given the intersections connected by one-way streets in a city, you are
+to write a program that determines the number of different routes
+between each intersection.  A route is a sequence of one-way streets
+connecting two intersections.
+<p>
+Intersections are identified by non-negative integers.  A one-way
+street is specified by a pair of intersections.  For example,  <img width="28" height="25" align="MIDDLE" alt="tex2html_wrap_inline30" src="125img1.gif"> 
+indicates that there is a one-way street from intersection  <i>j</i> to
+intersection <i>k</i>.  Note that two-way streets can be modeled by
+specifying two one-way streets:  <img width="28" height="25" align="MIDDLE" alt="tex2html_wrap_inline30" src="125img1.gif">  and  <img width="26" height="25" align="MIDDLE" alt="tex2html_wrap_inline38" src="125img2.gif"> .
+<p>
+Consider a city of four intersections connected by the following one-way
+streets:
+<pre>    0  1
+    0  2
+    1  2
+    2  3</pre>
+There is one route from intersection 0 to 1, two routes from 0 to 2 (the
+routes are  <img width="79" height="13" align="BOTTOM" alt="tex2html_wrap_inline40" src="125img3.gif">  
+and  <img width="43" height="13" align="BOTTOM" alt="tex2html_wrap_inline42" src="125img4.gif"> ), 
+two routes from 0 to 3, one route from 1 to 2, one route from 1 to 3, one route from 2 to 3, and no other routes.
+<p>
+It is possible for an infinite number of different routes to exist.  For
+example if the intersections above are augmented by the street  <img width="25" height="13" align="BOTTOM" alt="tex2html_wrap_inline44" src="125img5.gif"> ,
+there is still only one route from 0 to 1, but there are infinitely many
+different routes from 0 to 2.  This is because the street from 2 to 3
+and back to 2 can be repeated yielding a different sequence of streets
+and hence a different route.  Thus the route  <img width="186" height="13" align="BOTTOM" alt="tex2html_wrap_inline46" src="125img6.gif">  is a different
+route than  <img width="114" height="13" align="BOTTOM" alt="tex2html_wrap_inline48" src="125img7.gif"> .
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input is a sequence of city specifications.  Each specification
+begins with the number of one-way streets in the city followed by that
+many one-way streets given as pairs of intersections.  Each pair 
+ <img width="28" height="25" align="MIDDLE" alt="tex2html_wrap_inline30" src="125img1.gif">  represents a one-way street from intersection <i>j</i> to intersection <i>k</i>.
+In all cities, intersections are numbered sequentially from 0 to the
+``largest'' intersection.  All integers in the input are separated by
+whitespace.  The input is terminated by end-of-file.
+<p>
+There will never be a one-way street from an intersection to itself.
+No city will have more than 30 intersections.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+For each city specification, a square matrix of the number of different routes
+from intersection <i>j</i> to intersection <i>k</i> is printed.  If the matrix is
+denoted <i>M</i>, then <i>M</i>[<i>j</i>][<i>k</i>] is the number of different routes from
+intersection <i>j</i> to intersection <i>k</i>.  The matrix <i>M</i> should be printed
+in row-major order, one row per line.  Each matrix should be preceded by
+the string ``<code>matrix for city</code> <i>k</i>'' (with <i>k</i> appropriately
+instantiated, beginning with 0).
+<p>
+If there are an infinite number of different paths between two
+intersections a -1 should be printed.  <b>DO NOT</b> worry about
+justifying and aligning the output of each matrix.  All entries in a
+row should be separated by whitespace.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>7 0 1 0 2 0 4 2 4 2 3 3 1 4 3
+5 
+0 2 
+0 1 1 5 2 5 2 1
+9
+0 1 0 2 0 3
+0 4 1 4 2 1
+2 0
+3 0
+3 1</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>matrix for city 0
+0 4 1 3 2
+0 0 0 0 0
+0 2 0 2 1
+0 1 0 0 0
+0 1 0 1 0
+matrix for city 1
+0 2 1 0 0 3
+0 0 0 0 0 1
+0 1 0 0 0 2
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+matrix for city 2
+-1 -1 -1 -1 -1
+0 0 0 0 1
+-1 -1 -1 -1 -1
+-1 -1 -1 -1 -1
+0 0 0 0 0</pre>
+<p>
+</body>
+</html>

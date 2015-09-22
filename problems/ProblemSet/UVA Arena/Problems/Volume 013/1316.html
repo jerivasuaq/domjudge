@@ -1,0 +1,65 @@
+<p>A supermarket has a set <i>Prod</i> of products on sale. It earns a profit  p<sub>x</sub>  for
+each product x in <i>Prod</i> sold by a deadline d<sub>x</sub> that is measured  as  an  integral
+number of time units starting from the moment the sale begins. Each  product
+takes precisely one unit of time for being sold. A selling  schedule  is  an
+ordered subset of products <i>Sell</i> from <i>Prod</i> such that the selling of  each  product
+x in <i>Sell</i>, according to the ordering of Sell, completes before the deadline  d<sub>x</sub>
+or  just  when  d<sub>x</sub>  expires.  The  profit  of  the   selling   schedule   is
+<img src="p2757a.gif">. An  optimal  selling  schedule  is  a  schedule  with  a
+maximum profit.</p>
+
+<p>For example, consider  the  products  Prod={a,b,c,d}  with  (p<sub>a</sub>,p<sub>a</sub>=(50,2),
+(p<sub>b</sub>,p<sub>b</sub>=(10,1), (p<sub>c</sub>,p<sub>c</sub>=(20,2), and  (p<sub>d</sub>,p<sub>d</sub>=(30,1).  The  possible  selling
+schedules are listed in table  1.  For  instance,  the  schedule  Sell={d,a}
+shows that the selling of product d starts at time 0 and  ends  at  time  1,
+while the selling of product a starts at time 1 and ends at time 2. Each  of
+these products is sold by its deadline. Sell is  the  optimal  schedule  and
+its profit is 80.</p>
+
+<center><p><img src="p2757b.gif"></p></center>
+
+<p>Write a program that reads sets of products from  an  input  text  file  and
+computes the  profit  of  an  optimal  selling  schedule  for  each  set  of
+products.</p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>A set of products starts with an integer 0 &lt;= n &lt;= 10000, which is the  number  of
+products in the  set,  and  continues  with  n  pairs  pi  di  of  integers,
+1 &lt;= pi &lt;= 10000 and  1 &lt;= di &lt;= 10000,  that  designate  the  profit  and  the  selling
+deadline of the i-th product. White spaces can occur freely in input.  Input
+data terminate with an end of file and are guaranteed correct.</p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<p>For each set of products, the program prints  on  the  standard  output  the
+profit of an optimal selling schedule for the set. Each  result  is  printed
+from the beginning of a separate line.</p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+4  50 2  10 1   20 2   30 1
+
+7  20 1   2 1   10 3  100 2   8
+2
+5 20  50 10
+</pre>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+80
+185
+</pre>
+
+The sample input contains two product sets. The first  set  encodes  the
+products from table 1. The second set is for 7 products. The  profit  of  an
+optimal schedule for these products is 185.
+
+<p>

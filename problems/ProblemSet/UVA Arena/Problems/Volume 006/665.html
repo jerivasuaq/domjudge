@@ -1,0 +1,130 @@
+
+
+<html>
+<head>
+<title>False coin</title>
+<meta name="description" content="False coin">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+False coin</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+
+<img width="282" height="292" align="MIDDLE" border="0" src="665img1.gif" alt="$\textstyle \parbox{.5\textwidth}{
+The \lq\lq Gold Bar'' bank received information fr...
+... less than, greater than, or equal to the weight of objects in the
+right pan. }$">
+<img width="290" height="265" align="MIDDLE" border="0" src="665img2.gif" alt="$\textstyle \parbox{.49\textwidth}{
+\begin{center}
+\mbox{}
+\epsfxsize 2.5in
+\epsfbox{p665.eps}
+\end{center}}$">
+
+<p>
+In order to detect the false coin the bank employees numbered all coins by the
+integers from 1 to <i>N</i>, thus assigning each coin a unique integer identifier.
+After that they began to weight various groups of coins by placing equal
+numbers of coins in the left pan and in the right pan. The identifiers of
+coins and the results of the weightings were carefully recorded. 
+
+<p>
+You are to
+write a program that will help the bank employees to determine the identifier
+of the false coin using the results of these weightings.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input is an integer M, then a blank line followed by M datasets. There is a blank line between datasets.
+
+<p>The first line of each dataset contains two integers <i>N</i> and <i>K</i>, separated
+by spaces, where <i>N</i> is the number of coins (
+
+<img width="102" height="32" align="MIDDLE" border="0" src="665img3.gif" alt="$1 \le N \le 100$">)
+and <i>K</i> is the
+number of weightings fulfilled (
+
+<img width="102" height="32" align="MIDDLE" border="0" src="665img4.gif" alt="$1 \le K \le 100$">). The following 2<i>K</i> lines
+describe all weightings. Two consecutive lines describe each weighting. The
+first of them starts with a number <i>P</i><sub><i>i</i></sub> (
+
+<img width="108" height="34" align="MIDDLE" border="0" src="665img5.gif" alt="$1 \le P_i \le N/2$">), representing the number
+of coins placed in the left and in the right pans, followed by <i>P</i><sub><i>i</i></sub>
+identifiers of coins placed in the left pan and <i>P</i><sub><i>i</i></sub> identifiers of coins
+placed in the right pan. All numbers are separated by spaces. 
+
+<p>
+The second line
+contains one of the following characters: `<tt>&lt;</tt>', `<tt>&gt;</tt>', or `<tt>=</tt>'.
+It represents the result of the weighting: 
+
+<p>
+<ul>
+<li>`<tt>&lt;</tt>' means that the weight of coins
+in the left pan is less than the weight of coins in the right pan,
+<li>`<tt>&gt;</tt>' means
+that the weight of coins in the left pan is greater than the weight of coins
+in the right pan,
+<li>`<tt>=</tt>' means that the weight of coins in the left pan is
+equal to the weight of coins in the right pan.
+</li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, write to the output file the identifier of the false coin or <tt>0</tt>, if it
+cannot be found by the results of the given weightings. Print a blank line between datasets.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+5 3
+2 1 2 3 4
+&lt;
+1 1 4
+=
+1 2 5
+=
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+3
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

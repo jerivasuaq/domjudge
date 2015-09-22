@@ -1,0 +1,82 @@
+
+<html><head><title>Jack Straws</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta content="Jack Straws" name="description">
+<meta content="htmlatex" name="keywords">
+<meta content="document" name="resource-type">
+<meta content="global" name="distribution"><link href="htmlatex.css" rel="STYLESHEET">
+<meta content="MSHTML 6.00.2600.0" name="GENERATOR"></head>
+<body lang="EN" bgcolor="#ffffff">
+<h1><br clear="all">
+<center>
+<table bgcolor="#0060f0">
+  <tbody>
+  <tr>
+    <td><b><font color="#c0ffff" size="5">&nbsp;<a name="SECTION0001000000000000000000">Jack 
+  Straws</a></font>&nbsp;</b></td></tr></tbody></table></center></h1>
+<p>In the game of Jack Straws, a number of plastic or wooden ``straws" are 
+dumped on the table and players try to remove them one-by-one without disturbing 
+the other straws. Here, we are only concerned with if various pairs of straws 
+are connected by a path of touching straws. You will be given a list of the 
+endpoints for some straws (as if they were dumped on a large piece of graph 
+paper) and then will be asked if various pairs of straws are connected. Note 
+that touching is connecting, but also two straws can be connected indirectly via 
+other connected straws. 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>The input begins with a single positive integer on a line by itself 
+indicating the number of the cases following, each of them as described below. 
+This line is followed by a blank line, and there is also a blank line between 
+two consecutive inputs.<br>A test case consists of multiple lines of input. The 
+first line will be an integer <i>n</i> (1 &lt; <i>n</i> &lt; 13) giving the 
+number of straws on the table. Each of the next <i>n</i> lines contain 4 
+<i>positive integers</i>, <img height="17" alt="tex2html_wrap_inline34" src="273img1.gif" width="15" align="middle"> , <img height="17" alt="tex2html_wrap_inline36" src="273img2.gif" width="14" align="middle"> , 
+<img height="17" alt="tex2html_wrap_inline38" src="273img3.gif" width="15" align="middle"> and <img height="17" alt="tex2html_wrap_inline40" src="273img4.gif" width="14" align="middle"> , giving the coordinates, 
+<img height="27" alt="tex2html_wrap_inline42" src="273img5.gif" width="114" align="middle"> of the endpoints of a single straw. All coordinates will be less 
+than 100. (Note that the straws will be of varying lengths.) The first straw 
+entered will be known as straw #1, the second as straw #2, and so on. The 
+remaining lines of input (except for the final line) will each contain two 
+positive integers, <i>a</i> and <i>b</i>, both between 1 and <i>n</i>, 
+inclusive. You are to determine if straw <i>a</i> can be connected to straw 
+<i>b</i>. When <i>a</i> = 0 = <i>b</i>, the input is terminated. 
+<p>
+<p>There will be no illegal input and there are no zero-length straws. 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>For each test case, the output must follow the description below. The outputs 
+of two consecutive cases will be separated by a blank line. <br>You should 
+generate a line of output for each line containing a pair <i>a</i> and <i>b</i>, 
+except the final line where <i>a</i> = 0 = <i>b</i>. The line should say simply 
+``<tt>CONNECTED</tt>", if straw <i>a</i> is connected to straw <i>b</i>, or 
+``<tt>NOT CONNECTED</tt>", if straw <i>a</i> is not connected to straw <i>b</i>. 
+For our purposes, a straw is considered connected to itself. 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001003000000000000000">Sample 
+Input</a></font></h2>
+<p><pre>1
+
+7
+1 6 3 3 
+4 6 4 9 
+4 5 6 7 
+1 4 3 5 
+3 5 5 5 
+5 2 6 3 
+5 4 7 2 
+1 4 
+1 6 
+3 3 
+6 7 
+2 3 
+1 3 
+0 0</pre>
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001004000000000000000">Sample 
+Output</a></font></h2>
+<p><pre>CONNECTED 
+NOT CONNECTED 
+CONNECTED 
+CONNECTED 
+NOT CONNECTED 
+CONNECTED</pre>
+<p></body></html>

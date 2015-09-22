@@ -1,0 +1,70 @@
+
+<p>
+Given a permutation 
+<span class="MATH"><i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>,...<i>a</i><sub>N</sub></span> of 
+<span class="MATH">{1, 2,..., <i>N</i>}</span>, we define its 
+<span class="MATH"><i>E</i></span>-value as the amount of elements where <span class="MATH"><i>a</i><sub>i</sub> &gt; <i>i</i></span>. For example, the <span class="MATH"><i>E</i></span>-value of 
+permutation 
+<span class="MATH">{1, 3, 2, 4}</span> is 1, while the <span class="MATH"><i>E</i></span>-value of 
+<span class="MATH">{4, 3, 2, 1}</span> is 2. 
+You are requested to find how many permutations of 
+<span class="MATH">{1, 2,..., <i>N</i>}</span> whose <span class="MATH"><i>E</i></span>-value 
+is exactly <span class="MATH"><i>k</i></span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+There are several test cases, and one line for each case, which contains two integers, 
+<span class="MATH"><i>N</i></span> and <span class="MATH"><i>k</i></span>. 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="5092img1.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="5092img1.png" alt="$ \le$">1000, 0<img width="18" height="31" align="MIDDLE" border="0" src="5092img1.png" alt="$ \le$"><i>k</i><img width="18" height="31" align="MIDDLE" border="0" src="5092img1.png" alt="$ \le$"><i>N</i>)</span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Output one line for each case. For the answer may be quite huge, you need to output the 
+answer module 1,000,000,007.
+
+<p>
+
+<p>
+<br>
+
+<span class="textbf">Explanation for the sample:</span>
+
+<p>
+There is only one permutation with <span class="MATH"><i>E</i></span>-value 0: <span class="MATH">{1, 2, 3}</span>, and there are four permutations 
+with <span class="MATH"><i>E</i></span>-value 1: <span class="MATH">{1, 3, 2}</span>, <span class="MATH">{2, 1, 3}</span>, <span class="MATH">{3, 1, 2}</span>, <span class="MATH">{3, 2, 1}</span>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 0 
+3 1
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 
+4
+</pre> 
+
+<p>

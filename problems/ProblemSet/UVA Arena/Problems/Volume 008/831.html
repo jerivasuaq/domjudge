@@ -1,0 +1,203 @@
+
+
+<html>
+<head>
+<title>Document Validator</title>
+<meta name="description" content="Document Validator">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Document Validator</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+Nowadays mark-up languages like <tt>LaTeX</tt>, <tt>HTML</tt>, <tt>SGML</tt>, and <tt>XML</tt> are widely
+used to define, in a completely textual
+mode, the structure of documents. Those languages are composed by tags,
+or annotations, that are used to mark blocks
+of text (their begin and end) in order:
+
+<p>
+
+<ul>
+<li>to specify the document structure - for instance, the <em>front material</em>
+ like the <em>title</em>, the <em>authors</em>, the <em>date</em>, or a <em>chapter</em>,
+with its <em>sections</em> and <em>paragraphs</em>;
+</li>
+<li>to give them some special interpretation, or a particular formatting
+ information - for instance, to say that the
+block designates a <em>country</em>, a <em>profession</em>, a <em>king</em>, or the block must
+be printed out in <em>italic</em>, or <em>boldface</em>.
+</li>
+</ul>
+
+<p>
+Tags are just words like all the others that belong to the original
+plain text; so, it is necessary to use some lexical
+convention to distinguish those special words (annotations). Also,
+we need some convention to identify the beginning
+and the end of the text block we want to annotate.
+
+<p>
+In the present
+context, our mark-up language follows an approach
+similar to the <tt>SGML</tt> based languages:
+
+<p>
+
+<ul>
+<li>special characters - square <code>[ ]</code> and curly  <code>{ }</code>
+brackets - are used to identify the words that are tag names;
+</li>
+<li>the same tag name is used to setup block boundaries, and a lexical
+ detail defines the opening and closing tag.
+The convention is:
+<code>[opening-tag[</code>, <code>]closing-tag]</code> and <code>{opening-closing-tag}</code>.
+</li>
+</ul>
+
+<p>
+Paired tags are employed to define the document structure, while single
+tags are used to give meaning or formatting
+information. Tag names (one letter followed by zero or more letters or
+digits) are free, i.e. not previously defined;
+this means that the user of that mark-up language can choose the names
+of the tags he will employ to annotate his
+document. However, to be a <b>valid annotation</b> it must be in conformity
+with the following rules:
+
+<p>
+
+<ul>
+<li>an <em>opening-tag</em> must always have a corresponding <em>closing-tag</em>;
+</li>
+<li>a <em>closing-tag</em> must always have a corresponding <em>opening-tag</em>;
+</li>
+<li>paired tags may be nested to any level, however the last opening-tag
+ must be closed before any enclosing tag,
+i.e. one external block can not be closed before an internal one;
+</li>
+<li>an <em>opening-closing-tag</em> can not have other tags inside; in that case,
+ the corresponding block of text will appear
+inside the curly brackets.
+</li>
+</ul>
+
+<p>
+Given a structured document, supposed to be annotated accordingly to
+the mark-up language above described, write
+a program that validates it, that is that verifies if the tags are
+properly used. If the document is valid (has no errors),
+your program must identify all the different tag names used, separating
+structural and semantic ones.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The input is a plain text file with tags, following the above stated
+conventions. Assume that lexical conventions
+specified for the three tag types (<code>[opening-tag[</code>, <code>]closing-tag]</code> and
+<code>{opening-closing-tag}</code>) are always complied.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+The output consists of:
+
+<p>
+
+<ul>
+<li>just 1 line with the word `<tt>ERROR</tt>' if one of the rules above is not
+ observed, making the input an invalid annotated document;
+</li>
+<li>2 lists with the tag names found, without duplicates and in the order
+ they appear in the document (from the beginning to the end), 1 word per line.
+ The first list begins with the
+heading line `<tt>STRUCTURAL TAGS</tt>', while
+the second list will begin with the heading line `<tt>SEMANTIC TAGS</tt>.
+Blank lines between those are not allowed.
+</li>
+</ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+[memo[
+[de[ Comiss ao Cient fica do MIUP ]de]
+[para[ Todos os Concorrentes ]para]
+[data[{bold 2001.set.25}]data]
+[mensagem[
+[parag[Devem ter o m aximo cuidado na leitura dos enunciados.]parag]
+[parag[Desejamos a todos {desejo Calma} e {desejo Boa Sorte}!]parag]
+]mensagem]
+]memo]
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+STRUCTURAL TAGS
+memo
+de
+para
+data
+mensagem
+parag
+SEMANTIC TAGS
+bold
+desejo
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Pedro Henriques, MIUP'2001
+</address>
+</body>
+</html>
+

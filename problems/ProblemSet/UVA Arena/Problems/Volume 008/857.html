@@ -1,0 +1,286 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Problem</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1 align="left"><font color="#0000FF">Problem F</font></h1>
+
+<p align="center">&nbsp;</p>
+
+<h1 align="center"><font color="#0000FF" size="6"><b>Quantiser</b></font></h1>
+
+<p><font size="3">MIDI (Musical Instrument Digital Interface) is
+a standard for transmitting musical performance data between
+devices. With MIDI, each event of a performance (e.g., pressing
+or releasing a key of a piano) is encoded in a message. A typical
+MIDI message essentially consists of a <i>code</i> and a <i>note</i>,
+and says that a given key (corresponding to a given <i>note</i>)
+was pressed (the <i>code</i> NoteOn) or released (NoteOff<i> code</i>).</font></p>
+
+<p><font size="3">If we register all the events of a performance
+and associate a convenient time stamp with them, we will be able
+to reproduce the performance later with precision. We may also
+make many other things, like editing the data or producing a
+score in standard, human readable, music notation. This last
+application will be our focus: we want to prepare performance
+data stored in a file so that the production of a score becomes
+easy.</font></p>
+
+<p><font size="3">Figure 1 presents an example of a performance
+(4 notes, 8 events) and the corresponding data, in the form
+&lt;code, note, time-stamp&gt;. The time stamp is represented by
+the triple &lt;measure:beat:tick&gt;. To make things simpler, we
+will consider that a measure is a positive integer and has always
+4 beats (numbered 1 to 4) and each beat has 480 ticks (numbered 0
+to 479).</font></p>
+<div align="center"><center>
+
+<table border="0" cellpadding="5" cellspacing="0" width="426">
+    <tr>
+        <td valign="top" width="67%"><font size="3"><img src="p857a.gif"></font></td>
+        <td valign="top" width="33%"><p align="center"><font size="3">NoteOn, 35, 23:1:0</font></p>
+        <p align="center"><font size="3">NoteOn, 52, 23:1:0</font></p>
+        <p align="center"><font size="3">NoteOn, 43, 23:2:0</font></p>
+        <p align="center"><font size="3">NoteOff, 52, 23:3:0</font></p>
+        <p align="center"><font size="3">NoteOff, 35, 23:4:0</font></p>
+        <p align="center"><font size="3">NoteOn, 35, 24:1:0</font></p>
+        <p align="center"><font size="3">NoteOff, 43, 24:1:0</font></p>
+        <p align="center"><font size="3">NoteOff, 35, 24:2:0</font></p>
+        </td>
+    </tr>
+</table>
+</center></div>
+
+<p align="center"><font size="3">Figure 1</font></p>
+
+<p><font size="3">This performance may be easily converted to
+standard music notation, as all the events occur at the exact
+beginning of a beat (tick 0). The same would happen if they
+occurred in points corresponding to subdivisions of the beat that
+match certain musical rhythm symbols. To simplify, we will
+consider divisions of the beats in 2, 4 and 8 parts as
+corresponding to legal musical notation; thus, if the events
+occur in ticks like 60, 240 or 420, the production of the score
+will be possible. </font></p>
+
+<p><font size="3">The events in Figure 1, however, could hardly
+be produced by an human. Humans can&#146;t be so precise: their
+performances have subtle &quot;imprecisions&quot; in timing and
+in other parameters. These imprecisions make a direct production
+of a score virtually impossible. Figure 2 represents a possible
+human performance.</font></p>
+<div align="center"><center>
+
+<table border="0" cellpadding="5" cellspacing="0" width="448">
+    <tr>
+        <td valign="top" width="63%"><p align="center"><font size="3"><img src="p857b.gif"></font></p>
+        </td>
+        <td valign="top" width="37%"><p align="center"><font size="3">NoteOn, 35, 23:1:006</font></p>
+        <p align="center"><font size="3">NoteOn, 52, 23:1:017</font></p>
+        <p align="center"><font size="3">NoteOn, 43, 23:2:010</font></p>
+        <p align="center"><font size="3">NoteOff, 52, 23:3:015</font></p>
+        <p align="center"><font size="3">NoteOff, 35, 23:3:252</font></p>
+        <p align="center"><font size="3">NoteOn, 35, 23:4:473</font></p>
+        <p align="center"><font size="3"><i>NoteOn, 33, 23:4:478</i></font></p>
+        <p align="center"><font size="3">NoteOff, 43, 24:1:011</font></p>
+        <p align="center"><font size="3"><i>NoteOff, 33, 24:1:012</i></font></p>
+        <p align="center"><font size="3">NoteOff, 35, 24:2:003</font></p>
+        </td>
+    </tr>
+</table>
+</center></div>
+
+<p align="center"><font size="3">Figure 2</font></p>
+
+<p><font size="3">We may see that the times where the events
+occur are close to &quot;correct&quot; points. For instance, the
+fourth event occurs close to 23:3:000, the fifth close to
+23:3:240 and the sixth close to 24:1:000. To produce a readable
+score from this data, we may change the time stamps to make them
+fit the closest &quot;correct&quot; points: this process is
+called <i>Quantisation</i>.</font></p>
+
+<p><font size="3">The short note 33 near the beginning of measure
+24 (in italic) represents a special case: after quantisation, its
+duration becomes zero. We will <i>filter</i> notes in these
+conditions.</font></p>
+
+<h2><font color="#0000FF" size="5"><b>Problem</b></font></h2>
+
+<p><font size="3">Make a program that, given a <i>performance</i>
+consisting of a sequence of no more than 2.000 events, produces a
+new sequence after <i>quantising</i> the data. Notes whose
+duration becomes zero after quantisation must be filtered out.
+If a time stamp is equally close to two different correct points,
+quantise it to the upper point (for example, "<i>23 1 30</i>" becomes
+"<i>23 1 60</i>").
+The program should be able to process several performances each
+time it runs.</font></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#0000FF" size="5"><b>Input</b></font></p>
+
+<p><font size="3">The input file represents several performances.
+Input for each performance consists of a sequence of lines, as
+follows: </font></p>
+
+<p><font size="3">First line: <i>n</i></font></p>
+
+<dir>
+    <li><font size="3">where <i>n</i> is the number of messages
+        of the performance</font></li>
+</dir>
+
+<p><font size="3">Next <i>n</i> lines (up to 2.000): <i>code note
+m b t</i></font></p>
+
+<dir>
+    <li><font size="3">where <i>code</i> is the number <b>1</b>
+        for a Note On event or the number <b>0</b> for a Note Off
+        event; <i>note</i> is a positive number representing a
+        piano key; <i>m</i> is a positive integer representing
+        the measure; <i>b</i> is 1, 2, 3 or 4 and represents the
+        beat; <i>t</i> is an integer between 0 and 479, and
+        represents the tick.</font></li>
+</dir>
+
+<p><font size="3">The messages of a performance are ordered by
+increasing times.</font></p>
+
+<p><font size="3">Successive values on a line are separated by
+one blank. The integer -1 follows the data of the last
+performance. </font></p>
+
+<p><font color="#0000FF" size="5"><b>Output</b></font></p>
+
+<p><font size="3">Output should give, for each given performance,
+the following output:</font></p>
+
+<p><font size="3">First line: <i>n</i></font></p>
+
+<dir>
+    <li><font size="3">where <i>n</i> is the number of the
+        messages of the quantised performance</font></li>
+</dir>
+
+<p><font size="3">Next <i>n</i> lines:<i> code note m b t</i></font></p>
+
+<dir>
+    <li><font size="3">where the meaning of the symbols is the
+        same as for the input file</font></li>
+</dir>
+
+<p><font size="3">The messages of each performance must be
+ordered by increasing times.</font></p>
+
+<p><font size="3">The integer -1 must follow the data of the last
+performance. </font></p>
+
+<p>&nbsp;</p>
+
+<h2><font color="#0000FF" size="5"><b>Sample Input</b></font></h2>
+
+<p><font size="3">10</font></p>
+
+<p><font size="3">1 35 23 1 6</font></p>
+
+<p><font size="3">1 52 23 1 17</font></p>
+
+<p><font size="3">1 43 23 2 10</font></p>
+
+<p><font size="3">0 52 23 3 15</font></p>
+
+<p><font size="3">0 35 23 3 252</font></p>
+
+<p><font size="3">1 35 23 4 473</font></p>
+
+<p><font size="3">1 33 23 4 478</font></p>
+
+<p><font size="3">0 43 24 1 11</font></p>
+
+<p><font size="3">0 33 24 1 12</font></p>
+
+<p><font size="3">0 35 24 2 3</font></p>
+
+<p><font size="3">10</font></p>
+
+<p><font size="3">1 42 14 1 55</font></p>
+
+<p><font size="3">1 38 14 1 126</font></p>
+
+<p><font size="3">0 42 14 1 177</font></p>
+
+<p><font size="3">1 42 14 1 230</font></p>
+
+<p><font size="3">1 51 14 1 241</font></p>
+
+<p><font size="3">0 42 14 1 248</font></p>
+
+<p><font size="3">1 42 14 1 352</font></p>
+
+<p><font size="3">0 38 14 1 356</font></p>
+
+<p><font size="3">0 51 14 1 472</font></p>
+
+<p><font size="3">0 42 14 2 244</font></p>
+
+<p><font size="3">-1</font></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#0000FF" size="5"><b>Sample Output</b></font></p>
+
+<p><font size="3">8</font></p>
+
+<p><font size="3">1 35 23 1 0</font></p>
+
+<p><font size="3">1 52 23 1 0</font></p>
+
+<p><font size="3">1 43 23 2 0</font></p>
+
+<p><font size="3">0 52 23 3 0</font></p>
+
+<p><font size="3">0 35 23 3 240</font></p>
+
+<p><font size="3">1 35 24 1 0</font></p>
+
+<p><font size="3">0 43 24 1 0</font></p>
+
+<p><font size="3">0 35 24 2 0</font></p>
+
+<p><font size="3">8</font></p>
+
+<p><font size="3">1 42 14 1 60</font></p>
+
+<p><font size="3">1 38 14 1 120</font></p>
+
+<p><font size="3">0 42 14 1 180</font></p>
+
+<p><font size="3">1 51 14 1 240</font></p>
+
+<p><font size="3">1 42 14 1 360</font></p>
+
+<p><font size="3">0 38 14 1 360</font></p>
+
+<p><font size="3">0 51 14 2 0</font></p>
+
+<p><font size="3">0 42 14 2 240</font></p>
+
+<p><font size="3">-1</font></p>
+
+<p>
+<br><hr>
+<address>
+
+Am&iacute;lcar Cardoso, MIUP'2002
+</address>
+
+</body>
+</html>

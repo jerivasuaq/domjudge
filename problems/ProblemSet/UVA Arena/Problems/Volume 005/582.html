@@ -1,0 +1,155 @@
+
+
+<html>
+<head>
+<title>Randomly Wired Neural Nets</title>
+<meta name="description" content="Randomly Wired Neural Nets">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Randomly Wired Neural Nets</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Introduction</a>&nbsp;</font>
+</h2>
+The following story (``AI Koan'') is from <em>The Hacker's Dictionary:</em>
+
+<p>
+<dl compact="">
+<dt>
+<dd>In the days when Sussman was a novice, Minsky once came to him as he sat hacking
+at the PDP-6.
+<dt>
+<dd>``What are you doing?'', asked Minsky.
+<dt>
+<dd>``I am training a randomly wired neural net to play Tic-Tac-Toe'' Sussman replied.
+<dt>
+<dd>``Why is the net wired randomly?'', asked Minsky.
+<dt>
+<dd>``I do not want it to have any preconceptions of how to play'', Sussman said.
+<dt>
+<dd>Minsky then shut his eyes.
+<dt>
+<dd>``Why do you close your eyes?'', Sussman asked his teacher.
+<dt>
+<dd>``So that the room will be empty.''
+<dt>
+<dd>At that moment, Sussman was enlightened.
+</dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+A Graph Model</a>&nbsp;</font>
+</h2>
+Graphs are powerful tools for modeling connected entities of all kinds (including randomly
+wired neural nets). In this problem, we wish to prune unnecessary nodes from a graph that is
+modeling a particular kind of neural net. In particular, we wish to remove neurons from the
+neural net that do not have any potential across them (or, equivalently, any flow through them)
+when we introduce a potential across two given nodes of the network.
+
+<p>
+
+<p>
+<br>
+Let 
+
+<i>G</i> = (<i>V</i> , <i>E</i>) be an undirected graph with |<i>V</i>|=<i>n</i> vertices and |<i>E</i>|=<i>m</i> edges. For two
+given distinct vertices <i>v</i> and <i>w</i> of <i>G</i>, a path <i>P</i>(<i>v</i>,<i>w</i>) in <i>G</i> between <i>v</i> and <i>w</i> is called a <em>simple
+path</em> between <i>v</i> and <i>w</i> if no vertex of <i>G</i> appears in <i>P</i>(<i>v</i>,<i>w</i>) more than once.
+
+<p>
+
+<p>
+<br>
+It is straightforward to show that a neuron in a neural net will support flow if and only if
+the corresponding edge in the graph model of the neural net lies on some simple path between
+<i>v</i> and <i>w</i>. Thus, the set of all vertices of <i>G</i> that are on at least one simple path between <i>v</i> and <i>w</i>
+represent the vertices that would be present in a model of the neural net with the unnecessary neurons removed.
+
+<p>
+
+<p>
+<br>
+Your program is to print out a modified graph <i>G</i> such that each vertex in the graph is present on at least one simple path between <i>v</i> and <i>w</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input will consist of a graph <i>G</i> described as an adjacency list and two distinguished vertices,
+<i>v</i> and <i>w</i>. The first line of the input will contain two numbers separated by a space, indicating
+the distinguished vertices, <i>v</i> and <i>w</i>. The second line will contain one number <i>n</i>, specifying the
+number of vertices in <i>G</i>. The next <i>n</i> lines specify the adjacency list for the graph, one line for
+each vertex, ordered from vertex 0 to vertex <i>n</i>-1. The line corresponding to vertex <i>q</i> (i.e., the
+<i>q</i>th line in the adjacency list portion of the input file) consists of an integer <i>k</i> specifying the
+degree of <i>q</i> (the number of edges connected to <i>q</i>), followed by <i>k</i> integers specifying the vertices
+connected to vertex <i>q</i>. All of the numbers in one line will be separated by a single space.
+
+<p>
+The maximum number of vertices is 1024.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output of the program will consist of an ordered list of all vertices of <i>G</i> such that each of
+the identified vertices is on some simple path in <i>G</i> between <i>v</i> and <i>w</i>.Lines 0 through <i>n</i> - 1
+should specify the connectivity for the vertices 0 through <i>n</i>-1, respectively. If a given vertex is
+not present in the modified graph, an <tt>X</tt> should be printed on that line. Otherwise, the vertices
+(in the modified graph) to which the given vertex is connected should be printed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+0 6
+8
+2 1 4
+5 0 2 3 5 7
+1 1
+1 1
+2 0 5
+3 4 1 7
+1 7
+3 1 5 6
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+1 4
+0 5 7
+X
+X
+0 5
+4 1 7
+7
+1 5 6
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

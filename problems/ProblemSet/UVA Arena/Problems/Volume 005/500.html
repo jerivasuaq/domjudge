@@ -1,0 +1,106 @@
+
+
+<html>
+<head>
+<title>Table</title>
+<meta name="description" content="Table">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Table</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+<img src="p500a.gif" align="right">
+A lot of text editors allows us to make tables with the help of
+pseudographical characters but do not let edit them, i.e. after alternation of
+the text in cells, to restore the marking of lines and columns you have to
+align the whole table manually. You are offered to implement an editor
+fragment carrying out an automatic table alignment.<p>
+
+The table represents a rectangle divided into cells with vertical and
+horizontal lines, linking its borders. Vertical and horizontal markers as well
+as the rectangle itself are formed by pseudographical characters from figure
+1.<p>
+
+The text in table cells can be located in several lines. Text does not contain
+control and pseudographical characters.<p>
+
+While editing a table the text of cells is being changed and as a result
+symbols `<img width="9" height="34" align="MIDDLE" border="0" src="500img3.gif" alt="$\mid$">' (ASCII 179) can be shifted to
+the left or to the right. The number of lines and columns of the table as
+well as the number of lines in each cell is not being changed.
+
+<p>
+The text in each line of each cell should be separated from vertical markers
+exactly with one space
+on the left and no less than with one space on the right in the aligned table.
+All spaces between words are significant. It is allowed only:
+
+<p>
+<ul>
+<li>to alter the number of leading and trailing spaces in cell lines;
+<li>to add and delete characters ``-" (ASCII 196) in horizontal table
+markers.
+</li></li></ul>
+
+<p>
+The table does not contain empty columns, i.e. each column contains at
+least one cell with non-empty text.
+
+<p>
+It is required to format a given table making its width (the length of table
+line) minimal.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input is an integer M, then a blank line followed by M datasets. There is a blank line between datasets.
+
+<p>Input for each dataset contains an edited table. It consists of no more than 100
+lines and line
+length is no more then 255 characters. Lines themselves do not contain
+leading and trailing spaces.
+The datasets do not contain empty lines.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, write to the output the aligned table. Output lines should not
+contain
+leading and trailing spaces. The output for each dataset should not contain empty lines.
+The input data provides that
+the width of the formatted table does not exceed 255 characters. Print a blank line between datasets.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+<img src="p500b.gif">
+</pre>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<img src="p500c.gif">
+<p>
+
+<p>
+</body>
+</html>

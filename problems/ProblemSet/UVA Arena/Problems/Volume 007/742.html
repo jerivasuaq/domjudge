@@ -1,0 +1,120 @@
+
+
+<html>
+<head>
+<title>Domino Game</title>
+<meta name="description" content="Domino Game">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Domino Game</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Let us consider the following version of the Domino game:
+
+<p>
+<ul>
+<li>A domino piece has two sides, each of them numbered from 0 to 6.
+<li>The game is played with 28 pieces. A piece having both sides with the same number is called a double piece.
+<li>We will consider a two-player version of the game: each player receives a set of pieces and both sets are equal in size.
+<li>The player who received the largest-valued double piece begins the game placing down this piece, thus starting a configuration with two extremes.
+<li>Each player, in turn, has to place down one of his (her) pieces, always at one of the extremes of the current configuration, if and only if that piece has one of its sides matching the number at the outer side of the extreme piece. The piece is placed so that the sides with matching numbers are adjacent to each other. No special treatment is given to a double piece in that regard: it is placed down with one of its matching sides adjacent to the extreme piece.
+<li>Whenever a player has no piece matching one of the extremes, then he (she) passes his (her) turn.
+<li>The winner is that player who first places down all of his pieces.
+</li></li></li></li></li></li></li></ul>
+
+<p>
+Suppose the two players are named Red and Green. Given initial sets of pieces assigned to each of Red and Green, your problem is to determine whether (i) only one of them can win, or (ii) both of them can win, or (iii) none of them can win the game. <b>Remember that this is not a problem of finding winning strategies. You just have to find out the winning possibility of each player.</b>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file may contain several instances of the problem. Each instance consists of one line in the following format:
+
+<p>
+<pre>
+n r11 r12 r21 r22 ... rn1 rn2 g11 g12 ... gn1 gn2
+</pre>
+
+<p>
+where:
+<ul>
+<li><tt>n</tt> is the size of the subsets assigned to Red and Green; you may assume that 
+
+<img width="88" height="30" align="MIDDLE" border="0" src="742img2.gif" alt="$1 \leY n \leY 14$">;
+<li><tt>ri1 ri2</tt> is the <i>i</i>-th piece assigned to player Red;
+<li><tt>gi1 gi2</tt> is the <i>i</i>-th piece assigned to player Green;
+<li>no pieces are repeated;
+<li>at least one player is assigned a double piece;
+<li>each of <tt>ri1 ri2 gi1 gi2</tt> is an integer number from 0 to 6.
+</li></li></li></li></li></li></ul>
+
+<p>
+An arbitrary number of blank spaces may separate a number from its neighbours in the input line of an instance. Consecutive instances are NOT separated by blank lines. The last line has <i>n</i> = 0.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each instance of the problem, your program should print one line containing one of the four messages:
+
+<p>
+<pre>
+Only player Red can win
+Only player Green can win
+Both players can win
+No player can win
+</pre>
+
+<p>
+A blank line separates the outputs of two consecutive instances.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1 6 6 0 0
+2 5 5 3 4 1 5 3 5
+2 1 1 2 2 3 3 4 4
+1 4 5 4 4
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Only player Red can win
+
+Both players can win
+
+No players can win
+
+Only player Green can win
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

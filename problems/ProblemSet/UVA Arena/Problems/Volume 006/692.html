@@ -1,0 +1,239 @@
+
+
+<html>
+<head>
+<title>BUT We Need a Diagram</title>
+<meta name="description" content="BUT We Need a Diagram">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+BUT We Need a Diagram</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Consider a data structure called BUT (Binary and/or Unary Tree). A BUT is defined inductively as follows:
+
+<p>
+<ul>
+<li>Let <i>l</i> be a letter of the English alphabet, either lowercase or uppercase (in the sequel, we say simply ``a letter''). Then, the object that consists only of <i>l</i>, designating <i>l</i> as its label,
+is a BUT. In this case, it is called a 0-ary BUT.
+
+<p>
+<li>Let <i>l</i> be a letter and <i>C</i> a BUT. Then, the object that consists of <i>l</i> and <i>C</i>, designating <i>l</i> as
+its label and <i>C</i> as its component, is a BUT. In this case, it is called a unary BUT.
+
+<p>
+<li>Let <i>l</i> be a letter, <i>L</i> and <i>R</i> BUTs. Then, the object that consists of <i>l</i>, <i>L</i> and <i>R</i>, designating
+<i>l</i> as its label, <i>L</i> as its left component, and <i>R</i> as its right component, is a BUT. In this case, it is called a binary BUT.
+</li></li></li></ul>
+
+<p>
+A BUT can be represented by an expression in the following way.
+
+<p>
+<ul>
+<li>When a BUT <i>B</i> is 0-ary, its representation is the letter of its label.
+
+<p>
+<li>When a BUT <i>B</i> is unary, its representation is the letter of its label followed by the parenthesized representation of its component.
+
+<p>
+<li>When a BUT <i>B</i> is binary, its representation is the letter of its label, a left parenthesis, the representation of its left component, a comma, the representation of its right component, and a right parenthesis, arranged in this order.
+</li></li></li></ul>
+
+<p>
+Here are examples:
+
+<p>
+<pre>
+a
+A(b)
+a(a,B)
+a(B(c(D),E),f(g(H,i)))
+</pre>
+
+<p>
+Such an expression is concise, but a diagram is much more appealing to our eyes. We prefer a diagram:
+
+<p>
+<pre>
+D  H i
+-  ---
+c E g
+--- -
+ B  f
+ ----
+  a
+</pre>
+
+<p>
+to the expression <tt>a(B(c(D),E),f(g(H,i)))</tt>.
+
+<p>
+
+<p>
+<br>
+Your mission is to write a program that converts the expression representing a BUT into its diagram. We want to keep a diagram as compact as possible assuming that we display it on a conventional character terminal with a fixed pitch font such as Courier. Let's define the diagram <i>D</i> for a BUT <i>B</i> inductively along the structure of <i>B</i> as follows:
+
+<p>
+<ul>
+<li>When <i>B</i> is 0-ary, <i>D</i> consists only of a letter of its label. The letter is called the root of <i>D</i>, and also called the leaf of <i>D</i>.
+
+<p>
+<li>When <i>B</i> is unary, <i>D</i> consists of a letter <i>l</i> of its label, a minus symbol <i>S</i>, and the diagram
+<i>C</i> for its component, satisfying the following constraints:
+<ul>
+<li><i>l</i> is just below <i>S</i>.
+<li>The root of <i>C</i> is just above <i>S</i>.
+</li></li></ul>
+<i>l</i> is called the root of <i>D</i>, and the leaves of <i>C</i> are called the leaves of <i>D</i>.
+
+<p>
+<li>When <i>B</i> is binary, <i>D</i> consists of a letter <i>l</i> of its label, a sequence of minus symbols <i>S</i>, the
+diagram <i>L</i> for its left component, and the diagram <i>R</i> for its right component, satisfying the following constraints:
+<ul>
+<li><i>S</i> is contiguous, and is in a line.
+<li><i>l</i> is just below the central minus symbol of <i>S</i>, where, if the center of <i>S</i> locates on
+a minus symbol <i>s</i>, <i>s</i> is the central, and if the center of <i>S</i> locates between adjacent minus symbols, the left one of them is the central.
+<li>The root of <i>L</i> is just above the leftmost minus symbol of <i>S</i>, and the root of <i>R</i> is just above the rightmost minus symbol of <i>S</i>.
+<li>In any line of <i>D</i>, <i>L</i> and <i>R</i> do not touch or overlap each other.
+<li>No minus symbols are just above the leaves of <i>L</i> and <i>R</i>.
+</li></li></li></li></li></ul>
+<i>l</i> is called the root of <i>D</i>, and the leaves of <i>L</i> and <i>R</i> are called the leaves of <i>D</i>.
+</li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input to the program is a sequence of expressions representing BUTs. Each expression except the last one is terminated by a semicolon. The last expression is terminated by a period.
+White spaces (tabs and blanks) should be ignored. An expression may extend over multiple lines. The number of letters, i.e., the number of characters except parentheses, commas, and white spaces, in an expression is at most 80.
+
+<p>
+
+<p>
+<br>
+You may assume that the input is syntactically correct and need not take care of error cases.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Each expression is to be identified with a number starting with 1 in the order of occurrence in the input. Output should be produced in the order of the input.
+
+<p>
+
+<p>
+<br>
+For each expression, a line consisting of the identification number of the expression followed
+by a colon should be produced first, and then, the diagram for the BUT represented by the expression should be produced.
+
+<p>
+
+<p>
+<br>
+For a diagram, output should consist of the minimum number of lines, which contain only letters or minus symbols together with minimum number of blanks required to obey the rules shown above.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+a(A,b(B,C));
+x( y( y( z(z), v( s, t ) ) ), u ) ;
+
+a( b( c,
+      d(
+         e(f),
+         g
+       )
+    ),
+   h( i(
+         j(
+            k(k,k),
+            l(l)
+          ),
+         m(m)
+       )
+    )
+ );
+
+a(B(C),d(e(f(g(h(i(j,k),l),m),n),o),p))
+.
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+1:
+ B C
+ ---
+A b
+---
+ a
+2:
+z s t
+- ---
+z  v
+----
+ y
+ -
+ y u
+ ---
+  x
+3:
+   k k l
+   --- -
+ f  k  l m
+ -  ---- -
+ e g j   m
+ --- -----
+c d    i
+---    -
+ b     h
+ -------
+    a
+4:
+j k
+---
+ i l
+ ---
+  h m
+  ---
+   g n
+   ---
+    f o
+    ---
+   C e p
+   - ---
+   B  d
+   ----
+    a
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-05</i>
+</address>
+</body>
+</html>
+

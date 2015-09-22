@@ -1,0 +1,70 @@
+
+
+<html>
+<head>
+<title>Text Comparsion</title>
+<meta name="description" content="Text Comparsion">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Text Comparsion</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Write a program that will compare two texts. The two texts are assumed do be
+different versions of the same text. Three different things can happen to a text between two versions:
+<p>
+<ul><li> Text could be deleted<li> Text could be inserted<li> Text could be changed
+</li></li></li></ul>
+<p>
+Any combination of the three can occur at once. A move, for example will look as a deletion at one place and an insert at another. You should
+list all changes that happened from the old to the new version.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file contains several datasets, each containing two lines with <tt>text1</tt> and <tt>text2</tt> strings.
+They contain the two versions of
+the text to compare. String <tt>text2</tt> should be regarded as the older version, and string <tt>text1</tt> as the newer.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The outputfile contain all deletions, insertions
+and changes that happended to the text between the two versions
+in the following format:
+<p>
+<ul><li> deletion: Position of the first character deleted,
+the word ``<tt>deleted</tt>'' and the number
+of characters deleted and the text that has been deleted.<li> insertion: Position of the first character of the text inserted,
+the word ``<tt>inserted</tt>''
+since the last version, the number of characters inserted an the text inserted.<li> change: Position of the first character changed,
+the word ``<tt>changed</tt>'', the number of
+characters changed, the original text and what it has been changed to.
+</li></li></li></ul>
+<p>
+The position of the first character always refers to the position in
+the <i>older</i> version (i.e.
+the position within <tt>text2</tt>). The first character in a file
+is numbered zero (0). The
+program should <i>not</i> be case-sensitive. Print a blank line after each dataset.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>       0         1         2         3         4         5         6
+       0123456789012345678901234567890123456789012345678901234567890
+text1: This is a joke. This is not life. Don't consider it anyway...
+text2: This is not a joke. This is life. Consider it thoroughly...</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>pos 8 deleted 4 chars &quot;not &quot;
+pos 28 inserted 4 chars &quot;not &quot;
+pos 34 inserted 6 chars &quot;don't &quot;
+pos 46 changed 10 chars from &quot;thoroughly&quot; to &quot;anyway&quot;</pre>
+<p>
+<p>
+<p>
+<b>Note:</b> The numbers for position characters and the headings of lines are not included in the input file.
+<p>
+</body>
+</html>

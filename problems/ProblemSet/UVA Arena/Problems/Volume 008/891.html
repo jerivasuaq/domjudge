@@ -1,0 +1,209 @@
+
+
+<html>
+<head>
+<title>Syntrax</title>
+<meta name="description" content="Syntrax">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Syntrax</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Given a simple syntax for describing regular expressions, one can find a graphical representation
+for a given regular expression using ASCII characters like `<tt>-</tt>', `', `<tt>+</tt>', and `<tt>/</tt>'.
+The syntax we use can be drawn by using four different patterns:
+
+<ol>
+<li><tt>"abc"</tt> is the terminal string `<tt>abc</tt>', represented as
+
+<p>
+<div align="CENTER">
+
+<img width="243" height="202" align="BOTTOM" border="0" src="p891a.gif" alt="\epsfbox{p891a.eps}">
+</div>
+
+<p>
+Note that the graphical representation of every expression has a bounding box. This is the
+smallest rectangle that surrounds the graphic.
+
+<p>
+</li>
+<li>(<span class="MATH"><i>re</i>1&nbsp;<i>re</i>2</span>) is a sequence of first expression <span class="MATH"><i>re</i>1</span>, then expression <span class="MATH"><i>re</i>2</span>, represented as
+
+<p>
+<div align="CENTER">
+
+<img width="508" height="281" align="BOTTOM" border="0" src="p891b.gif" alt="\epsfbox{p891b.eps}">
+</div>
+
+<p>
+The two expressions <span class="MATH"><i>re</i>1</span> and <span class="MATH"><i>re</i>2</span> have to be concatenated such that the bounding boxes of
+the two expressions touch and such that the `<tt>-</tt>' on the right of <span class="MATH"><i>re</i>1</span> matches the `<tt>-</tt>' on the
+left of <span class="MATH"><i>re</i>2</span>.
+
+<p>
+</li>
+<li>{<span class="MATH"><i>re</i>1&nbsp;<i>re</i>2</span>} represents alternatives, either <span class="MATH"><i>re</i>1</span> or <span class="MATH"><i>re</i>2</span>, represented as
+
+<p>
+<div align="CENTER">
+
+<img width="258" height="323" align="BOTTOM" border="0" src="p891c.gif" alt="\epsfbox{p891c.eps}">
+</div>
+the number of `<tt>|</tt>' characters that has to be added depends on the shapes of <span class="MATH"><i>re</i>1</span> and <span class="MATH"><i>re</i>2</span>.
+There has to be exactly one straight blank line between the bounding box of the graphical
+representation of <span class="MATH"><i>re</i>1</span> and the bounding box of <span class="MATH"><i>re</i>2</span>. If necessary, also a number of `<tt>-</tt>'
+characters has to be added on the right side of <span class="MATH"><i>re</i>1</span> or <span class="MATH"><i>re</i>2</span>, to make the drawing possible. Note
+that the `<tt>-</tt>' on the left of <span class="MATH"><i>re</i>1</span> and <span class="MATH"><i>re</i>2</span> matches the `
+<span class="MATH">&#92;</span>' character and that the `<tt>-</tt>'
+on the right of <span class="MATH"><i>re</i>1</span> and <span class="MATH"><i>re</i>2</span> matches the `
+<span class="MATH">&#92;</span>' character in the drawing.
+
+<p>
+</li>
+<li>[<span class="MATH"><i>re</i>1</span>] is a 1-or-more repetition of <span class="MATH"><i>re</i>1</span>, represented as
+<div align="CENTER">
+
+<img width="266" height="161" align="BOTTOM" border="0" src="p891d.gif" alt="\epsfbox{p891d.eps}">
+</div>
+
+<p>
+Note that the `<tt>-</tt>' on the left of <span class="MATH"><i>re</i>1</span> matches the `
+<span class="MATH">&#92;</span>' character and that the `<tt>-</tt>' on the right of
+<span class="MATH"><i>re</i>1</span> matches the `<tt>/</tt>' character in the drawing.
+</li>
+</ol>
+
+<p>
+
+<p>
+<br>
+For example the graphical representation for the regular expression
+<tt>{("f" "bar") ["c"]}</tt> looks like:
+
+<p>
+<pre>
+      +===+    +=====+
+---\-&gt;+ f +---&gt;+ bar +--/--&gt;
+   |  +===+    +=====+  |
+   |                    |
+   | /---------\        |
+   | |  +===+  |        |
+   \-\-&gt;+ c +--/--------/
+        +===+
+</pre>
+
+<p>
+Write a program that reads syntax rules and prints the size of the graphical representation.
+For esthetic reasons, the entire graphic has a `<tt>-</tt>' on the left and a `<tt>-&gt;</tt>' on the right.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of a line holding the number of test cases, followed by the input expressions
+(one per line). The expressions are formatted according to the following grammar:
+
+<p>
+<blockquote>
+expression :: sequence | alternatives | repetition | terminal
+</blockquote>
+<p>
+<blockquote>sequence :: ( ws expression expression ) ws
+</blockquote>
+<p>
+<blockquote>alternatives :: { ws expression expression } ws
+</blockquote>
+<p>
+<blockquote>repetition :: [ ws expression ] ws
+</blockquote>
+<p>
+<blockquote>terminal :: <tt>"</tt> character* <tt>"</tt> ws
+</blockquote>
+<p>
+<blockquote>ws :: (&lt;<em>space</em>&gt; | &lt;<em>tab</em>&gt;)*
+</blockquote>
+<p>
+<blockquote>character :: &lt;<em>any character except <tt>"</tt> and control-characters (ASCII 0..31)&gt;</em>
+
+</blockquote>
+
+<p>
+Note that the grammar is specified according to the following notational conventions:
+
+<p>
+<blockquote>
+<span class="MATH"><i>x</i>&nbsp;<i>y</i></span> sequence: <span class="MATH"><i>x</i></span> followed by <span class="MATH"><i>y</i></span>
+</blockquote>
+<p>
+<blockquote><span class="MATH"><i>x</i>| <i>y</i></span> choice: <span class="MATH"><i>x</i></span> or <span class="MATH"><i>y</i></span>
+</blockquote>
+<p>
+<blockquote><span class="MATH"><i>x</i></span>*  repetition: zero or more occurrences of <span class="MATH"><i>x</i></span>
+</blockquote>
+<p>
+<blockquote><span class="MATH">&lt; &gt;</span> used for describing a character
+
+</blockquote>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each expression, output a line of the form <span class="MATH"><i>X</i></span><tt>x</tt><span class="MATH"><i>Y</i></span> with <span class="MATH"><i>X</i></span> and <span class="MATH"><i>Y</i></span> the width and height of
+the graphical representation of that expression.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+{("f" "bar") ["c"]}
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+28x8
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-09-16
+</address>
+</body>
+</html>
+

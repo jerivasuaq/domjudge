@@ -1,0 +1,67 @@
+<p>
+One method for determining the height achieved by a model rocket is to have three observers <span class="textbf">A</span>, <span class="textbf">B</span> and <span class="textbf">C</span> equally
+spaced <span class="MATH"><i>D</i></span> feet apart along a line at one edge of the flat test field.  Each observer has a theodolite or some other
+device for measuring angle above the horizontal of a distant object.  Each measuring device is on a stand <span class="MATH"><i>H</i></span> feet
+above the field.  When a rocket is fired, near the top of its flight, it deploys a parachute and emits a puff of dust.
+Each observer measures the angle above the horizontal of the puff of dust from their location.  From these angles <span class="MATH"><img width="16" height="16" align="BOTTOM" border="0" src="3147img1.gif" alt="$ \alpha$"></span>
+for <span class="textbf">A</span>,  <span class="MATH"><img width="15" height="32" align="MIDDLE" border="0" src="3147img2.gif" alt="$ \beta$"></span> for <span class="textbf">B</span> and <span class="MATH"><img width="14" height="30" align="MIDDLE" border="0" src="3147img3.gif" alt="$ \gamma$"></span> for <span class="textbf">C</span>, the height of the rocket above the field can be determined.
+
+<p>
+This problem is to write a program which, given the parameters <span class="MATH"><i>D</i></span> (the distance between observers along the line in
+feet), <span class="MATH"><i>H</i></span> (the distance of the measuring device above the field in feet),  <span class="MATH"><img width="16" height="16" align="BOTTOM" border="0" src="3147img1.gif" alt="$ \alpha$"></span> (the angle of the rocket above the horizontal
+in degrees measured by the leftmost observer <span class="textbf">A</span>), <span class="MATH"><img width="15" height="32" align="MIDDLE" border="0" src="3147img2.gif" alt="$ \beta$"></span> (the angle above the horizontal in degrees observed by the center
+observer <span class="textbf">B</span>) and  <span class="MATH"><img width="14" height="30" align="MIDDLE" border="0" src="3147img3.gif" alt="$ \gamma$"></span> (the angle above the horizontal in degrees measured by the rightmost observer <span class="textbf">C</span>), computes the
+height of the rocket above the field in feet to the nearest foot.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The first line of input contains the parameters <span class="MATH"><i>D</i></span> and <span class="MATH"><i>H</i></span> in that order as decimal numbers (not necessarily integers).
+These values would be measured once at the beginning of the day and remain fixed through all rocket shots.  Each
+succeeding line of input will contain the angles  <span class="MATH"><img width="16" height="16" align="BOTTOM" border="0" src="3147img1.gif" alt="$ \alpha$"></span> , <span class="MATH"><img width="15" height="32" align="MIDDLE" border="0" src="3147img2.gif" alt="$ \beta$"></span> and  <span class="MATH"><img width="14" height="30" align="MIDDLE" border="0" src="3147img3.gif" alt="$ \gamma$"></span> in that order (measured in degrees).  The last line of input
+will contain at least one value <span class="textit">less than or equal to</span> zero.  Other than  the last line indicating the end of data all
+angles will be strictly between 0 and 90 degrees.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each set of three angles (other than the end indicator), the output contains a line with the height above the field
+in feet (to the nearest foot) with no leading spaces.  (Note: <span class="MATH"><i>x</i>.5</span> rounds up to <span class="MATH"><i>x</i> + 1</span>.)
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+50 4
+43.88 46.85 40.70
+34.52 39.50 35.43
+27.05 29.22 26.14
+0 0 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+90
+70
+60
+</pre>
+
+<p>

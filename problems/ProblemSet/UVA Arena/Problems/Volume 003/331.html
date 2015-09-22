@@ -1,0 +1,70 @@
+
+
+<html>
+<head>
+<title>Mapping the Swaps</title>
+<meta name="description" content="Mapping the Swaps">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Mapping the Swaps</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Sorting an array can be done by swapping certain pairs of adjacent entries
+in the array.  This is the fundamental technique used in the well-known
+bubble sort.  If we list the identities of the pairs to be swapped, in the
+sequence they are to be swapped, we obtain what might be called a swap map.
+For example, suppose we wish to sort the array A whose elements are 3, 2,
+and 1 in that order.  If the subscripts for this array are 1, 2, and 3,
+sorting the array can be accomplished by swapping A2 and A3, then swapping A1
+and A2, and finally swapping A2 and A3.  If a pair is identified in a swap
+map by indicating the subscript of the first element of the pair to be
+swapped, then this sorting process would be characterized with the swap map
+2 1 2.
+<p>
+<p>
+It is instructive to note that there may be many ways in which swapping of
+adjacent array entries can be used to sort an array.  The previous array,
+containing 3 2 1, could also be sorted by swapping A1 and A2, then swapping
+A2 and A3, and finally swapping A1 and A2 again.  The swap map that describes
+this sorting sequence is 1 2 1.
+<p>
+<p>
+For a given array, how many different swap maps exist?  A little thought
+will show that there are an infinite number of swap maps, since sequential
+swapping of an arbitrary pair of elements will not change the order 
+of the elements.  Thus the swap map 1 1 1 2 1 will also leave our array
+elements in ascending order.  But how many swap maps of minimum size will
+place a given array in order?  That is the question you are to 
+answer in this problem.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input data will contain an arbitrary number of test cases, followed by a
+single 0.  Each test case will have a integer <i>n</i> that gives the size of an
+array, and will be followed by the <i>n</i> integer values in the array.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each test case, print a message similar to those shown in the
+sample output below.  In no test case will <i>n</i> be larger than 5.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2 9 7
+2 12 50
+3 3 2 1
+3 9 1 5
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>There are 1 swap maps for input data set 1.
+There are 0 swap maps for input data set 2.
+There are 2 swap maps for input data set 3.
+There are 1 swap maps for input data set 4.</pre>
+<p>
+</body>
+</html>

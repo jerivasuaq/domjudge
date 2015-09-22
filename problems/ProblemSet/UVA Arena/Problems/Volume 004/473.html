@@ -1,0 +1,56 @@
+
+
+<html>
+<head>
+<title>Raucous Rockers</title>
+<meta name="description" content="Raucous Rockers">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Raucous Rockers</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You just inherited the rights to <i>n</i> previously unreleased songs recorded by the popular group Raucous Rockers.
+You plan to release a set of <i>m</i> compact disks with a selection
+of these songs.
+Each disk can hold a maximum of <i>t</i> minutes of music, and a song can not overlap from one disk
+to another.
+Since you are a classical music fan and have no way to judge the artistic
+merits of these songs, you decide on the following criteria for making the selection:
+<ol><li> The  songs will be recorded on the set of disks in the order of the dates they were written.<li>
+The total number of songs included will be maximized.
+</li></li></ol><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input consists of several datasets. The first line of the input indicates the number of datasets, then there is a blank line and the datasets separated by a blank line. Each dataset consists of a line containing the values of <i>n</i>, <i>t</i> and <i>m</i>
+(integer numbers) followed by a line containing a list of the length of <i>n</i> songs,  <img width="81" height="23" align="MIDDLE" alt="tex2html_wrap_inline43" src="473img1.gif">  ordered by
+the date they were written (Each  <img width="11" height="23" align="MIDDLE" alt="tex2html_wrap_inline45" src="473img2.gif">  is between 1 and t minutes long, both inclusive, and  <img width="119" height="27" align="MIDDLE" alt="tex2html_wrap_inline49" src="473img3.gif"> .)
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+<b>The output</b> for each dataset consists of one integer indicating the number of songs that, following the
+above selection criteria will fit on <i>m</i> disks. Print a blank line between consecutive datasets.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+2
+
+10 5 3
+3, 5, 1, 2, 3, 5, 4, 1, 1, 5
+
+1 1 1
+1
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+6
+
+1
+</pre>
+<p>
+</body>
+</html>

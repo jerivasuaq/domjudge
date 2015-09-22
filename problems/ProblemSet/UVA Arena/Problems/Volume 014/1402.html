@@ -1,0 +1,101 @@
+
+<p>
+Somewhere deep in the Czech Technical University buildings, there are laboratories for examining mechanical and electrical properties of various materials. In one of yesterday's presentations, you have seen how was one of the laboratories changed into a new multimedia lab. But there are still others, serving to their original purposes. 
+
+<p>
+In this task, you are to write software for a robot that handles samples in such a laboratory. Imagine there are material samples lined up on a running belt. The samples have different heights, which may cause troubles to the next processing unit. To eliminate such troubles, we need to sort the samples by their height into the ascending order. 
+
+<p>
+Reordering is done by a mechanical robot arm, which is able to pick up any number of consecutive samples and turn them round, such that their mutual order is reversed. In other words, one robot operation can reverse the order of samples on positions between <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark>. 
+
+<p>
+A possible way to sort the samples is to find the position of the smallest one (<span class="MATH"><i>P</i><sub>1</sub></span>
+<tex2html_verbatim_mark>) and reverse the order between positions 1 and <span class="MATH"><i>P</i><sub>1</sub></span>
+<tex2html_verbatim_mark>, which causes the smallest sample to become first. Then we find the second one on position <span class="MATH"><i>P</i><sub>2</sub></span>
+<tex2html_verbatim_mark> and reverse the order between 2 and <span class="MATH"><i>P</i><sub>2</sub></span>
+<tex2html_verbatim_mark>. Then the third sample is located etc.
+
+<p>
+<div align="CENTER">
+
+<img width="634" height="129" align="BOTTOM" border="0" src="p3961.png" alt="\epsfbox{p3961.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+
+<p>
+The picture shows a simple example of 6 samples. The smallest one is on the 4th position, therefore, the robot arm reverses the first 4 samples. The second smallest sample is the last one, so the next robot operation will reverse the order of five samples on positions 2-6. The third step will be to reverse the samples 3-4, etc. 
+
+<p>
+Your task is to find the correct sequence of reversal operations that will sort the samples using the above algorithm. If there are more samples with the same height, their mutual order must be preserved: the one that was given first in the initial order must be placed before the others in the final order too.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of several scenarios. Each scenario is described by two lines. The first line contains one integer number <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>, the number of samples, 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="3961img2.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="3961img2.png" alt="$ \le$">100000</span>
+<tex2html_verbatim_mark>. The second line lists exactly <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> space-separated positive integers, they specify the heights of individual samples and their initial order. 
+
+<p>
+The last scenario is followed by a line containing zero.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each scenario, output one line with exactly <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> integers 
+<span class="MATH"><i>P</i><sub>1</sub>, <i>P</i><sub>2</sub>,..., <i>P</i><sub>N</sub></span>
+<tex2html_verbatim_mark>, separated by a space. Each <span class="MATH"><i>P</i><sub>i</sub></span>
+<tex2html_verbatim_mark> must be an integer 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="3961img2.png" alt="$ \le$"><i>P</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="3961img2.png" alt="$ \le$"><i>N</i>)</span>
+<tex2html_verbatim_mark> giving the position of the <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th sample just before the <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th reversal operation. 
+
+<p>
+Note that if a sample is already on its correct position <span class="MATH"><i>P</i><sub>i</sub></span>
+<tex2html_verbatim_mark>, you should output the number <span class="MATH"><i>P</i><sub>i</sub></span>
+<tex2html_verbatim_mark> anyway, indicating that the ``interval between <span class="MATH"><i>P</i><sub>i</sub></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>P</i><sub>i</sub></span>
+<tex2html_verbatim_mark>" (a single sample) should be reversed.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6 
+3 4 5 1 6 2 
+4 
+3 3 2 1 
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4 6 4 5 6 6 
+4 2 4 4
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

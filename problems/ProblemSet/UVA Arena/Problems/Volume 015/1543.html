@@ -1,0 +1,132 @@
+<p>
+Dr. Extreme experimentally made an extremely precise telescope to investigate extremely curi-
+ous phenomena at an extremely distant place. In order to make the telescope so precise as to
+investigate phenomena at such an extremely distant place, even quite a small distortion is not
+allowed. However, he forgot the influence of the internal gas affected by low-frequency vibration
+of magnetic flux passing through the telescope. The cylinder of the telescope is not affected by
+the low-frequency vibration, but the internal gas is.
+
+<p>
+The cross section of the telescope forms a perfect circle. If he forms a coil by putting extremely
+thin wire along the (inner) circumference, he can measure (the average vertical component
+of) the temporal variation of magnetic flux:such measurement would be useful to estimate
+the influence. But points on the circumference at which the wire can be fixed are limited;
+furthermore, the number of special clips to fix the wire is also limited. To obtain the highest
+sensitivity, he wishes to form a coil of a polygon shape with the largest area by stringing the
+wire among carefully selected points on the circumference.
+
+<p>
+Your job is to write a program which reports the maximum area of all possible <span class="MATH"><i>m</i></span>-polygons
+(polygons with exactly <span class="MATH"><i>m</i></span> vertices) each of whose vertices is one of the <span class="MATH"><i>n</i></span> points given on a
+circumference with a radius of 1. An example of the case <span class="MATH"><i>n</i> = 4</span> and <span class="MATH"><i>m</i> = 3</span> is illustrated below.
+
+<p>
+<div align="CENTER">
+
+<img width="800" height="514" align="BOTTOM" border="0" src="p2151.gif" alt="\epsfbox{p2151.eps}">
+</div>
+
+<p>
+In the figure above, the equations such as ``
+<span class="MATH"><i>p</i><sub>1</sub> = 0.0</span>" indicate the locations of the <span class="MATH"><i>n</i></span> given points,
+and the decimals such as ``1.000000" on <span class="MATH"><i>m</i></span>-polygons indicate the areas of <span class="MATH"><i>m</i></span>-polygons.
+
+<p>
+Parameter <span class="MATH"><i>p</i><sub>i</sub></span> denotes the location of the <span class="MATH"><i>i</i></span>-th given point on the circumference 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="2151img2.png" alt="$ \le$"><i>i</i><img width="18" height="31" align="MIDDLE" border="0" src="2151img2.png" alt="$ \le$"><i>n</i>)</span>. The
+location <span class="MATH"><i>p</i></span> of a point on the circumference is in the range 
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="2151img2.png" alt="$ \le$"><i>p</i> &lt; 1</span>, corresponding to the range
+of rotation angles from 0 to <span class="MATH">2<img width="15" height="15" align="BOTTOM" border="0" src="2151img3.png" alt="$ \pi$"></span> radians. That is, the rotation angle of a point at <span class="MATH"><i>p</i></span> to the point
+at 0 equals <span class="MATH">2<img width="15" height="15" align="BOTTOM" border="0" src="2151img3.png" alt="$ \pi$"><i>p</i></span> radians. (<span class="MATH"><img width="15" height="15" align="BOTTOM" border="0" src="2151img3.png" alt="$ \pi$"></span> is the circular constant 3.14159265358979323846....)
+
+<p>
+You may rely on the fact that the area of an isosceles triangle ABC (AB = AC = 1) with an
+interior angle BAC of <span class="MATH"><img width="16" height="15" align="BOTTOM" border="0" src="2151img4.png" alt="$ \alpha$"></span> radians 
+<span class="MATH">(0 &lt; <img width="16" height="15" align="BOTTOM" border="0" src="2151img4.png" alt="$ \alpha$"> &lt; <img width="15" height="15" align="BOTTOM" border="0" src="2151img3.png" alt="$ \pi$">)</span> is 
+<span class="MATH"><img width="15" height="39" align="MIDDLE" border="0" src="2151img5.png" alt="$ {\frac{{1}}{{2}}}$"></span>sin<span class="MATH"><img width="16" height="15" align="BOTTOM" border="0" src="2151img4.png" alt="$ \alpha$"></span> , and the area of a polygon inside a circle with a radius of 1 is less than <span class="MATH"><img width="15" height="15" align="BOTTOM" border="0" src="2151img3.png" alt="$ \pi$"></span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of multiple subproblems followed by a line containing two zeros that indicates
+the end of the input. Each subproblem is given in the following format.
+
+<p>
+
+<p>
+<br>
+<table cols="4">
+<col align="CENTER"><col align="CENTER"><col align="CENTER"><col align="CENTER">
+<tr><td valign="BASELINE" align="CENTER" nowrap="">
+<span class="MATH"><i>n</i></span> </td><td valign="BASELINE" align="CENTER" nowrap=""> <span class="MATH"><i>m</i></span> </td><td></td><td></td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+<span class="MATH"><i>p</i><sub>1</sub></span> </td><td valign="BASELINE" align="CENTER" nowrap=""> <span class="MATH"><i>p</i><sub>2</sub></span> </td><td valign="BASELINE" align="CENTER" nowrap=""> <span class="MATH"><sup> ... </sup></span> </td><td valign="BASELINE" align="CENTER" nowrap=""> <span class="MATH"><i>p</i><sub>n</sub></span> </td></tr>
+</table>
+
+<p>
+
+<p>
+<br>
+
+<span class="MATH"><i>n</i></span> is the number of points on the circumference 
+<span class="MATH">(3<img width="18" height="31" align="MIDDLE" border="0" src="2151img2.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="2151img2.png" alt="$ \le$">40)</span>. <span class="MATH"><i>m</i></span> is the number of vertices to
+form <span class="MATH"><i>m</i></span>-polygons 
+<span class="MATH">(3<img width="18" height="31" align="MIDDLE" border="0" src="2151img2.png" alt="$ \le$"><i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="2151img2.png" alt="$ \le$"><i>n</i>)</span>. The locations of <span class="MATH"><i>n</i></span> points, 
+<span class="MATH"><i>p</i><sub>1</sub>, <i>p</i><sub>2</sub>,..., <i>p</i><sub>n</sub></span>, are given as decimals
+and they are separated by either a space character or a newline. In addition, you may assume that 
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="2151img2.png" alt="$ \le$"><i>p</i><sub>1</sub> &lt; <i>p</i><sub>2</sub> &lt; <sup> ... </sup> &lt; <i>p</i><sub>n</sub> &lt; 1</span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each subproblem, the maximum area should be output, each in a separate line. Each value
+in the output may not have an error greater than 0.000001 and its fractional part should be
+represented by 6 decimal digits after the decimal point.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4 3
+0.0 0.25 0.5 0.666666666666666666667
+4 4
+0.0 0.25 0.5 0.75
+30 15
+0.00 0.03 0.06 0.09 0.12 0.15 0.18 0.21 0.24 0.27
+0.30 0.33 0.36 0.39 0.42 0.45 0.48 0.51 0.54 0.57
+0.61 0.64 0.66 0.69 0.72 0.75 0.78 0.81 0.84 0.87
+40 20
+0.351 0.353 0.355 0.357 0.359 0.361 0.363 0.365 0.367 0.369
+0.371 0.373 0.375 0.377 0.379 0.381 0.383 0.385 0.387 0.389
+0.611 0.613 0.615 0.617 0.619 0.621 0.623 0.625 0.627 0.629
+0.631 0.633 0.635 0.637 0.639 0.641 0.643 0.645 0.647 0.649
+0 0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1.183013
+2.000000
+3.026998
+0.253581
+</pre> 
+
+<p>

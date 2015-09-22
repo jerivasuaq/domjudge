@@ -1,0 +1,132 @@
+
+
+<html>
+<head>
+<title>Making the Grade</title>
+<meta name="description" content="Making the Grade">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Making the Grade</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Mr. Chips has a simple grading scheme that lends itself to
+automated computation.  You will write a program that will read in
+his students' grades, bonus points, and attendance record, compute
+the student's grades, and output the average grade point of the
+class.
+<p>
+<p>
+Mr. Chips grades as follows.  All tests are
+based on 100 points and all test grades are between 0 and 100
+points. If he has given more than 2 tests then he will drop the
+lowest test grade for each student before computing student
+averages.  After computing student averages he computes the
+overall class average (<em>mean</em>) and standard deviation (<em>sd</em>). The
+cutoff points for grades are: an average  <img width="11" height="24" align="MIDDLE" alt="tex2html_wrap_inline53" src="381img1.gif">  one <em>sd</em> above the <em>mean</em> is an A, an average  <img width="11" height="24" align="MIDDLE" alt="tex2html_wrap_inline53" src="381img1.gif">  the <em>mean</em> but &lt; one <em>sd</em> above the <em>mean</em> is a B,
+an average  <img width="11" height="24" align="MIDDLE" alt="tex2html_wrap_inline53" src="381img1.gif">  one <em>sd</em> below the <em>mean</em> but &lt; the <em>mean</em> is a C, and an
+average &lt; one <em>sd</em> below the <em>mean</em> is a D.
+<p>
+For every two bonus
+points accrued by a student Mr. Chips increases their computed
+average by 3 percentage points. Thus, if students have one bonus
+point, their averages are not bumped at all.  If they have 4 or 5
+bonus points, their averages are bumped by 6 percentage points,
+and so on. Bumping of averages based on bonus points takes place
+after the grade cutoff points have been determined.
+<p>
+Finally, for
+every 4 absences, students lose one letter grade (from A to B, B to
+C, C to D, and D to F).  For example, if they have 9 absences they
+will lose two letter grades. Students cannot get a grade lower than
+F. If students have perfect attendance, they gain one letter grade;
+although they cannot get a grade higher than an A.  During his
+computations, Mr. Chips always rounds his results to the nearest
+tenth. In summary, Mr. Chips drops a student's lowest test grade if
+more than 2 tests have been administered, computes each student's
+average, computes the class <em>mean</em> and <em>sd</em>, adjusts the students'
+averages based on bonus points, determines the student's
+unadjusted grades, and then adjusts the grades based on attendance.
+<p>
+<p>
+The average grade point (<em>avg grd pnt</em>) of a class is determined by using 4 points
+for each A, 3 points for each B, 2 points for each C, 1 point for
+each D, and 0 points for each F.  The total points for the class are
+added together and divided by the number of students in the class
+(which is always at least 2).
+<p>
+<p>
+The standard deviation <em>sd</em> of a list of numbers  <img width="74" height="17" align="MIDDLE" alt="tex2html_wrap_inline65" src="381img2.gif"> 
+is:   
+<p> <img width="338" height="48" align="BOTTOM" alt="displaymath67" src="381img3.gif"> <p>
+<p>
+If the calculated standard deviation is less than 1 then Mr. Chips
+uses 1 in place of the standard deviation for grade calculation.
+<p>
+<p>
+Suppose Mr. Chips has 5 students and has given 3 tests. The
+following table shows the grades, number of bonuses and days
+absent, plus the computed average (with lowest test dropped), the
+adjusted average (with bonus), the unadjusted grade and the
+adjusted grade (with attendance). The <em>mean</em> and <em>sd</em> used to
+determine letter grade cutoffs are 69.0 and 20.1. For example, for
+an unadjusted B, one's average must be greater than or equal to
+69.0 and less than 89.1.The <em>avg grd pnt</em> is 2.2
+<p>
+<p>
+<p> <img width="511" height="122" align="BOTTOM" alt="tabular41" src="381img4.gif"> <p><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line contains an integer <i>N</i> between 1 and 10
+describing how many of Mr. Chip's classes are represented in the
+input.  The first line for each class contains two integers <i>S</i> and <i>T</i>. <i>S</i>
+is the number of students in the class (1 &lt; <i>S</i> &lt; 31) and <i>T</i> is the
+number of tests the students took (1 &lt; <i>T</i> &lt; 11).  The next <i>S</i> lines
+will each represent one student in the class. A student line first lists
+each of their <i>T</i> test scores as integers between 0 and 100 inclusive,
+and then lists their bonus points and their number of absences.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+There should be <i>N</i>+2 lines of output.  The first line of
+output should read <tt>MAKING THE GRADE OUTPUT</tt>.   There will
+then be one line of output for each of Mr. Chip's classes showing
+that class's average grade point. The final line of output should
+read <tt>END OF OUTPUT</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3
+3 2
+100 50 2 5
+60 60 17 1
+20 10 0 0
+5 5
+100  80  90  80  90   0   0
+80 80 80 80 80   0 0
+50 50 50 50 50 0 0
+100 100 20 20 20 0 0
+30 30 30 30 30 0 0
+10  4
+79   56   59   89    4    5
+100   89   96   79    6    2
+80   80   80   76    1    3
+76   76   76   76    5    4
+58   78   67   75    4    0
+100   96  100   95    1    2
+47   49   46   45    0    5
+67   98   59   87    5    5
+23   45   52   54    2    7
+78   75   79   79    3    3</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>MAKING THE GRADE OUTPUT
+3.0
+3.2
+2.4
+END OF OUTPUT</pre>
+<p>
+</body>
+</html>

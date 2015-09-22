@@ -1,0 +1,114 @@
+
+<p>
+In computational complexity theory, polynomial-time reduction is an important concept. 
+
+<p>
+If the existence of a polynomial-time algorithm for problem <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> implies that problem <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> also has a polynomial-time algorithm, we say that problem <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> has a polynomial-time reduction to problem <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark>. The relation of reduction is transitive, i.e. if <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> has a reduction to <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> has a reduction to <span class="MATH"><i>C</i></span>
+<tex2html_verbatim_mark>, then <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> has a reduction to <span class="MATH"><i>C</i></span>
+<tex2html_verbatim_mark>. 
+
+<p>
+Theoretical computer science researchers have found hundreds of polynomial-time reductions between problems, which build a large network of reductions in computational complexity theory. 
+
+<p>
+In this network, some reductions are explicitly presented and others exist implicitly. For example, if the reductions from <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> and from <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>C</i></span>
+<tex2html_verbatim_mark> are explicitly presented and the reduction from <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>C</i></span>
+<tex2html_verbatim_mark> is not explicitly presented, we say that the reduction from <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>C</i></span>
+<tex2html_verbatim_mark> exists implicitly. 
+
+<p>
+In fact, some reductions are not necessary to present explicitly in the network. For example, if reductions from <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> and from <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>C</i></span>
+<tex2html_verbatim_mark> exist explicitly or implicitly in the network, then the reduction from <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>C</i></span>
+<tex2html_verbatim_mark> is not necessary to present explicitly. By this fact, it's possible to simplify the network of reductions. 
+
+<p>
+Your task is just to simplify the network of reductions such that the number of reductions explicitly presented in the simplified network is minimized and reduction from problem <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> to problem <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> exists explicitly or implicitly in the simplified network if and only if it exists in the original network explicitly or implicitly.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of multiple test cases. Each test case starts with a line containing two integers <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4272img1.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4272img1.png" alt="$ \le$">100, 0<img width="18" height="31" align="MIDDLE" border="0" src="4272img1.png" alt="$ \le$"><i>M</i><img width="18" height="31" align="MIDDLE" border="0" src="4272img1.png" alt="$ \le$">10000)</span>
+<tex2html_verbatim_mark>, which are the number of problems and the number of explicitly presented reductions in the network. The problems are numbered from 1 to <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>. 
+
+<p>
+Each of the following <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark> lines contains two integers <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4272img1.png" alt="$ \le$"><i>A</i><img width="18" height="31" align="MIDDLE" border="0" src="4272img1.png" alt="$ \le$"><i>N</i>, 1<img width="18" height="31" align="MIDDLE" border="0" src="4272img1.png" alt="$ \le$"><i>B</i><img width="18" height="31" align="MIDDLE" border="0" src="4272img1.png" alt="$ \le$"><i>N</i>, <i>A</i> <img width="18" height="34" align="MIDDLE" border="0" src="4272img2.png" alt="$ \neq$"> <i>B</i>)</span>
+<tex2html_verbatim_mark>, which means a polynomial-time reduction from problem <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> to problem <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> is explicitly presented in the network. The last test case is followed by a line containing two zeros.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, print a line containing the test case number (beginning with 1) followed by a integer which is the number of explicitly presented reductions in the simplified network.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 3 
+1 2 
+2 3 
+1 3 
+4 6 
+1 2 
+2 1 
+2 3 
+3 2 
+3 4 
+4 3 
+0 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case 1: 2 
+Case 2: 4
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

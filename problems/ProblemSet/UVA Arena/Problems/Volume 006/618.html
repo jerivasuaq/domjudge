@@ -1,0 +1,127 @@
+
+
+<html>
+<head>
+<title>Doing Windows</title>
+<meta name="description" content="Doing Windows">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Doing Windows</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The screen of monitors on computer systems are rectangles.  The <em>aspect ratio</em>
+of a screen is its width divided by its height.  This term can also be applied
+to rectangular windows that may appear on the monitor's screen, where it is
+defined
+as the width of the window divided by its height.  For this problem we assume
+the dimensions of a monitor's screen and its windows are measured in integral
+numbers
+of pixels, the individual dots (arranged in a rectangular grid) that comprise
+and image.
+
+<p>
+
+<p>
+<br>
+Suppose your windowing software only allows windows to be resized in such
+a way that their aspect ratios are unmodified.  For example, a window with
+a width
+of 150 pixels and a height of 100 pixels (and an aspect ratio of 150/100,
+or 1.5)
+can be resized so its width is 225 pixels and its height is 150 pixels
+(the aspect ratio
+remains unchanged, at 225/150, or 1.5), but a width of 224 and a height
+of 150 is not
+allowed, since that would change the aspect ratio.  Each window can be
+moved to an
+arbitrary location on the screen, but the entire window must remain visible
+on the screen.
+
+<p>
+
+<p>
+<br>
+Given the size of a screen and the initial sizes of four different windows
+(as integer values for width and height), is it possible to resize (and
+relocate) the
+four windows so they completely cover the screen without overlapping each
+other?
+That's the question you are to answer in this problem.
+
+<p>
+
+<p>
+<br>
+For example, consider a square screen with four square windows.
+The aspect ratio
+for each of these is exactly 1.  We are permitted to resize each of
+the four windows
+so they would completely fill the screen without overlapping.
+This case is illustrated by the first data set in the Sample Input, below.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input will consist of one or more data sets followed by a pair of zeroes.
+Each data set will contain five pairs of integers.  The first pair
+
+
+(<i>W</i><sub><i>s</i></sub>, <i>H</i><sub><i>s</i></sub>) specifies the
+width and height of the screen.  The four remaining pairs (<i>W</i><sub><i>i</i></sub>,
+<i>H</i><sub><i>i</i></sub>, for <i>i</i> = 1 to 4) specify the initial sizes of the windows.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output should have one line for each input data set.  The line should contain
+the input data set number (starting with 1) followed by the word <tt>Yes</tt>
+if the screen can be completely covered by the (possibly resized and relocated) windows with no overlap, or <tt>No</tt> if it cannot be so covered.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+400 400   10 10  35 35   15 15   100 100
+200 300   10 10  20 20   30 45   40 60
+200 250   10 10  20 20   30 45   40 60
+
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Set 1: Yes
+Set 2: No
+Set 3: Yes
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-24</i>
+</address>
+</body>
+</html>
+

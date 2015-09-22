@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>Reserve Bookshelf</title>
+<meta name="description" content="Building Bridges">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0000ff"><tr><td><b><font size="5" color="#FFff00">&nbsp;<a name="SECTION0001000000000000000000">
+Reserve Bookshelf</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A very small rural library has only one shelf dedicated to reserve books (reserve books are deemed important to
+a large number of library users and can therefore be checked out only for very short periods of time) .
+
+<p>
+When the library's staff places a book on reserve, the book is put on the reserve shelf's left end. All books
+that were already on the reserve shelf must therefore be moved to the right, just enough to make room for the new
+book on the shelf. When a reserve book is checked out and subsequently returned, it is also put on the reserve shelf's
+left end, as if it were just being placed on reserve. What happens when the shelf is full? When a book is placed on
+reserve, or when a previously checked out reserve book is returned, and there is not enough room on the reserve
+bookshelf, then, starting at the right end, as many books (but no more) are removed from the reserve shelf (they
+are "taken off reserve") as needed in order to make room for the book to be put on the reserve bookshelf.
+
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input file contains a single integer, the total available space on the reserve book shelf
+(when it is empty), measured in millimeters (1 inch equals about 25 millimeters). Its value will be at least 250
+and at most 1500. Your program will start with an empty reserve book shelf.
+
+<p>
+Each subsequent line of input will start with one of the four commands ADD, CHECKOUT, RETURN, PRINT in upper case
+letters, starting in column 1.
+<blockquote>
+<li>The ADD command is followed by a title (starting in column 10), consisting of at most 29 printable
+characters. The title is followed (starting in column 40) by the thickness of the book (the amount of book shelf
+space it will require), a positive integer, not greater than 150. The effect of the ADD command will be to place a
+new title on reserve, as described above. Once a particular title has been ADDed, it will not be ADDed again as long
+as that book is on the reserve book shelf or has been checked out. However, if a title has been forced off the reserve
+book shelf (by another ADD command or by a RETURN command) then that title may appear in a subsequent ADD command
+(with the same thickness as before).<br><br>
+<li>The CHECKOUT command is followed by a title (starting in column 10) which is currently on the reserve
+shelf. The effect of the CHECKOUT command is to remove the specified title from the reserve shelf (until it is placed
+back on the reserve shelf by a subsequent RETURN command.<br><br>
+<li>A CHECKOUT may create a gap between two books (for example, when "The C Programming Language"  is checked out in
+the example shown). Such a gap will count as part of the free space.<br><br>
+<li>The RETURN command is followed by a title (starting in column 10) which is currently checked out. The effect of the
+RETURN command is to put the specified book to the left end of the reserve shelf, as described in the introductory
+paragraphs.<br><br>
+<li>The effect of the PRINT command will be to display in the output file: the title and thickness of each book currently
+on the reserve shelf, one book per line, in the (left-to-right) order in which the books are currently on the reserve shelf,
+the currently available space on the reserve shelf, and one blank line.
+</li></li></li></li></li></blockquote>
+<p>
+There will not be any trailing blank spaces in the input  file.
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+Pay attention to all formatting details, such as punctuation, upper/lower case characters, and the presence or
+absence of blank spaces and blank lines. All titles, as well as the sentence "AVAILABLE SHELF SPACE:" are left-justified,
+starting in column 1. All numerical quantities are displayed right-justified, with the unit's digit in column 34.
+
+
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+250
+PRINT
+ADD      101 Uses for a Dead Cat       38
+ADD      Thin Thighs in 30 Days        63
+ADD      The Republic                  44
+ADD      Mein Kampf                    101
+PRINT
+ADD      Principia Mathematica         79
+PRINT
+CHECKOUT The Republic
+ADD      On the Origin of Species      55
+ADD      The C Programming Language    15
+PRINT
+RETURN   The Republic
+ADD      101 Uses for a Dead Cat       38
+CHECKOUT The C Programming Language
+PRINT
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Program 2 by team X
+AVAILABLE SHELF SPACE:         250
+
+Mein Kampf                     101
+The Republic                    44
+Thin Thighs in 30 Days          63
+101 Uses for a Dead Cat         38
+AVAILABLE SHELF SPACE:           4
+
+Principia Mathematica           79
+Mein Kampf                     101
+The Republic                    44
+AVAILABLE SHELF SPACE:          26
+
+The C Programming Language      15
+On the Origin of Species        55
+Principia Mathematica           79
+Mein Kampf                     101
+AVAILABLE SHELF SPACE:           0
+
+101 Uses for a Dead Cat         38
+The Republic                    44
+On the Origin of Species        55
+Principia Mathematica           79
+AVAILABLE SHELF SPACE:          34
+
+End of program 2 by team X
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Mountain Region'2000
+</address>
+</body>
+</html>
+

@@ -1,0 +1,120 @@
+Mr. Kim is planning to open a new restaurant. His city is laid out as a grid with size 
+<span class="MATH"><i>M</i> <tt>x</tt> <i>M</i></span>. Therefore, every road is horizontal or 
+vertical and the horizontal roads (resp., the vertical roads) are numbered from 0 to <span class="MATH"><i>M</i> - 1</span>. For profitability, all restaurants are located 
+near road junctions. The city has two big apartments which are located on the same horizontal road. The figure below shows an example 
+of a city map with size 
+<span class="MATH">11 <tt>x</tt> 11</span>. A circle represents an existing restaurant and a circle labeled with `A' or `B' represents 
+the location of an apartment. Notice that a restaurant is already located at each apartment. Each road junction is represented by the 
+coordinate of the ordered pair of a vertical road and a horizontal road. The distance between two locations <span class="MATH">(<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>)</span> and <span class="MATH">(<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>)</span> is 
+computed as 
+<span class="MATH">| <i>x</i><sub>1</sub> - <i>x</i><sub>2</sub>| + | <i>y</i><sub>1</sub> - <i>y</i><sub>2</sub>|</span>. In the figure below, the coordinates of A and B are <span class="MATH">(0, 5)</span> and <span class="MATH">(10, 5)</span>, respectively.
+
+<p>
+<div align="CENTER">
+
+<img width="467" height="401" align="BOTTOM" border="0" src="p4851.png" alt="\epsfbox{p4851.eps}">
+</div>
+
+<p>
+Mr. Kim knows that the residents of the two apartments frequently have a meeting. So, he thinks that the best location of a new 
+restaurant is halfway between two apartments. Considering lease expenses and existing restaurants, however, he can't select the 
+optimal location unconditionally. Hence he decides to regard a location satisfying the following condition as a <span class="textit">good place</span>. Let 
+<span class="MATH"><i>dist</i>(<i>p</i>, <i>q</i>)</span> be the distance between <span class="MATH"><i>p</i></span> and <span class="MATH"><i>q</i></span>. 
+
+<p>
+<blockquote>
+A location <span class="MATH"><i>p</i></span> is a <span class="textit">good place</span> if for each existing restaurant's location <span class="MATH"><i>q</i></span>, 
+
+<span class="MATH"><i>dist</i>(<i>p</i>, <i>A</i>) &lt; <i>dist</i>(<i>q</i>, <i>A</i>)</span> or 
+<span class="MATH"><i>dist</i>(<i>p</i>, <i>B</i>) &lt; <i>dist</i>(<i>q</i>, <i>B</i>)</span>. In other words, <span class="MATH"><i>p</i></span> is not a good place if there exists an existing restaurant's 
+location <span class="MATH"><i>q</i></span> such that 
+<span class="MATH"><i>dist</i>(<i>p</i>, <i>A</i>)<img width="18" height="31" align="MIDDLE" border="0" src="4851img2.png" alt="$ \ge$"><i>dist</i>(<i>q</i>, <i>A</i>)</span> and 
+<span class="MATH"><i>dist</i>(<i>p</i>, <i>B</i>)<img width="18" height="31" align="MIDDLE" border="0" src="4851img2.png" alt="$ \ge$"><i>dist</i>(<i>q</i>, <i>B</i>)</span>. 
+
+</blockquote> 
+
+<p>
+In the above figure, the location <span class="MATH">(7, 4)</span> is a good place. 
+But the location <span class="MATH"><i>p</i> = (4, 6)</span> is not good because there is no apartment which is closer to <span class="MATH"><i>p</i></span> than the restaurant at <span class="MATH"><i>q</i> = (3, 5)</span>, i.e., 
+
+<span class="MATH"><i>dist</i>(<i>p</i>, <i>A</i>) = 5<img width="18" height="31" align="MIDDLE" border="0" src="4851img2.png" alt="$ \ge$"><i>dist</i>(<i>q</i>, <i>A</i>) = 3</span> and 
+<span class="MATH"><i>dist</i>(<i>p</i>, <i>B</i>) = 7<img width="18" height="31" align="MIDDLE" border="0" src="4851img2.png" alt="$ \ge$"><i>dist</i>(<i>q</i>, <i>B</i>) = 7</span>. Also, the location <span class="MATH">(0, 0)</span> is not good due to the restaurant 
+at <span class="MATH">(0, 5)</span>. Notice that the existing restaurants are positioned regardless of Mr. Kim's condition. 
+
+<p>
+Given <span class="MATH"><i>n</i></span> locations of existing 
+restaurants, write a program to compute the number of good places for a new restaurant.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to read the input from standard input. The input consists of <span class="MATH"><i>T</i></span> test cases. The number of test cases <span class="MATH"><i>T</i></span> is given in 
+the first line of the input. Each test case starts with a line containing two integers <span class="MATH"><i>M</i></span> and 
+<span class="MATH"><i>n</i></span> (
+<span class="MATH">2<img width="18" height="31" align="MIDDLE" border="0" src="4851img3.png" alt="$ \le$"><i>M</i><img width="18" height="31" align="MIDDLE" border="0" src="4851img3.png" alt="$ \le$">60, 000</span> and 
+<span class="MATH">2<img width="18" height="31" align="MIDDLE" border="0" src="4851img3.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4851img3.png" alt="$ \le$">50, 000</span>), which 
+represent the size of a city map and the number of existing restaurants, respectively. The <span class="MATH">(<i>i</i> + 1)</span>-th line of a test case contains 
+two integers <span class="MATH"><i>x</i><sub>i</sub></span> and <span class="MATH"><i>y</i><sub>i</sub></span> (
+<span class="MATH"><i>i</i> = 1, 2,..., <i>n</i></span> and 
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="4851img3.png" alt="$ \le$"><i>x</i><sub>i</sub>, <i>y</i><sub>i</sub> &lt; <i>M</i></span>), which represents the coordinate of the <span class="MATH"><i>i</i></span>-th 
+existing restaurant. Assume 
+that all restaurants have distinct coordinates and that the two apartments A and B are positioned at the locations of 1-st restaurant 
+and 2-nd restaurant. Notice that A and B are placed on the same horizontal line. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to write to standard output. 
+Print exactly one line for each test case. Print the number of good places which can be found in a given city map.
+
+<p>
+The following shows sample input and output for two test cases. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+6 3
+1 3
+4 3
+0 2
+11 11
+0 5
+10 5
+4 9
+2 8
+7 8
+5 6
+3 5
+5 3
+3 2
+7 2
+9 1
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+16
+</pre> 
+
+<p>

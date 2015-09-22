@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>ACM - Porto</title>
+<style>a:hover {color:#FA1F00}</style>
+</head>
+
+
+
+<p align="center"><font size="5"><b>Numerical maze</b></font></p>
+
+<b><font size="3"><a name="back">Background</a></font></b><p>
+
+<p>&nbsp;&nbsp; No one knows who is the creator of the first maze (or
+labyrinth), but all sorts of mazes can be found almost everywhere and some of
+them have been built long time ago. The most famous maze is maybe the one in
+Crete, drawn and built by Daedalus for the king Minos, a place where it is
+believed the Minotaur (a monster with the head of a bull and the body of a man)
+was kept, feeding on human flesh, until destroyed by Theseus.<br>&nbsp;&nbsp; The following figure illustrates a kind of maze.</p>
+
+<p align="center"><img border="0" src="p868.gif" width="335" height="198"><br><b>Figure
+3.1</b> - The maze</p>
+
+<b><font size="3"><a name="problem">Problem</a></font></b></p>
+
+<p>&nbsp;&nbsp; Are you able to find a path that takes you from the start to
+exit of the maze? You are only allowed to move horizontally or vertically 
+diagonal movements are not permitted. The path consists of subsequences obeying
+to the following rule: <b>1; 1,2; 1,2,3; 1,2,3,4; </b>and so on. Subsequences may
+include changes of direction.<br>&nbsp;&nbsp; The problem you have to solve is to determine an entry
+point and a path that takes you to the exit point, for a given maze. The start
+point is always a cell in the top row of the maze (with the value 1!) and the
+exit point is always a cell in the last line of the maze.</p>
+
+<b><font size="3"><a name="input">Input</a></font></b><p>
+<p>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</p><p>
+<p>
+<p>&nbsp;&nbsp; The first input line contains two positive
+integers <b>N</b> and <b>M</b> for the number of rows and columns of the maze, respectively.
+Each of the N subsequent lines contains the M cell values, separated by single
+spaces. Cell values are greater or equal to 1.</p>
+
+<b><font size="3"><a name="output">Output</a></font></b></p>
+<p>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+
+<p>
+<p>
+<p>&nbsp;&nbsp; Two lines, the first with the coordinates, row and column, of the starting cell, and the 
+second with the coordinates of the exit cell. If there are several solutions, print the one with lexicographically smallest starting point. If still a tie, print the one with lexicographically smallest ending point.</p>
+
+
+<p><b>Sample Input</b><br>1<br><br>10 11<br>1 6 5 2 1 1 2 3 2 1 4<br>1 2 6 3 2 1 1 3 4 5 6<br>1 2 3 2 1 3 2 5 6 4 2<br>
+2 3 1 2 2 3 3 4 5 2 1<br>3 4 2 3 4 5 3 2 1 4 2<br>4 3 4 4 5 6 4 3 2 5 3<br>5 4 2 1 2 3 4 4 3 6 4<br>
+6 5 3 2 3 4 5 5 4 1 1<br>1 6 4 3 5 5 6 6 1 2 3<br>2 1 5 1 6 6 1 2 2 3 4</p>
+
+<p><b>Sample Output</b><br>1 6<br>10 3</p>
+
+<p>&nbsp;</p>
+
+
+
+
+</html>

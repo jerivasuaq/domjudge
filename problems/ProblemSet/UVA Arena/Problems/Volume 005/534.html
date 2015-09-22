@@ -1,0 +1,114 @@
+
+
+<html>
+<head>
+<title>Frogger</title>
+<meta name="description" content="Frogger">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Frogger</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Freddy Frog is sitting on a stone in the middle of a lake. Suddenly he notices
+Fiona Frog who is
+sitting on another stone. He plans to visit her, but since the water is
+dirty and full of tourists'
+sunscreen, he wants to avoid swimming and instead reach her by jumping.
+
+<p>
+Unfortunately Fiona's stone is out of his jump range. Therefore Freddy
+considers to use other
+stones as intermediate stops and reach her by a sequence of several
+small jumps.
+
+<p>
+To execute a given sequence of jumps, a frog's jump range obviously must
+be at least as long as the longest jump occuring in the sequence.
+
+<p>
+The <em>frog distance</em> (humans also call it <em>minimax distance</em>) between two stones therefore is defined as
+the minimum necessary jump range over all possible paths between the
+two stones.
+
+<p>
+
+<p>
+<br>
+You are given the coordinates of Freddy's stone, Fiona's stone and all other stones in the lake. Your
+job is to compute the 
+frog distance between Freddy's and Fiona's stone.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input Specification</a>&nbsp;</font>
+</h2>
+The input file will contain one or more test cases. The first line of
+each test case will contain the
+number of stones <i>n</i> (
+
+<img width="96" height="30" align="MIDDLE" border="0" src="534img1.gif" alt="$2 \le n \le 200$">). The next <i>n</i> lines each contain two
+integers <i>x</i><sub><i>i</i></sub>, <i>y</i><sub><i>i</i></sub> (
+
+<img width="132" height="30" align="MIDDLE" border="0" src="534img2.gif" alt="$0 \le x_i,y_i \le 1000$">)
+representing the coordinates of stone #<i>i</i>. Stone #1 is Freddy's stone,
+stone #2 is Fiona's stone,
+the other <i>n</i>-2 stones are unoccupied. There's a blank line following each test
+case. Input is terminated by a value of zero (0) for <i>n</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output Specification</a>&nbsp;</font>
+</h2>
+For each test case, print a line saying ``<tt>Scenario #</tt><i>x</i>" and a line
+saying ``<tt>Frog Distance = </tt><i>y</i>" where <i>x</i>
+is replaced by the test case number (they are numbered from 1) and <i>y</i> is
+replaced by the appropriate
+real number, printed to three decimals. Put a blank line after each
+test case, even after the last one.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+2
+0 0
+3 4
+
+3
+17 4
+19 4
+18 5
+
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Scenario #1
+Frog Distance = 5.000
+
+Scenario #2
+Frog Distance = 1.414
+</pre>
+
+<p>
+
+<p>
+</body>
+</html>

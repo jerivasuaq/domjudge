@@ -1,0 +1,180 @@
+
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="bdf">
+   <meta name="GENERATOR" content="Mozilla/4.76 [en] (Windows NT 5.0; U) [Netscape]">
+   <title>Calculating Expressions on Turing Machine</title>
+</head>
+<body>
+&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<center><table bgcolor="#0060F0">
+<tr>
+<td><a name="SECTION0001000000000000000000"></a><b><font color="#C0FFFF"><font size="+2">
+&nbsp;Calculating Expressions on Turing Machine&nbsp;</font></font></b></td>
+</tr>
+</table></center>
+
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Turing Machine</a>&nbsp;</font>
+</h2>
+<i>Turing Machine</i> (TM) was defined by mathematician Alan Turing in
+1936. You probably expect all the Contest problems to be related to the
+same topic, so you may now wonder what the Turing Machine has in common
+with the Antique Theatre. The fact is that Alan Turing had a friend called
+Fred. And Fred's Grandmother was keen on Antique Tragedies. So we think
+it is a good idea to give you this problem as a remembrance of Alan Turing.
+<p>Let us describe one particular TM: TM consists of two-way potentially
+infinite <i>tape</i>, read/write <i>head</i> and a <i>finite automaton</i>
+control unit. The tape is an infinite one-dimensional sequence of <i>fields</i>.
+Each field contains one symbol of an <i>alphabet</i> <i>Sigma = {~,0,1,...,M}</i>,
+where '~' is a special <i>blank</i> symbol. At each moment, there is just
+a finite number of fields not containing the blank symbol.
+<p>The head is a device capable at each step of reading one symbol from
+the tape field above which it is positioned, writing another symbol on
+its place and moving one field to the left or right. As the tape is two-way
+potentially infinite, the movement is always possible.
+<p>The control unit drives the head. At each time, it is in one state taken
+from <i>Gamma = {0,1,...,N}</i>. It starts in state <i>0</i>. At each step
+the control unit considers its actual state <i>gamma</i> and the symbol
+under the head <i>sigma</i>. This information determines the symbol to
+be written on the tape <i>sigma'</i> in place of <i>sigma</i>, the next
+state to go <i>gamma'</i> and the direction <i>delta</i> (<tt>R</tt> or
+<tt>L</tt>
+for right or left) for the movement of the head.
+<p>TM description (TMD) is a triple <i>(M,N,P)</i> where <i>P</i> is a
+set of rules. Each rule is a quintuple <i>(gamma, sigma, sigma', gamma',
+delta)</i> describing the behaviour of the machine in a particular situation
+as described in the preceding paragraph. If no rule exists for the current
+situation, the machine stops, i.e. the calculation is finished. Conflicting
+(with the same <i>gamma</i> and <i>sigma</i>) rules may not exist.
+<p>In the text form, TMD starts with a line containing positive integers
+<i>M</i>
+and <i>N</i>. Then there is an arbitrary number of lines containing each
+one rule. The rule is described as <i>gamma sigma sigma' gamma' delta</i>,
+where <i>gamma, sigma, sigma'</i> and <i>gamma'</i> are integers ('~' should
+be coded as <tt>-1</tt> and <i>delta from {<tt>R</tt>, <tt>L</tt>}</i>,
+the symbols are separated by spaces. After the last rule, a line immediately
+follows which contains only the symbol '<tt>-</tt>'.
+<p>When the machine starts there will be a finite string of symbols from
+<i>Sigma</i>
+starting under the head position and continuing to the right. All the remaining
+fields on the tape are blank.
+<p>Theoretically, TM is equivalent to any general purpose computer. We
+ask you to at least partly demonstrate it --- you are to write a program
+generating TMD evaluating arbitrary Turing arithmetic expression (TAE)
+for any input values. TAE is defined in the following section.
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Turing Arithmetic Expression</a>&nbsp;</font>
+</h2>
+TAE is defined by the following grammar:
+<ul>
+<li>
+<i>TAE</i> -> <i>expr</i></li>
+
+<li>
+<i>expr</i> -> <i>factor</i> | <i>expr</i> <tt>+</tt> <i>expr</i></li>
+
+<li>
+<i>factor</i> -> <tt>(</tt> <i>expr</i> <tt>)</tt> | <i>factor</i> <tt>*</tt><i>factor</i>
+| <i>variable</i></li>
+
+<li>
+<i>variable</i> -> <tt>1</tt> | <tt>2</tt> | ... | <tt>9</tt></li>
+</ul>
+The operators <tt>+</tt> resp. <tt>*</tt> operators stand for integer addition
+resp. multiplication modulo 10 (e.g. <i>238*17=6</i>); multiplication takes
+precedence over addition. The syntactic element <i>variable</i> denotes
+the value of the first, second, etc. up to ninth integer written on the
+tape of the TM at start time.
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Task</a>&nbsp;</font>
+</h2>
+Write a program that for each TAE outputs a TMD evaluating the TAE for
+any valid contents of the tape. A valid contents of the tape is a sequence
+of at most nine non-negative integers written left to write (most significant
+digit first) in a decimal notation using symbols <tt>0</tt>, ..., <tt>9</tt>
+and separated by one blank symbol. All the rest of the tape is blank, the
+head starts at the most significant digit of the first number. The magnitude
+of the integers is not specified. Example of a valid tape (underline indicates
+head position):
+<center><pre>... ~ ~ ~ ~ <u>1</u> 2 3 ~ 4 7 ~ 1 1 ~ ~ ~ ~ ...</pre></center>
+When the TM finished processing the tape should contain the result of the
+computation starting with the most significant digit under the head and
+continuing to the right until the first blank. No leading zeros are allowed.
+The contents of the rest of the tape is insignificant. For example, if
+the TAE was <tt>(1+3)*2</tt> and the tape contents as above, the correct
+answer would be <i>(123+11).47 mod 10 = 8</i>. The correct tape contents
+would be
+<center><pre>x x x <u>8</u> ~ x x x</pre></center>
+where <i>x</i> stands for any symbol.
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Input Specification</a>&nbsp;</font>
+</h2>
+The input consists of <i>N</i> cases. The first line of the input contains
+only positive integer <i>N</i>. Then follow the cases. Each case is described
+by one line, containing one valid TAE. The line is at most 1000 characters
+long, does not contain any characters other than <tt>0</tt>, <tt>1</tt>,
+..., <tt>9</tt>, <tt>(</tt>, <tt>)</tt>, <tt>*</tt> and <tt>+</tt>, and
+is terminated by the newline character.
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output Specification</a>&nbsp;</font>
+</h2>
+For each case, print valid TMD that evaluates the TAE for any valid tape
+contents. You can assume there will be always at least as many integers
+on the tape, as mentioned in the TAE.
+<p><i>Remark:</i> For this problem, 'Presentation error' is returned if
+your program did not generate a valid TMD, while 'Wrong answer' means that
+the generated TMD was valid but the corresponding TM did not produce the
+correct output.
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>2
+1
+2</pre>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+9 2
+0 1 1 1 R
+0 2 2 1 R
+0 3 3 1 R
+0 4 4 1 R
+0 5 5 1 R
+0 6 6 1 R
+0 7 7 1 R
+0 8 8 1 R
+0 9 9 1 R
+1 1 1 2 L
+1 2 2 2 L
+1 3 3 2 L
+1 4 4 2 L
+1 5 5 2 L
+1 6 6 2 L
+1 7 7 2 L
+1 8 8 2 L
+1 9 9 2 L
+1 -1 -1 2 L
+-
+9 1
+0 1 1 0 R
+0 2 2 0 R
+0 3 3 0 R
+0 4 4 0 R
+0 5 5 0 R
+0 6 6 0 R
+0 7 7 0 R
+0 8 8 0 R
+0 9 9 0 R
+0 -1 -1 1 R
+-
+</pre>
+</body>
+</html>

@@ -1,0 +1,102 @@
+
+
+<html>
+<head>
+<title>Radar Tracking</title>
+<meta name="description" content="Radar Tracking">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Radar Tracking</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A ground-to-air radar system uses an antenna that rotates in a horizontal
+plane with a period of 2 seconds.  Whenever the antenna faces an object,
+its distance from that antenna is measured and displayed on a circular
+screen as a white dot.  The distance from the dot to the centre of the
+screen is proportional to the horizontal distance from the antenna to
+the object, and the angle of the line passing through the centre and
+the dot represents the direction of the object from the antenna.  A dot
+directly above the centre represents an object that is north of the
+antenna; an object to the right of the centre represents an object to
+the east, and so on.  The antenna rotates clockwise; that is, if it
+points north at time <span class="MATH"><i>t</i> = 0.0</span>, it points east at <span class="MATH"><i>t</i> = 0.5</span>, south at <span class="MATH"><i>t</i> = 1.0</span>,
+west at <span class="MATH"><i>t</i> = 1.5</span>, north at <span class="MATH"><i>t</i> = 2</span>, and so on.  If the object is directly on top
+of the radar antenna, it cannot be observed.
+
+<p>
+There are a number of objects in the sky.  Each is moving at a constant
+velocity, and appears as a dot on the screen that appears in a different
+position every time the antenna observes it.  Your task is to determine
+where the dot will appear on the screen the next time the antenna observes
+it, given the previous two observations.  If there are several possibilities,
+you are to find them all.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of a number of lines, each with four real numbers:
+
+<span class="MATH"><i>a</i><sub>1</sub>, <i>d</i><sub>1</sub>, <i>a</i><sub>2</sub>, <i>d</i><sub>2</sub></span>.  <span class="MATH"><i>a</i><sub>1</sub>, <i>d</i><sub>1</sub></span> are the angle (in degrees)
+and distance (in arbitrary distance units) for the first observation while
+<span class="MATH"><i>a</i><sub>2</sub>, <i>d</i><sub>2</sub></span> are the angle and distance for the second observation.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output consists of one line per line of input, containing all
+posible solutions sorted by ascending angle value and then by descending distance value; each solution consists of two real
+numbers (with two digits after the decimal place) indicating
+<span class="MATH"><i>a</i><sub>3</sub>, <i>d</i><sub>3</sub></span>, the angle and distance for the next observation.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+90.0 100.0 90.0 110.0
+90.0 100.0 270.0 10.0
+90.0 100.0 180.0 50.0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+90.00 120.00
+270.00 230.00
+199.93 64.96 223.39 130.49
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2002-06-15
+</address>
+</body>
+</html>
+

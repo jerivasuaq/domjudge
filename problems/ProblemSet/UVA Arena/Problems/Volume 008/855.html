@@ -1,0 +1,123 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Problem</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1 align="left"><font color="#0000FF">Problem D</font></h1>
+
+<h1 align="center"><font color="#0000FF">Lunch in Grid City</font></h1>
+
+<p align="left">&nbsp;</p>
+
+<p align="justify">
+Grid city is a city carefully planned. Its street-map very much
+resembles that of downtown Manhattan in New York. Streets and avenues
+are orderly setup like a grid.
+
+<p align="justify">
+A group of friends living in Grid city decide to meet for lunch. Given
+that the group is dynamic, that is, its size may grow or shrink from time to
+time, they follow a written rule to determine the meeting point. It
+states that the meeting point is the one that minimizes the total
+distance the all group has to walk from their homes upto that point.
+If there is more than one candidate point, the rule imposes that the
+meeting point is the one corresponding to the smaller number for
+street and avenue. For large groups, this rule naturally avoids the
+usual long discussions that take place before aggreeing on a possible
+meeting point. For simplicity, consider that each person lives at a
+corner formed by a street and an avenue. You can also assume that the
+distance between two corners along one street or avenue is always one
+unit.
+
+<p align="justify">
+Your task is to suggest to the group their best meeting point (corner
+between a street and an avenue). 
+
+<p align="justify">
+As an example, the following figure illustrates one such Crid city and
+the location of 11 friends. For this scenario, the best meeting point
+is street 3 and avenue 4. You can assume that streets and avenues are
+set and ordered as illustrated in this figure.
+
+<p align="center"><img src="p855.jpg"></p>
+
+<p align="justify">
+Please note that if we add another friend located at, say street 3 and
+avenue 5, making a total of 12 friends, then we would have two
+candidate meeting points, pairs (3,4) and (3,5). The rule clearly
+defines that street 3 and avenue 4 is the meeting point.
+
+
+<h2><font color="#0000FF"><b>Problem</b></font></h2>
+
+<p align="justify">
+Given the size of a grid representing the Grid city and the locations
+of each person of the group of friends, your task is to determine the
+best meeting point following the rule of the group, as stated above.
+
+<h2><font color="#0000FF"><b>Input</b></font></h2>
+
+<p align="justify">The first line of the input contains the number
+<i>T</i> of test cases, followed by <i>T</i> input blocks.
+
+<p align="justify">
+The first line of each test case consists of three positive numbers, the number
+of streets <i>S</i>, the number of avenues <i>A</i> (where <i>S <=></=></i> and <i>A <=></=></i>), and the number of friends <i>F</i> (where
+<i>0 < f=""><=></=></i>). The following <i>F</i> input lines indicate the
+locations of the friends. A location is defined by two numbers, a
+street and an avenue, in this order.
+
+<h2><font color="#0000FF"><b>Output</b></font></h2>
+
+<p align="justify">
+The output for each test case must list the best meeting point
+formatted as follows:
+<tt>(Street: 3, Avenue: 4)</tt>.
+
+<p align="justify">
+Each test case must be on a separate line.
+
+<h2><font color="#0000FF"><b>Sample Input</b></font></h2>
+
+<pre>
+2
+2 2 2
+1 1
+2 2
+7 7 11
+1 2
+1 7
+2 2
+2 3
+2 5
+3 4
+4 2
+4 5
+4 6
+5 3
+6 5
+</pre>
+
+<h2><font color="#0000FF"><b>Sample Output</b></font></h2>
+
+<pre>
+(Street: 1, Avenue: 1)
+(Street: 3, Avenue: 4)
+</pre>
+
+<p>
+<br><hr>
+<address>
+
+Fernando Silva, MIUP'2002
+</address>
+
+</body>
+</html>
+

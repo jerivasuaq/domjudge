@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>ACM - 4ª Sessão - 4º Problema</title>
+<style>a:hover {color:#FA1F00}</style>
+</head>
+
+<body>
+
+
+
+<font color="#000000" face="Arial" size="2">
+
+<p align="center"><b><font size="3" face="Arial" color="#000000">Circuit Nets
+</font></b></p>
+
+<p> 
+<b><font size="3"><a name="back">Background</a></font></b></p>
+
+<p>&nbsp;&nbsp; An electronic circuit consists of components, pins, and wires. Figure
+1 shows a circuit with the three components A, B, and C. Each wire
+connects a pair of pins. Two pins a and b are <b>electrically
+equivalent</b> if they are either connected by a wire or there is a
+sequence <i>a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>k</sub></i> of pins such that <i>a,a<sub>1</sub>; 
+a<sub>1</sub>,a<sub>2</sub>; ...; a<sub>k-1</sub>,a<sub>k</sub>;</i>  and <i>a_k, b</i>
+are all connected by wires. A <b>net</b> is a maximal set of electrically equivalent
+pins. <i>Maximal</i> means that no pin outside the net is electrically
+equivalent to a pin in the net.
+
+<p align="center"><img src="p879a.gif" width="650" height="243" alt="" border="0">
+
+<p>
+<b><font size="3"><a name="problem">Problem</a></font></b></p>
+
+<p>&nbsp;&nbsp; Given a set of pins and a set of wires your task is to determine the
+number of nets defined within the circuit. Figure 2 illustrates a circuit
+with 3 nets.
+<p align="center"><img src="p879b.gif" width="405" height="197" alt="" border="0">
+
+</p>
+
+<p>
+<b><font size="3"><a name="input">Input</a></font></b></p>
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<p>&nbsp;&nbsp; The sequence of pins is always numbered from 1 to N. The first
+input value is the value of N. The sequence of wires is described by
+pairs of pin values. It is given at the input as sequence of numbers,
+separated by a space. The first two numbers define the first pair, the
+two numbers that follow define the second pair, and so on. The input
+ends with the end_of_file mark. 
+
+<p>
+<b><font size="3"><a name="output">Output</a></font></b></p>
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+
+<p>&nbsp;&nbsp; The output is just the number of nets found.
+
+
+<p><b>Sample Input</b><br>1<br><br>14<br>
+&nbsp;1 11 7 11 2 12 12 8 11 12 3 13 4 13 13 14<br> 
+14 &nbsp;9 5 14 6 10
+
+<p><b>Sample Output</b><br>3
+
+<p>&nbsp;</p>
+
+</font>
+</body>
+
+</html>

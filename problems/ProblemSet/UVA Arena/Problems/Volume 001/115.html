@@ -1,0 +1,155 @@
+
+
+<html>
+<head>
+<title>Climbing Trees</title>
+<meta name="description" content="Climbing Trees">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Climbing Trees</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+Expression trees, B and B* trees, red-black trees, quad trees, PQ 
+trees; trees play a significant role in many domains of computer 
+science. Sometimes the name of a problem may indicate that trees are 
+used when they are not, as in the Artificial Intelligence planning 
+problem traditionally called the <em>Monkey and Bananas problem</em>.  
+Sometimes trees may be used in a problem whose name gives no 
+indication that trees are involved, as in the <em>Huffman code</em>.
+<p>
+<p>
+This problem involves determining how pairs of people who may be part of
+a ``family tree'' are related.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+Given a sequence of <em>child-parent</em> pairs, where a pair consists of
+the child's name followed by the (single) parent's name, and a list of
+query pairs also expressed as two names, you are to write a program to
+determine whether the query pairs are related. If the names comprising a
+query pair are related the program should determine what the
+relationship is.  Consider academic advisees and advisors as exemplars
+of such a single parent genealogy (we assume a single advisor, i.e., no
+co-advisors).
+<p>
+<p>
+In this problem the child-parent pair  <img width="27" height="17" align="MIDDLE" alt="tex2html_wrap_inline76" src="115img1.gif">  denotes that <i>p</i> is
+the child of <i>q</i>.  In determining relationships between names we use the
+following definitions:
+<ul><li> <i>p</i> is a <em>0-descendent</em> of <i>q</i> (respectively <em>0-ancestor</em>)
+if and only if the child-parent pair  <img width="27" height="17" align="MIDDLE" alt="tex2html_wrap_inline76" src="115img1.gif">  (respectively  <img width="26" height="17" align="MIDDLE" alt="tex2html_wrap_inline88" src="115img2.gif"> ) appears
+in the input sequence of child-parent pairs.<li> <i>p</i> is a <em>k-descendent</em> of <i>q</i> (respectively <em>k-ancestor</em>)
+if and only if the child-parent pair  <img width="27" height="17" align="MIDDLE" alt="tex2html_wrap_inline94" src="115img3.gif">  (respectively  <img width="25" height="17" align="MIDDLE" alt="tex2html_wrap_inline96" src="115img4.gif"> ) appears
+in the input sequence and <i>r</i> is a (<i>k</i>-1)-descendent of <i>q</i>
+(respectively <i>p</i> is a (<i>k</i>-1)-ancestor of <i>r</i>).
+</li></li></ul>
+<p>
+For the purposes of this problem the relationship between a person <i>p</i>
+and a person <i>q</i> is expressed as exactly one of the following four relations:
+<ol><li> child -- grand child, great grand child, great great grand child,
+<em>etc.</em>
+<p>
+By definition <i>p</i> is the ``child'' of <i>q</i> if and only if the pair  <img width="27" height="17" align="MIDDLE" alt="tex2html_wrap_inline76" src="115img1.gif"> 
+appears in the input sequence of child-parent pairs (i.e., p is a
+0-descendent of q); <i>p</i> is the ``grand
+child'' of <i>q</i> if and only if <i>p</i> is a 1-descendent of <i>q</i>;
+and
+<p> <img width="427" height="38" align="BOTTOM" alt="displaymath33" src="115img5.gif"> <p>
+if and only if <i>p</i> is an (<i>n</i>+1)-descendent of <i>q</i>.<li> parent -- grand parent, great grand parent, great great grand
+parent, <em>etc.</em>
+<p>
+By definition <i>p</i> is the ``parent'' of <i>q</i> if and only if the pair  <img width="26" height="17" align="MIDDLE" alt="tex2html_wrap_inline88" src="115img2.gif"> 
+appears in the input sequence of child-parent pairs (i.e., <i>p</i> is a
+0-ancestor of <i>q</i>); <i>p</i> is the ``grand
+parent'' of <i>q</i> if and only if <i>p</i> is a 1-ancestor of <i>q</i>; and
+<p> <img width="433" height="38" align="BOTTOM" alt="displaymath40" src="115img6.gif"> <p>
+if and only if <i>p</i> is an (<i>n</i>+1)-ancestor of <i>q</i>.<li> cousin --  <img width="24" height="19" align="BOTTOM" alt="tex2html_wrap_inline158" src="115img7.gif">  cousin,  <img width="21" height="17" align="BOTTOM" alt="tex2html_wrap_inline160" src="115img8.gif">  cousin,  <img width="26" height="18" align="BOTTOM" alt="tex2html_wrap_inline162" src="115img9.gif"> 
+cousin, <em>etc.</em>; cousins may be once removed, twice removed, three times
+removed, <em>etc.</em>
+<p>
+By definition <i>p</i> and <i>q</i> are ``cousins'' if and only if they are
+related (i.e., there is a path from <i>p</i> to <i>q</i> in the implicit
+undirected parent-child tree).  Let <i>r</i> represent the least common
+ancestor of <i>p</i> and <i>q</i> (i.e., no descendent of <i>r</i> is an ancestor of
+both <i>p</i> and <i>q</i>), where <i>p</i> is an <i>m</i>-descendent of <i>r</i> and <i>q</i> is an
+<i>n</i>-descendent of <i>r</i>.
+<p>
+Then, by definition, cousins <i>p</i> and <i>q</i> are `` <img width="25" height="18" align="BOTTOM" alt="tex2html_wrap_inline200" src="115img10.gif">  
+cousins'' if and only if  <img width="120" height="27" align="MIDDLE" alt="tex2html_wrap_inline202" src="115img11.gif"> , and, also by definition, <i>p</i> 
+and <i>q</i> are ``cousins removed <i>j</i> times'' if and only if  <img width="102" height="27" align="MIDDLE" alt="tex2html_wrap_inline210" src="115img12.gif"> .<li> sibling --  <img width="24" height="19" align="BOTTOM" alt="tex2html_wrap_inline158" src="115img7.gif"> 
+cousins removed 0 times are ``siblings'' (they have the same parent).
+</li></li></li></li></ol><h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input consists of parent-child pairs of names, one pair per line.
+Each name in a pair consists of lower-case alphabetic characters or
+periods (used to separate first and last names, for example).  Child
+names are separated from parent names by one or more spaces.
+Parent-child pairs are terminated by a pair whose first component is the
+string ``<em>no.child</em>''. 
+Such a pair is NOT to be considered as a parent-child
+pair, but only as a delimiter to separate the parent-child
+pairs from the query pairs.  There will be no circular relationships,
+i.e., no name <i>p</i> can be <em>both</em> an ancestor and a descendent of
+the same name <i>q</i>.
+<p>
+<p>
+The parent-child pairs are followed by a sequence of query pairs in the
+same format as the parent-child pairs, i.e., each name in a query pair is
+a sequence of lower-case alphabetic characters and periods, and names are
+separated by one or more spaces.  Query pairs are terminated by end-of-file.
+<p>
+<p>
+There will be a maximum of 300 different names overall
+(parent-child and query pairs).  All names will be fewer than 31
+characters in length.  There will be no more than 100 query pairs.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+For each query-pair  <img width="27" height="17" align="MIDDLE" alt="tex2html_wrap_inline76" src="115img1.gif">  
+of names the output should indicate the relationship
+<i>p</i> <em>is-the-relative-of</em> <i>q</i> by the appropriate string of the form
+<ul><li> child, grand child, great grand child, great great ...great
+grand child<li> parent, grand parent, great grand parent, great great ...great
+grand parent<li> sibling<li> <i>n</i> cousin removed <i>m</i><li> no relation
+</li></li></li></li></li></ul>
+If an <i>m</i>-cousin is removed 0 times then only <em>m cousin</em> should be
+printed, i.e., <em>removed 0</em> should NOT be printed.  Do not print 
+<em>st, nd, rd, th</em> after the numbers.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>alonzo.church oswald.veblen
+stephen.kleene alonzo.church
+dana.scott alonzo.church
+martin.davis alonzo.church
+pat.fischer hartley.rogers
+mike.paterson david.park
+dennis.ritchie pat.fischer
+hartley.rogers alonzo.church
+les.valiant mike.paterson
+bob.constable stephen.kleene
+david.park hartley.rogers
+no.child no.parent
+stephen.kleene bob.constable
+hartley.rogers stephen.kleene
+les.valiant alonzo.church
+les.valiant dennis.ritchie
+dennis.ritchie les.valiant
+pat.fischer michael.rabin</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>parent
+sibling
+great great grand child
+1 cousin removed 1
+1 cousin removed 1
+no relation</pre>
+<p>
+</body>
+</html>

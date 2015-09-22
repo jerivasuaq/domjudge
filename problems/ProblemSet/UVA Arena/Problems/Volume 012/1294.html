@@ -1,0 +1,159 @@
+<p>
+Given cells filled with functional formulas and data, display the calculated results of a 
+mini-spreadsheet.  Spreadsheet cells are 
+labeled by columns(A-J) and rows (1-10).  The cell in the 6-th column of the 3-rd row would 
+be labeled with address F3.  All cell 
+entries will be integers.  All function names and cell references are case insensitive.  Any function 
+not adhering to proper syntax 
+should output `<tt>#SYN#</tt>' in its cell.  The functions the spreadsheet should handle are as follows:
+
+<p>
+<dl>
+<dt><strong>Average(<span class="MATH"><i>Range</i></span>)</strong></dt>
+<dd>Calculate the average of the non-blank cells in a specified <span class="MATH"><i>Range</i></span>. 
+Truncate result. 
+</dd>
+<dt><strong>Large(<span class="MATH"><i>Range</i></span>, <span class="MATH"><i>k</i></span>)</strong></dt>
+<dd>Calculate the <span class="MATH"><i>k</i></span>-th largest distinct value of non-blank cells in 
+a specified <span class="MATH"><i>Range</i></span>. 
+
+<p>
+<span class="MATH"><i>k</i></span> may be a cell address.  Ex.. Large(2,2,5,5,5,8,8,8,3) is 2.
+
+<p>
+Output `<tt>#ERR#</tt>' if impossible.  Ex.. Large(2,2,5,5,5,8,8,4) 
+</dd>
+<dt><strong>CountIF(<span class="MATH"><i>Range</i></span>, <span class="MATH"><i>condition</i></span>)</strong></dt>
+<dd>Count the number of cells satisfying a condition.  Conditions 
+are ``<span class="MATH">&gt; <i>n</i></span>'', ``<span class="MATH">&lt; <i>n</i></span>'', ``<span class="MATH">&gt; = <i>n</i></span>'', ``<span class="MATH">&lt; = <i>n</i></span>'', or ``<span class="MATH">= <i>n</i></span>''. <span class="MATH"><i>n</i></span> represents any integer.  
+Positive numbers may have a leading `<tt>+</tt>'.  Zero is a value; an empty cell, 
+denoted by `<tt>B</tt>', is not.
+
+<p>
+Ex. CountIF(A4, B1:B5, ``>0") 
+</dd>
+<dt><strong>Median(<span class="MATH"><i>Range</i></span>)</strong></dt>
+<dd>Find the median of the cells in a specified Range 
+
+<p>
+The median is the middle number of the cells if they are in numerical  order.  If  the Range 
+contains an odd number of  cells, the median is the average of the two middle cells.  Truncate the 
+result if there is an even number of cells. 
+</dd>
+<dt><strong>Mode(<span class="MATH"><i>Range</i></span>)</strong></dt>
+<dd>Find the mode of the cells in a specified Range 
+
+<p>
+The mode is the most frequently occurring value in the range.  In case of a tie, use the first 
+modal value occurring in a list  of the Range values.  Rectangular sections of the Range should be
+listed by rows, from left to right. 
+</dd>
+<dt><strong>SumIf(
+<span class="MATH"><i>Evaluation</i>&nbsp;<i>Range</i></span>, <span class="MATH"><i>condition</i></span>, 
+<span class="MATH"><i>Sum</i>&nbsp;<i>Range</i></span>)</strong></dt>
+<dd>Sum certain cells. 
+
+<p>
+If a cell in the 
+<span class="MATH"><i>Evaluation</i>&nbsp;<i>Range</i></span> meets the specified <span class="MATH"><i>condition</i></span>, the corresponding cell in the 
+
+<span class="MATH"><i>Sum</i>&nbsp;<i>Range</i></span> should be   included in the sum.  Output `<tt>#ERR#</tt>' if there is not a 1-1 
+correspondence between 
+
+<span class="MATH"><i>Evaluation</i>&nbsp;<i>Range</i></span> cells and 
+<span class="MATH"><i>Sum</i>&nbsp;<i>Range</i></span> cells.  Condition specifications are the same as those 
+of the CountIf function.  Rectangular sections of the <span class="MATH"><i>Range</i></span> are in row 
+major form.  That is, they should be listed by rows, from left to right.  Any blank cell in the 
+
+<span class="MATH"><i>Evaluation</i>&nbsp;<i>Range</i></span> counts for purposes of the required 1-1 correspondence, but the <span class="MATH"><i>condition</i></span> 
+should automatically evaluate to False. 
+
+<p>
+Ex.  If A1=1, A2=2, A4=4, B1=10, C1=20,B3=30, B4=40 
+
+<p>
+SumIf(A1:A2,  3  ,A4,  "&gt;2" , B1 , C1 ,B3:B4) is 70. 
+</dd>
+</dl>
+
+<p>
+A range may be a 
+<span class="MATH">&lt; <i>Cell</i>&nbsp;<i>Address</i> &gt;</span>, 
+<span class="MATH">&lt; <i>Cell</i>&nbsp;<i>Address</i> : <i>Cell</i>&nbsp;<i>Address</i> &gt;</span>, any integer, or a 
+combination of these separated by commas.  
+
+<p>
+Examples are `<tt>C5</tt>', or `<tt>A3:B4</tt>' (meaning A3,B3,A4, and B4), `<tt>55</tt>', or 
+the combination `<tt>D2, 55, A3:B4, J3</tt>', 
+respectively.  There 
+may be spaces within the parentheses.  There will not be spaces separating a column and a row in a 
+cell address. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input beginning with `<tt>R</tt>' indicates a particular row's data.  Any row not accounted for 
+should be filled with blanks.  If a row is listed, all entries in the row are listed, from left to 
+right, separated by blank(s).  A row's entries may extend over more than one line. 
+
+<p>
+There are no circular references in the data; however, one cell's function may use another cell's 
+results as input.  If there is an 
+`<tt>#ERR#</tt>' or `<tt>#SYN#</tt>' in an input cell the function should display `<tt>#INP#</tt>'.  
+If there is an `<tt>#INP#</tt>' in any input cell the function should 
+display `<tt>#INP#</tt>'.  `<tt>#INP#</tt>' is the error with most precedence. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output should be exactly as above.  Column and row heading labels should be right justified in a 
+field width of 5.  All cells 
+should be of width 5.  Integers should be right-aligned within cells.  Any cells without data should 
+contain 5 spaces.  There should 
+be no extraneous spaces in the output. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+R1 8 4 5 7 B 4 3 6 90 B
+R3 7 8 11 14 Average(A3:D3,A3) SumF(A1 A2) B B B B
+R5 B 3 4 B B B B B B Large( B1:B10 , 3)
+R6 B 4 3 B B B B B B Average(4, J7)
+R7 B CountIf(B1:B6,"&gt;0") LARGE(C1:C6,D1:E6,1) B B
+B B B
+B Large(B1:B10, 5)
+R10 B Mode(A1:I1) Median(A1:I1,B1:B3) B B B B B B SUMIF(B5:C6,"&gt;3",A1:D1)
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+       A    B    C     D     E    F    G     H       I       J
+ 1     8    4    5     7          4    3     6      90
+ 2
+ 3     7    8   11    14     9#SYN#
+ 4
+ 5          3    4                                           3
+ 6          4    3                                       #INP#
+ 7          4   14                                       #ERR#
+ 8
+ 9
+10          4    5                                           9
+</pre> 
+

@@ -1,0 +1,122 @@
+
+
+<html>
+<head>
+<title>Hi-Q</title>
+<meta name="description" content="Hi-Q">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Hi-Q</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Hi-Q is a popular solitaire game that comes in a small box with a
+playing board that has little holes in the shape of a cross and 32
+little pegs that fit into the holes.  Starting with the centermost hole
+open, players move the pegs by jumping one peg over another,
+either in a horizontal or vertical direction and removing each peg
+that is jumped over.  Diagonal jumps are not allowed.  The object
+for players is to remove as many pegs from the board as possible. 
+This problem involves writing a program that will automatically
+play Hi-Q so that we can investigate how the game might unfold
+based on various opening arrangements of pegs.
+<p>
+<p>
+There is a peg board with the following
+shape and with holes numbered from 1 to 33 as follows:
+<p>
+<pre>                              1         2         3
+                              4         5         6
+          7         8         9        10        11        12        13
+         14        15        16        17        18        19        20
+         21        22        23        24        25        26        27        
+                             28        29        30
+                             31        32        33</pre>
+<p>
+An instance of the game begins with some holes having pegs in
+them and the rest of the holes being empty.   The game proceeds by
+jumping one peg over another, either horizontally or vertically,
+with the peg that is jumping landing in an empty hole, and the peg
+being jumped over being removed from the board.  For example, if
+9 is empty and 10 and 11 are not, then the peg in 11 can be
+``moved&quot; to 9 with the peg in 10 being removed. After this move,
+10 and 11 would both be empty but 9 would have a peg in it.
+<p>
+Given a specific board configuration your program will pick and
+model a specific move, over and over, until no more moves are
+available. Your program will then report the sum of the holes that
+still have pegs in them.  At any point during the game there may be
+more than one possible move available.  In such a case always
+model the move with the target hole of the moving peg as large as
+possible.  If there is more than one move available to the largest
+possible target hole, then choose from those moves the one with
+the larger source hole.
+<p>
+<p>
+For example, if the board looks like this, with <tt>X</tt> representing a peg
+and <tt>O</tt> representing a hole:
+<p>
+<pre>                              O         O         O
+                              O         O         O
+          O         O         O         X         O         X         O
+          O         O         O         X         O         X         O
+          O         O         O         O         X         O         O
+                              O         O         O
+                              O         O         O</pre>
+<p>
+then the following jumps would be made: 1: from 12 over 19 to 26
+(26, 24, and 5 are the only possible targets and 26 is the largest), 2:
+from 26 to 24 over 25 (5 and 24 are the only possible targets with
+24 &gt; 5 plus 24 is the target for two possible moves, one from 26
+and one from 10; the one from 26 is used since 26 &gt; 10), 3: from
+17 to 29 (29 &gt; 5), and two pegs would be left, one in hole 10 and
+one in hole 29.  Thus 39 would be reported as the result for this
+instance.
+<p>
+<p>
+<p>
+<b>NOTE:</b> The above paragraph is wrong.  This was discovered shortly
+ after the contest began, and the correction was broadcast to all
+ teams. The second jump should be from 25 to 27. The third jump
+ should be from 10 to 24. The two pegs left will be in holes 24
+ and 27 and 51 should be reported as the result.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line contains an integer <i>N</i> between 1 and 10
+describing how many instances of the game are represented.  The
+remaining lines will describe <i>N</i> instances of the game by listing the
+holes which begin with pegs in them, in increasing order.  A 0 will
+indicate the end of each  sequence of unique numbers between 1
+and 33 that represents an instance of the game.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+There should be <i>N</i>+2 lines of output.  The first line of
+output will read <tt>HI Q OUTPUT</tt>. There will then be one line of
+output for each instance of the game, reporting the sum of the holes
+that still have pegs in them for the final configuration of that
+instance.. The final line of output should read <tt>END OF OUTPUT</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>4
+10 12 17 19 25 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+16 17 18 19 20
+21 22 23 24 25 26   27 28 29 30 31 32 33 0
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 19 20
+21 22 23 24 25 26 27 28 29 30 31 32 33 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>HI Q OUTPUT
+51                                                          
+0
+561  
+98
+END OF OUTPUT</pre>
+<p>
+</body>
+</html>

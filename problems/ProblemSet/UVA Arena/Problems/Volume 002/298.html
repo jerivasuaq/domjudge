@@ -1,0 +1,91 @@
+
+
+<html>
+<head>
+<title>Race Tracks</title>
+<meta name="description" content="Race Tracks">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Race Tracks</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Many boring math classes have been spent playing Race Tracks, where two players have
+to maneuver their cars on a race track drawn on a piece of paper, while their cars can only
+accelerate by a limited (positive or negative) amount per move.
+<p>
+<p>
+A variant of Race Tracks involves Hoppers. Hoppers are people on a jump stick who can
+jump from one square to the other, without touching the squares in between (a bit like a
+knight in chess). Just like the aforementioned cars, they can pick up speed and make bigger
+hops, but their acceleration per move is limited, and they also have a maximum speed.
+<p>
+<p>
+Let's be a bit more formal: our variant of Race Tracks is played on a rectangular grid,
+where each square on the grid is either empty or occupied. While hoppers can fly over any
+square, they can only land on empty squares. At any point in time, a hopper has a velocity
+(<i>x</i>,<i>y</i>), where <i>x</i> and <i>y</i> are the speed (in squares) parallel to the grid. Thus, a speed of (2,1)
+corresponds to a knight jump, (as does (-2,1) and 6 other speeds).
+<p>
+<p>
+To determine the hops a hopper can make, we need to know how much speed he can
+pick up or lose: either -1, 0, or 1 square in both directions. Thus, while having speed (2,1),
+the hopper can change to speeds (1,0), (1,1), (1,2), (2,0), (2,1), (2,2), (3,0), (3,1) and (3,2).
+It is impossible for the hopper to obtain a velocity of 4 in either direction, so the <i>x</i> and <i>y</i> component will stay between -3 and 3 inclusive.
+<p>
+<p>
+The goal of Hopping Race Tracks is to get from start to finish as quickly as possible (i.e. in
+the least number of hops), without landing on occupied squares. You are to write a program
+which, given a rectangular grid, a start point S, and a finish point F, determines the least
+number of hops in which you can get from S to F. The hopper starts with initial speed (0,0)
+and he does not care about his speed when he arrives at F.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input specification</a></font></h2>
+<p>
+The first line contains the number of test cases (<i>N</i>) your program has to process. Each test
+case consists of a first line containing the width <i>X</i> ( <img width="87" height="26" align="MIDDLE" alt="tex2html_wrap_inline41" src="298img1.gif"> )
+and height <i>Y</i> ( <img width="85" height="26" align="MIDDLE" alt="tex2html_wrap_inline45" src="298img2.gif"> )
+of the grid. Next is a line containing four integers separated by blanks, of which the first two
+indicate the start point  <img width="51" height="27" align="MIDDLE" alt="tex2html_wrap_inline47" src="298img3.gif">  and the last two indicate the end
+point  <img width="51" height="27" align="MIDDLE" alt="tex2html_wrap_inline49" src="298img4.gif">  ( <img width="227" height="25" align="MIDDLE" alt="tex2html_wrap_inline51" src="298img5.gif"> ).
+The third line of each test case contains an integer <i>P</i> indicating the
+number of obstacles in the grid. Finally, the test case consists of <i>P</i> lines, each specifying an obstacle.
+<p>
+<p>
+Each obstacle consists of four integers:  <img width="64" height="17" align="MIDDLE" alt="tex2html_wrap_inline57" src="298img6.gif">  and  <img width="13" height="17" align="MIDDLE" alt="tex2html_wrap_inline59" src="298img7.gif"> ,
+( <img width="259" height="25" align="MIDDLE" alt="tex2html_wrap_inline61" src="298img8.gif"> ),
+meaning that all squares (<i>x</i>,<i>y</i>) with  <img width="89" height="23" align="MIDDLE" alt="tex2html_wrap_inline65" src="298img9.gif"> 
+and  <img width="86" height="23" align="MIDDLE" alt="tex2html_wrap_inline67" src="298img10.gif">  are occupied.
+<p>
+<p>
+The start point will never be occupied.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output specification</a></font></h2>
+<p>
+The string '<tt>No solution.</tt>' if there is no way the hopper can reach the finish point from the
+start point without hopping on an occupied square.
+Otherwise, the text '<tt>Optimal solution takes N hops.</tt>',
+where <i>N</i> is the number of hops needed to get from start to finish point.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Example input</a></font></h2>
+<p>
+<pre>2
+5 5
+4 0 4 4
+1
+1 4 2 3
+3 3
+0 0 2 2
+2
+1 1 0 2
+0 2 1 1</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Example output</a></font></h2>
+<p>
+<pre>Optimal solution takes 7 hops.
+No solution.</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,96 @@
+
+
+<html>
+<head>
+<title>Perfect Hash</title>
+<meta name="description" content="Perfect Hash">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Perfect Hash</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Perfect Software, Inc. has obtained a government contract to examine 
+text flowing through a high-speed network for the occurrence of 
+certain words. Your boss, Wally Perfect, has designed a parallel 
+processing system which checks each word against a group of small 
+perfect hash tables.
+<p>
+<p>
+A perfect hash function maps its input directly to a fully occupied
+table. Your job is to construct the perfect hash functions from the
+lists of words in each table. The hash function is of the form
+ <img width="101" height="27" align="MIDDLE" alt="tex2html_wrap_inline63" src="188img1.gif"> , where <i>C</i> is a positive integer you are
+to discover, <i>w</i> is an integer representation of an input word, and <i>n</i> is
+the length of the table. <i>C</i> must be as small as possible.  Note that 
+ <img width="11" height="27" align="MIDDLE" alt="tex2html_wrap_inline73" src="188img2.gif">  is the floor function and that  <img width="24" height="27" align="MIDDLE" alt="tex2html_wrap_inline75" src="188img3.gif">  for 
+some real number <i>R</i> is the largest integer that is  <img width="31" height="26" align="MIDDLE" alt="tex2html_wrap_inline79" src="188img4.gif"> .
+<p>
+<p>
+Here are Wally's notes on the subject:
+<p>
+Let  <img width="166" height="27" align="MIDDLE" alt="tex2html_wrap_inline81" src="188img5.gif">  consist of positive
+integers  <img width="150" height="19" align="MIDDLE" alt="tex2html_wrap_inline83" src="188img6.gif"> .
+The problem is to find the smallest positive
+integer <i>C</i> such that
+<p>
+ <img width="198" height="38" align="MIDDLE" alt="tex2html_wrap_inline87" src="188img7.gif">  for all  <img width="102" height="25" align="MIDDLE" alt="tex2html_wrap_inline89" src="188img8.gif"> .
+<p>
+<i>C</i> must be a multiple of at least one element of <i>W</i>.
+<p>
+If some
+<p>
+ <img width="198" height="38" align="MIDDLE" alt="tex2html_wrap_inline95" src="188img9.gif">  for all  <img width="36" height="29" align="MIDDLE" alt="tex2html_wrap_inline97" src="188img10.gif"> ,
+<p>
+then the next largest <i>C</i> that could resolve the conflict is 
+at least
+<p>
+<p> <img width="407" height="48" align="BOTTOM" alt="displaymath61" src="188img11.gif"> <p>
+<p>
+Since all such conflicts must be resolved, it is advantageous to choose 
+the largest candidate from among the conflicts as the next <i>C</i> to test.
+<p>
+<p>
+You are to convert each word to a number by processing each letter
+from left to right. Consider `<tt>a</tt>' to be 1, `<tt>b</tt>' to be 2,  <img width="20" height="2" align="BOTTOM" alt="tex2html_wrap_inline103" src="188img12.gif"> ,
+`<tt>z</tt>' to be 26. Use 5
+bits for each letter (shift left by 5 or multiply by 32). Thus `<tt>a</tt>' = 1,
+`<tt>bz</tt>' =  <img width="128" height="27" align="MIDDLE" alt="tex2html_wrap_inline105" src="188img13.gif"> .
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input to your program will be a series of word lists, one per line, 
+terminated by the end-of-file. Each line consists of between two and 
+thirteen words of at most five lower case letters each, separated 
+from each other by at least one blank. There will always be at least 
+one one-letter word.
+<p>
+<p>
+For each list, you are to print the input line. On the next line, print
+the <i>C</i> for the hash function determined by the list. Print a blank line 
+after each <i>C</i>.
+<p>
+<p>
+<i>C</i> will always fit in a 32-bit integer.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample input</a></font></h2>
+<p>
+<pre>this is a test of some words to try out
+a bee see dee
+the of and to a in that is i it with for as</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample output</a></font></h2>
+<p>
+<pre>this is a test of some words to try out
+17247663
+
+a bee see dee
+4427
+
+the of and to a in that is i it with for as
+667241</pre>
+<p>
+</body>
+</html>

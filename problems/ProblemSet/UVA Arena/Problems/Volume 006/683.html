@@ -1,0 +1,135 @@
+
+
+<html>
+<head>
+<title>Character Decoding</title>
+<meta name="description" content="Character Decoding">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Character Decoding</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+This is a test for decoding characters' values. Assume a numerical expression is
+encoded in English characters by replacing some digit numbers (from 0 to 9) with
+English characters. So this kind of numerical expressions can be expressed in new
+forms, such as
+
+<p>
+<div align="CENTER">
+<tt>2BAD = ABE + CD</tt>
+</div>
+
+<p>
+Please write a program to decode the expressions in characters and output the
+numerical value of characters, according to the following rules and assumptions.
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>All character values are integers between 0 to 9 both inclusive.
+<p>
+<dt>2.
+<dd>An expression is represented as a set of items combined with operators. Only the
+operators <tt>+</tt>, <tt>-</tt> and <tt>=</tt> are used in each expression. And at
+most 5 items are used in one expression.
+
+<p>
+<dt>3.
+<dd>There is one and only one operator <tt>=</tt> in each expression. And only
+one item is in the left-hand side of the operator <tt>=</tt>.
+
+<p>
+<dt>4.
+<dd>Each item is represented by a combination of capital English characters and digital
+numbers. The value of the left-most character in each item is not 0.
+
+<p>
+<dt>5.
+<dd>The input data are represented as several rows of numerical expressions and are
+stored in a file. Each row is an independent expression with other rows. The end of
+the input file is a star symbol (<tt>*</tt>).
+
+<p>
+<dt>6.
+<dd>Output the value of the left-most item in each expression row by row, in the same
+order as that in the input file.
+
+<p>
+<dt>7.
+<dd>If there are multiple solutions, print out the smallest values for each left-most item.
+If no possible solutions exist, print out a question mark (<tt>?</tt>) instead.
+</dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Contains k lines, with <i>k</i>-1 expressions.
+<pre><tt>
+Line 1 		 the first expression 
+... 
+Line <i>k</i>-1 the 
+
+(<i>k</i>-1)<sup><i>th</i></sup> 
+Line <i>k</i> A star symbol indicating end-of-file
+</tt></pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Contains <i>k</i> - 1 lines. Each line is the smallest value that satisfies the
+corresponding expression.
+<pre><tt>
+Line 1 		 value 
+... 
+Line <i>k</i>-1 value
+</tt></pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+CA = AB + 6C
+DDE5 = DEFG - EHI + DDH
+A = 0
+*
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+81
+1115
+?
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-14</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+
+
+<html>
+<head>
+<title>Paper Folding</title>
+<meta name="description" content="Paper Folding">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Paper Folding</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+If a large sheet of paper is folded in half, then in half again, etc,
+with all the folds parallel, then opened up flat, there are a series
+of parallel creases, some pointing up and some down, dividing the
+paper into fractions of the original length. If the paper is only
+opened ``half-way'' up, so every crease forms a 90 degree angle, then
+(viewed end-on) it forms a ``dragon curve''. For example, if four
+successive folds are made, then the following curve is seen (note that
+it does not cross itself, but two corners touch):
+<p>
+<p> <img width="160" height="97" align="BOTTOM" alt="picture23" src="177img1.gif"> <p>
+<p>
+Write a program to draw the curve which appears after <i>N</i> folds. The
+exact specification of the curve is as follows:
+<p>
+<ul><li> The paper starts flat,
+with the ``start edge'' on the left, looking at it from above.<li> The right
+half is folded over so it lies on top of the left half, then the right
+half of the new double sheet is folded on top of the left, to form a
+4-thick sheet, and so on, for <i>N</i> folds.<li> Then every fold is opened from
+a 180 degree bend to a 90 degree bend.<li> Finally the bottom edge of the
+paper is viewed end-on to see the dragon curve.
+</li></li></li></li></ul>
+<p>
+From this view, the
+only unchanged part of the original paper is the piece containing the
+``start edge'', and this piece will be horizontal, with the ``start edge''
+on the left. This uniquely defines the curve. In the above picture,
+the ``start edge'' is the left end of the rightmost bottom horizontal
+piece (marked `<tt>s</tt>'). Horizontal pieces are to be displayed with the
+underscore character ``<tt>_</tt>'', and vertical pieces with the ``<tt>|</tt>'' character.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will consist of a series
+of lines, each with a single number <i>N</i> ( <img width="87" height="26" align="MIDDLE" alt="tex2html_wrap_inline50" src="177img2.gif"> ). The end of
+the input will be marked by a line containing a zero.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output will consist of a series of dragon curves, one for each value
+of <i>N</i> in the input. Your picture must be shifted as far left, and as
+high as possible. Note that for large <i>N</i>, the picture will be greater
+than 80 characters wide, so it will look messy on the screen. The
+pattern for each different number of folds is terminated by a line
+containing a single `<tt>^</tt>'.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>2
+4
+1
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>|_
+ _|
+^
+   _   _
+  |_|_| |_
+   _|    _|
+|_|
+^
+_|
+^</pre>
+<p>
+</body>
+</html>

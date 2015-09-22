@@ -1,0 +1,117 @@
+
+
+<html>
+<head>
+<title>Maze</title>
+<meta name="description" content="Maze II">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Maze</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+You have been blindfolded and deposited someplace in a maze.  You have no
+idea where you are.  You do know, however, that the maze is laid out on a
+grid, and that each grid location is either blocked or free.  In fact, you
+have memorized a map of the maze.  Also, your magnetic personality allows
+you to always sense which direction is north.
+
+<p>
+In this maze, you have four possible moves: north, south, east, and west.
+Your task is to find the shortest sequence of moves that will guarantee your
+escape, regardless of your initial placement in the maze.  You have ``escaped"
+whenever you reach a square on an outside edge of the grid (and if you start
+there, then you've already escaped).  Further moves are irrelevant once you
+have escaped.  If you try to walk into a wall, you will simply stay in the
+same spot.
+
+<p>
+You may assume that it is possible to escape from every unblocked position
+in the maze.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p><p>
+<br>
+
+<p>
+Input consists of a positive integer <span class="MATH"><i>n</i><img width="18" height="30" align="MIDDLE" border="0" src="851img1.png" alt="$ \le$">8</span>, followed by <span class="MATH"><i>n</i></span>
+lines giving the rows of an <span class="MATH"><i>n</i></span> by <span class="MATH"><i>n</i></span> grid.  This grid describes
+the maze you are trapped in.  Written on the screen, north is up.  Blocked
+locations are denoted by the character `<tt>O</tt>' (that's an uppercase `<tt>o</tt>'), while
+unblocked locations are indicated by the character `<tt>.</tt>'.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p><p>
+<br>
+
+<p>
+Output consists of a number of lines, each consisting of one of `<tt>north</tt>',
+`<tt>south</tt>', `<tt>east</tt>', or `<tt>west</tt>', indicating the shortest sequence of moves that
+guarantees escape for any possible unblocked starting position.
+
+<p>
+If there are multiple possible shortest sequences, any of them will do.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+4
+OO.O
+...O
+OO..
+O..O
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+east
+north
+</pre>
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2002-06-15
+</address>
+</body>
+</html>
+

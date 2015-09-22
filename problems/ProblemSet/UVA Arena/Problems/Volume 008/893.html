@@ -1,0 +1,106 @@
+
+
+<html>
+<head>
+<title>Y3K Problem</title>
+<meta name="description" content="Y3K Problem">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Y3K Problem</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+We have heard a lot recently about the Y2K problem.  According to the doom sayers, planes will fall out of the
+skies, businesses will crash and the world will enter a major depression as the bugs in software and hardware
+bite hard.  While this panic is a very satisfactory state of affairs for the computing profession, since it is
+leading to lots of lucrative jobs, it will have a tendency to bring the profession into disrepute when almost
+no problems occur on 1/1/00.  To help avoid this unseemly behaviour on any future occasion, you must write a
+program which will give the correct date for (almost) any number of future days - in particular, it must
+correctly predict the date <span class="MATH"><i>N</i></span> days ahead of any given date, where <span class="MATH"><i>N</i></span> is a number less than 1,000,000,000 and
+the given date is any date before the year 3000.
+
+<p>
+
+<p>
+<br>
+Remember that in the standard Gregorian calendar we use there are 365 days in a year, except for leap years
+in which there are 366.  Leap years are all years divisible by 4 and not divisible by 100, except for those
+divisible by 400.  Thus 1900 was not a leap year, 1904, 1908 ... 1996 were leap years, 2000 will be a leap year,
+2100 will not be a leap year, etc.  The number of days in each month in a normal year is
+31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31; in a leap year, the second month has 29 days.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input will consist of lines
+containing four numbers, separated by one or more spaces.  The first number on each line will be the number
+of days you have to predict (between 0 and 999999999), followed by the date in the format 
+<span class="MATH"><i>DD</i>&nbsp;<i>MM</i>&nbsp;<i>YYYY</i></span>
+where <span class="MATH"><i>DD</i></span> is the day of the month (1 to 31), <span class="MATH"><i>MM</i></span> is the month (1 to 12), and <span class="MATH"><i>YYYY</i></span> is the year (1998 to 2999),
+all inclusive.  The input will be terminated by a line containing four <tt>0</tt>'s.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each line of input, one output line should be produced.
+This line should contain the date which is the required number of days ahead of the input date, written in the
+same format as the input dates.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1 31 12 2999
+40 1 2 2004
+60 31 12 1999
+60 31 12 2999
+146097 31 12 1999
+999999 1 1 2000
+0 0 0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+1 1 3000
+12 3 2004
+29 2 2000
+1 3 3000
+31 12 2399
+27 11 4737
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-07-08
+</address>
+</body>
+</html>
+

@@ -1,0 +1,114 @@
+
+<p>
+ZSoft  Corp.  is  a  software  company  in  GaoKe  Hall.  And  the  workers  in  the  hall  are  very hard-working.
+But the elevator in that hall always drives them crazy. Why? Because there is only one elevator in GaoKe Hall, while
+there are hundreds of companies in it. Every morning, people must waste a lot of time waiting for the elevator.
+
+<p>
+Hal,  a smart  guy  in  ZSoft,  wants  to  change  this  situation.  He  wants  to  find  a  way  to  make  the
+elevator work more effectively. But it's not an easy job.
+
+<p>
+
+<p>
+<br>
+There are 31 floors in GaoKe Hall. It takes 4 seconds for the elevator to raise one floor. It means:
+
+<p>
+It  costs  
+<span class="MATH">(31 - 1)&#215;4 = 120</span> seconds  if  the  elevator  goes  from  the  1-st  floor  to
+the  31-st  floor without stop. And the elevator stops 10 second once. So, if the elevator stops at
+each floor, it will cost  
+<span class="MATH">30&#215;4 + 29&#215;10 = 410</span> seconds (It is not  necessary to calculate the
+stopping time  at 31st floor). In another  way, it takes 20 seconds for the  workers  to  go  up  or down one
+floor. It takes 
+<span class="MATH">30&#215;20 = 600</span> seconds for them to walk from the 1-st floor to the 31-st
+floor. Obviously, it is not a good idea. So some people choose to use the elevator to get a floor which is the
+nearest to their office.
+
+<p>
+
+<p>
+<br>
+After thinking over for a long time, Hal finally found a way to improve this situation. He told the elevator
+man his idea: First, the elevator man asks the people which  floors they want to go. He will then design a stopping
+plan which minimize the time the last person need to arrive the floor where his office locates. For example, if
+the elevator is required to stop at the 4-th, 5-th and 10-th floor, the stopping
+plan would be: the elevator stops at 4-th and 10-th floor. Because the elevator will arrive
+
+<span class="MATH">4<sup>th</sup></span> floor at 
+<span class="MATH">3&#215;4 = 12</span> second, then it will stop 10 seconds, then it will arrive 
+<span class="MATH">10<sup>th</sup></span>
+floor at 
+<span class="MATH">3&#215;4 + 10 + 6&#215;4 = 46</span> second. People  who  want to  go  4-th  floor  will  reach
+their  office  at  12 second, people who want to go to 5-th floor will reach at  
+<span class="MATH">12 + 20 = 32</span> second
+and people who want to go to 10-th floor will reach at 46 second. Therefore it takes 46 seconds for the
+last person to reach his office. It is a good deal for all people.
+
+<p>
+Now, you are supposed to write a program to help the elevator man to design the stopping plan, which minimize the
+time the last person needs to arrive at his floor.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of several testcases. Each testcase is in a single line as the following:
+
+<p>
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<i>n</i>&nbsp;<i>f</i><sub>1</sub>&nbsp;<i>f</i><sub>2</sub>&nbsp;...&nbsp;<i>f</i><sub>n</sub>
+</div><p>
+
+<p>
+It means, there are totally <span class="MATH"><i>n</i></span> floors at which the elevator need to stop, and <span class="MATH"><i>n</i> = 0</span> means no testcases any more.
+
+<span class="MATH"><i>f</i><sub>1</sub>&nbsp;<i>f</i><sub>2</sub>&nbsp;...&nbsp;<i>f</i><sub>n</sub></span> are the floors at which the elevator is to be stopped
+(<span class="MATH"><i>n</i><img width="18" height="30" align="MIDDLE" border="0" src="2949img1.png" alt="$ \le$">30</span>, 
+<span class="MATH">2<img width="18" height="30" align="MIDDLE" border="0" src="2949img1.png" alt="$ \le$"><i>f</i><sub>1</sub> &lt; <i>f</i><sub>2</sub> &lt; ... &lt; <i>f</i><sub>n</sub><img width="18" height="30" align="MIDDLE" border="0" src="2949img1.png" alt="$ \le$">31</span>). Every number is separated by a single space.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each testcase, output the time the last reading person needs in the first line and the stopping floors in
+the second line. Please note that there is a summary of the floors at the head of the second line. There may be
+several solutions, any appropriate one is accepted. No extra spaces are allowed.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 4 5 10
+1 2
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+46
+2 4 10
+4
+1 2
+</pre>
+
+<p>

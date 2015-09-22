@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>ACM - Porto</title>
+<style>a:hover {color:#FA1F00}</style>
+</head>
+
+
+<p align="center"><font size="5"><b>Intersecting line segments</b></font></p>
+
+<b><font size="3"><a name="back">Background</a></font></b><p>
+
+<p>&nbsp;&nbsp; In a 2-D Cartesian space, a straight line segment A is defined
+by two points <b>A<sub>0</sub>=(x<sub>0</sub>,y<sub>0</sub>)</b>, <b>A<sub>1</sub>=(x<sub>1</sub>,y<sub>1</sub>)</b>.
+The intersection of line segments <b>A</b> and <b>B</b> (if there is one),
+together with the initial four points, defines four new line segments.<br>&nbsp;&nbsp;
+In Figure 1.1, the intersection <b>P</b> between lines <b>B</b> and <b>C</b>
+defines four new segments. As a result, the toal amount of line segments after
+the evaluation of intersections is five.</p>
+
+<p align="center"><img border="0" src="p866a.gif" width="251" height="165"><br><b>Figure
+1.1</b> - Intersections of line segments</p>
+
+<b><font size="3"><a name="problem">Problem</a></font></b></p>
+
+<p>&nbsp;&nbsp; Given an initial set of lines segments, determine the number of line segments resulting from the
+evaluation of all the possible intersections.<br>&nbsp;&nbsp; It is assumed, as
+a simplification, that no coincidences may occur between coordinates of singular
+points (intersections or end points).</p>
+
+<b><font size="3"><a name="input">Input</a></font></b><p>
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+<p>&nbsp;&nbsp; The first line of the input contains the integer number <b>N</b>
+of line segments. Each of the following N lines contains four integer values <b>x<sub>0</sub>
+y<sub>0</sub> x<sub>1</sub> y<sub>1</sub></b>,separated by a single space, that define a line segment.</p>
+
+<b><font size="3"><a name="output">Output</a></font></b></p>
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+
+<p>&nbsp;&nbsp; The integer number of lines segments after all the possible
+intersections are evaluated.</p>
+
+<p><b>Sample Input</b><br>1<br><br>5<br>3 1 3 8<br>4 1 4 8<br>2 4 9 4<br>8 7 5 7<br>5 6 10 1</p>
+
+<p><b>Sample Output</b><br>11</p>
+
+<p><b>Note:</b> Figure 1.2 corresponds to the sample above.</p>
+<p align="center"><b><img border="0" src="p866b.gif" width="183" height="132"><br>Figure 1.2</b> - Example</p>
+
+
+
+
+</html>
+

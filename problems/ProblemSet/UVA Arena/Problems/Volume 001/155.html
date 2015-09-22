@@ -1,0 +1,65 @@
+
+
+<html>
+<head>
+<title>All Squares</title>
+<meta name="description" content="All Squares">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">All Squares</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Geometrically, any square has a unique, well-defined centre point. On
+a grid this is only true if the sides of the square are an odd number
+of points long. Since any odd number can be written in the form 2k+1,
+we can characterise any such square by specifying k, that is we can say
+that a square whose sides are of length 2k+1 has size k. Now define a
+pattern of squares as follows.
+<p>
+<ol><li> The largest square is of size k (that is sides are of length 2k+1) and is
+centred in a grid of size 1024 (that is the grid sides are of length
+2049).<li> The smallest permissible square is of size 1 and the largest is of
+size 512, thus  <img width="89" height="26" align="MIDDLE" alt="tex2html_wrap_inline32" src="155img1.gif"> .<li> All squares of size <i>k</i> &gt; 1 have a square of size k div 2 centred on
+each of their 4 corners. (Div implies integer division, thus 9 div 2 =
+4).<li> The top left corner of the screen has coordinates (0,0), the bottom
+right has coordinates (2048, 2048).
+</li></li></li></li></ol>
+<p>
+Hence, given a value of k, we can draw a unique pattern of squares
+according to the above rules. Furthermore any point on the screen will
+be surrounded by zero or more squares. (If the point is on the border
+of a square, it is considered to be surrounded by that square). Thus
+if the size of the largest square is given as 15, then the following
+pattern would be produced.
+<p>
+<p> <img width="443" height="441" align="BOTTOM" alt="picture25" src="155img2.gif"> <p>
+<p>
+Write a program that will read in a value of k and the coordinates of
+a point, and will determine how many squares surround the point.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Input will consist of a
+series of lines. Each line will consist of a value of k and the
+coordinates of a point. The file will be terminated by a line
+consisting of three zeroes (0 0 0).
+<p>
+<p>
+Output will consist of a series of lines, one for each line of the
+input. Each line will consist of the number of squares containing the
+specified point, right justified in a field of width 3.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample input</a></font></h2>
+<p>
+<pre>500 113 941
+0 0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample output</a></font></h2>
+<p>
+<pre>  5</pre>
+<p>
+</body>
+</html>

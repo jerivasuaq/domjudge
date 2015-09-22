@@ -1,0 +1,115 @@
+
+
+<html>
+<head>
+<title>Heavy Cargo</title>
+<meta name="description" content="Heavy Cargo">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Heavy Cargo</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+<em>Big Johnsson Trucks Inc.</em> is a company specialized in manufacturing big trucks. Their latest model,
+the <em>Godzilla V12</em>, is so big that the amount of cargo you can transport with it is never limited by the
+truck itself. It is only limited by the weight restrictions that apply for the roads along the path you want to drive.
+
+<p>
+
+<p>
+<br>
+Given start and destination city, your job is to determine the maximum load of the <em>Godzilla V12</em> so
+that there still exists a path between the two specified cities.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file will contain one or more test cases. The first line of each test case will contain two
+integers: the number of cities <i>n</i> (
+
+<img width="96" height="30" align="MIDDLE" border="0" src="544img1.gif" alt="$2 \le n \le 200$">)
+and the number of road segments <i>r</i> (
+
+<img width="112" height="30" align="MIDDLE" border="0" src="544img2.gif" alt="$1 \le r \le 19900$">)
+making up the street network.
+
+<p>
+Then <i>r</i> lines will follow, each one describing one road segment by naming the two cities connected
+by the segment and giving the weight limit for trucks that use this segment. Names are not longer
+than 30 characters and do not contain white-space characters. Weight limits are integers in the
+range 0 - 10000. Roads can always be travelled in both directions.
+
+<p>
+The last line of the test case contains two city names: start and destination.
+
+<p>
+Input will be terminated by two values of 0 for <i>n</i> and <i>r</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, print three lines:
+<ul>
+<li>a line saying ``<tt>Scenario #</tt><i>x</i>" where <i>x</i> is the number of the test case
+<li>a line saying ``<i>y</i> <tt>tons</tt>" where <i>y</i> is the maximum possible load
+<li>a blank line
+</li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4 3
+Karlsruhe Stuttgart 100
+Stuttgart Ulm 80
+Ulm Muenchen 120
+Karlsruhe Muenchen
+5 5
+Karlsruhe Stuttgart 100
+Stuttgart Ulm 80
+Ulm Muenchen 120
+Karlsruhe Hamburg 220
+Hamburg Muenchen 170
+Muenchen Karlsruhe
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Scenario #1
+80 tons
+
+Scenario #2
+170 tons
+</pre>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

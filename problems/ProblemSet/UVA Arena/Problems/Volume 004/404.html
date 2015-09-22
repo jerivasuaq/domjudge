@@ -1,0 +1,144 @@
+
+
+<html>
+<head>
+<title>Radar Scopes</title>
+<meta name="description" content="Radar Scopes">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Radar Scopes</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You have been hired to a team of software designers to write a new air-
+traffic control system.  One of the functions of this new software is 
+to automatically verify the functioning of the subject aircrafts' 
+instrumentation and alert controllers to endangered, newly aloft, or 
+possibly downed aircraft.  You are to write a prototype of this 
+function.
+<p>
+<p>
+Your program will be given a series of scenarios which include 2 radar 
+sweeps each.  Each radar sweep will find 0 to 100 airplanes.  Each time 
+a sweep encounters a plane, the data acquisition system captures an 
+azimuth reading and distance (in miles) from the radar.  It will also 
+retrieve (from the plane) a squawk number and a ground speed in 
+miles/hour (actually an airspeed with wind corrections).  Based on the 
+two radar sweeps, your program is to determine if a warning is required 
+for any plane in the radar's domain.
+<p>
+<p>
+You should assume a radar range (radius of the area covered) of 10 
+miles and instantaneous sweeps that occur 5 seconds apart.
+<p>
+<p>
+Based on the information about the radar and planes, you are to 
+determine if the controllers should be warned of potential problems.
+<p>
+<p>
+An ``equipment warning&quot; is issued if the average of the plane's two
+indicated airspeeds is not within 10% of the airspeed
+measured/calculated based on radar sweeps.
+<p>
+<p>
+A ``new intrusion&quot; warning is issued if the second radar sweep indicates
+a plane which was not present in the first sweep, but whose indicated 
+airspeed + 10% is sufficient to have brought the plane onto the scope
+(on the shortest path) between the two sweeps.  If the speed is not 
+sufficient to account for a plane which was already aloft, then the 
+assumption must be made that there is a ``new aloft&quot; warning to be
+issued because a plane has just taken off within the domain of the 
+radar.
+<p>
+<p>
+A ``domain exited&quot; warning is issued if the first sweep of the radar
+indicates a plane which is not seen in the second sweep but whose 
+indicated airspeed + 10% is sufficient to have accounted for the plane
+leaving the range of the radar (on the shortest path) within the two 
+sweeps.  If the speed is not sufficient to allow the plane to leave the 
+radar scope between the sweeps, a ``domain loss&quot; warning is issued
+indicating that the plane has either landed or crashed with the 
+controller's domain.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line of each scenario contains a single integer ( <img width="101" height="25" align="MIDDLE" alt="tex2html_wrap_inline32" src="404img1.gif"> )
+that indicates the number of planes detected in the first sweep.  The 
+next  <img width="20" height="25" align="MIDDLE" alt="tex2html_wrap_inline34" src="404img2.gif">  lines each contain the description of exactly one detected
+plane in sweep 1.  Each description contains a squawk number, an 
+azimuth, a distance, and a ground speed.  The squawk number is an 
+integer between 1 and 5 digits in length.  The azimuth, distance and 
+ground speed are all real numbers in the format <tt>XXX.XXX</tt> with leading 
+and trailing zeroes as needed to fill all 6 places.
+<p>
+<p>
+The squawk number (0&lt;<i>S</i>&lt;32767) is a globally unique integer that
+identifies each plane and is used to match planes from sweeps 1 and 2.  
+The azimuth ( <img width="172" height="26" align="MIDDLE" alt="tex2html_wrap_inline38" src="404img3.gif"> ) is the angle in degrees from North
+(sweeping in a circle toward the East) where the plane was detected.  
+Therefore, East is at 90 degrees; South is at 180 degrees; and West is 
+at 270 degrees.  The distance ( <img width="174" height="26" align="MIDDLE" alt="tex2html_wrap_inline40" src="404img4.gif"> ) is the distance
+from the radar to the plane (added distance due to altitude has been 
+removed by the radar's sensing logic).  The ground speed 
+( <img width="173" height="26" align="MIDDLE" alt="tex2html_wrap_inline42" src="404img5.gif"> ) is the speed at which the plane is moving (in any
+direction) relative to the radar.
+<p>
+<p>
+Immediately following the lines with the descriptions of planes in the 
+first sweep is a line with a single integer ( <img width="102" height="25" align="MIDDLE" alt="tex2html_wrap_inline44" src="404img6.gif"> ) indicating the
+number of planes detected in the second sweep.  The next  <img width="19" height="25" align="MIDDLE" alt="tex2html_wrap_inline46" src="404img7.gif">  lines each
+contain the description of exactly one detected plane in sweep 2.
+<p>
+<p>
+The next scenario (if any) starts with  <img width="20" height="25" align="MIDDLE" alt="tex2html_wrap_inline34" src="404img2.gif">  on the next line.  You are to
+read and process scenarios to the end-of-file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each scenario, you are to print ``<tt>Scenario # X</tt>&quot; where <i>X</i> is the
+number of the scenario starting with 1 for the first scenario and 
+incrementing by 1 for successive scenarios.  Each subsequent line 
+contains exactly one report for each plane requiring a warning 
+indication.  These lines are to be sorted based on the squawk number.  
+Reports consist of the squawk number right-justified in columns 1 to 5 
+and one of the following warnings ``<tt> -- equipment warning</tt>&quot;,
+``<tt> -- new intrusion</tt>&quot;, ``<tt> -- new aloft</tt>&quot;,
+``<tt> -- domain exited</tt>&quot;, or ``<tt> -- domain loss</tt>&quot;
+starting in column 6.  (You must print the blanks and dashes exactly as 
+shown in the strings above.)  There are no messages printed for planes 
+for whom no warning applies.
+<p>
+<p>
+After each scenario, print a blank line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+4 
+222   060.111   007.600   095.000 
+1496  203.122   009.444   598.991 
+111   000.000   005.100   999.999 
+013   333.333   006.711   188.448 
+4 
+111   001.000   003.713   999.999 
+777   263.122   009.933   477.633 
+333   083.014   004.300   127.122 
+222   040.713   009.813   098.125
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+Scenario # 1 
+  013 -- domain loss 
+  222 -- equipment warning 
+  333 -- new aloft 
+  777 -- new intrusion 
+ 1496 -- domain exited
+
+</pre>
+<p>
+</body>
+</html>

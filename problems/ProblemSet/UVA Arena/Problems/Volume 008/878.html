@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>ACM - 4ª Sessão - 3º Problema</title>
+<style>a:hover {color:#FA1F00}</style>
+</head>
+
+<body>
+
+
+
+<font color="#000000" face="Arial" size="2">
+
+<p align="center"><b><font size="3" face="Arial" color="#000000">Rotating Tetris Pieces
+</font></b></p>
+
+<p> 
+<b><font size="3"><a name="back">Background</a></font></b></p>
+
+<p>&nbsp;&nbsp; A <i>tetris piece</i> is a two-dimensional figure made up from unit squares.
+Valid tetris pieces are constructed by stacking squares together to the left, right, bottom or top of 
+each other. Figure 1 shows three tetris pieces made up from 4 squares.
+
+<p align="center"><img src="p878a.gif" width="497" height="80" alt="" border="0"><br><b>Figure
+1</b> - Different pieces made with 4 squares.</p>
+<p>&nbsp;&nbsp; Given a tetris piece we consider the ones obtained by rotating it
+on the plane by 0, 90, 180, 270 degrees.  Some pieces generate four different figures by
+these rotations (cf. figure 1 right), whereas in others we get repeated figures
+(cf. figure 1 left and center).
+
+<p>
+<b><font size="3"><a name="problem">Problem</a></font></b></p>
+
+<p>&nbsp;&nbsp; Write a program that reads as input the coordinates of the squares
+making up a piece and outputs the number of different pieces obtained
+by rotations.
+</p>
+
+<p>
+<b><font size="3"><a name="input">Input</a></font></b></p>
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<table>
+<tr><td valign="top">
+<font color="#000000" face="Arial" size="2">
+<p>&nbsp;&nbsp; The input is a sequence of <i>(x,y)</i> coordinate pairs;
+the values for <i>x</i> and <i>y</i> are non-negative integers and separated
+by a <i>','</i> (a comma); coordinate pairs are separated by white-spaces
+and the order among pairs is non-relevant. The end of the list is marked by a
+<i>'-1,-1'</i>.
+<p>&nbsp;&nbsp; Example: for the piece on the right, the input data
+could be: 0,1 &nbsp;0,2 &nbsp;1,1 &nbsp;2,1 &nbsp;2,0 &nbsp;-1,-1
+<td valign="center"><img src="p878b.gif" width="150" height="159" alt="" border="0">
+</td></font></td></tr></table>
+
+<p>
+<b><font size="3"><a name="output">Output</a></font></b></p>
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+
+<p>&nbsp;&nbsp; The output should be the number of different 
+pieces obtained by rotations (between 1 and 4). For the input above the output
+should be 2.
+
+
+<p><b>Sample Input</b><br>1<br><br>0,1 &nbsp;0,2 &nbsp;1,1 &nbsp;2,1 &nbsp;2,0 &nbsp;-1,-1
+
+
+<p><b>Sample Output</b><br>2
+
+<p>&nbsp;</p>
+
+
+</font></body>
+
+</html>

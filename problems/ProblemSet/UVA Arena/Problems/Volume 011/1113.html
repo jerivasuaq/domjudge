@@ -1,0 +1,169 @@
+<p>
+Before the digital age, the most common ``binary''
+code for radio communication was the <i>Morse code</i>.
+In Morse code, symbols are encoded
+as sequences of short and long pulses (called <i>dots</i> 
+and <i>dashes</i>, respectively).
+The following table reproduces the Morse code for the
+alphabet, where dots and dashes are represented by ASCII&nbsp;characters
+``<tt>.</tt>'' and ``<tt>-</tt>'':
+
+<p>
+<div align="CENTER">
+<table cellpadding="3" border="1">
+<tr><td align="LEFT">A</td>
+<td align="LEFT"><tt>.-</tt></td>
+<td align="LEFT">B</td>
+<td align="LEFT"><tt>-...</tt></td>
+<td align="LEFT">C</td>
+<td align="LEFT"><tt>-.-.</tt></td>
+<td align="LEFT">D</td>
+<td align="LEFT"><tt>-..</tt></td>
+</tr>
+<tr><td align="LEFT">E</td>
+<td align="LEFT"><tt>.</tt></td>
+<td align="LEFT">F</td>
+<td align="LEFT"><tt>..-.</tt></td>
+<td align="LEFT">G</td>
+<td align="LEFT"><tt>--.</tt></td>
+<td align="LEFT">H</td>
+<td align="LEFT"><tt>....</tt></td>
+</tr>
+<tr><td align="LEFT">I</td>
+<td align="LEFT"><tt>..</tt></td>
+<td align="LEFT">J</td>
+<td align="LEFT"><tt>.---</tt></td>
+<td align="LEFT">K</td>
+<td align="LEFT"><tt>-.-</tt></td>
+<td align="LEFT">L</td>
+<td align="LEFT"><tt>.-..</tt></td>
+</tr>
+<tr><td align="LEFT">M</td>
+<td align="LEFT"><tt>--</tt></td>
+<td align="LEFT">N</td>
+<td align="LEFT"><tt>-.</tt></td>
+<td align="LEFT">O</td>
+<td align="LEFT"><tt>---</tt></td>
+<td align="LEFT">P</td>
+<td align="LEFT"><tt>.--.</tt></td>
+</tr>
+<tr><td align="LEFT">Q</td>
+<td align="LEFT"><tt>--.-</tt></td>
+<td align="LEFT">R</td>
+<td align="LEFT"><tt>.-.</tt></td>
+<td align="LEFT">S</td>
+<td align="LEFT"><tt>...</tt></td>
+<td align="LEFT">T</td>
+<td align="LEFT"><tt>-</tt></td>
+</tr>
+<tr><td align="LEFT">U</td>
+<td align="LEFT"><tt>..-</tt></td>
+<td align="LEFT">V</td>
+<td align="LEFT"><tt>...-</tt></td>
+<td align="LEFT">W</td>
+<td align="LEFT"><tt>.--</tt></td>
+<td align="LEFT">X</td>
+<td align="LEFT"><tt>-..-</tt></td>
+</tr>
+<tr><td align="LEFT">Y</td>
+<td align="LEFT"><tt>-.--</tt></td>
+<td align="LEFT">Z</td>
+<td align="LEFT"><tt>--..</tt></td>
+<td align="LEFT">&nbsp;</td>
+<td align="LEFT">&nbsp;</td>
+<td align="LEFT">&nbsp;</td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+</table>
+</div>
+
+<p>
+Notice that in the absence of pauses between letters there might be
+multiple interpretations of a Morse sequence. For example,
+the sequence ``<tt>-.-..--</tt>'' can be decoded both as
+``CAT'' or ``NXT'' (among others). A human Morse
+operator would use other context information (such as
+a language dictionary) to decide the appropriate decoding.
+
+<p>
+Write a program that reads a Morse code string and 
+a list of words (a <i>dictionary</i>)
+and attempts to parse the Morse code into
+a phrase using words that occur in the dictionary.
+The program's output should be the number of distinct phrases
+that can be obtained. 
+
+<p>
+Notice that we are interested in <i>full matches</i>, i.e. the complete
+Morse string must be matched to words in the dictionary.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<p>
+The input starts with the Morse code string,
+made up of characters ``<tt>.</tt>'' and ``<tt>-</tt>'', with 
+no spaces between them, and terminated by the end-of-line character.
+
+<p>
+The next line consists of the number <i><b>N</b></i> of words in
+the dictionary, and is followed by
+<i><b>N</b></i> dictionary words, one in each line.
+Each word consists of upper-case 
+characters from ``A''  to ``Z'' only.
+
+<p>
+The number of words in the dictionary is less than or equal to 10000 and
+the Morse code string is at most 1000 characters long.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+<p>
+The output should be a single integer number representing the count
+of distinct phrases into which the Morse code can be parsed.
+You may assume that this number is at most <i><b>2 &times; 10<sup>9</sup></b></i>.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+1
+
+.---.--.-.-.-.---...-.---.
+6
+AT
+TACK
+TICK
+ATTACK
+DAWN
+DUSK
+</pre>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>
+2
+</pre>
+
+<p>

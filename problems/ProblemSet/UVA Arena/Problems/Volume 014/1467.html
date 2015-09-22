@@ -1,0 +1,118 @@
+In the morning, service engineers in a telecom company receive a list of jobs which they must serve today. They install telephones, 
+internet, ipTVs, etc and repair troubles with established facilities. A client requires a deadline when the requested job must be 
+completed. But the engineers may not complete some jobs within their deadlines because of job overload. For each job, we consider, 
+as a penalty of the engineer, the difference between the deadline and the completion time. It measures how long the job proceeds
+after its deadline. The problem is to find a schedule minimizing the sum of the penalties of the jobs with the two largest penalties. 
+
+<p>
+A service engineer gets a list of jobs <span class="MATH"><i>J</i><sub>i</sub></span> with a serving time <span class="MATH"><i>s</i><sub>i</sub></span> and a deadline <span class="MATH"><i>d</i><sub>i</sub></span>. A job <span class="MATH"><i>J</i><sub>i</sub></span> needs time <span class="MATH"><i>s</i><sub>i</sub></span>, 
+and if it is completed 
+at time <span class="MATH"><i>C</i><sub>i</sub></span>, then the penalty of <span class="MATH"><i>J</i><sub>i</sub></span> is defined to be 
+<span class="MATH">max{0, <i>C</i><sub>i</sub> - <i>d</i><sub>i</sub>}</span>. For convenience, we assume that the time <span class="MATH"><i>t</i></span> when a job can 
+be served is 
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="4850img1.png" alt="$ \le$"><i>t</i> &lt; <img width="22" height="18" align="BOTTOM" border="0" src="4850img2.png" alt="$ \infty$"></span> and <span class="MATH"><i>s</i><sub>i</sub></span> and <span class="MATH"><i>d</i><sub>i</sub></span> are given positive integers such that 
+<span class="MATH">0 &lt; <i>s</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="4850img1.png" alt="$ \le$"><i>d</i><sub>i</sub></span>. The goal is to find a schedule of 
+jobs minimizing the sum of the penalties of the jobs with the two largest penalties. 
+
+<p>
+For example, there are six jobs <span class="MATH"><i>J</i><sub>i</sub></span> with the pair 
+<span class="MATH">(<i>s</i><sub>i</sub>, <i>d</i><sub>i</sub>)</span> of the serving time <span class="MATH"><i>s</i><sub>i</sub></span> and the deadline <span class="MATH"><i>d</i><sub>i</sub></span>, 
+<span class="MATH"><i>i</i> = 1,..., 6</span>, where 
+<span class="MATH">(<i>s</i><sub>1</sub>, <i>d</i><sub>1</sub>) = (1, 7)</span>, 
+<span class="MATH">(<i>s</i><sub>2</sub>, <i>d</i><sub>2</sub>) = (4, 7)</span>, 
+
+<span class="MATH">(<i>s</i><sub>3</sub>, <i>d</i><sub>3</sub>) = (2, 4)</span>, 
+<span class="MATH">(<i>s</i><sub>4</sub>, <i>d</i><sub>4</sub>) = (2, 15)</span>, 
+<span class="MATH">(<i>s</i><sub>5</sub>, <i>d</i><sub>5</sub>) = (3, 5)</span>, 
+<span class="MATH">(<i>s</i><sub>6</sub>, <i>d</i><sub>6</sub>) = (3, 8)</span>. Then Figure 1 represents a schedule 
+which minimizes the sum of the penalties of the jobs with the two largest penalties. The sum of the two largest penalties of an 
+optimal schedule is that of the penalties of <span class="MATH"><i>J</i><sub>2</sub></span> and <span class="MATH"><i>J</i><sub>6</sub></span>, namely 6 and 1, respectively, which is equal to 7 in this example.
+
+<p>
+<div align="CENTER">
+
+<img width="1215" height="219" align="BOTTOM" border="0" src="p4850.png" alt="\epsfbox{p4850.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 1. The optimal schedule of the example
+
+</div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to read from standard input. The input consists of <span class="MATH"><i>T</i></span> test cases. The number of test cases <span class="MATH"><i>T</i></span> is given on the 
+first line of the input. The first line of each test case contains an integer <span class="MATH"><i>n</i></span> (
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4850img1.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4850img1.png" alt="$ \le$">500</span>), the number of the given jobs. 
+In the next <span class="MATH"><i>n</i></span> lines of each test case, the <span class="MATH"><i>i</i></span>-th line contains two integer numbers <span class="MATH"><i>s</i><sub>i</sub></span> and <span class="MATH"><i>d</i><sub>i</sub></span>, representing the serving time and 
+the deadline of the job <span class="MATH"><i>J</i><sub>i</sub></span>, respectively, where 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4850img1.png" alt="$ \le$"><i>s</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="4850img1.png" alt="$ \le$"><i>d</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="4850img1.png" alt="$ \le$">10, 000</span>. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to write to standard output. 
+Print exactly one line for each test case. The line contains the sum of the penalties of the jobs with the two largest penalties. 
+
+<p>
+The following shows sample input and ouput for three test cases.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+6
+1 7
+4 7
+2 4
+2 15
+3 5
+3 8
+7
+2 17
+2 11
+3 4
+3 20
+1 20
+4 7
+5 14
+10
+2 5
+2 9
+5 10
+3 11
+3 4
+4 21
+1 7
+2 9
+2 11
+2 23
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+7
+0
+14
+</pre> 
+
+<p>

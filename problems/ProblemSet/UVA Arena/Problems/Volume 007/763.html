@@ -1,0 +1,106 @@
+
+
+<html>
+<head>
+<title>Fibinary Numbers</title>
+<meta name="description" content="Fibinary Numbers">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Fibinary Numbers</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+The standard interpretation of the binary number <tt>1010</tt> is 8 + 2 = 10. An alternate way to
+view the sequence ``<tt>1010</tt>'' is to use Fibonacci numbers as bases instead of powers of two.
+For this problem, the terms of the Fibonacci sequence are:
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="150" height="30" src="763img1.gif" alt="\begin{displaymath}1, 2, 3, 5, 8, 13, 21 , \dots
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+Where each term is the sum of the two preceding terms (note that there is only one 1 in
+the sequence as defined here). Using this scheme, the sequence ``<tt>1010</tt>'' could be
+interpreted as 
+
+<img width="232" height="30" align="MIDDLE" border="0" src="763img2.gif" alt="$1 \cdot 5 + 0 \bullet 3 + 1 \bullet 2 + 0 \bullet 1 = 7$">.
+This
+representation is called a Fibinary number.
+
+<p>
+
+<p>
+<br>
+Note that there is not always a unique Fibinary representation of every number. For
+example the number 10 could be represented as either 8 + 2 (<tt>10010</tt>) or as 5 + 3 + 2
+(<tt>1110</tt>). To make the Fibinary representations unique, larger Fibonacci terms must
+always be used whenever possible (i.e. disallow 2 adjacent 1's). Applying this rule to the
+number 10, means that 10 would be represented as 8+2 (<tt>10010</tt>).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input and Output</a>&nbsp;</font>
+</h2>
+Write a program that takes two valid Fibinary numbers and prints the sum in Fibinary
+form. These numbers will have at most 100 digits.
+
+<p>
+In case that two or more test cases had to be solved, it must be a
+blank line between two consecutive, both in input and output files. 
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+10010
+1
+
+10000
+1000
+
+10000
+10000
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+10100
+
+100000
+
+100100
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+

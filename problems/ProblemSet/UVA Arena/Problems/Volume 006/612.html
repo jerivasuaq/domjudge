@@ -1,0 +1,117 @@
+
+
+<html>
+<head>
+<title>DNA Sorting</title>
+<meta name="description" content="DNA Sorting">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+DNA Sorting</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+One measure of ``unsortedness'' in a sequence is the number of
+pairs of entries that are out of
+order with respect to each other. For instance, in the letter
+sequence ``<tt>DAABEC</tt>'', this measure
+is 5, since <tt>D</tt> is greater than four letters to its right and <tt>E</tt>
+is greater than one letter to its right.
+This measure is called the number of inversions in the sequence.
+The sequence ``<tt>AACEDGG</tt>'' has
+only one inversion (<tt>E</tt> and <tt>D</tt>)--it is nearly sorted--while the
+sequence ``<tt>ZWQM</tt>'' has 6 inversions
+(it is as unsorted as can be--exactly the reverse of sorted).
+
+<p>
+
+<p>
+<br>
+You are responsible for cataloguing a sequence of DNA strings (sequences
+containing only the
+four letters <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, and <tt>T</tt>). However, you want to catalog them,
+not in alphabetical order, but
+rather in order of ``sortedness'', from ``most sorted''
+to ``least sorted''. All the strings are of the same length.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input is an integer M, then a blank line followed by
+M datasets. There is a blank line between datasets.
+
+<p>The first line of each dataset contains two integers: a positive integer <i>n</i> (
+
+<img width="88" height="30" align="MIDDLE" border="0" src="612img1.gif" alt="$0 < n \le 50$">)
+giving the length of the
+strings; and a positive integer <i>m</i> (
+
+<img width="101" height="30" align="MIDDLE" border="0" src="612img2.gif" alt="$0 < m \le 100$">)
+giving the number
+of strings. These are followed
+by <i>m</i> lines, each containing a string of length <i>n</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, output the list of input strings, arranged from ``most sorted'' to
+``least sorted''. If two or more strings
+are equally sorted, list them in the same order they are in the input file.
+
+<p>
+Print a blank line between consecutive test cases.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+10 6
+AACATGAAGG
+TTTTGGCCAA
+TTTGGCCAAA
+GATCAGATTT
+CCCGGGGGGA
+ATCGATGCAT
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+CCCGGGGGGA
+AACATGAAGG
+GATCAGATTT
+ATCGATGCAT
+TTTTGGCCAA
+TTTGGCCAAA
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-24</i>
+</address>
+</body>
+</html>
+

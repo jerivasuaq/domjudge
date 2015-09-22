@@ -1,0 +1,195 @@
+
+
+<html>
+<head>
+<title>Scrabble</title>
+<meta name="description" content="Scrabble">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Scrabble</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The board game Scrabble (copyright Hasbro, Inc.) requires players to draw seven letter tiles from a
+pool, and form words on a game board, arranged horizontally or vertically, with their letters and the
+letters already played; just what constitutes a ``word'' is often subject to dispute, so it's handy to
+have a dictionary nearby when you play. Scoring is based on the point values of the letters used to
+form the words, with the letters associated with point values as follows:
+
+<p>
+<pre>
+A-1 B-3 C-3 D-2  E-1 F-4 G-2 H-4 I-1 J-8 K-5 L-1 M-3
+N-1 O-1 P-3 Q-10 R-1 S-1 T-1 U-1 V-4 W-4 X-8 Y-4 Z-10
+</pre>
+
+<p>
+Scoring is also affected by the positions on the board where the letters are played. Some positions
+have the feature that they double or triple the score of the letter played there. This bonus goes only
+to the first player to play a tile on that position, and not to another player who later uses that letter
+in a word. The score for a word is obtained by summing the letter scores (including any doubling
+and tripling of letter values). For example, the word ``<tt>MOUSE</tt>'', which would normally score 7
+points, would score 10 if played so that the ``<tt>M</tt>'' falls on one of the double letter positions. There
+are also positions that double or triple the score of the entire word. These bonuses can accumulate;
+thus, if our word ``<tt>MOUSE</tt>'' managed to land with the ``<tt>M</tt>'' on a double letter position, and the
+``<tt>E</tt>'' on a double word position, then the resulting score for the word is 20. We will denote these kinds of positions as follows:
+
+<p>
+<ul>
+<li><tt>-</tt> Ordinary position
+<li><tt>2</tt> Double letter score
+<li><tt>3</tt> Triple letter score
+<li><tt>4</tt> Double word score
+<li><tt>5</tt> Triple word score
+</li></li></li></li></li></ul>
+
+<p>
+The map below illustrates the scrabble board in terms of these symbols; note the symmetries.
+
+<p>
+<pre>
+5--2---5---2--5
+-4---3---3---4-
+--4---2-2---4--
+2--4---2---4--2
+----4-----4----
+-3---3---3---3-
+--2---2-2---2--
+5--2---4---2--5
+--2---2-2---2--
+-3---3---3---3-
+----4-----4----
+2--4---2---4--2
+--4---2-2---4--
+-4---3---3---4-
+5--2---5---2--5
+</pre>
+
+<p>
+Finally, there is a 50 point bonus if all seven letters get played in a single turn.
+
+<p>
+
+<p>
+<br>
+The game begins with one player placing a word of up to seven letters on the board so that one
+letter covers that '4' (double word score) marker in the center of the board.
+
+<p>
+
+<p>
+<br>
+Now, it's your move.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+You will receive, in the input file, a series of Scrabble puzzles, and after a blank line a
+list of legal words. Each puzzle poses the problem of playing second, after your opponent has made
+the first move of the game; thus, there is just one word you will have to intersect with when you
+choose your word. Your opponent's first word is also in the list of legal words. In our nonstandard
+version of the game, we require that the word you play must use one of the letters of of your
+opponent's word to form your own. The objective in a puzzle is to find a word that uses some of
+your letters and one of the letters already played to form the highest scoring word, including
+bonuses for double-letter, triple-letter, double-word and triple-word positions, and the 50 point
+bonus for using all seven letters.
+
+<p>
+
+<p>
+<br>
+Each puzzle is represented on one line of the input file. A puzzle consists of the following
+information:
+
+<p>
+<ul>
+<li>The seven letters you have drawn; these are the first seven characters of the line.
+<li>A digit from 1 to 7, indicating which letter of your opponents opening word landed on the center square.
+<li>The word your opponent played, of up to seven letters.
+</li></li></li></ul>
+
+<p>
+You may assume that the first word is played horizontally, and thus that your word will be played
+vertically. The symmetry of the board actually makes it irrelevant whether the word was played
+horizontally or vertically.
+
+<p>
+About the list of words that can be used in the game<a name="tex2html1" href="#foot74"><sup>1
+</sup></a>, each word is on a line by itself,
+at the beginning of the line, with no trailing spaces. The words in the file are contain only
+uppercase letters, with no digits, punctuation, or lowercase letters. You may assume that there are
+no more than 30000 words in the list, and that no word is more than eight letters long.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+You will print one line for each puzzle. In that line you will show your
+word, in a field 8 characters wide, left-justified, padded by spaces on the right as necessary; a digit
+in a 2 character field, right-justified, that shows which letter of the original word you used, a digit in
+a 2 character field, right-justified, that shows which letter of your word is part of your opponent's
+word, and finally a number in a 4 character field, right justified. that is your score for your word.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+RDAWEER1ABDOMEN
+OADPZBI5OPIATE
+RTWXAIB3SMELL
+AEFGOOS1BILLION
+CYOKDAR7DOLTISH
+CYOKDAR1DOLTISH
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font><a name="tex2html4" href="#foot75"><sup>2
+</sup></a>
+</h2>
+				
+<pre>
+1234567890123456
+WANDER   7 3  20
+ZAP      4 2  27
+AXIS     1 4  27
+FALSE    3 3  18
+DOCKYARD 1 1 100
+DOCKYARD 1 8 122
+</pre>
+
+<p>
+<br><hr><h4>Footnotes</h4>
+<dl>
+<dt>... game<a name="foot74" href="655.html#tex2html1"><sup>1
+</sup></a>
+<dd>Derived from the <tt>/usr/dict/words</tt> file in our system
+
+<dt>... Output<a name="foot75" href="655.html#tex2html4"><sup>2
+</sup></a>
+<dd>The line of digits is intended to guide you in proper output alignment, and is <b>not</b> part of the output
+that your solution should produce.
+
+</dd></dt></dd></dt></dl>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-17</i>
+</address>
+</body>
+</html>
+

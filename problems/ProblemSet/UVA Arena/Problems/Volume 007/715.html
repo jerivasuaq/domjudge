@@ -1,0 +1,152 @@
+
+
+<html>
+<head>
+<title>Substitution Cipher</title>
+<meta name="description" content="Substitution Cipher">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Substitution Cipher</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Antique Comedians of Malidinesia would like to play a new discovered
+comedy of Aristofanes. Putting it on a stage should be a big surprise for
+the audience so all the preparations must be kept absolutely secret.
+The ACM director suspects one of his competitors of reading his
+correspondece. To prevent other companies from revealing his secret, he
+decided to use a substitution cipher in all the letters mentioning the
+new play.
+
+<p>
+
+<p>
+<br>
+Substitution cipher is defined by a substitution table assigning each
+character of the substitution alphabet another character of the same alphabet.
+The assignment is a bijection (to each character exactly
+one character is assigned - not neccessary different).
+The director is afraid of disclosing the substitution table and
+therefore he changes it frequently. After each change he chooses a few
+words from a dictionary by random, encrypts them and sends them together with
+an encrypted message. The plain (i.e. non-encrypted) words
+are sent by a secure channel, not by mail. The recipient of the message
+can then compare plain and encrypted words and create
+a new substitution table.
+
+<p>
+
+<p>
+<br>
+Unfortunately, one of the ACM cipher specialists have found that this
+system is sometimes insecure. Some messages can be decrypted by the rival
+company even without knowing the plain words. The reason is
+that when the director chooses the words from the dictionary and encrypts them, 
+he never changes their order (the words in the dictionary are
+lexicographically sorted). String 
+
+<img width="81" height="30" align="MIDDLE" border="0" src="715img1.gif" alt="$a_1a_2 \dots a_p$">
+is lexicografically smaller than 
+
+<img width="76" height="32" align="MIDDLE" border="0" src="715img2.gif" alt="$b_1b_2 \dots b_q$">
+if there exists an integer <i>i</i>, 
+
+<img width="88" height="31" align="MIDDLE" border="0" src="715img3.gif" alt="$i \le p, i \le q$">,
+such that <i>a</i><sub><i>j</i></sub>=<i>b</i><sub><i>j</i></sub> for each <i>j</i>, 
+
+<img width="74" height="31" align="MIDDLE" border="0" src="715img4.gif" alt="$1 \le j < i$">
+and <i>a</i><sub><i>i</i></sub> &lt; <i>b</i><sub><i>i</i></sub>.
+
+<p>
+
+<p>
+<br>
+The director is interested in which of his messages could be
+read by the rival company. You are to write a program to determine that.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of <i>N</i> cases. The first line of the input
+contains only positive integer <i>N</i>. Then follow the cases. 
+The first line of each case contains only two positive integers
+<i>A</i>, 
+
+<img width="90" height="32" align="MIDDLE" border="0" src="715img5.gif" alt="$1 \le A \le 26$">,
+and <i>K</i>, separated by
+space. <i>A</i> determines the size of the substitution alphabet (the
+substitution alphabet consists of the first <i>A</i> lowercase letters
+of the english alphabet (<tt>a</tt>-<tt>z</tt>) and <i>K</i> is the number of encrypted
+words. The plain words contain only the letters of the substitution
+alphabet. The plain message can contain any symbol, but only the letters of
+the substitution alphabet are encrypted. Then follow <i>K</i> lines,
+each containing exactly one encrypted word. At the next line is encrypted
+message.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each case, print exactly one line. If it is possible
+to decrypt the message uniquely, print the
+decrypted message. Otherwise, print the sentence
+`<tt>Message cannot be decrypted.</tt>'.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+2
+5 6
+cebdbac
+cac
+ecd
+dca
+aba
+bac
+cedab
+4 4
+cca
+cad
+aac
+bca
+bdac
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+abcde
+Message cannot be decrypted.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-15</i>
+</address>
+</body>
+</html>
+

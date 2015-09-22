@@ -1,0 +1,145 @@
+
+
+<html>
+<head>
+<title>The Snail</title>
+<meta name="description" content="The Snail">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The Snail</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A snail is at the bottom of a 6-foot well and wants to climb to the top.
+The snail can climb 3 feet
+while the sun is up, but slides down 1 foot at night while sleeping.
+The snail has a fatigue factor
+of 10%, which means that on each successive day the snail climbs
+10% <img width="18" height="30" align="MIDDLE" border="0" src="573img1.gif" alt="$\times$">
+3 = 0.3 feet less than
+it did the previous day. (The distance lost to fatigue is always 10% of the
+<em>first</em> day's climbing
+distance.) On what day does the snail leave the well, <em>i.e.</em>, what is the first
+day during which
+the snail's height <em>exceeds</em> 6 feet? (A day consists of a period of sunlight
+followed by a period of
+darkness.) As you can see from the following table, the snail leaves the well
+during the third day.
+
+<p>
+<div align="CENTER">
+<table cellpadding="3" border="1">
+<tr><td align="CENTER">Day</td>
+<td align="CENTER">Initial Height</td>
+<td align="CENTER">Distance Climbed</td>
+<td align="CENTER">Height After Climbing</td>
+<td align="CENTER">Height After Sliding</td>
+</tr>
+<tr><td align="CENTER">1</td>
+<td align="CENTER">0'</td>
+<td align="CENTER">3'</td>
+<td align="CENTER">3'</td>
+<td align="CENTER">2'</td>
+</tr>
+<tr><td align="CENTER">2</td>
+<td align="CENTER">2'</td>
+<td align="CENTER">2.7'</td>
+<td align="CENTER">4.7'</td>
+<td align="CENTER">3.7'</td>
+</tr>
+<tr><td align="CENTER">3</td>
+<td align="CENTER">3.7'</td>
+<td align="CENTER">2.4'</td>
+<td align="CENTER">6.1'</td>
+<td align="CENTER">-</td>
+</tr>
+</table></div>
+
+<p>
+Your job is to solve this problem in general. Depending on the parameters
+of the problem, the
+snail will eventually either leave the well or slide back to the bottom of
+the well. (In other words,
+the snail's height will exceed the height of the well or become negative.)
+You must find out which
+happens first and on what day.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains one or more test cases, each on a line by itself.
+Each line contains four
+integers <i>H</i>, <i>U</i>, <i>D</i>, and <i>F</i>, separated by a single space. If <i>H</i>
+= 0 it signals the end of the input;
+otherwise, all four numbers will be between 1 and 100, inclusive. <i>H</i> is the
+height of the well in
+feet, <i>U</i> is the distance in feet that the snail can climb during the day,
+<i>D</i> is the distance in feet
+that the snail slides down during the night, and <i>F</i> is the fatigue factor
+expressed as a percentage.
+The snail <em>never</em> climbs a negative distance. If the fatigue factor drops
+the snail's climbing distance
+below zero, the snail does not climb at all that day. Regardless of how far
+the snail climbed, it always slides <i>D</i> feet at night.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<br>
+For each test case, output a line indicating whether the snail succeeded
+(left the well) or failed
+(slid back to the bottom) and on what day. Format the output <em>exactly</em> as shown in the example.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+6 3 1 10
+10 2 1 50
+50 5 3 14
+50 6 4 1
+50 6 3 1
+1 1 1 1
+0 0 0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+success on day 3
+failure on day 4
+failure on day 7
+failure on day 68
+success on day 20
+failure on day 2
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

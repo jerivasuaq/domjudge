@@ -1,0 +1,147 @@
+
+
+<html>
+<head>
+<title>Crimewave</title>
+<meta name="description" content="Crimewave">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Crimewave</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Nieuw Knollendam is a very modern town. This becomes clear already when
+looking at the layout of its map, which is just a rectangular grid of streets
+and avenues. Being an important trade centre, Nieuw Knollendam also has a lot
+of banks. Almost on every crossing a bank is found (although there are
+ never two banks at the same crossing). Unfortunately this has attracted a
+ lot of criminals. Bank hold-ups are quite common, and often on one day
+ several banks are robbed. This has grown into a problem,
+ not only to the banks, but to the criminals as well. After robbing a bank
+the robber tries to leave the town as soon as possible, most of the times
+chased at high speed by the police. Sometimes two running criminals pass the
+same crossing, causing several risks: collisions, crowds of police at
+one place and a larger risk to be caught.
+
+<p>
+
+<p>
+<br>
+To prevent these unpleasant situations the robbers agreed to consult
+together.  Every Saturday night they meet and make a schedule for the week
+to come: who is going to rob which bank on which day? For every day they try
+to plan the get-away routes,
+such that no two routes use the same crossing. Sometimes they do not
+succeed in planning the routes according to this condition, although they
+believe that such a planning should exist.
+
+<p>
+
+<p>
+<br>
+Given a grid of 
+
+<img width="57" height="34" align="MIDDLE" border="0" src="563img1.gif" alt="$(s \times a)$">
+and the crossings where the banks to be robbed are located, find out whether or not it is possible to plan a get-away route from every robbed bank to the city-bounds, without using a crossing more than once.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input contains the number of problems <i>p</i> to be solved.
+
+<p>
+<ul>
+<li>The first line of every problem contains the number <i>s</i> of streets
+(
+
+<img width="85" height="30" align="MIDDLE" border="0" src="563img2.gif" alt="$1 \le s \le 50$">), followed by the number <i>a</i> of avenues (
+
+<img width="86" height="30" align="MIDDLE" border="0" src="563img3.gif" alt="$1 \le a \le 50$">),
+followed by the number <i>b</i> (<img width="44" height="32" align="MIDDLE" border="0" src="563img4.gif" alt="$b \ge 1$">)
+of banks to be robbed.
+
+<p>
+<li>Then <i>b</i> lines follow, each containing the location of a bank in the form
+of two numbers <i>x</i> (the number of the street) and <i>y</i> (the number of the avenue). Evidently 
+
+<img width="78" height="30" align="MIDDLE" border="0" src="563img5.gif" alt="$1 \le x \le s$">
+and 
+
+<img width="78" height="30" align="MIDDLE" border="0" src="563img6.gif" alt="$1 \le y \le a$">.
+</li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output file consists of <i>p</i> lines. Each line contains the text <tt>possible</tt> or
+<tt>not possible</tt>. If it is possible to plan non-crossing get-away routes, this
+line should contain the word: <tt>possible</tt>. If this is not possible,
+the line should contain the words <tt>not possible</tt>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+6 6 10
+4 1
+3 2
+4 2
+5 2
+3 4
+4 4
+5 4
+3 6
+4 6
+5 6
+5 5 5
+3 2
+2 3
+3 3
+4 3
+3 4
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+possible
+not possible
+</pre>
+
+<p>
+<div align="CENTER">
+<img src="p563.gif">
+</div>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

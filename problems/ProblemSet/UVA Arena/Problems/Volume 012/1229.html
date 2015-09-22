@@ -1,0 +1,65 @@
+
+<p>
+In this problem, by the word ``dictionary" we mean a list of alphabetically ordered words and their associated explanations in the same language. A dictionary must contain the definition for any word that appears in the explanation of another word. So you see, if a dictionary defines <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> words, it has exactly <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> distinct words in it. Also, we know that in a dictionary no word appears in the definition of itself. 
+
+<p>
+A sub-dictionary is a collection of dictionary's words and their definitions such that it can be published as an independent dictionary, obviously satisfying the mentioned condition. As a project of Computational Linguistics course, we are assigned to create a Lexical Knowledge Base which is the knowledge expressed by words. For this task we should create our knowledge foundation based on a dictionary. 
+
+<p>
+It's really hard for the computer to study words automatically. So, we decided to manually teach it some common words. We start from an appropriate sub-dictionary. By understanding its words, a computer could extend its knowledge to the whole dictionary word by word. For instance, a word ``xyz" could be added to the computer's understanding if computer knows the meaning of every words used in xyz's definition. You are asked to write a program that can find the smallest extendable sub-dictionary for a specific dictionary.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of multiple test cases. The first line of each test case is <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4099img1.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4099img1.png" alt="$ \le$">100)</span>
+<tex2html_verbatim_mark>, the number of dictionary's words. Each of the next <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> lines contains a word and its definition (that has at most 30 words). Words are separated by blanks and are made up of small English letters less than 25 characters.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, on the first line print the number of sub-dictionary's words and on the second line write the alphabetically sorted list of words (separated by blanks).
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample  Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 
+aue oizer piqoi oizer 
+doy oizer hweqlo hweqlo 
+hweqlo piqoi aue 
+oizer piqoi 
+piqoi aue aue 
+0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample  Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+3 
+aue oizer piqoi
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

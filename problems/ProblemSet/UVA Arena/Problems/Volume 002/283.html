@@ -1,0 +1,87 @@
+
+
+<html>
+<head>
+<title>Compress</title>
+<meta name="description" content="Compress">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Compress</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Nowadays everyone is using compression methods to reduce the space occupied by data. In some cases
+this is done in such a way you hardly notice it, for example tapestreamers, modems and harddisk
+doubling programs. In other cases you have to do it yourself by using <em>pack</em>, <em>arj</em>, <em>zip</em>, <em>zoo</em> or <em>arc</em>.
+<p>
+<p>
+Most compression-methods are very complicated, but for this problem only the following simplified
+method is used. An ASCII-character consists of eight bits, which allows the encoding of 256 different
+characters. It's possible to recode the characters with a new sequence of bits. These sequences may
+have a different length. When you choose to give the characters which are often used a shorter
+sequence of bits than the characters which are seldom used the total text size will be reduced.
+<p>
+<p>
+Recoding characters gives one other problem, which occurs when you try to get the text back. In a
+standard ASCII text you know the first character begins at the 1st and ends at the 8th bit, the second
+begins at the 9th and ends at the 16th bit and so on. When using a variable length coding you don't
+know where a character begins. For example when an `<tt>a</tt>' is coded as `11' and an `<tt>e</tt>' as `1111', given
+the bit-sequence `111111' you don't know if it means `<tt>ae</tt>', `<tt>ea</tt>' or `<tt>aaa</tt>'.
+<p>
+<p>
+The last problem is solved when the next principle is used. Suppose you want to give some characters a
+code length of 3 (and you haven't given any character a code yet). In that case you've got 8 (2 to the
+power 3) possibilities. Seven codes can be immediately allocated to characters. The last one depends on
+how many more characters you have left to code. If you only have one left to code, the last code
+will do, but if you have to code more than one, you must use the last code to indicate that an extension
+follows. The extension has the same structure. This has to be continued until all different characters in
+the text are given a code.
+<p>
+<p>
+For example you've the characters `<tt>a</tt>', `<tt>e</tt>', `<tt>i</tt>', `<tt>o</tt>', `<tt>u</tt>' and `<tt>y</tt>'. You choose to give the first three
+characters a code with length 2 and the rest an equal length. So `<tt>a</tt>' becomes `00', `<tt>e</tt>' becomes `01' and
+`<tt>i</tt>' becomes `10'. The other characters have to be an extension of `11'. Then `<tt>o</tt>' becomes `1100', `<tt>u</tt>'
+becomes `1101' and `<tt>y</tt>' becomes `1110'. The code `1111' is free now. If 7 characters instead of 6
+characters should be given a code this last code would be sufficient. If more than 7 characters should be
+given a code, the last code would be extended and so on.
+<p>
+<p>
+You only have to code the characters which occur in the text. You don't have to give the code table
+itself.
+<p>
+<p>
+You must write a program that reduces a given text by recoding each character and give the minimum
+total filelength in bits.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line of the input file contains the number of problems. A problem starts with the number of
+lines <i>n</i> (>=0) to follow, followed by <i>n</i> lines. A line consists of characters and
+the characters `<tt>A</tt>'..`<tt>Z</tt>', `<tt>a</tt>'..`<tt>z</tt>',
+<tt>space</tt>, `<tt>.</tt>', `<tt>,</tt>' , `<tt>-</tt>' and `<tt>$</tt>' are allowed. The character `<tt>$</tt>' will always be at the end of a line and cannot
+occur anywhere else. This character has to coded instead of the real end of line mark.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each problem in the input your program should output the minimal number of bits to code the given
+text.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2
+3
+Hello Contestant,$
+Please write a program which gives$
+the text Hello world.$
+1
+To be or not to be, that is the question.$</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>335
+167</pre>
+<p>
+</body>
+</html>

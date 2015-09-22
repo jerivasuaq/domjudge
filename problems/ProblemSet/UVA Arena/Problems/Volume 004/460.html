@@ -1,0 +1,70 @@
+
+
+<html>
+<head>
+<title>Overlapping Rectangles</title>
+<meta name="description" content="Overlapping Rectangles">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center></center></h1>
+ <table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Overlapping Rectangles</a></font>&nbsp;</b></td></tr></table>
+<p>
+When displaying a collection of rectangular windows on a SUN screen, a
+critical step is determining whether two windows overlap, and, if so,
+where on the screen the overlapping region lies.
+<p>
+<p>
+Write a program to perform this function.  Your program will accept as
+input the coordinates of two rectangular windows. If the windows do
+not overlap, your program should produce a message to that effect. If
+they do overlap, you should compute the coordinates of the overlapping
+region (which must itself be a rectangle).
+<p>
+<p>
+All coordinates are expressed in &quot;pixel numbers&quot;, integer values
+ranging from 0 to 9999. A rectangle will be described by two pairs of
+(<i>X</i>,<i>Y</i>) coordinates. The first pair gives the coordinates of the lower
+left-hand corner (<i>XLL</i>,<i>YLL</i>). The second pair gives the
+coordinates of the upper right-hand coordinates (<i>XUR</i>, <i>YUR</i>).
+You are guaranteed that <i>XLL</i> &lt; <i>XUR</i> and <i>YLL</i> &lt; <i>YUR</i>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+  Input will contain several test case. It begins with a single positive integer
+  on a line by itself indicating the number of the cases following, each of them
+  as described below. This line is followed by a blank line, and there is also a
+  blank line between two consecutive inputs.
+<p>
+  Each test case consists of two lines. The first contains the integer numbers XLL, YLL,
+XUR and YUR for the first window.  The second contains the same
+numbers for the second window.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+ For each test case, the output must follow the description below. The outputs
+ of two consecutive cases will be separated by a blank line.
+<p>
+ For each set of input if the two windows do not overlap, print the message ``<tt>No Overlap</tt>&quot;.  If the two windows do overlap, print 4 integer numbers
+giving the  <i>XLL</i>, <i>YLL</i>, <i>XUR</i> and <i>YUR</i> for the region of overlap.
+<p>
+<p>
+Note that two windows that share a common edge but have no other
+points in common are considered to have ``<tt>No Overlap</tt>&quot;.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+
+0 20 100 120
+80 0 500 60</pre>
+<p>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>80 20 100 60</pre>
+</body>
+</html>

@@ -1,0 +1,188 @@
+
+
+<html>
+<head>
+<title>France '98</title>
+<meta name="description" content="France '98">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+France '98</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Today the first round of the Soccer World Championship in France is coming to an end. 16
+countries are remaining now, among which the winner is determined by the following tournament:
+
+<p>
+<pre>
+ 1 Brazil -----+
+               +-- ? --+
+ 2 Chile ------+       |
+                       +-- ? --+
+ 3 Nigeria ----+       |       |
+               +-- ? --+       |
+ 4 Denmark ----+               |
+                               +-- ? --+
+ 5 Holland ----+               |       |
+               +-- ? --+       |       |
+ 6 Yugoslavia -+       |       |       |
+                       +-- ? --+       |
+ 7 Argentina --+       |               |
+               +-- ? --+               |
+ 8 England ----+                       |
+                                       +-- World Champion
+ 9 Italy ------+                       |
+               +-- ? --+               |
+10 Norway -----+       |               |
+                       +-- ? --+       |
+11 France -----+       |       |       |
+               +-- ? --+       |       |
+12 Paraguay ---+               |       |
+                               +-- ? --+
+13 Germany ----+               |
+               +-- ? --+       |
+14 Mexico -----+       |       |
+                       +-- ? --+
+15 Romania ----+       |
+               +-- ? --+
+16 Croatia ----+
+</pre>
+
+<p>
+For each possible match A vs. B between these 16 nations, you are given the probability that team
+A wins against B. This (together with the tournament mode displayed above) is sufficient to
+compute the probability that a given nation wins the World Cup. For example, if Germany wins
+against Mexico with 80%, Romania against Croatia with 60%, Germany against Romania with 70%
+and Germany against Croatia with 90%, then the probability that Germany reaches the semi-finals
+is 80% * (70% * 60% + 90% * 40%) = 62.4%.
+
+<p>
+
+<p>
+<br>
+Your task is to write a program that computes the chances of the 16 nations to become the World Champion '98.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file will contain just one test case.
+
+<p>
+The first 16 lines of the input file give the names of the 16 countries, from top to bottom according
+to the picture given above.
+
+<p>
+Next, there will follow a 16 <img width="18" height="30" align="MIDDLE" border="0" src="542img1.gif" alt="$\times$">
+16 integer matrix <i>P</i> where element <i>p</i><sub><i>ij</i></sub> gives the probability in percent
+that country #<i>i</i> defeats country #<i>j</i> in a direct match. Country #<i>i</i> means the <i>i</i>-th country from top to
+bottom given in the list of countries. In the picture above Brazil is #1 and Germany is #13, so
+
+
+<i>p</i><sub>1,13</sub> = 55 would mean that in a match between Brazil and Germany, Brazil wins with a probability of 55%.
+
+<p>
+Note that matches may not end with a draw, i.e. 
+
+<i>p</i><sub><i>ij</i></sub> + <i>p</i><sub><i>ji</i></sub> = 100 for all <i>i</i>,<i>j</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output 16 lines of the form ``
+
+<i>XXXXXXXXXX</i> <tt>p=</tt><i>Y</i>.<i>YY</i>%", where 
+
+<i>XXXXXXXXXX</i> is the country's
+name, left-justified in a field of 10 characters, and <i>Y</i>.<i>YY</i> is their chance in percent to win the cup,
+written to two decimal places. Use the same order of countries like in the input file.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Brazil
+Chile
+Nigeria
+Denmark
+Holland
+Yugoslavia
+Argentina
+England
+Italy
+Norway
+France
+Paraguay
+Germany
+Mexico
+Romania
+Croatia
+50 65 50 60 55 50 50 65 45 55 40 55 40 55 50 50
+35 50 35 45 40 35 35 50 30 40 25 40 25 40 35 35
+50 65 50 60 55 50 50 65 45 55 40 55 40 55 50 50
+40 55 40 50 45 40 40 55 35 45 30 45 30 45 40 40
+45 60 45 55 50 45 45 60 40 50 35 50 35 50 45 45
+50 65 50 60 55 50 50 65 45 55 40 55 40 55 50 50
+50 65 50 60 55 50 50 65 45 55 40 55 40 55 50 50
+35 50 35 45 40 35 35 50 30 40 25 40 25 40 35 35
+55 70 55 65 60 55 55 70 50 60 45 60 45 60 55 55
+45 60 45 55 50 45 45 60 40 50 35 50 35 50 45 45
+60 75 60 70 65 60 60 75 55 65 50 65 50 65 60 60
+45 60 45 55 50 45 45 60 40 50 35 50 35 50 45 45
+60 75 60 70 65 60 60 75 55 65 50 65 50 65 60 60
+45 60 45 55 50 45 45 60 40 50 35 50 35 50 45 45
+50 65 50 60 55 50 50 65 45 55 40 55 40 55 50 50
+50 65 50 60 55 50 50 65 45 55 40 55 40 55 50 50
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Brazil     p=8.54%
+Chile      p=1.60%
+Nigeria    p=8.06%
+Denmark    p=2.79%
+Holland    p=4.51%
+Yugoslavia p=7.50%
+Argentina  p=8.38%
+England    p=1.56%
+Italy      p=9.05%
+Norway     p=3.23%
+France     p=13.72%
+Paraguay   p=3.09%
+Germany    p=13.79%
+Mexico     p=3.11%
+Romania    p=5.53%
+Croatia    p=5.53%
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

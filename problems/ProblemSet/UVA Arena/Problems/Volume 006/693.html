@@ -1,0 +1,175 @@
+
+
+<html><head><title>Digital Racing Circuit</title>
+<meta content="Digital Racing Circuit" name="description">
+<meta content="htmlatex" name="keywords">
+<meta content="document" name="resource-type">
+<meta content="global" name="distribution">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta content="Microsoft FrontPage 4.0" name="GENERATOR"></head>
+<body lang="EN" bgcolor="#ffffff">
+<h1><br clear="all">
+<center>
+</center></h1>
+<table bgcolor="#0060f0">
+  <tbody>
+  <tr>
+    <td><b><font color="#c0ffff" size="5">&nbsp;<a name="SECTION0001000000000000000000"> Digital Racing 
+      Circuit</a>&nbsp;</font></b></td></tr></tbody></table>
+<p>You have an ideally small racing car on an <i>x</i>-<i>y</i> plane ( <img height="30" alt="$0 \leY x, y \leY 255$" src="693img1.gif" width="113" align="middle" border="0">, where bigger y 
+denotes upper coordinate). The racing circuit course is figured by two solid 
+walls. Each wall is a closed loop of connected line segments. End point 
+coordinates of every line segment are both integers (See Figure 1). Thus, a wall 
+is represented by a list of end point integer coordinates (<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>), (<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>), ..., (<i>x</i><sub><i>n</i></sub>, 
+<i>y</i><sub><i>n</i></sub>). The start line and the goal line are identical. 
+<p>
+<div align="center"><img src="p693.gif" width="285" height="285"> 
+<p>Figure 1. A Simple Course </p></div>
+<p>For the qualification run, you start the car at any integer coordinate 
+position on the start line, say 
+(<i>s</i><sub><i>x</i></sub> , 
+<i>s</i><sub><i>y</i></sub>). 
+<p>
+<p><br>At any clock <img height="34" alt="$t (\ge- 0)$" src="693img2.gif" width="52" align="middle" border="0">, according to the 
+acceleration parameter at <i>t</i>, 
+(<i>a</i><sub><i>x</i>,<i>t</i></sub>, 
+<i>a</i><sub><i>y</i>,<i>t</i></sub>), the velocity changes instantly to (<i>v</i><sub><i>x</i>,<i>t</i>-1</sub> 
++ <i>a</i><sub><i>x</i>,<i>t</i></sub>, <i>v</i><sub><i>y</i>,<i>t</i>-1</sub> + 
+<i>a</i><sub><i>y</i>,<i>t</i></sub>), if the velocity at <i>t</i> - 1 is (<i>v</i><sub><i>x</i>,<i>t</i>-1</sub>, 
+<i>v</i><sub><i>y</i>,<i>t</i>-1</sub>). The velocity will be kept constant 
+until the next clock. It is assumed that the velocity at clock -1, (<i>v</i><sub><i>x</i>,-1</sub>, 
+<i>v</i><sub><i>y</i>,-1</sub>) is (0, 0). Each of the acceleration components 
+must be either -1, 0, or 1, because your car does not have so fantastic engine 
+and brake. In other words, any successive pair of velocities should not differ 
+more than 1 for either <i>x</i>-component or <i>y</i>-component. Note that your 
+trajectory will be piecewise linear as the walls are. 
+<p>
+<p><br>Your car should not touch nor run over the circuit wall, or your car will 
+be crashed, even at the start line. The referee watches your car's trajectory 
+very carefully, checking whether or not the trajectory touches the wall or 
+attempts to cross the wall. 
+<p>
+<p><br>The objective of the qualification run is to finish your run within as 
+few clock units as possible, without suffering from any interference by other 
+racing cars. That is, you run alone the circuit around clockwise and reach, 
+namely touch or go across the goal line without having been crashed. Don't be 
+crashed even in the last trajectory segment after you reach the goal line. But 
+we don't care whatever happens after that clock. 
+<p>
+<p><br>Your final lap time is the clock <i>t</i> when you reach the goal line 
+for the first time after you have once left the start line. But it needs a 
+little adjustment at the goal instant. When you cross the goal line, only the 
+necessary fraction of your car's last trajectory segment is counted. For 
+example, if the length of your final trajectory segment is 3 and only its 1/3 
+fraction is needed to reach the goal line, you have to add only 0.333 instead of 
+1 clock unit. 
+<p>
+<p><br>Drivers are requested to control their cars as cleverly as possible to 
+run fast but avoiding crash. ALAS! The racing committee decided that it is too 
+DANGEROUS to allow novices to run the circuit. In the last year, it was reported 
+that some novices wrenched their fingers by typing too enthusiastically their 
+programs. So, this year, you are invited as a referee assistant in order to 
+accumulate the experience on this dangerous car race. 
+<p>
+<p><br>A number of experienced drivers are now running the circuit for the 
+qualification for semi-finals. They submit their driving records to the referee. 
+The referee has to check the records one by one whether it is not a fake. 
+<p>
+<p><br>Now, you are requested to make a program to check the validity of driving 
+records for any given course configuration. Is the start point right on the 
+start line without touching the walls? Is every value in the acceleration 
+parameter list either one of -1, 0, and 1? Does the length of acceleration 
+parameter list match the reported lap time? That is, aren't there any excess 
+acceleration parameters after the goal, or are these enough to reach the goal? 
+Doesn't it involve any crash? Does it mean a clockwise running all around? (Note 
+that it is not inhibited to run backward temporarily unless crossing the start 
+line again.) Is the lap time calculation correct? You should allow a rounding 
+error up to 0.01 clock unit in the lap time. 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001001000000000000000">Input</a>&nbsp;</font> </h2>
+<p>The input 
+consists of several courses and the first line of input is number of
+courses.&nbsp;</p>
+<p>
+<p><br>A course configuration is given by two lists representing the inner wall 
+and the outer wall, respectively. Each list shows the end point coordinates of 
+the line segments that comprise the wall. A course configuration looks as 
+follows: 
+<p>
+<p><br><img height="31" alt="$i_{x,1} \ i_{y,1} \dots i_{x,N} \ i_{y,N} \ \mbox{\tt 99999}$" src="693img3.gif" width="203" align="middle" border="0"> 
+<p><img height="30" alt="$o_{x,1} \ o_{y,1} \dots o_{x,M} \ o_{y,M} \ \mbox{\tt 99999}$" src="693img4.gif" width="218" align="middle" border="0"> 
+<p>
+<p><br>where data are alternating <i>x</i>-coordinates and <i>y</i>-coordinates 
+that are all non-negative integers <img height="34" alt="$(\leY 255)$" src="693img5.gif" width="63" align="middle" border="0"> terminated by <tt>99999</tt>. The start/goal line is a line segment 
+connecting the coordinates 
+(<i>i</i><sub><i>x</i>,1</sub>, 
+<i>i</i><sub><i>y</i>,1</sub>) and 
+(<i>o</i><sub><i>x</i>,1</sub>, 
+<i>o</i><sub><i>y</i>,1</sub>). For simplicity, <i>i</i><sub><i>y</i>,1</sub> is 
+assumed to be equal to <i>o</i><sub><i>y</i>,1</sub>; that is, the start/goal 
+line is horizontal on the <i>x</i>-<i>y</i> plane. Note that <i>N</i> and 
+<i>M</i> may vary among course configurations, but do not exceed 100, because 
+too many curves involve much danger even for experienced drivers. You need not 
+check the validity of the course configuration. 
+<p>
+<p><br>A driving record consists of three parts, which is terminated by 
+<tt>99999</tt>: two integers <i>s</i><sub><i>x</i></sub>, 
+<i>s</i><sub><i>y</i></sub> for the start position 
+(<i>s</i><sub><i>x</i></sub>, 
+<i>s</i><sub><i>y</i></sub>), the lap time with three digits after the decimal 
+point, and the sequential list of acceleration parameters at all clocks until 
+the goal. It is assumed that the length of the acceleration parameter list does 
+not exceed 500. A driving record looks like the following: 
+<p>
+<p><br><img height="30" alt="$s_x \ s_y$" src="693img6.gif" width="43" align="middle" border="0"> 
+<p><i>lap</i>-<i>time</i> 
+<p><img height="30" alt="$a_{x,0} \ a_{y,0} \ a_{x,1} \ a_{y,1} \dots a_{x,L} \ a_{y,L} \ \mbox{\tt 99999}$" src="693img7.gif" width="278" align="middle" border="0"> 
+<p>
+<p><br>The list of the record of a course is terminated by a null driving 
+record; that is, it is terminated by a <tt>99999</tt> that immediately follows 
+<tt>99999</tt> of the last driving record.&nbsp; 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001002000000000000000">Output</a>&nbsp;</font> </h2>The test result 
+should be reported by simply printing <tt>OK</tt> or <tt>NG</tt> for each 
+driving record, each result in each line. No other letter is allowed in the 
+result. Print a blank line between consecutive courses. 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001003000000000000000">Sample 
+Input</a>&nbsp;</font> </h2>
+<p>1<pre>6 28 6 32 25 32 26 27 26 24 6 24 99999
+2 28 2 35 30 35 30 20 2 20 99999
+
+3 28
+22.667
+0 1 1 1 1 0 0 -1 0 -1 1 0 0 0 1 0 -1 0 0 -1 -1 -1 -1 0 -1 0 -1 -1 -1 1 -1 1
+-1 1 -1 0 1 0 1 1 1 1 1 0 1 1 99999
+
+5 28
+22.667
+0 1 -1 1 1 0 1 -1 1 -1 1 0 1 0 1 0 -1 -1 -1 0 -1 -1 -1 0 -1 1 -1 -1 -1 1
+-1 0 -1 1 -1 0 1 0 1 0 1 1 1 1 1 1 99999
+
+4 28
+6.333
+0 1 0 1 1 -1 -1 -1 0 -1 0 -1 0 -1 99999
+
+3 28
+20.000
+0 -1 1 -1 1 0 1 1 1 1 1 0 -1 0 -1 0 -1 1 -1 1
+-1 1 -1 0 -1 -1 -1 -1 -1 -1 -1 0 1 0 1 -1 1 -1 1 -1 99999
+
+99999
+
+
+</pre>
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001004000000000000000">Sample 
+Output</a>&nbsp;</font> </h2><pre>OK
+NG
+NG
+NG
+</pre>
+<p><br>
+<hr>
+
+<address><i>Miguel A. Revilla</i> <br><i>1999-03-05</i> </address></body></html>

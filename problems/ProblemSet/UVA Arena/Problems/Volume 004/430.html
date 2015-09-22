@@ -1,0 +1,78 @@
+
+
+<html>
+<head>
+<title>Swamp County Supervisors</title>
+<meta name="description" content="Swamp County Supervisors">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Swamp County Supervisors</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The smell of rebellion is rising over Swamp County. The county is 
+geographically split into various bogs, each represented by a supervisor on the
+Board of Supervisors.  Since the bogs have varying populations, each supervisor
+has votes in proportion to the total population of the county, with a majority
+of the total votes needed for an ordinance to pass. The smaller bogs
+feel that they have no say on the Board because, in fact, the votes
+of the largest bogs completely determine the outcome of a vote.
+The smaller bogs might as well have zero votes.
+<p>
+<p>
+Your team's job is to write some software to aid in finding a fairer 
+voting plan.  The Board has agreed to consider a charter amendment that
+would make the number of votes
+needed to pass an ordinance a total other than that needed for a simple
+majority.  Given the number of votes each bog holds, and the number of votes
+necessary to win (which could be more or less than a majority of
+the total votes), your program is to calculate the Banzhaf power index for
+each bog.
+<p>
+Given the set of all possible votes, the Banzhaf power index for a bog
+is the number of times it could change the outcome of the vote on an
+ordinance from failure to passage.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input to your program consists of a series of lines of at most 80 characters.
+Each line consists of a series of numbers separated from each other by at
+least one space.  The first number in a line is the minimum number of votes
+needed for passage of an ordinance.  The rest of the numbers are the votes
+held by each bog.
+(For example, in the first line of the sample input below, the number of 
+votes needed to pass an ordinance is 17.  There are six bogs, with votes of
+1, 7, 3, 12, 9, and 1 respectively.)
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each case represented by an input line, your program is to
+print the power index of each bog.
+<p>
+Output for each case should appear on a separate line, starting
+in the first column, with each power index separated from the others by
+single spaces.  The order of the power indexes on each line must correspond
+to the input order of the votes for each bog.
+<p>
+<p>
+Swamp County will never be divided into more than 27 bogs-there's a limit to
+the number of lunches the lobbyists will buy.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>17 1 7 3 12 9 1
+2000 214 306 298 274 270 261 246 404 241 240 240 238 224 333 210
+12 1 7 3 12 9 1
+2200 214 306 298 274 270 261 246 404 241 240 240 238 224 333 210</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>2 14 2 18 14 2 
+2666 3934 3806 3474 3418 3218 3094 4734 3022 3006 3006 2978 2798 4402 2622
+1 5 5 19 11 1
+2453 3593 3493 3183 3137 3051 2841 4817 2777 2763 2763 2741 2527 4035 2395</pre>
+<p>
+</body>
+</html>

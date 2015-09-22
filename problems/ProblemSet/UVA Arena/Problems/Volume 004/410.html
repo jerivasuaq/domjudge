@@ -1,0 +1,96 @@
+
+
+<html>
+<head>
+<title>Station Balance</title>
+<meta name="description" content="Station Balance">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Station Balance</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The International Space Station contains many centrifuges in its labs.
+Each centrifuge will have some number (<i>C</i>) of chambers each of which
+can contain 0, 1, or 2 specimens. You are to write a program which
+assigns all <i>S</i> specimens to the chambers such that no chamber contains
+more than 2 specimens and the following expression for <i>IMBALANCE</i> is
+minimized.
+<p>
+<p> <img width="390" height="49" align="BOTTOM" alt="displaymath38" src="410img1.gif"> <p>
+<p>
+where:
+<dl><dt><strong> <img width="35" height="25" align="MIDDLE" alt="tex2html_wrap_inline40" src="410img2.gif"> </strong>
+<dd> is the Chamber Mass of chamber <i>i</i> and is computed by summing
+the masses of the specimens assigned to chamber <i>i</i>.
+<dt><strong><i>AM</i></strong>
+<dd> is the Average Mass of the chambers and is computed by
+dividing the sum of the masses of all specimens by the
+number of chambers (<i>C</i>).
+<p>
+ </dd></dt></dd></dt></dl><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input to this program will be a file with multiple sets of input. The
+first line of each set will contain two numbers. The first number
+( <img width="76" height="26" align="MIDDLE" alt="tex2html_wrap_inline50" src="410img3.gif"> ) defines the number of chambers in the centrifuge and the
+second number ( <img width="88" height="26" align="MIDDLE" alt="tex2html_wrap_inline52" src="410img4.gif"> ) defines the number of specimens in the
+input set. The second line of input will contain S integers
+representing the masses of the specimens in the set. Each specimen
+mass will be between 1 and 1000 and will be delimited by the beginning
+or end of the line and/or one or more blanks.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each input set, you are to print a line specifying the set number
+(starting with 1) in the format &quot;<tt>Set #X</tt>&quot; where &quot;<tt>X</tt>&quot; is the set
+number.
+<p>
+The next <i>C</i> lines will contain the chamber number in column 1, a
+colon in column number 2, and then the masses of the specimens your program
+has assigned to that chamber starting in column 4. The masses in your
+output should be separated by exactly one blank.
+<p>
+<p>
+Your program should
+then print ``<tt>IMBALANCE = X</tt>&quot; on a line by itself where <tt>X</tt> is the
+computed imbalance of your specimen assignments printed to 5 digits of
+precision to the right of the decimal.
+<p>
+<p>
+The final line of output for
+each set should be a blank line. (Follow the sample output format.)
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2 3
+6 3 8
+3 5
+51 19 27 14 33
+5 9
+1 2 3 5 7 11 13 17 19</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Set #1
+ 0: 6 3
+ 1: 8
+IMBALANCE = 1.00000
+
+Set #2
+ 0: 51
+ 1: 19 27
+ 2: 14 33
+IMBALANCE = 6.00000
+
+Set #3
+ 0: 1 17
+ 1: 2 13
+ 2: 3 11
+ 3: 5 7
+ 4: 19
+IMBALANCE = 11.60000</pre>
+<p>
+</body>
+</html>

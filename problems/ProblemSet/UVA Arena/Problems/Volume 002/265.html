@@ -1,0 +1,121 @@
+
+
+<html>
+<head>
+<title>Dining Diplomats</title>
+<meta name="description" content="Dining Diplomats">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Dining Diplomats</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You have been hired to arrange the seating of diplomats at a dinner party.
+Your employer has invited 9 diplomats from several countries around the
+world. Each diplomat will speak from one to five languages. Diplomats not
+speaking a common language can not talk to each other. Furthermore, some
+of the countries represented will not have diplomatic relations with other
+nations represented, so these diplomats will not be speaking to each other
+either. Your task is to determine the seating arrangement at the dinner
+table for your employer and the 9 guests such that each person can speak
+to the person seated on each side.
+<p>
+The table to be used for dinner is round, and seats 10 people. Your employer
+will be seated at the first position at the table. The other positions will
+be numbered clockwise from 2 to 10. The person seated to the left of your
+employer is in seat number 2, the person seated to the right of your employer
+is in seat number 10.
+<p>
+Persons seated next to each other must speak a common language. A person
+may speak to the person on the left in one common language, and speak to
+the person on the right in another language. The governments of the guests
+seated next to each other must have formally recognized each other.
+<p>
+The government of your employer has diplomatic relations with the governments
+of all of his guests. The government of a guest may or may not have diplomatic
+relations with the governments of all the other guests.
+<p>
+Two diplomats from the same country will have diplomatic relations with
+the same list of countries. A country will always have diplomatic relations
+with itself. Diplomats from the same country may or may not speak any languages
+in common.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input to the program will contain several data sets. Each data set will be a list of ten people, one per line, ended by
+a blank line. The first line will represent your employer, the other lines
+will represent the guest diplomats. Each line consists of a sequence of
+words, where words are separated by a single space. Each word is a sequence
+of capitals. The first word consists of 3 characters and represents the
+code for the guest's country. The second word contains 1 to 5 characters
+and represents the languages that the guest speaks. Each language that the
+guest speaks is represented by a single letter. Finally, there is a list
+of up to 9 three-character words representing the codes of the countries
+of the other guests that this guest's government has diplomatic relations
+with.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output of each data set is a table of the seating arrangement. It contains
+one diplomat per line. Each line starts with the seat number followed by
+three words, all separated by single spaces. The first word is the language
+code for the person seated on the left. The second word is the country code
+for the diplomat. The third word is the language code for the person seated
+on the right. The seating arrangement should be printed in the order 1 to
+10, and no blank line should appear after line 10. More than one solution
+may exist, but you need find only one. If no solution is found, output the
+sentence
+<p>
+<pre>NO SOLUTION EXISTS</pre>
+<p>
+Print a blank line after each data set.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+USA EF CHN GBR USR FRA FRG JPN ISR POR KOR
+CHN CFE USA GBR FRA FRG
+GBR ER USA CHN USR FRA FRG JPN ISR POR KOR
+USR RF USA GBR FRA FRG
+FRA F USA CHN GBR USR FRG JPN ISR POR
+FRG ERG USA CHN GBR USR FRA JPN ISR POR
+JPN JHG USA GBR FRA FRG JPN ISR POR KOR
+ISR HER USA GBR FRA FRG JPN KOR
+POR PGE USA GBR FRA FRG JPN
+KOR KEC USA GBR USR JPN ISR
+
+TLC ADBE TQA DAO FHH NUW FAB PSR FEQ QPA KCW
+TQA EB TLC DAO PSR FEQ KCW
+DAO B TLC TQA FHH FAB PSR FEQ QPA KCW
+FHH B TLC DAO PSR KCW
+NUW DBE TLC
+FAB D TLC DAO PSR FEQ QPA
+PSR AC TLC TQA DAO FHH FAB QPA
+FEQ CB TLC TQA DAO FAB QPA
+QPA D TLC DAO FAB PSR FEQ KCW
+KCW AE TLC TQA DAO FHH QPA
+
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+1 F USA E
+2 E CHN E
+3 E GBR E
+4 E KOR E
+5 E ISR H
+6 H JPN G
+7 G POR E
+8 E FRG R
+9 R USR F
+10 F FRA F
+
+NO SOLUTION EXISTS
+
+</pre>
+<p>
+</body>
+</html>

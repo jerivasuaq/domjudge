@@ -1,0 +1,77 @@
+
+
+<html>
+<head>
+<title>ID Codes</title>
+<meta name="description" content="ID Codes">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">ID Codes</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+It is 2084 and the year of Big Brother has finally arrived, albeit a
+century late. In order to exercise greater control over its citizens
+and thereby to counter a chronic breakdown in law and order, the
+Government decides on a radical measure--all citizens are to have a
+tiny microcomputer surgically implanted in their left wrists. This
+computer will contains all sorts of personal information as well as a
+transmitter which will allow people's movements to be logged and
+monitored by a central computer. (A desirable side effect of this
+process is that it will shorten the dole queue for plastic surgeons.)
+<p>
+<p>
+An essential component of each computer will be a unique
+identification code, consisting of up to 50 characters drawn from the
+26 lower case letters. The set of characters for any given code is
+chosen somewhat haphazardly. The complicated way in which the code is
+imprinted into the chip makes it much easier for the manufacturer to
+produce codes which are rearrangements of other codes than to produce
+new codes with a different selection of letters.  Thus, once a set of
+letters has been chosen all possible codes derivable from it are used
+before changing the set.
+<p>
+<p>
+For example, suppose it is decided that a code will contain exactly 3
+occurrences of `<tt>a</tt>', 2 of `<tt>b</tt>' and 1 of `<tt>c</tt>', then three of the allowable 60 codes under these conditions are:
+<p>
+<pre>      abaabc
+      abaacb
+      ababac</pre>
+<p>
+These three codes are listed from top to bottom in alphabetic order.
+Among all codes generated with this set of characters, these codes
+appear consecutively in this order.
+<p>
+<p>
+Write a program to assist in the issuing of these identification
+codes. Your program will accept a sequence of no more than 50 lower
+case letters (which may contain repeated characters) and print the
+successor code if one exists or the message `No Successor' if the
+given code is the last in the sequence for that set of characters.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Input will consist of a series of lines each containing a string
+representing a code. The entire file will be terminated by a line
+consisting of a single <tt>#</tt>.
+<p>
+<p>
+Output will consist of one line for each code read containing the
+successor code or the words `<tt>No Successor</tt>'.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample input</a></font></h2>
+<p>
+<pre>abaacb
+cbbaa
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample output</a></font></h2>
+<p>
+<pre>ababac
+No Successor</pre>
+<p>
+</body>
+</html>

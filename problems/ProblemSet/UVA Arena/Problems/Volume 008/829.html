@@ -1,0 +1,166 @@
+
+
+<html>
+<head>
+<title>Almost Balanced Trees</title>
+<meta name="description" content="Almost Balanced Trees">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Almost Balanced Trees</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+A tree is an <em>almost well-balanced</em> tree if at each node the depths
+of the subtrees rooted at its children are the same or
+differ at most by 1. The depth of a tree is 1 if the tree is a
+single leaf, or 1 plus the maximum of the depths of subtrees
+rooted at the children of its root.
+
+<p>
+
+<p>
+<br>
+Write a program that, given two (non empty) trees A and B whose
+nodes contain positive integers, checks that A is
+almost wellbalanced and that B can be obtained from A by applying
+<b>only once</b> one of the following operations:
+
+<p>
+
+<ul>
+<li>interchange the integers of two nodes;
+</li>
+<li>delete one leaf.
+</li>
+</ul>
+
+<p>
+The following pictures illustrate each of these operations. In the
+first one, the circled nodes have their integers
+exchanged. In the second, the marked leaf is deleted. Note that
+your program will apply only one of the operations
+and only once.
+
+<p>
+<div align="CENTER">
+
+<img src="p829a.gif" alt="\epsfbox{p829a.eps}">
+</div>
+
+<p>
+
+<p>
+<br>
+<div align="CENTER">
+
+<img src="p829b.gif" alt="\epsfbox{p829b.eps}">
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+Assume each tree is given as follows: the integer in its root,
+the number of children of its root, and each subtree
+rooted at them from left to right. Every node in A has a unique
+integer (integers are not repeated) and the set of
+integers appearing in nodes of B is contained in, or is equal
+to the corresponding set of A.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+The output of the program should be a line (ended by newline and
+having integers separated by a single space character)
+with one of:
+
+<ul>
+<li><tt>-1</tt>, if the given data does not correspond to the specification
+ of the two trees as described above (i.e., your
+program must check whether it is possible to build a tree from
+the given numbers, and whether the conditions
+on the integers are verified);
+</li>
+<li><tt>0</tt>, if first tree is not almost well-balanced;
+</li>
+<li>otherwise, <tt>1</tt> followed by either:
+
+<ul>
+<li><tt>0</tt> if the second tree cannot be obtained from the first by
+the method above; or,
+</li>
+<li><b>the two integers to be interchanged</b> if the first operation
+above applies, written in increasing order; or,
+</li>
+<li><b>minus the integer of the leaf to be deleted</b>, if the second operation applies.
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+1 3 10 2 15 0 20 0 2 2 6 0 7 1 4 0 9 1 21 0
+1 3 10 2 15 0 20 0 2 2 9 0 7 1 4 0 6 1 21 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+1 6 9
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Filgueiras, MIUP'2001
+</address>
+</body>
+</html>
+

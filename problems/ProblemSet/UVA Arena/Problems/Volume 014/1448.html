@@ -1,0 +1,253 @@
+
+<p>
+ICPC (International Connecting Points Company) starts to sell a new railway toy. It 
+consists of a toy tramcar and many rail units on square frames of the same size. There 
+are four types of rail units, namely, straight (S), curve (C), left-switch (L) and 
+right-switch (R) as shown in Figure 9. A switch has three ends, namely, 
+branch/merge-end (B/M-end), straight-end (S-end) and curve-end (C-end).
+
+<p>
+<div align="CENTER">
+
+<img width="998" height="203" align="BOTTOM" border="0" src="p4644a.png" alt="\epsfbox{p4644a.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 9: Four rail types
+
+</div>
+
+<p>
+A switch is either in ``through" or ``branching" state. When the tramcar comes from 
+B/M-end, and if the switch is in the through-state, the tramcar goes through to S-end 
+and the state changes to branching; if the switch is in the branching-state, it branches 
+toward C-end and the state changes to through. When the tramcar comes from S-end or C-end, 
+it goes out from B/M-end regardless of the state. The state does not change in this case. 
+
+<p>
+Kids are given rail units of various types that fill a rectangle area of 
+<span class="MATH"><i>w</i> <tt>x</tt> <i>h</i></span>, as shown 
+in Figure 10(a). Rail units meeting at an edge of adjacent two frames are automatically 
+connected. Each rail unit may be independently rotated around the center of its frame by 
+multiples of 90 degrees in order to change the connection of rail units, but its position 
+cannot be changed. 
+
+<p>
+Kids should make ``valid" layouts by rotating each rail unit, such as getting Figure 10(b) 
+from Figure 10(a). A layout is valid when all rails at three ends of every switch are 
+directly or indirectly connected to an end of another switch or itself. A layout in Figure 
+10(c) is invalid as well as Figure 10(a). Invalid layouts are frowned upon. 
+
+<p>
+When a tramcar runs in a valid layout, it will eventually begin to repeat the same route 
+forever. That is, we will eventually find the tramcar periodically comes to the same running 
+condition, which is a triple of the tramcar position in the rectangle area, its direction, 
+and the set of the states of all the switches. 
+
+<p>
+
+<p>
+<br>
+A periodical route is a sequence of rail units on which the tramcar starts from a rail unit 
+with a running condition and returns to the same rail unit with the same running condition 
+for the first time.
+
+<p>
+<div align="CENTER">
+
+<img width="1111" height="526" align="BOTTOM" border="0" src="p4644b.png" alt="\epsfbox{p4644b.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 10: Rail units in 
+<span class="MATH">5 <tt>x</tt> 2</span> matrix form
+
+</div>
+
+<p>
+A periodical route through a switch or switches is called the ``fun route", since 
+kids like the rattling sound the tramcar makes when it passes through a switch. The tramcar 
+takes the same unit time to go through a rail unit, not depending on the types of the unit 
+or the tramcar directions. After the tramcar starts on a rail unit on a ``fun route", it 
+will come back to the same unit with the same running condition, sooner or later. The fun 
+time <span class="MATH"><i>T</i></span> of a fun route is the number of time units that the tramcar takes for going around 
+the route. 
+
+<p>
+Of course, kids better enjoy layouts with longer fun time. Given a variety of rail units 
+placed on a rectangular area, your job is to rotate the given rail units appropriately and 
+to find the fun route with the longest fun time in the valid layouts. 
+
+<p>
+For example, there is a fun route in Figure 10(b). Its fun time is 24. Let the toy tramcar 
+start from B/M-end at (1, 2) toward (1, 3) and the states of all the switches are the 
+through-states. It goes through (1, 3), (1, 4), (1, 5), (2, 5), (2, 4), (1, 4), (1, 3), 
+(1, 2), (1, 1), (2, 1), (2, 2) and (1, 2). Here, the tramcar goes through (1, 2) with the 
+same position and the same direction, but with the different states of the switches. Then 
+the tramcar goes through (1, 3), (1, 4), (2, 4), (2, 5), (1, 5), (1, 4), (1, 3), (1, 2), 
+(2, 2), (2, 1), (1, 1) and (1, 2). Here, the tramcar goes through (1, 2) again, but with 
+the same switch states as the initial ones. Counting the rail units the tramcar visited, 
+the tramcar should have run 24 units of time after its start, and thus the fun time is 24. 
+
+<p>
+There may be many valid layouts with the given rail units. For example, a valid layout 
+containing a fun route with the fun time 120 is shown in Figure 11(a). Another valid layout 
+containing a fun route with the fun time 148 derived from that in Figure 11(a) is shown in 
+Figure 11(b). The four rail units whose rotations are changed from Figure 11(a) are indicated 
+by the thick lines. 
+
+<p>
+A valid layout depicted in Figure 12(a) contains two fun routes, where one consists of 
+the rail units (1, 1), (2, 1), (3, 1), (4, 1), (4, 2), (3, 2), (2, 2), (1, 2) with <span class="MATH"><i>T</i> = 8</span>, 
+and the other consists of all the remaining rail units with <span class="MATH"><i>T</i> = 18</span>.
+
+<p>
+<div align="CENTER">
+
+<img width="866" height="448" align="BOTTOM" border="0" src="p4644c.png" alt="\epsfbox{p4644c.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 11: valid layouts
+
+</div>
+
+<p>
+Another valid layout depicted in Figure 12(b) has two fun routes whose fun times are <span class="MATH"><i>T</i> = 12</span> 
+and <span class="MATH"><i>T</i> = 20</span>. The layout in Figure 12(a) is different from that in Figure 12(b) at the eight 
+rail units rotated by multiples of 90 degrees. There are other valid layouts with some 
+rotations of rail units but there is no fun route with the fun time longer than 20, so that 
+the longest fun time for this example (Figure 12) is 20.
+
+<p>
+<div align="CENTER">
+
+<img width="1026" height="325" align="BOTTOM" border="0" src="p4644d.png" alt="\epsfbox{p4644d.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 12: Fun routes in valid layouts 
+
+</div>
+
+<p>
+Note that there may be simple cyclic routes that do not go through any switches in a valid 
+layout, which are not counted as the fun routes. In Figure 13, there are two fun routes 
+and one simple cyclic route. Their fun times are 12 and 14, respectively. The required 
+time for going around the simple cyclic route is 20 that is greater than fun times of 
+the fun routes. However, the longest fun time is still 14.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of multiple datasets, followed by a line containing two zeros separated 
+by a space. Each dataset has the following format.
+
+<p>
+<div align="CENTER">
+
+<img width="399" height="405" align="BOTTOM" border="0" src="p4644e.png" alt="\epsfbox{p4644e.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 13: Two fun routes and a simple cyclic route
+
+</div>
+
+<p>
+
+<p>
+<br>
+
+
+<span class="MATH"><i>w</i>&nbsp;<i>h</i>
+<br><i>a</i><sub>11</sub>&nbsp;...&nbsp;<i>a</i><sub>1w</sub>
+<br>...
+<br><i>a</i><sub>h1</sub>&nbsp;...&nbsp;<i>a</i><sub>hw</sub></span>
+
+<p>
+
+<p>
+<br>
+
+<span class="MATH"><i>w</i></span> is the number of the rail units in a row, and <span class="MATH"><i>h</i></span> is the number of those in a column. 
+<span class="MATH"><i>a</i><sub>ij</sub></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4644img6.png" alt="$ \le$"><i>i</i><img width="18" height="31" align="MIDDLE" border="0" src="4644img6.png" alt="$ \le$"><i>h</i>, 1<img width="18" height="31" align="MIDDLE" border="0" src="4644img6.png" alt="$ \le$"><i>j</i><img width="18" height="31" align="MIDDLE" border="0" src="4644img6.png" alt="$ \le$"><i>w</i>)</span> is one of uppercase letters `<tt>S</tt>', 
+`<tt>C</tt>', `<tt>L</tt>' and `<tt>R</tt>', which indicate the types of the rail unit 
+at <span class="MATH">(<i>i</i>, <i>j</i>)</span> position, i.e., straight, curve, left-switch and right-switch, respectively. 
+Items in a line are separated by a space. You can assume that 
+<span class="MATH">2<img width="18" height="31" align="MIDDLE" border="0" src="4644img6.png" alt="$ \le$"><i>w</i><img width="18" height="31" align="MIDDLE" border="0" src="4644img6.png" alt="$ \le$">6</span>, 
+
+<span class="MATH">2<img width="18" height="31" align="MIDDLE" border="0" src="4644img6.png" alt="$ \le$"><i>h</i><img width="18" height="31" align="MIDDLE" border="0" src="4644img6.png" alt="$ \le$">6</span> and the sum of the numbers of left-switches and right-switches is 
+greater than or equal to 2 and less than or equal to 6.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each dataset, an integer should be printed that indicates the longest fun time of all 
+the fun routes in all the valid layouts with the given rail units. When there is no valid 
+layout according to the given rail units, a zero should be printed.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 2 
+C L S R C
+C C S C C
+6 4 
+C C C C C C
+S L R R C S
+S S S L C S
+C C C C C C
+6 6 
+C L S S S C 
+C C C S S C
+C C C S S C
+C L C S S C
+C C L S S C
+C S L S S C
+6 6
+C S S S S C
+S C S L C S
+S C S R C S
+S C L S C S
+S C R S C S
+C S S S S C
+4 4
+S C C S
+S C L S
+S L C S
+C C C C
+6 4
+C R S S L C
+C R L R L C
+C S C C S C
+C S S S S C
+0 0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+24 
+20 
+148 
+14 
+0 
+178
+</pre>
+
+<p>

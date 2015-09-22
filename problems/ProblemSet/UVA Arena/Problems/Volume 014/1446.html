@@ -1,0 +1,242 @@
+
+<p>
+Origami is the traditional Japanese art of paper folding. One day, Professor Egami found 
+the message board decorated with some pieces of origami works pinned on it, and became 
+interested in the pinholes on the origami paper. Your mission is to simulate paper 
+folding and pin punching on the folded sheet, and calculate the number of pinholes on 
+the original sheet when unfolded. 
+
+<p>
+A sequence of folding instructions for a ﬂat and square piece of paper and a single 
+pinhole position are specified. As a folding instruction, two points <span class="MATH"><i>P</i></span> and <span class="MATH"><i>Q</i></span> are given. 
+The paper should be folded so that <span class="MATH"><i>P</i></span> touches <span class="MATH"><i>Q</i></span> from above (Figure 4). To make a fold, we 
+first divide the sheet into two segments by creasing the sheet along the <span class="textit">folding line</span>, 
+i.e., the perpendicular bisector of the line segment <span class="textit">PQ</span>, and then turn over the 
+segment containing <span class="MATH"><i>P</i></span> onto the other. You can ignore the thickness of the paper.
+
+<p>
+<div align="CENTER">
+
+<img width="603" height="236" align="BOTTOM" border="0" src="p4640a.png" alt="\epsfbox{p4640a.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 4: Simple case of paper folding 
+
+</div>
+
+<p>
+The original ﬂat square piece of paper is folded into a structure consisting of layered 
+paper segments, which are connected by linear hinges. For each instruction, we fold one 
+or more paper segments along the specified folding line, dividing the original segments 
+into new smaller ones. The folding operation turns over some of the paper segments (not 
+only the new smaller segments but also some other segments that have no intersection with 
+the folding line) to the reﬂective position against the folding line. That is, for a 
+paper segment that intersects with the folding line, one of the two new segments made 
+by dividing the original is turned over; for a paper segment that does not intersect 
+with the folding line, the whole segment is simply turned over. 
+
+<p>
+The folding operation is carried out repeatedly applying the following rules, until we 
+have no segment to turn over. 
+
+<p>
+
+<p>
+<br>
+
+<ul>
+<li>Rule 1: The uppermost segment that contains <span class="MATH"><i>P</i></span> must be turned over. 
+</li>
+<li>Rule 2: If a hinge of a segment is moved to the other side of the folding line 
+by the operation, any segment that shares the same hinge must be turned over.
+</li>
+<li>Rule 3: If two paper segments overlap and the lower segment is turned over, the 
+upper segment must be turned over too. 
+</li>
+</ul>
+
+<p>
+
+<p>
+<br>
+In the examples shown in Figure 5, (a) and (c) show cases where only Rule 1 is applied. 
+(b) shows a case where Rule 1 and 2 are applied to turn over two paper segments 
+connected by a hinge, and (d) shows a case where Rule 1, 3 and 2 are applied to 
+turn over three paper segments.
+
+<p>
+<div align="CENTER">
+
+<img width="1188" height="447" align="BOTTOM" border="0" src="p4640b.png" alt="\epsfbox{p4640b.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 5: Different cases of folding
+
+</div>
+
+<p>
+After processing all the folding instructions, the pinhole goes through all the layered 
+segments of paper at that position. In the case of Figure 6, there are three pinholes 
+on the unfolded sheet of paper.
+
+<p>
+<div align="CENTER">
+
+<img width="537" height="219" align="BOTTOM" border="0" src="p4640c.png" alt="\epsfbox{p4640c.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 6: Number of pinholes on the unfolded sheet
+
+</div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input is a sequence of datasets. The end of the input is indicated by a line containing 
+a zero. 
+
+<p>
+Each dataset is formatted as follows.
+
+<p>
+
+<p>
+<br>
+
+
+<span class="MATH"><i>k</i>
+<br><i>p</i><sup>1</sup><sub>x</sub>&nbsp;<i>p</i><sup>1</sup><sub>y</sub>&nbsp;<i>q</i><sup>1</sup><sub>x</sub>&nbsp;<i>q</i><sup>1</sup><sub>y</sub>
+<br>...
+<br><i>p</i><sup>k</sup><sub>x</sub>&nbsp;<i>p</i><sup>k</sup><sub>y</sub>&nbsp;<i>q</i><sup>k</sup><sub>x</sub>&nbsp;<i>q</i><sup>k</sup><sub>y</sub>
+<br><i>h</i><sub>x</sub>&nbsp;<i>h</i><sub>y</sub></span>
+
+<p>
+
+<p>
+<br>
+For all datasets, the size of the initial sheet is 100 mm square, and, using mm as the 
+coordinate unit, the corners of the sheet are located at the coordinates (0, 0), 
+(100, 0), (100, 100) and (0, 100). The integer <span class="MATH"><i>k</i></span> is the number of folding instructions 
+and 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4640img4.png" alt="$ \le$"><i>k</i><img width="18" height="31" align="MIDDLE" border="0" src="4640img4.png" alt="$ \le$">10</span>. Each of the <span class="MATH"><i>i</i></span> following <span class="MATH"><i>k</i></span> lines represents a single folding 
+instruction and consists of four integers <span class="MATH"><i>p</i><sup>i</sup><sub>x</sub></span> , <span class="MATH"><i>p</i><sup>i</sup><sub>y</sub></span> , <span class="MATH"><i>q</i><sup>i</sup><sub>x</sub></span> and 
+<span class="MATH"><i>q</i><sup>i</sup><sub>y</sub></span> , delimited by a space. The positions of point <span class="MATH"><i>P</i></span> and <span class="MATH"><i>Q</i></span> for the <span class="MATH"><i>i</i></span>-th 
+instruction are given by 
+<span class="MATH">(<i>p</i><sup>i</sup><sub>x</sub>, <i>p</i><sup>i</sup><sub>y</sub>)</span> and 
+<span class="MATH">(<i>q</i><sup>i</sup><sub>x</sub>, <i>q</i><sup>i</sup><sub>y</sub>)</span>, respectively. 
+You can assume that <span class="MATH"><i>P</i> <img width="18" height="34" align="MIDDLE" border="0" src="4640img5.png" alt="$ \neq$"> <i>Q</i></span>. You must carry out these instructions 
+in the given order. The last line of a dataset contains two integers <span class="MATH"><i>h</i><sub>x</sub></span> and <span class="MATH"><i>h</i><sub>y</sub></span> 
+delimited by a space, and 
+<span class="MATH">(<i>h</i><sub>x</sub>, <i>h</i><sub>y</sub>)</span> represents the position of the pinhole. 
+
+<p>
+You can assume the following properties: 
+
+<p>
+
+<p>
+<br>
+
+<ul>
+<li>The points <span class="MATH"><i>P</i></span> and <span class="MATH"><i>Q</i></span> of the folding instructions are placed on some paper segments 
+at the folding time, and <span class="MATH"><i>P</i></span> is at least 0.01 mm distant from any borders of the paper segments. 
+</li>
+<li>The position of the pinhole also is at least 0.01 mm distant from any borders of the 
+paper segments at the punching time. 
+</li>
+<li>Every folding line, when infinitely extended to both directions, is at least 0.01 mm 
+distant from any corners of the paper segments before the folding along that folding line. 
+</li>
+<li>When two paper segments have any overlap, the overlapping area cannot be placed 
+between any two parallel lines with 0.01 mm distance. When two paper segments do not 
+overlap, any points on one segment are at least 0.01 mm distant from any points on 
+the other segment. 
+</li>
+</ul>
+
+<p>
+For example, Figure 5 (a), (b), (c) and (d) correspond to the first four datasets of the 
+sample input.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each dataset, output a single line containing the number of the pinholes on the sheet 
+of paper, when unfolded. No extra characters should appear in the output.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 
+90 90 80 20 
+80 20 75 50 
+50 35 
+2 
+90 90 80 20 
+75 50 80 20 
+55 20 
+3 
+5 90 15 70 
+95 90 85 75 
+20 67 20 73 
+20 75 
+3 
+5 90 15 70 
+5 10 15 55 
+20 67 20 73 
+75 80 
+8 
+1 48 1 50 
+10 73 10 75 
+31 87 31 89 
+91 94 91 96 
+63 97 62 96 
+63 80 61 82 
+39 97 41 95 
+62 89 62 90 
+41 93 
+5 
+2 1 1 1 
+-95 1 -96 1 
+-190 1 -191 1 
+-283 1 -284 1 
+-373 1 -374 1 
+-450 1 
+2 
+77 17 89 8 
+103 13 85 10 
+53 36 
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 
+4 
+3 
+2 
+32 
+1 
+0
+</pre>
+
+<p>

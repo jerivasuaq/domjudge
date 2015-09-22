@@ -1,0 +1,85 @@
+
+<p>
+Many well-known cryptographic operations require modular exponentiation. That is, given integers <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark>, compute 
+<span class="MATH"><i>x</i><sup>y</sup> mod <i>n</i></span>
+<tex2html_verbatim_mark>. In this question, you are tasked to program an efficient way to execute this calculation.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of a line containing the number <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark> of datasets, followed by <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark> datasets, followed by a line containing the number `<tt>0</tt>'. 
+
+<p>
+Each dataset consists of a single line containing three positive integers, <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark>, and <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark>, separated by blanks. You can assume that <span class="MATH">1 &lt; <i>x</i></span>
+<tex2html_verbatim_mark>, 
+<span class="MATH"><i>n</i> &lt; 2<sup>15</sup> = 32768</span>
+<tex2html_verbatim_mark>, and 
+<span class="MATH">0 &lt; <i>y</i> &lt; 2<sup>31</sup> = 2147483648</span>
+<tex2html_verbatim_mark>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The output consists of one line for each dataset. The <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th line contains a single positive integer <span class="MATH"><i>z</i></span>
+<tex2html_verbatim_mark> such that 
+
+<p>
+<p>
+</p>
+<div align="CENTER" class="mathdisplay">
+<i>z</i> = <i>x</i><sup>y</sup> mod <i>n</i>
+</div><p>
+<tex2html_verbatim_mark><p> 
+
+<p>
+for the numbers <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>z</i></span>
+<tex2html_verbatim_mark> given in the <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th input dataset.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+2 
+2 3 5 
+2 2147483647 13 
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+3 
+11
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

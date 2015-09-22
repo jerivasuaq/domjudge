@@ -1,0 +1,120 @@
+
+
+<html>
+<head>
+<title>String Distance and Transform Process</title>
+<meta name="description" content="String Distance and Transform Process">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+String Distance and Transform Process</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+String Distance is a non-negative integer that measures the distance
+between two strings. Here we
+give the definition. A transform list is a list of strings, where each
+string, except for the last one, can
+be changed to the string followed by adding a character, deleting a
+character or replacing a
+character. The length of a transform list is the count of strings
+minus 1 (that is the count of
+operations to transform these two strings). The distance between two strings
+is the length of a
+transform list from one string to the other with the minimal length. You
+are to write a program to
+calculate the distance between two strings and give the corresponding
+transform list.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input consists a sequence of string pairs, each string pair consists two
+lines, each string occupies
+one line. The length of each string will be no more than 80.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each string pair, you should give an integer to indicate the length
+between them at the first line,
+and give a sequence of command to transform string1 to string 2. Each
+command is a line lead by
+command count, then the command. A command must be 
+
+<p>
+
+<p>
+<br>
+
+<tt>Insert</tt> <i>pos</i>,<i>value</i>
+
+<p>
+
+<tt>Delete</tt> <i>pos</i>
+
+<p>
+
+<tt>Replace</tt> <i>pos</i>,<i>value</i>
+
+<p>
+
+<p>
+<br>
+where <i>pos</i> is the position of the string and <i>pos</i> should be between 1 and
+the current length of the
+string (in <tt>Insert</tt> command, <i>pos</i> can be 1 greater than the length), and value is a character. Actually
+many command lists can satisfy the request, but only one of them is required.
+
+<p>Print a blank line between consecutive datasets.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+abcac
+bcd
+aaa
+aabaaaa
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+3
+1 Delete 1
+2 Replace 3,d
+3 Delete 4
+
+4
+1 Insert 1,a
+2 Insert 2,a
+3 Insert 3,b
+4 Insert 7,a
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

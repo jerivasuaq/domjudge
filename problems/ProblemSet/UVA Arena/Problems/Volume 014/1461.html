@@ -1,0 +1,87 @@
+
+<p>
+Sudoku is a logic-based, combinatorial number-placement puzzle. The objective is to fill a 
+<span class="MATH">9 <tt>x</tt> 9</span> grid so that each column, each row, and each of the nine 
+<span class="MATH">3 <tt>x</tt> 3</span> boxes 
+(also called blocks or regions) contains the digits from 1 to 9 only one time each. The puzzle setter provides 
+a partially completed grid.[from wikipedia] 
+
+<p>
+Left figure is the puzzle and right figure is one solution for that puzzle.
+
+<p>
+<div align="CENTER">
+
+<img width="1003" height="500" align="BOTTOM" border="0" src="p4763.png" alt="\epsfbox{p4763.eps}">
+</div>
+
+<p>
+It's a very common game for magazine and newspapers, and people like it for killing time. 
+How about adding some features to this game, some cells can only be filled with even number, 
+some cells can only be filled with odd number, and some cells can only be filled with the 
+same number. Great, let's call it ``Sudoku Extension". 
+
+<p>
+It's very easy to give one possible 
+solution a Sudoku Extension puzzle, but do you know how many solutions are there for a 
+certain Sudoku Extension problem? Let's find out!
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input data will start with the number of test cases. For each test case, 9 lines 
+followed, corresponding to the rows of the table. On each line, a string of exactly 9 
+characters is given, it's either <tt>0-9</tt> digit, or <tt>a-z</tt> alpha in lower case. 
+`<tt>1</tt>' - `<tt>9</tt>' means the cell is already filled in; `<tt>0</tt>' means this 
+cell is empty; `<tt>e</tt>' means the cell need to be filled with a even number; `<tt>o</tt>' 
+means the cell need to be filled with an odd number; 
+other alpha of `<tt>a</tt>' - `<tt>z</tt>', except `<tt>e</tt>' and `<tt>o</tt>' denote a 
+variable, so if two or more cells denoted by `<tt>a</tt>', then they must be filled with 
+the same number.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The output for each case is the number of possible solutions, note for each case, the 
+solution will be less than 3000, and there are not more than 10 test cases.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 
+040008007 
+00e030408 
+006000200 
+301004000 
+0080000o2 
+000003000 
+200401005 
+600070000 
+800006003
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+507
+</pre> 
+
+<p>

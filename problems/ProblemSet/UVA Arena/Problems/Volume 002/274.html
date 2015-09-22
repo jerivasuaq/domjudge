@@ -1,0 +1,108 @@
+
+
+<html>
+<head>
+<title>Cat and Mouse</title>
+<meta name="description" content="Cat and Mouse">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Cat and Mouse</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In a house with many rooms live a cat and a mouse. The cat and the mouse
+each have chosen one room as their ``home&quot;. From their ``home&quot;
+they regularly walk through the house. A cat can go from room A to room
+B if and only if there is a cat door from room A to room B. Cat doors can
+only be used in one direction. Similarly a mouse can go from room A to room
+B if and only if there is a mouse door from room A to room B . Also mouse
+doors can be used in only one direction. Furthermore, cat doors cannot be
+used by a mouse, and mouse doors cannot be used by a cat.
+<p>
+Given a map of the house you are asked to write a program that finds out
+<p>
+<ol><li> if there exist walks for the cat and mouse where they meet each other
+in some room, and<li> if the mouse can make a walk through at least two rooms, end in its
+``home&quot; room again, and along the way cannot ever meet the cat.
+(Here, the mouse may not ever meet the cat, whatever the cat does.) 
+</li></li></ol>
+<p>
+<center>
+<p> <img width="381" height="141" align="BOTTOM" alt="picture25" src="274img1.jpg"> <p>
+</center>
+<p>
+For example, in the map, the cat can meet the mouse in rooms 1, 2, and 3.
+Also, the mouse can make a walk through two rooms without ever meeting the
+cat, viz., a round trip from room 5 to 4 and back.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+<b>
+The input begins with a single positive integer on a line by itself indicating 
+the number of the cases following, each of them as described below. 
+This line is followed by a blank line, and there is also a blank line between 
+two consecutive inputs.
+</b>
+<p>
+<p>
+The input consists of integers and defines the configuration of the house.
+The first line has three integers separated by blanks: the first integer
+defines the number of rooms, the second the initial room of the cat (the
+cat's ``home&quot;), and the third integer defines the initial room
+of the mouse (the mouse's ``home&quot;). Next there are zero or more
+lines, each with two positive integers separated by a blank. These lines
+are followed by a line with two <tt>-1</tt>'s separated by a blank. The pairs of
+positive integers define the cat doors. The pair A B represents the presence
+of a cat door from room A to room B . Finally there are zero or more lines,
+each with two positive integers separated by a blank. These pairs of integers
+define the mouse doors. Here, the pair A B represents the presence of a
+mouse door from room A to room B .
+<p>
+<p>
+The number of rooms is at least one and at most 100. All rooms are numbered
+consecutively starting at 1. You may assume that all positive integers in
+the input are legal room numbers.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+<b>
+For each test case, the output must follow the description below. 
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+The output consists of two characters separated by a blank and ended by
+a new-line character. The first character is <tt>Y</tt> if there exist walks for
+the cat and mouse where they meet each other in some room. Otherwise, it
+is <tt>N</tt>. The second character is <tt>Y</tt> if the mouse can make a walk through at
+least two rooms, end in its ``home&quot; room again, and along the way
+cannot ever meet the cat. Otherwise, it is <tt>N</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input <font size="3">(From example above)</font></a></font></h2>
+<p>
+<pre>
+1
+
+5 3 5
+1 2
+2 1
+3 1
+4 3
+5 2
+-1 -1
+1 3
+2 5
+3 4
+4 1
+4 2
+4 5
+5 4
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Y Y</pre>
+</body>
+</html>

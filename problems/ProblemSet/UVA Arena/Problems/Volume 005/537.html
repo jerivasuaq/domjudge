@@ -1,0 +1,139 @@
+
+
+<html>
+<head>
+<title>Artificial Intelligence?</title>
+<meta name="description" content="Artificial Intelligence?">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Artificial Intelligence?</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Physics teachers in high school often think that problems given as text are more demanding than
+pure computations. After all, the pupils have to read and understand the problem first!
+
+<p>
+So they don't state a problem like ``<tt>U=10V, I=5A, P=?</tt>" but rather like ``<tt>You have an electrical
+circuit that contains a battery with a voltage of U=10V and a light-bulb. There's an electrical
+current of I=5A through the bulb. Which power is generated in the bulb?</tt>".
+
+<p>
+However, half of the pupils just don't pay attention to the text anyway. They just extract from the
+text what is given: U=10V, I=5A. Then they think: ``Which formulae do I know? Ah yes, P=U*I.
+Therefore P=10V*5A=500W. Finished."
+
+<p>
+OK, this doesn't always work, so these pupils are usually not the top scorers in physics tests. But at
+least this simple algorithm is usually good enough to pass the class. (Sad but true.)
+
+<p>
+Today we will check if a computer can pass a high school physics test. We will concentrate on the
+<tt>P-U-I</tt> type problems first. That means, problems in which two of power, voltage and current are
+given and the third is wanted.
+
+<p>
+
+<p>
+<br>
+Your job is to write a program that reads such a text problem and solves it according to the simple
+algorithm given above.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input file will contain the number of test cases.
+
+<p>
+Each test case will consist of one line containing exactly two data fields and some additional
+arbitrary words. A data field will be of the form <tt>I=</tt><i>x</i><tt>A</tt>, <tt>U=</tt><i>x</i><tt>V</tt> or <tt>P=</tt><i>x</i><tt>W</tt>, where <i>x</i> is a real number.
+
+<p>
+Directly before the unit (<tt>A</tt>, <tt>V</tt> or <tt>W</tt>) one of the prefixes <tt>m</tt> (milli), <tt>k</tt> (kilo) and <tt>M</tt> (Mega) may also
+occur. To summarize it: Data fields adhere to the following grammar:
+
+<p>
+<pre>
+DataField ::= Concept '=' RealNumber [Prefix] Unit
+Concept   ::= 'P' | 'U' | 'I'
+Prefix    ::= 'm' | 'k' | 'M'
+Unit      ::= 'W' | 'V' | 'A'
+</pre>
+
+<p>
+Additional assertions:
+
+<p>
+<ul>
+<li>The equal sign (`<tt>=</tt>') will never occur in an other context than within a data field.
+<li>There is no whitespace (tabs,blanks) inside a data field.
+<li>Either <tt>P</tt> and <tt>U</tt>, <tt>P</tt> and <tt>I</tt>, or <tt>U</tt> and <tt>I</tt> will be given.
+</li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, print three lines:
+
+<p>
+<ul>
+<li>a line saying ``<tt>Problem #</tt><i>k</i>" where <i>k</i> is the number of the test case
+<li>a line giving the solution (voltage, power or current, dependent on what was given), written
+without a prefix and with two decimal places as shown in the sample output
+<li>a blank line
+</li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+If the voltage is U=200V and the current is I=4.5A, which power is generated?
+A light-bulb yields P=100W and the voltage is U=220V. Compute the current, please.
+bla bla bla lightning strike I=2A bla bla bla P=2.5MW bla bla voltage?
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Problem #1
+P=900.00W
+
+Problem #2
+I=0.45A
+
+Problem #3
+U=1250000.00V
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

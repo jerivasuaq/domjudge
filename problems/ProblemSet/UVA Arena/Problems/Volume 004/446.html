@@ -1,0 +1,80 @@
+
+
+<html>
+<head>
+<title>Kibbles `n' Bits `n' Bits `n' Bits</title>
+<meta name="description" content="Kibbles `n' Bits `n' Bits `n' Bits">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Kibbles `n' Bits `n' Bits `n' Bits</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A certain frazzled programmer is writing a program that receives
+two numbers at a time in hexadecimal form, performs an addition
+or subtraction on them, and outputs the result in decimal form.
+However, the binary representation of the hexadecimal numbers
+also needs to be output, in the exact format shown by the sample output below.
+<p>
+<p>
+This programmer would gladly write the routine to do this
+himself, but every time he tries to do anything in base 2, he
+breaks out in hives.  So if you write this little routine for
+him, he would be eternally grateful.
+<p>
+<p>
+You may assume the following:
+<ul><li> The largest allowable hexadecimal number is <tt>FFF</tt>.<li> When subtracting, the second number will always be smaller
+     than the first, i.e. no negative results.<li> The spacing in the input file will be uniform throughout,
+     i.e. no spaces at the beginning of a line, and one space
+     between each element.
+</li></li></li></ul><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input for this program will come from a file.  The format for
+the file is as follows:
+<p>
+<p>
+<p>
+<i>N</i> (This is the number of expressions to compute)
+<p>
+<i>HEX</i>1 (+ or -) <i>HEX</i>2 (The first expression)
+<p>
+ .
+<p>
+ .
+<p>
+ .
+<p>
+<i>HEX</i>1 (+ or -) <i>HEX</i>2 (The <i>n</i>th expression)
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output file should be in the following format:
+<p>
+<p>
+<p>
+<i>BINARY</i>1 (+ or -) <i>BINARY</i>2 = <i>DECIMAL</i> (first result)
+<p>
+ .
+<p>
+ .
+<p>
+ .
+<p>
+<i>BINARY</i>1 (+ or -) <i>BINARY</i>2 = <i>DECIMAL</i> (<i>n</i>th result)
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2
+A + 3
+AAA + BBB</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>0000000001010 + 0000000000011 = 13
+0101010101010 + 0101110111011 = 5733</pre>
+<p>
+</body>
+</html>

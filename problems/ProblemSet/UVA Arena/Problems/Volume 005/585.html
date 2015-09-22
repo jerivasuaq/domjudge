@@ -1,0 +1,131 @@
+
+
+<html>
+<head>
+<title>Triangles</title>
+<meta name="description" content="Triangles">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Triangles</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+It is always very nice to have little brothers or sisters. You can tease them, lock them in the
+bathroom or put red hot chili in their sandwiches. But there is also a time when all meanness comes
+back!
+
+<p>
+
+<p>
+<br>
+As you know, in one month it is Christmas and this year you are honored to make the big star that
+will be stuck on the top of the Christmas tree. But when you get the triangle-patterned silver paper
+you realize that there are many holes in it. Your little sister has already cut out smaller triangles for
+the normal Christmas stars. Your only chance is to find an algorithm that tells you for each piece of
+silver paper the size of the largest remaining triangle.
+
+<p>
+
+<p>
+<br>
+Given a triangle structure with white and black fields inside you must find the largest triangle area
+of white fields, as shown in the following figure.
+
+<p>
+<div align="CENTER">
+<img src="p585.gif">
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains several triangle descriptions. The first line of each description contains an
+integer <i>n</i> (
+
+<img width="96" height="30" align="MIDDLE" border="0" src="585img1.gif" alt="$1 \leY n \leY 100$">), which gives the height of the triangle. The next <i>n</i> lines contain characters of
+the set {<em>space</em>, <tt>#</tt>, <tt>-</tt>} representing the rows of the triangle, where `<tt>#</tt>' is a black and `<tt>-</tt>' a white field.
+The spaces are used only to keep the triangle shape in the input by padding at the left end of the lines.
+(Compare with the sample input. The first test case corresponds to the figure.)
+
+<p>
+For each triangle, the number of the characters `<tt>#</tt>' and `<tt>-</tt>' per line is odd and decreases from 2<i>n</i> - 1 down to 1.
+
+<p>
+
+<p>
+<br>
+The input is terminated by a description starting with <i>n</i> = 0.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each triangle in the input, first output the number of the triangle, as shown in the sample output.
+Then print the line ``<tt>The largest triangle area is </tt><i>a</i>.'', where <i>a</i> is the number of fields
+inside the largest triangle that consists only of white fields. Note that the largest triangle can have its
+point at the top, as in the second case of the sample input.
+
+<p>
+
+<p>
+<br>
+Output a blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5
+#-##----#
+ -----#-
+  ---#-
+   -#-
+    -
+4
+#-#-#--
+ #---#
+  ##-
+   -
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Triangle #1
+The largest triangle area is 9.
+
+Triangle #2
+The largest triangle area is 4.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

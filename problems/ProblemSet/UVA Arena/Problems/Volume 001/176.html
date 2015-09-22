@@ -1,0 +1,103 @@
+
+
+<html>
+<head>
+<title>City Navigation</title>
+<meta name="description" content="City Navigation">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">City Navigation</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Most US cities are constructed according to a very simple plan--they
+have Avenues running north and south, and Streets running east and
+west, enclosing square blocks. Avenues and Streets are numbered, with
+numbers increasing westward and southward. There are 50 driveways on
+each side of a block, numbered 00 to 98 on one side and 01 to 99 on
+the other. House numbers increase in the same directions as Street and
+Avenue numbers. If you are travelling in the direction of increasing
+numbers then odd numbers are on your right. Thus the house at 1288
+16th Street (S16 1288) is located on 16th Street, west of 12th Avenue
+and east of 13th Avenue, and is on the right-hand side going east. The
+residence described as A11 1543 lies on 11th Avenue, south of 15th
+Street and north of 16th Street, and is on the right-hand side going
+south. Both of these are marked on the following typical street map:
+<p>
+
+<img src="176img1.gif">
+
+<p>
+Quiet suburbs are formed by the simple expedient of making some
+Avenues and Streets discontinuous as shown above. Note that Avenues
+and Streets keep the same name, even when there are places where they
+simply don't exist. It is difficult to get lost in such a city, as the
+address tells you exactly where to go. However, if you don't know the
+pattern of missing portions, you can spend a lot of time going into
+dead-end roads.
+<p>
+<p>
+Write a program that will firstly read in a description of the
+`missing' areas in a city and then a series of pairs of addresses,
+where an address is assumed to specify a driveway not necessarily a
+residence. For each pair of addresses the program must calculate the
+distance between them, by the shortest legal route. The distance is
+the number of driveways you pass (on your side of the road) excluding
+the source and destination. You may make the following assumptions:
+<p>
+<ul><li> You drive on the right hand side of the road.<li> You may not cross a lane of traffic except at an intersection,
+that is you must turn right when entering or leaving a driveway.<li> Driveways are located in the centres of their sections.<li> U-turns are illegal except at the end of cul de sacs.<li> Streets and Avenues are numbered from 00 to 49 and there are no roads
+beyond these bounds; however there are driveways on both sides of the
+bounding roads.<li> Sections on corners have two driveways.<li> A route exists between any pair of driveways.
+</li></li></li></li></li></li></li></ul><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will be divided into two portions: a ``missing road'' portion
+and an address portion, each terminated by a line consisting of a
+single `<tt>#</tt>'. The ``missing road'' portion consists of a series of lines
+with each line containing a road identifier and a pair of house
+numbers. A road identifier is an `<tt>A</tt>' or an `<tt>S</tt>' (specifying an Avenue
+or a Street) followed by a number in the range 00 to 49. A house
+number is an even number in the range 0000 to 4898. The area between
+and including the specified numbers on the identified road is
+inaccessible. Note that the line goes directly across the street, thus
+if number 1612 is inaccessible, then so is 1613. Inaccessible portions
+run from the borders of sections not from driveways. There will be
+exactly one space separating parts of the input.
+<p>
+<p>
+The address portion consists of a series of lines each line containing
+two addresses. An address is a road identifier (as above) followed by
+a number in the range 0000 to 4899. There will be exactly one space
+separating parts of the input.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output consists of a series of lines, one for each line in the address
+portion of the input file. Each line contains the distance between the
+two houses specified in the input (the number of driveways passed)
+written as an integer, left justified.
+<p>
+<p>
+<p>
+<b>Note:</b> The following sample data matches the diagram on previous page. (Note
+the intersection of A13 and S17).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>A11 1612 1720
+A12 1508 1636
+S16 1152 1250
+S17 1048 1134
+S17 1272 1326
+#
+S16 1288 A11 1543
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>213</pre>
+<p>
+</body>
+</html>

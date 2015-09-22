@@ -1,0 +1,87 @@
+
+<html><head><title>Cabinets</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta content="Cabinets" name="description">
+<meta content="htmlatex" name="keywords">
+<meta content="document" name="resource-type">
+<meta content="global" name="distribution"><link href="htmlatex.css" rel="STYLESHEET">
+<meta content="MSHTML 6.00.2600.0" name="GENERATOR"></head>
+<body lang="EN" bgcolor="#ffffff">
+<h1><br clear="all">
+<center>
+<table bgcolor="#0060f0">
+  <tbody>
+  <tr>
+    <td><b><font color="#c0ffff" size="5">&nbsp;<a name="SECTION0001000000000000000000">Cabinets</a></font>&nbsp;</b></td></tr></tbody></table></center></h1>
+<p>Well-Built Cabinet Distributors, Inc. recently received an electronic catalog 
+of cabinets from their leading manufacturer, Woodcraft. Unfortunately, the 
+format of the data is not consistent with that expected by Well-Built's 
+inventory software. For this problem, you will construct a program that 
+reformats the Woodcraft catalog for use by the inventory software. 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>The input begins with a single positive integer on a line by itself 
+indicating the number of the cases following, each of them as described below. 
+This line is followed by a blank line, and there is also a blank line between 
+two consecutive inputs.<br>Input will be formatted as from a comma-delimited 
+ASCII file. Your program must read all input from the standard input file. Each 
+line in the input has a maximum length of 64 characters and contains the 
+following fields: 
+<p>
+<p>
+<p><img height="126" alt="tabular21" src="277img1.gif" width="587" align="bottom"> 
+<p>
+<p>
+<p>The records are presented in ascending order by Style Code. You may assume 
+that all fields will be consistent with the lengths given, and that all fields 
+will contain appropriate characters. 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>For each test case, the output must follow the description below. The outputs 
+of two consecutive cases will be separated by a blank line.<br>Output will 
+consist of a reformatted catalog. The reformatted catalog file will be a 
+comma-delimited ASCII file. The first record in the file must be the following: 
+<p><pre>Item Id,Item Desc,Item Price</pre>
+<p>Each remaining record in the file will have a maximum length of 50 characters 
+and contain the following fields: 
+<p>
+<p>
+<p><img height="82" alt="tabular28" src="277img2.gif" width="553" align="bottom"> 
+<p>
+<p>
+<p>The <tt>Item Id</tt> is formed by concatenating the Style Code and the 
+Description. If the Style Code is less than three characters long, it must be 
+left-filled with zeros to three characters. If the Item Id exceeds 13 
+characters, then the record is rejected. 
+<p>
+<p>The <tt>Item Desc</tt> is formed by concatenating the Style Name, a hyphen, 
+and the Extension. If the Style Name is missing, use the Style Name from the 
+first record of the corresponding Style Code group. If this first record has no 
+Style Name either, then reject the record. If the Extension is not present, then 
+Item Desc is the same as Style Name (no hyphen). If Item Desc exceeds 30 
+characters, then it must be truncated on the right. 
+<p>
+<p>The <tt>Item Price</tt> is formed by formatting the Unit Price as dollars and 
+cents. If Unit Price is not present, then Item Price = 0.00. 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001003000000000000000">Sample 
+Input</a></font></h2>
+<p><pre>1
+
+23,CHAMPAGNE,BASE36,3" RECESSED TOE KICK,8900
+23,,BASE54,,11000
+25,LAUREL,CNR24LT,,15000 
+107,COLONIAL,BASE54WSIDEJAM
+202,SAGEBRUSH,OVRHD54P,USE WITH HDWARE KIT #3207 
+221,ALVEA MODERN,BASE36
+221,ALVEA MODERN,OVRHD54WCAP</pre>
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001004000000000000000">Sample 
+Output</a></font></h2>
+<p><pre>Item Id,Item Desc,Item Price
+023BASE36,CHAMPAGNE-3" RECESSED TOE KICK,89.00
+023BASE54,CHAMPAGNE,110.00 
+025CNR24LT,LAUREL,150.00
+202OVRHD54P,SAGEBRUSH-USE WITH HDWARE KIT ,0.00 
+221BASE36,ALVEA MODERN,0.00</pre>
+<p></body></html>

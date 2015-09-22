@@ -1,0 +1,112 @@
+<p align="center"><img border="0" src="p2064_1.gif" width="241" height="154"><p align="center">
+Figure 1<p>Figure 1 shows a graphical representation of a binary tree of 
+letters.&nbsp; People familiar with binary trees can skip over the definitions of a 
+binary tree of letters, leaves of a binary tree, and a binary search tree of 
+letters, and go right to <b>The problem</b>. </p>
+<ol>
+  <p>A <i>binary tree of letters</i> may be one of two things: </p>
+  <ol>
+    <li>It may be empty. </li>
+    <li>It may have a root <i>node.</i>&nbsp; A node has a letter as data and refers 
+    to a left and a right subtree.&nbsp; The left and right subtrees are also binary 
+    trees of letters. </li>
+  </ol>
+</ol>
+<ol>
+  <p>In the <i>graphical</i> representation of a binary tree of letters: </p>
+  <ol>
+    <li>Empty trees are omitted completely. </li>
+    <li>Each node is indicated by
+    <ul type="DOT">
+      <li>Its letter data, </li>
+      <li>A line segment down to the left to the left subtree, if the left 
+      subtree is nonempty, </li>
+      <li>A line segment down to the right to the right subtree, if the right 
+      subtree is nonempty. </li>
+    </ul>
+    </li>
+  </ol>
+  <p>A <i>leaf</i> in a binary tree is a node whose subtrees are both empty.&nbsp; In 
+  the example in Figure 1, this would be the five nodes with data <tt>B</tt>,
+  <tt>D</tt>, <tt>H</tt>, <tt>P</tt>, and <tt>Y</tt>. </p>
+  <p>The <i>preorder traversal of a tree of letters</i> satisfies the defining 
+  properties: </p>
+  <ol>
+    <li>If the tree is empty, then the preorder traversal is empty. </li>
+    <li>If the tree is not empty, then the preorder traversal consists of the 
+    following, in order
+    <ul type="DOT">
+      <li>The data from the root node, </li>
+      <li>The preorder traversal of the root's left subtree, </li>
+      <li>The preorder traversal of the root's right subtree. </li>
+    </ul>
+    </li>
+  </ol>
+  <p>The preorder traversal of the tree in Figure 1 is <tt>KGCBDHQMPY</tt>. </p>
+  <p>A tree like the one in Figure 1 is also a binary search tree of letters.&nbsp; A
+  <i>binary search tree of letters</i> is a binary tree of letters in which each 
+  node satisfies: </p>
+  <ol>
+    <li>The root's data comes later in the alphabet than all the data in the 
+    nodes in the left subtree. </li>
+    <li>The root's data comes earlier in the alphabet than all the data in the 
+    nodes in the right subtree.</li>
+  </ol>
+</ol>
+<p><b><font color="#ff0000" size="4">The problem:</font></b></p>
+<p>Consider the following sequence of operations on a binary search tree of 
+letters </p>
+<blockquote>
+  <p>Remove the leaves and list the data removed <br>
+  Repeat this procedure until the tree is empty</p>
+</blockquote>
+<p>Starting from the tree below on the left,&nbsp; we produce the sequence of trees 
+shown, and then the empty tree</p>
+<p align="center"><img border="0" src="p2064_2.gif" width="652" height="149"></p>
+<p>by removing the leaves with data </p>
+<blockquote>
+  <p><tt>BDHPY</tt> <br>
+  <tt>CM</tt> <br>
+  <tt>GQ</tt> <br>
+  <tt>K</tt></p>
+</blockquote>
+<p>Your problem is to start with such a sequence of lines of leaves from a 
+binary search tree of letters and output the preorder traversal of the tree.</p>
+
+
+<p><b><font color="#ff0000" size="4"><a name="SECTION0001003000000000000000">Input</a></font></b></p>
+<p>The input file will contain one or more data sets.&nbsp; Each data set is a 
+sequence of one or more lines of capital letters.&nbsp; The lines contain the leaves 
+removed from a binary search tree in the stages described above.&nbsp; The letters on 
+a line will be listed in increasing alphabetical order.&nbsp; Data sets are separated 
+by a line containing only an asterisk ('<tt>*</tt>').&nbsp; The last data set is 
+followed by a line containing only a dollar sign ('<tt>$</tt>').&nbsp; There are no 
+blanks or empty lines in the input. </p>
+
+
+<p><b><font color="#ff0000" size="4"><a name="SECTION0001003000000000000000">Output</a> 
+</font></b></p>
+<p>For each input data set, there is a unique binary search tree that would 
+produce the sequence of leaves.&nbsp; The output is a line containing only the 
+preorder traversal of that tree, with no blanks.</p>
+<p>
+
+
+<h2><font color="#ff0000" size="4"><a name="SECTION0001003000000000000000">Sample 
+Input</a>&nbsp;</font> </h2>
+<p>
+<pre>BDHPY 
+CM 
+GQ 
+K 
+* 
+AC 
+B 
+$</pre>
+
+
+<h2><font color="#ff0000" size="4"><a name="SECTION0001004000000000000000">Sample 
+Output</a>&nbsp;</font> </h2>
+<p>
+<pre>KGCBDHQMPY
+BAC</pre>

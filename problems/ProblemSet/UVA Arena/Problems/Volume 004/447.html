@@ -1,0 +1,153 @@
+
+
+<html>
+<head>
+<title>Population Explosion</title>
+<meta name="description" content="Population Explosion">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center></center></h1>
+ <table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Population Explosion</a></font>&nbsp;</b></td></tr></table>
+<p>
+You just received a call from NASA's chief scientist who is
+working on a habitable structure to be built on the moon.  He has
+designed various models of enclosed cities that people could live
+in, but he is unsure as to how these models will stand up to
+population growth.  Therefore, since your name has become
+synonymous with &quot;He Can Program Anything From Neat, Flashy Space
+Games That Entangle You For Hours To Highly Sophisticated Super
+Spy Surveillance Satellite Image Enhancement Algorithms,&quot; he
+immediately called you with his problem.  Here is what he said:
+<p>
+<p>
+&quot;I need a program which will read in a set of data points that
+represent the location of living quarters within the city.  I
+then want the program to simulate the creation, growth, and death
+of each living quarter per year based on the following rules:
+<p>
+<ol><li> Every living quarter with two or three neighboring quarters
+     survives the current year.<li> Each living quarter with four or more neighbors dies due to
+     over-population.  Each living quarter with one or less
+     neighbors dies from isolation.<li> Each empty location that is adjacent to exactly three
+     neighbors - no more, no fewer - will have someone build new
+     living quarters in that location for the next year.
+</li></li></li></ol>
+<p>
+Note that each living quarter can have from zero to eight
+adjacent neighbors (i.e. north, south, east, west, north-west,
+north-east, south-west, and south-east) at any given time.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Each city model will have a maximum of 20 possible living
+quarters in the north-south direction and 20 in the east-west
+direction.  The top left corner will be designated location 1,1
+(N-S position, E-W position) and the bottom right is therefore
+20,20.  I want the program to read the data file and then output
+the existing population map for each year.  Year 1 will
+correspond to the initial configuration.  Therefore, the first
+map in the file should be the initial configuration.  Mark empty
+locations with a space and living quarters with a capital letter
+<tt>O</tt>.
+<p>
+Please separate each year's output with a single line of 20
+asterisks, and put a similar line both as the first and the last of the output file.  Any questions?&quot;
+<p>
+&quot;Yes, one,&quot; you replied, &quot;What will the input file look like?
+<p>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below. This line is
+followed by a blank line, and there is also a blank line between two consecutive
+inputs.
+<p>
+&quot;Let the first line of each input specify the number of years to
+run the simulation.  Then, following that will be the coordinates
+for the initial locations.&nbsp;
+<p>
+&nbsp;The outputs of two consecutive cases will be separated by a blank line.
+<p>
+  Oh, by the way, I need this to be
+completed within the next four hours.  Talk to you later.  Bye.&quot;
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+
+3
+5 4
+5 5
+5 6
+5 7</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>********************
+ 
+ 
+ 
+ 
+   OOOO
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+********************
+ 
+ 
+ 
+    OO
+    OO
+    OO
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+********************
+ 
+ 
+ 
+    OO
+   O  O
+    OO
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+********************</pre>
+<p>
+</body>
+</html>

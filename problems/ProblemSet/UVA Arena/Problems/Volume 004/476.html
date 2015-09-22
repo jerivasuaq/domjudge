@@ -1,0 +1,68 @@
+
+
+<html>
+<head>
+<title>Points in Figures: Rectangles</title>
+<meta name="description" content="Points in Figures: Rectangles">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Points in Figures: Rectangles</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Given a list of rectangles and a list of points in the <i>x</i>-<i>y</i>
+plane, determine for each point which figures (if any) contain the point.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+There will be <i>n</i>( <img width="34" height="25" align="MIDDLE" alt="tex2html_wrap_inline220" src="476img1.gif"> ) rectangles descriptions, one per line. The first character will designate the type of figure (``<tt>r</tt>'' for rectangle). This character will be followed by four real values designating the <i>x</i>-<i>y</i> coordinates of the upper left and lower right corners.
+<p>
+The end of the list will be signalled by a line containing an asterisk in column one.
+<p>
+<p>
+The remaining lines will contain the <i>x</i>-<i>y</i> coordinates, one per line, of the points to be tested. The end of this list will be indicated by a point with coordinates 9999.9 9999.9; these values
+should not be included in the output.
+<p>
+Points coinciding with a figure border are not considered inside.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each point to be tested, write a message of the form:
+<pre>Point i is contained in figure j</pre>
+for each figure that contains that point. If the point is not contained in any figure, write a
+message of the form:
+<pre>Point i is not contained in any figure</pre>
+Points and figures should be numbered in the order in which they appear in the input.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>r 8.5 17.0 25.5 -8.5
+r 0.0 10.3 5.5 0.0
+r 2.5 12.5 12.5 2.5
+*
+2.0 2.0
+4.7 5.3
+6.9 11.2
+20.0 20.0
+17.6 3.2
+-5.2 -7.8
+9999.9 9999.9</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Point 1 is contained in figure 2
+Point 2 is contained in figure 2
+Point 2 is contained in figure 3
+Point 3 is contained in figure 3
+Point 4 is not contained in any figure
+Point 5 is contained in figure 1
+Point 6 is not contained in any figure</pre>
+<p>
+<center><img src="476img2.gif"></center>
+<p>
+Diagrama of sample input figures and data points
+<p>
+</body>
+</html>

@@ -1,0 +1,174 @@
+
+
+<html>
+<head>
+<title>Whoever-pick-the-last-one-lose</title>
+<meta name="description" content="Whoever-pick-the-last-one-lose">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Whoever-pick-the-last-one-lose</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Consider the following <b>whoever-pick-the-last-one-lose</b> game. The game is
+played on a  5<img width="18" height="30" align="MIDDLE" border="0" src="682img1.gif" alt="$\times$">5 board.  Initially  every  array  cell  has  a  piece 
+in  it.  Two players  remove pieces alternatively  from  the  board.  The 
+player  can  remove  any  number  of  consecutive pieces  in a row or column.
+For example,  in  the configuration depicted below where one  indicates  a 
+piece,  the  player  can  either  remove  one  piece  (<b>A1</b>, <b>A2</b>,  or 
+<b>B1</b>),  or remove two pieces (<b>A1</b> and <b>A2</b>, or <b>A1</b> and
+<b>B1</b>) simultaneously. The game ends when one player is forced to take the
+last piece, and the other player wins the game.
+
+<p>
+
+<p>
+<br>
+
+<div align="CENTER">
+<table cellpadding="3" border="1">
+<tr><td align="CENTER">&nbsp;</td>
+<td align="CENTER"><b> 1</b></td>
+<td align="CENTER"><b> 2</b></td>
+<td align="CENTER"><b> 3</b></td>
+<td align="CENTER"><b> 4</b></td>
+<td align="CENTER"><b> 5</b></td>
+</tr>
+<tr><td align="CENTER"><b> A</b></td>
+<td align="CENTER">1</td>
+<td align="CENTER">1</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+</tr>
+<tr><td align="CENTER"><b> B</b></td>
+<td align="CENTER">1</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+</tr>
+<tr><td align="CENTER"><b> C</b></td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+</tr>
+<tr><td align="CENTER"><b> D</b></td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+</tr>
+<tr><td align="CENTER"><b> E</b></td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">0</td>
+</tr>
+</table></div>
+
+<p>
+
+<p>
+<br>
+Write  a  program  that  evaluates  board  configurations  from  this  game.  
+The  program must  output  ``<tt>winning</tt>'' when there exists a winning move
+that no matter how the opponent responds, it will force the opponent to take
+the last piece. Otherwise, the program must output ``<tt>losing</tt>''. 
+
+<p>
+
+<p>
+<br>
+Note that
+during the game tree evaluation, if the current configuration has a winning
+move, then it is not necessary to search any further because the configuration
+is guaranteed to be winning. This can greatly reduce the game tree search time.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains 5<i>c</i> + 1 lines.
+
+<p>
+<pre><tt>
+Line 1 		 <i>c</i> the number of configurations 
+Lines 2-6 		 ... 		 configuration #1 
+... 		 ... 		 
+Lines 5<i>c</i>-3 to 5<i>c</i>+1 ... 		 configuration #<i>c</i>
+</tt></pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output contains <i>c</i> lines.
+<pre><tt>
+Line 1 		 evaluation result of configuration #1 
+... 
+Line <i>c</i> evaluation result of configuration #<i>c</i>
+</tt></pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+1 1 0 0 0
+1 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+1 1 0 0 0
+0 0 0 0 0
+1 1 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+1 1 1 0 0
+1 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+winning
+losing
+winning
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-14</i>
+</address>
+</body>
+</html>
+

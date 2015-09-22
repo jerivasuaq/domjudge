@@ -1,0 +1,53 @@
+
+
+<html>
+<head>
+<title>Divisors</title>
+<meta name="description" content="Divisors">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Divisors</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Mathematicians love all sorts of odd properties of numbers. For instance, they consider
+945 to be an interesting number, since it is the first odd number for which the sum of its
+divisors is larger than the number itself.
+<p>
+<p>
+To help them search for interesting numbers, you are to write a program that scans a
+range of numbers and determines the number that has the largest number of divisors in the
+range. Unfortunately, the size of the numbers, and the size of the range is such that a too
+simple-minded approach may take too much time to run. So make sure that your algorithm
+is clever enough to cope with the largest possible range in just a few seconds.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input Specification</a></font></h2>
+<p>
+The first line of input specifies the number <i>N</i> of ranges, and each of the <i>N</i> following lines
+contains a range, consisting of a lower bound <i>L</i> and an upper bound <i>U</i>, where <i>L</i> and <i>U</i> are included in the range. <i>L</i> and <i>U</i> are chosen such
+that  <img width="190" height="26" align="MIDDLE" alt="tex2html_wrap_inline42" src="294img1.gif">  and  <img width="145" height="26" align="MIDDLE" alt="tex2html_wrap_inline44" src="294img2.gif"> .
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output Specification</a></font></h2>
+<p>
+For each range, find the number <i>P</i> which has the largest number of divisors (if several numbers
+tie for first place, select the lowest), and the number of positive divisors <i>D</i> of <i>P</i> (where
+<i>P</i> is included as a divisor). Print the text <tt>'Between <i>L</i> and <i>H</i>, <i>P</i> has a maximum of <i>D</i>
+divisors.'</tt>, where <i>L</i>, <i>H</i>, <i>P</i>, and <i>D</i> are the numbers as defined above.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Example input</a></font></h2>
+<p>
+<pre>3
+1 10
+1000 1000
+999999900 1000000000</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Example output</a></font></h2>
+<p>
+<pre>Between 1 and 10, 6 has a maximum of 4 divisors.
+Between 1000 and 1000, 1000 has a maximum of 16 divisors.
+Between 999999900 and 1000000000, 999999924 has a maximum of 192 divisors.</pre>
+<p>
+</body>
+</html>

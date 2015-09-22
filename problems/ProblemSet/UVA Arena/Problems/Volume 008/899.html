@@ -1,0 +1,132 @@
+
+
+<html>
+<head>
+<title>Colour Circles</title>
+<meta name="description" content="Colour Circles">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Colour Circles</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+A very colourful one-person game can be played as follows.  First you select a set of colours.  Then you draw
+at least three circles using some or all of the colours.  You may use a colour more than once.  There will be
+at least as many circles as there are colours.  You then draw coloured arrows to connect some of these circles.
+Any number of arrows, with any colours, may be used to connect any pair of circles.  You may draw two arrows in
+opposite directions if desired.
+
+<p>
+
+<p>
+<br>
+For example, if we use the four colours R, G, B, and Z and four circles then we could have the following situation:
+
+<p>
+<div align="CENTER">
+
+<img width="257" height="232" align="BOTTOM" border="0" src="p899.gif" alt="\epsfbox{p899.eps}">
+</div>
+
+<p>
+Three different circles are then picked from the set; two of them have a counter placed inside, while the
+third is the ``target" circle.  A counter may be moved from one circle to another along an arrow (in the direction
+of the arrow), but only if (i) the other counter is not in the circle being moved to, and (ii) the colour of the
+arrow is the same as the colour of the circle the other counter is in.  A single counter may be moved several
+times in succession - they don't have to be moved alternately.  The aim is to get one of the counters into the
+target circle using the smallest number of moves; if the target circle can't be reached, the game is  ``impossible".
+
+<p>
+
+<p>
+<br>
+For example, in the picture above, if one counter is in the B circle, the other counter is in the Z circle and the
+target is the G circle, then the game can only be won by moving the Z counter to the R circle (since a B arrow runs
+in that direction), which makes it possible to move the B counter to the Z circle along the R arrow, and the R
+counter can now be moved to the G circle along the Z arrow, for a total of three moves.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input will consist of descriptions of
+several games, using numbers instead of colours.  The first line of each game description contains five
+numbers, <span class="MATH"><i>N</i></span>, <span class="MATH"><i>R</i></span>, <span class="MATH"><i>S</i></span>, <span class="MATH"><i>T</i></span> and <span class="MATH"><i>M</i></span>, where <span class="MATH"><i>N</i></span> is the number of circles in the game (they will be numbered 1 to <span class="MATH"><i>N</i></span>,
+with <span class="MATH"><i>N</i><img width="18" height="30" align="MIDDLE" border="0" src="899img2.png" alt="$ \le$">100</span>), <span class="MATH"><i>R</i></span> and <span class="MATH"><i>S</i></span> are the numbers of the circles the two counters start in, <span class="MATH"><i>T</i></span> is the number of the
+target circle, and <span class="MATH"><i>M</i></span> is the total number of arrows connecting the circles (
+<span class="MATH"><i>M</i><img width="18" height="30" align="MIDDLE" border="0" src="899img2.png" alt="$ \le$">5, 000</span>).  After this will
+come several lines (maximum length 60 characters each) giving the colours of the circles in order from
+circle 1 to circle <span class="MATH"><i>N</i></span>, with up to 20 numbers per line, separated by one or more spaces.  The colours are
+denoted by numbers from 1 to <span class="MATH"><i>N</i></span> - some of these numbers may be unused. Then come <span class="MATH"><i>M</i></span> lines which define the
+arrows, in no particular order.  Each contains three numbers; the first is the number of the starting circle,
+the second the number of the ending circle, and the third is the colour of the arrow.  The input will be
+terminated by a line consisting of a five zeroes.  The first example below describes the picture above.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each game description in the input, one line
+of output must be produced.  This line should contain the minimum number of moves to complete the game,
+or `<tt>0</tt>' if the game is impossible.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+4 2 3 4 7
+1 2 3 4
+1 4 3
+1 4 4
+2 3 1
+3 1 2
+4 2 3
+4 3 2
+4 3 1
+5 3 4 1 8
+2 3 2 1 4
+2 1 2
+4 1 5
+4 5 3
+5 1 4
+3 2 1
+3 2 2
+5 3 3
+3 5 1
+0 0 0 0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+3
+4
+</pre>
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-07-08
+</address>
+</body>
+</html>
+

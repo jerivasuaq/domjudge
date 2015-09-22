@@ -1,0 +1,145 @@
+
+
+<html>
+<head>
+<title>LED Test</title>
+<meta name="description" content="LED Test">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">LED Test</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Many electronic devices have digital read-outs that are made using
+light-emitting diode (LED) arrays. A
+common digital display element uses seven, bar-shaped LED's, with the
+seven LED bars (segments) arranged and identified as:
+<center><img src="416img4.gif"></center>
+<p>
+Digits are displayed by illuminating various combinations of the seven
+segments in accordance with the following table:
+<p>
+<center><img src="416img5.gif"></center>
+<p>
+For example, the digit three (3) would be displayed as the illumination of
+the segments {<tt>a</tt>,<tt>b</tt>,<tt>c</tt>,<tt>d</tt>,<tt>g</tt>} as:
+<p>
+<center><img src="416img6.gif"></center>
+<p>
+The problem below is abstracted from one occurring in the incoming-parts
+inspection department, in a
+microwave-oven manufacturing facility. The incoming seven-segment LED's are
+checked for their proper
+functioning by automated equipment running under programmable control.
+<p>
+<p>
+<p>
+<b>Note:</b> The solution to the problem below will not be a
+complete nor necessarily useful test for the actual inspections that
+would be conducted.
+<p>
+<p>
+You are to create a program that will observe successive sets of illumination
+conditions of the seven segments of a single-digit display,
+and decide whether the sequence of illuminations could have been a valid
+``count down&quot; sequence.
+<p>
+<p>
+Unfortunately, for the LED your program is to observe, some of the segments
+may be burned out at the start
+of your test, and additional segments may burn out during the test. No
+segments will everfail into the ON
+mode; no burned out segments will recover. Nevertheless, you are expected
+to be able to ``read&quot; through the
+ambiguities this malfunctioning display presents, by watching the display
+count down through one or more values.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input consists of a series of data sets having the following format:
+<p>
+<dl><dt><strong>First line -</strong>
+<dd> A single unsigned integer, N, with value greater than zero (0)
+and less than eleven (11). The integer is left-justified on the input line.
+<p>
+<dt><strong>Next <i>N</i> lines -</strong>
+<dd> Each line has a string of seven (7) contiguous <tt>Y</tt>/<tt>N</tt> characters showing the light condition of
+the segments of the LED display. These successive lines supposedly
+represent a ``count down&quot; sequence.
+The first of these seven characters, the illumination reading for the ``<tt>a</tt>&quot;
+segment, will be the first character on a line.
+<p>
+ </dd></dt></dd></dt></dl>
+<p>
+The end of data is signaled by a null data set having a zero on the first
+line and no further data.
+<p>
+<p>
+There is no information about where the ``count down&quot; sequence begins for
+a given data set. There is no
+information that carries over from one data set to the next; each data set
+represents a <i>different</i> LED being tested.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Foreach supposed ``count down&quot; sequence you receive as a data set, you are
+to reply either:
+<pre>MATCH</pre>
+-or-
+<pre>MISMATCH</pre>
+<p>
+depending on whether this sequence could possibly be a valid ``count down&quot;
+sequence <i>somewhere</i> within
+the sequence { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 } if an unknown number of
+burned-out segments were present at the
+beginning of the test, and, with possible burn-outs occurring during the
+test. Your output must be at the beginning of the line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+YYYYNYY
+2
+NNNNNNN
+NNNNNNN
+2
+YYYYYYY
+YYYYYYY
+3
+YNYYYYY
+YNYYNYY
+NYYNNYY
+3
+YNYYYYN
+YNYYNYN
+NYYNNYN
+3
+YNYYYYN
+YNYYNYN
+NYYNYYN
+4
+YYYYYYY
+NYYNNNN
+NNYYYYN
+NNNYNNN
+3
+NNNNNNN
+YNNNNNN
+NNNNYNN
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>MATCH
+MATCH
+MISMATCH
+MATCH
+MATCH
+MISMATCH
+MATCH
+MATCH</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,150 @@
+
+
+<html>
+<head>
+<title>Enigmatic Encryption</title>
+<meta name="description" content="Enigmatic Encryption">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Enigmatic Encryption</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+One Saturday morning, Valentine McKee attempted to log into <tt>kevin.bit.edu</tt>,
+the new BIT
+supercomputer, to work on her new MPI implementation. After a few failed
+login attempts,
+Valentine put her head in her hands. ``I can't believe it! I've forgotten
+my password!''
+<p>
+<p>
+Valentine thought for a few minutes. She remembered choosing her password
+as a combination of two words from the body of her thesis.
+The password program on <tt>kevin</tt> had required
+her to make the password between 5 and 8 characters long with at least
+one ``special'' character
+(non-alpha), so Valentine had also incorporated a numeral into the
+password. ``Either 0, 2, 4,
+or 8, between the two words,'' she recalled. Also, to save typing
+effort, she had used only
+lowercase for the letters. She could not recall, however, whether or not the
+original words had
+been all lowercase. She did recall that both words were longer than just
+a single character.
+<p>
+<p>
+Valentine started to read through the most recent printout of her
+thesis, trying to jog her
+memory of the password, but to no avail. Finally, she
+said, ``My thesis is on line in my lab and I
+have a record there of my encrypted password. I never thought I would
+have to use it, though.''
+<p>
+<p>
+She sighed as she invoked man <tt>crypt</tt> to determine how <tt>crypt()</tt>
+processes passwords.
+<p>
+<p>
+
+<p>
+crypt ( 3C ) C Library Functions crypt ( 3C )
+<p>
+<p>
+<p>
+<b>NAME</b>
+<blockquote> crypt - generate encryption
+</blockquote>
+<p>
+SYNOPSIS
+<blockquote> <b>char</b> *<b>crypt(const char</b> *<em>key</em>, <b>const char</b> *<em>salt</em>);
+</blockquote>
+<p>
+DESCRIPTION
+<ul><dt>
+<dd>
+<p>
+<b>crypt( )</b> is the password encryption function. It is based on a
+one-way encryption algorithm with variations intended (among other things)
+to frustrate use of hardware implementations of a key search.
+<p>
+<p>
+<p>
+<em>key</em> is the input string to encrypt, for instance, a user's typed
+password. Only the first eight characters
+are used; the rest are ignored. <em>salt</em> is a two-character string chosen
+from the set [<b>a-zA-Z0-9./</b>]; this
+string is used to perturb the hashing algorithm in one of 4096 different
+ways, after which the input string
+is used as the key to repeatedly encrypt a constant string. The returned
+value points to the encrypted
+input string. The first two characters of the return value are
+the <em>salt</em> itself.
+</dd></dt></ul>
+<p>
+NOTES
+<blockquote> 
+The return value for <b>crypt( )</b> points to static data that are
+overwritten by each call.
+<p>
+<p>
+<p>
+The <b>crypt( )</b> function is provided for you. You do not have to
+write it yourself.
+</blockquote>
+<p>
+ApollOS 1.3 Last change: 17 Apr 1970 1
+
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Note for Pascal Programmers</a></font></h2>
+<p>
+Include the following in your program so that you can properly call the
+<tt>pcrypt()</tt> procedure (a
+wrapper to the C <tt>crypt()</tt> function). The <tt>pcrypt()</tt> procedure is a
+library procedure that we will supply -- you do not have to write it.
+<p>
+<pre>type
+   key_type = array[1..8] of char;
+   salt_type = array[1..2] of char;
+   encrypt_type = array[1..32] of char;
+
+procedure pcrypt( key : key_type;
+                  salt : salt_type;
+              var result : encrypt_type); external c;</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Input</a></font></h2>
+<p>
+The first line of input is the encrypted password. The next lines of
+input are the contents of
+Valentine's thesis. Each input line will consist of 80 or fewer characters
+of printable ASCII
+text and will be terminated by a newline. No lines will be empty. Words
+are assumed to be
+any contiguous set of alphabetic characters (upper or lower case),
+separated by whitespace or punctuation.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Output</a></font></h2>
+<p>
+The output of the program is Valentine's original password.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>h8E6dqt5lkL9o
+The parallel algorithms were executed on the Connection Machine model
+CM-2 --- a single-instruction multiple data (SIMD) parallel computer
+which, in its largest configuration, contains 65,536 bit-serial
+processors and 2048 Weitek floating-point units (FPU's).
+The bit-serial processors are clustered together into groups of 16
+within a single integrated circuit, and these IC's are connected
+together in a 12-dimensional hypercube. Two IC's, or 32 processors,
+share a single Weitek FPU. Note that a fully configured CM-2 contains
+2048 times as much floating point hardware as a conventional computer
+containing a single Weitek FPU (e.g., a SUN-4).</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>bit0note</pre>
+<p>
+</body>
+</html>

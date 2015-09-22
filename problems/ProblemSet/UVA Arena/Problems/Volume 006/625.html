@@ -1,0 +1,137 @@
+
+
+<html>
+<head>
+<title>Compression</title>
+<meta name="description" content="Compression">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Compression</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+There are many various compression method with character string compression
+among them. It is usually used for text compression, especially for program
+source codes. Source code usually consists of repeating identifiers and
+keywords. A simple compression method exchanges these repeating words with
+their codes.
+
+<p>
+
+<p>
+<br>
+Your task is to write a compression program using a below-defined method:
+
+<p>
+<ul>
+<li>keywords like: <em>var, end, for, then, else, case, goto, const, label, while, begin, until, repeat, downto, function, procedure</em> are coded as <tt>&amp;</tt><i>X</i> where <i>X</i> is equal to 0 for <em>var</em>, 1 for <em>end</em>, and so on up to 15 for <em>procedure</em>.
+<li>identifiers are replaced by <tt>&amp;</tt><i>X</i> where <i>X</i> is a number of the identifier + 15, so the first identifier in the text is given the code &amp;16.
+<li>identifiers are defined as any string of digits and letters (i.e. number, number33, 20001, 2Pi, h2o). Identifiers are separated by whitespaces (not alphanumeric)
+<li>identifiers which are shorter than 3 characters are not coded
+<li>to make decompression possible first occurrence of an identifier is not coded but the appropriate code is stored in memory
+<li>no identifier is longer than 39 characters
+<li>there are at most 2000 identifiers
+<li>character <tt>&amp;</tt> does not appear in the input source code
+</li></li></li></li></li></li></li></li></ul>
+
+<p>
+Example: identifier '<tt>integer</tt>' from the source code listed below is given a
+code &amp;(3+15) = &amp;18 because '<tt>var</tt>' is a keyword and '<tt>n</tt>' is too short to be coded, so both are not counted.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input is an integer N, then a blank line followed by N datasets. There is a blank line between datasets.
+
+Each dataset contains an unlimited number of lines of source code (the last line being `<tt>end.</tt>').
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, print the compressed source code. Print a blank line between datasets.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+program Test;
+var n :integer;
+
+function harmonic(number :integer):real;
+var i :integer;
+    result :real;
+begin
+  result := 0;
+  for i := 1 to number do
+  begin
+    number := number + 1/i;
+  end;
+  harmonic := result;
+end;
+
+begin
+  writeln('Get n:');
+  readln(n);
+  writeln('harmonic number for n: ');
+  writeln(harmonic(n));
+end.
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+program Test;
+&0 n :integer;
+
+&14 harmonic(number :&18):real;
+&0 i :&18;
+    result :&21;
+&10
+  &22 := 0;
+  &2 i := 1 to &20 do
+  &10
+    &20 := &20 + 1/i;
+  &1;
+  &19 := &22;
+&1;
+
+&10
+  writeln('Get n:');
+  readln(n);
+  &23('&19 &20 &2 n: ');
+  &23(&19(n));
+&1.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+</body>
+</html>
+

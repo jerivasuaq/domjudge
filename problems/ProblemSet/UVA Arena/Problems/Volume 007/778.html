@@ -1,0 +1,115 @@
+
+
+<html>
+<head>
+<title>Recording a tape</title>
+<meta name="description" content="Recording a tape">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Recording a tape</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The market offers several types of cassette tapes, with standard time durations. You have
+some of these types at home, and you want to record all songs from a given list. The songs
+you hope to record have their time durations expressed, as usual, in minutes and seconds.
+Given the list of songs, find the list per side in which they have to be recorded in order to
+use the shortest possible available cassette for recording them.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line in the input file informs the cassette durations available; each of the following
+lines contain the duration of one song. The input file contains several instances, that follow
+this same specification, which finish with a line containing only a <tt>%</tt> (percentage symbol).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The first line should contain the duration of the cassette. Next, ``<tt>Side A</tt>'' should
+be printed
+followed by lines with the song durations for this side. ``<tt>Side B</tt>'' follows in the
+same manner.
+The output file should have a <tt>%</tt> (percentage symbol) printed after the output of each of the
+several input instances.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+56 90 120
+20m 44s
+4m 36s
+7m 18s
+13m 8s
+9m 6s
+8m 12s
+%
+30 45
+3m 11s
+4m 45s
+13m 45s
+6m 8s
+%
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+90
+Side A
+20m 44s
+4m 36s
+7m 8s
+Side B
+13m 8s
+9m 6s
+8m 12s
+%
+30
+Side A
+3m 11s
+4m 45s
+6m 8s
+Side B
+13m 45s
+%
+</pre>
+
+<p>
+
+<p><p>
+<br>
+
+<b>Observations:</b>
+No pair of songs have the same duration.
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+Ejercicio 9. 
+
+Programa que te calcula la potencia entera de un numero por medio de iteraciones. El usuario debe introducir el numero base y el exponente entero.
+
+Entrada: 
+	Un número real como base.
+	
+Salida:
+	Un número entero positivo.
+
+Ejemplos:
+==============================================================
+entrada:
+2 3
+--------------------------------------------------------------
+salida:
+8
+==============================================================
+entrada:
+-1 5
+--------------------------------------------------------------
+salida:
+-1
+==============================================================
+entrada:
+2.1 10
+--------------------------------------------------------------
+salida:
+1667.98809782
+

@@ -1,0 +1,118 @@
+
+<p>
+In a graph <span class="MATH"><i>G</i></span>
+<tex2html_verbatim_mark>, <span class="textit">contraction</span> of an edge <span class="MATH"><i>e</i></span>
+<tex2html_verbatim_mark> with endpoints <span class="MATH"><i>u</i></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>v</i></span>
+<tex2html_verbatim_mark> is the replacement of <span class="MATH"><i>u</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>v</i></span>
+<tex2html_verbatim_mark> with a single vertex such that edges incident to the new vertex are the edges other than <span class="MATH"><i>e</i></span>
+<tex2html_verbatim_mark> that were incident with <span class="MATH"><i>u</i></span>
+<tex2html_verbatim_mark> or <span class="MATH"><i>v</i></span>
+<tex2html_verbatim_mark>. The resulting graph has one less edge than <span class="MATH"><i>G</i></span>
+<tex2html_verbatim_mark>. A graph <span class="MATH"><i>H</i></span>
+<tex2html_verbatim_mark> is a <span class="textit">minor</span> of a graph <span class="MATH"><i>G</i></span>
+<tex2html_verbatim_mark> if a copy of <span class="MATH"><i>H</i></span>
+<tex2html_verbatim_mark> can be obtained from <span class="MATH"><i>G</i></span>
+<tex2html_verbatim_mark> via repeated edge deletion, edge contraction and isolated node deletion. 
+
+<p>
+Minors play an important role in graph theory. For example, every non-planar graph contains either the graph <span class="textbf">K<span class="MATH"><sub>3, 3</sub></span>
+<tex2html_verbatim_mark></tex2html_verbatim_mark></span> (i.e., the complete bipartite graph on two sets of three vertices) or the complete graph <span class="textbf">K<span class="MATH"><sub>5</sub></span>
+<tex2html_verbatim_mark></tex2html_verbatim_mark></span> as a graph minor. 
+
+<p>
+Write a program to find a graph minor <span class="textbf">K<span class="MATH"><sub>n, m</sub></span>
+<tex2html_verbatim_mark></tex2html_verbatim_mark></span> or <span class="textbf">K<span class="MATH"><sub>n</sub></span>
+<tex2html_verbatim_mark></tex2html_verbatim_mark></span> in an <span class="textit"><span class="textbf">undirected connected simple graph</span></span>. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of several test cases. The first line of each case contains an integers <span class="MATH"><i>V</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(3<img width="18" height="31" align="MIDDLE" border="0" src="4023img1.png" alt="$ \le$"><i>V</i><img width="18" height="31" align="MIDDLE" border="0" src="4023img1.png" alt="$ \le$">12)</span>
+<tex2html_verbatim_mark>, the number of vertices in the graph, followed by a string in format ``<tt>K<span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark></tex2html_verbatim_mark></tt>" or ``<tt>K<span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark>,<span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tt>" 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4023img1.png" alt="$ \le$"><i>n</i>, <i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="4023img1.png" alt="$ \le$"><i>V</i>)</span>
+<tex2html_verbatim_mark>, the graph minor you're finding. The following <span class="MATH"><i>V</i></span>
+<tex2html_verbatim_mark> lines contain the adjacency matrix of the graph (1 means directly connected, 0 means not directly connected). 
+
+<p>
+The diagonal elements of the matrix will always be 0, and the element in row <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark> column <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark> is always equal to the element in row <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark> column <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>. The last test case is followed by a single zero, which should not be processed.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, print the case number and the string ``<tt>Found</tt>" or ``<tt>Not found</tt>".
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 K2,2 
+0 1 1 1 1
+1 0 0 0 0
+1 0 0 0 0
+1 0 0 0 0
+1 0 0 0 0
+4 K3 
+0 1 0 1 
+1 0 1 0 
+0 1 0 1 
+1 0 1 0 
+4 K2,2 
+0 1 0 1 
+1 0 1 1 
+0 1 0 1 
+1 1 1 0 
+5 K2,2 
+0 1 0 0 1
+1 0 0 0 1
+0 0 0 1 1
+0 0 1 0 1
+1 1 1 1 0
+5 K4 
+0 1 0 1 1
+1 0 1 1 0
+0 1 0 1 1
+1 1 1 0 1
+1 0 1 1 0
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case 1: Not found 
+Case 2: Found 
+Case 3: Found 
+Case 4: Not found 
+Case 5: Found
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

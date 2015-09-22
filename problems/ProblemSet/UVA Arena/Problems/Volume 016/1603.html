@@ -1,0 +1,66 @@
+The&nbsp; left&nbsp; figure below&nbsp; shows a complete&nbsp; 3x3 grid
+made with&nbsp; 2x(3x4) (=24) matchsticks. The&nbsp; lengths of
+all&nbsp; matchsticks are one. You can find many squares of different
+sizes in the grid. The size of a square is the length&nbsp; of its
+side. In the grid shown in the left figure, there are 9 squares of size
+one, 4 squares of size two, and 1&nbsp; square of size three.<br>
+<br>
+Each matchstick of the complete grid is identified with a unique number
+which is assigned from left to right
+and from top to bottom as shown in the left figure. If you take some
+matchsticks out from the complete grid,
+then some squares in the grid will be destroyed, which results in an
+incomplete 3&times;3 grid. The right figure
+illustrates an incomplete 3&times;3 grid after removing three
+matchsticks numbered with 12, 17 and 23. This
+removal destroys 5 squares of size one, 3 squares of size two, and 1
+square of size three. Consequently, the
+incomplete grid does not have squares of size three, but still has 4
+squares of size one and 1 square of size two.
+<center><img src="p2328a.gif"></center>
+
+As input, you are given a (complete or incomplete) <i>n </i>&times; <i>n
+</i>grid made with no more than 2<i>n</i>(<i>n</i>+1) matchsticks for a
+natural number <i>n </i> 5 . Your task is to compute the minimum
+number of matchsticks taken
+out to destroy <b>all </b>the squares existing in the input <i>n </i>&times;
+<i>n </i>grid.
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">Input</a>&nbsp;</font>
+</h2>
+The input consists of <i>T </i>test cases. The number of test cases (<i>T</i>)
+is given in the first line of the input file.
+Each test case consists of two lines: The first line contains a natural
+number <i>n </i>, not greater than 5, which
+implies you are given a (complete or incomplete) <i>n </i>&times; <i>n
+</i>grid as input, and the second line begins with a
+nonnegative integer <i>k </i>, the number of matchsticks that are
+missing from the complete <i>n </i>&times; <i>n </i>grid, followed
+by
+<i>k</i> numbers specifying the matchsticks. Note that if <i>k</i> is
+equal to zero, then the input grid is a complete <i>n </i>&times; <i>n</i>
+grid; otherwise, the input grid is an incomplete <i>n </i>&times; <i>n
+</i>grid such that the specified <i>k </i>matchsticks are missing
+from the complete <i>n </i>&times; <i>n </i>grid.
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">Output</a>&nbsp;</font>
+</h2>
+Print exactly one line for each test case. The line should contain the
+minimum number of matchsticks that
+have to be taken out to destroy all the squares in the input grid.
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">Sample Input</a> <br>
+</font></h2>
+
+<pre>
+2
+2
+0
+3
+3 12 17 23
+</pre>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>
+3
+3
+</pre>

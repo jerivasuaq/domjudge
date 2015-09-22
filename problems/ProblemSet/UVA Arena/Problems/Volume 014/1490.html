@@ -1,0 +1,133 @@
+
+<p>
+Plain of despair was once an ancient battlefield where those brave 
+spirits had rested in peace for thousands of years. Actually no one 
+dare step into this sacred land until the rumor that ``there is a 
+huge gold mine underneath the plain" started to spread. 
+
+<p>
+Recently an accident destroyed the eternal tranquility. Some greedy 
+fools tried using powerful bombs to find the hidden treasure. Of course 
+they failed and such behavior enraged those spirits - the consequence 
+is that all the human villages nearby are haunted by ghosts. 
+
+<p>
+In order to stop those ghosts as soon as possible, Panda the Archmage and 
+Facer the great architect figure out a nice plan. Since the plain can 
+be represented as grids of <span class="MATH"><i>N</i></span> rows and <span class="MATH"><i>M</i></span> columns, the plan is that we 
+choose ONLY ONE cell in EACH ROW to build a magic tower so that each tower 
+can use holy light to protect the entire ROW, and finally the whole plain 
+can be covered and all spirits can rest in peace again. It will cost 
+different time to build up a magic tower in different cells. The 
+target is to minimize the total time of building all <span class="MATH"><i>N</i></span> towers, one in 
+each row. 
+
+<p>
+
+<p>
+<br>
+``Ah, we might have some difficulties." said Panda, ``In order to control 
+the towers correctly, we must guarantee that every two towers in two 
+consecutive rows share a common magic area." 
+
+<p>
+``What?" 
+
+<p>
+``Specifically, if we build a tower in cell <span class="MATH">(<i>i</i>, <i>j</i>)</span> and another tower in 
+cell <span class="MATH">(<i>i</i> + 1, <i>k</i>)</span>, then we shall have 
+<span class="MATH">| <i>j</i> - <i>k</i>|<img width="18" height="31" align="MIDDLE" border="0" src="5106img1.png" alt="$ \le$"><i>f</i> (<i>i</i>, <i>j</i>) + <i>f</i> (<i>i</i> + 1, <i>k</i>)</span>. Here, 
+<span class="MATH"><i>f</i> (<i>i</i>, <i>j</i>)</span> means the scale of magic flow in cell <span class="MATH">(<i>i</i>, <i>j</i>)</span>." 
+
+<p>
+``How?" 
+
+<p>
+``Ur, I forgot that you cannot sense the magic power. Here is a map which 
+shows the scale of magic flows in each cell. And remember that the 
+constraint holds for every two consecutive rows." 
+
+<p>
+``Understood." 
+
+<p>
+``Excellent! Let's get started!" 
+
+<p>
+
+<p>
+<br>
+Would you mind helping them?
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+There are multiple test cases. 
+
+<p>
+Each test case starts with a line containing 2 integers <span class="MATH"><i>N</i></span> and <span class="MATH"><i>M</i></span> 
+
+<span class="MATH">(2<img width="18" height="31" align="MIDDLE" border="0" src="5106img1.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="5106img1.png" alt="$ \le$">100, 1<img width="18" height="31" align="MIDDLE" border="0" src="5106img1.png" alt="$ \le$"><i>M</i><img width="18" height="31" align="MIDDLE" border="0" src="5106img1.png" alt="$ \le$">5000)</span>, representing that the plain consists 
+<span class="MATH"><i>N</i></span> rows and <span class="MATH"><i>M</i></span> columns. 
+
+<p>
+The following <span class="MATH"><i>N</i></span> lines contain <span class="MATH"><i>M</i></span> integers each, forming a matrix <span class="MATH"><i>T</i></span> 
+of 
+<span class="MATH"><i>N</i> <tt>x</tt> <i>M</i></span>. The <span class="MATH"><i>j</i></span>-th element in row <span class="MATH"><i>i</i></span> <span class="MATH">(<i>T</i><sub>ij</sub>)</span> represents the 
+time cost of building a magic tower in cell <span class="MATH">(<i>i</i>, <i>j</i>)</span>. 
+
+<span class="MATH">(0<img width="18" height="31" align="MIDDLE" border="0" src="5106img1.png" alt="$ \le$"><i>T</i><sub>ij</sub><img width="18" height="31" align="MIDDLE" border="0" src="5106img1.png" alt="$ \le$">100000)</span> 
+
+<p>
+The following <span class="MATH"><i>N</i></span> lines contain <span class="MATH"><i>M</i></span> integers each, forming a matrix 
+<span class="MATH"><i>F</i></span> of 
+<span class="MATH"><i>N</i> <tt>x</tt> <i>M</i></span>. The <span class="MATH"><i>j</i></span>-th element in row <span class="MATH"><i>i</i></span> <span class="MATH">(<i>F</i><sub>ij</sub>)</span> represents 
+the scale of magic flows in cell <span class="MATH">(<i>i</i>, <i>j</i>)</span>. 
+<span class="MATH">(0<img width="18" height="31" align="MIDDLE" border="0" src="5106img1.png" alt="$ \le$"><i>F</i><sub>ij</sub><img width="18" height="31" align="MIDDLE" border="0" src="5106img1.png" alt="$ \le$">100000)</span> 
+For each test case, there is always a solution satisfying the constraints. 
+
+<p>
+The input ends with a test case of <span class="MATH"><i>N</i> = 0</span> and <span class="MATH"><i>M</i> = 0</span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, output a line with a single integer, which is the 
+minimum time cost to finish all magic towers.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 5 
+9 5 3 8 7 
+8 2 6 8 9 
+1 9 7 8 6 
+0 1 0 1 2 
+1 0 2 1 1 
+0 2 1 0 2 
+0 0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+10
+</pre> 
+
+<p>

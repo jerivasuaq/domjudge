@@ -1,0 +1,47 @@
+Ejercicio 12. 
+
+Programa para dibujar un cuadrado en ascii art.
+El programa debe leer un número entero, y apartir de ahi dibuje cuadrado de asteriscos con ese tamaño. Los asteriscos sólo se verán en el borde del cuadrado, no en el interior. La longitud máxima del cuadrado debe ser 80.
+
+Entrada: 
+	Un entero positivo menor a 80.
+	
+Salida:
+	Un cuadrado dibujado.
+
+
+Ejemplos:
+==============================================================
+entrada:
+5
+--------------------------------------------------------------
+salida:
+*****
+*   *
+*   *
+*   *
+*****
+==============================================================
+entrada:
+1
+--------------------------------------------------------------
+salida:
+*
+==============================================================
+entrada:
+10
+--------------------------------------------------------------
+salida:
+**********
+*        *
+*        *
+*        *
+*        *
+*        *
+*        *
+*        *
+*        *
+*        *
+*        *
+**********
+

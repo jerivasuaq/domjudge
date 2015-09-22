@@ -1,0 +1,244 @@
+
+
+<html>
+<head>
+<title>The JustaPox Language</title>
+<meta name="description" content="The JustaPox Language">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The JustaPox Language</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A new programming language is being designed. One of its new features is related to the
+specification of arrays. The language deals only with arrays of integers, and there are two
+ways of specifying new arrays:
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>by explicit declaration of its size. For example:
+<div align="CENTER">
+<i>A</i> is [1]
+<p>
+<i>B</i> is [3]
+</div>
+These sentences specify <i>A</i> and <i>B</i> as arrays of 1 and 3 elements, respectively. This
+implies that any sequence with the specified size is a possible value for the array.
+<dt>2.
+<dd>by inclusion of previously defined arrays. For example:
+<div align="CENTER">
+<i>C</i> is <img width="38" height="15" align="BOTTOM" border="0" src="773img1.gif" alt="$A \ B$">
+
+<p>
+<i>D</i> is <img width="36" height="15" align="BOTTOM" border="0" src="773img2.gif" alt="$A \ A$">
+
+<p>
+<i>SEQ</i> is [1] <i>A</i> [4] <img width="57" height="16" align="BOTTOM" border="0" src="773img3.gif" alt="$C \ B \ A$"></div>
+The size for arrays specified in this manner is determined by the size of its sub-arrays.
+Besides, if a specification includes the same array more than once, the subsequences in
+the array corresponding to the repeated parts have to hold the same value.
+
+<p>
+For the aforementioned specification of <i>A</i> and <i>B</i>, we have <i>C</i> with size 4, <i>D</i> with size
+2, and <i>SEQ</i> with size 14.
+</dd></dt></dd></dt></dl>
+
+<p>
+Assignments are expressed in the language by the following statement:
+<div align="CENTER">
+&lt; <i>array</i> &gt; <tt>=</tt> 
+
+<img width="205" height="32" align="MIDDLE" border="0" src="773img4.gif" alt="$< sequence\ of\ integers >$"></div>
+
+<p>
+For example,
+<div align="CENTER">
+<i>B</i> = 3 4 15
+</div>
+is a valid assignment for <i>B</i>. Notice that the assignment <i>B</i> = 3 4 would be inconsistent
+with <i>B</i>'s specification (which stated that <i>B</i> would hold a sequence of integers with size 3).
+The assignment <i>D</i> = 1 2 would also be inconsistent, since <i>D</i>'s specification implies that
+<i>D</i> is formed by the repetition of a size 1 sequence of integers. <i>D</i> = 1 1 is an example of a
+consistent assignment for <i>D</i>.
+
+<p>
+
+<p>
+<br>
+In other words, for the specification
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="141" height="30" src="773img5.gif" alt="\begin{displaymath}S \mbox{ is } S_1 \ S_2 \ \dots \ S_m ,
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+the assignment
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="119" height="29" src="773img6.gif" alt="\begin{displaymath}S = i_1 \ i_2 \ \dots \ i_n
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+is said to be <b>consistent</b> if and only if <i>S</i> is a sequence
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="312" height="31" src="773img7.gif" alt="\begin{displaymath}i_{11} i_{12} \dots i_{1k_1} i_{21} \dots i_{2k_2} \dots i_{m1} i_{m2} \dots i_{mk_m},
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+where
+<ul>
+<li>
+
+<img width="164" height="34" align="MIDDLE" border="0" src="773img8.gif" alt="$k_i = \vert S_i\vert \ (1 \le i \le m)$"></li></ul>
+and
+<ul>
+<li>for every previously defined subsequences <i>S</i><sub><i>a</i></sub>, <i>S</i><sub><i>b</i></sub> (
+
+<img width="100" height="32" align="MIDDLE" border="0" src="773img10.gif" alt="$1 \le a, b \le m$">)
+such
+that <i>S</i><sub><i>a</i></sub> = <i>S</i><sub><i>b</i></sub> we have (
+
+<img width="121" height="31" align="MIDDLE" border="0" src="773img11.gif" alt="$i_{a1}, i_{a2}, \dots, i_{ak_a}$">)
+= (
+
+<img width="115" height="31" align="MIDDLE" border="0" src="773img12.gif" alt="$i_{b1}, i_{b2}, \dots,
+i_{bk_b}$">).
+</li></ul>
+
+<p>
+The language designers want you to cooperate with the compiler construction effort: you
+have to write a program that receives as input a collection of array specifications and a
+sequence of assignments, and produces as output the list of inconsistent assignments.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file is composed by a list of array specifications followed by a list of assignments.
+
+<p>
+
+<p>
+<br>
+An array specification has the following format:
+<dl>
+<dt><strong>&lt;<i>id</i>&gt;</strong>
+<dd>is 
+
+<img width="97" height="32" align="MIDDLE" border="0" src="773img13.gif" alt="$d_1 \ d_2 \ \dots d_m$">.
+<dt><strong>&lt;<i>id</i>&gt;</strong>
+<dd>is a sequence of characters representing the array name.
+You can assume that (1) the length of this sequence is between 1 and 32 and
+(2) the sequence follows the rules for identifier names in the programming
+language that you are using. <dt><strong><i>d</i><sub><i>i</i></sub></strong>
+<dd>is
+<p>
+either [<i>k</i>] where <i>k</i> is a strictly positive integer (there may be spaces between <i>k</i> and its
+surrounding brackets)
+
+<p>
+or &lt;<i>id</i>&gt;, where &lt;<i>id</i>&gt; is the name of a previously specified array.
+</dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+
+<p>
+<br>
+The sequence of <i>d</i><sub><i>i</i></sub>'s is terminated by a period.
+
+<p>
+
+<p>
+<br>
+An assignment sepcification has the following format:
+
+<p>
+
+&lt;<i>id</i>&gt; = 
+
+<img width="90" height="31" align="MIDDLE" border="0" src="773img14.gif" alt="$i_1 \ i_2 \ \dots \ i_n$">.
+
+<p>
+&lt;<i>id</i>&gt; is the name of a previously specified array and <i>i</i><sub><i>j</i></sub> are
+positive integers. The list of <i>i</i><sub><i>j</i></sub>'s is terminated by a period.
+
+<p>
+
+<p>
+<br>
+In both types of specifications, an arbritrary number of spaces or empty lines can appear
+between the tokens.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output file must contain the list of assignment specifications from the input file that are
+inconsistent. The output for each of the inconsistent assignments should be its specification
+as it appeared in the input file.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+A is [1].
+B is [3].
+C is A B.
+SEQ is [1 ] A [4] B A.
+A = 10.
+B = 1 2 3.
+C = 1 1 2 3 4.
+SEQ = 1 10 1 1 1 1 2 2 2 10.
+SEQ = 1 10 1 1 1 1 1 2 3 9.
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+C = 1 1 2 3 4.
+SEQ = 1 10 1 1 1 1 1 2 3 9.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+

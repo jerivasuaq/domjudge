@@ -1,0 +1,76 @@
+<p>
+In the 25th century, civilization is struck by a series of calamities that eventually led mankind to build walled cities interconnected by tunnel bridges to facilitate transportation. Each walled city possesses a unique ore required to build and repair all infrastructure including the tunnels. This material which when combined with other ores from all others cities form an almost indestructible material called ``oreon". 
+
+<p>
+Outside the walled cities are uncivilized barbarians armed with antiquated but destructive weaponry which can effectively shoot down any air transport, but only damage and not penetrate tunnel bridges. Thus each city is interconnected to more than one city in order to have access redundancy in case one of its interconnecting tunnels is damaged. 
+
+<p>
+If a tunnel is damaged, it becomes impassable and would require a substantial amount of ``oreon" to repair the damage. When a single city is made isolated, meaning all of its interconnections are damaged, ``oreon" cannot be manufactured which may lead to the eventual destruction of the wall fortifying the city. You, being the head of the homeland defense unit, are tasked to ensure that all cities remain accessible even by at least a single interconnecting tunnel at all times. Faced with only a limited manpower in the defense unit, you have to determine which tunnel to protect using the least number of people and ensure that no city will be isolated. 
+
+<p>
+Figure 2 shows a map of the walled cities, their interconnecting tunnels and the number of security personnel.
+
+<p>
+<div align="CENTER">
+ =6in
+
+<img width="830" height="485" align="BOTTOM" border="0" src="3171img1.png" alt="\epsfbox{p3171.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 2: Map of six cities and its interconnecting tunnels
+
+</div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The input will contain several test cases. The first line will indicate the number of test cases. Each test case begins with a number representing the number of walled cities. Cities are labeled alphabetically using the letters in the English alphabet. The subsequent lines contain the number of security personnel needed to protect the tunnel connecting each city to all other cities. A value of zero implies no security personnel needed since no tunnel exists. You are to output which tunnel should be protected and how many personnel are needed for each tunnel. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+The output shows the tunnel connection which is named after the cities that it connects (in alphabetical order) and the number of personel needed to protect the tunnel. Order the records in increasing order of presonal. In case two tunnels have the same number of personel, write them in lexicographycal order.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 
+6 
+0, 8, 12, 0, 0, 7 
+8, 0, 0, 3, 0, 0 
+12, 0, 0, 0, 6, 0 
+0, 3, 0, 0, 0, 4 
+0, 0, 6, 0, 0, 5 
+7, 0, 0, 4, 5, 0
+</pre>  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+Case 1: 
+B-D 3 
+D-F 4 
+E-F 5 
+C-E 6 
+A-F 7
+</pre> 
+
+<p>

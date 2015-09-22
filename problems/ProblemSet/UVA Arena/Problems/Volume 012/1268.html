@@ -1,0 +1,136 @@
+
+<p>
+Dr. Wolf is an employee of Academic Cipher Machinery (ACM). His work is to secure a plenty 
+of electronic documents by using a cipher machine invented by ACM. Given a document, the 
+cipher machine is capable of making it encrypted whenever an arbitrary prime number, 
+called the <span class="textit">key prime</span>, is provided. In mathematics, a prime number is a positive integer 
+which has exactly two distinct positive divisors: 1 and itself. Of course, an encrypted 
+document can be decrypted if the corresponding key prime is available. 
+
+<p>
+As a consequence, Dr. Wolf picked many key primes for those documents to be secured. This 
+seems to be an easy task. However, Dr. Wolf found that it is very difficult for him to 
+remember so many key primes. Therefore, he decided to write down some information of the 
+key primes in a notebook. To ensure safety, only a <span class="textit">clue</span> is recorded for each key prime. 
+Let <span class="MATH"><i>k</i><sub>0</sub></span> be a key prime. Dr. Wolf produces a clue <span class="MATH"><i>C</i></span> for <span class="MATH"><i>k</i><sub>0</sub></span> according to the following 
+strategy. Initially, <span class="MATH"><i>C</i></span> is an empty sequence. In Step 1, select an integer <span class="MATH"><i>r</i><img width="18" height="31" align="MIDDLE" border="0" src="4525img1.png" alt="$ \ge$">1</span> as well 
+as <span class="MATH"><i>r</i> - 1</span> prime numbers 
+<span class="MATH"><i>k</i><sub>1</sub>, <i>k</i><sub>2</sub>,..., <i>k</i><sub>r-1</sub></span> that are not larger than 
+<span class="MATH"><i>k</i><sub>0</sub></span>, and then include <span class="MATH"><i>r</i></span> into <span class="MATH"><i>C</i></span>. In Step 2, for each <span class="MATH"><i>k</i><sub>i</sub></span>, 
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="4525img2.png" alt="$ \le$"><i>i</i><img width="18" height="31" align="MIDDLE" border="0" src="4525img2.png" alt="$ \le$"><i>r</i> - 1</span>, 
+either include <span class="MATH"><i>k</i><sub>i</sub></span> into <span class="MATH"><i>C</i></span>, or partition <span class="MATH"><i>k</i><sub>i</sub></span> into smaller positive integers (adding 
+up to exactly <span class="MATH"><i>k</i><sub>i</sub></span>) and then include the smaller integers into <span class="MATH"><i>C</i></span>. Finally, in Step 3, 
+rearrange the integers in <span class="MATH"><i>C</i></span> non-decreasingly. For example, a clue for 
+<span class="MATH"><i>k</i><sub>0</sub> = 13</span> is 
+made as follows. In Step 1, select <span class="MATH"><i>r</i> = 4</span> and 
+<span class="MATH">(<i>k</i><sub>1</sub>, <i>k</i><sub>2</sub>, <i>k</i><sub>3</sub>) = (5, 5, 7)</span>, and 
+include 4 into <span class="MATH"><i>C</i></span>. In Step 2, partition 
+<span class="MATH"><i>k</i><sub>0</sub> = 13</span> into (2, 4, 7), partition <span class="MATH"><i>k</i><sub>1</sub> = 5</span> 
+into (1, 4), partition <span class="MATH"><i>k</i><sub>2</sub> = 5</span> into (2, 3), and partition <span class="MATH"><i>k</i><sub>3</sub> = 7</span> into (1, 
+1, 5). After Step 2, we have 
+<span class="MATH"><i>C</i> = (4, 2, 4, 7, 1, 4, 2, 3, 1, 1, 5)</span>. Finally, in Step 3, 
+we obtain a clue 
+<span class="MATH"><i>C</i> = (1, 1, 1, 2, 2, 3, 4, 4, 4, 5, 7)</span>. 
+
+<p>
+Dr. Wolf would use clues to recover the original key primes. Unfortunately, Dr. Wolf found 
+that there is a drawback in his strategy: the key prime that can be inferred from a given 
+clue may not be unique! For example, consider the clue 
+<span class="MATH"><i>C</i> = (1, 1, 1, 2, 2, 3, 4, 4, 4, 5, 7)</span>. 
+We may conclude 
+<span class="MATH"><i>k</i><sub>0</sub> = 13</span> by letting <span class="MATH"><i>r</i> = 4</span> and 
+<span class="MATH">(<i>k</i><sub>0</sub>, <i>k</i><sub>1</sub>, <i>k</i><sub>2</sub>, <i>k</i><sub>3</sub>) = (2 + 4 + 7, 1 + 4, 2 + 3, 1 + 1 + 5) = (13, 5, 5, 7)</span>. However, we may also conclude 
+<span class="MATH"><i>k</i><sub>0</sub> = 17</span> by 
+letting <span class="MATH"><i>r</i> = 4</span> and 
+<span class="MATH">(<i>k</i><sub>0</sub>, <i>k</i><sub>1</sub>, <i>k</i><sub>2</sub>, <i>k</i><sub>3</sub>) = (2 + 4 + 7 + 4, 1 + 2, 3, 1 + 1 + 5) = (17, 3, 3, 7)</span>, 
+or conclude 
+<span class="MATH"><i>k</i><sub>0</sub> = 29</span> by letting <span class="MATH"><i>r</i> = 2</span> and 
+<span class="MATH">(<i>k</i><sub>0</sub>, <i>k</i><sub>1</sub>) = (2 + 3 + 4 + 4 + 4 + 5 + 7, 1 + 1 + 1) = (29, 3)</span>. To overcome this drawback, Dr. Wolf calls a clue of a key prime <span class="MATH"><i>k</i><sub>0</sub></span> good if 
+the largest key prime that can be inferred from it is <span class="MATH"><i>k</i><sub>0</sub></span>. In the above example, 
+
+<span class="MATH"><i>C</i> = (1, 1, 1, 2, 2, 3, 4, 4, 4, 5, 7)</span> is good if 
+<span class="MATH"><i>k</i><sub>0</sub> = 29</span>. In order 
+to produce good clues, Dr. Wolf needs a program that computes the largest key prime that 
+can be inferred from a given clue. Therefore, Dr. Wolf seeks for your help.
+
+<p>
+
+<p>
+<br>
+
+<span class="textbf">Technical Specification</span>
+
+<ol>
+<li>The number of integers in a clue, <span class="MATH"><i>n</i></span>: 
+<span class="MATH">3<img width="18" height="31" align="MIDDLE" border="0" src="4525img2.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4525img2.png" alt="$ \le$">14</span>. 
+</li>
+<li>Each integer in a clue ranges from 1 to 10000.
+</li>
+</ol>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+There are at most 25 test cases. Each test case describes a clue 
+
+<span class="MATH"><i>C</i> = (<i>c</i><sub>1</sub>, <i>c</i><sub>2</sub>,..., <i>c</i><sub>n</sub>)</span> in two lines. The first line contains the integer <span class="MATH"><i>n</i></span>, 
+where 
+<span class="MATH">3<img width="18" height="31" align="MIDDLE" border="0" src="4525img2.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4525img2.png" alt="$ \le$">14</span>. The second line contains the <span class="MATH"><i>n</i></span> integers 
+<span class="MATH"><i>c</i><sub>1</sub>, <i>c</i><sub>2</sub>,..., <i>c</i><sub>n</sub></span>, 
+where 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4525img2.png" alt="$ \le$"><i>c</i><sub>1</sub><img width="18" height="31" align="MIDDLE" border="0" src="4525img2.png" alt="$ \le$"><i>c</i><sub>2</sub><img width="18" height="31" align="MIDDLE" border="0" src="4525img2.png" alt="$ \le$">...<img width="18" height="31" align="MIDDLE" border="0" src="4525img2.png" alt="$ \le$"><i>c</i><sub>n</sub><img width="18" height="31" align="MIDDLE" border="0" src="4525img2.png" alt="$ \le$">10000</span>. The last test case is followed 
+by a line containing a number `<tt>-1</tt>'.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, print a line containing the test case number (beginning with 1) 
+followed by the largest key prime that can be inferred from the clue <span class="MATH"><i>C</i></span>. If no key 
+prime can be inferred, print ``<tt>not a valid clue</tt>". (Dr. Wolf may make mistakes in Step 
+2, during the production of a clue.) Use the format of the sample output.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6 
+1 1 2 4 5 8 
+11 
+1 1 1 2 2 3 4 4 4 5 7
+3 
+1 8 9 
+4 
+4 5 5 5 
+6 
+1 3 4 5 6 8
+-1
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case 1: 17 
+Case 2: 29 
+Case 3: 17 
+Case 4: not a valid clue
+Case 5: not a valid clue
+</pre>
+
+<p>

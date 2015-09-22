@@ -1,0 +1,115 @@
+
+
+<html>
+<head>
+<title>Processing MX Records</title>
+<meta name="description" content="Processing MX Records">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Processing MX Records</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Mapping symbolic machine names, like bigone.stateu.edu, to the corresponding
+Internet network address (like 24.99.100.33) is a major function of the
+Domain Naming System, or DNS.  The pieces of a machine's symbolic name,
+separated by periods, correspond to nodes in a tree when the name is read 
+right to left. The pieces corresponding to internal nodes in the tree
+correspond to domains.  The edu domain, for example, is the node under which
+we find all college and university machines in the United States.  All
+machines in Canada are found under the ca domain.
+<p>
+<p>
+By providing one or more MX records (lines of text in a particular file), a
+system manager can arrange for DNS to route mail bound for one machine to
+another instead.  Rerouting is appropriate in many cases, but one frequent use
+is to create addresses for fictitious machines with meaningful names.  For
+example, it might be nice to allow mail to be addressed to info.stateu.edu,
+but not have a specific machine named info on the stateu campus.  The mail
+could be redirected to bigone.stateu.edu by using an appropriate MX record.
+In this problem we'll deal with processing a simplified form of MX records.
+<p>
+<p>
+An MX record has three fields, or sequences of non-blank characters.
+These fields are separated by one or more blanks.  The first field, if
+present, always begins in the first column on a line.  If the first field
+is not present, then it is assumed to be the same as the first field from the
+preceding line (or the one assumed for that line if it didn't have one). The
+first and third fields are symbolic machine names, and will contain no 
+more than 36 characters.  The second field is a non-negative integer
+specifying a preference.  Let's look at an example.
+<p>
+<pre>info.stateu.edu          0      bigone.stateu.edu
+                        10      tiny.stateu.edu</pre>
+<p>
+The first line says that all mail destined for <tt>info.stateu.edu</tt> should be
+delivered to <tt>bigone.stateu.edu</tt>.  The preference in this MX record is 0,
+versus 10 for the second MX record.  If <tt>bigone.stateu.edu</tt> is down, then mail for info would instead be redirected to tiny.  Smaller numbers indicate higher preference, and MX records need not be given in order of increasing
+preference.
+<p>
+<p>
+Wildcard MX records allow redirection of mail to many machines with a
+single MX record.  For example,
+<p>
+<pre>*.citycc.midville.edu    0      tiny.stateu.edu</pre>
+<p>
+would redirect mail to any machine whose name has the symbolic suffix
+<tt>.citycc.midville.edu</tt> to the machine <tt>tiny</tt> on the <tt>stateu</tt> campus.  For
+simplicity, we will assume that the asterisk (<tt>*</tt>) representing a wildcard
+record will appear only in the first part of a wildcarded symbolic name, and
+that no more than three periods will occur in any symbolic name.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+What you will do in this problem is record MX records, process commands that
+indicate when machines go up or down, and process requests to determine how
+to redirect mail based on the recorded MX records.  The input begins with a
+line containing an integer <i>N</i>, following by <i>N</i> lines, each of which contain
+an MX record that is to be read and recorded.  (There is no explicit limit
+on the value of <i>N</i>.) The remaining lines of input (after the <i>N</i>  MX records)
+will each begin with the letter <tt>U</tt>, <tt>D</tt>, <tt>A</tt>, or <tt>X</tt> in column 1.  Following a <tt>U</tt>
+or <tt>D</tt> will be one or more blanks and a machine name.  <tt>D</tt> means the machine
+is now down (not operational), while <tt>U</tt> means it is now up.  All machines
+are initially assumed to be up at the beginning of the input.  An <tt>A</tt> in 
+column 1 will be followed by one or more spaces and a symbolic machine name.
+That machine name is to be processed (at the time the line is read) using the
+recorded MX records and the up/down status of machines to determine how mail
+to that machine should be directed.  Of course some machines may not 
+have their mail redirected, so be prepared to handle these cases.
+<p>
+<p>
+Output for
+these <tt>A</tt> lines is as shown in the samples.  Note the output style for machines which have no redirection indicated (that is, there are no applicable MX records). The end of input is indicated by a line containing <tt>X</tt> in column 1.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Notes</a></font></h2>
+<p>
+<ol><li> No input line will contain more than 80 characters.<li> MX records are not to be processed recursively.  Thus if mail to <tt>first.com</tt>
+   is being redirected to <tt>second.com</tt> by one MX record, any additional MX
+   records that might redirect mail from <tt>second.com</tt> to another machine are
+   not examined during the processing of <tt>first.com</tt>.
+</li></li></ol><h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5
+service.stateu.edu   10 tiny.stateu.edu
+info.stateu.edu	0       bigone.stateu.edu
+                        10      tiny.stateu.edu
+service.stateu.edu   5     bigone.stateu.edu
+*.smallu.edu    10      service.stateu.edu
+A    alpha.cs.smallu.edu
+A    info.stateu.edu
+D    bigone.stateu.edu
+A    info.stateu.edu
+A    nowhere.com
+X</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>alpha.cs.smallu.edu =&gt; service.stateu.edu
+info.stateu.edu =&gt; bigone.stateu.edu
+info.stateu.edu =&gt; tiny.stateu.edu
+nowhere.com =&gt;</pre>
+<p>
+</body>
+</html>

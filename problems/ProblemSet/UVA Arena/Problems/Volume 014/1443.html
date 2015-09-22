@@ -1,0 +1,121 @@
+
+<p>
+Garland decorator is a profession which recently gained in importance, especially during 
+Christmas time. Any kid can decorate a christmas tree, any parent can put gifts in 
+sockets, and even anyone can start believing in Santa Claus, but hanging christmas 
+garlands is a completely difflerent story. As you will learn, it is an extremely 
+important, responsible and tough job. 
+
+<p>
+A garland consists of <span class="MATH"><i>n</i></span> pieces of equal length. Due to decorations like christmas balls 
+attached to garlands, piece <span class="MATH"><i>i</i></span> has its own weight <span class="MATH"><i>w</i><sub>i</sub></span>. The garland has to be attached to 
+the ceiling in <span class="MATH"><i>m</i></span> spots, where the very beginning of the garland should be attached to spot 
+1 and its end to spot <span class="MATH"><i>m</i></span>. The garland should also be hooked to the remaining spots, which 
+divides it into segments, each consisting of several consecutive pieces. There are, however, 
+several rules that every respectable garland decorator should keep in mind. 
+
+<p>
+
+<p>
+<br>
+<dl compact="">
+<dt>(i)</dt>
+<dd>Each segment should contain a positive even number of pieces. Due to this condition, 
+we may divide a segment into two <span class="textit">half-segments</span>. 
+</dd>
+<dt>(ii)</dt>
+<dd>To minimize the chance that a guest hits your precious garland with their head 
+(and tears it into pieces), the garland cannot hang too low: each half-segment can 
+contain at most <span class="MATH"><i>d</i></span> pieces. 
+</dd>
+<dt>(iii)</dt>
+<dd>Finally, to keep the ceiling from falling on people heads, the decorator should 
+minimize the weight of the heaviest half-segment. 
+</dd>
+</dl>
+
+<p>
+
+<p>
+<br>
+An example of an optimally hanging garland (consisting of twelve pieces in three segments) 
+is presented below; weights of respective pieces are given in circles.
+
+<p>
+<div align="CENTER">
+
+<img width="730" height="228" align="BOTTOM" border="0" src="p4625.png" alt="\epsfbox{p4625.eps}">
+</div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input contains several test cases. The first line of the input contains a positive 
+integer <span class="MATH"><i>Z</i><img width="18" height="31" align="MIDDLE" border="0" src="4625img2.png" alt="$ \le$">50</span>, denoting the number of test cases. Then <span class="MATH"><i>Z</i></span> test cases follow, each conforming 
+to the format described below.
+
+<p>
+
+<p>
+<br>
+The description of each garland consists of two lines. The first line describing a particular 
+garland contains three positive integers <span class="MATH"><i>n</i></span>, <span class="MATH"><i>m</i></span>, and <span class="MATH"><i>d</i></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4625img2.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4625img2.png" alt="$ \le$">40000, 2<img width="18" height="31" align="MIDDLE" border="0" src="4625img2.png" alt="$ \le$"><i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="4625img2.png" alt="$ \le$">10000, 1<img width="18" height="31" align="MIDDLE" border="0" src="4625img2.png" alt="$ \le$"><i>d</i><img width="18" height="31" align="MIDDLE" border="0" src="4625img2.png" alt="$ \le$">10000)</span> separated by single spaces and described above. The second 
+line contains <span class="MATH"><i>n</i></span> positive integers 
+<span class="MATH"><i>w</i><sub>1</sub>, <i>w</i><sub>2</sub>,..., <i>w</i><sub>n</sub></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4625img2.png" alt="$ \le$"><i>w</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="4625img2.png" alt="$ \le$">10000)</span>, 
+being the weights of the corresponding pieces.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, your program has to write an 
+output conforming to the format described below.
+
+<p>
+
+<p>
+<br>
+For each garland, your program should output a single line containing one integer, being 
+the weight of the heaviest half-segment in an optimal attachment of the garland. If it 
+is not possible to hang the garland satisfying conditions (i) and (ii), then your program 
+should output word `<tt>BAD</tt>'.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+4 
+4 3 10 
+10 10 20 20 
+6 4 10 
+1 1 100 100 1 1 
+6 3 10 
+1 1 100 100 1 1 
+1 2 2 
+333
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+20 
+100 
+200 
+BAD
+</pre> 
+
+<p>

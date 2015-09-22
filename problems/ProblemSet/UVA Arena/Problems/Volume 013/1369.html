@@ -1,0 +1,101 @@
+
+Kim works in a traveling agency in Korea. Recently, his foreign customer gave him an international call and asked him to make a travel plan in Korea. The customer wants to visit two famous roads along which beautiful flowers are in full blossom. The customer would like to fly to a city in the plan and rent a car, enjoy his travel, and return to the city where he started. He does not want to visit the same city or the same road twice. Also, he hates to travel along any toll roads. It does not matter how many cities are included in the plan. Can Kim make a travel plan satisfying the requirements? 
+
+For example, see the maps in Figure 1. In the figure a circle represents a city and the line between two cities represents the road between them. The two bold lines represent the famous roads that the customer wants to visit and the dotted line is a toll road.
+
+<div align="CENTER">
+
+
+<img width="715" height="294" align="BOTTOM" border="0" src="p3604.jpg" alt="\epsfbox{p3604.eps}">
+<tex2html_verbatim_mark>
+
+Figure 1
+
+</tex2html_verbatim_mark></div>
+In case of Figure 1(a), Kim can make travel plans such as 
+<span class="MATH">1 <img width="22" height="16" align="BOTTOM" border="0" src="3604img2.png" alt="$ \rightarrow$"> 2 <img width="22" height="16" align="BOTTOM" border="0" src="3604img2.png" alt="$ \rightarrow$"> 4 <img width="22" height="16" align="BOTTOM" border="0" src="3604img2.png" alt="$ \rightarrow$"> 5 <img width="22" height="16" align="BOTTOM" border="0" src="3604img2.png" alt="$ \rightarrow$"> 3 <img width="22" height="16" align="BOTTOM" border="0" src="3604img2.png" alt="$ \rightarrow$"> 1</span>
+<tex2html_verbatim_mark> and 
+<span class="MATH">2 <img width="22" height="16" align="BOTTOM" border="0" src="3604img2.png" alt="$ \rightarrow$"> 3 <img width="22" height="16" align="BOTTOM" border="0" src="3604img2.png" alt="$ \rightarrow$"> 5 <img width="22" height="16" align="BOTTOM" border="0" src="3604img2.png" alt="$ \rightarrow$"> 4 <img width="22" height="16" align="BOTTOM" border="0" src="3604img2.png" alt="$ \rightarrow$"> 2</span>
+<tex2html_verbatim_mark>. In case of Figure 1(b), Kim can not make any plan satisfying the requirements. 
+
+You are to write a program to help Kim. For a given map with two famous roads and some toll roads, your program should determine whether there can be a travel plan satisfying the requirements.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+Your program is to read from standard input. The input consists of <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> test cases. The number of test cases <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> is given in the first line of the input. Each test case starts with a line containing two integers <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark> , the number of cities and the number of roads in the map, respectively, where 
+<span class="MATH">5<img width="18" height="31" align="MIDDLE" border="0" src="3604img3.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="3604img3.png" alt="$ \le$">1000</span>
+<tex2html_verbatim_mark>. In the next <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark> lines, each line contains two positive integers that represent a road connecting two cities. In the next two lines, each line contains a road that the customer wants to visit. In the next line, the number of toll roads <span class="MATH"><i>F</i></span>
+<tex2html_verbatim_mark> is given, 
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="3604img3.png" alt="$ \le$"><i>F</i><img width="18" height="31" align="MIDDLE" border="0" src="3604img3.png" alt="$ \le$"><i>M</i></span>
+<tex2html_verbatim_mark>. In the next <span class="MATH"><i>F</i></span>
+<tex2html_verbatim_mark> lines, each line contains toll roads. Assume the cities are labeled from 1 to <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> and there is at most one road between two cities. Also, assume the two roads that the customer wants to visit are not toll roads.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+Your program is to write to standard output. Print exactly one line for each test case. For each test case, print <tt>YES</tt> if there can be a travel plan satisfying the requirements. Otherwise, print <tt>NO</tt>. 
+
+The following shows sample input and output for three test cases.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+3 
+6 8
+2 1
+1 3
+4 5
+2 4
+5 3
+2 3
+3 6
+5 6
+3 5
+2 4
+1 
+6 5
+6 8
+2 1
+1 3
+4 5
+2 4
+5 3
+2 3
+3 6
+5 6
+2 3
+3 5
+1 
+4 2
+5 4
+1 2
+2 3
+3 4
+4 5
+1 2
+4 5
+2 
+2 3
+3 4
+</pre>
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>
+YES 
+NO 
+NO
+</pre>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

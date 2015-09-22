@@ -1,0 +1,96 @@
+
+
+<html>
+<head>
+<title>Hearts</title>
+<meta name="description" content="Hearts">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Hearts</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+There are 52 playing cards in a pack, divided into suits, and, within
+suits, into denominations. The suits are (in order, lowest to highest)
+Clubs, Diamonds, Hearts and Spades, abbreviated C, D, H and S. The 13
+denominations (or face values) are (from lowest to highest): 2, 3, 4,
+5, 6, 7, 8, 9, 10 (T), Jack (J), Queen (Q), King (K) and Ace(A). A
+higher card will beat a lower card in the same suit, but will not
+usually beat any other card in a different suit. An exception to this
+is the `trump' suit--if a suit is designated to be a trump suit (by
+whatever means the rules of the game allow), then <b>any</b> card of that
+suit will beat <b>any</b> card of any other suit.
+<p>
+<p>
+A simplified version of an old card game called Hearts is played as
+follows. The dealer deals cards clockwise, one by one, face downward,
+to four other players and himself, starting with the player on his
+left, who thus gets the first card, followed by the sixth, and so on,
+while the dealer gets the fifth card, followed by the tenth, and so
+on. When each player has 10 cards there will be two left--these are
+exposed and the suit of the one of higher denomination determines the
+trump suit. If there is a tie, then the highest ranking suit becomes
+the trump suit.
+<p>
+<p>
+A `game' consists of 10 `tricks', each containing 5 cards, one from
+each player. For each trick, one player `leads', i.e. plays a card
+face up on the table, the rest of the players then `follow', in
+clockwise order. The player to the dealer's left leads to the first
+trick, thereafter the winner of each trick leads to the next trick. A
+player must follow suit if possible, i.e. play a card of the same suit
+as the one lead. If he cannot, then he must trump it (play a card of
+the designated trump suit). If he cannot trump it (because he has no
+cards in the trump suit), he discards a card. If a trick is trumped,
+then the person playing the highest trump wins the trick, otherwise
+the person playing the highest card of the correct suit wins it.
+<p>
+<p>
+Strategies are as follows:
+<p>
+<ol><li> Leader: The leader always plays the highest card in his hand. If
+  there is a tie and one of the cards is a trump card, then he leads
+  the trump, otherwise he plays the highest ranking suit.<li> Follower: If possible he must play the highest card in his
+  hand of the correct suit. If he has no cards in that suit then he
+  plays the highest trump he has. If he cannot trump it he plays the
+  highest card in his hand, breaking ties as previously specified.
+</li></li></ol>
+<p>
+When all the tricks have been played, each player examines the tricks
+he has taken and scores the face value of any Heart he has (Jack
+counts 11, Queen counts 12, King counts 13 and Ace counts 14). This
+score is recorded.
+<p>
+<p>
+Write a program to simulate the playing of this game.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will consist of a series of decks of cards, each deck spread
+over four lines as shown below. The file will be terminated by a line
+consisting of a single <tt>#</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output will consist of a series of lines, one for each deck in the
+input. Each line will consist of 5 numbers reflecting the scores of
+the individual players, starting with the dealer and proceeding
+clockwise through the rest of the players. Each score will consist of
+a number right justified in a field of width 3.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>TS QC 8S 8D QH 2D 3H KH 9H 2H TH KS KC
+9D JH 7H JD 2S QS TD 2C 4H 5H AD 4D 5D
+6D 4S 9S 5S 7S JS 8H 3D 8C 3S 4C 6S 9C
+AS 7C AH 6H KD JC 7D AC 5C TC QD 6C 3C
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre> 22  0 68  0 14</pre>
+<p>
+</body>
+</html>

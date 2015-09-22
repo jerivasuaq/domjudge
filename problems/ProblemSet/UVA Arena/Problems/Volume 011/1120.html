@@ -1,0 +1,103 @@
+<p>
+Though it might be hard to imagine, the
+inhabitants of a small country Additivia do not know of such thing
+as change, which probably has to do with them
+not knowing subtraction either. 
+When they buy something, 
+they always need to have the exact amount of addollars, their currency. 
+The only other option, but not 
+a really attractive one, is over-paying.
+
+<p>
+Professor Adem, one of the Additivian mathematicians 
+came up with an algorithm for keeping a balanced 
+portfolio. The idea is the following. 
+Suppose you have more coins of value <i><b>v<sub>1</sub></b></i> than coins of value 
+<i><b>v<sub>2</sub></b></i>. In this case you should try to spend at least as many 
+coins of value <i><b>v<sub>1</sub></b></i> as those of value 
+<i><b>v<sub>2</sub></b></i> on any buy you make. 
+Of course spending too many <i><b>v<sub>1</sub></b></i> coins is not a good idea either, but to make 
+the algorithm simpler professor Adem decided 
+to ignore the problem. The algorithm became an instant hit
+and professor Adem is now designing a kind of ``electronic portfolio'' 
+with built-in Adem's algorithm.
+All he needs now is a software for these machines, 
+that will decide whether a given amount of
+addollars can be paid using a given set of coins according 
+to the rules of Adem's algorithm.
+Needless to say, you are his chosen programmer for the task.
+
+<p>
+Write a program that 
+reads the description of a set of coins and an amount of addollars
+to be paid,
+and determines whether you can pay that amount
+according to Professor Adem's rules.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<p>
+The input starts with the amount of 
+addollars to be paid <i><b>x</b></i>, where 
+<i><b>1 &le; x &le; 100 000</b></i>. 
+The number of different coin values <i><b>k</b></i> follows,
+where <i><b>1 &le; k &le; 5</b></i>.
+The values of the coins 
+<i><b>v<sub>1</sub>,...,v<sub>k</sub></b></i> follow,
+where 
+<i><b>1 &le; v<sub>i</sub> &le; 10 000</b></i>.
+
+<p>
+Notice that the order among coin values is significant:
+you need to spend at least as many coins of value <i><b>v<sub>1</sub></b></i> as coins
+of value <i><b>v<sub>2</sub></b></i>, at least as many coins of value <i><b>v<sub>2</sub></b></i>"> as
+those of value
+<i><b>v<sub>3</sub></b></i>, and so on. You may assume
+that you have a sufficiently large number of coins of each value.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+
+<p>
+Your program should output either
+a single word ``<tt>YES</tt>'', if the given amount can
+be paid according to the rules, or a single word ``<tt>NO</tt>'' otherwise.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+1
+
+13 3 9 2 1
+</pre>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>
+NO
+</pre>
+
+<p>

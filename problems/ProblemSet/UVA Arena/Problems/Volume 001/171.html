@@ -1,0 +1,99 @@
+
+
+<html>
+<head>
+<title>Car Trialling</title>
+<meta name="description" content="Car Trialling">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Car Trialling</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Car trialling requires the following of carefully worded instructions.
+When setting a trial, the organiser places traps in the instructions
+to catch out the unwary.
+<p>
+<p>
+Write a program to determine whether an instruction obeys the
+following rules, which are loosely based on real car trialling
+instructions. <b>BOLD-TEXT</b> indicates text as it appears in the
+instruction (case sensitive),  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">  separates options of which
+exactly one must be chosen, and .. expands, so <b>A</b>..<b>D</b>
+is equivalent to <b>A</b> <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif"> <b>B</b> <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif"> <b>C</b> <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif"> <b>D</b> .
+<p>
+instruction = navigational   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   time-keeping   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   navigational <b>AND</b> time-keeping
+<p>
+navigational = directional   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   navigational <b>AND THEN </b>directional
+<p>
+directional = how direction   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   how direction where
+<p>
+how = <b>GO</b>   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   <b>GO</b> when   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   <b>KEEP</b>
+<p>
+direction = <b>RIGHT</b>   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   <b>LEFT</b>
+<p>
+when = <b>FIRST </b>  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   <b>SECOND</b>   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   <b>THIRD</b>
+<p>
+where = <b>AT</b> sign
+<p>
+sign = <b><tt>&quot;</tt></b>signwords<b><tt>&quot;</tt></b>
+<p>
+signwords = s-word   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   signwords s-word
+<p>
+s-word = letter   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   s-word letter
+<p>
+letter = <b>A</b>..<b>Z</b>   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   <b>.</b>
+<p>
+time-keeping = record   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   change
+<p>
+record = <b>RECORD TIME</b>
+<p>
+change = cas <b>TO</b> nnn <b>KMH</b>
+<p>
+cas = <b>CHANGE AVERAGE SPEED</b>   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   <b>CAS</b>
+<p>
+nnn = digit   <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline61" src="171img1.gif">   nnn digit
+<p>
+digit = <b>0</b>..<b>9</b>
+Note that <em>s-word</em> and <em>nnn</em> are sequences of letters and digits
+respectively, with no intervening spaces. There will be one or more
+spaces between items except before a period (.), after the opening
+speech marks or before the closing speech marks.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Each input line will consist of not more than 75 characters. The input
+will be terminated by a line consisting of a single <tt>#</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output will consist of a series of sequentially numbered lines,
+either containing the valid instruction, or the text <tt>Trap!</tt> if the
+line did not obey the rules. The line number will be right justified
+in a field of 3 characters, followed by a full-stop, a single space,
+and the instruction, with sequences of more than one space reduced to
+single spaces.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>KEEP LEFT AND THEN GO RIGHT
+CAS TO 20 KMH
+GO FIRST       RIGHT AT &quot;SMITH ST.&quot;  AND   CAS TO 20 KMH
+GO 2nd RIGHT
+GO LEFT AT &quot;SMITH STREET AND RECORD TIME
+KEEP RIGHT AND THEN RECORD TIME
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>  1. KEEP LEFT AND THEN GO RIGHT
+  2. CAS TO 20 KMH
+  3. GO FIRST RIGHT AT &quot;SMITH ST.&quot; AND CAS TO 20 KMH
+  4. Trap!
+  5. Trap!
+  6. Trap!</pre>
+<p>
+</body>
+</html>

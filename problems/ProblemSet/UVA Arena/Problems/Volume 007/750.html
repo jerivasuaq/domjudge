@@ -1,0 +1,143 @@
+
+
+<html>
+<head>
+<title>8 Queens Chess Problem</title>
+<meta name="description" content="8 Queens Chess Problem">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+8 Queens Chess Problem</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In chess it is possible to place eight queens on the board so that no one
+queen can be taken by any other. Write a program that will determine all
+such possible arrangements for eight queens given the initial position of one
+of the queens.
+
+<p>
+Do not attempt to write a program which evaluates every possible 8
+configuration of 8 queens placed on the board. This would require 8<sup>8</sup>
+evaluations and would bring the system to its knees. There will be a
+reasonable run time constraint placed on your program. 
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input contains the number of datasets, and it's followed by a blank line.
+Each dataset
+will be two numbers separated by a blank. The numbers represent the square
+on which one of the eight queens must be positioned. A valid square will be
+represented; it will not be necessary to validate the input.
+
+<p>
+To standardize our notation, assume that the upper left-most corner of the
+board is position (1,1). Rows run horizontally and the top row is row 1.
+Columns are vertical and column 1 is the left-most column. Any reference to
+a square is by row then column; thus square (4,6) means row 4, column 6.
+
+<p>Each dataset is separated by a blank line.
+<p>
+<div align="CENTER">
+
+<img src="p750.gif">
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output for each dataset will consist of a one-line-per-solution representation.
+
+<p>
+Each solution will be sequentially numbered <img width="55" height="15" align="BOTTOM" border="0" src="750img1.gif" alt="$1 \dots N$">.
+Each solution will
+consist of 8 numbers. Each of the 8 numbers will be the ROW coordinate for
+that solution. The column coordinate will be indicated by the order in which
+the 8 numbers are printed. That is, the first number represents the ROW in
+which the queen is positioned in column 1; the second number represents the
+ROW in which the queen is positioned in column 2, and so on.
+
+<p>
+The sample input below produces 4 solutions. The full 8<img width="18" height="30" align="MIDDLE" border="0" src="750img2.gif" alt="$\times$">8 representation of each solution is shown below.
+
+<p>
+<div align="CENTER">
+<b>DO NOT SUBMIT THE BOARD MATRICES AS PART OF YOUR SOLUTION!</b>
+</div>
+
+<p>
+<pre>
+   SOLUTION 1           SOLUTION 2           SOLUTION 3           SOLUTION 4
+
+1 0 0 0 0 0 0 0      1 0 0 0 0 0 0 0      1 0 0 0 0 0 0 0      1 0 0 0 0 0 0 0
+0 0 0 0 0 0 1 0      0 0 0 0 0 0 1 0      0 0 0 0 0 1 0 0      0 0 0 0 1 0 0 0
+0 0 0 0 1 0 0 0      0 0 0 1 0 0 0 0      0 0 0 0 0 0 0 1      0 0 0 0 0 0 0 1
+0 0 0 0 0 0 0 1      0 0 0 0 0 1 0 0      0 0 1 0 0 0 0 0      0 0 0 0 0 1 0 0
+0 1 0 0 0 0 0 0      0 0 0 0 0 0 0 1      0 0 0 0 0 0 1 0      0 0 1 0 0 0 0 0
+0 0 0 1 0 0 0 0      0 1 0 0 0 0 0 0      0 0 0 1 0 0 0 0      0 0 0 0 0 0 1 0
+0 0 0 0 0 1 0 0      0 0 0 0 1 0 0 0      0 1 0 0 0 0 0 0      0 1 0 0 0 0 0 0
+0 0 1 0 0 0 0 0      0 0 1 0 0 0 0 0      0 0 0 0 1 0 0 0      0 0 0 1 0 0 0 0
+</pre>
+
+<p>
+Submit only the one-line, 8 digit representation of each solution as described
+earlier. Solution #1 below indicates that there is a queen at Row 1, Column 1;
+Row 5, Column 2; Row 8, Column 3; Row 6, Column 4; Row 3,Column 5; ... Row 4,
+Column 8.
+
+<p>
+Include the two lines of column headings as shown below in the sample output and print the solutions in lexicographical order.
+
+<p>Print a blank line between datasets.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+1 1
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+SOLN       COLUMN
+ #      1 2 3 4 5 6 7 8
+
+ 1      1 5 8 6 3 7 2 4
+ 2      1 6 8 3 7 4 2 5
+ 3      1 7 4 6 8 2 5 3
+ 4      1 7 5 8 2 4 6 3
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

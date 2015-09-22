@@ -1,0 +1,73 @@
+
+
+<html>
+<head>
+<title>Vertex</title>
+<meta name="description" content="Vertex">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Vertex</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Write a program that searches a directed graph for vertices which are inaccessible from a given starting
+vertex.
+<p>
+<p>
+A directed graph is represented by <i>n</i> vertices where  <img width="90" height="25" align="MIDDLE" alt="tex2html_wrap_inline31" src="280img1.gif"> ,
+numbered consecutively  <img width="44" height="12" align="BOTTOM" alt="tex2html_wrap_inline33" src="280img2.gif">  , and a
+series of edges <i>p</i> <tt>-&gt;</tt> <i>q</i> which connect the pair of nodes <i>p</i> and <i>q</i> in
+one direction only.
+<p>
+<p>
+A vertex <i>r</i> is reachable from a vertex <i>p</i> if there is an edge <i>p</i> <tt>-&gt;</tt> <i>r</i>, or if there exists some vertex <i>q</i> for
+which <i>q</i> is reachable from <i>p</i> and <i>r</i> is reachable from <i>q</i>.
+<p>
+<p>
+A vertex <i>r</i> is inaccessible from a vertex <i>p</i> if <i>r</i> is not reachable from <i>p</i>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input data for this program consists of several directed graphs and starting nodes.
+<p>
+<p>
+For each graph, there is first one line containing a single integer <i>n</i>.
+This is the number of vertices in the graph.
+<p>
+<p>
+Following, there will be a group of lines, each containing a set of integers. The group is terminated by
+a line which contains only the integer 0. Each set represent a collection of edges. The first integer in
+the set, <i>i</i>, is the starting vertex, while the next group of integers,
+ <img width="44" height="25" align="MIDDLE" alt="tex2html_wrap_inline73" src="280img3.gif"> , define the series of edges
+<i>i</i> <tt>-&gt;</tt>  <img width="41" height="25" align="MIDDLE" alt="tex2html_wrap_inline77" src="280img4.gif">  <tt>-&gt;</tt> <i>k</i>, and the last integer on the line is always 0.
+Each possible start vertex <i>i</i>,  <img width="70" height="25" align="MIDDLE" alt="tex2html_wrap_inline83" src="280img5.gif">  will
+appear once or not at all. Following each graph definition, there will be a one line containing list of
+integers. The first integer on the line will specify how many integers follow. Each of the following
+integers represents a start vertex to be investigated by your program. The next graph then follows. If
+there are no more graphs, the next line of the file will contain only the integer 0.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each start vertex to be investigated, your program should identify all the vertices which are
+inaccessible from the given start vertex. Each list should appear on one line, beginning with the
+count of inaccessible vertices and followed by the inaccessible vertex numbers.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3
+1 2 0
+2 2 0
+3 1 2 0
+0
+2 1 2
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>2 1 3
+2 1 3</pre>
+<p>
+</body>
+</html>

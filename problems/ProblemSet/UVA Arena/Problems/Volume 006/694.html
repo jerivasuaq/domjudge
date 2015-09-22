@@ -1,0 +1,106 @@
+
+
+<html>
+<head>
+<title>The Collatz Sequence</title>
+<meta name="description" content="The Collatz Sequence">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The Collatz Sequence</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+An algorithm given by Lothar Collatz produces sequences of integers, and is
+described as follows:
+<dl>
+<dt><strong>Step 1:</strong>
+<dd>Choose an arbitrary positive integer <i>A</i> as the first item in
+the sequence.
+<dt><strong>Step 2:</strong>
+<dd>If <i>A</i> = 1 then stop.
+<dt><strong>Step 3:</strong>
+<dd>If <i>A</i> is even, then replace <i>A</i> by <i>A</i> / 2 and go to step 2.
+<dt><strong>Step 4:</strong>
+<dd>If <i>A</i> is odd, then replace <i>A</i> by 3 * <i>A</i> + 1 and go to step 2.
+</dd></dt></dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+It has been shown that this algorithm will always stop (in step 2) for initial
+values of <i>A</i> as large as 10<sup>9</sup>, but some values of <i>A</i> encountered in
+the sequence may exceed the size of an integer on many computers.  In this
+problem we want to determine the length of the sequence that includes all
+values produced until either the algorithm stops (in step 2), or a value
+larger than some specified limit would be produced (in step 4).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input for this problem consists of multiple test cases.  For each case,
+the input contains a single line with two positive integers, the first giving
+the initial value of <i>A</i> (for step 1) and the second giving <i>L</i>, the limiting
+value for terms in the sequence.  Neither of these, <i>A</i> or <i>L</i>, is larger
+than 2,147,483,647 (the largest value that can be stored in a 32-bit signed
+integer).  The initial value of <i>A</i> is always less than <i>L</i>.  A line that
+contains two negative integers follows the last case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each input case display the case number (sequentially numbered starting
+with 1), a colon, the initial value for <i>A</i>, the limiting value <i>L</i>, and the
+number of terms computed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+ 3 100
+ 34 100
+ 75 250
+ 27 2147483647
+ 101 304
+ 101 303
+ -1 -1
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+ Case 1: A = 3, limit = 100, number of terms = 8
+ Case 2: A = 34, limit = 100, number of terms = 14
+ Case 3: A = 75, limit = 250, number of terms = 3
+ Case 4: A = 27, limit = 2147483647, number of terms = 112
+ Case 5: A = 101, limit = 304, number of terms = 26
+ Case 6: A = 101, limit = 303, number of terms = 1
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-14</i>
+</address>
+</body>
+</html>
+

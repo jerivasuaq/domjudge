@@ -1,0 +1,173 @@
+<p>
+In order to ensure that the contestants find it easy to reach the regional contest
+site, the authority has prepared some robot-driven vehicles. The vehicles would
+visit <span class="MATH"><i>n</i></span> predetermined junctions and carry the contestants waiting there to the
+contest. There is a computer controlled Transportation Center (TC) that determines
+the number of seats of each vehicle and the time each vehicle leaves the contest
+site for the first time.
+
+<p>
+When a new vehicle is needed, a request is made to the TC. Every new vehicle has
+fewer number of seats than the last vehicle if it is more than 3: the <span class="MATH"><i>i</i></span>-th
+vehicle has 
+<span class="MATH">max(<i>s</i> - (<i>i</i> - 1)*<i>t</i>, 3)</span> seats (
+<span class="MATH"><i>i</i> = 1, 2,...</span>). The first vehicle
+leaves the contest site just at 8:00am. When TC gets a request for a new vehicle,
+it prepares a new vehicle and right after 2 seconds of getting the request, the new
+vehicle leaves the contest site. If multiple requests are made at the same time,
+only one is considered.
+
+<p>
+At the junction <span class="MATH"><i>j</i></span>, each vehicle does the following tasks. If there are more than
+one vehicle at <span class="MATH"><i>j</i></span> at the same time, they perform the tasks in order of their
+service times: the one with the longest service time goes first. Service time of a
+vehicle is the difference between current time and the time the vehicle left the
+contest site (which is at junction 0) for the first time.
+
+<p>
+
+<ol>
+<li>If <span class="MATH"><i>j</i> = 0</span> (the contest site), all the contestants in the vehicle gets
+        down. Otherwise, the vehicle picks up as many contestants as it can (i.e. until
+        the vehicle is full or there are no contestants left at junction <span class="MATH"><i>j</i></span>).
+</li>
+<li>If, after that, there are any contestant left at junction <span class="MATH"><i>j</i></span> (<span class="MATH"><i>j</i> &gt; 0</span>),
+        the vehicle sends a request for a new vehicle to the TC.
+</li>
+<li>Finally the vehicle starts moving towards the next junction <span class="MATH"><i>k</i></span>, which
+        is selected by the robot-driver in the following way (even at junction 0):
+	
+<ul>
+<li>If the vehicle is full, <span class="MATH"><i>k</i> = 0</span>.
+</li>
+<li>Otherwise, if no other vehicle has left junction <span class="MATH"><i>j</i></span> yet,
+                
+<span class="MATH"><i>k</i> = (<i>j</i> + 1) mod <i>n</i></span>.
+</li>
+<li>Otherwise, <span class="MATH"><i>k</i></span> is (
+<span class="MATH">(<i>k</i><sub>0</sub> + 1) mod <i>n</i></span>) if it is different from <span class="MATH"><i>j</i></span>.
+</li>
+<li>Otherwise, <span class="MATH"><i>k</i></span> is (
+<span class="MATH">(<i>k</i><sub>0</sub> + 2) mod <i>n</i></span>). 
+<br>
+Here, <span class="MATH"><i>k</i><sub>0</sub></span> is the `<em>next junction</em>' selected by the last vehicle
+                leaving junction <span class="MATH"><i>j</i></span>.
+	
+</li>
+</ul>
+</li>
+</ol>
+
+<p>
+Vehicles do the above 3 tasks instantly (i.e. in 0 seconds). Time needed to go from
+each junction to any other junction is known. All the contestants reach a suitable
+junction by 8:00am and don't go away until they are picked up by any vehicle.
+Given the number of contestants waiting at each junction and a time limit, you are
+to determine when everyone reaches the contest or how many have reached the contest
+by the time limit.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input consists of several datasets. Each dataset consists of the followings:
+
+<p>
+
+<ul>
+<li>A line containing the name of the set (which has 2 to 20 alphanumeric characters).
+</li>
+<li>A line containing 3 positive integers <span class="MATH"><i>n</i></span>, <span class="MATH"><i>s</i></span> and <span class="MATH"><i>t</i></span> (
+<span class="MATH">2 &lt; <i>n</i> &lt; 11</span>).
+</li>
+<li>Each of next <span class="MATH"><i>n</i></span> lines contains <span class="MATH"><i>n</i> - 1</span> integers each. The <span class="MATH"><i>i</i></span>-th line
+        (
+<span class="MATH"><i>i</i> = 1, 2, 3...</span>) contains the time (in seconds) needed to go from the
+        junction <span class="MATH"><i>i</i> - 1</span> to all other junctions (except the 
+<span class="MATH">(<i>i</i> - 1)<sup>th</sup></span>) in order
+        
+<span class="MATH">0, 1, 2...<i>n</i></span>.
+</li>
+<li>Next <span class="MATH"><i>n</i> - 1</span> lines each contain a non-negative integer. The <span class="MATH"><i>i</i></span>-th line
+        (
+<span class="MATH"><i>i</i> = 1, 2, 3...</span>) contains the number of contestants waiting at the <span class="MATH"><i>i</i></span>-th junction.
+</li>
+<li>The last line of the dataset contains the time limit (in seconds, less
+        than 10000000).
+</li>
+</ul>
+
+<p>
+All integers on a single line are separated by exactly one space. Total number of contestants
+is at most 1000.
+
+<p>
+The end of input is marked with a line consisting of `<tt>TheEnd</tt>'.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each set, print 2 lines. The first line contains the name of the set as it appears
+in the input. The second line contains the time (in seconds) needed to bring all the
+contestants to the contest, if the time is not more than the given time limit. Otherwise,
+print the number of contestants reached the contest by the time limit.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Dhaka2000
+3 22 4
+30 8
+10 30
+28 8
+20
+20
+100
+Dhaka2001
+3 22 4
+30 8
+10 30
+28 8
+20
+20
+90
+Dhaka2002
+3 22 2
+30 8
+10 30
+28 8
+20
+20
+100
+TheEnd
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Dhaka2000
+98 seconds needed
+Dhaka2001
+22 contestants reached
+Dhaka2002
+88 seconds needed
+</pre>
+
+<p>

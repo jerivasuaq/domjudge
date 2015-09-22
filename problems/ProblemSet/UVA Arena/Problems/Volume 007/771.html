@@ -1,0 +1,183 @@
+
+
+<html>
+<head>
+<title>Flying Stars</title>
+<meta name="description" content="Flying Stars">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Flying Stars</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+When pop stars make their international tours they usually prefer to spend as little time as possible
+for travel and to save more time for rehearsal, shows and for their private life. Therefore they travel
+only by airplanes and constantly search for the fastest route to destination. However, nowadays
+there are so many possibilities for traveling that finding the fastest way for a long distant trip is not
+an easy task. That is why a program capable to solve this problem would be prized on the market
+and you as an independent software developer are strongly encouraged to write such a program.
+
+<p>
+
+<p>
+<br>
+Since pop stars travel only by airplanes your task is greatly simplified. You need to take into
+account only international airports and flights connecting them.
+
+<p>
+There are some facts about a journey by airplanes that you should know:
+
+<p>
+<ul>
+<li>international airports are located in different time zones,
+<li>each airport has flight schedule which defines destination, departure time and travel time for
+each flight; this schedule works on daily basis,
+<li>boarding the airplane (as well as changing from one airplane to another) takes time, which
+differs from one airport to another.
+</li></li></li></ul>
+
+<p>
+To formalize the problem, we make the following steps:
+
+<p>
+<ul>
+<li>all international airport names are coded as identifiers represented by sequences of no more
+than 20 alphanumeric characters or underline characters
+(i.e. '<tt>a</tt>'...'<tt>z</tt>', '<tt>A</tt>'...'<tt>Z</tt>', '<tt>0</tt>'...'<tt>9</tt>' or '<tt>_</tt>'); all identifiers are unique,
+<li>all flight identifiers are combination of company code and flight number with a total length of
+no more than 5 alphanumeric characters; all such identifiers are unique,
+<li>all identifiers are case sensitive,
+<li>all data which represent time have a format of ``<i>hh</i><tt>:</tt><i>mm</i>", where ``<i>hh</i>" and ``<i>mm</i>" are
+digits from
+'<tt>0</tt>' to '<tt>9</tt>' representing hours and minutes respectively; if not specified otherwise the local
+time is used.
+</li></li></li></li></ul>
+
+<p>
+Using these assumptions, you should write a program to find the fastest route from the airport of
+origin to the destination one.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>
+The input will contain several test cases, each of them as described below.
+Consecutive test cases are separated by a single blank line.
+</b>
+<p>
+<p>
+
+The first line of the input file contains identifiers of the airports of origin and of destination and
+starting time of the journey separated by spaces. The starting time is the time when pop star arrives
+to the airport of origin.
+
+<p>
+The second line of the input file contains single integer <i>N</i>. This integer represents the number of
+international airports and is not less than 2 and not greater than 100.
+
+<p>
+The rest of the input file consists of descriptions of international airports. Each description starts
+with a headline and may contain some complementary lines.
+
+<p>
+
+<p>
+<br>
+The headline consists of the airport identifier, airport time zone, boarding time and integer
+<i>M</i> separated by spaces. Time zone is time difference between local time and Greenwich Mean Time
+and has a format of ``<i>shh</i><tt>:</tt><i>mm</i>", where ``<i>s</i>" is the sign of time difference and
+are either ``<tt>+</tt>" or ``<tt>-</tt>".
+Boarding time is the time delay needed for boarding or airplane change in that particular airport.
+Integer <i>M</i> defines a number of flights in the airport schedule (not greater than 300), each flight is
+described on its separate line following the headline.
+
+<p>
+
+<p>
+<br>
+The description of the flight consists of the flight identifier, destination airport identifier, departure
+time and travel time, separated by spaces. The travel time is the time gap between departure and
+landing (arrival).
+
+<p>
+The task will always have a solution for the given data.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+
+
+In the first line of the output file your program should print the total travel time which is counted
+from the moment when pop star arrives to the airport of origin till the moment of arrival to the
+destination airport using the format of ``<i>d</i><tt>:</tt><i>hh</i><tt>:</tt><i>mm</i>", where ``<i>d</i>" is the number of full days of travel (no
+trip can last more than 9 full days).
+
+<p>
+In the second line the program should print the local time of the arrival of the star to the destination
+airport. In the following lines program should print the list of flight identifiers of the best route -
+one flight identifier per line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Pulkovo JFK 11:15
+3
+Pulkovo +03:00 01:30 2
+BA347 Heathrow 12:10 04:25
+Z8805 Heathrow 18:25 04:30
+Heathrow +00:00 00:45 3
+BA160 JFK 09:20 08:10
+BA346 Pulkovo 14:45 04:20
+Z8804 Pulkovo 21:30 04:25
+JFK -05:00 00:45 1
+BA161 Heathrow 14:25 08:05
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1:09:15
+12:30
+Z8805
+BA160
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+

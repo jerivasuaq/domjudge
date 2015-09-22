@@ -1,0 +1,119 @@
+
+<p>
+The skyline of Singapore as viewed from the Marina Promenade (shown on the left) is one of the iconic scenes of Singapore. Country X would also like to create an iconic skyline, and it has put up a call for proposals. Each submitted proposal is a description of a proposed skyline and one of the metrics that country X will use to evaluate a proposed skyline is the amount of overlap in the proposed sky-line. 
+
+<p>
+<div align="CENTER">
+
+<img width="708" height="494" align="right" border="0" src="p4108a.png" alt="\epsfbox{p4108a.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+
+<p>
+As the assistant to the chair of the skyline evaluation committee, you have been tasked with determining the amount of overlap in each proposal. Each proposal is a sequence of buildings, 
+<span class="MATH"><img width="11" height="36" align="MIDDLE" border="0" src="4108img2.png" alt="$ \langle$"><i>b</i><sub>1</sub>, <i>b</i><sub>2</sub>,..., <i>b</i><sub>n</sub><img width="11" height="36" align="MIDDLE" border="0" src="4108img3.png" alt="$ \rangle$"></span>
+<tex2html_verbatim_mark>, where a building is specified by its left and right endpoint and its height. The buildings are specified in back to front order, in other words a building which appears later in the sequence appears in front of a building which appears earlier in the sequence. 
+
+<p>
+The skyline formed by the first <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark> buildings is the union of the rectangles of the first <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark> buildings (see Figure 4). The overlap of a building, <span class="MATH"><i>b</i><sub>i</sub></span>
+<tex2html_verbatim_mark>, is defined as the total horizontal length of the parts of <span class="MATH"><i>b</i><sub>i</sub></span>
+<tex2html_verbatim_mark>, whose height is greater than or equal to the skyline behind it. This is equivalent to the total horizontal length of parts of the skyline behind <span class="MATH"><i>b</i><sub>i</sub></span>
+<tex2html_verbatim_mark> which has a height that is less than or equal to <span class="MATH"><i>h</i><sub>i</sub></span>
+<tex2html_verbatim_mark>, where <span class="MATH"><i>h</i><sub>i</sub></span>
+<tex2html_verbatim_mark> is the height of building <span class="MATH"><i>b</i><sub>i</sub></span>
+<tex2html_verbatim_mark>. You may assume that initially the skyline has height zero everywhere.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of a line containing the number <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark> of datasets, followed by <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark> datasets, followed by a line containing the number `<tt>0</tt>'. 
+
+<p>
+The first line of each dataset consists of a single positive integer, <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(0 &lt; <i>n</i> &lt; 100000)</span>
+<tex2html_verbatim_mark>, which is the number of buildings in the proposal. The following <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> lines of each dataset each contains a description of a single building. The <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th line is a description of building <span class="MATH"><i>b</i><sub>i</sub></span>
+<tex2html_verbatim_mark>. Each building <span class="MATH"><i>b</i><sub>i</sub></span>
+<tex2html_verbatim_mark> is described by three positive integers, separated by spaces, namely, <span class="MATH"><i>l</i><sub>i</sub></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>r</i><sub>i</sub></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>h</i><sub>i</sub></span>
+<tex2html_verbatim_mark>, where <span class="MATH"><i>l</i><sub>i</sub></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>r</i><sub>j</sub></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(0 &lt; <i>l</i><sub>i</sub> &lt; <i>r</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="4108img4.png" alt="$ \le$">100000)</span>
+<tex2html_verbatim_mark> represents the left and right end point of the building and <span class="MATH"><i>h</i><sub>i</sub></span> represents the height of the building.
+
+<p>
+<div align="CENTER">
+
+<img width="870" height="203" align="BOTTOM" border="0" src="p4108b.png" alt="\epsfbox{p4108b.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The output consists of one line for each dataset. The <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark>-th line contains one single integer, representing the amount of overlap in the proposal for dataset <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark>. You may assume that the amount of overlap for each dataset is at most 2000000.
+
+<p>
+
+<p>
+<br>
+
+<span class="textbf">Note:</span>
+In this test case, the overlap of building <span class="MATH"><i>b</i><sub>1</sub></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>b</i><sub>2</sub></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>b</i><sub>3</sub></span>
+<tex2html_verbatim_mark> are 6, 4 and 4 respectively. Figure 4 shows how to compute the overlap of building <span class="MATH"><i>b</i><sub>3</sub></span>
+<tex2html_verbatim_mark>. The grey area represents the skyline formed by <span class="MATH"><i>b</i><sub>1</sub></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>b</i><sub>2</sub></span>
+<tex2html_verbatim_mark> and the black rectangle represents <span class="MATH"><i>b</i><sub>3</sub></span>
+<tex2html_verbatim_mark>. As shown in the figure, the length of the skyline covered by <span class="MATH"><i>b</i><sub>3</sub></span>
+<tex2html_verbatim_mark> is from position 3 to position 5 and from position 11 to position 13, therefore the overlap of <span class="MATH"><i>b</i><sub>3</sub></span>
+<tex2html_verbatim_mark> is 4.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+1 
+3 
+5 11 3 
+1 10 1 
+3 13 2 
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+14
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

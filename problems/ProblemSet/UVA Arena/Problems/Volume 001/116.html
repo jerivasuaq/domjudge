@@ -1,0 +1,109 @@
+
+
+<html>
+<head>
+<title>Unidirectional TSP</title>
+<meta name="description" content="Unidirectional TSP">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Unidirectional TSP</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+Problems that require minimum paths through some domain appear in many
+different areas of computer science.  For example, one of the
+constraints in VLSI routing problems is minimizing wire length. The
+Traveling Salesperson Problem (TSP) -- finding whether all the cities in
+a salesperson's route can be visited exactly once with a specified limit
+on travel time -- is one of the canonical examples of an NP-complete
+problem; solutions appear to require an inordinate amount of time to
+generate, but are simple to check.
+<p>
+This problem deals with finding a minimal path through a grid of
+points while traveling only from left to right.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+Given an  <img width="46" height="18" align="MIDDLE" alt="tex2html_wrap_inline352" src="116img1.gif">  matrix of integers, you are to write a
+program that computes a path of minimal weight.  A path starts anywhere
+in column 1 (the first column) and consists of a sequence of steps
+terminating in column <i>n</i> (the last column).  A step consists of
+traveling from column <i>i</i> to column <i>i</i>+1 in an adjacent (horizontal or
+diagonal) row.  The first and last rows (rows 1 and <i>m</i>) of a matrix
+are considered adjacent, i.e., the matrix ``wraps'' so that it represents
+a horizontal cylinder.  Legal steps are illustrated below.
+<p> <img width="67" height="99" align="BOTTOM" alt="picture25" src="116img2.gif"> <p>
+<p>
+The <em>weight</em> of a path is the sum of the integers in
+each of the <i>n</i> cells of the matrix that are visited.
+<p>
+For example, two slightly different  <img width="37" height="24" align="MIDDLE" alt="tex2html_wrap_inline366" src="116img3.gif"> 
+matrices are shown below (the only difference is the numbers in the bottom
+row).
+<p>
+<p> <img width="534" height="175" align="BOTTOM" alt="picture37" src="116img4.gif"> <p>
+<p>
+The minimal path is illustrated for each matrix.  Note that the path for
+the matrix on the right takes advantage of the adjacency property of
+the first and last rows.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input consists of a sequence of matrix specifications.  Each matrix
+specification consists of the row and column dimensions in that order on
+a line followed by  <img width="37" height="8" align="BOTTOM" alt="tex2html_wrap_inline376" src="116img5.gif">  integers where <i>m</i> is the row dimension
+and <i>n</i> is the column dimension.  The integers appear in the input in
+row major order, i.e., the first <i>n</i> integers constitute the first row of
+the matrix, the second <i>n</i> integers constitute the second row and so on.
+The integers on a line will be separated from other integers by one or
+more spaces.  Note: integers are not restricted to being positive.
+There will be one or more matrix specifications in an
+input file. Input is terminated by end-of-file.
+<p>
+For each specification the number of rows will be between 1 and 10
+inclusive; the number of columns will be between 1 and 100 inclusive.
+No path's weight will exceed integer values representable
+using 30 bits.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+Two lines should be output for each matrix specification in the input
+file, the first line represents a minimal-weight path, and the second
+line is the cost of a minimal path.  The path consists of a sequence of
+<i>n</i> integers (separated by one or more spaces)
+representing the rows that constitute the minimal path.  If
+there is more than one path of minimal weight the path that is
+<i>lexicographically</i> smallest should be output.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5 6
+3 4 1 2 8 6
+6 1 8 2 7 4
+5 9 3 9 9 5
+8 4 1 3 2 6
+3 7 2 8 6 4
+5 6
+3 4 1 2 8 6
+6 1 8 2 7 4
+5 9 3 9 9 5
+8 4 1 3 2 6
+3 7 2 1 2 3
+2 2
+9 10 9 10</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1 2 3 4 4 5
+16
+1 2 1 5 4 5
+11
+1 1
+19</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+
+<html>
+<head>
+<title>Pig-Latin</title>
+<meta name="description" content="Pig-Latin">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Pig-Latin</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You have decided that PGP encryptation is not strong enough for your email. You have decided to supplement
+it by first converting your clear text letter into Pig Latin before encrypting it with PGP.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+You are to write a program that will take in an arbitrary number of lines of text and output it in Pig Latin.
+Each line of text will contain one or more words. A ``word'' is defined as a consecutive sequence of letters
+(upper and/or lower case). Words should be converted to Pig Latin according to the following rules (non-words should be output exactly as they appear in the input):
+<ol><li> Words that begin with a vowel (<tt>a</tt>, <tt>e</tt>, <tt>i</tt>, <tt>o</tt>, or <tt>u</tt>, and the capital versions of these) should just have the
+string ``<tt>ay</tt>'' (not including the quotes) appended to it. For example, ``<tt>apple</tt>'' becomes ``<tt>appleay</tt>''.<li> Words that begin with a consonant (any letter than is not <tt>A</tt>, <tt>a</tt>, <tt>E</tt>, <tt>e</tt>, <tt>I</tt>, <tt>i</tt>, <tt>O</tt>, <tt>o</tt>, <tt>U</tt> or <tt>u</tt>) should have the
+first consonant removed and appended to the end of the word, and then appending ``<tt>ay</tt>'' as well. For
+example, ``<tt>hello</tt>'' becomes ``<tt>ellohay</tt>''.<li> Do not change the case of any letter.
+</li></li></li></ol><h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>This is the input.</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>hisTay isay hetay inputay.</pre>
+<p>
+</body>
+</html>

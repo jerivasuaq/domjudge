@@ -1,0 +1,108 @@
+
+
+<html>
+<head>
+<title>Little Black Book</title>
+<meta name="description" content="Little Black Book">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Little Black Book</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The Public Relations Office is looking for an easier way to
+compile the information for their Black Book, a listing of all
+faculty members.  Currently, each department types up a list of
+their faculty and submits the list to PR.  PR then takes all the
+lists and makes a combined list that is sorted alphabetically by
+last name.  So far they have been doing this task by hand, which
+takes far more time than the average PR employee has to spare!
+<p>
+<p>
+What PR is looking for is a program that will take these faculty
+listings and combine them in a certain format that PR can use for
+inclusion in the Black Book.  All the lists are stored in text
+files.  Each department's file is sorted by last name.  The
+program should take these individually sorted files and combine
+them into a single sorted file in the format shown below.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file will contain, on the first line, a
+number (between 2 and 12) that reports the number of departments that
+your program should sort and write to the output file.
+Following the first line will be a series of sets of lines. The first line of each set contains a department title, and following lines contain the data to be sorted.
+<p>
+The information
+reported is in this order: Title, First Name, Last Name, Street
+Address, Home Phone, Work Phone, and Campus Mailbox. The information is delimited with commas.
+<p>
+A blank line separates two sets of lines. There are the same number of  department titles and sets of data as the number on the first line reports.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The format of each record held in the output file should be
+as follows:
+<p>
+<p>
+<tt>--------------------</tt>
+<p>
+<tt>&lt;</tt>Title<tt>&gt;</tt> <tt>&lt;</tt>FirstName<tt>&gt;</tt> <tt>&lt;</tt>LastName<tt>&gt;</tt>
+<p>
+<tt>&lt;</tt>HomeAddress<tt>&gt;</tt>
+<p>
+<tt>Department: &lt;</tt>Department<tt>&gt;</tt>
+<p>
+<tt>Home Phone: &lt;</tt>HomePhone<tt>&gt;</tt>
+<p>
+<tt>Work Phone: &lt;</tt>WorkPhone<tt>&gt;</tt>
+<p>
+<tt>Campus Box: &lt;</tt>CampusBox<tt>&gt;</tt>
+<p>
+<p>
+The dashed line should be shown at the top of each record.  The
+characters &quot;<tt>&lt;</tt>&quot; and &quot;<tt>&gt;</tt>&quot; show where a field should be placed.
+Please pay attention to spacing.
+<p>
+You may assume that all input files will be in the proper syntax,
+with no extra spaces.  PR therefore expects that the data they
+are requesting will be in the proper syntax.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2
+English Department
+Dr.,Tom,Davis,Anystreet USA,555-2832,555-2423,823
+Mrs.,Jessica,Lembeck,Center Street,555-2543,555-8584,928
+
+Computer Science
+Mr.,John,Euler,East Pleasure,555-1432,555-2343,126</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>----------------------------------------
+Dr. Tom Davis
+Anystreet USA
+Department: English Department 
+Home Phone: 555-2832
+Work Phone: 555-2423
+Campus Box: 823
+----------------------------------------
+Mr. John Euler
+East Pleasure
+Department: Computer Science 
+Home Phone: 555-1432
+Work Phone: 555-2343
+Campus Box: 126
+----------------------------------------
+Mrs. Jessica Lembeck
+Center Street
+Department: English Department
+Home Phone: 555-2543
+Work Phone: 555-8584
+Campus Box: 928</pre>
+<p>
+</body>
+</html>

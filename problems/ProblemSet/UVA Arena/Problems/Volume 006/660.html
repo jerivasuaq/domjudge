@@ -1,0 +1,211 @@
+
+
+<html>
+<head>
+<title>Going in circles on Alpha Centauri</title>
+<meta name="description" content="Going in circles on Alpha Centauri">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Going in circles on Alpha Centauri</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In the early 27th century, Alpha Centauri has become the main shipping hub of this part of the galaxy.
+At a space station near the fourth planet, goods from almost every space-faring civilization are traded
+and shipped to all major star systems. The space station is shaped like a large circle, and has docking
+ports on its outer rim, labelled clockwise from 1 to <i>n</i>:
+
+<p>
+<div align="CENTER">
+
+<img src="p660.gif">
+</div>
+
+<p>
+When a trading spaceship docks to a port, it usually makes a request to transfer its cargo to another
+ship docked to some other port. This task is taken care of by transportation robots (transrobs) operating
+within the ring of the space station. The transrobs can travel clockwise around the station, and load
+and unload cargo at the ports.
+
+<p>
+Every ships cargo fits into one transport container, and all transrobs can carry only one container
+at a time. The transrobs only differ in maximal weight they can carry.
+
+<p>
+The consortium operating the space station has recently decided to upgrade its transportation
+system. But before doing so, they want to gather some statistics on the performance of their current
+system. More specifically, they are interested in
+
+<p>
+<ul>
+<li>the average time it takes for a request to be fulfilled, i.e. the time
+between a ship requesting a cargo to be taken to another port, and the cargo
+actually being delivered to its destination, and
+
+<p>
+<li>the utilization of the transrobs, i.e. the average percentage of
+transrobs serving requests during some interval of time
+</li></li></ul>
+
+<p>
+For this, they need a simulation program, which you have to write. To facilitate this task, the consor-
+tium has released the following details on their transrob control program.
+
+<p>
+<ul>
+<li>The transrobs are numbered 1 to <i>m</i>.
+
+<p>
+<li>It takes a transrob 1 minute to get from a port to the next one, and it
+takes 5 minutes to load or unload a container at a port.
+
+<p>
+<li>Transrobs move on different tracks, and therefore do not hinder each
+other when performing their duties.
+
+<p>
+<li>Transrobs are either <em>idle</em>, or they are <em>servicing a request</em>,
+which means that they move to the origin of that request, load the cargo, move
+to the destination, unload the cargo, and become idle again.
+
+<p>
+<li>All incoming requests are put in the <em>request list</em>. A request from
+that list is <em>possible</em> to satisfy if there is an idle transrob for which
+the cargo is not too heavy.
+
+<p>
+<li>As long as (or as soon as) there are possible requests on the list, they
+are assigned to transrobs, giving precedence for older requests over newer
+requests. Each request is assigned to the transrob which is closest (in
+anti-clockwise direction) to the origin of the request, and for which the
+cargo is not too heavy. If there are two transrobs at the same distance, the
+one with the lower number gets assigned the request. Assigned requests are
+deleted from the request list.
+
+<p>
+<li>The assignment procedure is instantenous, i.e. a robot starts moving in
+the instant it gets assigned a request, and a robot becomes idle (and can
+get a new request) in the instant it finishes unloading.
+</li></li></li></li></li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of the description of several simulations you have to perform. Each description
+starts with a line containing two integers, <i>n</i> and <i>m</i>, the number of ports
+and transrobs, respectively, satisfying 
+
+<img width="96" height="30" align="MIDDLE" border="0" src="660img2.gif" alt="$2 \le n Y\le 100$">
+and 
+
+<img width="92" height="30" align="MIDDLE" border="0" src="660img3.gif" alt="$1 \le m \leY
+20$">.
+The next <i>m</i> lines contain a single integer <i>l</i><sub><i>i</i></sub> each, the maximum load
+that transrob <i>i</i> can carry, measured in galactic tons.
+
+<p>
+This is followed by one or more shipments to perform. Each shipment is described by a line
+containing four integers, <i>t</i>, <i>o</i>, <i>d</i>, <i>w</i>: the time <i>t</i> the request was made
+at (measured in minutes since the beginning of the simulation), the port
+number <i>o</i> where the shipment comes from (origin), the port number <i>d</i> of the
+shipment's destination, and the weight <i>w</i> of the container in galactic tons.
+
+<p>
+The request times are in strictly increasing order in the input file. The
+values satisfy <img width="43" height="30" align="MIDDLE" border="0" src="660img4.gif" alt="$1 \leY t$">,
+
+
+<img width="96" height="32" align="MIDDLE" border="0" src="660img5.gif" alt="$1 \leY o,d \leY n$">,
+<img width="45" height="32" align="MIDDLE" border="0" src="660img6.gif" alt="$o \ne d$">
+and 
+
+<img width="227" height="34" align="MIDDLE" border="0" src="660img7.gif" alt="$1 \le w \leY
+\max\{ l_i \mid 1 \leY i \leY m \}$">.
+
+<p>
+
+<p>
+<br>
+The description of shipments is terminated by the line ``<tt>-1 -1 -1 -1</tt>''.
+
+<p>
+
+<p>
+<br>
+The input is terminated by a test case starting with <i>n</i> = <i>m</i> = 0. This test
+case should not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each simulation description in the input, first output the number of the description. Then, simulate
+the operation of the transrobs on the shipment requests and output the average wait time, and the
+utilization percentage. The utilization percentage is computed for the interval of the time between the
+first request was made until the moment all requests were satisfied.
+
+<p>
+At the beginning of the simulation (time 0), all transrobs are idle, and located at port number 1.
+
+<p>
+All values must be exact to three digits to the right of the decimal point.
+
+<p>
+
+<p>
+<br>
+Output a blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+10 3
+5
+10
+20
+1 2 9 8
+2 7 8 5
+5 3 2 17
+20 1 2 4
+-1 -1 -1 -1
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Simulation 1
+Average wait time   = 17.250 minutes
+Average utilization = 71.875 %
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

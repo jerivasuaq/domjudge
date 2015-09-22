@@ -1,0 +1,159 @@
+<p>
+<div align="CENTER">
+
+<img width="345" height="393" align="BOTTOM" border="0" src="p2693.gif" alt="\epsfbox{p2693.eps}">
+</div>
+
+<p>
+The famous Ghost Busters team has decided to upgrade their Ectomobile
+(aka Ecto-1) with a powerful proton gun and an advanced targeting system.
+Egon has designed and built all the hardware which consists of ectoplasmic
+scanner and a proton gun that has two degrees of freedom and can automatically
+rotate and fire in a 90 degrees trihedral angle. You have been hired to
+write a prototype for the targeting software.
+
+<p>
+
+<p>
+<br>
+Ghosts are detected by ectoplasmic scanner and are represented as
+floating spheres. The coordinates of their centers and radii are
+delivered from the ectoplasmic scanner to the targeting software. The
+coordinate system is aligned is such a way, that the proton gun fires
+from the point (0, 0, 0) anywhere into
+<span class="MATH"><i>X</i><img width="18" height="30" align="MIDDLE" border="0" src="2693img2.gif" alt="$ \ge$"> 0</span>, <span class="MATH"><i>Y</i><img width="18" height="30" align="MIDDLE" border="0" src="2693img2.gif" alt="$ \ge$"> 0</span>, <span class="MATH"><i>Z</i><img width="18" height="30" align="MIDDLE" border="0" src="2693img2.gif" alt="$ \ge$"> 0</span>
+trihedral angle. The gun fires a proton ray in a straight line
+and is so powerful, that even a touch of its ray is enough to kill
+a ghost. The ray of the proton gun is able to kill a virtually unlimited
+number of ghosts on its way.
+
+<p>
+
+<p>
+<br>
+For the first prototype for the targeting software, you are asked to
+write a program that determines the maximal number of ghosts that can
+be killed with a single shot of the proton gun.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+On the first line of the input file there is a single integer number
+<span class="MATH"><i>N</i></span> (
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="2693img3.gif" alt="$ \le$"><i>N</i><img width="18" height="30" align="MIDDLE" border="0" src="2693img3.gif" alt="$ \le$">100</span>) - the number of ghosts detected by the ectoplasmic
+scanner of Ecto-1. The following <span class="MATH"><i>N</i></span> lines describe detected ghosts - one
+ghost per line. The description of <span class="MATH"><i>i</i></span>-th ghost (ghosts are
+numbered from 1 to <span class="MATH"><i>N</i></span>) consists of 4 integer numbers <span class="MATH"><i>X</i><sub>i</sub></span>,
+<span class="MATH"><i>Y</i><sub>i</sub></span>, <span class="MATH"><i>Z</i><sub>i</sub></span>, and <span class="MATH"><i>R</i><sub>i</sub></span>, separated by spaces.
+<span class="MATH"><i>X</i><sub>i</sub></span>, <span class="MATH"><i>Y</i><sub>i</sub></span>, <span class="MATH"><i>Z</i><sub>i</sub></span> (
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2693img3.gif" alt="$ \le$"><i>X</i><sub>i</sub>, <i>Y</i><sub>i</sub>, <i>Z</i><sub>i</sub><img width="18" height="30" align="MIDDLE" border="0" src="2693img3.gif" alt="$ \le$">10000</span>)
+are the coordinates of the ghost's center, and <span class="MATH"><i>R</i><sub>i</sub></span>
+(
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2693img3.gif" alt="$ \le$"><i>R</i><sub>i</sub><img width="18" height="30" align="MIDDLE" border="0" src="2693img3.gif" alt="$ \le$">min(<i>X</i><sub>i</sub>, <i>Y</i><sub>i</sub>, <i>Z</i><sub>i</sub>)</span>) is the ghost's radius.
+Because ghosts are ectoplasmic, they can be arbitrarily placed in respect
+to each others. They can intersect, fit inside each other, coincide with each
+other, etc.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+On the first line of the output file write a single integer number -
+the maximal number of ghosts that can be killed with a single shot
+of the proton gun. On the second line of the output file write the
+identifying numbers of the ghosts to be killed in an arbitrary order
+separated by spaces. If there are multiple ways to kill this
+number of ghosts then write any one.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+2
+
+2
+1200 1200 3900 300
+160 160 820 60
+
+13
+1200 1200 3900 300
+160 160 820 60
+100 10 10 10
+10 100 10 10
+10 10 100 10
+10 10 10 10
+50 50 50 10
+100 100 75 20
+100 75 100 20
+75 100 100 20
+3000 4000 7000 2600
+100 1000 1000 50
+1000 100 1000 100
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+2
+1 2
+
+5
+6 7 9 10 11
+</pre>
+
+<p>
+
+<p><p>
+<br>
+
+<b>Notes:</b>
+<dl compact="">
+<dt>a)</dt>
+<dd>It is possible to kill both ghosts in the first sample only because the
+proton gun is so powerful that it kills ghosts by mere touch.
+
+<p>
+</dd>
+<dt>b)</dt>
+<dd>The second sample has 11 more ghosts (for a total of 13). Picture shows the
+view of these ghosts through the ectoplasmic scope sight that
+Egon has attached to proton gun to calibrate it and to debug your
+targeting software. Outlines show ghosts as seen through the scope.
+</dd>
+</dl>
+
+<p>

@@ -1,0 +1,108 @@
+
+
+<html>
+<head>
+<title>OOPS!</title>
+<meta name="description" content="OOPS!">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">OOPS!</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You've been sitting in front of the terminal for three hours
+savagely coding the Assembler assignment that's due tomorrow.
+Your best friend, who finished the program last week and has been
+rubbing it in for just as long, saunters up to your terminal and
+offers, &quot;Coke break, slow poke?&quot;  You take the Coke he hands you
+and you lean your head back, savoring the refreshing feeling of
+the drink as it soothes your parched throat; too much coding
+always made your throat raw.  &quot;Hey, can I look at how far you've
+gotten?&quot; your friend asks.  &quot;Sure,&quot; you reply, taking another
+long drink.  As you're enjoying your drink and thinking of what
+&quot;The Real Thing&quot; really is, you hear a whispered &quot;oops&quot; from the
+direction of your terminal.  &quot;What?!&quot; you demand.  Your friend
+replies, backing away, &quot;I think I just deleted your source code.&quot;
+<p>
+<p>
+&quot;Arrrgggghhh!&quot; you spurt as your friend runs from the computer
+lab, mumbling prayers for divine protection.  You double check
+and sure enough all you have left of your precious Assembler
+assignment is the executable code from your last compile.  And
+you were so close to finishing!  Do you take a zero?  No, that
+last test was a killer.  Start over?  NOT!  Instead, your hands
+fumble for your Assembler textbook....  Ah, here we go: a
+description of the encoding scheme used by the computer's
+assembler.  It doesn't look too bad and you remember most of the
+hand disassembling you did in class (Thanks Dr. Baber)!  It's
+decided then, you'll just have to write a quick disassembler to
+convert the executable code back into your source code so that
+you can finish your assignment before Cheers comes on.  You open
+your textbook and begin reading:
+<p>
+<p> <img width="337" height="429" align="BOTTOM" alt="tabular21" src="448img1.gif"> <p>
+<p>
+<tt>ADD</tt> [R,A,N],[R,A] means that the <tt>ADD</tt> instruction takes two
+operands.  The first can be a register, an address, or a number,
+and the second operand is either a register or an address.
+<p>
+<p>
+Opcodes are 4 bits in length.  An operand is made up of two
+fields: a mode and a value.  The mode is two bits and the value
+is fourteen bits for a total of sixteen bits.  The possible
+values for mode are:
+<p>
+<p> <img width="239" height="100" align="BOTTOM" alt="tabular51" src="448img2.gif"> <p>
+<p>
+The value field for a register operand (mode = 00) specifies the
+number of the register.  For example, if the value field
+contained a seven then that would specify register number 7,
+written &quot;<tt>R7</tt>&quot;.  The valid registers are R0 through R1023.
+<p>
+<p>
+The value field for an absolute operand (mode = 01) specifies the
+absolute address that the operand is to be stored at.  For
+example, if the value field contained the number 110, that would
+denote address location 110, which is written &quot;<tt>$110</tt>&quot;.  Valid
+addresses are $0 through $16383.
+<p>
+<p>
+The value field for a PC-Relative operand (mode = 10) specifies
+the offset of the address relative to the program counter.  (On
+this computer, all PC-relative offsets are non-negative).  For
+example, if the value field contained the number 45, that would
+specify the address location (Program Counter) + 45, which is
+written &quot;<tt>PC+45</tt>&quot;.  Valid offsets are from 0 to 16363.
+<p>
+<p>
+The value field for a constant operand (mode = 11) specifies a
+constant - a number between 0 and 16383.  For example, if the
+value field contained the number 1276, then that would specify
+the actual number 1276 and is written as &quot;<tt>1276</tt>&quot;.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Your task is to write a program which will read in a text file
+that contains the hexadecimal listing of an executable program
+and output the original source code, one assembler instruction
+per line.  Each line in the text file will contain exactly 30
+hexadecimal digits except for the last line which will contain
+from 1 to 30 hexadecimal digits.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>4C00D00004C0020001000000001400
+005FFFB801E</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>MOV 13,R0
+MOV 2,R1
+ADD R0,R1
+MOV R0,$8191
+BR PC+30</pre>
+<p>
+</body>
+</html>

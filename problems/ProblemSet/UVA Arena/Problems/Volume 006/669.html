@@ -1,0 +1,154 @@
+
+
+<html>
+<head>
+<title>Defragment</title>
+<meta name="description" content="Defragment">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Defragment</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+You are taking part in the development of a ``New Generation'' operating system and the NG 
+file system. In this file system all
+disk space is divided into <i>N</i> clusters of the equal sizes, numbered by
+integers from 1 to <i>N</i>. Each file occupies one or more clusters in arbitrary
+areas of the disk. All clusters that are not occupied by files are considered
+to be free. A file can be read from the disk in the fastest way, if all its
+clusters are situated in the successive disk clusters in the natural order.
+
+<p>
+
+<p>
+<br>
+Rotation of the disk with constant speed implies that various amounts of time are needed 
+for accessing its clusters. Therefore,
+reading of clusters located near the beginning of the disk performs faster than reading of 
+the ones located near its ending. Thus,
+all files are numbered beforehand by integers from 1 to <i>K</i> in the order of
+descending  frequency of access. Under the optimal
+placing of the files on the disk the file number 1 will occupy clusters 
+
+<img width="87" height="32" align="MIDDLE" border="0" src="669img1.gif" alt="$1,
+2, \dots, S_1$">,
+the file number 2 will occupy clusters 
+
+<img width="205" height="32" align="MIDDLE" border="0" src="669img2.gif" alt="$S_1 +1, S_1 +2,
+\dots, S_1 +S_2$">
+and so on (here <i>S</i><sub><i>i</i></sub> is the number of clusters which the
+<i>i</i>-th file occupies).
+
+<p>
+
+<p>
+<br>
+In order to place the files on the disk in the optimal way cluster-moving operations are executed. One cluster-moving operation
+includes reading of one occupied cluster from the disk to the memory and writing its contents to some free cluster. After that
+the first of them is declared free, and the second one is declared occupied.
+
+<p>
+
+<p>
+<br>
+Your goal is to place the files on the disk in the optimal way by executing the minimal possible number of cluster-moving
+operations.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input is an integer M, then a blank line followed by M datasets. There is a blank line between datasets.
+
+The first line of each dataset file contains two integers <i>N</i> and <i>K</i> separated by
+a space (
+
+<img width="159" height="32" align="MIDDLE" border="0" src="669img3.gif" alt="$1 \le K < N \le 10000$">). Then <i>K</i> lines follow,
+each of them describes one file. The description of the <i>i</i>-th file starts
+with the integer <i>S</i><sub><i>i</i></sub> that represents the number of clusters in the <i>i</i>-th
+file (
+
+<img width="92" height="32" align="MIDDLE" border="0" src="669img4.gif" alt="$1 \le S_i < N$">). Then <i>S</i><sub><i>i</i></sub> integers follow separated by spaces, which
+indicate the cluster numbers of this file on the disk in the natural order.
+
+<p>
+
+<p>
+<br>
+All cluster numbers in the input file are different and there is always at
+least one free cluster on the disk.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, your program should write to the output file any sequence of cluster-moving operations that are needed in order to place the
+files on the disk in the optimal way. Two integers <i>P</i><sub><i>j</i></sub> and <i>Q</i><sub><i>j</i></sub> separated
+by a single space should represent each cluster-moving operation. <i>P</i><sub><i>j</i></sub> gives
+the cluster number that the data should be moved FROM and <i>Q</i><sub><i>j</i></sub> gives the
+cluster number that this data should be moved TO. 
+
+<p>
+
+<p>
+<br>
+The number of cluster-moving
+operations executed should be as small as possible. If the files on the disk
+are already placed in the optimal way the output should contain only the
+string ``<tt>No optimization needed</tt>".
+
+<p>Print a blank line between datasets.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+20 3
+4 2 3 11 12
+1 7
+3 18 5 10
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+2 1
+3 2
+11 3
+12 4
+18 6
+10 8
+5 20
+7 5
+20 7
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

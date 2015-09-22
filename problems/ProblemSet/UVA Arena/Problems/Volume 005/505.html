@@ -1,0 +1,170 @@
+
+
+<html>
+<head>
+<title>Moscow time</title>
+<meta name="description" content="Moscow time">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Moscow time</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In e-mail the following format for date and time setting is used:
+<br><p>
+
+<center><b>EDATE::=Day_of_week, Day_of_month Month Year Time Time_zone</b></center>
+
+<br clear="ALL">
+<p>
+Here <i>EDATE</i> is the name of date and time format, the text to the right
+from ``::=" defines how date and time are written in this format.
+Below the descriptions of <i>EDATE</i> fields are presented:
+
+<p>
+<dl>
+<dt><strong>
+
+<i>Day</i><sub>-</sub><i>of</i><sub>-</sub><i>week</i></strong>
+<dd>The name of a day of the week.
+Possible values: MON, TUE, WED, THU, FRI,
+SAT, SUN. The name is followed by ``," character (a comma).
+<dt><strong>
+
+<i>Day</i><sub>-</sub><i>of</i><sub>-</sub><i>month</i></strong>
+<dd>A day of the month. Set by two decimal digits.
+<dt><strong><i>Month</i></strong>
+<dd>The name of the month. Possible values: JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC.
+<dt><strong><i>Year</i></strong>
+<dd>Set by two or four decimal digits. If a year is set by two decimals it is assumed that
+this is a number of the year of the XX century. For instance, 74 and 1974 set a year of 1974.
+<dt><strong><i>Time</i></strong>
+<dd>Local time in format <em>hours:minutes:seconds</em>, where hours, minutes and seconds are
+made up of two decimal digits. The time keeps within the limits from 00:00:00 to
+23:59:59.
+<dt><strong>
+
+<i>Time</i><sub>-</sub><i>zone</i></strong>
+<dd>Offset of local time from Greenwich mean time.
+It is set by the difference sign ``+"
+or ``-"and by sequence of four digits. First two digits set the hours
+and the last two the
+minutes of offset value. The absolute value of the difference does not
+exceed 24 hours. Time zone can also be presented by one of the following names:
+<p>
+<div align="CENTER">
+<table cellpadding="3">
+<tr><td align="LEFT"><b> Name</b></td>
+<td align="LEFT"><b> Digital value</b></td>
+</tr>
+<tr><td align="LEFT">UT</td>
+<td align="LEFT">-0000</td>
+</tr>
+<tr><td align="LEFT">GMT</td>
+<td align="LEFT">-0000</td>
+</tr>
+<tr><td align="LEFT">EDT</td>
+<td align="LEFT">-0400</td>
+</tr>
+<tr><td align="LEFT">CDT</td>
+<td align="LEFT">-0500</td>
+</tr>
+<tr><td align="LEFT">MDT</td>
+<td align="LEFT">-0600</td>
+</tr>
+<tr><td align="LEFT">PDT</td>
+<td align="LEFT">-0700</td>
+</tr>
+</table></div></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+Each two adjacent fields of <i>EDATA</i> are separated with exactly one space.
+Names of day of the
+week, month and time zone are written in capitals.
+For instance, 10 a.m. of the Contest day in
+St.Petersburg can be presented as
+<pre>
+                          TUE, 03 DEC 96 10:00:00 +0300
+</pre>
+
+<p>
+Write a program which transforms the given date and time in <i>EDATE</i> format
+to the corresponding
+date and time in Moscow time zone. So called ``summer time" is not taken
+into consideration. Your
+program should rely on the predefined correctness of the given
+
+
+<i>Day</i><sub>-</sub><i>of</i><sub>-</sub><i>week</i> and 
+
+<i>Time</i><sub>-</sub><i>zone</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+A note</a>&nbsp;</font>
+</h2>
+<ul>
+<li>Moscow time is 3 hours later than Greenwich mean time (time zone +0300)
+<li>Months: January, March, May, July, August, October and December have 31 days. Months:
+April, June, September and November have 30 days. February, as a rule, has 28 days, save for
+the case of the leap year (29 days).
+<li>A year is a leap year if valid one out of two following conditions:
+<ul>
+<li>its number is divisible by 4 and is not divisible by 100;
+<li>its number is divisible by 400.
+</li></li></ul></li></li></li></ul>
+
+<p>
+For instance, 1996 and 2000 are the leap years, while 1900 and 1997 are not.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input data file contains date and time in <i>EDATE</i> format in each line.
+Minimum permissible year in the input data is 0001, maximum 9998.
+Input <i>EDATA</i> string does not contain leading and trailing spaces.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output must contain a single line for each one in the input file
+with date and time of Moscow time zone
+in <i>EDATE</i> format. In output <i>EDATE</i> string a Year must be presented
+with four decimal digits.
+The output string should not include leading and trailing spaces.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+SUN, 03 DEC 1996 09:10:35 GMT
+WED, 28 FEB 35 23:59:00 +0259
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+SUN, 03 DEC 1996 12:10:35 +0300
+THU, 01 MAR 1935 00:00:00 +0300
+</pre>
+
+<p>
+</body>
+</html>

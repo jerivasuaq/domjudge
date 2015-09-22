@@ -1,0 +1,115 @@
+
+
+<html>
+<head>
+<title>Goldbach's Conjecture</title>
+<meta name="description" content="Goldbach's Conjecture">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Goldbach's Conjecture</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In 1742, Christian Goldbach, a German amateur mathematician, sent a letter to Leonhard Euler in
+which he made the following conjecture:
+<p><i>Every number greater than 2 can be written as the sum of three prime numbers.</i>
+
+<p>Goldbach cwas considering 1 as a primer number, a convention that is no longer followed. Later on, Euler re-expressed the conjecture as:
+
+<p><i>Every even number greater than or equal to 4 can be expressed as the sum of two prime numbers.</i>
+
+<p>
+
+<p>
+<br>
+For example:
+
+<p>
+<ul>
+<li>8 = 3 + 5. Both 3 and 5 are odd prime numbers.
+<li>20 = 3 + 17 = 7 + 13.
+<li>42 = 5 + 37 = 11 + 31 = 13 + 29 = 19 + 23.
+</li></li></li></ul>
+
+<p>
+Today it is still unproven whether the conjecture is right. (Oh wait, I have the proof of course, but it
+is too long to write it on the margin of this page.)
+
+<p>
+
+<p>
+<br>
+Anyway, your task is now to verify Goldbach's conjecture as expressed by Euler for all even numbers less than a million.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file will contain one or more test cases.
+
+<p>
+Each test case consists of one even integer <i>n</i> with 
+
+<img width="131" height="30" align="MIDDLE" border="0" src="543img2.gif" alt="$6 \le n < 1000000$">.
+
+<p>
+Input will be terminated by a value of 0 for <i>n</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, print one line of the form <i>n</i> = <i>a</i> + <i>b</i>, where <i>a</i> and <i>b</i> are odd primes. Numbers and
+operators should be separated by exactly one blank like in the sample output below. If there is more
+than one pair of odd primes adding up to <i>n</i>, choose the pair where the difference <i>b</i> - <i>a</i> is maximized.
+
+<p>
+If there is no such pair, print a line saying ``<tt>Goldbach's conjecture is wrong.</tt>"
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+8
+20
+42
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+8 = 3 + 5
+20 = 3 + 17
+42 = 5 + 37
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

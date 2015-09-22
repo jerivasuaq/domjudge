@@ -1,0 +1,83 @@
+
+
+<html>
+<head>
+<title>Fifth Bank of Swamp County</title>
+<meta name="description" content="Fifth Bank of Swamp County">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center></center></h1>
+ <table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Fifth Bank of Swamp County</a></font>&nbsp;</b></td></tr></table>
+<p>
+In response to overwhelming customer complaints, the Fifth Bank of Swamp County
+has finally decided to produce a listing of cleared checks at the end of each
+customer's checking account statement.  The current statements list only the
+transaction history, sorted by date, which includes all deposits, withdrawals
+and fee assessments in addition to cleared checks.  The code to generate the
+current statements was written by programmers with degrees in math; these
+programmers have for years argued that all ''necessary and sufficient''
+information is contained in the transaction history, and any further output is
+unnecessary and wasteful.  In order to minimize the cost of the software
+change, the bank has laid off the entire programming staff and has chosen
+instead to outsource the job to part-time student labor as a weekend
+project.
+<p>
+<p>
+The cleared check summary will list all checks which cleared the bank during
+the statement reporting period.  The summary will be sorted in ascending order
+by check number, and will report the dollar amount of the check and date the 
+check cleared.  To improve the usefulness of the list, any
+out-of-sequence check numbers should have an asterisk (<tt>*</tt>) printed next to
+them.  An out-of-sequence check number is one which, when sorted, does not
+immediately succeed the previously cleared check number.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line of the input will contain an integer N indicating the number of
+test case you need to test followed by a blank line.. Then there N set of test case. For each test
+input&nbsp; to the check summary program consists of a check transaction history,
+sorted in ascending order by date.  There will be one input line for each
+check, consisting of the transaction date in <em>yy/mm/dd</em> format, white space, the check number (an integer between 1 and 9999), white space, and the amount
+of the check in dollars and cents.<p>Consecutive test cases will separated by
+one blank line.
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output for each test case should be displayed in three columns, with all checks sorted in
+column order (see the sample output).  Do not print any more rows than
+necessary, and always fill the middle column before spilling over to the
+last column.  Each column should be separated from the others by three spaces
+and have the following format:
+<p>
+<pre>nnnn* dddddd.cc yy/mm/dd</pre>
+<p>
+where ``<tt>nnnn</tt>'' is the check number with leading zeroes suppressed, ``<tt>*</tt>'' is the optional out-of-sequence indicator (use a space if in sequence), 
+and  ``<tt>dddddd.cc</tt>'' is the dollar and cent value of the check, with leading zeroes suppressed.  If the check is for less than one dollar, print a zero before the decimal point.
+All checks for $1 million or more require special processing and are not
+handled through the bank's normal check clearing process; such checks will not
+appear on these statements.
+<p>
+Consecutive output is separated by single blank line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+
+93/10/01 998  .65
+93/10/01 999 123.89
+93/10/05 996 29.99
+93/10/06 993 116.52
+93/10/12 995 418.00
+93/10/15 1001 15045.00
+93/10/27 1000 840.85</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<pre> 993     116.52 93/10/06    998*      0.65 93/10/01   1001   15045.00 93/10/15
+ 995*    418.00 93/10/12    999     123.89 93/10/01
+ 996      29.99 93/10/05   1000     840.85 93/10/27</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,147 @@
+
+
+<html>
+<head>
+<title>Blowing Fuses</title>
+<meta name="description" content="Blowing Fuses">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Blowing Fuses</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Maybe you are familiar with the following situation. You have plugged in a lot of electrical devices,
+such as toasters, refrigerators, microwave ovens, computers, stereos, etc, and have them all running.
+But at the moment when you turn on the TV, the fuse blows, since the power drawn from all the
+machines is greater than the capacity of the fuse. Of course this is a great safety feature, avoiding that
+houses burn down too often due to fires ignited by overheating wires. But it is also annoying to walk
+down to the basement (or some other inconvenient place) to replace to fuse or switch it back on.
+
+<p>
+
+<p>
+<br>
+What one would like to have is a program that checks <em>before</em> turning on an
+electrical device whether the combined power drawn by all running devices
+exceeds the fuses capacity (and it blows), or whether it is safe to turn it on.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of several test cases. Each test case describes a set of electrical devices and gives a
+sequence of turn on/off operations for these devices.
+
+<p>
+
+<p>
+<br>
+The first line of each test case contains three integers <i>n</i>, <i>m</i> and <i>c</i>,
+where <i>n</i> is the number of devices (<img width="56" height="30" align="MIDDLE" border="0" src="661img1.gif" alt="$n \le 20$">), <i>m</i> the number of operations
+performed on these devices and <i>c</i> is the capacity of the fuse (in Amperes).
+The following <i>n</i> lines contain one positive integer <i>c</i><sub><i>i</i></sub> each, the
+consumption (in Amperes) of the <i>i</i>-th device.
+
+<p>
+
+<p>
+<br>
+This is followed by <i>m</i> lines also containing one integer each, between 1 and
+<i>n</i> inclusive. They describe a sequence of turn on/turn off operations
+performed on the devices. For every number, the state of that particular
+devices is toggled, i.e. if it is currently running, it is turned off, and if
+it is currently turned off, it will by switched on. At the beginning all
+devices are turned off.
+
+<p>
+
+<p>
+<br>
+The input will be terminated by a test case starting with 
+
+<i>n</i> = <i>m</i> = <i>c</i> = 0.
+This test case should not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, first output the number of the test case. Then output whether the fuse was blown
+during the operation sequence. The fuse will be blown if the sum of the power
+consumptions <i>c</i><sub><i>i</i></sub> of turned on devices at some point exceeds the capacity of
+the fuse <i>c</i>.
+
+<p>
+
+<p>
+<br>
+If the fuse is not blown, output the maximal power consumption by turned on devices that occurred
+during the sequence.
+
+<p>
+
+<p>
+<br>
+Output a blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 2 10
+5
+7
+1
+2
+3 6 10
+2
+5
+7
+2
+1
+2
+3
+1
+3
+0 0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Sequence 1
+Fuse was blown.
+
+Sequence 2
+Fuse was not blown.
+Maximal power consumption was 9 amperes.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+Ejercicio 12. 
+
+Programa para dibujar una caja de aviso en ascii con el mensaje 100% UAQ.
+
+El programa debe leer un número entero, y apartir de ahi dibuje una caja de texto. 
+Se recomienda copiar los caracteres ascii utilizados para poder dibujar la caja.
+
+La longitud mínima del cuadrado debe ser 10.
+La longitud máxima del cuadrado debe ser 80.
+
+Ejemplos:
+==============================================================
+Programa para dibujar una caja de avisos.
+
+Por favor introduzca la longitud de la caja:
+> 10
+
+╔══════════╗
+║ 100% UAQ ║
+╚══════════╝
+==============================================================
+Programa para dibujar una caja de avisos.
+
+Por favor introduzca la longitud de la caja:
+> 20
+
+╔════════════════════╗
+║      100% UAQ      ║
+╚════════════════════╝
+
+

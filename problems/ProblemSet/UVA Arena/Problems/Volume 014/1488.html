@@ -1,0 +1,174 @@
+
+<p>
+On the planet Pandora, huge rocks are floating in the sky. Despite the 
+beautiful scenery, these rocks bring some critical problem: they block 
+the sunshine, and shade on the ground. Na'vi (``people" living on the 
+planet) cannot grow plants in the shade because of the lack of sunshine. 
+In order to predicate the amount of food they can get, they have to 
+calculate the area of the shade. 
+
+<p>
+Let's assume the ``sun" as a point-source of light, and the ground as a 
+infinite flat plane. Also, to simplify this problem, assume all rocks 
+are convex polyhedrons. 
+
+<p>
+Now here is a mathematical problem. Given the position of the point-source 
+of light, the position of a convex polyhedron and the position of an 
+infinite plane, you are required to calculate the area of the shade. 
+Please note that light travels in a strictly straight line and the 
+light source and the convex polyhedron are on the same side of the plane. 
+The light source is not placed in the convex polyhedron, nor on the 
+polyhedron or on the plane.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input contains no more than 100 cases. 
+
+<p>
+Each case contains several lines which are formatted as follows. 
+
+<p>
+
+<p>
+<br>
+
+
+<span class="MATH"><i>a</i>&nbsp;<i>b</i>&nbsp;<i>c</i>&nbsp;<i>d</i></span> 
+<br><span class="MATH"><i>n</i></span> 
+<br>
+<span class="MATH"><i>x</i><sub>1</sub>&nbsp;<i>y</i><sub>1</sub>&nbsp;<i>z</i><sub>1</sub></span> 
+<br>
+<span class="MATH"><i>x</i><sub>2</sub>&nbsp;<i>y</i><sub>2</sub>&nbsp;<i>z</i><sub>2</sub></span> 
+<br>
+<span class="MATH">......</span> 
+<br>
+<span class="MATH"><i>x</i><sub>n</sub>&nbsp;<i>y</i><sub>n</sub>&nbsp;<i>z</i><sub>n</sub></span> 
+<br>
+<span class="MATH"><i>x</i><sub>0</sub>&nbsp;<i>y</i><sub>0</sub>&nbsp;<i>z</i><sub>0</sub></span> 
+<br>
+<p>
+
+<span class="MATH"><i>a</i></span>, <span class="MATH"><i>b</i></span>, <span class="MATH"><i>c</i></span> and <span class="MATH"><i>d</i></span> means that the plane is 
+<span class="MATH"><i>ax</i> + <i>by</i> + <i>cz</i> = <i>d</i></span>. <span class="MATH"><i>n</i></span> means 
+the number of vertex of the convex polyhedron. It is guaranteed that 
+<span class="MATH"><i>n</i></span> is no more than 100. Following it are <span class="MATH"><i>n</i></span> lines. Each line contains 
+three float numbers, indicating the position of a point which is a vertex 
+of the polyhedron. The last line also contains three float numbers, 
+which means the position of the point-source of light. 
+
+<p>
+The input is ended by <span class="MATH"><i>a</i> = 0</span>, <span class="MATH"><i>b</i> = 0</span>, <span class="MATH"><i>c</i> = 0</span> and <span class="MATH"><i>d</i> = 0</span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each case, if there is no shade on the plane, print ``<tt>0.00</tt>". 
+
+<p>
+If the area of the shade is infinite, print ``<tt>Infi</tt>". 
+
+<p>
+Otherwise, print out the area of the shade. Please round the result to 
+two digits after the decimal point.
+
+<p>
+
+<p><p>
+<br>
+
+<span class="textbf">Hint:</span>
+Here are some hints to help you implement rotation in 3-dimensional 
+space. 
+
+<p>
+
+<ul>
+<li>Assume that there is a plane 
+<span class="MATH"><i>ax</i> + <i>by</i> + <i>cz</i> = 0</span>, and our task is to 
+rotate the whole space so that the plane will be in the position <span class="MATH"><i>z</i> = 0</span>. 
+
+<p>
+As we all know, the normal vector of the plane is <span class="MATH">(<i>a</i>, <i>b</i>, <i>c</i>)</span> , so after 
+we rotate the space, the normal vector will be the z-axis. So we can only 
+consider how to rotate the vector to the position 
+
+<span class="MATH">(0, 0,<img width="108" height="42" align="MIDDLE" border="0" src="5100img1.png" alt="$ \sqrt{{a^{2} + b^{2} + c^{2}}}$">)</span>. 
+
+<p>
+</li>
+<li>We can divide the process into 2 steps. First step, rotate the normal 
+vector to 
+<span class="MATH">(0,<img width="72" height="42" align="MIDDLE" border="0" src="5100img2.png" alt="$ \sqrt{{a^{2} + b^{2}}}$">, <i>c</i>)</span>. Second step, rotate 
+
+<span class="MATH">(0,<img width="72" height="42" align="MIDDLE" border="0" src="5100img2.png" alt="$ \sqrt{{a^{2} + b^{2}}}$">, <i>c</i>)</span> to 
+<span class="MATH">(0, 0,<img width="108" height="42" align="MIDDLE" border="0" src="5100img1.png" alt="$ \sqrt{{a^{2} + b^{2} + c^{2}}}$">)</span>. 
+Then apply the two rotation steps on the whole space, we can rotate the 
+plane to a given position. 
+
+<p>
+It is easy to implement the two steps. In first step, the third number 
+in the normal vector does not change, so this is like rotation in a 
+2-dimensional space. Similarly, we implement the second step.
+</li>
+</ul>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+0 0 1 0 
+8 
+1 1 1 
+1 -1 1 
+-1 1 1 
+-1 -1 1 
+1 1 0 
+1 -1 0 
+-1 1 0 
+-1 -1 0 
+2 2 1 
+1 0 0 -2 
+8 
+1 1 1 
+1 1 -1 
+1 -1 1 
+1 -1 -1 
+-1 1 1 
+-1 1 -1 
+-1 -1 1 
+-1 -1 -1 
+2 0 0 
+1 1 1 1 
+0 
+0 0 0 
+0 0 0 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Infi 
+64.00 
+0.00
+</pre> 
+
+<p>

@@ -1,0 +1,242 @@
+
+
+<html>
+<head>
+<title>Gaston</title>
+<meta name="description" content="Gaston">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Gaston</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Gaston is an employee of a famous comic magazine. One of his
+tasks (the one he dislikes most) is archiving mail. He
+archives infrequently, so a large part of his desk
+is taken up
+by an enormous pile of unprocessed letters.  Sometimes, one of
+the editors needs a particular letter and Gaston is faced with
+the problem of finding that letter in the pile.
+
+<p>
+<div align="CENTER">
+<img src="p564a.gif">
+</div>
+
+<p>
+
+<p>
+<br>
+
+Gaston realizes that he has a retrieval problem. Using sticks and threads, he
+has designed a system for better retrieving unarchived letters. In the middle
+of a stick, he attaches a letter. At both ends of the stick, a thread is attached
+where another stick (with letter and threads) can be fastened.
+He arranges the letters such that all letters under the left
+ thread of a stick are alphabetically before the letter in the middle and the
+ letters under the right thread are alphabetically after the
+ letter in the middle. As this is
+ true for every stick, this system creates a sorted tree, in which it is easy
+ to find letters.
+
+<p>
+
+<p>
+<br>
+When making a prototype, Gaston found out that he has a balancing problem. If
+ there is a difference in weight between the ends of a stick, the stick is
+ unbalanced, and the whole system collapses in an even bigger mess than before.
+ Using some extra thread,
+ Gaston invented an asymmetric fix in which a stick is still balanced if the
+ left side contains one more letter than the right side. If the
+ right side contains more letters, the stick is always unbalanced, so the
+ fix is indeed asymmetric.
+
+<p>
+<br>
+Opinions about Gaston differ. He believes that he is a genius, but
+others are not so certain. The editors point out that when a letter is added, there is a
+fair chance that the tree gets out of balance and must be rearranged. We
+want you to find out how often the tree (or a subtree) must be
+rearranged, given a tree and a sequence of incoming letters.
+
+<p>
+
+<p>
+<br>
+We have simplified the problem a bit. All letters have the same weight. Every
+ letter has a unique (positive) number. The letters must be arranged according to
+ their number. A stick is balanced if the left side contains the
+ same number of letters as the right side or at most one more.
+
+<p>
+
+<p>
+<br>
+A letter is added according to the following procedure: if its number is lower
+than the number of the letter on the stick, it is added to the left thread.
+If its number is higher, it is added to the right thread.
+Following this procedure repeatedly, eventually a free thread is found.
+The letter is then attached to a fresh stick (having a free thread on
+both ends) which is tied to the free thread. Then, starting at the top, working
+downwards, the balance of all sticks are checked. If a stick is
+unbalanced, a balancing step is executed. Because a balancing step might
+cause other sticks to become unbalanced, the whole tree is
+checked again from top to bottom for unbalanced sticks. This is repeated until
+no unbalanced sticks are found.
+
+<p>
+
+<p>
+<br>
+A balancing step is defined as bringing one unbalanced stick <i>s</i> into 
+ balance by removing a letter from the heavy side of the stick
+ and adding one to the light side. This is done according
+ to the following procedure:
+
+<p>
+<ol>
+<li>remove the letter <i>l</i><sub><i>old</i></sub> from the stick <i>s</i>
+
+<p>
+<li>find an appropriate letter <i>l<sub>new</sub></i> from the heavy side and attach it to the stick <i>s</i>
+
+<p>
+<li>add <i>l<sub>old</sub></i> on the other side of <i>s</i>.
+</li></li></li></ol>
+
+<p>
+A balancing step can result in more sticks being unbalanced! Because 
+<i>l</i><sub><i>new</i></sub> is removed from it's old position, an unbalanced
+stick can be left behind. Also, adding the former letter can result in 
+a new unbalanced stick. Getting these sticks balanced again is not a part of
+this balancing step(!); they are done in future balancing steps.  Note
+that each balancing step must be done carefully in order to ensure that
+the tree remains sorted.
+
+<p>
+
+<p>
+<br>
+The problem is to find out how many balancing steps are needed to keep
+the tree balanced when new letters are added.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Notation</a>&nbsp;</font>
+</h2>
+At the end of a thread we may find:
+
+<p>
+<ul>
+<li>a stick, with a letter and a thread at both ends, or
+<li>nothing
+</li></li></ul>
+
+<p>
+This leads to the following textual representation of a balance:
+
+<p>
+<ul>
+<li>if it is a stick: the number of the letter on it, followed by 
+ what is attached to its left thread, followed by
+ what is attached to its right thread.
+
+<p>
+<li>if it is a loose thread: the number 0.
+</li></li></ul>
+
+<p>
+Within a line, numbers are separated with at least one space. The
+textual representation of a tree may run over several lines. Each line
+contains at least one number.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+A line with the number <i>n</i> of problems, then <i>n</i> times:
+
+<p>
+<ul>
+<li>a description of a balance (see notation above)
+
+<p>
+<li>on a separate line the number <i>b</i> of letters to be added, then, beginning on the next line
+
+<p>
+<li><i>b</i> numbers, representing a letter <i>l</i> to be added (
+
+<img width="100" height="32" align="MIDDLE" border="0" src="564img2.gif" alt="$1 \le l \le 1000$">).
+</li></li></li></ul>
+
+<p>
+
+<p>
+<br>
+Within a line, the numbers of the letters to insert are separated by at least
+one space. The numbers of the letters may run over several lines. Each line
+contains at least one number.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output consists of <i>n</i> lines. Each line contains the number of balancing
+steps needed to keep the tree balanced when the letters are added.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+3 2 0 0 
+5 0 0
+4
+1 6 7 
+9
+400 250 0 0 0
+2
+511 100
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+0
+</pre>
+
+<p>
+<div align="CENTER">
+<img src="p564b.gif">
+</div>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

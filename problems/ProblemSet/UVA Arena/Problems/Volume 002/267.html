@@ -1,0 +1,87 @@
+
+
+<html>
+<head>
+<title>Of(f) Course!</title>
+<meta name="description" content="Of(f) Course!">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Of(f) Course!</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+F<font size="-1"><small>AT</small></font> C<font size="-1"><small>HANCE</small></font> Airlines has had several of their aircraft stray off course within
+the last few months. After the last error nearly put an aircraft over the
+enemy's airspace, an investigation has shown that their navigation techniques
+do not take the wind speed and direction into account properly.
+<p>
+In order
+to make life easier on their novice navigators, the airline has contracted
+with your team to produce a program that will provide the pilot with the
+proper heading for the aircraft, given a desired course and wind velocity.
+<p>
+<p>
+For each flight segment, you will be given the desired course, the true air
+speed (the speed relative to the air) of the aircraft, the wind speed, and
+the direction the wind is blowing from. The pilot needs the heading to which
+she should steer the aircraft and the effective ground speed (the speed
+at which the aircraft is moving over the desired course relative to the
+ground).
+<p>
+<p>
+All speeds will be given in knots, and all directions will be given
+in degrees ( <img width="104" height="25" align="MIDDLE" alt="tex2html_wrap_inline26" src="267img1.gif"> , with 0 <img width="5" height="6" align="BOTTOM" alt="tex2html_wrap_inline28" src="267img2.gif">  = north, 90 <img width="5" height="6" align="BOTTOM" alt="tex2html_wrap_inline28" src="267img2.gif">  = east, 180 <img width="5" height="6" align="BOTTOM" alt="tex2html_wrap_inline28" src="267img2.gif">  = south, 270 <img width="5" height="6" align="BOTTOM" alt="tex2html_wrap_inline28" src="267img2.gif">  = west).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input to your program will consist of a series of flight segments, one per
+line terminated by an end-of-file. Each line will consist of the wind speed,
+the wind direction, the desired course, and the true air speed, all given
+as free-format floating point numbers separated from each other by a single
+space.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Your program should produce for every line segment in the input file, including
+the last one, six lines followed by a blank line. Each of the six lines
+is labeled as in the example below. The first four lines reproduce the input
+numbers. The remaining two lines show the heading and effective ground speed
+calculated for each segment.
+<p>
+<p>
+Use a format analogous to the sample below.
+Each number must be accurate to 1/100th.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>15.0 290.0 260.0 100.0
+15.0 270.0 135.0 200.0
+28.0 290.0 5.0 195.0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>WIND SPEED 15.00
+WIND DIRECTION 290.00
+DESIRED COURSE 260.00
+TRUE AIRSPEED 100.00
+AIRCRAFT HEADING 264.30
+GROUND SPEED 86.73
+
+WIND SPEED 15.00
+WIND DIRECTION 270.00
+DESIRED COURSE 135.00
+TRUE AIRSPEED 200.00
+AIRCRAFT HEADING 138.04
+GROUND SPEED 210.33
+
+WIND SPEED 28.00
+WIND DIRECTION 290.00
+DESIRED COURSE 5.00
+TRUE AIRSPEED 195.00
+AIRCRAFT HEADING 357.03
+GROUND SPEED 185.87</pre>
+<p>
+</body>
+</html>

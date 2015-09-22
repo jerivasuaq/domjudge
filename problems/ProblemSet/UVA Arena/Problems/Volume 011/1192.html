@@ -1,0 +1,135 @@
+<p>
+Molecular biologists frequently compare bio-sequences to see if any similarities can be 
+found in the hope that what is true of one sequence is also true of its analogue.  In this 
+problem, we focus on nucleic acid sequences that are composed of four symbols `A', `C', 
+`G' or `T'. Generally, such comparisons involve aligning sections of the two sequences in 
+a way that exposes the similarities between them.  Given a query sequence and a set of 
+sequences stored in a database, you are asked to write a program that searches the 
+database and finds the sequence having the largest similarity score with the query 
+sequence.   
+
+<p>
+The similarity score between the query sequence and a database sequence is the 
+sum of the alignment scores of the aligned pairs of symbols from an alignment of the 
+two sequences.  Two identical symbols that are aligned are given a score of +5 while a 
+mismatched pair of symbols is assigned a score of -4.  A gap is introduced into an 
+alignment if one symbol in one sequence is not aligned with symbols in the other.  The 
+penalty for a gap is a score of -7.  For example, given a query sequence <span class="MATH"><i>m</i></span>=`<tt>GAAGGCA</tt>' 
+and a database sequence <span class="MATH"><i>n</i></span>=`<tt>GCAGAGCA</tt>', the following alignment between them 
+(aligned pairs of symbols are written one above the other) has a similarity score of 
+5+(-4)+5+5+(-7)+5+5+5=21. 
+
+<p>
+<pre><tt>
+    Sequence <span class="MATH"><i>m</i></span>: <tt>G A A G - G C A</tt> 
+<br>
+Sequence <span class="MATH"><i>n</i></span>: 		 <tt>G C A G A G C A</tt>
+</tt></pre>
+
+<p>
+Note that a gap in the above alignment is represented by the symbol `<tt>-</tt>'.   The 
+dynamic programming algorithm provides a rigorous mathematical approach towards 
+this alignment problem. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>  
+
+<p>
+The input consists a query sequence (on the first two lines) and a set of data sequences 
+(each occupying two lines).  Each sequence has the following format: 
+
+<p>
+
+<p>
+<br>
+
+<tt>&gt;
+<span class="MATH"><i>sequence</i>&nbsp;<i>name</i></span></tt>  
+<br><tt>
+<span class="MATH"><i>sequence</i>&nbsp;<i>data</i></span></tt>  
+
+<p>
+
+<p>
+<br>
+There is a blank line between two adjacent sequences. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+The output indicates the sequence having the highest similarity score with the query 
+sequence.  The result should be printed out in the following format:
+
+<p>
+
+<p>
+<br>
+
+<tt>The query sequence is:</tt> 
+<br>(the query sequence data) 
+<br> 
+<br><tt>The most similar sequences are:</tt> 
+<br> 
+<br>(sequence 1 data) 
+<br><tt>The similarity score is: 
+<span class="MATH">(<i>similarity</i>&nbsp;<i>score</i>)</span></tt> 
+<br> 
+<br>(sequence 2 data) 
+<br><tt>The similarity score is: 
+<span class="MATH">(<i>similarity</i>&nbsp;<i>score</i>)</span></tt>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+&gt;query 
+ACGGG 
+ 
+&gt;seq1 
+ACGGT 
+ 
+&gt;seq2 
+ACGGGG 
+ 
+&gt;seq3 
+TCCGGTT 
+ 
+&gt;seq4 
+TCGGG 
+ 
+&gt;seq5 
+AACGGG
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+The query sequence is: 
+ACGGG 
+ 
+The most similar sequences are: 
+ 
+ACGGGG 
+The similarity score is: 18 
+ 
+AACGGG 
+The similarity score is: 18
+</pre>  
+
+<p>

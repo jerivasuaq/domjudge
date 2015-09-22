@@ -1,0 +1,91 @@
+
+
+<html>
+<head>
+<title>Poker Solitaire Evaluator</title>
+<meta name="description" content="Poker Solitaire Evaluator">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center></center></h1>
+ <table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Poker Solitaire Evaluator</a></font>&nbsp;</b></td></tr></table>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>The input will contain several test cases. First line of the input is the an
+integer which indicate the number of test case followed by a blank line.&nbsp;Each
+consecutive test case will also separated by a blank line.</p>
+<p>
+Each test case gets 25 cards, 5 cards per line. Each card consists
+ of two characters. The first represents the rank of the card: `A', `2',
+     `3', `4', `5', `6', `7', `8', `9', `X', `J', `Q', `K'.
+     The second represents the suit of the card: `S', `H', `D', `C'.
+<p>
+<p>
+     The cards are dealt into a  <img width="37" height="24" align="MIDDLE" alt="tex2html_wrap_inline44" src="451img1.gif">  square.  Each row and column is
+     evaluated to determine the highest hand type for which its 5 cards
+     qualify.  The hand types, from low to high, are Nothing, Pair, Two
+     Pair, Three of a Kind, Straight, Flush, Full House, Four of a Kind,
+     Straight Flush.  A hand qualifies only once, and then only for its
+     highest type.  For example, a Four of a Kind does not count as two
+     pair or three of a kind.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each test case output a list of 9 integers, telling how many hands of each handtype were found.
+from lowest to highest, being:
+<p>
+<ol><li> <b>Nothing</b>: does not qualify as any of the following. Example: AC,
+          3H, QS, JD, 7D.
+<p>
+<li> <b>One Pair</b>: contains two cards of the same rank and does not
+          qualify for any of the following. Example: 2C, 3H, 4H, 2H, KD.
+<p>
+<li> <b>Two Pair</b>: contains two cards of one rank and two cards of another and does not qualify for any of the following. Example: 2C,
+          3H, 4H, 2H, 4D.
+<p>
+<li> <b>Three of a Kind</b>: contains three cards of the same rank and does
+          not qualify for any of the following. Example: QS, KH, 2C, QD,
+          QC.
+<p>
+<li> <b>Straight</b>: the five cards of the hand may be sorted on rank so that an unbroken sequence of 5 ranks is formed and the hand does not
+          qualify for any of the following. 
+There can be cycle through Ace. That is AC, 2H, 4D, 3H, 5S forms a straight, as
+does JH, XD,QC, KD, AS and QC, KD, AS, 2H, 3D.
+<p>
+<li> <b>Flush</b>: the five cards are all of the same suit and the hand does
+          not qualify for any of the following. Example: 5D, AD, KD, 7D,
+          QD.
+<p>
+<li> <b>Full House</b>: the hand contains three cards of one rank and two
+          cards of another. Example: 3C, QS, QD, 3H, 3S.
+<p>
+<li> <b>Four of a kind</b>: the hand contains four cards of the same rank.
+          Example: AS, AD, AH, 7C, AC.
+<p>
+<li> <b>Straight Flush</b>: the hand meets the criteria for being both a
+          straight and a flush.
+</li></li></li></li></li></li></li></li></li></ol>
+<p>
+Two consecutive output will separated by a blank line.
+<p>
+For the example below, the five rows evaluate to Straight Flush, Straight, Pair, Flush, Three of a Kind. The Five columns evaluate to Four of A Kind, Full House, Two Pair, Nothing, and Two Pair.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+
+AS 2S 3S 4S 5S
+AC 2H 3H 5C 4C
+AH 2D KC KH 5D
+AD 3D KD 9D 8D
+XH 3C XC XS 8C</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1, 1, 2, 1, 1, 1, 1, 1, 1</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+<p>
+
+<p>
+<br>
+A new mighty weapon has just been developed, which is so powerful that it can attack a sector of indefinite size, as long as the center of the circle containing the sector is the location of the weapon. We are interested in developing a fire-control system that calculates firing-solutions automatically. 
+
+<p>
+
+<p>
+<br>
+<span class="textit">The following example gives an example of a firing solution:</span>
+
+<p>
+<div align="CENTER">
+
+<img width="581" height="692" align="BOTTOM" border="0" src="p4356.png" alt="\epsfbox{p4356.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+
+<p>
+<span class="textit">Here the firing region is the sector 
+<span class="MATH"><img width="45" height="18" align="BOTTOM" border="0" src="4356img2.png" alt="$ \overline{{ABC}}$"></span>
+<tex2html_verbatim_mark> that covers six points: A, B, C, D, E, H.</tex2html_verbatim_mark></span>
+
+<p>
+<span class="textit">You may further assume that the weapon is always located at point (0, 0), no targets will be on the point (0, 0) and the coordinates of the targets will be</span> distinct.
+
+<p>
+
+<p>
+<br>
+A firing solution is called <span class="textit">effective</span> if and only if it covers a minimum of <span class="MATH"><i>K</i></span>
+<tex2html_verbatim_mark> points out of <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> given points (targets) on the two-dimensional Cartesian plane. Furthermore, since the cost of a particular fire solution is in direct proportion to the size of the area it covers, a firing could be quite costly; thus we are only interested in the optimal firing solution with the minimum cost.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+There are multiple test cases in the input file. 
+
+<p>
+Each test case starts with two non-negative integers, <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>K</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4356img3.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4356img3.png" alt="$ \le$">5000, <i>K</i><img width="18" height="31" align="MIDDLE" border="0" src="4356img3.png" alt="$ \le$"><i>N</i>)</span>
+<tex2html_verbatim_mark>, followed by <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> lines each containing two integers, <span class="MATH"><i>X</i></span>
+<tex2html_verbatim_mark>, and <span class="MATH"><i>Y</i></span>
+<tex2html_verbatim_mark>, describing the distinct location of one target. It is guaranteed that the absolute value of any integer does not exceed 1000. 
+
+<p>
+Two successive test cases are separated by a blank line. A case with <span class="MATH"><i>N</i> = 0</span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>K</i> = 0</span>
+<tex2html_verbatim_mark> indicates the end of the input file, and should not be processed by your program.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, please print the required size (to two decimal places), in the format as indicated in the sample output. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 1 
+0 1 
+1 0 
+-5 -6 
+
+3 2 
+0 2 
+2 0 
+-5 -6 
+
+0 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case #1: 0.00 
+Case #2: 3.14
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

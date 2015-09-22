@@ -1,0 +1,210 @@
+
+
+<html>
+<head>
+<title>Schedule of Taiwan Baseball League</title>
+<meta name="description" content="Schedule of Taiwan Baseball League">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Schedule of Taiwan Baseball League</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Taiwan baseball league and the sport division of the ministry of education
+of Taiwan are planning to organize a major event with world baseball
+championship. After several rounds of discussions among the members
+of the organizing committee, the details of the game plan are as follows.
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>There will be <i>N</i> teams invited to the competition, and <i>N</i> will be a
+power of 2. (<i>N</i> will also be less than or equal to 128 and, of course,
+greater than 2.)
+<p>
+<dt>2.
+<dd>A round-robin competition and game schedule will be used. It means
+every team will play every other team exactly once.
+
+<p>
+<dt>3.
+<dd>Two cities will collectively host the games. Kaohsiung and Taipei will
+be the two cities to host the game, and Taipei Baseball Stadium and
+Kaohsiung Baseball Stadium (Lee-Der Stadium) will be used as the
+game fields.
+</dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+Please write a program to produce a schedule for the games. The
+schedule needs to satisfy the following criteria.
+
+<p>
+<dl compact="">
+<dt>a)
+<dd>The game schedule is round-robin. Suppose there are <i>N</i> teams to
+participate in the competition, you need to schedule games to be
+played in exactly <i>N</i>-1 days. In each day of the competition, every
+team will have to play exactly one game.
+<p>
+<dt>b)
+<dd>The games have to be scheduled evenly between Taipei and
+Kaohsiung. There will be equal number of games to be played each
+day between Taipei and Kaohsiung in your produced schedule.
+
+<p>
+<dt>c)
+<dd>The organizing committee also hopes to reduce the total number of
+travellings for the teams. Therefore, your schedule has to be the one
+with the minimum travellings for teams to travel between Taipei and
+Kaohsiung. For example, if a team plays in Taipei in Day 1, and
+then the same team plays in Kaohsiung in Day 2, we say that the
+travelling total is one. Your goal is to produce a schedule so that the
+total travelling combined with all the teams is the minimum. The
+fairness with the amount of travellings for each team is not required
+by the organizing committee. We assume no travelling accounts in
+the first day of the game. The travelling total will be counted from
+day 2 of the games.
+</dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+
+<p>
+<br>
+In the testing data, there will be <i>K</i> sets of data.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<i>K</i>
+
+<p>
+
+<i>N</i><sub>1</sub>
+
+<p>
+
+<i>N</i><sub>2</sub>
+
+<p>
+
+<img width="25" height="15" align="BOTTOM" border="0" src="678img2.gif" alt="$\dots$">
+
+<p>
+
+<i>N</i><sub><i>k</i></sub>
+
+<p>
+
+<p>
+<br>
+
+<i>K</i> is the number of testing data. 
+
+<img width="124" height="32" align="MIDDLE" border="0" src="678img3.gif" alt="$N_i, i=1, \dots,K$">,
+are the total number 
+of teams invited for the competitions. Totally, there are <i>K</i> sets of data to
+be tested.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<i>T</i><sub>1</sub>
+
+<p>
+
+<i>T</i><sub>2</sub>
+
+<p>
+
+<img width="25" height="15" align="BOTTOM" border="0" src="678img2.gif" alt="$\dots$">
+
+<p>
+
+<i>T</i><sub><i>k</i></sub>
+
+<p>
+
+<p>
+<br>
+For each testing case <i>N</i><sub><i>i</i></sub>, you must report a schedule of
+travellings for the all the teams. The amount of travellings has to be
+minimum to be able to be correct. Format your output as shown in the sample
+below. In case no teams have to travel between two consecutive days, print
+`<tt>No teams travelling between day </tt><i>n</i><tt> and day </tt><i>n</i>+1<tt>.</tt>'
+
+<p>
+The order in the report has to follow the
+input order with each testing case. Print a blank line between cases.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+8
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Day 1:
+  Taipei: (1-2) (3-4).
+  Kaohsiung: (5-6) (7-8).
+  No teams travelling between day 1 and day 2.
+Day 2:
+  Taipei: (1-3) (2-4).
+  Kaohsiung: (5-7) (6-8).
+  No teams travelling between day 2 and day 3.
+Day 3:
+  Taipei: (1-4) (2-3).
+  Kaohsiung: (5-8) (6-7).
+  Teams travelling between day 3 and day 4: 3,5,4,6.
+Day 4:
+  Taipei: (1-5) (2-6).
+  Kaohsiung: (3-7) (4-8).
+  No teams travelling between day 4 and day 5.
+Day 5:
+  Taipei: (1-6) (2-5).
+  Kaohsiung: (3-8) (4-7).
+  Teams travelling between day 5 and day 6: 5,7,6,8.
+Day 6:
+  Taipei: (1-7) (2-8).
+  Kaohsiung: (3-5) (4-6).
+  No teams travelling between day 6 and day 7.
+Day 7:
+  Taipei: (1-8) (2-7).
+  Kaohsiung: (3-6) (4-5).
+Total number of travels: 8
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-25</i>
+</address>
+</body>
+</html>
+

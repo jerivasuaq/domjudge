@@ -1,0 +1,135 @@
+
+
+<html>
+<head>
+<title>DNA Translation</title>
+<meta name="description" content="DNA Translation">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">DNA Translation</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Deoxyribonucleic acid (DNA) is composed of a sequence of nucleotide bases
+paired together to
+form a double-stranded helix structure. Through a series of complex
+biochemical processes the
+nucleotide sequences in an organism's DNA are translated into the proteins
+it requires for life. The
+object of this problem is to write a computer program which accepts a DNA
+strand and reports
+the protein generated, if any, from the DNA strand.
+<p>
+<p>
+The nucleotide bases from which DNA is built are adenine, cytosine,
+guanine, and thymine (hereafter referred to as <tt>A</tt>, <tt>C</tt>, <tt>G</tt>,
+and <tt>T</tt>, respectively). These bases bond together in a chain to form
+half of a DNA strand. The other half of the DNA strand is a similar
+chain, but each nucleotide
+is replaced by its complementary base. The bases <tt>A</tt> and <tt>T</tt> are
+complementary, as are the bases
+<tt>C</tt> and <tt>G</tt>. These two ``half-strands'' of DNA are then bonded
+by the pairing of the complementary bases to form a strand of DNA.
+<p>
+<p>
+Typically a DNA strand is listed by simply writing down the bases
+which form the primary strand
+(the complementary strand can always be created by writing the complements
+of the bases in the primary strand).
+For example, the sequence <tt>TACTCGTAATTCACT</tt> represents a DNA strand
+whose complement would be <tt>ATGAGCATTAAGTGA</tt>. Note that <tt>A</tt> is
+always paired with <tt>T</tt>, and <tt>C</tt> is always paired with <tt>G</tt>.
+<p>
+<p>
+From a primary strand of DNA, a strand of ribonucleic acid (RNA) known
+as messenger RNA
+(mRNA for short) is produced in a process known as transcription.
+The transcribed mRNA is
+identical to the complementary DNA strand with the exception that
+thymine is replaced by a
+nucleotide known as uracil (hereafter referred to as <tt>U</tt>).
+For example, the mRNA strand for the
+DNA in the previous paragraph would be <tt>AUGAGCAUUAAGUGA</tt>.
+<p>
+<p>
+It is the sequence of bases in the mRNA which determines the protein
+that will be synthesized.
+The bases in the mRNA can be viewed as a collection of codons,
+each codon having exactly three
+bases. The codon <tt>AUG</tt> marks the start of a protein sequence,
+and any of the codons <tt>UAA</tt>, <tt>UAG</tt>,
+or <tt>UGA</tt> marks the end of the sequence. The one or more codons
+between the start and termination
+codons represent the sequence of amino acids to be synthesized to
+form a protein. For example,
+the mRNA codon <tt>AGC</tt> corresponds to the amino acid serine (Ser),
+<tt>AUU</tt> corresponds to isoleucine
+(Ile), and <tt>AAG</tt> corresponds to lysine (Lys). So, the protein formed
+from the example mRNA in
+the previous paragraph is, in its abbreviated form, Ser-Ile-Lys.
+<p>
+<p>
+The complete genetic code from which codons are translated into amino
+acids is shown in the table
+below (note that only the amino acid abbreviations are shown).
+It should also be noted that the
+sequence <tt>AUG</tt>, which has already been identified as the start
+sequence, can also correspond to the
+amino acid methionine (Met). So, the first <tt>AUG</tt> in a mRNA strand is
+the start sequence, but
+subsequent <tt>AUG</tt> codons are translated normally into the Met amino acid.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+The input for this program consists of strands of DNA sequences, one
+strand per line, from which
+the protein it generates, if any, should be determined and output.
+The given DNA strand may
+be either the primary or the complementary DNA strand, and it may
+appear in either forward
+or reverse order, and the start and termination sequences do
+not necessarily appear at the ends
+of the strand. For example, a given input DNA strand to form
+the protein Ser-Ile-Lys could be
+any of <tt>ATACTCGTAATTCACTCC</tt>, <tt>CCTCACTTAATGCTCATA</tt>, <tt>TATGAGCATTAAGTGAGG</tt>,
+or <tt>GGAGTGAATTACGAGTAT</tt>. The input file will be terminated by a line
+containing a single asterisk character.
+<p>
+<p> <img width="384" height="394" align="BOTTOM" alt="tabular52" src="385img1.gif"> <p>
+<p>
+<p>
+You may assume the input to contain only valid, upper-case,
+DNA nucleotide base letters (<tt>A</tt>, <tt>C</tt>, <tt>G</tt>,
+and <tt>T</tt>). No input line will exceed 255 characters in length.
+There will be no blank lines or spaces
+in the input.
+<p>
+Some sequences, though valid DNA strands, do
+not produce valid protein sequences;
+the string ``<tt>*** No translatable DNA found ***</tt>'' should be output
+when an input DNA strand does not translate into a valid protein. Also some sequences can be translated into several different proteines. In that case,
+print any of them.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>ATACTCGTAATTCACTCC
+CACCTGTACACAGAGGTAACTTAG
+TTAATACGACATAATTAT
+GCCTTGATATGGAGAACTCATTAGATA
+AAGTGTATGTTGAATTATATAAAACGGGCATGA
+ATGATGATGGCTTGA
+*</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Ser-Ile-Lys
+Cys-Leu-His
+Ser-Tyr
+*** No translatable DNA found ***
+Leu-Asn-Tyr-Ile-Lys-Arg-Ala
+Met-Met-Ala</pre>
+<p>
+</body>
+</html>

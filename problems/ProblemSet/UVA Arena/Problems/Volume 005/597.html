@@ -1,0 +1,141 @@
+
+
+<html>
+<head>
+<title>Last Name First, Please</title>
+<meta name="description" content="Last Name First, Please">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Last Name First, Please</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+An administrative assistant is presented with the problem or renaming a group of files containing photos 
+of employees.  The files are currently named with the employee's first name first, i.e., the photo of John 
+Smith is named John Smith.jpg.  The names must be changed so that the last name appears first, i.e., 
+Smith John.jpg.
+
+<p>
+
+<p>
+<br>
+The files are listed in a window in alphabetical order by file name, and are renamed by selecting them 
+with a mouse or cursor keys, then typing the new name, followed by the enter key.  Immediately after a 
+file is renamed, the ordering of the files is updated in the window, and the file just renamed remains selected.
+
+<p>
+
+<p>
+<br>
+For example, the list may originally display (with the first name selected) as
+
+<p>
+<div align="CENTER">
+<img src="p597a.gif">
+</div>
+
+<p>
+After renaming the selected file, the appearance of the list changes to this:
+
+<p>
+<div align="CENTER">
+<img src="p597b.gif">
+</div>
+
+<p>
+To save keystrokes, the administrative assistant decides to choose a file adjacent to the selected one,
+either Nancy Schnell.jpg or Ruth Sandweiss.jpg, to rename next, thus requiring only a single cursor 
+keystroke to select the next file.  Note that after a few files are renamed, it may be the case that the 
+selected file is adjacent only to already-renamed files, so that a single cursor keystroke is not sufficient 
+to select another file to rename.  The cursor key does not cause the selected file to "wrap around" from 
+last to first name or vice.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>
+The input will contain several test cases, each of them as described below.
+Consecutive test cases are separated by a single blank line.
+</b>
+<p>
+<p>
+
+<p>
+For each case, the input will contain a list of at most 20 file names, one per line, terminated with carriage returns.  
+No file name will contain more than 32 characters.  The first and last names will all be strings of letters, 
+with only the first capitalized.  You may assume that the ``last name" is that portion of the file name 
+between the first space character and the period.  In addition, you may assume that no two last names will be identical
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+
+
+For each case, if the files can be renamed, starting with the first file in the list, in such an order that only a single cursor 
+keystroke is used between renamings, your output should be the file names, last names first,  in the 
+order they are renamed.  If there is no such renaming, your output should be the phrase <tt>NO QUICK RENAMING POSSIBLE</tt>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Christina Peter.jpg
+Ganesh Ramanarayanan.jpg
+Laurie Yorr.jpg
+Lucy Kraus.jpg
+Melanie Ayala.jpg
+Nancy Schnell.jpg
+Ruth Sandweiss.jpg
+
+Christina Peter.jpg
+Ganesh Ramanarayanan.jpg
+Melanie Ayala.jpg
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+NO QUICK RENAMING POSSIBLE
+
+Peter, Christina.jpg
+Ayala, Melanie.jpg
+Ramanarayanan, Ganesh.jpg
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<p>Let us define a regular brackets sequence in the following way:</p>
+
+<ol>
+<li>Empty sequence is a regular sequence.</li>
+<li>If S is a regular sequence, then (S) and [S] are both regular sequences.</li>
+<li>If A and B are regular sequences, then AB is a regular sequence.</li>
+</ol>
+
+<p>For example, all of the following sequences of characters are regular 
+brackets sequences:</p>
+
+<p><tt>()</tt>, <tt>[]</tt>, <tt>(())</tt>, <tt>([])</tt>, <tt>()[]</tt>, <tt>()[()]</tt></p>
+
+<p>And all of the following character sequences are not:</p>
+
+<p><tt>(</tt>, <tt>[</tt>, <tt>)</tt>, <tt>)(</tt>, <tt>([)]</tt>, <tt>([(]</tt></p>
+
+<p>Some sequence of characters '(', ')', '[', and ']' is given. You are to find
+the shortest possible regular brackets sequence, that contains the given
+character sequence as a subsequence. Here, a string
+a<sub>1</sub>a<sub>2</sub>...a<sub>n</sub> is called a subsequence of the string
+b<sub>1</sub>b<sub>2</sub>...b<sub>m</sub>, if there exist such indices
+1 &le; i<sub>1</sub> &lt; i<sub>2</sub> &lt; ... &lt; i<sub>n</sub> &le; m,
+that a<sub>j</sub>=b<sub>i<sub>j</sub></sub> for all 1 &le; j &le; n.</p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+<p>The input file contains at most 100 brackets (characters '(', ')', '[' and ']')
+that are situated on a single line without any other characters among them.</p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+<p>Write to the output file a single line that contains some regular brackets sequence
+that has the minimal possible length and contains the given sequence as a
+subsequence.</p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+1
+
+([(]
+</pre>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>
+()[()]
+</pre>

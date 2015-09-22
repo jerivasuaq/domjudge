@@ -1,0 +1,151 @@
+
+<p>
+You had an accountant, who recorded all your expenses. Each day you sent her notes on 
+expenses and she appended them to a single big summary file. Each of your notes consisted 
+of several rows, like the following: 
+
+<p>
+<pre>
+bed = 100 
+table = 150 
+furniture = bed + table 
+furniture = furniture + 10
+</pre>
+
+<p>
+which (probably) meant that you spent 250 on furniture and 10 on transport (probably). 
+More generally, each row in your note was one of the following: 
+
+<p>
+<pre>
+name = number 
+name = item + item
+</pre>
+
+<p>
+where <tt>item</tt> was either <tt>number</tt> or <tt>name</tt>, <tt>number</tt> was a 
+natural number not exceeding <span class="MATH">10<sup>9</sup></span> (with no leading zeroes) and name was an arbitrary 
+sequence of small and capital letters. 
+
+<p>
+While transferring your notes to the summary file, the accountant neither changed the 
+order of rows of a note nor shuffled rows of difflerent notes. But sometimes she changed 
+names<span class="MATH">...</span> She did it consistently though, changing all occurrences of the name in a single 
+note to the same new one. Also, different names from the same note were rewritten as 
+different names in the summary file. But there is no guarantee that it was consistent 
+with your other notes -- the name <span class="textit">beer</span> from one note could have been rewritten as 
+<span class="textit">drink</span>, the name <span class="textit">tee</span> from the other note could have been rewritten as 
+<span class="textit">drink</span> as well, while the <span class="textit">beer</span> from the next note could have been rewritten 
+as <span class="textit">food</span>. Lets call her version of your note a <span class="textit">transcription</span> of it. 
+
+<p>
+The problem is that your accountant has just quit (and, as it turned out, took most of 
+your savings) and you are left with the summary file and a huge unsorted pile of notes. 
+You want to check if it is possible that some of your notes were not recorded in the 
+summary, so for each note you are searching for a piece of summary that can be its 
+transcription.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The input contains several test cases. The first line of the input contains a positive 
+integer <span class="MATH"><i>Z</i><img width="18" height="31" align="MIDDLE" border="0" src="4619img1.png" alt="$ \le$">15</span>, denoting the number of test cases. Then <span class="MATH"><i>Z</i></span> test cases follow, each 
+conforming to the format described below.
+
+<p>
+
+<p>
+<br>
+The first line of an input instance contains an integer <span class="MATH"><i>k</i></span>, the number of notes 
+
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4619img1.png" alt="$ \le$"><i>k</i><img width="18" height="31" align="MIDDLE" border="0" src="4619img1.png" alt="$ \le$">50000)</span>. The following lines first contain the descriptions of <span class="MATH"><i>k</i></span> notes, 
+then the description of the summary file follows. The description of each note and 
+the summary starts with a line consisting of a single integer <span class="MATH"><i>d</i></span> <span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4619img1.png" alt="$ \le$"><i>d</i> )</span>. Then <span class="MATH"><i>d</i></span> lines 
+follow, each containing a single row of a note or the summary. The format of each row is 
+as described in the problem statement above. You can assume that names, numbers, signs 
+``<tt>=</tt>" and ``<tt>+</tt>" are separated by single spaces and each line is at most 100 
+characters long. Both the length of the text and the sum of all patterns lengths will 
+be at most 
+<span class="MATH">3*10<sup>6</sup></span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, your 
+program has to write an output conforming to the format described below.
+
+<p>
+
+<p>
+<br>
+The output for a single instance should consist of <span class="MATH"><i>k</i></span> lines. In the <span class="MATH"><i>i</i></span>-th line there 
+should be the answer for the <span class="MATH"><i>i</i></span>-th note. It should be the number of <span class="textit">the first row</span> in 
+the summary file, where a possible transcription of the <span class="MATH"><i>i</i></span>-th note starts (the first 
+row of the summary file has number 1) or word <tt>NONE</tt> if no fragment of the summary file 
+could be such possible transcription.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+2 
+3 
+4 
+bed = 100 
+table = 150 
+furniture = bed + table 
+furniture = furniture + 10 
+1 
+beer = 100 
+2 
+a = a + a 
+a = a + 10 
+10 
+furniture = 100 
+table = 150 
+furniture = furniture + table 
+furniture = furniture + 10 
+sofa = 100 
+stol = 150 
+meble = sofa + stol 
+meble = meble + 10 
+picie = 100 
+drink = 0100 
+2 
+1 
+a = 100 + 200 
+1 
+a = 100 
+2 
+x = 100 + 200 
+y = 100
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 
+1 
+NONE 
+1 
+2
+</pre>
+
+<p>

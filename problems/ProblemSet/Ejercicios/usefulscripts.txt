@@ -1,0 +1,35 @@
+for i in {01..19}; do cp domjudge-problem.ini ejercicio$i/ ; done
+for i in {01..01}; do zip ejercicio$i/ejercicio$i.zip ejercicio$i/*.in ejercicio$i/*.out ejercicio$i/*.txt ejercicio$i/*.c; done
+for i in {01..01}; do zip ejercicio$i.zip ejercicio$i/*.in ejercicio$i/*.out ejercicio$i/*.txt ejercicio$i/*.c; done
+for i in {01..01}; do zip ejercicio$i.zip ejercicio$i/*.in ejercicio$i/*.out ejercicio$i/*.txt ejercicio$i/*.c ejercicio$i/*.ini; done
+for i in {01..01}; do zip  ejercicio$i/ejercicio$i.zip ejercicio$i/*.in ejercicio$i/*.out ejercicio$i/*.txt ejercicio$i/*.c ejercicio$i/*.ini; done
+for i in {01..01}; do zip -b ejercicio$i ejercicio$i/ejercicio$i.zip ejercicio$i/*.in ejercicio$i/*.out ejercicio$i/*.txt ejercicio$i/*.c ejercicio$i/*.ini; done
+for i in {01..01}; do zip -b ejercicio$i/ ejercicio$i/ejercicio$i.zip ejercicio$i/*.in ejercicio$i/*.out ejercicio$i/*.txt ejercicio$i/*.c ejercicio$i/*.ini; done
+for i in {01..01}; do cd ejercicio$i/ ; zip ejercicio$i/ejercicio$i.zip ejercicio$i/*.in ejercicio$i/*.out ejercicio$i/*.txt ejercicio$i/*.c ejercicio$i/*.ini; cd..; done
+for i in {01..01}; do cd ejercicio$i/ ; zip ejercicio$i.zip *.in *.out *.txt *.c *.ini; cd..; done
+#for i in {01..01}; do cd ejercicio$i/ ; zip ejercicio$i.zip *.in *.out *.txt *.c *.ini; cd ..; done
+for i in {01..01}; do cd ejercicio$i/ ; zip ejercicio$i.zip *.in *.out *.txt *.c *.ini; cd ..; done
+for i in {01..19}; do cd ejercicio$i/ ; zip ejercicio$i.zip *.in *.out *.txt *.c *.ini; cd ..; done
+for i in {01..19}; echo "cid=c3\n" >> ejercicio$i/domjudge-problem.ini ; done
+for i in {01..19}; echo "cid=c3\n"; done
+for i in {01..19}; echo "cid="; done
+for i in {01..19}; do echo "cid=c3\n" >> ejercicio$i/domjudge-problem.ini ; done
+for i in {01..19}; do echo -e "cid=c3\n" >> ejercicio$i/domjudge-problem.ini ; done
+for i in {01..19}; do echo -e "allow_submit=true\n" >> ejercicio$i/domjudge-problem.ini ; done
+for i in {01..19}; do echo -e "allow_judge=true\n" >> ejercicio$i/domjudge-problem.ini ; done
+for i in {01..19}; do mkdir -p ejercicio$i/data/sample; done
+for i in {01..19}; do find ejercicio$i/ -type f -name '*.ans' -exec mv ejercicio$i/data/sample \;
+for i in {01..19}; do find ejercicio$i/ -type f -name '*.ans' -exec mv ejercicio$i/data/sample \; done
+for i in {01..19}; do find ejercicio$i/ -type f -name '*.ans' -exec mv '{}' ejercicio$i/data/sample ; done
+for i in {01..19}; do find ejercicio$i/ -type f -name '*.ans' -exec mv '{}' ejercicio$i/data/sample \; done
+for i in {01..19}; do find ejercicio$i/ -type f -name '*.ans' -exec mv '{}' ejercicio$i/data/sample \; ; done
+for i in {01..19}; do find ejercicio$i/ -type f -name '*.in' -exec mv '{}' ejercicio$i/data/sample \; ; done
+for i in {01..19}; do cd ejercicio$i/ ; rm *.zip; zip ejercicio$i.zip *.in *.out *.txt *.c *.ini; cd ..; done
+for i in {01..19}; do cd ejercicio$i/ ; rm *.zip; zip ejercicio$i.zip *; cd ..; done
+for i in {01..19}; do cd ejercicio$i/ ; rm *.zip; zip -r ejercicio$i.zip *; cd ..; done
+for i in {01..19}; do echo -e "teamid=t1\n" >> ejercicio$i/domjudge-problem.ini ; done
+for i in {01..19}; do cd ejercicio$i/ ; rm *.zip; zip -r ejercicio$i.zip *; cd ..; done
+for i in {01..19}; do mkdir -p ejercicio$i/submissions; done
+for i in {01..19}; do find ejercicio$i/ -type f -name '*.c' -exec mv '{}' ejercicio$i/submissions \; ; done
+for i in {01..19}; do cd ejercicio$i/ ; rm *.zip; zip -r ejercicio$i.zip *; cd ..; done
+

@@ -1,0 +1,71 @@
+
+
+<html>
+<head>
+<title>Intersection</title>
+<meta name="description" content="Intersection">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Intersection</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You are to write a program that has to decide whether a given line segment
+intersects a given rectangle.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">An example:</a></font></h2>
+<p>
+<pre><tt> 
+line: 		 start point: 		 (4,9)
+<p>
+ 		 end point: 		 (11,2)
+<p>
+rectangle: 		 left-top: 		 (1,5)
+<p>
+ 		 right-bottom: 		 (7,1)
+<p>
+</tt></pre>
+<p>
+<p><a name="32">&#160;</a> <img align="BOTTOM" alt="figure27" src="191img1.gif"> <br>
+<strong>Figure:</strong> Line segment does not intersect rectangle<br>
+<p>
+<p>
+The line is said to intersect the rectangle if the line and the rectangle
+have at least one point in common. The rectangle consists of four straight
+lines and the area in between. Although all input values are integer numbers,
+valid intersection points do not have to lay on the integer grid.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Input</a></font></h2>
+<p>
+The input consists of <i>n</i> test cases. The first line of the input file
+contains the number <i>n</i>. Each following line contains one test case
+of the format:
+<p>
+<p> <img width="446" height="16" align="BOTTOM" alt="displaymath45" src="191img2.gif"> <p>
+<p>
+where (<i>xstart</i>, <i>ystart</i>) is the start and (<i>xend</i>, <i>yend</i>)
+the end point of the line and (<i>xleft</i>, <i>ytop</i>) the top left and
+(<i>xright</i>, <i>ybottom</i>) the bottom right corner of the rectangle.
+The eight numbers are separated by a blank. The terms  <img width="60" height="25" align="MIDDLE" alt="tex2html_wrap_inline55" src="191img3.gif">  and
+ <img width="97" height="25" align="MIDDLE" alt="tex2html_wrap_inline57" src="191img4.gif">  do not imply any ordering of coordinates.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Output</a></font></h2>
+<p>
+For each test case in the input file, the output file should contain a line
+consisting either of the letter &quot;<tt>T</tt>&quot; if the line segment intersects
+the rectangle or the letter &quot;<tt>F</tt>&quot; if the line segment does not intersect
+the rectangle.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+4 9 11 2 1 5 7 1</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>F</pre>
+<p>
+</body>
+</html>

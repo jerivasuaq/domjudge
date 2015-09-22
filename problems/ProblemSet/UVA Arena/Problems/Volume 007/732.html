@@ -1,0 +1,170 @@
+
+
+<html>
+<head>
+<title>Anagrams by Stack</title>
+<meta name="description" content="Anagrams by Stack">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Anagrams by Stack</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+How can anagrams result from sequences of stack operations?  There are two
+sequences of stack operators which can convert TROT to TORT:
+
+<p>
+<pre>
+[
+i i i i o o o o
+i o i i o o i o
+]
+</pre>
+where <tt>i</tt> stands for Push and <tt>o</tt> stands for Pop. Your
+program should, given pairs of words produce sequences of stack
+operations which convert the first word to the second.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input will consist of several lines of input.  The first line
+of each pair of input lines is to be considered as a source word
+(which does not include the end-of-line character).  The second
+line (again, not including the end-of-line character) of each pair
+is a target word.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each input pair, your program should produce a sorted list of
+valid sequences of <tt>i</tt> and <tt>o</tt> which produce the target
+word from the source word. Each list should be delimited by
+<pre>
+[
+]
+</pre>
+and the sequences should be printed in ``dictionary order". Within
+each sequence, each <tt>i</tt> and <tt>o</tt> is followed by a single
+space and each sequence is terminated by a new line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Process</a>&nbsp;</font>
+</h2>
+
+<p>
+A stack is a data storage and retrieval structure permitting two
+operations:
+
+<p>
+<dl compact="">
+<dt>
+<dd>Push - to insert an item and
+<dt>
+<dd>Pop - to retrieve the most recently pushed item
+</dd></dt></dd></dt></dl>
+
+<p>
+We will use the symbol <tt>i</tt> (in) for push and <tt>o</tt> (out) for
+pop operations for an initially empty stack of characters.  Given
+an input word, some sequences of push and pop operations are valid
+in that every character of the word is both pushed and popped, and
+furthermore, no attempt is ever made to pop the empty stack.  For
+example, if the word FOO is input, then the sequence:
+
+<p>
+
+<p>
+<br>
+
+<tt>i i o i o o</tt>  is valid, but
+
+<p>
+<tt>i i o       </tt> is not (it's too short), neither is
+
+<p>
+<tt>i i o o o i</tt>  (there's an illegal pop of an empty stack)
+
+<p>
+
+<p>
+<br>
+Valid sequences yield rearrangements of the letters in an input
+word.  For example, the input word FOO and the sequence <tt>i i o
+i o o</tt> produce the anagram OOF.  So also would the sequence <tt>i
+i i o o o</tt>.  You are to write a program to input pairs of words
+and output all the valid sequences of <tt>i</tt> and <tt>o</tt> which
+will produce the second member of each pair from the first.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+madam
+adamm
+bahama
+bahama
+long
+short
+eric
+rice
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+[
+i i i i o o o i o o
+i i i i o o o o i o
+i i o i o i o i o o
+i i o i o i o o i o
+]
+[
+i o i i i o o i i o o o
+i o i i i o o o i o i o
+i o i o i o i i i o o o
+i o i o i o i o i o i o
+]
+[
+]
+[
+i i o i o i o o
+]
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-31</i>
+</address>
+</body>
+</html>
+

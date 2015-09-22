@@ -1,0 +1,80 @@
+
+There are sports facilities in the mountain at the back of our village for the villagers to build up their physical strength. One of the facilities consists of many logs placed along a straight trail through the forest. All the logs are of the same length and are placed in a parallel direction to the trail. `Log jumping' is one of the famous games played in the facility. The game, which involves mental skills, is to visit as many logs as possible in the following way.
+
+<ol>
+<li>One first selects an arbitrary log and visits the log. Visiting means jumping on the log. Moving on the log is allowed. 
+</li>
+<li>Next, he/she selects an unvisited log and visits it. The direction of jumping should be perpendicular to the direction of logs. Repeat Step 2 if he/she wants. 
+</li>
+<li>The last log visited should be identical to the first one. Visiting a log except the first/last one is allowed at most one time. When one returns to the first log, the game ends.
+</li>
+</ol>
+
+For example, let us have eight logs of length five numbered from 1 to 8 as depicted in the figure below. Starting with Log 2, we can jump on Log 4, then jump on Log 7, Log 8, Log 5, and finally we can return to Log 2 visiting totally five logs. We can not visit more than five logs according to the above way, so the maximum number of logs one can visit is five.
+
+<div align="CENTER">
+
+
+<img width="943" height="242" align="BOTTOM" border="0" src="p3610.jpg" alt="\epsfbox{p3610.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+Given the length and positions of logs, Ha-Jin wants to find an efficient method to determine the maximum number of logs she can visit. Write a program that can help her. When the position of the right endpoint of a log coincides with the position of the left endpoint of another log, it is assumed that one can jump from one log to the other log, and vice versa. In the above figure, jumping from Log 1 to Log 4 or jumping from Log 4 to Log 1 is possible.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+Your program is to read from standard input. The input consists of <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> test cases. The number of test cases <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> is given in the first line of the input. Each test case starts with a line containing two integers <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark> which represent the number and the length of logs, respectively, 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="3610img2.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="3610img2.png" alt="$ \le$">5, 000</span>
+<tex2html_verbatim_mark>, 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="3610img2.png" alt="$ \le$"><i>k</i><img width="18" height="31" align="MIDDLE" border="0" src="3610img2.png" alt="$ \le$">100, 000</span>
+<tex2html_verbatim_mark>. In the next line, <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> integers 
+<span class="MATH"><i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>,..., <i>x</i><sub>n</sub></span>
+<tex2html_verbatim_mark> are given. Here, <span class="MATH"><i>x</i><sub>i</sub></span>
+<tex2html_verbatim_mark>, 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="3610img2.png" alt="$ \le$"><i>i</i><img width="18" height="31" align="MIDDLE" border="0" src="3610img2.png" alt="$ \le$"><i>n</i></span>
+<tex2html_verbatim_mark>, represents the <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark>-coordinate of the left endpoint of the <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th log, 
+<span class="MATH">-1, 000, 000<img width="18" height="31" align="MIDDLE" border="0" src="3610img2.png" alt="$ \le$"><i>x</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="3610img2.png" alt="$ \le$">1, 000, 000</span>
+<tex2html_verbatim_mark>. There is a single space between two integers given in the same line.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+Your program is to write to standard output. Print exactly one line for each test case. The line should contain the maximum number of logs one can visit. 
+
+The following shows sample input and output for four test cases.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+4 
+8 5 
+-4 4 -5 1 7 -3 4 7 
+4 5 
+-5 -4 -3 1 
+2 10 
+-1 5 
+2 3 
+-1 5
+</pre>
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<pre>
+5 
+4 
+2 
+1
+</pre>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

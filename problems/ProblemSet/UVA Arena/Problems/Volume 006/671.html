@@ -1,0 +1,154 @@
+
+
+<html>
+<head>
+<title>Spell checker</title>
+<meta name="description" content="Spell checker">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Spell checker</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+You, as a member of a development team for a new spell checking program, are to write a module that will check the
+correctness of given words using a known dictionary of all correct words in all their forms.
+
+<p>
+
+<p>
+<br>
+If the word is absent in the dictionary then it can be replaced by correct words (from the dictionary) that can be obtained by
+one of the following operations:
+
+<p>
+<ul>
+<li>deleting of one letter from the word;
+
+<p>
+<li>replacing of one letter in the word with an arbitrary letter;
+
+<p>
+<li>inserting of one arbitrary letter into the word.
+</li></li></li></ul>
+
+<p>
+Your task is to write the program that will find all possible replacements from the dictionary for every given word.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+The first line of the input is an integer N, then a blank line followed by N datasets. There is a blank line between datasets.
+
+<p>The first part of each dataset contains all words from the dictionary. Each word occupies its own line. This part is finished by
+the single character `<tt>#</tt>' on a separate line. All words are different.
+There will be at most 10000 words in the dictionary.
+
+<p>
+
+<p>
+<br>
+The next part of the dataset contains all words that are to be checked. Each word occupies its own line. This part is also finished by
+the single character `<tt>#</tt>' on a separate line. There will be at most 50 words that are to be checked.
+
+<p>
+
+<p>
+<br>
+All words in the input file (words from the dictionary and words to be checked) consist only of small alphabetic characters and
+each one contains 15 characters at most.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, write exactly one line for every checked word in the order of their appearance in the second part of the input
+file. If the word is correct (i.e. it exists in the dictionary) write the 
+message: ``
+
+&lt;<i>checked word</i>&gt;<tt> is correct</tt>". If the word is not
+correct then write this word first, then write the character `<tt>:</tt>' (colon),
+and after a single space write all its possible replacements, separated by
+spaces. The replacements should be written in the order of their appearance in
+the dictionary (in the first part of the input file). If there are no
+replacements for this word then the line feed should immediately follow the
+colon.
+
+<p>Print a blank line between datasets.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+i
+is
+has
+have
+be
+my
+more
+contest
+me
+too
+if
+award
+#
+me
+aware
+m
+contest
+hav
+oo
+or
+i
+fi
+mre
+#
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+me is correct
+aware: award
+m: i my me
+contest is correct
+hav: has have
+oo: too
+or:
+i is correct
+fi: i
+mre: more me
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

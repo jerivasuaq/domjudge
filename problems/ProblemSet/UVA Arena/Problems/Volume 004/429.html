@@ -1,0 +1,78 @@
+
+
+<html>
+<head>
+<title>Word Transformation</title>
+<meta name="description" content="Word Transformation">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center></center></h1>
+ <table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Word Transformation</a></font>&nbsp;</b></td></tr></table>
+<p>
+A common word puzzle found in many newspapers and magazines is the <em>word
+transformation.</em>  By taking a starting word and successively altering a single
+letter to make a new word, one can build a sequence of words which changes the
+original word to a given end word.  For instance, the word ``<tt>spice</tt>'' can be transformed in four steps to the word ``<tt>stock</tt>'' according to the following
+sequence:   <tt>spice, slice, slick, stick, stock.</tt>  Each successive
+word differs from the previous word in only a single character position while
+the word length remains the same.
+<p>
+<p>
+Given a dictionary of words from which to make transformations, plus a list of
+starting and ending words, your team is to write a program to determine the
+number of steps in the shortest possible transformation.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+The first line of the input is an integer N, indicating the number of test set
+that your correct program should test followed by a blank line. Each test set will have two sections.  The first section will be
+the dictionary of available words with one word per line, terminated by a line
+containing an asterisk (<tt>*</tt>) rather than a word. There can be up to 200 words in the dictionary; all words will be alphabetic and in lower case, and no word will be longer than ten characters.  Words can appear in the dictionary in any order.
+<p>
+Following the dictionary are pairs of words, one pair per line, with the words
+in the pair separated by a single space.  These pairs represent the starting
+and ending words in a transformation. All pairs are guaranteed to have a transformation using the
+dictionary given.  The starting and ending words will appear in the
+dictionary.
+<p>
+Two consecutive input set will separated by a blank line.
+<p>
+The output should contain one line per word pair for each test set, and must include the
+starting word, the ending word, and the number of steps in the shortest
+possible transformation, separated by single spaces. Two consecutive output set
+will be separated by a blank line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+
+dip
+lip
+mad
+map
+maple
+may
+pad
+pip
+pod
+pop
+sap
+sip
+slice
+slick
+spice
+stick
+stock
+*
+spice stock
+may pod</pre>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<pre>spice stock 4
+may pod 3</pre>
+<p>
+</body>
+</html>

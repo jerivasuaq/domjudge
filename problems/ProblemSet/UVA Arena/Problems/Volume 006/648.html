@@ -1,0 +1,111 @@
+
+
+<html>
+<head>
+<title>Stamps</title>
+<meta name="description" content="Stamps">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Stamps</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Have you done any Philately lately? 
+You have been hired by the Ruritanian Postal Service (RPS) to design their new postage 
+software.  The software allocates stamps to customers based on customer needs and the 
+denominations that are currently in stock.
+
+<p>
+
+<p>
+<br>
+Ruritania is filled with people who correspond with stamp collectors. As a service to these people, 
+the RPS asks that all stamp allocations have the maximum number of different types of stamps in 
+it.  In fact, the RPS has been known to issue several stamps of the same denomination in order to 
+please customers (these count as different types, even though they are the same denomination).  
+The maximum number of different types of stamps issued at any time is twenty-five.
+
+<p>
+
+<p>
+<br>
+To save money, the RPS would like to issue as few duplicate stamps as possible (given the constraint that they want to issue as many different types).  Further, the RPS won't sell more than four stamps at a time.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input for your program will be pairs of positive integer sequences, consisting of two lines, 
+alternating until end-of-file.  The first sequence are the available values of stamps, while the second sequence is a series of customer requests.  
+
+<p>
+
+<p>
+<br>
+
+<b>Note:</b> the comments in the sample input are <b>not</b> part of the data file; data files contain only integers. 
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each customer, you should print the ``best" combination that is exactly equal to the customer's
+needs, with a maximum of four stamps. If no such combination exists, print ``<tt>none</tt>".
+
+<p>
+The ``best" combination is defined as the maximum number of different stamp types.  In case of a
+tie, the combination with the fewest total stamps is best.  If still tied, the set with the highest single-value stamp is best.  If there is still a tie, print ``<tt>tie</tt>".
+
+<p>
+As you can see in the sample output below, you should print the customer request, the number of types sold and the actual stamps in non-decreasing order.  
+In case of no legal allocation, the line should look like it does in the example, with four hyphens 
+after a space.  In the case of a tie, still print the number of types but do not print the allocation 
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 2 3 0	        ; three different stamp types
+7 4 0           ; two customers
+1 1 0           ; a new set of stamps (two of the same type)
+6 2 3 0	        ; three customers
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+7 (3): 1 1 2 3 
+4 (2): 1 3 
+6 ---- none
+2 (2): 1 1
+3 (2): tie
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-17</i>
+</address>
+</body>
+</html>
+

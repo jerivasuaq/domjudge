@@ -1,0 +1,115 @@
+<p>
+Contemporary buildings can have very complicated roofs. If we take a
+vertical section of such a roof it amounts to a number of sloping segments.
+When it is raining the drops are falling down onto the roof straight from
+the sky above. Some segments are completely exposed to the rain but there
+may be some segments partially or even completely shielded by other segments.
+All the water falling onto a segment flows as a stream straight down from the
+lower end of the segment on the ground or possibly onto some other segment.
+In particular if a stream of water is falling on an end of a segment then we
+consider it to be collected by this segment.
+
+<p>
+<div align="CENTER">
+
+<img align="BOTTOM" border="0" src="p2947.gif" alt="\epsfbox{p2947.eps}">
+</div>
+
+<p>
+For the purpose of designing a piping system it is
+desired to compute how much water is flowing down from each segment of the
+roof. To be prepared for a heavy November rain you should count one liter
+of rain water falling on a meter of the horizontal plane during one second.
+
+<p>
+
+<p>
+<br>
+Write a program that:
+
+<p>
+
+<ul>
+<li>reads the description of the roof from the standard input,
+</li>
+<li>computes the amount of water flowing down in one second from each segment of the roof,
+</li>
+<li>writes the result to the standard output.
+</li>
+</ul>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input consists of several test cases separated by a blank line. The first line of the input indicates the number of test cases, and it's followed by a blank line.
+
+
+<p>
+The first line of each dataset contains one integer <span class="MATH"><i>n</i></span> (
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2947img2.png" alt="$ \le$"><i>n</i><img width="18" height="30" align="MIDDLE" border="0" src="2947img2.png" alt="$ \le$">40000</span>)
+being the number of segments of the roof. Each of the next <span class="MATH"><i>n</i></span> lines
+describes one segment of the roof and contains four integers
+<span class="MATH"><i>x</i><sub>1</sub></span>, <span class="MATH"><i>y</i><sub>1</sub></span>, <span class="MATH"><i>x</i><sub>2</sub></span>, <span class="MATH"><i>y</i><sub>2</sub></span> (
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="2947img2.png" alt="$ \le$"><i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>, <i>x</i><sub>2</sub>, <i>y</i><sub>2</sub><img width="18" height="30" align="MIDDLE" border="0" src="2947img2.png" alt="$ \le$">1000000</span>,
+
+<span class="MATH"><i>x</i><sub>1</sub> &lt; <i>x</i><sub>2</sub></span>, 
+<span class="MATH"><i>y</i><sub>1</sub> != <i>y</i><sub>2</sub></span>) separated by single spaces.
+Integers <span class="MATH"><i>x</i><sub>1</sub></span>, <span class="MATH"><i>y</i><sub>1</sub></span> are
+respectively the horizontal position and the height of the left end of the
+segment. Integers <span class="MATH"><i>x</i><sub>2</sub></span>, <span class="MATH"><i>y</i><sub>2</sub></span> are respectively the horizontal position and
+the height of the right end of the segment. The segments don't have common
+points and there are no horizontal segments. Also you can assume that
+there are at most 100 segments placed above any point on the ground level.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, the output consists of <span class="MATH"><i>n</i></span> lines. The <span class="MATH"><i>i</i></span>-th line should contain the amount
+of water (in liters) flowing down from the <span class="MATH"><i>i</i></span>-th segment of the roof during
+one second.
+
+<p>
+The outputs of two consecutive cases will be separated by a blank line.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6
+13 7 15 6
+3 8 7 7
+1 7 5 6
+5 5 9 3
+6 3 8 2
+9 6 12 8
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+4
+2
+11
+0
+3
+</pre>
+
+<p>

@@ -1,0 +1,148 @@
+
+
+<html>
+<head>
+<title>The die is cast</title>
+<meta name="description" content="The die is cast">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The die is cast</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+InterGames is a high-tech startup company that specializes in developing technology that allows users
+to play games over the Internet. A market analysis has alerted them to the fact that games of chance
+are pretty popular among their potential customers. Be it Monopoly, ludo or backgammon, most of
+these games involve throwing dice at some stage of the game.
+
+<p>
+Of course, it would be unreasonable if players were allowed to throw their dice and then enter the
+result into the computer, since cheating would be way to easy. So, instead, InterGames has decided to
+supply their users with a camera that takes a picture of the thrown dice, analyzes the picture and then
+transmits the outcome of the throw automatically.
+
+<p>
+For this they desperately need a program that, given an image containing several dice, determines
+the numbers of dots on the dice.
+
+<p>
+We make the following assumptions about the input images. The images contain only three dif-
+ferent pixel values: for the background, the dice and the dots on the dice. We consider two pixels
+<em>connected</em> if they share an edge - meeting at a corner is not enough. In
+the figure, pixels A and B are connected, but B and C are not.
+
+<p>
+<div align="CENTER">
+
+<img src="p657.gif">
+</div>
+
+<p>
+A set <i>S</i> of pixels is connected if for every pair (<i>a</i>,<i>b</i>) of pixels in <i>S</i>,
+there is a sequence 
+
+<img width="102" height="30" align="MIDDLE" border="0" src="657img1.gif" alt="$a_1, a_2, \dots, a_k$">
+in <i>S</i> such that <i>a</i> = <i>a</i><sub>1</sub> and <i>b</i> =
+<i>a</i><sub><i>k</i></sub> , and <i>a</i><sub><i>i</i></sub> and <i>a</i><sub><i>i</i>+1</sub> are connected for 
+
+<img width="75" height="32" align="MIDDLE" border="0" src="657img2.gif" alt="$1 \le i < k$">.
+
+<p>
+We consider all
+maximally connected sets consisting solely of non-background pixels to be dice.
+`Maximally connected' means that you cannot add any other non-background
+pixels to the set without making it dis-connected. Likewise we consider every
+maximal connected set of dot pixels to form a dot.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of pictures of several dice throws. Each picture description starts with a line
+containing two numbers w and h, the width and height of the picture, respectively. These values
+satisfy 
+
+<img width="108" height="32" align="MIDDLE" border="0" src="657img3.gif" alt="$5 \leYw,h \le 50$">.
+
+<p>
+The following <i>h</i> lines contain <i>w</i> characters each. The characters can be:
+``<tt>.</tt>'' for a background pixel, ``<tt>*</tt>'' for a pixel of a die, and
+``<tt>X</tt>'' for a pixel of a die's dot. 
+
+<p>
+Dice may have different sizes and not
+be entirely square due to optical distortion. The picture will contain at least
+one die, and the numbers of dots per die is between 1 and 6, inclusive. 
+
+<p>
+The input is terminated by a picture starting with <i>w</i> = <i>h</i> = 0, which should
+not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each throw of dice, first output its number. Then output the number of dots on the dice in the
+picture, sorted in increasing order.
+
+<p>
+Print a blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+30 15
+..............................
+..............................
+...............*..............
+...*****......****............
+...*X***.....**X***...........
+...*****....***X**............
+...***X*.....****.............
+...*****.......*..............
+..............................
+........***........******.....
+.......**X****.....*X**X*.....
+......*******......******.....
+.....****X**.......*X**X*.....
+........***........******.....
+..............................
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Throw 1
+1 2 2 4
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

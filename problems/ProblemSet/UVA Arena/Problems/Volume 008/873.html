@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>ACM - 3ª Sessão - 2º Problema</title>
+<style>a:hover {color:#FA1F00}</style>
+</head>
+
+<body>
+
+
+
+<font color="#000000" face="Arial" size="2">
+
+<p align="center"><b><font size="3" face="Arial" color="#000000">Loan (II)
+</font></b></p>
+
+<p> 
+<b><font size="3"><a name="back">Background</a></font></b></p>
+
+<p>&nbsp;&nbsp; One of the services of banks is to lend money to their customers. The loan
+is characterized by an initial capital and by a number of periods (for instance, months) of
+duration. At the end of the loan all the money must have been paid back to the bank, plus an
+interest that represents the money the bank earns. The interest rate is usually specified on
+a yearly basis. For the sake of clarity lets use an example: you get a loan of 5000 €, for
+three years, at an interest rate of 6%. One possibility is that you collect the money to pay
+back at home and, after three years, you pay to the bank all the 5000 € plus 3*0.06*5000=900€
+of interest. Another possibility is that you periodically pay a certain amount that we will
+assume is always the same, part of which is to pay the interest for the last period and the
+rest is to subtract to the debt. This way the capital on loan will decrease since the first
+period and the interest on the next period will be smaller. The total amount paid in this
+modality is obviously less than in the case you keep all the money until the end of the loan. 
+</p>
+
+<p> 
+<b><font size="3"><a name="problem">Problem</a></font></b></p>
+
+<p>&nbsp;&nbsp; Given an initial capital on loan, an yearly interest rate, a duration for
+the loan, determine the value of a fixed monthly payment such that in the last payment the
+capital on loan is reduced to zero and all the interest have been properly paid.</p>
+
+<p> 
+<b><font size="3"><a name="input">Input</a></font></b></p>
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<p>&nbsp;&nbsp; One line with three integers, separated by single spaces: the initial
+capital in euros, the yearly interest rate in percentage, and the duration in months. 
+
+<p> 
+<b><font size="3"><a name="output">Output</a></font></b></p>
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+
+<p>&nbsp;&nbsp; One line containing the value in euros of the monthly payment rounded to cents.
+
+
+<p><b>Sample Input</b><br>1<br><br>5000 6 36
+
+<p><b>Sample Output</b><br>152.11
+
+<p>&nbsp;</p>
+
+</font>
+</body>
+
+</html>

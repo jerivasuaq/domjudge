@@ -1,0 +1,236 @@
+
+
+<html>
+<head>
+<title>Adam's Genes</title>
+<meta name="description" content="Adam's Genes">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Adam's Genes</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+You've been hired by Gemini Labs, the world leader in human cloning, to write
+decision support
+software. At Gemini, all clones are derived from ``ADAM", a genetically perfect
+human. Something
+about his DNA makes him much easier to clone than normal humans. Not all the
+clones of Adam
+are the same, though, because geneticists introduce mutations, in the form
+of recessive genes, to
+learn more about genetics. For example, Bob might be a clone of Adam with
+a recessive gene for
+baldness added. Scientists would study Bob to see what subtle effects the
+gene may have. Clones of
+Bob would carry the recessive gene, as would clones of those clones, and so
+on. All is well as long
+as no clone derived from Bob is given a second recessive baldness gene. If
+that were to happen, a
+bald clone would be produced and the Cloning Board would shut Gemini down.
+
+<p>
+
+<p>
+<br>
+The software you are to write takes cloning requests from the research staff
+and evaluates them for
+consistency and safety. A collection of requests is ``inconsistent" if it
+includes a clone that is not
+descended from Adam. A collection of requests is ``unsafe" if it produces a
+clone with two identical recessive genes.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Your program consumes a file of cloning requests, one per line. Here is
+the format of a cloning request:
+
+<p>
+&lt;<i>request</i>&gt; = <code>clone_</code>&lt;<i>name</i>&gt;<code>_from_</code>
+
+&lt;<i>name</i>&gt;&lt;<i>genelist</i>&gt;
+
+<p>
+
+
+&lt;<i>genelist</i>&gt; = <code>NULL | _mutating_</code>
+
+&lt;<i>gene</i>&gt;&lt;<i>genes</i>&gt;
+
+<p>
+&lt;<i>genes</i>&gt; = <code>NULL | _</code>
+
+&lt;<i>gene</i>&gt;&lt;<i>genes</i>&gt;
+
+<p>
+&lt;<i>gene</i>&gt; = 3 upper case alphabetical characters
+
+<p>
+&lt;<i>name</i>&gt; = 1 to 10 upper case alphabetical characters
+
+<p>
+<code> _</code> = one blank
+
+<p>
+
+<p>
+<br>
+A typical cloning request is
+
+<p>
+<pre>
+clone BOB from ADAM mutating BLD HEM
+</pre>
+
+<p>
+
+<p>
+<br>
+
+<b>Note:</b> there is always exactly one space between words; the last character on a line is immediately
+followed by EOLN. There can be zero to ten mutations in a request. If there
+are no mutations in the request, the keyword ``mutating" does not appear, e.g.,
+
+<p>
+<pre>
+clone BOB from ADAM
+</pre>
+
+<p>
+The input is guaranteed to satisfy the syntactic format specifications, and it
+is guaranteed to contain
+at most one cloning request per clone, i.e., ``<tt>clone BOB</tt>" will appear no more than once as the beginning of an input line. Furthermore, you are to process requests as though only those
+definitions which precede it are in effect. Therefore, if you have the
+following input segment
+
+<p>
+<pre>
+clone BOB from ADAM
+clone MIKE from TIM
+clone TIM from BOB
+</pre>
+
+<p>
+your output would include
+
+<p>
+<pre>
+clone MIKE from TIM has no connection to ADAM
+</pre>
+
+<p>
+because at the time MIKE was cloned, there was no connection to ADAM. If a clone is not consistent and safe, then all subsequent clones from that clone should be reported as having no connection to ADAM. For example, if you have the following input segment
+
+<p>
+<pre>
+clone BOB from ADAM mutating BLD
+clone CHARLIE from BOB mutating BLD
+clone DAVID from CHARLIE
+</pre>
+
+<p>
+your output would include
+
+<p>
+<pre>
+clone BOB from ADAM is consistent and safe
+clone CHARLIE from BOB was at least twice mutated with BLD
+clone DAVID from CHARLIE has no connection to ADAM
+</pre>
+
+<p>
+You are also guaranteed that no gene is listed twice in the same request.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Your program produces a file of the processed requests, one per line,
+in the same order as they were consumed. The requests are modified
+according to the following rules.
+<dl compact="">
+<dt>1.
+<dd>If a clone is consistent and safe, the line should have the format
+<p>
+
+<tt>clone JOE from ADAM is consistent and safe</tt>
+<dt>2.
+<dd>If a clone is inconsistent, the line should indicate this as follows
+
+<p>
+
+<tt>clone </tt>&lt;<i>name</i>&gt;<tt> from </tt>&lt;<i>name</i>&gt;<tt> has no connection to ADAM</tt>
+
+<p>
+<dt>3.
+<dd>If a clone is unsafe, the line should indicate this as follows
+
+<p>
+
+<tt>clone </tt>&lt;<i>name</i>&gt;<tt> from </tt>&lt;<i>name</i>&gt;<tt> was at least twice mutated with </tt>&lt;<i>gene</i>&gt;
+
+<p>
+where &lt;<i>gene</i>&gt; is the first gene to appear in the clone's mutation list that is
+a second mutation
+from Adam. You should print ONLY the first such doubly mutated gene.
+</dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+If a particular cloning request is inconsistent, there is no need to report
+whether or not it is safe.
+
+<p>
+Your output should contain exactly one space between words and no leading or
+trailing spaces.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+clone JOE from ADAM
+clone BOB from ADAM mutating HEM
+clone SAM from BOB mutating BLD
+clone ED from SAM mutating BLD
+clone FRANK from ED mutating HEM
+clone KAIN from ABEL
+clone ABEL from KAIN
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+clone JOE from ADAM is consistent and safe
+clone BOB from ADAM is consistent and safe
+clone SAM from BOB is consistent and safe
+clone ED from SAM was at least twice mutated with BLD
+clone FRANK from ED has no connection to ADAM
+clone KAIN from ABEL has no connection to ADAM
+clone ABEL from KAIN has no connection to ADAM
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

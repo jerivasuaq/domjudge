@@ -1,0 +1,97 @@
+
+
+<html>
+<head>
+<title>The Errant Physicist</title>
+<meta name="description" content="The Errant Physicist">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">The Errant Physicist</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The well-known physicist Alfred E Neuman is working on problems that 
+involve multiplying polynomials of x and y.  For example, he may need to 
+calculate
+<p>
+<p> <img width="385" height="20" align="BOTTOM" alt="displaymath50" src="126img1.gif"> <p>
+<p>
+getting the answer
+<p>
+<p> <img width="485" height="19" align="BOTTOM" alt="displaymath51" src="126img2.gif"> <p>
+<p>
+Unfortunately, such problems are so trivial that the great man's mind keeps 
+drifting off the job, and he gets the wrong answers.  As a consequence, 
+several nuclear warheads that he has designed have detonated prematurely, 
+wiping out five major cities and a couple of rain forests.
+<p>
+<p>
+You are to write a program to perform such multiplications and save the 
+world.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The file of input data will contain pairs of lines, with each line containing 
+no more than 80 characters.  The final line of the input file contains a 
+<tt>#</tt> as 
+its first character.  Each input line contains a polynomial written without 
+spaces and without any explicit exponentiation operator.  Exponents are 
+positive non-zero unsigned integers.  Coefficients are also integers, but may 
+be negative.  Both exponents and coefficients are less than or equal to 100 
+in magnitude.  Each term contains at most one factor in x and one in y.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Your program must multiply each pair of polynomials in the input, and print 
+each product on a pair of lines, the first line containing all the exponents, 
+suitably positioned with respect to the rest of the information, which is in 
+the line below.
+<p>
+<p>
+The following rules control the output format:
+<ol>
+<li> Terms in the output line must be sorted in decreasing order of powers 
+of x and, for a given power of x, in increasing order of powers of y.
+<li> Like terms must be combined into a single term.  For example, 
+40x<sup>2</sup>y<sup>3</sup>
+- 38x<sup>2</sup>y<sup>3</sup> is replaced by 2x<sup>2</sup>y<sup>3</sup>.
+<li> Terms with a zero coefficient must not be displayed.<li> Coefficients of 1 are omitted, except for the case of a constant term 
+of 1.
+<li> Exponents of 1 are omitted.
+<li> Factors of x<sup>0</sup>  and y<sup>0</sup> are omitted.
+<li> Binary pluses and minuses (that is the pluses and minuses connecting 
+terms in the output) have a single blank column both before and after.
+<li> If the coefficient of the first term is negative, it is preceded by a 
+unary minus in the first column, with no intervening blank column.  
+Otherwise, the coefficient itself begins in the first output column.
+<li> The output can be assumed to fit into a single line of at most 80 
+characters in length.
+<li> There should be no blank lines printed between each pair of output 
+lines.
+<li> The pair of lines that contain a product should be the same
+length--trailing blanks should appear after the last non-blank character
+of the shorter line to achieve this.
+</li></li></li></li></li></li></li></li></li></li></li></ol>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+-yx8+9x3-1+y
+x5y+1+x3
+1
+1
+#
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+  13 2    11      8      6    5     5 2     3    3
+-x  y  - x  y + 8x y + 9x  - x y + x y  + 8x  + x y - 1 + y 
+
+1
+</pre>
+<p>
+</body>
+</html>

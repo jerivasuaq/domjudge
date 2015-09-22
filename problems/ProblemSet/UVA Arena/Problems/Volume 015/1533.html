@@ -1,0 +1,58 @@
+<p>
+Venture MFG Company, Inc. has made a game board. This game board has 15 holes and these holes are filled 
+with pegs except one hole. A peg can jump over one or more consecutive  peg s to  the nearest  empty  hole along 
+the straight line. As a peg jump over the pegs you remove them from the board. In the following figure, the peg at the hole number 12 or the peg at the hole number 14 can jump to the empty hole number 5. If the peg at the hole number 12 is moved then the peg at the hole number 8 is removed. Instead, if the peg at the hole number 14 is moved then the peg at the hole number 9 is removed.  
+
+<p>
+<div align="CENTER">
+
+<img width="283" height="177" align="BOTTOM" border="0" src="2093img1.png" alt="\epsfbox{p2093.eps}">
+</div>
+
+<p>
+Write a  program which find a shortest sequence of moving pegs to leave the last peg in the hole that was initially empty. If such a sequence does not exist the program should write a message ``<tt>IMPOSSIBLE</tt>". 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The input consists of <span class="MATH"><i>T</i></span> test cases. The number of test cases (<span class="MATH"><i>T</i></span>) is given in the first line of the input file. Each test case is a single integer which means an empty hole number.  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, the first line of the output file contains an integer which is the number of jumps in a shortest sequence of moving pegs. In the second line of the output file, print a sequence of peg movements. A peg movement consists of a  pair o f integers   separated by a space. The first integer of the pair denotes the hole number of the peg that is moving, and the second integer denotes a destination (empty) hole number. 
+<p>
+If there are multiple solutions, output the lexicographically smallest one.
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>                                       
+
+<p>
+<pre>
+1                                                   
+5
+</pre>                                                                       
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+10
+12 5 3 8 15 12 6 13 7 9 1 7 10 8 7 9 11 14 14 5
+</pre>                                               
+
+<p>

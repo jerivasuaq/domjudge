@@ -1,0 +1,61 @@
+
+
+<html>
+<head>
+<title>Permalex</title>
+<meta name="description" content="Permalex">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Permalex</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Given a string of characters, we can permute the individual characters
+to make new strings. If we can impose an ordering on the characters
+(say alphabetic sequence), then the strings themselves can be ordered
+and any given permutation can be given a unique number designating its
+position in that ordering. For example the string `acab' gives rise to
+the following 12 distinct permutations:
+<p>
+<p> <img width="233" height="78" align="BOTTOM" alt="tabular21" src="153img1.gif"> <p>
+<p>
+Thus the string `acab' can be characterised in this sequence as 5.
+<p>
+<p>
+Write a program that will read in a string and determine its position
+in the ordered sequence of permutations of its constituent characters.
+Note that numbers of permutations can get very large; however we
+guarantee that no string will be given whose position is more than
+ <img width="185" height="30" align="MIDDLE" alt="tex2html_wrap_inline31" src="153img2.gif"> .
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Input will consist of a series of lines, each
+line containing one string. Each string will consist of up to 30 lower
+case letters, not necessarily distinct. The file will be terminated by
+a line consisting of a single <tt>#</tt>.
+<p>
+<p>
+Output will consist of a series of lines, one for each line of the
+input. Each line will consist of the position of the string in its
+sequence, right justified in a field of width 10.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample input</a></font></h2>
+<p>
+<pre>bacaa
+abc
+cba
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample output</a></font></h2>
+<p>
+<pre>
+        15
+         1
+         6
+</pre>
+<p>
+</body>
+</html>

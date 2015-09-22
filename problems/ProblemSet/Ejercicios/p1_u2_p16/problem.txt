@@ -1,0 +1,28 @@
+Ejercicio 15. 
+
+Porgrama que dibuja asteriscos en forma de un rombo. 
+La longitud mínima debe ser 1.
+La longitud máxima debe ser 80.
+
+Ejemplos:
+==============================================================
+Introduzca la longitud del rombo:
+> 6
+
+     *
+    ***
+   *****
+  *******
+ *********
+***********
+ *********
+  *******
+   *****
+    ***
+     *
+==============================================================
+Introduzca la longitud del rombo:
+> 1
+
+*
+

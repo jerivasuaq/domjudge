@@ -1,0 +1,147 @@
+
+
+<html>
+<head>
+<title>Transform those strings</title>
+<meta name="description" content="Transform those strings">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Transform those strings</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Given below is a set of rules that can be used to transform one string into 
+another:
+
+<p>
+<ul>
+<li>`t' 
+
+<img width="22" height="16" align="BOTTOM" border="0" src="761img1.gif" alt="$\rightarrow$">
+`i' (<em>change `t' to `i'</em>)
+<li>{`a' - `z'} 
+
+<img width="22" height="16" align="BOTTOM" border="0" src="761img1.gif" alt="$\rightarrow$">
+`m' (<em>change `a', or `b', or `c', ...
+, or `z' to `m'</em>)
+<li>`s' 
+
+<img width="22" height="16" align="BOTTOM" border="0" src="761img1.gif" alt="$\rightarrow$">
+`i'
+<li>`a' 
+
+<img width="22" height="16" align="BOTTOM" border="0" src="761img1.gif" alt="$\rightarrow$">
+`aa'
+<li>{`a' - `z'} 
+
+<img width="22" height="16" align="BOTTOM" border="0" src="761img1.gif" alt="$\rightarrow$">
+`' (<em>delete `a', or `b', or `c', ... ,
+or `z'</em>)
+<li>`t' 
+
+<img width="22" height="16" align="BOTTOM" border="0" src="761img1.gif" alt="$\rightarrow$">
+`r'
+<li>{`a' - `g'} 
+
+<img width="22" height="16" align="BOTTOM" border="0" src="761img1.gif" alt="$\rightarrow$">
+`h'
+<li>`o' 
+
+<img width="22" height="16" align="BOTTOM" border="0" src="761img1.gif" alt="$\rightarrow$">
+`a'
+<li>`t' 
+
+<img width="22" height="16" align="BOTTOM" border="0" src="761img1.gif" alt="$\rightarrow$">
+`s'
+<li>{`t' - `z'} 
+
+<img width="22" height="16" align="BOTTOM" border="0" src="761img1.gif" alt="$\rightarrow$">
+`u'
+</li></li></li></li></li></li></li></li></li></li></ul>
+
+<p>
+Sets are always given as a range, i.e. {`a' - `c'} is the set with the 
+characters {`a',`b',`c'}
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input and Output</a>&nbsp;</font>
+</h2>
+Write a program that reads two strings, and prints the steps required to 
+transform the first
+string into the second. The steps in the transformation must be printed 
+in the form:
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="243" height="30" src="761img3.gif" alt="\begin{displaymath}rule: origString \mbox{ {\tt ->} } newString
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+Note that several transformations may exist, your program only needs to 
+find one. It is
+also possible that the first string cannot be transformed into the second. 
+In this case, your
+program should simply output the word ``<tt>no</tt>''
+
+<p>
+If there are more than one test cases, it must be a
+blank line between two consecutive, both in input and output files. 
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+thinner
+rih
+
+a
+x
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6: thinner -&gt; rhinner
+5: rhinner -&gt; rinner
+7: rinner -&gt; rinnhr
+5: rinnhr -&gt; rinhr
+5: rinhr -&gt; rihr
+5: rihr -&gt; rih
+
+no
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+

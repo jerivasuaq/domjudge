@@ -1,0 +1,148 @@
+
+
+<html>
+<head>
+<title>What Day Is It?</title>
+<meta name="description" content="What Day Is It?">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+What Day Is It?</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The calendar now in use evolved from the Romans.  Julius Caesar codified a 
+calendar system that came to be known as the Julian calendar.  In this system, 
+all months have 31 days, except for April, June, September, and November, 
+which have 30 days, and February, which has 28 days in non-leap years, and 29 
+days in leap years.  Also, in this system, leap years happened every four years.  
+That is because the astronomers of ancient Rome computed the year to be 
+365.25 days 
+long, so that after every four years, one needed to add an extra day to keep the 
+calendar on track with the seasons.  To do this, they added an extra day 
+(February 29) to every year that was a multiple of four.  
+
+<p>
+
+<p>
+<br>
+
+<dl>
+<dt><strong>Julian Rule:</strong>
+<dd>Every year that is a multiple of 4 is a leap year, i.e. has an extra day (February 29).  
+</dd></dt></dl>
+
+<p>
+
+<p>
+<br>
+In 1582, Pope Gregory's astronomers noticed that the year was not 365.25 days 
+long, but closer to 365.2425.  Therefore, the leap year rule would be revised to the following:
+
+<p>
+
+<p>
+<br>
+
+<dl>
+<dt><strong>Gregorian Rule:</strong>
+<dd>Every year that is a  multiple of 4 is a leap year, unless it is a multiple of 100 that is not a multiple of 400.  
+</dd></dt></dl>
+
+<p>
+
+<p>
+<br>
+To compensate for how the seasons had shifted against the calendar up until 
+that time, the calendar was actually shifted 10 days: the day following October 4, 1582 was declared to be October 15.
+
+<p>
+
+<p>
+<br>
+England and its empire (including the United States) didn't switch to the 
+Gregorian calendar system until 1752, when the day following September 2 was 
+declared to be September 14.  (The delay was caused by the poor relationship 
+between Henry VIII and the Pope.)
+
+<p>
+
+<p>
+<br>
+Write a program that converts dates in the United States using a calendar of the 
+time and outputs weekdays.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input will be a series of positive integers
+greater than zero, three integers per line, which represent dates, one date per 
+line.  The format for a date is ``month day year" where month is a number
+between 1 (which indicates January) and 12 (which indicates December), day is 
+a number between 1 and 31, and year is positive number.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output will be the
+input date and name of the weekday on which the given date falls in the format 
+shown in the sample.  An invalid date or nonexistent date for the calendar used 
+in the United States at the time should generate an error message indicating a 
+invalid date. The input will end with three zeroes. 
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+11 15 1997
+1 1 2000
+7 4 1998
+2 11 1732
+9 2 1752
+9 14 1752
+4 33 1997
+0 0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+November 15, 1997 is a Saturday
+January 1, 2000 is a Saturday
+July 4, 1998 is a Saturday
+February 11, 1732 is a Friday
+September 2, 1752 is a Wednesday 
+September 14, 1752 is a Thursday
+4/33/1997 is an invalid date.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-24</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,140 @@
+
+
+<html>
+<head>
+<title>Telephone Directory Alphabetization</title>
+<meta name="description" content="Telephone Directory Alphabetization">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Telephone Directory Alphabetization</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Based on its success in contracting previous software
+development efforts to programming contest teams, the String
+&amp; Tin Can (S&amp;TC) Telephone Company has now decided to
+produce its telephone directories internally. Your team has been
+hired to develop a program that will take subscriber names and
+telephone numbers and alphabetize them into a list for printing.
+
+<p>
+Telephone directories have traditionally used special
+conventions for alphabetization, and S&amp;TC wants your program
+to use these conventions. Each subscriber listing consists of one
+or more ``words,'' where each word is separated from the
+others by spaces or non-alphanumeric characters. Directories only
+use the letters A through Z for sorting, ignoring case.
+Therefore, names that include words comprised of digits or
+capital letters require special processing.
+
+<p>
+
+<p>
+<br>
+A listing may contain a word that is a decimal number.
+Listings with numbers in them appear in the alphabetized list in
+the same location they would if the numbers were spelled out in
+English. For example, ``50 Star Company'' might appear just
+before ``Fifty Star Vending'' in the list. Numbers are
+permitted to be in the range 0-999,999,999. Letters and digits
+will not appear together in the same word.
+
+<p>
+All special (non-alphanumeric) characters are to be treated as
+spaces. ``Penny-Wise Corporation'' would appear after
+``Penny Saver,'' but before ``Pennypinching Company.''
+Multiple spaces or non-alphanumeric characters are treated as a
+single space when sorting. Special characters will not appear at
+the beginning of a listing.
+
+<p>
+Words that are comprised of all capital letters are assumed to
+be initials or acronyms, and are treated as if spaces appeared
+between each letter. Hence, ``KAT Shop'' would appear at the
+beginning of the K listings, before ``K-B Enterprises'' and
+``K Warehouse''.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input to your program will be a list of subscribers, one per
+line. The first seven digits will be the telephone number, and
+the rest of the line will be the name of the subscriber as it is
+to appear in the telephone directory.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Your program is to
+alphabetically sort the subscriber names according to the rules
+above and print the listing in order. Each line should contain
+the subscriber name as it appeared in the input in the first 52
+positions, left justified and space filled, followed by the seven
+digit telephone number (including a space between the third and
+fourth digits) in columns 56 through 63. The telephone number is
+to be immediately followed by the end of line.
+
+<p>
+Your program need not handle more than 1,000 subscribers-none
+of the towns S&amp;TC serves in Swamp County have populations
+larger than that.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+8936251KAT Shop
+7362812Penny Saver, Inc.
+7251887Kate's Company
+8372974Fine Foods
+9273664Five Star Vending
+3523984K-B Enterprises
+723621899 Cents Only Store
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Fine Foods                                             837 2974
+Five Star Vending                                      927 3664
+KAT Shop                                               893 6251
+K-B Enterprises                                        352 3984
+Kate's Company                                         725 1887
+99 Cents Only Store                                    723 6218
+Penny Saver, Inc.                                      736 2812
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-09-16
+</address>
+</body>
+</html>
+

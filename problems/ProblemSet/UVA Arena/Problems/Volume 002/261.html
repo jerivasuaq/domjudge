@@ -1,0 +1,109 @@
+
+
+<html>
+<head>
+<title>The Window Property</title>
+<meta name="description" content="The Window Property">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">The Window Property</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Suppose you are given a sequence of symbols
+but you can see only <i>k</i> ( <img width="40" height="26" align="MIDDLE" alt="tex2html_wrap_inline45" src="261img1.gif"> ) consecutive symbols
+at a time.  Then we say the length of
+the window is <i>k</i>. Moving this window along the sequence
+can give you a lot of different patterns.
+Of all possible sequences of <i>n</i> different symbols only
+a minority has the property that the
+windows of length <i>k</i> show only <i>k</i>+1 different patterns.
+<p>
+We say that a sequence of symbols has the
+<i>window property</i> if for all natural <i>k</i> the number
+of different patterns you can see through
+a window of length <i>k</i> is at most <i>k</i>+1.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Examples</a></font></h2>
+<p>
+<pre><tt> 
+		 <tt>ABAABABAB</tt>   		    has the window property.
+<p>
+		 <tt>ABCABCABC</tt>   		    does not have the window property (check <i>k</i>=1).
+<p>
+		 <tt>011010</tt>      		    has the window property.
+<p>
+		 <tt>0110100101</tt>  		    does not have the window property.
+<p>
+</tt></pre>
+<p>
+In the third example the patterns axe :
+<p>
+<pre><tt> 
+		        length 1 		 : 		 <tt>0, 1.</tt>
+<p>
+		        length 2 		 : 		 <tt>01, 11, 10.</tt>
+<p>
+		        length 3 		 : 		 <tt>011, 110, 101, 010.</tt>
+<p>
+		        length 4 		 : 		 <tt>0110, 1101, 1010.</tt>
+<p>
+		        length 5 		 : 		 <tt>01101, 11010.</tt>
+<p>
+		        length 6 		 : 		 <tt>011010.</tt>
+<p>
+</tt></pre>
+<p>
+The sequence in the last example is an
+extension of the sequence in the third example.  So
+the first 6 symbols form a sequence
+with the window property.  The seventh symbol adds the
+pattern '00' to the set of patterns of
+length 2 displayed in the windows preceding the window
+containing '00'.  So the sequence
+formed by the first 7 symbols does not have the window
+property.  Accordingly we call the seventh
+symbol the first offending symbol.  By the way we
+count from left-to-right as our computers seem to do.
+<p>
+The problem is to determine whether a
+given sequence has the window property and if not,
+to find the position of the first offending
+symbol - this is that symbol such that the sequence
+preceding it has the window property but
+adding the symbol destroys this property (counting
+of the symbols starts at one).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Input</a></font></h2>
+<p>
+The input is a textfile where each
+line is a non-empty sequence of (ASCII) characters to
+be checked for the window property.
+No sequence will be longer than one hundred symbols.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Output</a></font></h2>
+<p>
+The output file should be a textfile containing
+for each line of the input a line with the
+result of the check for the window property
+in the following way: `<tt>YES</tt>' (uppercase) if the line
+enjoys the window property, otherwise `<tt>NO:</tt>' (in uppercase)
+followed by the position of the offending symbol.
+Each line should be terminated by an end-of-line marker.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>ababcababa
+0010100100
+0010101001</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>NO:5
+YES
+YES</pre>
+<p>
+</body>
+</html>

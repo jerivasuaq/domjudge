@@ -1,0 +1,106 @@
+
+
+<html>
+<head>
+<title>Non-Stop Travel</title>
+<meta name="description" content="Non-Stop Travel">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Non-Stop Travel</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+David hates to wait at stop signs, yield signs and traffic signals while
+driving.  To minimize this  aggravation, he has prepared maps of the
+various regions in which he frequently drives, and  measured the average
+delay (in seconds) at each of the various intersections in these
+regions.  He  wants to find the routes between specified points in these
+regions which minimize his delay at  intersections (regardless of the
+total distance he has to drive to avoid delays), and has enlisted  your
+assistance in this effort.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+For each region, David provides you with a map.  The map
+data first identifies some number of  intersections, <i>NI</i>.  The regions
+never include more than 10 intersections.  The intersections in each 
+region are numbered sequentially, starting with the number one (1).  For
+each intersection, in turn,  the input then specifies the number of
+streets leading away from the intersection, and for each  such street,
+the number of the intersection to which the street leads, and the
+average delay, in  seconds, that David encounters at that intersection. 
+Following the data for the last intersection in  a region there appear
+the numbers associated with the intersections where David wants to start
+ and end his drive.  The entire input consists of a sequence of maps,
+followed by the single integer  zero (0).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each region, in order, print a single line of
+output which contains the region number (they,  too, are sequentially
+numbered, starting with 1), a list of the intersection numbers David
+will  encounter in the route with minimum average delay, and the average
+number of seconds he will be  delayed while travelling this route.  A
+suitable format is shown in the example below.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Notes</a></font></h2>
+<p>
+<ol><li> There will always be a unique route with the minimum average delay
+in each region.<li> A street from intersection <i>I</i> to intersection <i>J</i> is one-way.  To
+represent a two-way street from <i>I</i>  to <i>J</i>, the map must also include a
+route from intersection <i>J</i> to intersection <i>I</i>.<li> There will never be more than one route directly from intersection
+<i>I</i> to intersection <i>J</i>.
+</li></li></li></ol><h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Example</a></font></h2>
+<p>
+Suppose David wants to travel from intersection 2 to
+intersection 4 in the region shown in the  following map:
+<p>
+<pre>                +---------------+                   From To Delay
+                |               V                     1   3   3
+                1&lt;------2------&gt;3------&gt;4&lt;------5     1   4   6
+                |       |               ^       ^     2   1   2
+                |       +---------------|-------+     2   3   7
+                |                       |             2   5   6
+                +-----------------------+             3   4   5
+                                                      5   4   7</pre>
+<p>
+The input and output for this example is shown as the first case
+in the Sample Input and  Sample Output shown on the next page.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5
+2  3 3   4 6
+3  1 2   3 7   5 6
+1  4 5
+0
+1  4 7
+2 4
+
+2
+1   2 5
+1   1 6
+1 2
+
+7
+4   2 5   3 13   4 8   5 18
+2   3 7   6 14
+1   6 6
+2   3 5   5 9
+3   6 2   7 9    4 6
+1   7 2
+0
+1 7
+
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Case 1: Path = 2 1 4; 8 second delay
+Case 2: Path = 1 2; 5 second delay
+Case 3: Path = 1 2 3 6 7; 20 second delay</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,84 @@
+
+
+<html>
+<head>
+<title>The Reservation Maker</title>
+<meta name="description" content="The Reservation Maker">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">The Reservation Maker</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Write a program that will assist the receptionist in seating customer
+parties at tables and booths in a large restaurant.   Your program
+should accept for the receptionist the arrival time, the size of the
+party, whether the party desires a table or a booth, in the smoking
+or nonsmoking sections of the restaurant.
+<p>
+<p>
+For each request in a list
+of requests, the program should provide a table number and the
+approximate waiting time before the party can be seated.  The
+restaurant has the following seating characteristics:
+<p>
+<p> <img width="452" height="158" align="BOTTOM" alt="tabular21" src="461img1.gif"> <p>
+<p>
+Each table of the table groups is portable and can be moved such that as
+many as five tables of any group may be connected to seat a larger party
+than any one table could seat.  This connection of tables is only possible
+if the sequential number of the tables to be used are vacant.  Thus 2
+four-person tables can be joined together to seat a party of 6; 3
+four-person table can be joined to seat a party of 8, and so on.
+<p>
+Parties of 1 take 35 minutes, parties of 2 take 47 minutes at the
+restaurant (service is very predictable), parties of 3 or 4 take 52 minutes,
+while parties of 5 to 10 take 55 minutes.  Parties of greater than 10 take
+ <img width="166" height="27" align="MIDDLE" alt="tex2html_wrap_inline43" src="461img2.gif">  minutes.
+<p>
+<p>
+Your program should always assign the lowest booth/table number available.
+You should also process the requests in the order given and once an
+assignment is made, not change it.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Your program should accept a sequence of reservation requests (the
+restaurant requires reservations).  Each reservation consists of one line
+with an integer arrival time (in minutes past 8:00 p.m.), the party size
+(at least 1), a blank, then an `<tt>S</tt>' or an `<tt>N</tt>' (smoking or nonsmoking), a blank, then a `<tt>B</tt>' or a `<tt>T</tt>' (booth or table).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each reservation request
+which can be satisfied, your program should then print the list of table
+numbers or the table/booth number and the number of minutes the party will
+have to wait after their arrival.  If a request cannot be satisfied,
+print `<tt>Impossible</tt>'.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>60 5 N B
+0 4 N B
+10 3 N B
+10 2 N B
+13 2 N B
+0 6 N B
+30 12 N T
+60 8 S B</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1 0
+2 0
+3 0
+4 0
+1 0
+2 47
+11 12 13 14 15 0
+Impossible</pre>
+<p>
+</body>
+</html>

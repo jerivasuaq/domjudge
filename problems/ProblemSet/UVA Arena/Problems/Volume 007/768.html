@@ -1,0 +1,142 @@
+
+
+<html>
+<head>
+<title>Crossword</title>
+<meta name="description" content="Crossword">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Crossword</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A double linear crossword of length <i>L</i> is a string of <i>L</i> lowercase alphabetic characters arranged in a
+line in such a way that there are at least two methods (so called decompositions) to split this string
+into the words from the given list. Look at the example for <i>L</i>=17:
+
+<p>
+<pre>
+   |       |       |       |
+a n d a t a r e a l l a s t a s k
+     |   |     |     |   |
+</pre>
+
+<p>
+The words were taken from the following list: all, an, and, are, area, as, ask, at, data, last, or, read,
+real, task.
+
+<p>
+
+<p>
+<br>
+The words from the first decomposition may not appear in the second one and vice versa. In
+addition, no word can be repeated in any decomposition.
+
+<p>
+No word in one decomposition can end in the same place of the string where a word in the other
+composition ends, except, naturally, for the end of the string (otherwise the crossword can be
+separated into two independent crosswords). One of the compositions may consist of a single word.
+
+<p>
+
+<p>
+<br>
+You should write a program to construct the first, in lexicographic order, double linear crossword
+of length <i>L</i> for a given list of words.
+
+<p>
+Strings are arranged in the lexicographic order with respect of the following rules:
+<ul>
+<li>If the first letter of a string appears in latin alphabet before the first letter of another string,
+then the former string precedes in lexicographic order.
+<li>If the first letters of some strings match, then the corresponding letters of these strings are
+compared until they stop matching.
+<li>If a mismatching is not found, the shorter string goes first.
+</li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains several test cases, each of them as described below.
+The first line of the case consists of the single integer number <i>L</i> (
+
+<img width="89" height="32" align="MIDDLE" border="0" src="768img2.gif" alt="$4 \le L \le 50$">)
+denoting the
+desired crossword length. The second line consists of the single positive integer <i>N</i> (at most 1000)
+indicating the number of words in the list. Each of the followings <i>N</i> lines consists
+of a string of 20 or less (but at least 2) latin lowercase alphabetic characters. The words in the list are arranged in
+lexicographic order and no word is repeated.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, write to the output on a line by itself. For the given input data set your program 
+should write to the output the first, in lexicographic
+order, double linear crossword with the given length. If it is impossible for the given input file to
+construct a double linear crossword with the given length, the program should write only the
+message ``<tt>NO SOLUTION</tt>" (without the quotation marks).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+17
+19
+all
+an
+and
+area
+as
+ask
+at
+data
+do
+for
+last
+of
+or
+ort
+read
+real
+task
+to
+tor
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+andatareadofortor
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,111 @@
+
+
+<html>
+<head>
+<title>Long Multiplication</title>
+<meta name="description" content="Long Multiplication">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Long Multiplication</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In traditional ``long multiplication&quot; we determine the product
+of two integers, <i>x</i> and <i>y</i>, by  multiplying <i>x</i> and the individual digits of
+<i>y</i>, in turn, starting with the units digit.  The results of  these
+multiplications are arranged appropriately and added, yielding the
+completed product.
+<p>
+<p>
+The representation of these operations is
+usually done in a particular manner.  Consider the  multiplication of
+123 by 95:
+<p>
+<pre>                                123
+                                 95
+                                ---
+                                615
+                              1107
+                              -----
+                              11685</pre>
+<p>
+The numbers to be multiplied, <i>x</i> and <i>y</i>, are each displayed on a
+separate line, followed by a  horizontal line.  The results of
+multiplying each digit of <i>y</i> by <i>x</i> are then displayed on separate lines, 
+followed by another horizontal line, and then the final product.  In
+this problem you are to  perform a sequence of such multiplications,
+displaying the results in this traditional representation.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Each line of the input data, except the last, will contain two
+integers, <i>x</i> and <i>y</i>, separated by  whitespace (one or more blanks and tab
+characters).  Whitespace may also precede the first  integer and follow
+the second integer.  Each integer will have no more than 10 digits. The last 
+line of the input data contain only a zero, and marks the end of the input.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each pair of integers (that is, each input line except the
+last), perform the multiplication of <i>x</i>  by <i>y</i>, displaying the results in
+the form shown above and in the examples shown below.  Follow  the
+output for each multiplication by a blank line.  
+
+
+
+If there are less than 2 lines of numbers between the horizontal lines, 
+omit them (since in that case they would be
+superfluous) as well as 
+the second horizontal line, and just output the sum. Display 0 digits only
+when they are significant.
+<p>
+<p>
+The number of hyphens in the first horizontal line should be the
+same as the number of digits in  the larger of <i>x</i> and <i>y</i>.  The number of
+hyphens in the second horizontal line, if it is produced,  should be the
+same as the number of digits in the product of <i>x</i> and <i>y</i>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>   4 7
+135  46
+    12345   862
+0 123456789
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+ 4
+ 7
+ -
+28
+
+ 135
+  46
+ ---
+ 810
+540
+----
+6210
+
+   12345
+     862
+   -----
+   24690
+  74070
+ 98760
+--------
+10641390
+
+        0
+123456789
+---------
+        0
+
+</pre>
+<p>
+</body>
+</html>

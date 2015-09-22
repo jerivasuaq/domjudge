@@ -1,0 +1,114 @@
+
+
+<html>
+<head>
+<title>Crazy Calculator</title>
+<meta name="description" content="Crazy Calculator">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Crazy Calculator</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The two properties of arithmetic operators which determine the order in
+which they are executed in an expression are their precedence
+levels and their associativities. Precedence levels determine the order in
+which operators with different precedence levels are executed.
+Associativities determine the order in which a repeated operator is
+executed. Left associative operators are evaluated left to right while
+right associative operators are evaluated right to left. Different operators
+with equal precedence levels are evaluated left to right.
+Examples:
+<p>
+<ul><li> If the precedence level of <tt>*</tt> is higher than that of <tt>+</tt>, the
+expression 5*3+4 would evaluate to 19.<li> If the precedence level of <tt>+</tt> is higher than that of <tt>*</tt>, the expression 5*3+4 would evaluate to 35.<li> Left-associativity of <tt>-</tt> would cause the expression
+3-2-1 to be interpreted as (3-2)-1 which evaluates to 0.<li> Right-associativity of <tt>-</tt> would cause 3-2-1 to be interpreted as
+3-(2-1) which evaluates to 2.
+</li></li></li></li></ul>
+<p>
+In the Southeastern region of the planet ACM, a strange collection of
+dialects has resulted in the use of non-standard operators for the
+integer operations of plus, minus, times, and integer divide. The
+operations are the usual binary operations, but the symbols used, their
+precedences and their associativities, vary widely across the region.
+Your team is to write a program that will implement a simple integer
+calculator with operations &quot;<tt>+</tt>&quot;, &quot;<tt>-</tt>&quot;, &quot;<tt>*</tt>&quot;, and &quot;<tt>/</tt>&quot; where &quot;<tt>/</tt>&quot; denotes integer division. The catch is, your calculator has to deal with all of the local dialects.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input begins with a single positive integer on a line by itself indicating the number of the cases following, each of them as described below. This line is followed by a blank line, and there is also a blank line between two consecutive inputs.<br>
+The input for each case will contain 4 lines that describe the local symbol set
+followed by 1 or more lines each containing an expression using the
+local symbol set to be evaluated. The first four lines each contain a
+four character string  <img width="56" height="16" align="MIDDLE" alt="tex2html_wrap_inline45" src="354img1.gif">  beginning in column one, where:
+<p>
+<dl compact=""><dt><strong></strong>
+<dd>  <img width="13" height="17" align="MIDDLE" alt="tex2html_wrap_inline47" src="354img2.gif">  denotes the standard operator that is being described
+<p>
+<dt><strong></strong>
+<dd>  <img width="13" height="17" align="MIDDLE" alt="tex2html_wrap_inline49" src="354img3.gif">  denotes the local symbol being used for that operator
+<p>
+<dt><strong></strong>
+<dd>  <img width="13" height="17" align="MIDDLE" alt="tex2html_wrap_inline51" src="354img4.gif">  is a digit denoting the local precedence of the operator (higher digit means higher precedence)
+<p>
+<dt><strong></strong>
+<dd>  <img width="13" height="17" align="MIDDLE" alt="tex2html_wrap_inline53" src="354img5.gif">  is a single letter denoting the local associativity of the
+operator (<tt>L</tt> for left associativity, <tt>R</tt> for right).
+<p>
+ </dd></dt></dd></dt></dd></dt></dd></dt></dl>
+<p>
+The line
+<p>
+<pre>-@1R</pre>
+<p>
+means that the symbol <tt>@</tt> will be used to denote minus which will be right
+associative and have precedence 1. The expression
+5@3@1 under these circumstances will evaluate to 3.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each input expression, your program must print one line containing
+the expression with standard operators followed by a
+space, an equal sign, and the result.<br>
+The outputs of two consecutive cases will be separated by a blank line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>1
+
++@1L
+-+3R
+*-2R
+//2R
+1@1
+5@5+4
+2@3-12/6/5+3
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>1+1 = 2
+5+5-4 = 6
+2+3*12/6/5-3 = 14
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Note</a></font></h2>
+<p>
+The last expression, parenthesized to show you the order of
+execution is (2+((3*12)/(6/(5-3)))).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Notes from the testsetter</a></font></h2>
+<ul>
+<li>operators were selected from the set <pre>~@#$%^&amp;*()_+=-{}[]:;|&lt;&gt;,.?/</pre>
+  and the four operators for the arithmetic operations are unique.
+  
+<li>numbers in the input have no leading zeros.
+
+<li>lines are max. 1024 characters long.
+
+<li>input numbers, answers and intermediate results all fit into 32-bit signed integers.
+</li></li></li></li></ul>
+<p></body>
+</html>

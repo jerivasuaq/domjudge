@@ -1,0 +1,245 @@
+
+
+<html>
+<head>
+<title>Gears on a Board</title>
+<meta name="description" content="Gears on a Board">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Gears on a Board</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+An engineering firm called ``Gears R Us" needs a program which can
+evaluate the operation of gears on a board. The board is a two-dimensional
+mounting plane which allows gears with two levels of teeth
+(an inside radius closest to the board and an outside radius away from
+the board). The gears rotate around the center of their diameter and
+interact by turning an adjacent gear which it touches (either on the
+inside or outside radiuss) with a equal tangential velocity. Angular
+velocity is the same for both the inside and outside radius gears.
+
+<p>
+
+<p>
+<br>
+``Gears R Us" uses square mounting boards which have a 
+<span class="MATH">300&#215;300</span> grid
+of mounting holes on 1 cm centers. When viewing the board, the lower left
+of the board is position <span class="MATH"><i>x</i> = 1</span>, <span class="MATH"><i>y</i> = 1</span>; the upper right of the board is
+position <span class="MATH"><i>x</i> = 300</span>, <span class="MATH"><i>y</i> = 300</span>. The gears mount only on mounting holes and are
+available with integer inside and outside radii between 1 and 100. The
+``motor" gear is the only original source of energy of any board and is
+actually a gear (powered from behind the board) subject to all the
+restrictions described for gears above. The following diagram shows a
+sample configuration.
+
+<p>
+
+<br>
+<center><img width="547" height="437" align="BOTTOM" border="0" src="407img1.png" alt="\begin{picture}(10500,7000)(-2500,-1500)
+% put(1902.000,2194.500)\{ arc\{1710.59...
+...[l]{{\tt\char93 2} \\ ir = 8\\ or = 4\\ {\tt L 187.50}\\ (43,74)}}
+\end{picture}">
+</center><br>
+
+<p>
+In the above example, the motor is at location <span class="MATH"><i>x</i> = 20</span>, <span class="MATH"><i>y</i> = 100</span>; the inside
+and outside radii of the gears the motor drives are both 5 centimeters,
+and the motor is rotating to the left (counter-clockwise) at 300 RPM's.
+By observation and computation, you can see that the motor touches
+(without overlapping) the inside radius of Gear <tt>#1</tt>. The inside radius
+of Gear <tt>#1</tt> touches the inside radius of Gear <tt>#2</tt> and Gear <tt>#3</tt>.
+The outside radius of Gear <tt>#3</tt> touches the outside radius of Gear <tt>#4</tt>;
+the inside radius of Gear <tt>#4</tt> touches the inside radius of Gear <tt>#5</tt>.
+
+<p>
+
+<p>
+<br>
+Given the data in the above example, it is possible to compute that Gear
+<tt>#1</tt> rotates to the right (clockwise) at 83.33 RPM's; Gear <tt>#2</tt>
+rotates to the left (counter-clockwise) at 187.50 RPM's; Gear <tt>#3</tt>
+rotates to the left at 150.00 RPM's; Gear <tt>#4</tt> rotates to the right
+at 281.25 RPM's; and Gear <tt>#5</tt> rotates to the left at 33.75 RPM's.
+
+<p>
+
+<p>
+<br>
+Although this example does not include any off-nominal conditions,
+``Gears R Us" needs your program to isolate two error conditions. The
+first error occurs when two or more gears would overlap at either the
+inner or outter radius. The second error condition occurs when any gear
+is being driven at two or more different speeds. It is valid for two or
+more gears to drive another gear at the same speed (and in the same
+direction).
+
+<p>
+
+<p>
+<br>
+It is possible for a warning condition to occur when 1 or more gears are
+idle (ie rotation <span class="MATH">= 0.0</span>). If this condition occurs, your program will
+have to print a warning message as described below.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input to your program consists of an undetermined number of
+configurations to be analyzed. Each set starts with a single line of
+six integers. 
+
+<p>
+
+<p>
+<br>
+The first two integers are the <span class="MATH"><i>x</i></span>, <span class="MATH"><i>y</i></span> coordinates of the
+motor (
+<span class="MATH">1<img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$"><i>x</i>, <i>y</i><img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$">300</span>); the next two integers are the inside and
+outside radii of the motor gear respectively (
+<span class="MATH">1<img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$"><i>ir</i>, <i>or</i><img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$">100</span>); the
+fifth integer is the rotational velocity (
+<span class="MATH">1<img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$">abs(<i>AV</i>)<img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$">1000</span>) of the
+motor in RPM's (negative representing counter-clockwise rotation and
+positive representing clockwise rotation); the sixth integer is the
+number of gears (
+<span class="MATH">1<img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$"><i>NG</i><img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$">20</span>) excluding the motor that are mounted on
+the board.
+
+<p>
+
+<p>
+<br>
+Each of the following <span class="MATH"><i>NG</i></span> lines contain exactly 4 integers
+representing gears 1 through <span class="MATH"><i>NG</i></span> respectively. The first two integers
+represent the <span class="MATH"><i>x</i>, <i>y</i></span> coordinates (
+<span class="MATH">1<img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$"><i>x</i>, <i>y</i><img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$">300</span>) of the gear and the
+second pair of integers represent the inside and outside radii of the
+gear respectively (
+<span class="MATH">1<img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$"><i>ir</i>, <i>or</i><img width="20" height="33" align="MIDDLE" border="0" src="407img2.png" alt="$ \le$">100</span>).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each input set, your program should print either a list of the gears
+and the rotation value for each or one of two error messages. The first
+line of each output set should be a line containing only ``<tt>Simulation #X</tt>"
+where <span class="MATH"><i>X</i></span> is the simulation number (starting with 1) and is left-justified starting in column 13.
+
+<p>
+
+<p>
+<br>
+If there are no errors, lines 2 through <span class="MATH"><i>NG</i></span>+1 of the output set should
+contain the gear number right-justified in columns 1 and 2, a colon in
+column 3, either a `<tt>L</tt>' for counter-clockwise rotation of the gear or a
+`<tt>R</tt>' for clockwise rotation in column 5, and the magnitude of the
+rotation always printed with two digits to the right of the decimal
+point and are left-justified starting in column 7. If any gear has
+rotation of magnitude zero, you should print the message
+``<code>Warning -- Idle Gear</code>" in columns 5 through 24 instead of the rotation direction and
+magnitude.
+
+<p>
+
+<p>
+<br>
+If there is an error, your program should print only the first line
+containing ``<tt>Simulation #X</tt>" and a second line containing only one of
+two error messages left-justified in column 1. If there is an overlapping
+of two or more gears at either in inner or outter radii, your program
+should print the message ``<code>Error -- Overlapping Gears</code>". If there is any
+gear which is being driven by two or more <b>different</b> vectors, your
+program should print the message ``<code>Error -- Conflicting Gear Rotation</code>".
+Your program should give precedence to the overlapping error condition.
+
+<p>
+
+<p>
+<br>
+The last line of output for each output set should be an empty line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+20 100 5 5 -300 5
+43 100 18 10
+43 74 8 4
+71 100 10 15
+94 100 3 8
+122 100 25 6
+20 100 5 5 -300 5
+43 100 18 10
+43 74 8 4
+71 100 10 10
+89 100 3 8
+105 100 25 6
+20 100 5 5 -300 5
+43 100 18 10
+43 74 8 4
+71 100 10 10
+89 100 3 8
+125 100 25 6
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Simulation #1
+ 1: R 83.33
+ 2: L 187.50
+ 3: L 150.00
+ 4: R 281.25
+ 5: L 33.75
+
+Simulation #2
+Error -- Overlapping Gears
+
+Simulation #3
+ 1: R 83.33
+ 2: L 187.50
+ 3: L 150.00
+ 4: R 187.50
+ 5: Warning -- Idle Gear
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2002-03-02
+</address>
+</body>
+</html>
+

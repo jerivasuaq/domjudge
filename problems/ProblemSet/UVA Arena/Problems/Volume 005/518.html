@@ -1,0 +1,113 @@
+
+
+<html>
+<head>
+<title>Time</title>
+<meta name="description" content="Time">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Time</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Let a time point be given as 6 integers 
+
+<i>y</i>, <i>m</i>, <i>d</i>, <i>h</i>, <i>min</i>, <i>s</i> where 
+
+1970 &lt;= <i>y</i> &lt; 2030, 
+
+0 &lt; <i>m</i> &lt; 13,
+
+
+0 &lt; <i>d</i> &lt; 32, 
+
+<img width="87" height="32" align="MIDDLE" border="0" src="518img1.gif" alt="$0 \leY h < 24$">,
+
+
+<img width="109" height="31" align="MIDDLE" border="0" src="518img2.gif" alt="$0 \leY min < 60$">,
+
+
+<img width="85" height="30" align="MIDDLE" border="0" src="518img3.gif" alt="$0 Y\le s < 60$">.
+Write a program which computes how many
+periods of a given length fit between two given time points. A period is given by a pair consisting of
+a positive integer and a word expressing a time unit, i.e. <tt>year</tt> or <tt>month</tt> or <tt>day</tt> or <tt>hour</tt> or <tt>minute</tt>
+or <tt>second</tt>. Every 4th year is a leap year, except every 100th which is not except every 400 year
+which is. A length of the year varies according to leap years. The same is true for the month
+February. Time units always start as usual, e.g., a year starts at 1st January, a month starts at its
+1st day, a day starts at 0 hours 0 minutes 0 seconds, etc. A period ends after its last second.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file consists of blocks of lines. Each block has three lines. The first line of a block
+contains a time point <i>D</i><sub>1</sub> and the second line a time point <i>D</i><sub>2</sub>. <i>D</i><sub>1</sub> always precedes <i>D</i><sub>2</sub>. All numbers
+in the lines are separated by one space. You can assume that the given descriptions of time points
+are correct. The third line contains a time period. There is one space between the number and the
+word in the period definition on this line. After each block, there is one empty line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output file contains the lines corresponding to the blocks in the input file. A line corresponding to a block contains one integer number expressing how many specified periods are
+contained between the given time points.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1997 12 31 23 59 59
+1998 1 1 0 0 0
+1 second
+
+2000 2 29 0 0 0
+2000 2 29 23 59 59
+1 day
+
+2000 2 29 0 0 0
+2000 3 1 0 0 0
+24 hour
+
+1996 12 31 20 30 0
+1997 1 1 7 30 0
+60 minute
+
+1996 12 31 20 30 0
+1997 1 1 7 30 0
+1 hour
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+0
+1
+11
+10
+</pre>
+
+<p>
+
+<p>
+</body>
+</html>

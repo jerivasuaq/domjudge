@@ -1,0 +1,59 @@
+
+
+<html>
+<head>
+<title>Key to Success</title>
+<meta name="description" content="Key to Success">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center></center></h1>
+ <table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Key to Success</a></font>&nbsp;</b></td></tr></table>
+<p>
+Any one-to-one mapping, <i>f</i>, of any alphabet to itself can be
+used to encode text by replacing each occurrence of any letter, <i>c</i>, with
+<i>f</i>(<i>c</i>).
+One such mapping could be the mapping of a letter to
+three positions beyond the letter in the alphabet.
+That is,  <img width="44" height="13" align="BOTTOM" alt="tex2html_wrap_inline35" src="468img1.gif"> ,  <img width="41" height="13" align="BOTTOM" alt="tex2html_wrap_inline37" src="468img2.gif"> ,  <img width="44" height="25" align="MIDDLE" alt="tex2html_wrap_inline39" src="468img3.gif"> ,  <img width="43" height="25" align="MIDDLE" alt="tex2html_wrap_inline41" src="468img4.gif">  and so on.
+<p>
+With this mapping, 
+``<tt>The car is blue</tt>'' will be encoded as ``<tt>Wkh fdu lv eoxh</tt>''.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>The input begins with a single positive integer on a line by itself
+indicating the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.</p>
+<p>
+Your correct program should decodes the contents of each input set according
+to the following guidelines:
+<ol><li> Only letters are encoded. Letters are mapped to letters.
+Uppercase letters are different from their lowercase counter parts.<li> The mapping that defines the encoding is one-to-one.  That
+is, two different letters never map to the same letter of the
+alphabet ( <img width="44" height="10" align="BOTTOM" alt="tex2html_wrap_inline43" src="468img5.gif">  and  <img width="43" height="12" align="BOTTOM" alt="tex2html_wrap_inline45" src="468img6.gif">  is impossible).<li> There are two input lines -
+the first one contains a text (not encoded) and
+the second one contains an encoded text.
+This text is to be decoded by your program.<li> Both lines are written by the same person.<li> 
+It is to be assumed that any
+person uses letters of the alphabet with the same <b>RELATIVE
+FREQUENCY</b> from document to document and no two letters are
+used with the same frequency.
+That is, the most frequently used letter in the first line maps to the most frequently used letter in the second one; the second most frequently used letter maps to the second most frequently used letter and so on.
+</li></li></li></li></li></ol>
+<p>&nbsp;The outputs of two consecutive cases will be separated by a blank line.</p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Intput</a></font></h2>
+<p>
+<pre>1
+
+abacxbacac
+qqqqqrrrrssstt</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>aaaaaccccbbbxx</pre>
+</body>
+</html>

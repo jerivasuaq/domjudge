@@ -1,0 +1,58 @@
+
+
+<html>
+<head>
+<title>Anagrams</title>
+<meta name="description" content="Anagrams">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center></center></h1>
+ <table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Anagrams</a></font>&nbsp;</b></td></tr></table>
+<p>
+An anagram is a word or phrase formed by rearranging the letters of
+another word or phrase.  For example, ``<tt>carthorse</tt>&quot; is an anagram of ``<tt>orchestra</tt>&quot;.  Blanks within a phrase are ignored in forming anagrams.  Thus, ``<tt>orchestra</tt>&quot; and ``<tt>horse cart</tt>&quot; are also anagrams.
+<p>
+<p>
+   Write a program that reads a list of phrases and prints all pairs of anagrams occurring in the list.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file will contain a single integer at the first line of the input,
+indicate the number of test case you need to test followed by a blank line. Each test case will consist of from 1 to 100 lines.  A completely empty or
+     blank line signals the end of a test case. Each line constitutes one phrase.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Some number of lines (including possibly 0 if there are no anagrams in the list), each line containing two anagrammatic phrases
+     separated by `<tt>=</tt>'.
+<p>
+<p>
+Each anagram pair should be printed exactly once, and the order of
+the two phrases within a printed pair must be lexicographic, as well as the first phrases and the second ones in case some first are equal.
+<p>
+Two consecutive output for two consecutive input is separated by a single blank
+line.
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+
+carthorse
+horse
+horse cart
+i do not know u
+ok i now donut
+orchestra
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>carthorse = horse cart
+carthorse = orchestra
+horse cart = orchestra
+i do not know u = ok i now donut</pre>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<p>
+Suppose there are a number of good users using an Internet chat room, which is a
+shared text chat space. Now there are some bad guys in the Internet who would come
+to this room and would have no respect or interest in the topic of discussion in
+the group. They would start typing strings of garbage characters, start unsolicited
+advertisements of certain URLs or businesses, or paste same string again and again
+just to disturb others in the room.
+
+<p>
+When I asked about this problem to Prof Banku (naturally not as smart as Prof Shanku)
+he suggested the following scheme. Let us define consonants to be all letters in a-z
+and A-Z except a, e, i, o, u, y, A, E, I, O, U and Y.
+
+<p>
+A user should be able to send a line to the chat room unless
+
+<p>
+
+<ul>
+<li>the line has more than 5 consecutive consonants, or
+</li>
+<li>the line contains at least one word which has more than 4 consecutive
+        consonants and the user sent more than 2 such lines (containing more 
+than four consonants) in last 10 lines sent, or
+</li>
+<li>the user sent the same line more than once in last 10 sentences sent.</li></ul>
+where "last 10 lines sent" means last 10 lines (acceptable or not) sent by user, excluding the current line.
+
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input consists of several lines. The first line contains an integer <span class="MATH"><i>n</i></span>, which is
+the number of lines in the shared text space. Then follow <span class="MATH"><i>n</i></span> lines each consisting
+of not more than 200 ASCII characters.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each line of input print `<tt>y</tt>' if the line is acceptable according to the
+criteria set above and `<tt>n</tt>' otherwise in separate lines. See the sample
+output for example.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>12
+hello
+how r u?
+where r u from?
+kjhh kh kgkjhg jhg
+where r u from?
+i am from London, Ontario, Canada
+how r you nxw?
+now
+where r u from?
+kjhh kh kgkjhg jhg
+very good
+it is very cold here.
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>y
+y
+y
+n
+y
+y
+y
+y
+n
+n
+y
+y
+</pre>
+
+<p>

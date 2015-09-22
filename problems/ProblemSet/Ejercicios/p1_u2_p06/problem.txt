@@ -1,0 +1,42 @@
+Ejercicio 6. 
+
+Programa que evalua un número entero de tres dígitos.
+Introducir un número entero y verificar los siguiente:
+* Que tenga solo tres digitos.
+* Que imprima si los digitos son pares o impares.
+* Que imprima la suma de sus digitos.
+* Que imprima que el promedio sus digitos.
+
+Entrada: 
+	Un número entero.
+	
+Salida:
+	indicar si es par o impar cada uno de los digitos del número, suma de los dígitos, promedio de los dígitos.
+
+
+Ejemplos:
+==============================================================
+entrada:
+5
+--------------------------------------------------------------
+salida:
+numero no valido.
+==============================================================
+entrada:
+107
+--------------------------------------------------------------
+salida:
+1 impar, 0 par, 7 impar, suma 8, promedio 2.666666
+==============================================================
+entrada:
+1000
+--------------------------------------------------------------
+salida:
+numero no valido.
+==============================================================
+entrada:
+999
+--------------------------------------------------------------
+salida:
+9 impar, 9 impar, 9 impar, suma 27, promedio 9.0
+

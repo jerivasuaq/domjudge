@@ -1,0 +1,114 @@
+
+
+<html>
+<head>
+<title>Append</title>
+<meta name="description" content="Append">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Append</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Consider the following encoding scheme used in one famous compresion algorithm. Suppose
+we will code only sequences of lower case letters. Each such sequence of characters can be encoded
+to a sequence of pairs 
+
+(<i>p</i><sub><i>i</i></sub>, <i>r</i><sub><i>i</i></sub>), where 
+
+<img width="51" height="30" align="MIDDLE" border="0" src="520img1.gif" alt="$p_i \ge- 0$">
+is an integer and <i>r</i><sub><i>i</i></sub> is either a character (if <i>p</i><sub><i>i</i></sub> = 0) or
+an integer greater than zero and less or equal than <i>p</i><sub><i>i</i></sub> (if <i>p</i><sub><i>i</i></sub> &gt; 0).
+
+<p>
+We describe now the decoding procedure for our encoding scheme. Let 
+
+(<i>p</i><sub>1</sub>, <i>r</i><sub>1</sub>), 
+
+(<i>p</i><sub>2</sub>, <i>r</i><sub>2</sub>), <img width="25" height="15" align="BOTTOM" border="0" src="520img2.gif" alt="$\dots$">
+be
+a code of a sequence. We get the sequence as follows: we take successively individual pairs of the
+code. If <i>p</i><sub><i>i</i></sub> = 0 then <i>r</i><sub><i>i</i></sub> is a character and we simply add <i>r</i><sub><i>i</i></sub> to the end of already decoded sequence.
+If <i>p</i><sub><i>i</i></sub> &gt; 0 then <i>r</i><sub><i>i</i></sub> is an integer, 
+
+<img width="87" height="30" align="MIDDLE" border="0" src="520img3.gif" alt="$0 < r_i \leY p_i$">,
+and we add to already decoded sequence <i>r</i><sub><i>i</i></sub> letters from
+this sequence starting at the position <i>p</i><sub><i>i</i></sub> places before the end.
+
+<p>
+For example, consider the sequence of pairs (0 <i>a</i>), (1, 1), (0, <i>b</i>), (3, 3), (3, 3), (3, 2), (0, <i>c</i>). Decoding (0, <i>a</i>) we get <i>a</i>. Decoding (1, 1) we get <i>aa</i>. (0, <i>b</i>) adds <i>b</i> getting <i>aab</i>. (3, 3) will add <i>aab</i>, so now we have <i>aabaab</i>. Next pair (3, 3) will again add <i>aab</i> so we have <i>aabaabaab</i>. (3, 2) will add <i>aa</i>, so
+our sequence is 
+
+<i>aabaabaabaa</i> and (0, <i>c</i>) adds <i>c</i>. So the decoded sequence is 
+
+<i>aabaabaabaac</i>. Note that
+in general for a given <i>w</i> it can exist more such sequences of pairs.
+
+<p>
+Let <i>u</i>, <i>v</i> be some sequences. By <i>uv</i> we will understand the sequence created by appending of
+the sequence <i>v</i> to the end of sequence <i>u</i>. Let <i>C</i><sub><i>w</i></sub> be a sequence of pairs which encodes a sequence
+of lowercase letters <i>w</i>. Suppose we have given a sequence of pairs <i>C</i><sub><i>w</i></sub>. The question is how many
+possibilities does exist for expressing the sequence <i>C</i><sub><i>w</i></sub> in the form <i>C</i><sub><i>u</i></sub> <i>C</i><sub><i>v</i></sub> where <i>u</i>, <i>v</i> are sequences
+satisfying the equation <i>w</i> = <i>uv</i> and neither <i>u</i> nor <i>v</i> is empty. Write a program that will answer
+this question.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file consists of blocks of lines. Each block describes one sequence of pairs <i>C</i><sub><i>w</i></sub> to some
+<i>w</i> in such a way that the <i>i</i>-th line of the block contains either two integers <i>p</i><sub><i>i</i></sub>, <i>r</i><sub><i>i</i></sub>, (
+
+<img width="113" height="30" align="MIDDLE" border="0" src="520img4.gif" alt="$r_i \leY p_i < 1000$">)
+separated by one space or 0 followed by one space and one character. Each block ends with one empty line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output file contains the lines corresponding to the blocks in the input file. Each line
+contains the number of possibilities of representation of the sequence <i>C</i><sub><i>w</i></sub> in the form <i>C</i><sub><i>u</i></sub> <i>C</i><sub><i>v</i></sub> where
+<i>u</i>, <i>v</i> are sequences satisfying the equation <i>w</i> = <i>uv</i> and neither <i>u</i> nor <i>v</i> is empty.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+0 a
+1 1
+0 b
+3 3
+3 3
+3 2
+0 c
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+</pre>
+
+<p>
+
+<p>
+</body>
+</html>

@@ -1,0 +1,91 @@
+
+
+<html>
+<head>
+<title>Polygon Puzzler</title>
+<meta name="description" content="Polygon Puzzler">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Polygon Puzzler</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+We define a <em>simple polygon</em> as an area enclosed by endpoint-connected line segments such that
+no line segment intersects another (except for adjoining segments at their endpoints). A simple
+polygon can thus be defined by an ordered list of its vertices (the endpoints of the enclosing
+line segments). A <em>planar polygon</em> is a polygon whose vertices all lie in the same plane.
+
+<p>
+For this problem you are asked to compute the area of a simple planar polygon oriented in
+three space. That is, although the vertices of the polygon lie in some two-dimensional plane,
+the vertices are specified in three-dimensional Cartesian coordinates.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input will consist of several data sets. The first line of the data set will cointain
+the number of vertex of the polygon. Then an ordered sequence of coordinates for the vertices of the polygon follow.
+Each vertex will be in a line, and it will contain the three-dimensional cartesian coordinates for the single
+vertex in the order <i>x</i>, <i>y</i>, <i>z</i>. The values for the <i>x</i>, <i>y</i>, <i>z</i> components will be separated by a single
+space. Input values should be considered to be double precision floating point and may be
+positive or negative.
+No polygon will have less than 3 or more than 1024 vertices.
+Input will finish with a polygon with 0 vertices. This test case shouldn't be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output should be the area of the polygons specified by the input and should be rounded to
+the nearest 1/1000 (i.e., three places after the decimal point should be printed).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+4
+-1.401117996399998e+00 1.509291958378880e-01 1.186959898555237e-01
+1.918738650437130e-01 1.067473024933127e+00 9.075713530920345e-01
+1.401117996399998e+00 -1.509291958378880e-01 -1.186959898555237e-01
+-1.918738650437130e-01 -1.067473024933127e+00 -9.075713530920345e-01
+4
+0.000000000000000e+00 0.000000000000000e+00 0.000000000000000e+00
+1.000000000000000e+00 0.000000000000000e+00 0.000000000000000e+00
+1.000000000000000e+00 1.000000000000000e+00 0.000000000000000e+00
+0.000000000000000e+00 1.000000000000000e+00 0.000000000000000e+00
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+4.000
+1.000
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

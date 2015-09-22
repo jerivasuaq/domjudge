@@ -1,0 +1,114 @@
+<p>
+A set of laboratory mice is being trained to escape a maze. 
+The maze is made up of cells, and each cell is
+connected to some other cells. 
+However, there are obstacles in the passage between
+cells and therefore there is a time penalty to overcome the passage
+Also, some passages allow mice to go one-way,
+but not the other way round.
+
+<p>
+Suppose that all mice are now trained and,  when placed  in  an  arbitrary
+cell in the maze, take a path that leads them to  the  exit cell in minimum
+time.
+
+<p>
+We are going to conduct the following experiment: 
+a mouse is placed in each cell  of
+the maze and a count-down timer is started.
+When the timer stops we count the number of mice out of the maze.
+
+<p>
+Write a program that, given a description of the maze and the time limit,
+predicts the number of mice that will exit the maze. Assume
+that there are no bottlenecks is the maze, i.e. that all cells have
+room for an arbitrary number of mice.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<p>
+The maze cells are numbered <b><i>1,2,...,N</i></b>
+, where <b><i>N</i></b> is the total number
+of cells. You can assume that <b><i>N &le; 100</i></b>.
+
+<p>
+The first three input lines contain <b><i>N</i></b> 
+, the number of cells in the
+maze, <b><i>E</i></b>, the number of the exit cell,
+and the starting value <b><i>T</i></b> for the count-down timer 
+(in some arbitrary time unit).
+
+<p>
+The fourth line contains the number <b><i>M</i></b> of 
+connections in the maze, and is followed by <b><i>M</i></b> lines,
+each specifying a connection
+with three integer numbers: two cell numbers <b><i>a</i></b> and <b><i>b</i></b>
+(in the range <b><i>1,..,N</i></b>
+) and the number of time units
+it takes to travel from <b><i>a</i></b> to <b><i>b</i></b>.
+
+<p>
+Notice that each connection is one-way, i.e., 
+the mice can't travel from <b><i>b</i></b> to <b><i>a</i></b>
+unless there is another line specifying that passage.
+Notice also that the time required
+to travel in each direction might be different.
+
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+<p>
+The output consists of a single line with 
+the number of mice that reached the exit cell <b><i>E</i></b> in at
+most <i><b>T</b></i> time units.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+1
+
+4 
+2 
+1
+8
+1 2 1
+1 3 1
+2 1 1
+2 4 1
+3 1 1
+3 4 1
+4 2 1
+4 3 1
+</pre>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>
+3
+</pre>
+
+<p>

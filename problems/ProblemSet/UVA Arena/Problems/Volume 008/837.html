@@ -1,0 +1,183 @@
+
+
+<html>
+<head>
+<title>Light and Transparencies</title>
+<meta name="description" content="Light and Transparencies">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Light and Transparencies</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+When light traverses a transparent film, some energy is absorbed
+and the rest is transmitted to other side of the film. The
+percentage of light that is transmitted may be defined as
+Transparency Coefficient.
+
+<p>
+When several films are in the same direction of light, the
+correspondent transparency coefficients are multiplied. The goal
+of this problem is to determine the percentage of light that is
+projected on the ground, after traversing a given set of films.
+
+<p>
+<div align="CENTER">
+
+<img src="p837.gif" alt="\epsfbox{p837.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 1 Three films and correspondent Transparent Coeficients.
+
+</div>
+
+<p>
+
+<p>
+<br>
+Consider the set of lines segments in fig. 1. They represent
+transparent films in the above conditions (transparency
+coefficients are written in brackets). Also consider that light is
+propagating in the vertical direction, from top to bottom.
+
+<p>
+Accordingly to the figure, the end points of the lines define a
+set of projected segments onto the ground (ground is represented
+by the <span class="MATH"><i>X</i></span> axe). For each projected segment, it is possible
+to evaluate the percentage of light that reaches the ground and,
+for the entire set of segments, a list can be obtained:
+
+<p>
+<pre>
+-inf, 2.0 -&gt; 1.000
+2.0, 4.0 -&gt; 0.900
+4.0, 7.0 -&gt; 0.630
+7.0, 9.0 -&gt; 0.504
+9.0, 13.5 -&gt; 0.560
+13.0, 17.0 -&gt; 0.800
+17.0, +inf -&gt; 1.000
+</pre>
+
+<p>
+To simplify the problem, it is assumed that neither vertical lines
+nor crossing lines are given. Also no coincidences exist in the
+vertical projection of all given points (in other words, the
+<span class="MATH"><i>X</i></span> coordinates of the end points are all different
+from each other). On the other hand, a coordinate may be any real
+value from <span class="MATH">- <img width="22" height="16" align="BOTTOM" border="0" src="837img2.png" alt="$ \infty$"></span> to <span class="MATH">+ <img width="22" height="16" align="BOTTOM" border="0" src="837img2.png" alt="$ \infty$"></span>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The input is a text file containing several lines, as follows.
+
+<p>
+The first line of the input contains the number <span class="MATH"><i>NL</i></span> (integer
+format) of line segments. It is followed by <span class="MATH"><i>NL</i></span> lines of
+text defining, each one, a line segment.
+
+<p>
+Accordingly to the above
+explanations, a line segment is defined by the coordinates of its
+two end points <span class="MATH"><i>P</i>1</span> and <span class="MATH"><i>P</i>2</span> and the transparency
+coefficient <span class="MATH"><i>r</i></span>, in the sequence 
+<span class="MATH"><i>x</i>1&nbsp;<i>y</i>1&nbsp;<i>x</i>2&nbsp;<i>y</i>2&nbsp;<i>r</i></span>,
+separated by single spaces (all the five values are in the real
+format). No order is considered for the two points
+<span class="MATH"><i>P</i>1</span> and <span class="MATH"><i>P</i>2</span>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The first line of the output contains the number <span class="MATH"><i>NP</i></span>
+(integer format) of projected segments. It is followed by
+<span class="MATH"><i>NP</i></span> lines of text, defining, each one, a projected segment.
+These lines must be sorted in ascending order of <span class="MATH"><i>X</i></span> values.
+
+<p>
+A projected segment must be defined by its coordinates <span class="MATH"><i>X</i><sub>1</sub></span> and
+<span class="MATH"><i>X</i><sub>2</sub></span>, followed by the evaluated percentage of light. All the
+tree values must be in real format, rounded to 3 decimal digits
+and separated by single spaces. Infinite values must be
+represented by `<tt>-inf</tt>' or `<tt>+inf</tt>'.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+3
+2.0 2.0 9.0 2.0 0.9
+13.5 2.0 4.0 8.5 0.7
+17.0 10.0 7.0 8.5 0.8
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+7
+-inf 2.000 1.000
+2.000 4.000 0.900
+4.000 7.000 0.630
+7.000 9.000 0.504
+9.000 13.500 0.560
+13.500 17.000 0.800
+17.000 +inf 1.000
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+A. Augusto Sousa, ACM-UP'2001
+</address>
+</body>
+</html>
+

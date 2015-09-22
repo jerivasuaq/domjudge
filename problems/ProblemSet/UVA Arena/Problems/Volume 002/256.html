@@ -1,0 +1,73 @@
+
+
+<html>
+<head>
+<title>Quirksome Squares</title>
+<meta name="description" content="Quirksome Squares">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Quirksome Squares</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The number 3025 has a remarkable quirk: if
+you split its decimal representation in two strings
+of equal length (30 and 25) and square the
+sum of the numbers so obtained, you obtain the
+original number:
+<p>
+<p> <img width="316" height="20" align="BOTTOM" alt="displaymath26" src="256img1.gif"> <p>
+<p>
+The problem is to determine all numbers with
+this property having a given even number of
+digits.
+<p>
+<p>
+For example, 4-digit numbers run
+from 0000 to 9999.  Note that leading zeroes should be
+taken into account.  This means that 0001
+which is equal to  <img width="74" height="30" align="MIDDLE" alt="tex2html_wrap_inline28" src="256img2.gif">  is a quirksome number
+of 4 digits.  The number of digits
+may be 2,4,6 or 8. Although maxint is only 32767 and
+numbers of eight digits are asked for,
+a well-versed programmer can keep his numbers in the
+range of the integers.  However efficiency should be given a thought.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input of your program is a textflle containing
+numbers of digits (taken from 2,4,6,8),
+each number on a line of its own.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output is a textfile consisting of lines containing the
+quirksome numbers (ordered according to the
+input numbers and for each input number in
+increasing order).
+<p>
+<p>
+<p>
+<b>Warning:</b>
+Please note that the number of digits in
+the output is equal to the number in the corresponding
+input line : leading zeroes may not be suppressed.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2
+2</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>00
+01
+81
+00
+01
+81</pre>
+<p>
+</body>
+</html>

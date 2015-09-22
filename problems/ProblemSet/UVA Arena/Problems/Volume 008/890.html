@@ -1,0 +1,269 @@
+
+
+<html>
+<head>
+<title>Maze (II)</title>
+<meta name="description" content="Maze (II)">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Maze (II)</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Johnny likes solving puzzles. He especially likes drawing and solving mazes. However, solving
+a maze he has drawn himself is too easy for him.
+
+<p>
+Since his computer is his best friend, he figures that he needs a program drawing the mazes
+for him. So he starts thinking about an algorithm performing this difficult task for him and he
+comes up with `Johnny's Simple Algorithm.'
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Johnny's Simple Algorithm</a>&nbsp;</font>
+</h2>
+
+<p>
+You start with a 
+<span class="MATH"><i>M</i>&#215;<i>N</i></span> grid, where <span class="MATH"><i>M</i></span> is the number of rows and <span class="MATH"><i>N</i></span> is the number of columns of
+the grid. Initially, no two cells of the grid are connected to each other, so every cell is surrounded
+by walls on all four sides. The walls consist of an underscore (`<tt>_</tt>') for a horizontal wall, and a
+vertical bar (`<tt>|</tt>') for a vertical one. For example, if <span class="MATH"><i>M</i> = 3</span> and <span class="MATH"><i>N</i> = 4</span>, the grid looks like this:
+
+<p>
+<pre>
+ _ _ _ _
+|_|_|_|_|
+|_|_|_|_|
+|_|_|_|_|
+</pre>
+
+<p>
+Every cell of the grid has unique coordinates <span class="MATH">(<i>p</i>, <i>q</i>)</span>. The lower left corner in the example is (1, 1),
+the upper right corner is (3, 4).
+
+<p>
+After choosing the dimensions of the maze, you choose a starting cell. From now on you keep
+track of a list of <em>pending</em> cells, which initially contains only one cell (the starting cell), and you
+repeat the following steps:
+
+<ol>
+<li>If the list is empty, you stop. The maze is ready.
+</li>
+<li>Else, you consider the most recently added cell in the list (call this cell <em>AC</em>). If this cell
+(at the end of the list) has no <em>unvisited</em> neighbor cells then you remove this cell from the
+list. Every cell has at most 4 neighbor cells: on the right, left, above and below. A cell is
+unvisited if it has never been added to the list.
+</li>
+<li>If <em>AC</em> has at least one unvisited neighbor cell, you choose one of the unvisited neighbor cells
+(call this cell <em>NC</em>), remove the wall between <em>AC</em> and <em>NC</em> and add <em>NC</em> to the end of the list.
+</li>
+</ol>
+
+<p>
+Johnny makes a nice little program using this algorithm and it works fine, but Johnny is not
+completely satisfied with the results. He is a demanding little boy and in his opinion the so-called
+<em>branching factor</em> of the maze is too low, i.e. the generated mazes contain very long paths and too
+few crossings. Therefore, the mazes are still too easy to solve for him.
+
+<p>
+A little trick can be applied to Johnny's Simple Algorithm, giving much better results. Johnny
+does not know it, but you will, since it will be explained below!
+
+<p>
+
+<p>
+<br>
+The idea behind the trick is to sometimes change the order of the cells in the list. This avoids
+long paths and results in more branches. Changing the order of the cells in the list is done by
+`flipping' part of the list. A <em>flip</em> can be specified by giving the position of a cell in the list (where
+the first cell has position 1) and consists of reversing the sub-list starting at the specified cell and
+ending with the last cell in the list.
+
+<p>
+For example, if the list consists of the following cells:
+
+<p>
+<div align="CENTER" class="mathdisplay">
+(1, 1)(1, 2)(2, 2)(3, 2)(3, 3)
+</div><p>
+then a flip with starting cell number 2 results in:
+
+<p>
+<div align="CENTER" class="mathdisplay">
+(1, 1)(3, 3)(3, 2)(2, 2)(1, 2)
+</div><p>
+
+<p>
+
+<p>
+<br>
+Now, we will reveal `Johnny's Advanced Algorithm.'
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Johnny's Advanced Algorithm</a>&nbsp;</font>
+</h2>
+
+<p>
+The algorithm is pretty much the same as `Johnny's Simple Algorithm,' only sometimes part of
+the list is flipped. The steps you repeat after choosing the dimensions of the maze, choosing the
+starting cell and adding this cell to the list are:
+
+<ol>
+<li>If the list of cells is empty, you stop. The maze is ready.
+</li>
+<li>Else you consider the last cell in the list. If this cell has no unvisited neighbor cells, then
+you remove this cell from the list.
+</li>
+<li>Otherwise, you read a command. If this command is:
+  <dl>
+<dt><strong>`<tt>F</tt> <span class="MATH"><i>n</i></span>'</strong></dt>
+<dd>you flip the list, starting at position n.
+  
+</dd>
+<dt><strong>`<tt>U</tt>' </strong></dt>
+<dd>you go up: you remove the wall between the last cell in the list and the cell above it.
+      The cell above the last cell in the list is added to the list.
+  
+</dd>
+<dt><strong>`<tt>D</tt>' </strong></dt>
+<dd>you go down.
+  
+</dd>
+<dt><strong>`<tt>L</tt>' </strong></dt>
+<dd>you go left.
+  
+</dd>
+<dt><strong>`<tt>R</tt>' </strong></dt>
+<dd>you go right.
+  
+</dd>
+</dl>
+</li>
+</ol>
+
+<p>
+Since you are taking part in a programming contest, we ask you to write a program generating
+nice mazes for Johnny, using `Johnny's Advanced Algorithm,' to make him happy again. The
+maximum size of a maze is 39<span class="MATH">&#215;</span>39.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The first line of the input contains the number of test cases. The input for every test case is
+divided into three parts:
+
+<ul>
+<li>The first line contains two integer values <span class="MATH"><i>M</i></span> and <span class="MATH"><i>N</i></span>, specifying the dimensions of the maze:
+the number of rows <span class="MATH"><i>M</i></span> followed by the number of columns <span class="MATH"><i>N</i></span>.
+</li>
+<li>The second line contains the coordinates of the starting point (again, row followed by column).
+</li>
+<li>The next lines each contain a command. A command is one of the upper case characters
+`<tt>F</tt>', `<tt>U</tt>', `<tt>D</tt>', `<tt>L</tt>' and `<tt>R</tt>', appearing at the start of a line. An `<tt>F</tt>'
+character is followed by a space and an integer (the starting position of the flip.)
+</li>
+</ul>
+
+<p>
+The input for each test case contains exactly the number of commands needed for that maze.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The resulting mazes should be printed using spaces (`'), underscores (`<tt>_</tt>'), vertical bars (`<tt>|</tt>')
+and end-of-line characters. No unnecessary whitespace should be printed. The mazes should be
+followed by one blank line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+3 3
+1 1
+U
+U
+R
+D
+D
+R
+U
+U
+3 4
+2 1
+R
+U
+L
+F 2
+R
+U
+R
+D
+D
+F 4
+D
+L
+L
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+ _ _ _
+|   | |
+| | | |
+|_|_ _|
+
+ _ _ _ _
+|_  |   |
+|_ _  | |
+|_ _ _|_|
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+<b>Testsetter:</b> Joachim Wulff (Little Joey)
+<br>
+<b>Special thanks:</b> Ruben Spaans
+</address>
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+<p>
+John Smith, who is a member of Academy of Cold Manager (ACM), is in charge of a large-scale 
+cold store.  For him, it's a troublesome job.  Whenever the temperature in the cold store is too 
+hot or too cold for a long time, the goods will be damaged.  And poor Mr. Smith will have to 
+compensate for the loss of the store. 
+
+<p>
+Therefore, Mr. Smith has installed an automatic temperature control system in the store.  The 
+system may control the temperature according to the input polynomial and the start time.  At 
+each moment, it tries to adjust the temperature equal to the value of the polynomial function.  But 
+Mr. Smith still feels worried.  Since he could not know the effect beforehand how the system will 
+regulate.  At such a worrisome moment, it's lucky for him to call to remembrance that you, an 
+excellent programmer, are willing to offer a program to help him.  Making use of this program, 
+he may simply input the polynomial and the parameters of the start time and the end time, and 
+then he will be aware of the average temperature during this period.  Now he is relieved from 
+such a bothersome job. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The input file may contain several data sets.  Each data set begins with a line containing an 
+integer <span class="MATH"><i>n</i></span> <span class="MATH">(<i>n</i> &lt; 100)</span>, which specifies the highest power of the polynomial.  A value of 0 for the 
+power indicates the end of input, and this data set should not be processed.  In each data set, the 
+following line contains  <span class="MATH"><i>n</i> + 1</span> real numbers, which tell the coefficients of the polynomial.  The 
+sequence of those coefficients is arranged according to the power of items from high to low in the 
+polynomial.  If an item of the polynomial does not exist, the corresponding coefficient is 0.  
+And then follows a line consists of 2 real numbers <span class="MATH"><i>s</i></span> and <span class="MATH"><i>e</i>(<i>s</i> &lt; <i>e</i>)</span>, indicating the start time and the 
+end time. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+For each data set, compute <span class="MATH"><i>t</i></span>, the average temperature of the input polynomial from the start time 
+to the end time.  Print your answer as a single real number accurate to 3 decimal places on a line 
+by itself.  You should not print any more white spaces or blank lines in the output. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+2 
+1.0 0.0 0.0 
+0.0 1.0 
+0
+</pre>  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+0.333
+</pre> 
+
+<p>

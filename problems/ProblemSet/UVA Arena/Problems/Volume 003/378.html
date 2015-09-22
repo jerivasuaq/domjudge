@@ -1,0 +1,69 @@
+
+
+<html>
+<head>
+<title>Intersecting Lines</title>
+<meta name="description" content="Intersecting Lines">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Intersecting Lines</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+We all know that a pair of distinct points on a plane defines a line
+and that a pair of lines on a plane will intersect in one of three
+ways: 1) no intersection because they are parallel, 2) intersect in a
+line because they are on top of one another (i.e. they are the same
+line), 3) intersect in a point.  In this problem you will use your
+algebraic knowledge to create a program that determines how and
+where two lines intersect.
+<p>
+<p>
+Your program will repeatedly read in four
+points that define two lines in the <i>x</i>-<i>y</i> plane and determine how and
+where the lines intersect.  All numbers required by this problem
+will be reasonable, say between -1000 and 1000.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line contains an integer <i>N</i> between 1 and 10
+describing how many pairs of lines  are represented.  The next <i>N</i>
+lines will each contain eight integers.  These integers represent the
+coordinates of four points on the plane in the order  <img width="132" height="17" align="MIDDLE" alt="tex2html_wrap_inline35" src="378img1.gif"> .  Thus each of these input lines represents two lines on
+the plane: the line through  <img width="51" height="27" align="MIDDLE" alt="tex2html_wrap_inline37" src="378img2.gif">  and  <img width="51" height="27" align="MIDDLE" alt="tex2html_wrap_inline39" src="378img3.gif">  and the line through
+ <img width="51" height="27" align="MIDDLE" alt="tex2html_wrap_inline41" src="378img4.gif">  and  <img width="51" height="27" align="MIDDLE" alt="tex2html_wrap_inline43" src="378img5.gif"> .  The point  <img width="51" height="27" align="MIDDLE" alt="tex2html_wrap_inline37" src="378img2.gif">  is always distinct from
+ <img width="51" height="27" align="MIDDLE" alt="tex2html_wrap_inline39" src="378img3.gif"> .  Likewise with  <img width="51" height="27" align="MIDDLE" alt="tex2html_wrap_inline41" src="378img4.gif">  and  <img width="51" height="27" align="MIDDLE" alt="tex2html_wrap_inline43" src="378img5.gif"> .
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+There should be <i>N</i>+2 lines of output.  The first line of
+output should read <tt>INTERSECTING LINES OUTPUT</tt>.  There will
+then be one line of output for each pair of planar lines represented
+by a line of input, describing how the lines intersect: none, line, or
+point.  If the intersection is a point then your program should
+output the <i>x</i> and <i>y</i> coordinates of the point, correct to two decimal
+places.  The final line of output should read ``<tt>END OF OUTPUT</tt>&quot;.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5
+0 0 4 4 0 4 4 0
+5 0 7 6 1 0 2 3
+5 0 7 6 3 -6 4 -3
+2 0 2 27 1 5 18 5
+0 3 4 0 1 2 2 5</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>INTERSECTING LINES OUTPUT
+POINT 2.00 2.00
+NONE
+LINE
+POINT 2.00 5.00
+POINT 1.07 2.20
+END OF OUTPUT</pre>
+<p>
+</body>
+</html>

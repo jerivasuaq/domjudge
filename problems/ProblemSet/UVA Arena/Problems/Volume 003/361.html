@@ -1,0 +1,106 @@
+
+
+<html>
+<head>
+<title>Cops and Robbers</title>
+<meta name="description" content="Cops and Robbers">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Cops and Robbers</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You are to simulate a game of Cops and Robbers.  In this game,
+cops, robbers, and other citizens are
+represented as points in a two-dimensional plane. A citizen is said to be
+<em>safe</em> if it is within a triangle formed by three cops.  A citizen
+is said to be <em>robbed</em> if it is not safe and is within a triangle
+formed by three robbers.  A citizen is <em>neither safe nor robbed</em> if
+it satisfies neither of the above conditions.
+For purposes of this problem, a triangle consists of three
+points, and a point is within a triangle if
+it is inside or on the boundary of the triangle.
+<p>
+<p>
+In the following diagram, filled circles represent cops, filled
+squares represent robbers, and filled triangles represent citizens.
+Dashed lines indicate triangles formed by cops or robbers
+<p>
+<center><img src="361img2.gif"></center>
+<p>
+In this example, citizens A and B are safe, citizen C is robbed,
+and citizen D is neither.
+<p>
+<p>
+Given a set of cops and robbers and several citizen queries,
+<b>efficiently</b> determine whether each citizen is safe, robbed, or neither.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input consists of several data sets.  The first line of each data
+set contains three non-negative integers
+<i>c</i>, <i>r</i>, and <i>o</i>:  the number of cops,
+robbers, and other citizens, respectively.
+<i>c</i>, <i>r</i>, and <i>o</i> will each be at most 200.  The next <i>c</i>
+lines contain the (<i>x</i>, <i>y</i>) coordinates of each cop, one per line.
+The next <i>r</i> lines contain the (<i>x</i>, <i>y</i>) coordinates
+of each robber, one per line.  The next <i>o</i> lines contain
+the (<i>x</i>, <i>y</i>) coordinates of each other citizen, one per line.
+All coordinates are integers between -500 and 500
+inclusive. 
+<p>
+<p>
+Your program must stop processing
+input when it encounters a data set in
+which <i>c</i>, <i>r</i>, and <i>o</i> are all zero.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output for each data set begins with a line identifying the data
+set.  For each other citizen in the data set, output the line
+<p>
+<p>
+<p>
+<tt>Citizen at (</tt><i>x</i>,<i>y</i><tt>) is </tt><i>status</i><tt>.</tt>
+<p>
+<p>
+<p>
+where (<i>x</i>,<i>y</i>) is the location of the citizen from the input and <em>status</em>
+is one of <tt>safe</tt>, <tt>robbed</tt> or <tt>neither</tt>.
+Follow the format given in the Sample Output.  Leave a blank line after
+the output from each data set.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3 3 2
+0 0
+10 0
+0 10
+20 20
+20 0
+0 20
+5 5
+15 15
+3 3 1
+0 0
+10 0
+0 10
+20 20
+20 0
+0 20
+40 40
+0 0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Data set 1:
+     Citizen at (5,5) is safe.
+     Citizen at (15,15) is robbed.
+
+Data set 2:
+     Citizen at (40,40) is neither.</pre>
+<p>
+</body>
+</html>

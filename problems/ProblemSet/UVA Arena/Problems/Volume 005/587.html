@@ -1,0 +1,111 @@
+
+
+<html>
+<head>
+<title>There's treasure everywhere!</title>
+<meta name="description" content="There's treasure everywhere!">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+There's treasure everywhere!</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Finding buried treasures is simple: all you need is a map! The pirates in the Caribbean were
+famous for their enormous buried treasures and their elaborate maps. The maps usually read like
+``Start at the lone palm tree. Take three steps towards the forest, then seventeen step towards the small
+spring, . . . blahblah . . . , finally six steps toward the giant rock. Dig right here, and you will find my
+treasure!'' Most of these directions just boil down to taking the mentioned number of steps in one of
+the eight principal compass directions (depicted in the left of the figure).
+
+<p>
+Obviously, following the paths given by these maps may lead to an interesting tour of the local
+scenery, but if one is in a hurry, there is usually a much faster way: just march directly from your
+starting point to the place where the treasure is buried. Instead of taking three steps north, one step
+east, one step north, three steps east, two steps south and one step west (see figure), following the
+direct route (dashed line in figure) will result in a path of about 3.6 steps.
+
+<p>
+You are to write a program that computes the location of and distance to a buried treasure, given
+a `traditional' map.
+
+<p>
+<div align="CENTER">
+<img src="p587.gif">
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains several strings, each one on a line by itself, and each one consisting of at most
+200 characters. The last string will be <tt>END</tt>, signaling the end of the input. All other strings describe
+one treasure map each, according to the following format:
+
+<p>
+The description is a comma-separated list of pairs of lengths (positive integers less than 1000) and
+directions (<tt>N</tt> (north), <tt>NE</tt> (northeast), <tt>E</tt> (east), <tt>SE</tt> (southeast), <tt>S</tt> (south), <tt>SW</tt> (southwest), <tt>W</tt> (west)
+or <tt>NW</tt> (northwest)). For example, <tt>3W</tt> means 3 steps to the west, and <tt>17NE</tt> means 17 steps to the
+northeast. A full stop (<tt>.</tt>) terminates the description, which contains no blanks.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For every map description in the input, first print the number of the map, as shown in the sample
+output. Then print the absolute coordinates of the treasure, in the format ``<tt>The treasure is
+located at </tt>(<i>x</i>,<i>y</i>).''. The coordinate system is oriented such that the <i>x</i>-axis points east, and the
+<i>y</i>-axis points north. The path always starts at the origin (0,0).
+
+<p>
+On the next line print the distance to that position from the point (0,0), in the format ``<tt>The
+distance to the treasure is </tt><i>d</i>.''. The fractional values <i>x</i>, <i>y</i>, <i>d</i> must be printed exact to three digits to the right of the decimal point.
+
+<p>
+Print a blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+3N,1E,1N,3E,2S,1W.
+10NW.
+END
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Map #1
+The treasure is located at (3.000,2.000).
+The distance to the treasure is 3.606.
+
+Map #2
+The treasure is located at (-7.071,7.071).
+The distance to the treasure is 10.000.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

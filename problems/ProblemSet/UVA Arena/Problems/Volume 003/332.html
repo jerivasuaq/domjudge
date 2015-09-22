@@ -1,0 +1,80 @@
+
+
+<html>
+<head>
+<title>Rational Numbers from Repeating Fractions</title>
+<meta name="description" content="Rational Numbers from Repeating Fractions">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Rational Numbers from Repeating Fractions</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A rational number is any which can be written in the form <i>p</i>/<i>q</i>, where <i>p</i> and <i>q</i>
+are integers.  All rational numbers less than 1 (that is, those for which <i>p</i>
+is less than <i>q</i>) can be expanded into a decimal fraction, but this expansion
+may require repetition of some number of trailing digits. For example, the
+rational number 7/22 has the decimal expansion .3181818...  Note that the pair
+of digits 1 and 8 repeat ad infinitum.  Numbers with such repeating decimal
+expansions are usually written with a horizontal bar over the repeated
+digits, like this:  <img width="31" height="15" align="BOTTOM" alt="tex2html_wrap_inline49" src="332img1.gif"> 
+<p>
+<p>
+If we are given the decimal expansion of a rational fraction (with an
+indication of which digits are repeated, if necessary), we can determine
+the rational fraction (that is, the integer values of <i>p</i> and <i>q</i> in <i>p</i>/<i>q</i>) using the following algorithm.
+<p>
+Assume there are <i>k</i> digits immediately after the decimal point that are not
+repeated, followed by a group of <i>j</i> digits which must be repeated. Thus for
+7/22 we would have <i>k</i> = 1 (for the digit 3) and <i>j</i> = 2 (for the digits 1
+and 8).  Now if we let <i>X</i> be the original number (7/22), we can compute the
+numerator and denominator of the expression
+<p>
+<p> <img width="332" height="41" align="BOTTOM" alt="displaymath67" src="332img2.gif"> <p>
+<p>
+For  <img width="31" height="15" align="BOTTOM" alt="tex2html_wrap_inline49" src="332img1.gif">  we obtain the following calculation for the
+numerator of this fraction:
+<p>
+<p> <img width="422" height="16" align="BOTTOM" alt="displaymath71" src="332img3.gif"> <p>
+<p>
+The denominator is just 1000 - 10, or 990.  It is important to note that the
+expression in the numerator and the denominator of this expression will always
+yield integer values, and these represent the numerator and denominator of the
+rational number.  Thus the repeated fraction  <img width="31" height="15" align="BOTTOM" alt="tex2html_wrap_inline49" src="332img1.gif">  is the decimal
+expansion
+of the rational number 315/990.  Properly reduced, this fraction is (as
+expected) just 7/22.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input data for this problem will be a sequence of test cases, each test
+case appearing on a line by itself, followed by a <tt>-1</tt>.  Each test case will
+begin with an integer giving the value of <i>j</i>, one or more spaces, then
+the decimal expansion of a fraction given in the form  <em>0.ddddd</em> (where <em>d</em> represents a decimal digit).  There may be as many as nine (9) digits in the
+decimal expansion (that is, the value of <i>k</i>+<i>j</i> may be as large as 9).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each
+test case, display the case number (they are numbered sequentially starting 
+with 1) and the resulting rational number in the form <i>p</i>/<i>q</i>, properly reduced.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2 0.318
+1 0.3
+2 0.09
+6 0.714285
+-1</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Case 1: 7/22
+Case 2: 1/3
+Case 3: 1/11
+Case 4: 5/7</pre>
+<p>
+</body>
+</html>

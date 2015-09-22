@@ -1,0 +1,78 @@
+<p>
+Write a program that performs symbolic derivation <i>f’(x) = df(x)/dx</i> of a given function <i>f(x)</i>. The function <i>f(x)</i>
+is defined by an expression which may contain the following operations: + (addition), - (subtraction), *
+(multiplication), / (division), and ln (natural logarithm). Besides, the operands may be the variable x and
+numerical constants. The expression may contain arbitrarily nested sub-expressions in parentheses ( ).
+
+<p>
+The expression is given in a usual, infix form, such as:
+
+<p align="center">
+(2*ln(x+1.7)-x*x)/((-7)+3.2*x*x)+(x+3*x)*x
+
+<p>
+Numerical constants have the form d.d, with an optional sign (+ or -), where the number of digits both in integer
+and decimal parts are arbitrary. The input expression is guaranteed to be correct (no syntax error can occur).
+
+<p>
+The output expression should be written in infix form. It should not be optimized for human reading. This means,
+it can contain redundancies, such as 0*x, 1*x, 0+x, etc. The derivation should be performed using the following
+rules:
+
+<blockquote>
+	<li>The operators * and / are of higher priority than the operators + and -. Parentheses may change
+	the priorities as usually.
+	<li>The operators +, -, *, and / are left-associative, meaning that they group from left to right:<br>
+<pre>		a*b*c = (a*b)*c, a/b/c = (a/b)/c, a/b*c = (a/b)*c, etc.</pre>
+	<li>The rules for derivation are:
+	<pre>
+		(a + b)' = a' + b'
+		(a - b)' = a' - b'
+		(a * b)' = (a' * b + a * b')
+		(a / b)' = (a' * b - a * b') / b^2
+			(Note: use b^2 and not (b*b) for presentation)
+		ln(a)' = (a')/(a)
+		x' = 1
+		const' = 0
+	</pre>
+	<li>While producing the symbolic derivation, use parentheses for output strictly as stated in the
+	previous rule. Do not perform presentation optimizations, such as 0*a = 0, 1*a = a, etc.
+</li></li></li></li></blockquote>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input is a textual file which has one <i>f(x)</i> definition per line. The input lines do not have blanks.
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output should contain lines with corresponding symbolic derivations <i>f’=df/dx</i>, one line for each <i>f</i>.
+The strings representing <i>f(x)</i> and <i>f ’(x)</i> are guaranteed to have no more than 100 characters. 
+<p>
+
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+x*x/x
+-45.78*x+x
+-2.45*x*x+ln(x-3)
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+((1*x+x*1)*x-x*x*1)/x^2
+(0*x-45.78*1)+1
+((0*x-2.45*1)*x-2.45*x*1)+(1-0)/(x-3)
+</pre>
+
+<p>

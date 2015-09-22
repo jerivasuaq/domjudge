@@ -1,0 +1,141 @@
+
+<p>
+Google Suggest is a typical feature of the Google search box. It guesses what you're 
+typing and offers suggestions in real time(Fig 1). Sometimes, we may mistype the keyword. 
+For example, when we want to find the information of ``mcgrady"(a famouse NBA star), we 
+mistyped it to ``macgrady"(Fig 2). The clever Google can still give you the right 
+suggestions. It is amazing, isn't it?
+
+<p>
+<div align="CENTER">
+
+<img width="960" height="492" align="BOTTOM" border="0" src="p4769a.png" alt="\epsfbox{p4769a.eps}">
+</div>
+<p>
+<div align="CENTER">Fig 1: Google Suggest
+
+</div>
+
+<p>
+<div align="CENTER">
+
+<img width="960" height="514" align="BOTTOM" border="0" src="p4769b.png" alt="\epsfbox{p4769b.eps}">
+</div>
+<p>
+<div align="CENTER">Fig 2: Fuzzy Google Suggest
+
+</div>
+
+<p>
+In this problem, your job is to implement a similar system. You will be given a data set 
+including a large amount of English words. Your system should provide the search service. 
+For each input query word, find the <span class="textit">prefix-fuzzy-match</span> words from the data set 
+and ouput the number of those words. In the following, I will explain you the 
+<span class="textit">prefix fuzzy match</span>. When we say the two words are <span class="textit">fuzzy-match</span> (without 
+``<span class="textit">prefix</span>"), we mean that they look similar and their Edit Distance meets a given 
+threshold (If you have no idea of the Edit Distance, please refer to the <span class="textbf">Hints</span> 
+below). When we say the word A is <span class="textit">prefix-fuzzy-match</span> (with ``<span class="textit">prefix</span>") 
+to the word B, we mean that there exists a prefix <span class="MATH"><i>p</i></span> of word B, and the Edit Distance 
+between <span class="MATH"><i>p</i></span> and B meets a given threshold. For Example, the data set contains four English 
+words: ``content", ``common",  ``onganize", ``case". 
+The input query contains a word ``con" and a Edit Distance threshold 1. ``con" is 
+<span class="textit">prefix-fuzzy-match</span> to the words ``<span class="textbf">con</span>tent", 
+``<span class="textbf">co</span>mmon",  ``<span class="textbf">on</span>ganize", but ``<span class="textbf">c</span>ase" 
+doesn't meet the condition, because the minimun Edit Distance between all of its prefixes 
+and ``con" is 2 which is larger than the given threshold 1.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file consists of two parts. The first part is a data set with <span class="MATH"><i>n</i></span> 
+
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4769img3.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4769img3.png" alt="$ \le$">300, 000)</span> English words. The second part is the <span class="MATH"><i>m</i></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4769img3.png" alt="$ \le$"><i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="4769img3.png" alt="$ \le$">300)</span> input 
+queries. Each query has a word and an Edit Distance threshold <span class="MATH"><i>edth</i></span> 
+<span class="MATH">(0<img width="18" height="31" align="MIDDLE" border="0" src="4769img3.png" alt="$ \le$"><i>edth</i><img width="18" height="31" align="MIDDLE" border="0" src="4769img3.png" alt="$ \le$">2)</span>, 
+separated by a space. The words in the data set and the queries contain at most 10 small 
+letters (<tt>a</tt>-<tt>z</tt>).
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each input query, output the number of words from data set that the query word is 
+<span class="textit">prefix-fuzzy-match</span> to.
+
+<p>
+
+<p>
+<br>
+
+<span class="textbf">Hints</span>(From Wikipedia): 
+
+<p>
+The Edit Distance between two strings is given by the minimum number 
+of operations needed to transform one string into the other, where an operation is an 
+insertion, deletion, or substitution of a single character. For example, the Edit Distance 
+between ``kitten" and ``sitting" is 3, since the following three edits change one into the 
+other, and there is no way to do it with fewer than three edits: 
+
+<p>
+
+<ul>
+<li>kitten 
+<span class="MATH"><img width="22" height="18" align="BOTTOM" border="0" src="4769img4.png" alt="$ \rightarrow$"></span> sitten (substitution of `s' for `k') 
+</li>
+<li>sitten 
+<span class="MATH"><img width="22" height="18" align="BOTTOM" border="0" src="4769img4.png" alt="$ \rightarrow$"></span> sittin (substitution of `i' for `e') 
+</li>
+<li>sittin 
+<span class="MATH"><img width="22" height="18" align="BOTTOM" border="0" src="4769img4.png" alt="$ \rightarrow$"></span> sitting (insert `g' at the end).
+</li>
+</ul>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4 
+content 
+common 
+onganize 
+case 
+7 
+c 0 
+con 0 
+con 2 
+con 1 
+com 1
+comm 2 
+cog 1
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 
+1 
+4 
+3 
+2 
+2 
+2
+</pre>
+
+<p>

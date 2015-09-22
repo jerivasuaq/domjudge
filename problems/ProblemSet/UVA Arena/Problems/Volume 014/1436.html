@@ -1,0 +1,101 @@
+
+<p>
+We are given a rooted tree of <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> vertices. The vertices are to be labeled with numbers 
+<span class="MATH">1, 2,..., <i>n</i></span>
+<tex2html_verbatim_mark> so that each label is unique and the heap condition holds, i.e. the label of any vertex is less than the label of its parent. How many such labellings exist? Since this number may be quite large, calculate only its remainder modulo <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input contains several tree descriptions. The first line contains the number of input trees <span class="MATH"><i>t</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(<i>t</i><img width="18" height="31" align="MIDDLE" border="0" src="4390img1.png" alt="$ \le$">250)</span>
+<tex2html_verbatim_mark>. Each tree description begins with a line containing the size of the tree <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4390img1.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4390img1.png" alt="$ \le$">500000)</span>
+<tex2html_verbatim_mark> and an integer <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(2<img width="18" height="31" align="MIDDLE" border="0" src="4390img1.png" alt="$ \le$"><i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="4390img1.png" alt="$ \le$">10<sup>9</sup>)</span>
+<tex2html_verbatim_mark>. <span class="MATH"><i>n</i> - 1</span>
+<tex2html_verbatim_mark> lines follow, <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th of which contains <span class="MATH"><i>p</i>(<i>i</i> + 1)</span>
+<tex2html_verbatim_mark>, the number of the parent of the <span class="MATH"><i>i</i> + 1</span>
+<tex2html_verbatim_mark>-th vertex 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4390img1.png" alt="$ \le$"><i>p</i>(<i>i</i> + 1)<img width="18" height="31" align="MIDDLE" border="0" src="4390img1.png" alt="$ \le$"><i>i</i>)</span>
+<tex2html_verbatim_mark>. Vertex number 1 will be the root in each tree, so its parent will not be given. Total size of the input will not exceed 50MB.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each tree output the number of its valid labellings modulo given <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark>.
+
+<p>
+
+<p><p>
+<br>
+
+<span class="textbf">Explanation for sample:</span>
+The 8 possible labellings from the last example test case are as follows: 
+
+<p>
+<div align="CENTER">
+
+<img width="874" height="355" align="BOTTOM" border="0" src="p4390.png" alt="\epsfbox{p4390.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4 
+3 1000000
+1 
+1 
+4 1000000
+1 
+1 
+1 
+5 1000000
+1 
+2 
+3 
+4 
+5 1000000
+1 
+1 
+3 
+3
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 
+6 
+1 
+8
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

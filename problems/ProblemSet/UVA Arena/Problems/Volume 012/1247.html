@@ -1,0 +1,101 @@
+
+<p>
+By 2100, space travel will be a reality for the Milky Way (Solar Galaxy) residents. The 
+Interstar Transport Travel agency operates scheduled direct space transports (flights) 
+between some of the most popular planet destinations in the Milky Way. The cost of these 
+scheduled direct transports are predetermined in Galaro (Galaxy Currency unit) and are 
+published in many different languages. For travel to planets that is not on the schedule, 
+there are slower, yet free, space flights from the closest planet that is on the direct 
+transport list. To help travelers plan their itinerary, the Interstar Transport wants to 
+offer a mobile application that can find the best traveling option, based on the total cost 
+of the direct transports on the itinerary. Given the starting and destination planets on 
+the itinerary, find the sequence of direct transports that has the lowest total traveling cost. 
+Output all the planets in sequence that one must pass through on this best route. If two or 
+more routes exist with the same cost, then the route that goes through the least number 
+of intermediate planets is considered a better route. There will always exist a unique 
+best route for any of the given test cases.
+
+<p>
+
+<p>
+<br>
+
+<span class="textbf">Technical Specification</span>
+
+<ol>
+<li>The number of planets on the direct transport list is at most <span class="MATH"><i>s</i></span>, 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4524img1.png" alt="$ \le$"><i>s</i><img width="18" height="31" align="MIDDLE" border="0" src="4524img1.png" alt="$ \le$">26</span>. 
+The planets are labeled using capital letters of the English alphabets, i.e., ``A", ``B", ``C",
+<span class="MATH">...</span>, ``Z", in no particular order. 
+</li>
+<li>The Interstar Transport operates at most <span class="MATH"><i>p</i></span>, 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4524img1.png" alt="$ \le$"><i>p</i><img width="18" height="31" align="MIDDLE" border="0" src="4524img1.png" alt="$ \le$">200</span>, direct transports 
+between planets. There is at most one (could be none) direct transport between any two 
+distinct planets. 
+</li>
+<li>The cost of any transport is given as a natural number less than or equal to 100 Galaros.
+</li>
+</ol>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The first line of the input file contains two integers, <span class="MATH"><i>s</i></span> and <span class="MATH"><i>p</i></span>, separated by a space. The 
+next <span class="MATH"><i>p</i></span> lines each contains two letters, <span class="MATH"><i>e</i><sub>i</sub></span> and <span class="MATH"><i>e</i><sub>j</sub></span>, followed by a natural number, 
+<span class="MATH"><i>d</i><sub>ij</sub></span>, indicating that there exists a direct transport between planets <span class="MATH"><i>e</i><sub>i</sub></span> and <span class="MATH"><i>e</i><sub>j</sub></span> 
+with a cost of <span class="MATH"><i>d</i><sub>ij</sub></span>. The next line contains an integer <span class="MATH"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4524img1.png" alt="$ \le$">20</span>, indicating the number 
+of queries to follow. For each of the next <span class="MATH"><i>n</i></span> lines, each line contains two letters <span class="MATH"><i>e</i><sub>k</sub></span> 
+and <span class="MATH"><i>e</i><sub>m</sub></span>, indicating a user is looking for a best (lowest cost) way to get from planet 
+<span class="MATH"><i>e</i><sub>k</sub></span> to planet <span class="MATH"><i>e</i><sub>m</sub></span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each of the <span class="MATH"><i>n</i></span> queries in the input, output on one line the best route to take, in the 
+sequence of starting planet, the intermediate planets in sequence along the route and the 
+destination planet; all separated by one blank space.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 7 
+A B 1
+B C 2
+C D 3
+D E 2
+E A 1
+A D 3
+A C 4
+3 
+B D 
+A D 
+E C
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+B A D 
+A D 
+E A B C
+</pre>
+
+<p>

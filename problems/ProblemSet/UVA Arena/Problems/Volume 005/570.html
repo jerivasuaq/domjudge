@@ -1,0 +1,349 @@
+
+
+<html>
+<head>
+<title>Stats</title>
+<meta name="description" content="Stats">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Stats</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+As with most team sports, certain statistics can be accumulated during play.
+For this problem, you
+are to write a program that reads play descriptions for a volleyball game
+and produces a report of
+player and team statistics for one of the teams.
+
+<p>
+
+<p>
+<br>
+Your program will read in a series of input lines that describe a ``play" of
+a volleyball game. Table 1
+lists the types of plays that your program will use for input.
+
+<p>
+<div align="CENTER">
+<table cellpadding="3" border="1">
+<tr><td align="CENTER">Key</td>
+<td align="CENTER">Play</td>
+<td align="CENTER" colspan="1">Play Description</td>
+</tr>
+<tr><td align="CENTER"><tt> C</tt></td>
+<td align="CENTER">CHECKIN</td>
+<td align="LEFT" valign="TOP" width="288">An indication of the beginning of a new game. The
+beginning of any game will contain one ``CHECKIN" play
+that lists all the players in the game from one team.</td>
+</tr>
+<tr><td align="CENTER"><tt> H</tt></td>
+<td align="CENTER">HIT</td>
+<td align="LEFT" valign="TOP" width="288">A hit that was successfully defended by the opponent.</td>
+</tr>
+<tr><td align="CENTER"><tt> K</tt></td>
+<td align="CENTER">KILL</td>
+<td align="LEFT" valign="TOP" width="288">A hit that was not successfully defended by the opponent.</td>
+</tr>
+<tr><td align="CENTER"><tt> E</tt></td>
+<td align="CENTER">ERR</td>
+<td align="LEFT" valign="TOP" width="288">An erroneous hit that went into the net or out of bounds.</td>
+</tr>
+<tr><td align="CENTER"><tt> B</tt></td>
+<td align="CENTER">BLOCK</td>
+<td align="LEFT" valign="TOP" width="288">A successful defense of a hit at the net.</td>
+</tr>
+<tr><td align="CENTER"><tt> D</tt></td>
+<td align="CENTER">DIG</td>
+<td align="LEFT" valign="TOP" width="288">A successful defense of a hit behind the net.</td>
+</tr>
+<tr><td align="CENTER"><tt> R</tt></td>
+<td align="CENTER">REPORT</td>
+<td align="LEFT" valign="TOP" width="288">Command to your program to generate a report. After
+generating a report, your program should discard all
+collected play records and begin processing anew on the rest
+of the input file.</td>
+</tr>
+</table>
+
+<p>
+
+<p>
+<br>
+Table 1: Real-Time Plays
+</div>
+
+<p>
+Each play (except CHECKIN and REPORT) has exactly one 2-digit player number
+associated with
+it. Player digit numbers are limited to 0 through 5 allowing referees to
+indicate player numbers
+using 0 to 5 fingers off of each hand.
+
+<p>
+
+<p>
+<br>
+Your program is to compute the following statistics for each player that has
+participated in any
+game as well as statistics for the entire team. Descriptions of all
+statistics that your program is to
+compute from the collected plays are listed in Table 2.
+
+<p>
+<div align="CENTER">
+<table cellpadding="3" border="0">
+<tr><td align="CENTER">Label</td>
+<td align="CENTER">Formula</td>
+<td align="CENTER">Description</td>
+<td align="CENTER">Sample</td>
+</tr>
+<tr><td><hr><td><hr><td><hr><td><hr>
+<tr><td align="CENTER"><tt> Hit %</tt></td>
+<td align="CENTER">
+
+(<i>sum</i>(<i>KILL</i>)-<i>sum</i>(<i>ERR</i>)) /</td>
+<td align="CENTER">Hitting percentage</td>
+<td align="CENTER">0.461</td>
+</tr>
+<tr><td align="CENTER">&nbsp;</td>
+<td align="CENTER">
+
+(<i>sum</i>(<i>KILL</i>)+<i>sum</i>(<i>ERR</i>)+<i>sum</i>(<i>HIT</i>))</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">&nbsp;</td>
+</tr>
+<tr><td><hr><td><hr><td><hr><td><hr>
+<tr><td align="CENTER"><tt> KPG</tt></td>
+<td align="CENTER">
+
+<img width="178" height="34" align="MIDDLE" border="0" src="570img1.gif" alt="$sum(KILL) / \char93  Games$"></td>
+<td align="CENTER">Kills per game</td>
+<td align="CENTER">5.613</td>
+</tr>
+<tr><td><hr><td><hr><td><hr><td><hr>
+<tr><td align="CENTER"><tt> BPG</tt></td>
+<td align="CENTER">
+
+<img width="199" height="34" align="MIDDLE" border="0" src="570img2.gif" alt="$sum(BLOCK) / \char93  Games$"></td>
+<td align="CENTER">Blocks per game</td>
+<td align="CENTER">3.100</td>
+</tr>
+<tr><td><hr><td><hr><td><hr><td><hr>
+<tr><td align="CENTER"><tt> DPG</tt></td>
+<td align="CENTER">
+
+<img width="167" height="34" align="MIDDLE" border="0" src="570img3.gif" alt="$sum(DIG) / \char93  Games$"></td>
+<td align="CENTER">Digs per game</td>
+<td align="CENTER">2.050</td>
+</tr>
+<tr><td><hr><td><hr><td><hr><td><hr>
+</td></td></td></td></tr></td></td></td></td></tr></td></td></td></td></tr></td></td></td></td></tr></td></td></td></td></tr></table>
+
+<p>
+
+<p>
+<br>
+Table 2: Computed Statistics
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input to your program will consist of a series of input lines each with
+exactly one play. Column 1
+will contain one of the play keys from Table 1. If the play is a REPORT,
+there is no additional input on the line.
+
+<p>
+
+<p>
+<br>
+If the play is a CHECKIN, there will be a blank in column 2, followed by
+a single integer (
+
+<img width="115" height="32" align="MIDDLE" border="0" src="570img4.gif" alt="$06 \le NP \le 15$">)
+in columns 3 and 4 which indicates the
+number of players participating in the game. The
+remainder of the line contains a series of 2-digit (including leading zeros)
+player numbers (each
+with exactly 1 preceding blank) indicating the players who participated in
+the game. You can be
+confident that the CHECKIN is accurate and that no player will be mentioned
+in any play in that game who does not appear on the preceding CHECKIN line.
+
+<p>
+
+<p>
+<br>
+For the plays HIT, KILL, ERR, BLOCK, and DIG, there will be blank in
+column 2 and exactly one
+player number (including leading a leading zero as required) in columns 3 and 4.
+
+<p>
+
+<p>
+<br>
+
+<b>Note:</b> Read the sample input below by columns
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Each time your program reads in a ``REPORT" play, you should print a report
+with the following format.
+
+<p>
+
+<p>
+<br>
+The first two lines of each report must contain the following strings each starting in column 1.
+
+<p>
+<pre>
+Player  Hit Pct    KPG      BPG      DPG
+-----------------------------------------
+</pre>
+
+<p>
+Your program should then print, for each player who has played in at least
+one game, a single line in the following format:
+
+<p>
+<pre>
+55      s0.000   99.999   99.999   99.999
+</pre>
+
+<p>
+with the lines in ascending order of player number. In the player report line,
+<tt>s</tt> is the sign of the
+hitting percentages and is '<tt>+</tt>' if the hitting percentage <img width="63" height="30" align="MIDDLE" border="0" src="570img5.gif" alt="$\ge 0.000$">
+and is '<tt>-</tt>' otherwise. Note the
+hitting percentage should be 0.000 if the user has not made any hits, kills,
+nor errors.
+
+<p>
+
+<p>
+<br>
+After printing a report for each player, your program should print a single
+line containing the team statistics in the following format.
+
+<p>
+<pre>
+team    s0.000   99.999   99.999   99.999
+</pre>
+
+<p>
+You can be confident that no statistic's magnitude will exceed 99.999 in value.
+After printing the team statistics, your program should print exactly one
+blank line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+C 8 01 23
+45 54 00    D 23        H 14        B 25        B 25        D 01
+32 10 14    B 00        E 23        D 25        E 31        K 14
+B 32        D 00        D 45        H 25        B 00        D 01
+E 32        H 10        B 45        B 31        B 00        K 23
+D 01        B 10        B 23        E 00        H 22        H 23
+E 01        B 14        D 23        H 00        K 22        B 25
+D 45        H 14        E 23        B 00        H 22        K 25
+B 54        D 00        E 45        K 14        B 25        H 45
+B 23        K 00        K 45        E 14        D 25        B 22
+D 45        D 00        B 25        K 22        B 25        K 01
+B 32        B 23        K 00        K 22        D 22        E 01
+K 00        K 01        B 00        K 00        D 31        R
+E 32        D 01        K 14        B 22        K 45        C 6 13 04
+K 32        K 01        D 14        E 22        K 31        40 14 15 22
+K 32        E 01        D 00        D 00        C 7 45      D 04
+D 45        D 23        B 00        D 23        23 14 01    B 04
+D 10        K 01        D 00        K 45        22 25 11    B 04
+H 10        E 01        D 14        E 45        E 01        K 14
+D 14        K 00        E 22        B 25        B 45        B 14
+D 14        K 14        E 00        B 25        E 01        B 14
+B 45        D 00        K 45        E 25        H 11        K 14
+B 54        B 00        D 23        H 31        K 11        K 14
+D 54        K 14        B 14        K 22        D 14        K 14
+D 01        E 23        B 23        E 31        B 14        B 14
+D 01        K 00        H 25        K 31        E 14        D 14
+H 14        K 45        D 00        K 22        K 45        D 14
+K 14        B 01        D 14        K 22        K 22        B 14
+H 01        B 01        K 14        B 31        B 22        H 15
+H 10        K 32        B 45        K 31        D 45        D 15
+H 10        K 45        B 45        D 45        K 45        E 15
+B 14        K 23        D 14        B 22        H 14        H 15
+D 01        C 7 14      B 14        K 22        B 14        H 15
+B 00        00 45 23    K 14        K 23        E 22        H 15
+D 00        31 25 22    D 22        H 00        D 23        H 15
+B 54        H 00        E 00        K 31        D 11        E 15
+E 32        K 00        H 00        B 45        E 11        B 22
+K 01        K 14        D 23        D 45        D 11        B 22
+H 10        K 14        H 23        H 22        K 25        K 22
+H 14        H 14        E 23        D 00        K 22        E 22
+E 14        B 23        H 45        K 00        B 22        H 22
+E 00        B 23        D 45        H 25        D 01        K 22
+D 01        K 23        E 00        H 31        E 01        D 40
+H 01        H 23        K 45        K 31        D 11        D 40
+B 23        D 45        K 45        D 31        K 14        R
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Player  Hit Pct    KPG      BPG      DPG
+-----------------------------------------
+00      +0.176    4.000    4.000    5.000
+01      -0.143    2.500    1.000    4.500
+10      +0.000    0.000    1.000    1.000
+11      +0.000    1.000    0.000    3.000
+14      +0.400    3.667    2.000    2.333
+22      +0.400    4.500    2.500    1.000
+23      +0.000    1.333    2.333    2.333
+25      +0.167    1.000    4.000    1.000
+31      +0.333    5.000    2.000    2.000
+32      +0.000    3.000    2.000    0.000
+45      +0.571    3.333    2.000    3.000
+54      +0.000    0.000    3.000    1.000
+team    +0.225   19.333   16.667   17.667
+
+Player  Hit Pct    KPG      BPG      DPG
+-----------------------------------------
+04      +0.000    0.000    2.000    1.000
+13      +0.000    0.000    0.000    0.000
+14      +1.000    4.000    4.000    2.000
+15      -0.286    0.000    0.000    1.000
+22      +0.250    2.000    2.000    0.000
+40      +0.000    0.000    0.000    2.000
+team    +0.200    6.000    8.000    6.000
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

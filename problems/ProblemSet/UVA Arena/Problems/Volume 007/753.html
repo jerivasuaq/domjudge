@@ -1,0 +1,133 @@
+
+
+<html>
+<head>
+<title>A Plug for UNIX</title>
+<meta name="description" content="A Plug for UNIX">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+A Plug for UNIX</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+You are in charge of setting up the press room for the inaugural meeting of the United Nations Internet
+eXecutive (UNIX), which has an international mandate to make the free flow of information and ideas
+on the Internet as cumbersome and bureaucratic as possible.
+
+<p>
+
+<p>
+<br>
+Since the room was designed to accommodate reporters and journalists from around the world, it is
+equipped with electrical receptacles to suit the different shapes of plugs and voltages used by appliances
+in all of the countries that existed when the room was built. Unfortunately, the room was built many
+years ago when reporters used very few electric and electronic devices and is equipped with only one
+receptacle of each type. These days, like everyone else, reporters require many such devices to do their
+jobs: laptops, cell phones, tape recorders, pagers, coffee pots, microwave ovens, blow dryers, curling
+irons, tooth brushes, etc. Naturally, many of these devices can operate on batteries, but since the
+meeting is likely to be long and tedious, you want to be able to plug in as many as you can.
+
+<p>
+
+<p>
+<br>
+Before the meeting begins, you gather up all the devices that the reporters would like to use, and
+attempt to set them up. You notice that some of the devices use plugs for which there is no receptacle.
+You wonder if these devices are from countries that didn't exist when the room was built. For some
+receptacles, there are several devices that use the corresponding plug. For other receptacles, there are
+no devices that use the corresponding plug.
+
+<p>
+
+<p>
+<br>
+In order to try to solve the problem you visit a nearby parts supply store. The store sells adapters that
+allow one type of plug to be used in a different type of outlet. Moreover, adapters are allowed to be
+plugged into other adapters. The store does not have adapters for all possible combinations of plugs
+and receptacles, but there is essentially an unlimited supply of the ones they do have.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input will consist of several case. The first line of the input contains the number of cases, and it's followed
+bya  blank line.
+The first line of each case contains a single positive integer <i>n</i> (
+
+<img width="96" height="30" align="MIDDLE" border="0" src="753img1.gif" alt="$1 \leY n \leY 100$">)
+indicating the number of receptacles in the room. The next <i>n</i> lines list the receptacle types found in the
+room. Each receptacle type consists of a string of at most 24 alphanumeric characters. The next line
+contains a single positive integer <i>m</i> (
+
+<img width="101" height="30" align="MIDDLE" border="0" src="753img2.gif" alt="$1 \leY m \leY 100$">)
+indicating the number of devices you would like to
+plug in. Each of the next <i>m</i> lines lists the name of a device followed by the type of plug it uses (which
+is identical to the type of receptacle it requires). A device name is a string of at most 24 alphanumeric
+characters. No two devices will have exactly the same name. The plug type is separated from the
+device name by a space. The next line contains a single positive integer <i>k</i> (
+
+<img width="96" height="32" align="MIDDLE" border="0" src="753img3.gif" alt="$1 \leY k \leY 100$">)
+indicating the
+number of different varieties of adapters that are available. Each of the next <i>k</i> lines describes a variety
+of adapter, giving the type of receptacle provided by the adapter, followed by a space, followed by the type of plug.
+
+<p>There's a blank line between test cases.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each case, print a line containing a single non-negative integer indicating the smallest number of devices that cannot be plugged in. Print a blank line between cases.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+4
+A
+B
+C
+D
+5
+laptop B
+phone C
+pager B
+clock B
+comb X
+3
+B X
+X A
+X D
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+1
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

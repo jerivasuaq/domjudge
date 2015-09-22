@@ -1,0 +1,119 @@
+
+
+<html>
+<head>
+<title>Bundling Newspapers</title>
+<meta name="description" content="Bundling Newspapers">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Bundling Newspapers</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A statistical research company needs a program to produce instructions for an existing application that 
+creates questionnaires about newspapers.  The application requires instructions that are comma-
+delimited lists of newspapers, each list consisting of a subset of the set of newspapers in some 
+metropolitan area.  Your program will read a list of newspapers and produce this output in a particular 
+order, and for subsets of some range of sizes.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+The first line of the input is an integer M, then a blank line followed by M datasets. There is a blank line between datasets.<p>
+Each dataset consists of a first line describing the sizes of subsets to be output, followed by the names of 
+the newspapers, one per line.  Each line is terminated by an end-of-line marker.
+The newspaper names will contain at most 30 characters each, and 
+there will be a maximum of 12 newspaper names.
+
+<p>
+
+<p>
+<br>
+The first line will contain either a single asterisk in column one, one positive integer, or two positive 
+integers, the first less than the second.  Any integers in this line will be no greater than the number of 
+newspapers to follow.  The meaning of these is as follows:
+
+<p>
+<pre><tt>
+* 		 means show all subset sizes from 1 to the number of newspapers in the list 
+<img width="27" height="16" align="BOTTOM" border="0" src="598img1.gif" alt="$a \ b$">
+means show all subset sizes from <i>a</i> to <i>b</i>, inclusive 
+<i>n</i> means show only subsets of size n
+</tt></pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+
+The output for each dataset should consist of the comma-delimited subsets of papers, one subset per line, grouped by 
+subset size, and with a header line above each subset size group indicating the size. Print a blank line after
+each subset size group. Within a subset size 
+group, the order of the lines of output should be listed in such a way that if the names of the first, 
+second and third newspapers listed in the input file were <i>A</i>, <i>B</i>, <i>C</i>, etc., respectively, the output lines 
+would be in lexicographic order (in the example above, <i>A</i>, <i>B</i>; <i>A</i>, <i>C</i>; <i>A</i>, <i>D</i>; <i>B</i>, <i>C</i>; ...).
+<p>Print a blank line between datasets.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+2 3
+Times
+Herald-Tribune
+Post
+New Advocate
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Size 2
+Times, Herald-Tribune
+Times, Post
+Times, New Advocate
+Herald-Tribune, Post
+Herald-Tribune, New Advocate
+Post, New Advocate
+
+Size 3
+Times, Herald-Tribune, Post
+Times, Herald-Tribune, New Advocate
+Times, Post, New Advocate
+Herald-Tribune, Post, New Advocate
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

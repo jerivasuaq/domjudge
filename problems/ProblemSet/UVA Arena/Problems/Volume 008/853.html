@@ -1,0 +1,191 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Problem</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1 align="left"><font color="#0000FF">Problem B</font></h1>
+
+<h1 align="center"><font color="#0000FF">DVD Subtitles</font></h1>
+
+<p align="left">&nbsp;</p>
+
+<p>One of the great things about movies on DVD is that you can
+choose the language for the subtitles, in case you need them.</p>
+
+<p>Let us consider that in the DVD the subtitles for a given
+language come in a text file, one subtitle in each line. By
+&quot;one subtitle&quot; we mean the short phrase that we see on
+the screen at any given time, even if that phrase uses more than
+one line on the screen. The subtitle files for all the available
+languages have the same number of lines, although some lines can
+be empty, for lack of an appropriate translation. There will be
+an extra file indicating the exact times in which each subtitle
+should be displayed on the screen, but we shall ignore it in this
+problem.</p>
+
+<p>Today, we want to explore the subtitle files in order to
+automatically construct simple bilingual dictionaries. The idea
+is quite simple. Take, for example, Portuguese and English
+subtitles. Suppose a given word <i>p</i> appears in the
+Portuguese file in lines <i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>,
+&#133;, <i>x</i><sub><i>n</i></sub>, with <i>n</i> &gt;= 2. Now
+suppose a word <i>e</i> appears in exactly the same lines in the
+English file. Then we can safely assume <i>e</i> is a legitimate
+translation of <i>p</i>, and vice-versa. Here is an example.
+First, a text in Portuguese:</p>
+
+<p><font size="3" face="Courier New">Por favor, mostre-me o seu
+bilhete.</font></p>
+
+<p><font size="3" face="Courier New">Lamento, mas esqueci-me
+dele.</font></p>
+
+<p><font size="3" face="Courier New">Esqueceu-se do bilhete? Voce
+deve ser maluco.</font></p>
+
+<p><font size="3" face="Courier New">Eu nao sou maluco. A sua mae
+e que e.</font></p>
+
+<p>Note that we are not using diacritical marks in the Portuguese
+text. Now, the equivalent text in English:</p>
+
+<p><font size="3" face="Courier New">May I see your ticket,
+please?</font></p>
+
+<p><font size="3" face="Courier New">I am sorry, but I forgot it.</font></p>
+
+<p><font size="3" face="Courier New">So, you forgot the ticket?
+You must be crazy.</font></p>
+
+<p><font size="3" face="Courier New">I am not crazy. Crazy is
+your mother.</font></p>
+
+<p>The words <font size="3" face="Courier New">bilhete</font> and
+<font size="3" face="Courier New">ticket</font> appear in lines 1
+and 3, in the Portuguese and English texts, respectively. We,
+therefore, conclude that <font size="3" face="Courier New">bilhete</font>
+is the Portuguese translation of <font size="3" face="Courier New">ticket</font>. Likewise for <font size="3" face="Courier New">maluco</font> and <font size="3" face="Courier New">crazy</font> in lines 3 and 4, even though <font size="3" face="Courier New">crazy</font> appears twice in line 4
+and <font size="3" face="Courier New">maluco</font> only appears
+once. The word <font size="3" face="Courier New">forgot</font>
+appears in lines 2 and 3, but cannot be translated using this
+method, as in the Portuguese text the corresponding words in
+these lines, <font size="3" face="Courier New">esqueci-me</font>
+and <font size="3" face="Courier New">esqueceu-se</font>, are
+different. </p>
+
+<p>More generally, we can <font size="3" face="Courier New">say</font>
+that a word <i>w</i><sub>1</sub> in language <i>L</i><sub>1</sub>
+translates to word <i>w</i><sub>2</sub> in language <i>L</i><sub>2</sub>
+if the set of line numbers in which <i>w</i><sub>1</sub> occurs
+is equal to the set of line numbers in which <i>w</i><sub>2</sub>
+appears in their respective subtitle files. We consider only
+words that occur at least twice, and words with at least three
+characters. Note that several occurrences of the same word on a
+given line are equivalent to a single occurrence.</p>
+
+<p>There&#146;s an ambiguous case, however: two (or more) words
+in the same language appearing on exactly the same lines in the
+subtitle file. To remove this ambiguity, those words are to be
+appended, separated by one space, in alphabetical order. See the
+example below, in the input and output samples.</p>
+
+<p>The result of processing is a sorted list of pairs of words,
+as in a dictionary. The list is be sorted by the first word of
+each pair and all words are in lowercase only.</p>
+
+<h2><font color="#0000FF"><b>Problem</b></font></h2>
+
+<p>Your task is to write a program that given two subtitle files
+constructs a bilingual dictionary as explained above. To avoid
+difficult cases caused by small words, your program should ignore
+all input words with less than three characters.</p>
+
+<h2><font color="#0000FF"><b>Input</b></font></h2>
+
+<p>The first line of the input contains the number <i>T</i> of test cases,
+followed by <i>T</i> input blocks.
+
+<p>The first line of each input block contains the number of lines in
+each language, 0 &lt; <i>N</i> &lt;= 1000. The following <i>N</i>
+lines contain the subtitles in the first language. After that,
+ <i>N</i> more lines contain the subtitles of the second language.</p>
+
+<p>Each subtitle consists of normal ASCII text, using both
+lowercase and uppercase, and punctuation, but no diacritical
+marks (accents, cedillas or tildes). For the purposes of this
+program, words contain letters and hyphens only, and processing
+is case insensitive.</p>
+
+<p>You can assume that the maximum number of words in each
+subtitle line is 20; the maximum number of different words for
+each language is 1000; and the maximum length of each word is 24.</p>
+
+<h2><font color="#0000FF"><b>Output</b></font></h2>
+
+<p>The output for each test case is a sorted list of lines,
+each one containing two lowercase words separated by a slash.
+The second word in each pair is the translation of the first one,
+as discovered by the program. In some cases, there might be pairs
+or triples, etc., of words, as a result of the ambiguity referred
+above.</p>
+
+<p>Separate the output of each test case with a single blank line.</p>
+
+<h2><font color="#0000FF"><b>Sample Input</b></font></h2>
+
+<p><pre>1
+10
+Quero um copo de cerveja, bem fresca.
+Nao temos cerveja, mas temos vinho.
+Nao obrigado, vinho nao quero.
+Tambem temos sumo de laranja natural.
+Esta bem, entao quero um sumo de laranja.
+Mais alguma coisa?
+Sim, um pastel de nata.
+Com certeza. Um sumo e um pastel. Sao quatro euros.
+Quatro euros!!! Mas isso e um roubo.
+Se acha que e um roubo, chame a policia.
+I want a glass of beer, very cool.
+We dont have beer, but we have wine.
+No thanks, I dont want wine.
+We also have natural orange juice.
+OK, then I want one orange juice.
+Anything else?
+Yes, a cream cake.
+Of course. One juice and one cake. Thats four euros.
+Four euros!!! That is a theft.
+If you think it is a theft, call the police.
+</pre></p>
+
+
+
+<h2><font color="#0000FF"><b>Sample Output</b></font></h2>
+
+<p>
+<pre>
+cerveja/beer
+euros quatro/euros four
+laranja/orange
+nao vinho/dont wine
+pastel/cake
+quero/want
+roubo/theft
+sumo/juice
+temos/have
+</pre>
+</p>
+<br><hr>
+<address>
+
+Pedro Guerreiro, MIUP'2002
+</address>
+
+</body>
+</html>
+

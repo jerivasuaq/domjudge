@@ -1,0 +1,208 @@
+
+
+<html>
+<head>
+<title>The Blocks Problem</title>
+<meta name="description" content="The Blocks Problem">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The Blocks Problem</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Background</a>&nbsp;</font>
+</h2>
+Many areas of Computer Science use simple, abstract domains 
+for both analytical and empirical studies.  For example, an early AI
+study of planning and robotics (STRIPS) used a block world in which a
+robot arm performed tasks involving the manipulation of blocks.  
+
+<p>
+In this
+problem you will model a simple block world under certain rules and
+constraints.  Rather than determine how to achieve a specified state,
+you will ``program'' a robotic arm to respond to a limited set of commands.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+The Problem</a>&nbsp;</font>
+</h2>
+The problem is to parse a series of commands that instruct a robot arm
+in how to manipulate blocks that lie on a flat table.  Initially there
+are <i>n</i> blocks on the table (numbered from 0 to <i>n</i>-1)
+with block <i>b</i><sub><i>i</i></sub> adjacent to block <i>b</i><sub><i>i</i>+1</sub>
+for all 
+
+<img width="106" height="31" align="MIDDLE" border="0" src="101img1.gif" alt="$0 \leq i < n-1$">
+as shown in the diagram below:
+
+<div align="CENTER"><a name="74">&#160;</a>
+<table width="50%">
+<tr><td><img width="433" height="52" src="101img2.gif" alt="\begin{figure}
+\centering
+\setlength{\unitlength}{0.0125in} %
+\begin{picture}
+(2...
+...raisebox{0pt}[0pt][0pt]{$\bullet
+\bullet \bullet$ }}}
+\end{picture}
+\end{figure}"></td></tr>
+</table>
+<strong>Figure:</strong>
+Initial Blocks World
+</div>
+<br>
+
+<p>
+The valid commands for the robot arm that manipulates blocks are:
+<ul>
+<li>move <i>a</i> onto <i>b</i> 
+
+<p>
+where <i>a</i> and <i>b</i> are block numbers, puts block <i>a</i> onto block <i>b</i> after
+returning any blocks that are stacked on top of blocks <i>a</i> and <i>b</i> to
+their initial positions.  
+
+<p>
+<li>move <i>a</i> over <i>b</i>
+
+<p>
+where <i>a</i> and <i>b</i> are block numbers, puts block <i>a</i> onto the top of the
+stack containing block <i>b</i>, after returning any blocks that are stacked
+on top of block <i>a</i> to their initial positions.
+
+<p>
+<li>pile <i>a</i> onto <i>b</i>
+
+<p>
+where <i>a</i> and <i>b</i> are block numbers, moves the pile of blocks consisting
+of block <i>a</i>,  and any blocks that are stacked above block <i>a</i>, onto
+block <i>b</i>.  All blocks on top of block <i>b</i> are moved to their initial
+positions prior to the pile taking place.  The blocks stacked above block
+<i>a</i> retain their order when moved.
+
+<p>
+<li>pile <i>a</i> over <i>b</i>
+
+<p>
+where <i>a</i> and <i>b</i> are block numbers, puts the pile of blocks consisting
+of block <i>a</i>, and any blocks that are stacked above  block <i>a</i>, onto
+the top of the stack containing block <i>b</i>.  The blocks stacked above block
+<i>a</i> retain their original order when moved.  
+
+<p>
+<li>quit
+
+<p>
+terminates manipulations in the block world.
+</li></li></li></li></li></ul>
+
+<p>
+Any command in which <i>a</i> = <i>b</i> or in which <i>a</i> and <i>b</i>
+are in the same stack of blocks is an illegal command.  All illegal
+commands should be ignored and should have no
+affect on the configuration of blocks. 
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+The Input</a>&nbsp;</font>
+</h2>
+The input begins with an integer <i>n</i> on a line by itself representing
+the number of blocks in the block world.  You may assume that 
+
+0 &lt; <i>n</i> &lt;
+25.
+
+<p>
+The number of blocks is followed by a sequence of block commands, one
+command per line.  Your
+program should process all commands until the <tt>quit</tt> command is
+encountered.
+
+<p>
+You may assume that all commands will be of the form specified above.
+There will be no syntactically incorrect commands.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+The Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The output should consist of the final state of the blocks world.  Each
+original block position numbered <i>i</i> 
+(
+
+<img width="76" height="31" align="MIDDLE" border="0" src="101img4.gif" alt="$0 \leq i < n$">
+where <i>n</i> is the number of blocks) should appear
+followed immediately by a colon.
+If there is at least a block
+on it, the colon must be followed by one space, followed by a list of 
+blocks that appear stacked in that position with each block number 
+separated from other block numbers by a space. Don't put any trailing 
+spaces on a line. 
+
+<p>
+There should be one line of output for each block position
+(i.e., <i>n</i> lines of output where <i>n</i> is the 
+integer on the first line of input).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+10
+move 9 onto 1
+move 8 over 1
+move 7 over 1
+move 6 over 1
+pile 8 over 6
+pile 8 over 5
+move 2 over 1
+move 4 over 9
+quit
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+ 0: 0
+ 1: 1 9 2 4
+ 2:
+ 3: 3
+ 4:
+ 5: 5 8 7 6
+ 6:
+ 7:
+ 8:
+ 9:
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-04-06</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+<p>
+Bob enjoys playing computer games, especially strategic games, but sometimes he cannot find the solution fast
+enough and then he is very sad. Now he has the following problem. He must defend a medieval city, the roads of
+which form a tree. He has to put the minimum number of soldiers on the nodes so that they can observe all the
+edges. Can you help him?
+
+<p>
+Your program should find the minimum number of soldiers that Bob has to put for a given tree.
+
+<p>
+For example for the tree:
+<p align="center"><img src="p2038a.gif">
+<p>
+the solution is one soldier (at the node 1). 
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains several data sets in text format. Each data set represents a tree with the following description:
+<blockquote>
+	<li>the number of nodes
+	<li>the description of each node in the following format:<br>
+<blockquote>
+<i>	node_identifier:(number_of_roads) node_identifier1 node_identifier2 … node_identifiernumber_of_roads</i><br>
+	or<br>
+<i>	node_identifier:(0)</i>
+</blockquote>
+</li></li></blockquote>
+	The node identifiers are integer numbers between <i>0</i> and <i>n-1</i>, for <i>n</i> nodes (<i>0 < n="" &le;=""></i>). Every edge appears only once in the input data.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output should be printed on the standard output. For each given input data set, print one integer number
+in a single line that gives the result (the minimum number of soldiers).
+
+<p>
+
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+4
+0:(1) 1
+1:(2) 2 3
+2:(0)
+3:(0)
+5
+3:(3) 1 4 2
+1:(1) 0
+2:(0)
+0:(0)
+4:(0)
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+1
+2
+</pre>
+
+<p>

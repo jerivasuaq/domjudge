@@ -1,0 +1,146 @@
+
+
+<html>
+<head>
+<title>Game</title>
+<meta name="description" content="Game">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Game</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A child has drawn <i>N</i> (<img width="70" height="32" align="MIDDLE" border="0" src="767img1.gif" alt="$N \le 100$">)
+numbered circles of different colors. 
+He has connected some of the
+circles by colored oriented line segments. Every pair of circles may have 
+any number of segments,
+with any colors, connecting them. Each color (either circle color or segment 
+color) is assigned its
+own unique positive integer number not greater than 100.
+
+<p>
+
+<p>
+<br>
+Starting the game the child first of all chooses three different integers 
+<i>L</i>, <i>K</i> and <i>Q</i> within the range
+between 1 and <i>N</i>. Then he places one pawn into the circle number <i>L</i> and 
+another one into the circle
+number <i>K</i>, whereupon he begins to move them using the following rules:
+<ul>
+<li>a pawn can be moved along the line segment, if this segment has the 
+same color with the
+circle where another pawn is placed,
+<li>the pawn can be moved only in the direction of the segment (all 
+segments are oriented),
+<li>two pawns can never be placed in the same circle at the same time,
+<li>the move order is free (i.e. it is not necessary to move pawns 
+alternately),
+<li>the game ends, when one of the pawns (any of the two) reaches the 
+last circle number <i>Q</i>.
+</li></li></li></li></li></ul>
+
+<p>
+You are to write a program to find out the shortest (i.e. containing a 
+minimal number of moves)
+solution for this game, if it exists.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>The first line of the input
+contains an integer indicating the number of datasets, and it's followed by a blank line.
+The first line of each dataset contains integers 
+
+<i>N</i>, <i>L</i>, <i>K</i>, <i>Q</i> separated 
+by spaces.
+The second line
+consists of <i>N</i> integers 
+
+<img width="98" height="30" align="MIDDLE" border="0" src="767img3.gif" alt="$c_1, c_2, \dots , c_n$">
+, separated by spaces, 
+in the given order,
+where <i>c</i><sub><i>i</i></sub> is the color of
+the circle number <i>i</i>. The third line consists of a single integer <i>M</i> 
+(
+
+<img width="122" height="32" align="MIDDLE" border="0" src="767img4.gif" alt="$0 \le M \le 10000$">)
+denoting the total
+number of segments. Then follow <i>M</i> lines, each containing a description 
+of one oriented segment.
+Each segment is described by three integer numbers 
+
+<i>A</i><sub><i>j</i></sub>, <i>B</i><sub><i>j</i></sub>, <i>C</i><sub><i>j</i></sub>, separated by spaces,
+where <i>A</i> and <i>B</i>
+are the numbers of the circles connected by the <i>j</i>-th segment with direction from <i>A</i><sub><i>j</i></sub> to <i>B</i><sub><i>j</i></sub> ,
+and <i>C</i><sub><i>j</i></sub> represents the color of this segment.
+
+<p>There's a blank line between datasets.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The first line of each dataset should contain the word ``<tt>YES</tt>", if 
+the game can
+come to the end, and ``<tt>NO</tt>" otherwise (without quotes). If the answer 
+is ``<tt>YES</tt>",
+the second line of the output should contain just a single integer - the 
+minimum number of the
+moves the child should make to finish the game.
+
+<p>Print a blank line between datasets.
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+5 3 4 1
+2 3 2 1 4
+8
+2 1 2
+4 1 5
+4 5 2
+5 1 3
+3 2 2
+3 2 4
+5 3 1
+3 5 1
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+YES
+3
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+

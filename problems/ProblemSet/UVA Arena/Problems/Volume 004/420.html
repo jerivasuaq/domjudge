@@ -1,0 +1,112 @@
+
+
+<html>
+<head>
+<title>Supercomputer Selection, The Sequel</title>
+<meta name="description" content="Supercomputer Selection, The Sequel">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Supercomputer Selection, The Sequel</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Valentine sighed as she sat down to lunch with her cousin, Martin Thiel,
+in the BIT student union Diner.
+<p>
+``What's the matter, Valentine?'' Martin asked.
+<p>
+``My presentation to the SSC. They all really liked the graphical displays
+of the criteria and
+the selection process,'' Valentine grudgingly admitted. ``But, Prof.
+Everett pointed out that the
+criteria would change over time and since we will be using the machine
+over several years, that we needed to take that into account as well.''
+<p>
+``Maybe you could make separate graphs for each year?'' suggested Martin.
+<p>
+``That's what I said to Prof. Everett, but she didn't think that would
+be sufficient -- it would
+only pick the best machine for a particular year.''
+<p>
+As Valentine silently pondered her problem, Jake Briggs, one of Valentine's
+CS classmates,
+joined Martin and Valentine at their table. ``What's up?'' he asked.
+Valentine explained her dilemma.
+<p>
+``Simple, '' Jake mumbled through bites of his club sandwich. ``Make
+three-dimensional shapes,
+using time as the third axis. The computer with the largest volume wins.''
+<p>
+Valentine sketched out a perspective drawing of such a volume as well
+as a detail of a single quadrant.
+``What do we do here at the edges of the axes? There are four points.''
+Valentine pointed to the points <tt>a</tt>, <tt>b</tt>, <tt>c</tt>, and <tt>d</tt>
+in her drawing of the quadrant.
+<p>
+<center><img src="420img3.gif"></center>
+<p>
+``Just use two planes, one determined by <tt>a</tt>, <tt>b</tt>, and <tt>c</tt>,
+and the other determined by <tt>b</tt>, and <tt>c</tt>, and <tt>d</tt>.''
+<p>
+``Whoa! Problem!'' exclaimed Martin. ``Those volume things are way too
+complicated for slideware. You'll just confuse everyone.''
+<p>
+``No problem,'' Jake said. ``We can use our virtual reality cave over in
+the JFK building. It even has tactile feedback gloves. The committee
+members can touch the volumes if they want.''
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line of input will contain two integers. The first integer, <i>n</i>,
+specifies the number of
+criteria that will be measured for each year. This value will be such
+that <i>(1 <= n=""></=><=></=></i>. The
+second integer, y specifies how many years will be considered. The value
+of y will be such that <i>(1 <= y=""></=><=></=></i>.
+<p>
+<p>
+The rest of the input will consist of sequences of possible configurations
+of supercomputers; each line will contain n floating point values.
+The supercomputer configurations will be
+grouped in sets of <i>y</i> , i.e., the first <i>y</i> lines (after the initial line
+of two integers) will be the yearly
+configurations for the first computer. The next <i>y</i> lines will be the
+yearly configurations for the second computer, etc.
+<p>
+<p>
+The first number on the input line corresponds to the value on the first
+axis, the second number corresponds to the value on the second axis, and so on.
+<p>
+<p>
+The final line of input will contain <i>n</i> floating point zeros.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output should be the configuration number (indexed from 1) which gives
+the configuration
+with the greatest volume, along with the value of the volume. The volume is
+to be given to two
+decimal places. Assume that the polygons are spaced with unit time along
+the time axis.
+<p>
+<p>
+In case of a tie (i.e., multiple configurations are given that produce a
+polygon of equal volume), output the one with the lowest configuration number.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5 2
+1.2 2.3 3.4 4.5 5.6
+0.2 3.3 4.4 5.6 4.5
+10.0 11.0 12.0 13.0 14.0
+9.0 12.0 11.0 14.0 13.0
+0.0 0.0 0.0 0.0 0.0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>2 336.83</pre>
+<p>
+</body>
+</html>

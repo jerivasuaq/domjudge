@@ -1,0 +1,182 @@
+
+
+<html>
+<head>
+<title>The Forrest for the Trees</title>
+<meta name="description" content="The Forrest for the Trees">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The Forrest for the Trees</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A <em>graph</em> G is a set of point V(G), together with a set of edges E(G), where each element 
+of E(G) is an unordered pair of distinct points of V(G).
+
+<p>
+
+<p>
+<br>
+
+<b>Example 1:</b> Let G be a graph where V(G) = 
+
+<img width="78" height="34" align="MIDDLE" border="0" src="599img1.gif" alt="$\{a, b, c, d\}$">
+and 
+	E(G) = 
+
+<img width="195" height="34" align="MIDDLE" border="0" src="599img2.gif" alt="$\{ (a, b), ( b, c ), ( c, d), ( d, b) \}$">.
+The figure gives a depiction of G.
+
+<p>
+<div align="CENTER">
+<img src="p599a.gif">
+</div>
+
+<p>
+Notice that G contains the ``cycle" , 
+
+<img width="150" height="34" align="MIDDLE" border="0" src="599img3.gif" alt="$\{ ( b, c ), ( c, d), ( d, b) \}$">.
+A graph devoid of cycles is 
+called a <em>tree</em>.  A <em>path</em> in a graph G is an alternating sequence of points and edges, 
+(beginning and ending with a point) such that all the points of the path are distinct.  In the 
+graph of example 1, 
+
+<img width="214" height="34" align="MIDDLE" border="0" src="599img4.gif" alt="$\{a, (a, b), b, (b, c), c, ( c, d), d\}$">
+is a path.
+
+<p>
+
+<p>
+<br>
+
+<b>Fact:</b>  Every two points of a tree are joined by a unique path.
+
+<p>
+
+<p>
+<br>
+A graph is called <em>connected</em> if every pair of points are joined by a path.  The graph of 
+example 1 is connected.  If a graph is not connected then it is made up of ``subgraphs" 
+which are.  Each one of these subgraphs is called a <em>connected component</em> of the graph G.
+
+<p>
+
+<p>
+<br>
+A graph for which each connected component is a tree is called a <em>forest</em>, see figure below.
+
+<p>
+<div align="CENTER">
+<img src="p599b.gif">
+</div>
+
+<p>
+One extreme case worth mentioning is the case when one of the component trees has one 
+point but no edges joined to it. This tree likes like an isolated dot. We will call this an <em>acorn</em>.  We are ready to define the problem.
+
+<p>
+
+<p>
+<br>
+
+<em>Problem:</em> Given a forest you are to write a program that counts the number of trees and acorns.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<p>
+The first line of the input file contains the number of test cases your program has to process. Each test case is a forest description consisting of two parts:
+<dl compact="">
+<dt>1.
+<dd>A list of edges of the tree (one per line, given as an unordered pair of capital letters 
+delimited by a row of asterisks).
+<dt>2.
+<dd>A list of points of the tree (these will be given on one line with a maximum of 26 corresponding to the capital letters, <tt>A - Z</tt>).
+</dd></dt></dd></dt></dl>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case your program should print the number of trees and the number of acorns, in a sentence, for example:
+
+<p>
+
+``<tt>There are </tt><i>x</i><tt> tree(s) and </tt><i>y</i><tt> acorn(s).</tt>", where <i>x</i> and <i>y</i> are the numbers of trees and acorns, respectively.
+
+<p>
+
+<p>
+<br>
+
+<b>Example 2:</b>  Let G be a graph whose edges and points are given by the first test case in the sample input. A depiction of this graph is given in figure following.
+
+<p>
+<div align="CENTER">
+<img src="p599c.gif">
+</div>
+
+<p>
+
+<p>
+<br>
+
+<b>Notes:</b>  A forest may have no trees and all acorns, all trees and no acorns, or anything 
+inbetween, so keep your eyes open and don't miss the forest for the trees!
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+2
+(A,B)
+(B,C)
+(B,D)
+(D,E)
+(E,F)
+(B,G)
+(G,H)
+(G,I)
+(J,K)
+(K,L)
+(K,M)
+****
+A,B,C,D,E,F,G,H,I,J,K,L,M,N
+(A,B)
+(A,C)
+(C,F)
+**
+A,B,C,D,F
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+There are 2 tree(s) and 1 acorn(s).
+There are 1 tree(s) and 1 acorn(s).
+</pre>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

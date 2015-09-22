@@ -1,0 +1,59 @@
+
+
+<html>
+<head>
+<title>Gondwanaland Telecom</title>
+<meta name="description" content="Gondwanaland Telecom">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Gondwanaland Telecom</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Gondwanaland Telecom makes charges for calls according to distance and
+time of day. The basis of the charging is contained in the following
+schedule, where the charging step is related to the distance:
+<p>
+<p> <img width="478" height="154" align="BOTTOM" alt="tabular21" src="145img1.gif"> <p>
+<p>
+All charges are in dollars per minute of the call. Calls which
+straddle a rate boundary are charged according to the time spent in
+each section. Thus a call starting at 5:58 pm and terminating at 6:04
+pm will be charged for 2 minutes at the day rate and for 4 minutes at
+the evening rate. Calls less than a minute are not recorded and no
+call may last more than 24 hours.
+<p>
+<p>
+Write a program that reads call details and calculates the
+corresponding charges.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Input lines will consist of the charging step (upper case letter
+'A'..'E'), the number called (a string of 7 digits and a hyphen in the
+approved format) and the start and end times of the call, all
+separated by exactly one blank. Times are recorded as hours and
+minutes in the 24 hour clock, separated by one blank and with two
+digits for each number. Input will be terminated by a line consisting
+of a single <tt>#</tt>.
+<p>
+<p>
+Output will consist of the called number, the time in minutes the call
+spent in each of the charge categories, the charging step and the
+total cost in the format shown below.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample input</a></font></h2>
+<p>
+<pre>A 183-5724 17 58 18 04
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample output</a></font></h2>
+<p>
+<tt>
+<p> <img width="239" height="29" align="BOTTOM" alt="tabular47" src="145img2.gif"> <p>
+</tt>
+<p>
+</body>
+</html>

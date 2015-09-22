@@ -1,0 +1,185 @@
+
+
+<html>
+<head>
+<title>A Chess Knight</title>
+<meta name="description" content="A Chess Knight">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+A Chess Knight</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Presumably everybody knows how a knight can move on a chessboard. One may
+agree that its movements are quite monotonous, so to make them more
+entertaining let's define a so called ``dynamic knight". A dynamic knight can
+perform many different movements that may belong to three types:
+
+<p>
+<ul>
+<li>type K: two fields forward (in any direction) and one sidewise - like ``regular knight";
+<li>type B: two fields diagonally - more like a bishop;
+<li>type T: sort of teleportation to a field which is a mirror reflection with respect to any of two axes of symmetry of the chessboard (we take into consideration only axes of symmetry parallel to sides of the chessboard);
+</li></li></li></ul>
+
+<p>
+The picture below shows all possible movements of a knight divided into three
+types K, B and T. Obviously our knight, like the ``regular" one cannot move
+outside the chessboard.
+
+<p>
+<div align="CENTER">
+<img src="p633.gif">
+</div>
+
+<p>
+For a dynamic knight it is not relevant whether the fields between the
+starting field and ending one are occupied or not (again like for
+the ``regular knight"). It only matters whether the ending field is empty.
+Then the movement can be performed. There has to be a restriction
+among so many capabilities of a dynamic knight. It cannot perform the
+same sort of movements consecutively (just not to fall into routine).
+
+<p>
+
+<p>
+<br>
+Having redefined a chess knight, why not to redefine a chessboard? Our
+chessboard will be a square of size 
+
+<img width="75" height="32" align="MIDDLE" border="0" src="633img2.gif" alt="$2N \times 2N$">.
+<i>N</i> can be any integer number from
+the range of 3..20. There can be several obstacles of any shape on a
+chessboard so a knight cannot stop on these defected fields.
+
+<p>
+
+<p>
+<br>
+Your task is to write a program which can calculate the minimal number of
+movements to get the knight from one given field to another one. It may be
+assumed that the first movement can be of any type.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+First line contains the number <i>N</i>, being the size of a chessboard. The second
+one contains field coordinates separated by space character, which is a knight
+current standpoint. Upper left-hand size corner has coordinates (1, 1).
+Third line contains destination field for the knight. Consecutive lines
+contain obstacle coordinates and the line with coordinates (0, 0) ends the
+obstacle description. Input can contain several sets of data. 
+
+<p>
+Input's end
+is shown as a line defining chessboard's size as 0.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+It is supposed to be fairly simple - one line with a single number being
+the calculated minimal number of movements.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+1 1
+1 1
+2 2
+0 0
+10
+1 1
+20 20
+20 1
+1 20
+3 1
+3 2
+3 3
+2 3
+1 3
+0 0
+10
+2 1
+18 12
+2 2
+5 6
+7 2
+8 3
+9 4
+1 15
+7 12
+8 13
+9 11
+11 9
+12 4
+11 3
+9 5
+2 7
+3 8
+6 5
+0 0
+3
+1 1
+5 4
+2 2
+2 4
+2 5
+3 1
+3 2
+3 3
+3 6
+4 2
+4 3
+4 5
+5 1
+5 3
+5 5
+6 1
+6 4
+6 5
+6 6
+0 0
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Result : 0
+Solution doesn't exist
+Result : 6
+Result : 4
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+</body>
+</html>
+

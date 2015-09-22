@@ -1,0 +1,147 @@
+
+
+<html>
+<head>
+<title>Indexing Web Pages</title>
+<meta name="description" content="Indexing Web Pages">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Indexing Web Pages</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Write a program to create an index
+of a small collection of World Wide Web pages.
+Each ``page&quot; is a text file in a special format called HTML (HyperText
+Markup Language).  The HTML format includes
+regular text and special HTML commands, which are always enclosed in
+anglebraces. For example, the string
+<tt>&lt;A HREF=&quot;layout.htm&quot;&gt;</tt> is an HTML command
+meaning that the following text should be highlighted; a user click on
+the highlighted text would cause a web browser to fetch and display the
+file <tt>layout.htm</tt>.
+<p>
+<p>
+Your program's job is to read an HTML file called
+<tt>index.htm</tt> and all the files referenced within
+<tt>index.htm</tt> by the HREF command and all the files
+referenced by those files, and so on until there are
+no new files to read.  Your program
+should also read the file <tt>webpage.in</tt> containing
+a list of words and show a list of all the
+files referenced from <tt>index.htm</tt> which
+contain each word (see the Sample Output).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Assumptions</a></font></h2>
+<p>
+<ol><li> Any opening angle bracket (the ``&lt;&quot; character)
+will be followed sooner or later by a matching
+closing angle bracket (the ``&gt;&quot; character).<li> A word is any string of characters found in a file that:
+<dl compact=""><dt><strong>-</strong>
+<dd> does not lie between matching angle brackets
+<dt><strong>-</strong>
+<dd> contains only letters (no spaces, hyphens, apostrophes, etc.)
+<dt><strong>-</strong>
+<dd> is not part of a longer word (e.g., in ``balloon&quot;, we would
+not consider ``loon&quot; to be a word).
+<p>
+ </dd></dt></dd></dt></dd></dt></dl><li> Words will have at most 25 characters.<li> Words which differ only in case should be considered
+to be the same.  Thus, ``Word&quot;, ``word&quot;, ``WORD&quot;, and ``wOrD&quot;
+would be considered to be the same word.<li> The only HTML command you need to worry about is the HREF command,
+and you can assume that it will always be
+in the form <tt>&lt;A HREF=&quot;filename&quot;&gt;</tt>, with no additional spaces
+or other characters; that the name of the file is legal and in the same
+directory as the file you are already reading; and that the name of the
+file will not exceed twelve characters
+in length.  Filenames will always end with ``<tt>.htm</tt>&quot;.<li> HTML files may be mutually referential or self referential,
+but there will be at most one hundred different files to read.
+</li></li></li></li></li></li></ol><h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Input</a></font></h2>
+<p>
+The initial HTML file you should start indexing
+will be named <tt>index.htm</tt>.  Next the other files, including <tt>webpage.in</tt>, with a single blank line separating each listing. The words in <tt>webpage.in</tt> will be placed one word per line, with no additional spaces.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Output</a></font></h2>
+<p>
+List each word in the standard input file, followed by a list of the file names
+it is found in, in the following format:
+<p>
+<pre>&quot;word&quot; can be found in the following pages:
+     filename1
+     filename2
+
+&quot;word&quot; can be found in the following pages:
+     filename3
+
+&quot;word&quot; can not be found in any page.</pre>
+<p>
+Where <tt>word</tt> is the word from the input
+file, and <tt>filename1</tt>, <tt>filename2</tt>, and so on, are
+the names of the files containing the word.  Each file name should be
+indented five spaces: a single blank line should separate each listing.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Input (there are three files: <tt>index.htm</tt>, <tt>layout.htm</tt>,
+and <tt>webpage.in</tt>)</a></font></h2>
+<p>
+<pre>&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;Indexing Web Pages&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;P&gt;Write a program to create an index of a small collection
+of World Wide Web pages.  Each &quot;page&quot; is a text file in a
+special format called HTML (HyperText Markup Language).  The
+HTML format includes regular text and special HTML commands,
+which are always enclosed in angle braces.  For example, the
+string &lt;A HREF=&quot;layout.htm&quot;&gt; is an HTML command meaning that
+the following text should be highlighted; a user click on
+the highlighted text would cause a web browser to fetch and
+display the file layout.htm.&lt;/P&gt;
+&lt;H1&gt;Following Links&lt;/H1&gt;
+&lt;P&gt;Don't forget that links can be &lt;A HREF=&quot;index.htm&quot;&gt;
+self-referential&lt;/A&gt;!&lt;/P&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+
+&lt;A bunch of gibberish and a word&gt;
+Note that there is no rule that the file needs to be legal HTML
+(if you know the rules), or that words really be wordseiwlaoieu;a. 
+&lt;A HREF=&quot;index.htm&quot;&gt;Watch out for mutual references!
+&lt;/HTML&gt;
+
+file
+index
+html
+HTML
+recursion
+word
+is</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>&quot;file&quot; can be found in the following pages:
+     index.htm
+     layout.htm
+
+&quot;index&quot; can be found in the following pages:
+     index.htm
+
+&quot;html&quot; can be found in the following pages:
+     index.htm
+     layout.htm
+
+&quot;HTML&quot; can be found in the following pages:
+     index.htm
+     layout.htm
+
+&quot;recursion&quot; can not be found in any page.
+
+&quot;word&quot; can not be found in any page.
+
+&quot;is&quot; can be found in the following pages:
+     index.htm
+     layout.htm</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,102 @@
+
+
+<html>
+<head>
+<title>Self Numbers</title>
+<meta name="description" content="Self Numbers">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Self Numbers</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In 1949 the Indian mathematician D.R. Kaprekar discovered a class
+of numbers called self-numbers. For any positive integer <i>n</i>, define
+<i>d</i>(<i>n</i>) to be <i>n</i> plus the sum of the digits of <i>n</i>. (The <i>d</i> stands
+for <em>digitadition</em>, a term coined by Kaprekar.) For example, <i>d</i>(75) = 75 + 7 + 5 = 87.  Given any positive integer <i>n</i> as a starting
+point, you can construct the infinite increasing sequence of integers
+<i>n</i>, <i>d</i>(<i>n</i>), <i>d</i>(<i>d</i>(<i>n</i>)), 
+
+<i>d</i>(<i>d</i>(<i>d</i>(<i>n</i>))), .... For example, if you start with
+33, the next number is 33 + 3 + 3 = 39, the next is 39 + 3 + 9 = 51, the next
+is 51 + 5 + 1 = 57, and so you generate the sequence
+
+<p>
+<pre>
+33, 39, 51, 57, 69, 84, 96, 111, 114, 120, 123, 129, 141, ...
+</pre>
+
+<p>
+The number <i>n</i> is called a  
+<b><i>generator</i></b>  of <b><i>d</i>(<i>n</i>)</b>.  In the
+sequence above, 33 is a generator of 39, 39 is a generator of 51, 51
+is a generator of 57, and so on.  Some numbers have more than one
+generator: for example, 101 has two generators, 91 and 100.  A number
+with 
+<b><i>no</i></b> generators is a  
+
+
+<b><i>self</i>-<i>number</i></b>. There are thirteen
+self-numbers less than 100: 1, 3, 5, 7, 9, 20, 31, 42, 53, 64, 75, 86,
+and 97.  
+
+<p>
+
+<p>
+<br>
+Write a program to output all positive self-numbers less than or equal 1000000
+in increasing order, one per line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+1
+3
+5
+7
+9
+20
+31
+42
+53
+64
+ |
+ |       &lt;-- a lot more numbers
+ |
+9903
+9914
+9925
+9927
+9938
+9949
+9960
+9971
+9982
+9993
+ |
+ |
+ |
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-17</i>
+</address>
+</body>
+</html>
+

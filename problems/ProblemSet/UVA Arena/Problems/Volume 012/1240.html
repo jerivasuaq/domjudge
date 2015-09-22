@@ -1,0 +1,116 @@
+
+<p>
+ICPC (International Collegiate Programming Contest), as you might know, is a team programming contest for college students. Each team consists of exactly three students and they will work on a number of programming problems. 
+
+<p>
+Andi, Budi and Chandra plan to participate in this year ICPC as a team. As for their team strategy, they come up with a simple one: 
+
+<p>
+
+<ul>
+<li>In the first 20 minutes of 5 hours contest, they will read through all problems. Then each of them will assign a number to each problem. This number indicates how many minute(s) it will take for him to get the problem accepted (correct solution). Then they will start to code, meaning that they only have 280 minutes to really work on the problems. You may assume that they always get accepted on time whenever they work on a problem. 
+</li>
+<li>There's only one computer for each team, so it's not possible for them to code two different problems simultaneously. 
+</li>
+<li>To avoid any brain fatigue and adrenaline rush (because they attend competitions so frequently), they decided to switch role after each problem, such that none of them will work at the computer for more than one problem consecutively. 
+</li>
+<li>They want to solve as many problems as they can. The order of problem to be solved does not matter.
+</li>
+</ul>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The first line of input contains an integer <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark>, number of test cases to follow. Each case begins with an integer <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4146img1.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4146img1.png" alt="$ \le$">12)</span>
+<tex2html_verbatim_mark> in one line, denoting the number of problems. The second line contains <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> integers, <span class="MATH"><i>A</i><sub>1..N</sub></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4146img1.png" alt="$ \le$"><i>A</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="4146img1.png" alt="$ \le$">300)</span>
+<tex2html_verbatim_mark>, denoting the total time (in minutes) needed by Andi to solve <span class="MATH"><i>i</i><sup>th</sup></span>
+<tex2html_verbatim_mark> problem. The third and fourth line will correspond to the total time needed by Budi and Chandra respectively and will have the same input format as the second line.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+For each case, print in a single line containing the maximum total number of problem that can be solved by that team.
+
+<p>
+
+<p><p>
+<br>
+
+<span class="textbf">Explanation for 1st sample case:</span> 
+
+<p>
+Actually Andi could solve all the three problems alone, but the team has decided that none of them should work at the computer for more than one problem consecutively. 
+
+<p>
+
+<p><p>
+<br>
+
+<span class="textbf">Explanation for 2nd sample case:</span> 
+
+<p>
+The team can solve all the problems. Here is one solution: 
+
+<p>
+
+<ul>
+<li>Let Budi work on Problem-2 (100 minutes). 
+</li>
+<li>Switch to Andi and let him work on Problem-1 (50 minutes). 
+</li>
+<li>Switch to Budi again and let him work on Problem-3 (30 minutes). 
+</li>
+<li>Finally, switch to Chandra and let him work on Problem-4 which (100 minutes). 
+</li>
+</ul>
+
+<p>
+Overall, they need 100 + 50 + 30 + 100 = 280 minutes.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 
+3 
+100 100 80 
+190 120 90 
+120 150 100 
+4 
+50 20 300 300 
+200 100 30 250 
+140 120 100 100
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 
+4
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

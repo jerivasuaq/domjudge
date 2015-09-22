@@ -1,0 +1,136 @@
+<p>
+Outel, a famous semiconductor company, released recently a new model of microprocessor called Platinium. Like
+many modern processors, Platinium can execute many instructions in one clock step providing that there are no
+dependencies between them (instruction <span class="MATH"><i>I</i><sub>2</sub></span> is dependent on instruction <span class="MATH"><i>I</i><sub>1</sub></span> if for example <span class="MATH"><i>I</i><sub>2</sub></span> reads
+a register that <span class="MATH"><i>I</i><sub>1</sub></span> writes to). Some processors are so clever that they calculate on they which instructions
+can be safely executed in parallel. Platinium however expects this information to be explicitly specified.
+A special marker, called simply a <span class="textit">stop</span>, inserted between two instructions indicatesthat some instructions
+after the stop are possibly dependent on some instructions before the stop. In other words instructions between
+two successive stops can be executed in parallel and there should not be dependencies between them.
+
+<p>
+Another interesting feature of Platinium is that a sequence of instructions must be split into groups of one,
+two or three successive instructions. Each group has to be packed into a container called a
+<span class="textit">bundle</span>. Each bundle has 3 slots and a single instruction can be put into each slot, however some
+slots may stay empty. Each instruction is categorized into one of 10 instruction types denoted by consecutive
+capital letters from <tt>A</tt> to <tt>J</tt> (instructions of the same type have similar functionality, for
+example type <tt>A</tt> groups integer arithmetic instructions and type <tt>F</tt> groups floating-point
+instructions). Only instructions of certain types are allowed to be packed into one bundle. A <span class="textit">template</span>
+specifies one permissible combination of instruction types within a bundle. A template can also specify a
+position of a stop in the middle of a bundle (there is at most one such stop allowed). In addition, stops
+are allowed between any two adjoining bundles. A set of templates is called a <span class="textit">bundling profile</span>.
+When packing instructions into bundles, one has to use templates from bundling profile only.
+
+<p>
+Although Platinium is equipped with an instruction cache it was found that for maximal performance it is
+most crucial to pack instructions as densely as possible. Second important thing is to use a small number of stops.
+
+<p>
+Your task is to write a program for bundling Platinium instructions. For the sake of simplicity we assume
+that the instructions cannot be reordered.
+
+<p>
+
+<p>
+<br>
+
+<span class="textbf">Task</span>
+
+<p>
+Write a program that:
+
+<ul>
+<li>reads a bundling prole and a sequence of instructions,
+</li>
+<li>computes the minimal number of bundles into which the sequence can be packed without breaking the
+dependencies and the minimal number of all stops that are required for the minimal number of bundles,
+</li>
+<li>writes the result.
+</li>
+</ul>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input consists of several test case, each separated by a blank line. The first line of the file indicates the number of test cases, and it's followed by a blank line.
+<p>
+The first line of each dataset contains two integers <span class="MATH"><i>t</i></span> and <span class="MATH"><i>n</i></span> separated by a single space. Integer
+<span class="MATH"><i>t</i></span> (
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2923img1.gif" alt="$ \le$"><i>t</i><img width="18" height="30" align="MIDDLE" border="0" src="2923img1.gif" alt="$ \le$">1500</span>) is the number of templates in the bundling profile. Integer <span class="MATH"><i>n</i></span> (
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2923img1.gif" alt="$ \le$"><i>n</i><img width="18" height="30" align="MIDDLE" border="0" src="2923img1.gif" alt="$ \le$">100000</span>)
+is the number of instructions to be bundled.
+
+<p>
+Each of the next <span class="MATH"><i>t</i></span> lines specifies one template and contains 3 capital letters <span class="MATH"><i>t</i><sub>1</sub></span>, <span class="MATH"><i>t</i><sub>2</sub></span>, <span class="MATH"><i>t</i><sub>3</sub></span>
+with no spaces in between followed by a space and an integer <span class="MATH"><i>p</i></span>. Letter <span class="MATH"><i>t</i><sub>i</sub></span> 
+<span class="MATH">(<texttt>A</texttt><img width="18" height="30" align="MIDDLE" border="0" src="2923img1.gif" alt="$ \le$"><i>t</i><sub>i</sub><img width="18" height="30" align="MIDDLE" border="0" src="2923img1.gif" alt="$ \le$"><i>J</i>)</span>
+is an instruction type allowed in the <span class="MATH"><i>i</i></span>-th slot. Integer <span class="MATH"><i>p</i></span> 
+<span class="MATH">(0<img width="18" height="30" align="MIDDLE" border="0" src="2923img1.gif" alt="$ \le$"><i>p</i><img width="18" height="30" align="MIDDLE" border="0" src="2923img1.gif" alt="$ \le$">2)</span> is the index of the slot after
+which the stop is positioned (0 means no stop within the bundle).
+
+<p>
+Each of the next <span class="MATH"><i>n</i></span> lines specifies one instruction. The <span class="MATH"><i>i</i></span>-th line of these <span class="MATH"><i>n</i></span> lines contains one capital
+letter <span class="MATH"><i>c</i><sub>i</sub></span> and an integer <span class="MATH"><i>d</i><sub>i</sub></span>, separated by a single space. Letter <span class="MATH"><i>c</i><sub>i</sub></span> 
+<span class="MATH">(<texttt>A</texttt><i>lec</i><sub>i</sub><img width="18" height="30" align="MIDDLE" border="0" src="2923img1.gif" alt="$ \le$"><i>J</i>)</span>
+is the type of the <span class="MATH"><i>i</i></span>-th instruction. Integer <span class="MATH"><i>d</i><sub>i</sub></span>
+
+<span class="MATH">(0<img width="18" height="30" align="MIDDLE" border="0" src="2923img1.gif" alt="$ \le$"><i>d</i><sub>i</sub> &lt; <i>i</i>)</span> is the index of the last instruction (among the previous ones) that the <span class="MATH"><i>i</i></span>-th instruction
+is dependent on (0 means that the instruction is not dependent on any former instruction).
+
+<p>
+You can assume that for each instruction type <span class="MATH"><i>c</i></span> appearing in the instruction sequence there is at least one
+template containing <span class="MATH"><i>c</i></span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The first and only line of the output contains two integers <span class="MATH"><i>b</i></span> and <span class="MATH"><i>s</i></span> separated by a single space. Integer <span class="MATH"><i>b</i></span>
+is the minimal number of bundles in a valid packing. Integer <span class="MATH"><i>s</i></span> is the minimal number of all stops that are
+required for the minimal number of bundles. Print a blank line between test cases.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+4 9
+ABB 0
+BAD 1
+AAB 0
+ABB 2
+B 0
+B 1
+A 1
+A 1
+B 4
+D 0
+A 0
+B 3
+B 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4 3
+</pre>
+
+<p>

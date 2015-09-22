@@ -1,0 +1,62 @@
+
+
+<html>
+<head>
+<title>Loglan-A Logical Language</title>
+<meta name="description" content="Loglan-A Logical Language">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Loglan-A Logical Language</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Loglan is a synthetic speakable language designed to test some of the fundamental problems of 
+linguistics, such as the Sapir Whorf hypothesis.  It is syntactically unambiguous, culturally neutral 
+and metaphysically parsimonious.  What follows is a gross over-simplification of an already very 
+small grammar of some 200 rules.
+<p>
+<p>
+Loglan sentences consist of a series of words and names, separated by spaces, and are terminated by a 
+period (.).  Loglan words all end with a vowel; names, which are derived extra-linguistically, end with 
+a consonant.  Loglan words are divided into two classes--little words which specify the structure of a 
+sentence, and predicates which have the form CCVCV or CVCCV where C represents a consonant 
+and V represents a vowel (see examples later).
+<p>
+<p>
+The subset of Loglan that we are considering uses the following grammar:
+<p>
+
+<p> <img width="681" height="298" align="BOTTOM" alt="tabular21" src="134img1.gif"> <p>
+
+<p>
+Write a program that will read a succession of strings and determine
+whether or not they are correctly formed Loglan sentences.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Each Loglan sentence will start on a new line and will be terminated
+by a period (.).  The sentence may occupy more than one line and words
+may be separated by more than one whitespace character.  The input will be terminated
+by a line containing a single `<tt>#</tt>'.  You can assume that all words will
+be correctly formed.
+<p>
+Output will consist of one line for each sentence containing 
+either `<tt>Good</tt>' or `<tt>Bad!</tt>'.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample input</a></font></h2>
+<p>
+<pre>la mutce bunbo mrenu bi ditca.
+la fumna bi le mrenu.
+djan ga vedma le negro ketpi.
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample output</a></font></h2>
+<p>
+<pre>Good
+Bad!
+Good</pre>
+<p>
+</body>
+</html>

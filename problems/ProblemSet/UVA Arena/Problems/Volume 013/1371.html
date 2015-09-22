@@ -1,0 +1,138 @@
+
+Given two strings <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> over an alphabet <span class="MATH"><img width="21" height="33" align="MIDDLE" border="0" src="3608img1.png" alt="$ \sum$"></span>
+<tex2html_verbatim_mark>, the <span class="textit">edit distance</span> between <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> is the minimum number of edit operations needed to convert <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> into <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark>. The three edit operations are the following: 
+
+<dl compact="">
+<dt>(i)</dt>
+<dd><span class="textit">change</span>: replace one character of <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> by another single character of <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark>. 
+</tex2html_verbatim_mark></tex2html_verbatim_mark></dd>
+<dt>(ii)</dt>
+<dd><span class="textit">deletion</span>: delete one character from <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark>. 
+</tex2html_verbatim_mark></dd>
+<dt>(iii)</dt>
+<dd><span class="textit">insertion</span>: insert one character of <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> into <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark>. 
+</tex2html_verbatim_mark></tex2html_verbatim_mark></dd>
+</dl>
+
+For example, the following figure shows that the edit distance between the strings <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark>=<tt>abcdefg</tt> and <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark>=<tt>ahcefig</tt> is 3. The edit operations are a change (i.e., replacing <tt>b</tt> of <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark> by <tt>h</tt> of <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark>), a deletion (i.e., deleting <tt>d</tt> from <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark>), and an insertion (i.e., inserting <tt>i</tt> of <span class="MATH"><i>B</i></span>
+<tex2html_verbatim_mark> into <span class="MATH"><i>A</i></span>
+<tex2html_verbatim_mark>).
+
+<div align="CENTER">
+
+
+<img width="752" height="255" align="BOTTOM" border="0" src="p3608.jpg" alt="\epsfbox{p3608.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+We now define a period of a repetitive string as follows: The string <span class="MATH"><i>p</i></span>
+<tex2html_verbatim_mark> is called the exact period of a string <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> if <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> can be written as <span class="MATH"><i>x</i> = <i>p</i><sup>k</sup></span>
+<tex2html_verbatim_mark>, where <span class="MATH"><i>k</i><img width="18" height="31" align="MIDDLE" border="0" src="3608img3.png" alt="$ \ge$">1</span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>p</i></span>
+<tex2html_verbatim_mark> is the shortest string. For example, if <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> =<tt>abababab</tt> then <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> = (<tt>abababab</tt>)<span class="MATH"><sup>1</sup></span>
+<tex2html_verbatim_mark> = (<tt>abab</tt>)<span class="MATH"><sup>2</sup></span>
+<tex2html_verbatim_mark> = (<tt>ab</tt>)<span class="MATH"><sup>4</sup></span>
+<tex2html_verbatim_mark>. Thus, the string <tt>ab</tt> is the exact period of <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark>. 
+
+We define an approximate period similarly. Given two strings <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark>, suppose that the string <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> is partitioned into substrings <span class="MATH"><i>p</i><sub>i</sub></span>
+<tex2html_verbatim_mark>, 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="3608img4.png" alt="$ \le$"><i>i</i><img width="18" height="31" align="MIDDLE" border="0" src="3608img4.png" alt="$ \le$"><i>t</i></span>
+<tex2html_verbatim_mark>, where <span class="MATH"><i>p</i><sub>i</sub></span>
+<tex2html_verbatim_mark> is not a null string, i.e., 
+<span class="MATH"><i>x</i> = <i>p</i><sub>1</sub><sup> . </sup><i>p</i><sub>2</sub><sup> . </sup><i>p</i><sub>3</sub><sup> ... </sup><i>p</i><sub>t</sub></span>
+<tex2html_verbatim_mark>. If the edit distance between a string <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> and each substring <span class="MATH"><i>p</i><sub>i</sub></span>
+<tex2html_verbatim_mark> is less than or equal to an integer <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark>, string <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> is called a <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark>-<span class="textit">approximate period</span> of string <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark>. 
+
+In this problem, given two strings <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark>, we want to find the minimum <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark> such that string <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> is a <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark>-approximate period of string <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark>. For example, suppose that two strings <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> = <tt>abcdabcabb</tt> and <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark>=<tt>abc</tt> are given. Since <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> may be partitioned into 
+<span class="MATH"><i>x</i> = <i>p</i><sub>1</sub><sup> . </sup><i>p</i><sub>2</sub><sup> . </sup><i>p</i><sub>3</sub> = <texttt>abcd</texttt><sup> . </sup><texttt>abc</texttt><sup> . </sup><texttt>abb</texttt></span>
+<tex2html_verbatim_mark> and the edit distances between string <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark>=<tt>abc</tt> and each substring <tt>abcd</tt>, <tt>abc</tt>, and <tt>abb</tt> equal to 1, 0, and 1, respectively, <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> is a 1-approximate period of <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark>. Hence, the minimum <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark> is one.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+Your program is to read from standard input. The input consists of <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> test cases. The number of test cases <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> is given in the first line of the input. For each test case, a string <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> is given in the first line and the string <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> is given in the next line. The length of string <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> is at least 1 and at most 50, the length of string <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> is at least 1 and at most 5000, and the alphabet <span class="MATH"><img width="21" height="33" align="MIDDLE" border="0" src="3608img1.png" alt="$ \sum$"></span>
+<tex2html_verbatim_mark> is the set of lowercase English characters.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+Your program is to write to standard output. Print exactly one line for each test case. Print the minimum integer value <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark> such that string <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> is a <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark>-approximate period of string <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark>. 
+
+The following shows sample input and output for three test cases.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+3 
+abc 
+abcdabcabb 
+abab 
+abababababab 
+xyz 
+abcdefghikjlmn
+</pre>
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<pre>
+1 
+0 
+3
+</pre>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

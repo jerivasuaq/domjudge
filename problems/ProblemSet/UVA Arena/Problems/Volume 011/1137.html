@@ -1,0 +1,80 @@
+<p>
+You are chief debugger for Poorly Guarded Privacy, Inc. One of the top
+selling product, ReallySecureAgent&#169;, seems to have a problem
+with its prime number generator. It produces from time to
+time bogus primes <span class="MATH"><i>N</i></span>. After a while, you realize that the problem is
+due to the way primes are recognized.
+
+<p>
+Every phony prime <span class="MATH"><i>N</i></span> you discover can be characterized as
+follows. It is odd and has distinct prime factors, say 
+<span class="MATH"><i>N</i> = <i>p</i><sub>1</sub><img width="13" height="15" align="BOTTOM" border="0" src="2946img1.png" alt="$ \star$"><i>p</i><sub>2</sub><img width="13" height="15" align="BOTTOM" border="0" src="2946img1.png" alt="$ \star$">...<img width="13" height="15" align="BOTTOM" border="0" src="2946img1.png" alt="$ \star$"><i>p</i><sub>k</sub></span>
+with 
+<span class="MATH"><i>p</i><sub>i</sub> <img width="18" height="32" align="MIDDLE" border="0" src="2946img2.png" alt="$ \not\equiv$"><i>p</i><sub>j</sub></span>, where the number <span class="MATH"><i>k</i></span> of factors
+is at least 3. Moreover, for all <span class="MATH"><i>i</i> = 1..<i>k</i></span>, <span class="MATH"><i>p</i><sub>i</sub> - 1</span> divides
+<span class="MATH"><i>N</i> - 1</span>. For instance, 
+<span class="MATH">561 = 3<img width="13" height="15" align="BOTTOM" border="0" src="2946img1.png" alt="$ \star$">11<img width="13" height="15" align="BOTTOM" border="0" src="2946img1.png" alt="$ \star$">17</span> is a phony prime.
+
+<p>
+Intrigued by this phenomenon, you decide to write a program that
+enumerates all such <span class="MATH"><i>N's</i></span> in a given interval 
+<span class="MATH">[<i>N</i><sub>min</sub>, <i>N</i><sub>max</sub>]</span>,
+with 
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2946img3.png" alt="$ \le$"><i>N</i><sub>min</sub> &lt; <i>N</i><sub>max</sub> &lt; 2<sup>31</sup></span>, 
+<span class="MATH"><i>N</i><sub>max</sub> - <i>N</i><sub>min</sub> &lt; 10<sup>6</sup>.</span>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input consists of several test cases, each of them following the description below. A blank line
+separates two consecutive cases.
+
+<p>
+Each test file contains one line. On this line are written the two
+integers <span class="MATH"><i>N</i><sub>min</sub></span> and <span class="MATH"><i>N</i><sub>max</sub></span> separated by a blank.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, output the list of phony primes in increasing
+order, one per line. If there are no phony prime in the interval, then
+simply output `<tt>none</tt>' on a line.
+
+<p>
+The outputs of two consecutive cases will be separated by a blank line.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+10 2000
+
+20000 21000
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+561
+1105
+1729
+
+none
+</pre>
+
+<p>

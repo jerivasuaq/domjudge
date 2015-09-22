@@ -1,0 +1,180 @@
+
+
+<html>
+<head>
+<title>Simply proportion</title>
+<meta name="description" content="Simply proportion">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Simply proportion</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Wou will probably have made a document on a word processor. When the job was
+done and you
+wanted to print that document you sometimes have the option to print the
+document with
+proportional spacing. This means that gaps between letters and words are
+filled with very small
+spaces (as small as your printer can handle) in such a way that you do not
+see a ragged appearance
+of a line but instead the line is left and right justified on your printout.
+This could also be done by
+filling each line with normal spaces, but this usually produces big gaps
+between words. In the following we call these small spaces <b>dots</b>.
+
+<p>
+
+<p>
+<br>
+In the exercise you are asked to produce an algorithm that fills lines with
+dots in such a manner that
+the line has a certain length (measured in dots). We will provide you with
+lines which contain
+spaces and certain letters. Each character has a width that can be measured
+in dots. In order to keep
+this exercise simple we will only use a subset of letters. These letters are
+the following:
+
+<p>
+<div align="CENTER">
+<table cellpadding="3">
+<tr><td align="CENTER"><b> Character</b></td>
+<td align="CENTER"><b> Width</b></td>
+</tr>
+<tr><td align="CENTER">A</td>
+<td align="CENTER">18</td>
+</tr>
+<tr><td align="CENTER">B</td>
+<td align="CENTER">17</td>
+</tr>
+<tr><td align="CENTER">I</td>
+<td align="CENTER">10</td>
+</tr>
+<tr><td align="CENTER">M</td>
+<td align="CENTER">20</td>
+</tr>
+<tr><td align="CENTER">S</td>
+<td align="CENTER">16</td>
+</tr>
+<tr><td align="CENTER">Y</td>
+<td align="CENTER">13</td>
+</tr>
+<tr><td align="CENTER">`space'</td>
+<td align="CENTER">Variable</td>
+</tr>
+</table></div>
+
+<p>
+The minimum number of dots between letters in a word is 3. The number of dots
+that separates letters in a word is given by the greatest <b>possible</b> number that is equal to or smaller than 1/3 of the minimum number of dots that separate words (rounded down to the nearest integer).
+The minimum
+number of dots for a single space is 10(there is no upper limit for the number
+of dots in a space).
+
+<p>
+
+<p>
+<br>
+
+<b>Note:</b> the begin and end of a line may not contain (empty) dots.
+
+<p>
+
+<p>
+<br>
+It can (and according to Murphy's law it will) happen that you are left with
+a number of dots that
+can't be equally divided in the gaps between letters or words. These leftovers
+must be equally
+divided over the spaces between the words beginning from the end of the line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input for your program is a text-file. Each input consists of two lines.
+On the first line there is
+an integer (say <i>N</i>) that tells you the desired length of the line (measured in
+dots) that will be your
+output. This integer has a maximum value of 5000. The second line consists of
+the input that you
+have to reformat to the desired length (each word is separated from the other
+by one space). Each
+line has at least two words on it and the maximum number of characters on
+this line is 80. There are
+no spaces after the last word. It is given that it is possible to fill the
+given line with dots so that the
+resulting line has a length of <i>N</i> dots. The last two lines of the input are
+given by:
+
+<p>
+<pre>
+0
+SYMIBA
+</pre>
+
+<p>
+Your program must not perform any action on this last input, it is simply
+there to mark the end of the input.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Your program must convert the given line to the desired length (<i>N</i> dots). The
+output is a text-file.
+Each line corresponds to the second line of each input pair with the number
+of dots between the
+letters and words. The spaces between letters and words are denoted in a
+special manner. If there
+are 3 dots between the letters <tt>A</tt> and <tt>B</tt> this is denoted by <tt>A/(3)B</tt> in your output. Your output may
+not contain any spaces, all these spaces must be converted to dots.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+250
+AIM SSY ABABA
+200
+SSSS AAAA
+130
+AA B AA
+0
+SYMIBA
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+A/(4)I/(4)M/(18)S/(4)S/(4)Y/(19)A/(4)B/(4)A/(4)B/(4)A
+S/(7)S/(7)S/(7)S/(22)A/(7)A/(7)A/(7)A
+A/(5)A/(15)B/(16)A/(5)A
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

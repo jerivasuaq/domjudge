@@ -1,0 +1,162 @@
+
+
+<html>
+<head>
+<title>``Cheapest'' Scores</title>
+<meta name="description" content="``Cheapest'' Scores">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">``Cheapest'' Scores</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Many games have scores associated with different types of events, and the
+overall score is just the sum of the these individual event scores. Take,
+for example, a hypothetical game called
+<em>Dunking</em>. In this game, you can earn 2 points for a <em>douser</em> and 7 points
+for a <em>bucket</em>. Immediately after a douser you can score an additional 3
+points for a <em>soaker</em>, or an additional 6
+points for a <em>gusher</em>. Note that you cannot get points for a soaker or a
+gusher by themselves. Additionally, immediately following a soaker you can
+get an additional point for a <em>spray</em>. The
+table below gives all the scoring possibilities for Dunking:
+<p>
+<p> <img width="466" height="130" align="BOTTOM" alt="tabular27" src="351img1.gif"> <p>
+<p>
+<b>Note:</b>
+An event sequence is defined as a number of consecutive scoring events
+in which all but the first have a prerequisite event.  For
+example, a <em>douser/soaker/spray</em> combination is one event sequence,
+but three <em>dousers</em> in a row are three separate event sequences.
+<p>
+<p>
+Given a particular score, what is the smallest number of event sequences
+which will achieve that score? For Dunking, some scores are impossible
+(like 1 and 3). Others can be obtained
+in several ways: to get 8 points you could score one <em>douser/gusher</em>, a
+<em>douser/soaker/spray</em> and a ``stand-alone&quot; <em>douser</em>, or four <em>dousers</em>. The one
+<em>douser/gusher</em> is the optimum way to
+achieve 8 points, since it requires only one ``event sequence.&quot;
+<p>
+<p>
+In this problem you will be presented with the scoring schemes for
+multiple games, and for each scheme, a set of potential scores to be
+analyzed. For each game and score, you are to
+determine if that score can be achieved, and if it can, the optimal manner
+in which it can be achieved. Optimal, again, means achieving the score
+with the smallest number of event sequences.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Each game's scoring scheme will begin with a line containing an
+integer  <img width="55" height="26" align="MIDDLE" alt="tex2html_wrap_inline51" src="351img2.gif">  identifying the number of scoring events that are possible
+for that game. The next <i>N</i> lines will contain the event
+name (case significant, but no more than 16 characters), the integer
+score associated with that event, and the name of an event that must
+immediately precede it in the game, if required.
+These items will be separated by whitespace (blanks and/or tabs). A value
+of zero for <i>N</i> marks the end of the input data.
+<p>
+<p>
+Following each scoring scheme will be a sequence of integers, each giving a
+potential score. This sequence will terminate with zero, which is not to
+be treated as a potential score.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each game/score pair, print a heading line similar to that shown in
+the output shown below; it includes the game number (starting with 1), a
+period, the score number (starting with 1
+for each game), and the score in parentheses. On the following lines print,
+with the <em>exact</em> format shown in the <em>Sample Output</em>,
+the number of each type of scoring event required to obtain the specified
+score, and the number of points
+achieved by completing those events (in parentheses), or a message
+indicating the score is impossible. Display a blank line after the output
+for each, but last, game/score pair.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5
+douser      2
+soaker      3     douser
+spray       1	  soaker
+gusher      6     douser
+bucket      7
+1
+2
+4
+5
+6
+7
+8
+9
+0
+4
+foul     0
+freeshot 1 foul
+goal     2
+whopper  4
+1
+2
+3
+4
+5
+0
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Case 1.1 (1):
+      This score is impossible.
+
+Case 1.2 (2):
+      1 douser (2)
+
+Case 1.3 (4):
+      2 dousers (4)
+
+Case 1.4 (5):
+      1 douser (2)
+      1 soaker (3)
+
+Case 1.5 (6):
+      1 douser (2)
+      1 soaker (3)
+      1 spray (1)
+
+Case 1.6 (7):
+      1 bucket (7)
+
+Case 1.7 (8):
+      1 douser (2)
+      1 gusher (6)
+
+Case 1.8 (9):
+      1 douser (2)
+      1 bucket (7)
+
+Case 2.1 (1):
+      1 foul (0)
+      1 freeshot (1)
+
+Case 2.2 (2):
+      1 goal (2)
+
+Case 2.3 (3):
+      1 foul (0)
+      1 freeshot (1)
+      1 goal (2)
+
+Case 2.4 (4):
+      1 whopper (4)
+
+Case 2.5 (5):
+      1 foul (0)
+      1 freeshot (1)
+      1 whopper (4)</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<div align="right"><i>We all use search everyday; to find a file in a directory, to find an email in the inbox, to find a song in<br>a playlist. Search is more than just a linear scan through a list of texts in a dictionary; It's binary<br>search, it's indexing, it's using your full text search algorithms to solve one of the hardest problems<br>we know. <br>-- adapted from NUMB3RS</i></div><br>
+
+<p>Given a dictionary containing less than <i>N</i> = 20000 words labeled from 1 to <i>N</i>. Each word consists of lowercase characters (from 'a' to 'z') with arbitrary length. The total number of characters in the dictionary is at most 100,000. Your task is to answer at most <i>Q</i> = 100000 queries. Each query <i>q<sub>i</sub></i> is also a word (as defined above). For each query, you have to print the "Top 10" words in the dictionary with the following rules:</p> 
+<ul>
+<li>All the words in the "Top 10" have to contain the substring <i>q<sub>i</sub></i>.</li>
+<li>All the words in the "Top 10" have to be sorted in this order:
+<ol>
+<li>The words with shorter length come first, if they have equal length then</li>
+<li>The lexicographically smaller words come first, otherwise</li>
+<li>The words with smaller label come first.</li>
+</ol>
+<li>If the number of words in the dictionary that contains the substring <i>q<sub>i</sub></i> is less than 10 then print all the words otherwise, print only the top-10 words (note: the words are printed using their labels).</li>
+<li>If there is no word in the dictionary that contains the substring <i>q<sub>i</sub></i> then print "-1" (without the quotes).</li>
+</li></ul>
+
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>The first line contains the number <i>N</i>. The next <i>N</i> lines contains the <i>N</i> words in the dictionary (the <i>i</i><sup>th</sup> line is the word with label <i>i</i>). The next line contains the number <i>Q</i> followed by the <i>Q</i> lines containing the queries.</p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>For each query, print one line containing the labels of the "Top 10" words (separated by a space) in the dictionary using the rules defined above.</p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+
+</h2> 
+
+<pre>17
+acm
+icpc
+regional
+asia
+jakarta
+two
+thousand
+and
+nine
+arranged
+by
+universitas
+bina
+nusantara
+especially
+for
+you
+5
+a
+an
+win
+b
+z
+</pre>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<pre>1 8 4 13 5 10 3 7 14 15
+8 10 7 14
+-1
+11 13
+-1
+</pre>

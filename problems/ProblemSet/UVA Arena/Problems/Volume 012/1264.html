@@ -1,0 +1,121 @@
+A binary search tree is a binary tree. It may be empty. If it is not empty, it satisfies the following properties: 
+
+<p>
+<dl compact="">
+<dt>(1)</dt>
+<dd>Every node has a key, and no two nodes have the same key. 
+</dd>
+<dt>(2)</dt>
+<dd>The keys in a nonempty left subtree must be smaller than the key in the root of the subtree. 
+</dd>
+<dt>(3)</dt>
+<dd>The keys in a nonempty right subtree must be larger than the key in the root of the subtree. 
+</dd>
+<dt>(4)</dt>
+<dd>The left and right subtrees are also binary search trees. 
+</dd>
+</dl>
+
+<p>
+Sample binary search trees are shown in Figure 1.
+
+<p>
+<div align="CENTER">
+
+<img width="922" height="369" align="BOTTOM" border="0" src="p4847.png" alt="\epsfbox{p4847.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 1. binary search trees
+
+</div>
+
+<p>
+To search for a node with a key <span class="MATH"><i>k</i></span> in a binary search tree <span class="MATH"><i>T</i></span>, we begin at the root. If <span class="MATH"><i>T</i></span> is empty, <span class="MATH"><i>T</i></span> contains no keys and the search is 
+unsuccessful. Otherwise, we compare <span class="MATH"><i>k</i></span> with the key in root. If <span class="MATH"><i>k</i></span> equals root's key, then the search terminates successfully. If <span class="MATH"><i>k</i></span> is 
+less than root's key, we search the left subtree of the root. If <span class="MATH"><i>k</i></span> is larger than root's key, we search the right subtree of the root. 
+In the same way, we can proceed the search in the left or right subree of <span class="MATH"><i>T</i></span>. 
+
+<p>
+To insert a new key <span class="MATH"><i>k</i></span> into a binary search tree <span class="MATH"><i>T</i></span> where <span class="MATH"><i>k</i></span> is 
+different from those of existing keys in <span class="MATH"><i>T</i></span>, we first search the tree <span class="MATH"><i>T</i></span>. The search will be unsuccessful, then we insert the key at the 
+point the search terminated. For instance, to insert a key 80 into the Figure 1(a), we first search the tree for 80. This search terminates 
+unsuccessfully, and the last node examined has key 40. We insert a new node containing 80 as the right child of the node. The resulting 
+search tree is shown in Figure 1(b). 
+
+<p>
+In this problem, we consider binary search trees with <span class="MATH"><i>N</i></span> keys 
+<span class="MATH">1, 2,..., <i>N</i></span>. For a permutation 
+
+<span class="MATH"><i>a</i><sub>1</sub>&nbsp;<i>a</i><sub>2</sub>&nbsp;...&nbsp;<i>a</i><sub>N</sub></span> of 
+<span class="MATH">{1, 2,..., <i>N</i>}</span>, inserting 
+<span class="MATH"><i>a</i><sub>1</sub>&nbsp;<i>a</i><sub>2</sub>&nbsp;...&nbsp;<i>a</i><sub>N</sub></span> successively into an initially empty binary 
+search tree will produce a binary 
+search tree. For instance, the permutation 2 1 4 3 5 will produce the tree in Figure 1(c). Also, 2 4 3 1 5 will produce the same tree. 
+Actually, 8 permutations among all possible permutations of 1, 2, 3, 4, 5 will produce the same tree to the tree in Figure 1(c).
+
+<p>
+We are interested in finding the number of permutations of 
+<span class="MATH">{1, 2,..., <i>N</i>}</span> such that all those permutations produce a binary search 
+tree identical to the tree produced by a given permutation <span class="MATH"><i>P</i></span>. Given <span class="MATH"><i>N</i></span> and <span class="MATH"><i>P</i></span>, you are to write a program that calculates the number of 
+permutations satisfying the above condition. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to read from standard input. The input consists of <span class="MATH"><i>T</i></span> test cases. 
+The number of test cases <span class="MATH"><i>T</i></span> is given in the first line. Each test case starts with a line containing an integer <span class="MATH"><i>N</i></span> representing the number 
+of keys, 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4847img2.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4847img2.png" alt="$ \le$">20</span>. In the next line, a permutation of length <span class="MATH"><i>N</i></span> is given. There is a single space between the integers representing 
+keys in the permutation. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to write to standard output. Print exactly one line for each test case as follows: 
+Let <span class="MATH"><i>B</i></span> be the number of permutations that produce the binary search tree identical to the tree produced by the input permutation. 
+Print 
+<span class="MATH"><i>B</i> mod 9, 999, 991</span> for each test case. For example, if 
+<span class="MATH"><i>B</i> = 20, 000, 000</span>, the output should be 18 for that test case.
+
+<p>
+The following shows sample input and output for three test cases. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+5
+2 1 4 3 5
+4
+2 4 1 3
+12
+1 2 3 4 5 6 7 8 9 10 11 12
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+8
+3
+1
+</pre> 
+
+<p>

@@ -1,0 +1,84 @@
+
+
+<html>
+<head>
+<title>Sunrise</title>
+<meta name="description" content="Sunrise">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Sunrise</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Compute the fraction of the solar-disc area that is visible at specified
+times after the onset of sunrise.
+<p>
+<p>
+This is a two-body problem; there is a single planet and a single star.
+<p>
+<p>
+Assume a perfectly spherical planet with a radius of 3950 miles. Ignore
+any possible atmospheric effects on the results to be determined.
+<p>
+<p>
+At a distance of 92,900,000 miles from the planet's center is an illuminating
+class four star. For the determinations to be made in this problem,
+ignore anyphenomena arising from the orbital motion of the planet
+about the star and consider the illuminating star to be a planar disc. The
+plane in which the disc lies is perpendicular to the line
+between the planet center and the solar disc center. The solar disc has a
+radius of 432,000 miles.
+<p>
+<center><img src="415img2.gif"></center>
+<p>
+Assume the planet rotates uniformly, making one full rotation in precisely
+24 hours.
+<p>
+<p>
+The sun is centered directly over the planet's equator during the entire
+revolution of the planet.
+<p>
+<p>
+Let time be measured from when the first solar rays of the morning reach a
+given reference point on the
+equator. For each time value giveninthe input data stream, compute the
+fraction of the solar disc area that
+is illuminating this reference point on the equator.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input time data are given as floating point values measured in seconds.
+There will be no time-data values less than zero,
+and none greater than 600. Each line of input will have one floating-point
+value that should be read using the default float/real input format.
+<p>
+<p>
+Process the input data stream until the end-of-file is encountered.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Aline with a single real value is to be emitted for each input data value
+received. This value is to be the
+fraction of the solar disc (area) that is illuminating the reference point
+at the given time. The default real/float output format should be used. 
+Non-zero answers must be within 0.1% of the correct answer. If an answer
+should be zero it must be reported as a value within the interval +/-0.001.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+0.0
+600.0
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output
+<font size="3">(Your output, using your chosen language, may be default-formatted differently).</font></a></font></h2>
+<p>
+<pre>
+0.000
+1.000
+</pre>
+</body>
+</html>

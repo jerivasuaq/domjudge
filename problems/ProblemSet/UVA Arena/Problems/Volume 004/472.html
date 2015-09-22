@@ -1,0 +1,53 @@
+
+
+<html>
+<head>
+<title>Simultaneous Equations</title>
+<meta name="description" content="Simultaneous Equations">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ 
+<p>
+Write a program that will solve a <i>n</i> by <i>n</i> system of simultaneous equations where the coefficients
+of the equations are complex numbers.
+(Recall that a complex number is an imaginary number of the form  <img width="90" height="30" align="MIDDLE" alt="tex2html_wrap_inline38" src="472img1.gif"> , where <i>a</i> and
+<i>b</i> are real numbers.)
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input contains several datasets, each separated by an empty line. Each dataset consists of  <img width="82" height="25" align="MIDDLE" alt="tex2html_wrap_inline44" src="472img2.gif">  lines each containing
+<i>n</i>+1 complex numbers in the form (<i>a</i>,<i>b</i>).
+The  <img width="104" height="32" align="MIDDLE" alt="tex2html_wrap_inline50" src="472img3.gif"> , complex number at line <i>i</i> is the coefficient of the  <img width="22" height="32" align="MIDDLE" alt="tex2html_wrap_inline54" src="472img4.gif">  unknown in
+the  <img width="17" height="15" align="BOTTOM" alt="tex2html_wrap_inline56" src="472img5.gif">  equation and the last complex number at line <i>i</i> represents
+the right-hand side of the  <img width="17" height="15" align="BOTTOM" alt="tex2html_wrap_inline56" src="472img5.gif">  equation.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output for each dataset consists of <i>n</i> lines containing pairs of the form (<i>a</i>,<i>b</i>).
+The pair on line <i>i</i> of output represents the  <img width="17" height="15" align="BOTTOM" alt="tex2html_wrap_inline56" src="472img5.gif">  root of the input system of equations. Each pair is to be printed in parenthesis with numbers accurately rounded to one digit to the right of the decimal point, as the sample below. In case the input system of equations can not be uniquely solved, your program should produce the sentence ``<tt>No solution</tt>&quot; as output.
+<p> Print a blank line between datasets.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>(1,0) (2,0) (3,0) (14,0)
+(2,0) (3,0) (4,0) (20,0)
+(3,0) (4,0) (4,0) (23,0)
+
+(1,0) (2,0) (3,0) (4,0)
+(2,0) (4,0) (6,0) (8,0)
+(3,0) (4,0) (5,0) (26,0)</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>(1.0,0.0)
+(2.0,0.0)
+(3.0,0.0)
+
+No solution</pre>
+<p>
+</body>
+</html>

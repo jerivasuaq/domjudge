@@ -1,0 +1,147 @@
+
+
+<html>
+<head>
+<title>Glass Beads</title>
+<meta name="description" content="Glass Beads">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Glass Beads</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Once upon a time there was a famous actress. As you may expect, she played
+mostly Antique Comedies most of all. All the people loved her. But she was not
+interested in the crowds. Her big hobby were beads of any kind. Many bead
+makers were working for her and they manufactured new necklaces and
+bracelets every day. One day she called her main <em>Inspector of Bead
+Makers</em> (<em>IBM</em>) and told him she wanted a very long and special
+necklace.
+
+<p>
+
+<p>
+<br>
+The necklace should be made of glass beads of different sizes connected
+to each other but without any thread running through the beads, so that
+means the beads can be disconnected at any point. The actress chose the
+succession of beads she wants to have and the IBM promised to make the
+necklace. But then he realized a problem. The joint between two neighbouring
+beads is not very robust so it is possible that the necklace will get torn
+by its own weight. The situation becomes even worse when the necklace is
+disjoined. Moreover, the point of disconnection is very important. If there
+are small beads at the beginning, the possibility of tearing is much higher
+than if there were large beads. IBM wants to test the robustness of a
+necklace so he needs a program that will be able to determine the worst
+possible point of disjoining the beads.
+
+<p>
+
+<p>
+<br>
+The description of the necklace is a string 
+
+<img width="123" height="32" align="MIDDLE" border="0" src="719img1.gif" alt="$A =a_1a_2 \dots a_m$">
+specifying sizes of the particular beads, where the last character
+<i>a</i><sub><i>m</i></sub> is considered to precede character <i>a</i><sub>1</sub> in circular fashion. 
+
+<p>
+
+<p>
+<br>
+The disjoint point <i>i</i> is said to be worse than the disjoint
+point <i>j</i> if and only if the string 
+
+<img width="170" height="30" align="MIDDLE" border="0" src="719img2.gif" alt="$a_ia_{i+1} \dots a_na_1 \dots a_{i-1}$">
+is lexicografically smaller than the string 
+
+<img width="175" height="30" align="MIDDLE" border="0" src="719img3.gif" alt="$a_ja_{j+1} \dots a_na_1 \dots a_{j-1}$">.
+String 
+
+<img width="82" height="30" align="MIDDLE" border="0" src="719img4.gif" alt="$a_1a_2 \dots a_n$">
+is lexicografically smaller than the string
+
+
+<img width="77" height="32" align="MIDDLE" border="0" src="719img5.gif" alt="$b_1b_2 \dots b_n$">
+if and only if there exists an integer 
+
+<img width="58" height="31" align="MIDDLE" border="0" src="719img6.gif" alt="$i, i \le n$">,
+so that
+<i>a</i><sub><i>j</i></sub>=<i>b</i><sub><i>j</i></sub>, for each 
+
+<img width="89" height="31" align="MIDDLE" border="0" src="719img7.gif" alt="$j, 1 \le j < i$">
+and <i>a</i><sub><i>i</i></sub> &lt; <i>b</i><sub><i>i</i></sub>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of <i>N</i> cases. The first line of the input
+contains only positive integer <i>N</i>. Then follow the cases. 
+Each case consists of exactly one line containing necklace description.
+Maximal length of each description is 10000 characters. 
+Each bead is represented by a lower-case character of 
+the english alphabet (<tt>a</tt>-<tt>z</tt>), where 
+
+<img width="100" height="32" align="MIDDLE" border="0" src="719img8.gif" alt="$a < b \dots < z$">.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each case, print exactly one line containing
+only one integer - number of the
+bead which is the first at the worst possible disjoining, i.e. such
+<i>i</i>, that the string <i>A</i>[<i>i</i>] is lexicographically smallest
+among all the <i>n</i> possible disjoinings of a necklace. If there are
+more than one solution, print the one with the lowest <i>i</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+4
+helloworld
+amandamanda
+dontcallmebfu
+aaabaaa
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+10
+11
+6
+5
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-15</i>
+</address>
+</body>
+</html>
+

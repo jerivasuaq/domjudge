@@ -1,0 +1,52 @@
+
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="bdf">
+   <meta name="GENERATOR" content="Mozilla/4.76 [en] (Windows NT 5.0; U) [Netscape]">
+   <title>Convex Hull of the Polygon</title>
+</head>
+<body>
+&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+
+
+<p>Suppose that a polygon is represented by a set of integer coordinates,
+{(x<sub>0</sub>, y<sub>0</sub>), (x<sub>1</sub>, y<sub>1</sub>), (x<sub>2</sub>,
+y<sub>2</sub>), ..., (x<sub>n</sub>, y<sub>n</sub>), (x<sub>0</sub>, y<sub>0</sub>)}.
+Please find the convex hull of the polygon, where a convex hull is the
+minimum bounding convex polygon and "convex" means the angle between two
+consecutive edges is less than 180<sup>o</sup>.
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Input file</a>&nbsp;</font>
+</h2>
+Input consists of several datasets separated by a blank line. Each dataset contains a sequence of integer coordinates x<sub>i</sub>, y<sub>i</sub>, one in each line. All input sequence will contain at least 3 different points.
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output for each dataset should contain a sequence of integer coordinates x<sub>i</sub>, y<sub>i</sub> specifying the convex hull, each in a line.
+The first coordinate of the output sequence must be the first coordinate in the input sequence that belongs to the convex hull. The output sequence must be in counter-cockwise order.
+Print a blank line between datasets.
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+0, 0
+2, 0
+1, 1
+2, 2
+0, 2
+0, 0
+</pre>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2><pre>
+0, 0
+2, 0
+2, 2
+0, 2
+0, 0
+</pre>
+</body>
+</html>

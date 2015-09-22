@@ -1,0 +1,71 @@
+
+
+<html>
+<head>
+<title>FlatLand Piano Movers</title>
+<meta name="description" content="FlatLand Piano Movers">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">FlatLand Piano Movers</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+FlatLand Piano Movers, as part of their Total Quality Management project, has
+decided to focus on the job estimation process.  Part of this process involves
+walking the proposed paths that are to be used to move a piano to see if it
+will fit through corridors and around corners.  Now this is harder than it
+might seem, since FlatLand is a 2-dimensional world.
+<p>
+<p>
+FlatLand pianos are rectangles of various sizes. FlatLand building
+codes require all turns in corridors to be right angle turns and
+prohibit ``T'' intersections.
+All dimensions are in furlongs. You can assume that each portion of
+a corridor is long enough so that other corners or doors into rooms don't
+have any effect on getting around a turn. You can also assume that
+the piano is narrower than the width of any corridor.
+Note that the piano actually
+has to turn in the corner, since it can only be pushed or pulled on
+one of its shorter sides (there are no square pianos).
+<p>
+<p>
+Your team's job is to write a program for a palmtop computer that will
+determine if a given piano will fit around a corner in a corridor.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input consists of a series of lines up to 80 columns in width followed by
+the end-of-file.  Each
+line consists of a series of number pairs. The numbers of a pair are separated
+by a comma and the pairs are separated by at least one space. The first pair
+is the size of a piano, and the remaining pairs are the widths of corridors on
+each side of the turns.  Consider the example:
+<p>
+<pre>600,200 300,500 837,500 350,350</pre>
+<p>
+This is a 600 by 200
+piano. The first turn is from a 300 furlong wide corridor through a right
+angle turn into a 500 furlong wide corridor.  The next turn is from an 837
+furlong wide corridor into one 500 furlongs wide. The last turn is from a 350
+furlong wide corridor into another 350 furlong wide corridor.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each piano, your program is to produce a yes-or-no answer for each turn.
+If the piano will fit around the turn, print ``<tt>Y</tt>'';  if not,
+print ``<tt>N</tt>''.  The results for each piano should be printed on a separate line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>600,200   300,500   837,500  350,350 
+137,1200 600,500 600,400</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>YYN
+YN</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,142 @@
+
+
+<html>
+<head>
+<title>Balancing Bank Accounts</title>
+<meta name="description" content="Balancing Bank Accounts">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Balancing Bank Accounts</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Once upon a time there was a large team coming home from the ACM World Finals. The fifteen
+travellers were confronted with a big problem:
+
+<p>
+
+<p>
+<br>
+In the previous weeks, there had been many money transactions between them: Sometimes
+somebody paid the entrance fees of a theme park for the others, somebody else paid the hotel room,
+another one the rental car, and so on.
+
+<p>
+So now the big calculation started. Some people had paid more than others, thus the individual bank
+accounts had to be balanced again. "Who has to pay whom how much?", that was the question.
+
+<p>
+As such a calculation is a lot of work, we need a program now that will solve this problem next
+year.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file will contain one or more test cases.
+
+<p>
+Each test case starts with a line containing two integers: the number of travellers <i>n</i> (
+
+<img width="88" height="30" align="MIDDLE" border="0" src="538img1.gif" alt="$2 \le n \le 20$">)
+and the number of transactions <i>t</i> (
+
+<img width="101" height="30" align="MIDDLE" border="0" src="538img2.gif" alt="$1 \le t \le 1000$">). On the next <i>n</i> lines the names of the travellers are
+given, one per line. The names only consist of alphabetic characters and contain no whitespace. On
+the following <i>t</i> lines, the transactions are given in the format 
+
+<i>name</i><sub>1</sub> <i>name</i><sub>2</sub> <i>amount</i> where <i>name</i><sub>1</sub> is
+the person who gave <i>amount</i> dollars to <i>name</i><sub>2</sub> . The amount will always be a non-negative integer
+less than 10000.
+
+<p>
+Input will be terminated by two values of 0 for <i>n</i> and <i>t</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, first print a line saying ``<tt>Case #</tt><i>i</i>" where <i>i</i> is the number of the test case.
+
+<p>
+Then, on the following lines, print a list of transactions that reverses the transactions given in the
+input, i.e. balances the accounts again. Use the same format as in the input. Print a blank line after
+each test case, even after the last one.
+
+<p>
+
+<p>
+<br>
+Additional restrictions:
+
+<p>
+<ul>
+<li>Your solution must consist of <b>at most </b><i>n</i>-1<b> transactions</b>.
+<li>Amounts may not be negative, i.e. never output ``<tt>A B -20</tt>", output 
+``<tt>B A 20</tt>" instead.
+</li></li></ul>
+
+<p>
+If there is more than one solution satisfying these restrictions, anyone is fine.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 1
+Donald
+Dagobert
+Donald Dagobert 15
+4 4
+John
+Mary
+Cindy
+Arnold
+John Mary 100
+John Cindy 200
+Cindy Mary 40
+Cindy Arnold 150
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case #1
+Dagobert Donald 15
+
+Case #2
+Mary John 140
+Cindy John 10
+Arnold John 150
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

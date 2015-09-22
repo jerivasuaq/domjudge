@@ -1,0 +1,173 @@
+
+
+<html>
+<head>
+<title>Prime Factors</title>
+<meta name="description" content="Prime Factors">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Prime Factors</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+Webster defines <em>prime</em> as:
+
+<p>
+
+<p>
+<br>
+
+<b>prime</b> (prim) <i>n</i>.[<b>ME</b>, fr. <b>MF</b>, fem. of <em>prin</em> first, <b>L</b> <em>primus</em>; akin to <b>L</b> <em>prior</em>] <b>1</b> :first in time:
+<b>original 2 a</b> : having no factor except itself and one <img width="11" height="34" align="MIDDLE" border="0" src="583img1.gif" alt="$\langle$">3 is a &nbsp;  number <img width="11" height="34" align="MIDDLE" border="0" src="583img2.gif" alt="$\rangle$">
+<b>b</b> : having no common
+factor except one <img width="11" height="34" align="MIDDLE" border="0" src="583img1.gif" alt="$\langle$">
+12 and 25 are relatively &nbsp;<img width="11" height="34" align="MIDDLE" border="0" src="583img2.gif" alt="$\rangle$">
+<b>3 a</b> : first in rank, authority or significance
+: <b>principal b</b> : having the highest quality or value <img width="11" height="34" align="MIDDLE" border="0" src="583img1.gif" alt="$\langle$">&nbsp; television time <img width="11" height="34" align="MIDDLE" border="0" src="583img2.gif" alt="$\rangle$">
+[from <em>Webster's New Collegiate Dictionary</em>]
+
+<p>
+
+<p>
+<br>
+The most relevant definition for this problem is 2a: An integer <i>g</i>&gt;1 is said to be <em>prime</em> if
+and only if its only positive divisors are itself and one (otherwise it is said to be <em>composite</em>). For
+example, the number 21 is composite; the number 23 is prime. Note that the decompositon of
+a positive number <i>g</i> into its prime factors, i.e.,
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="166" height="30" src="583img3.gif" alt="\begin{displaymath}g = f_1 \times f_2 \times \dots \times f_n
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+is unique if we assert that <i>f</i><sub><i>i</i></sub> &gt; 1 for all <i>i</i> and 
+
+<img width="57" height="32" align="MIDDLE" border="0" src="583img4.gif" alt="$f_i \le f_j$">
+for <i>i</i>&lt;<i>j</i>.
+
+<p>
+One interesting class of prime numbers are the so-called <em>Mersenne</em> primes
+which are of the form 2<sup><i>p</i></sup>- 1. Euler proved that 
+
+2<sup>31</sup> - 1 is prime in
+1772 -- all without the aid of a computer.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input will consist of a sequence of numbers. Each line of input will contain one number <i>g</i>
+in the range 
+
+-2<sup>31</sup> &lt; <i>g</i> &lt;2<sup>31</sup>, but different of -1 and 1. The end of input
+will be indicated by an input line having a value of zero.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each line of input, your program should print a line of output consisting of the input number
+and its prime factors. For an input number 
+
+<img width="219" height="32" align="MIDDLE" border="0" src="583img5.gif" alt="$g>0, g = f_1 \times f_2 \times
+\dots \times f_n$">,
+where each <i>f</i><sub><i>i</i></sub> is a prime
+number greater than unity (with 
+
+<img width="57" height="32" align="MIDDLE" border="0" src="583img4.gif" alt="$f_i \le f_j$">
+for <i>i</i>&lt;<i>j</i>), the format of the output line 
+should be
+
+<p>
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="194" height="30" src="583img6.gif" alt="\begin{displaymath}g \mbox{\tt\ = } f_1 \mbox{\tt\ x } f_2 \mbox{\tt\ x } \dots \mbox{\tt\ x } f_n
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+When <i>g</i> &lt; 0, if  
+
+<img width="185" height="34" align="MIDDLE" border="0" src="583img7.gif" alt="$ \mid g \mid = f_1 \times f_2 \times \dots \times f_n$">,
+the
+format of the output line should be 
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="239" height="30" src="583img8.gif" alt="\begin{displaymath}g \mbox{\tt\ = -1 x } f_1 \mbox{\tt\ x } f_2 \mbox{\tt\ x } \dots
+\mbox{\tt\ x } f_n
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+-190
+-191
+-192
+-193
+-194
+195
+196
+197
+198
+199
+200
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+-190 = -1 x 2 x 5 x 19
+-191 = -1 x 191
+-192 = -1 x 2 x 2 x 2 x 2 x 2 x 2 x 3
+-193 = -1 x 193
+-194 = -1 x 2 x 97
+195 = 3 x 5 x 13
+196 = 2 x 2 x 7 x 7
+197 = 197
+198 = 2 x 3 x 3 x 11
+199 = 199
+200 = 2 x 2 x 2 x 5 x 5
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-19</i>
+</address>
+</body>
+</html>
+

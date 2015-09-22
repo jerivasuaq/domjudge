@@ -1,0 +1,128 @@
+
+
+<html>
+<head>
+<title>City Directions</title>
+<meta name="description" content="City Directions">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">City Directions</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+When driving through a city, an intersection usually offers one the
+choice of going straight on or turning left or right through
+90 degrees. However some cities have diagonal roads, thus at
+intersections involving these one may be able to turn through
+45 degrees (``half'') or through 135 degrees (``sharp'').
+<p>
+<p>
+Consider such a city with Avenues running north-south, Streets running
+east-west and Boulevards running diagonally. The central Avenue and
+Street are labelled Zero (A0 and S0). Other roads are labelled
+relative to these, thus A3W is the third avenue to the west of A0.
+There are 6 Boulevards--two passing through the centre of the
+city, and 4 others, one in each quadrant. The diagram below shows the
+northwest quadrant of a small version of such a city.
+<p>
+<p> <img align="BOTTOM" alt="picture27" src="163img1.gif"> <p>
+<p>
+The roads marked in grey are considered to be throughways. These are
+elevated for most of their length, thus it is possible to cross them
+easily, however they always intersect each other at a circle, which is
+shared by all other roads that meet at that intersection. You may only
+enter or leave them by turning left (sharp left in the case of
+boulevards). You may not stop on them for any reason. There are no
+restrictions on turns for other roads.
+<p>
+<p>
+This system allows a very simple method of determining one's
+current position and a way of arriving at one's destination.
+Position can be specified in terms of the last intersection you passed
+through (the numbers of the Avenue and Street that meet there) and
+your current heading, which can be one of: north (N), northeast (NE),
+east (E), southeast (SE), south (S), southwest (SW), west (W) and
+northwest (NW). Directions can then be given in terms of how many
+intersections to pass through and which turns to make. However, the
+locals have an infuriating habit of giving incorrect or invalid
+directions, although it cannot be determined whether this is
+deliberate or accidental. Directions should (but don't always)
+conform to the following simple grammar:
+<p>
+<blockquote> &lt;command&gt; ::= &lt;turn_command&gt;  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline231" src="163img2.gif">  &lt;straight_command&gt; <br> 
+&lt;turn_command&gt; ::= TURN [HALF  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline231" src="163img2.gif">  SHARP] {LEFT  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline231" src="163img2.gif">  RIGHT} <br> 
+&lt;straight_command&gt; ::= GO [STRAIGHT] n  <img width="11" height="24" align="MIDDLE" alt="tex2html_wrap_inline249" src="163img3.gif">  n  <img width="11" height="24" align="MIDDLE" alt="tex2html_wrap_inline249" src="163img3.gif">  99
+</blockquote>
+<p>
+Write a program that will simulate driving through such a city, by
+tracking your position and heading as you follow a set of directions
+(commands). Each quadrant of the city will be 50 blocks by 50 blocks,
+thus the entire city will be 100 blocks by 100 blocks, the outer
+throughways will be labelled Fifty and the major and minor boulevards
+will cross at roads labelled Twentyfive. You will be told your
+starting position and heading and then given a series of directions.
+If a direction does not follow the above grammar, or would involve an
+illegal or impossible turn then ignore it. At no stage will directions
+take you out of the confines of the city.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will consist of a
+series of scenarios.
+<p>
+Each scenario will consist of a position and a
+heading and will be followed by a series of directions (commands),
+each on a separate line. If either of the roads involved is one of the
+central roads (A0, S0), they will be labelled <tt>N</tt> or <tt>E</tt> as appropriate.
+Note that you may assume that you have just left the intersection
+specified. The <code>GO &lt;n&gt;</code> command means that you pass through <code>&lt;n&gt;</code>
+intersections.
+<p>
+Each scenario will be terminated by a line consisting
+of the word <tt>STOP</tt>.
+<p>
+The file will be terminated by a line consisting of
+the word <tt>END</tt> only.
+<p>
+<p>
+Input data will follow the format shown below,
+except that more than one space may occur where only one is shown. No
+line will be longer than 80 characters.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output will consist of a series of lines, one for each scenario. Each
+line will consist of a position and a heading in the same format as
+the input. If the final stopping place is illegal, report
+`<tt>Illegal stopping place</tt>' as the answer.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>A2W S1N E
+TURN SHARP LEFT
+GO 1
+TURN RIGHT
+TURN LEFT
+TURN SHARP LEFT
+GO 1
+TURN LEFT
+STOP
+A2W S1N W
+GO STRAIGHT 2
+TURN LEFT
+GO ON 2
+TURN HALF LEFT
+TURN LEFT
+GO 2
+STOP
+END</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>A3W S1N E
+Illegal stopping place</pre>
+<p>
+</body>
+</html>

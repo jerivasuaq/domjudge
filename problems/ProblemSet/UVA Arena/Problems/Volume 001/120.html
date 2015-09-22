@@ -1,0 +1,92 @@
+
+
+<html>
+<head>
+<title>Stacks of Flapjacks</title>
+<meta name="description" content="Stacks of Flapjacks">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Stacks of Flapjacks</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+Stacks and Queues are often considered the bread and butter of data
+structures and find use in architecture, parsing, operating systems, and
+discrete event simulation.  Stacks are also important in the theory of
+formal languages.
+<p>
+This problem involves both butter and sustenance in the form of pancakes
+rather than bread in addition to a finicky server who flips pancakes
+according to a unique, but complete set of rules.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+Given a stack of pancakes, you are to write a program that indicates how
+the stack can be sorted so that the largest pancake is on the bottom
+and the smallest pancake is on the top.  The size of a pancake is given
+by the pancake's diameter.  All pancakes in a stack have different
+diameters.
+<p>
+Sorting a stack is done by a sequence of pancake ``flips''.  A flip
+consists of inserting a spatula between two pancakes in a stack and
+flipping (reversing) 
+ the pancakes on the spatula (reversing the sub-stack).  A
+flip is specified by giving the position of the pancake on the bottom of
+the sub-stack to be flipped (relative to the whole stack).  The pancake
+on the bottom of the whole stack has position 1 and the pancake on the
+top of a stack of <i>n</i> pancakes has position <i>n</i>.
+<p>
+A stack is specified by giving the diameter of each pancake in the
+stack in the order in which the pancakes appear.
+<p>
+For example, consider the three stacks of pancakes below 
+(in which pancake 8 is the top-most pancake of the left stack):
+<pre>         8           7           2
+         4           6           5
+         6           4           8
+         7           8           4
+         5           5           6
+         2           2           7</pre>
+The stack on the left can be transformed to the stack in the middle 
+via <em>flip(3)</em>.  The middle stack can be transformed into the right
+stack via the command <em>flip(1)</em>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input consists of a sequence of stacks of pancakes.  Each stack will
+consist of between 1 and 30 pancakes and each pancake will have an
+integer diameter between 1 and 100.  The input is terminated by
+end-of-file.  Each stack is given as a single line of input with the top
+pancake on a stack appearing first on a line, the bottom pancake
+appearing last, and all pancakes separated by a space.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+For each stack of pancakes, the output should echo the original stack on
+one line, followed by some sequence of flips that results in the stack
+of pancakes being sorted so that the largest diameter pancake is on the
+bottom and the smallest on top.  For each stack the sequence of flips
+should be terminated by a 0 (indicating no more flips necessary).  Once
+a stack is sorted, no more flips should be made.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1 2 3 4 5
+5 4 3 2 1
+5 1 2 3 4</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1 2 3 4 5
+0
+5 4 3 2 1
+1 0
+5 1 2 3 4
+1 2 0</pre>
+<p>
+</body>
+</html>

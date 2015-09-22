@@ -1,0 +1,87 @@
+<p>Your task is to divide a number of persons into two teams,
+in such a way, that:</p>
+<ul>
+<li>everyone belongs to one of the teams;</li>
+<li>every team has at least one member;</li>
+<li>every person in the team knows every other person in his team;</li>
+<li>teams are as close in their sizes as possible.</li>
+</ul>
+
+<p>This task may have many solutions. You are to find and output any solution,
+or to report that the solution does not exist.</p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<p>For simplicity, all persons are assigned a unique integer identifier
+from 1 to N.</p>
+
+<p>The first line in the input file contains a single integer number N
+(2 &le; N &le; 100) - the total number of persons to divide into teams, followed
+by N lines - one line per person in ascending order of their identifiers.
+Each line contains the list of distinct numbers A<sub>ij</sub>
+(1 &le; A<sub>ij</sub> &le; N, A<sub>ij</sub> &ne; i) separated by spaces.
+The list represents identifiers of persons that i<sup>th</sup> person knows.
+The list is terminated by 0.</p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+<p>If the solution to the problem does not exist, then write a single
+message &quot;No solution&quot; (without quotes) to the output file.
+Otherwise write a solution on two lines. On the first line of
+the output file write the number of persons in the first team,
+followed by the identifiers of persons in the first team,
+placing one space before each identifier. On the second line
+describe the second team in the same way. You may write teams
+and identifiers of persons in a team in any order.</p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+2
+
+5
+3 4 5 0
+1 3 5 0
+2 1 4 5 0
+2 3 5 0
+1 2 3 4 0
+
+5
+2 3 5 0
+1 4 5 3 0
+1 2 5 0
+1 2 3 0
+4 3 2 1 0
+</pre>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>
+No solution
+
+3 1 3 5
+2 2 4
+</pre>

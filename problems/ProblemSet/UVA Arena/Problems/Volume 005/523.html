@@ -1,0 +1,167 @@
+
+
+<html>
+<head>
+<title>Minimum Transport Cost</title>
+<meta name="description" content="Minimum Transport Cost">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Minimum Transport Cost</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+There are <i>N</i> cities in Spring country. Between each pair of cities there
+may be one transportation
+track or none. Now there is some cargo that should be delivered from one city
+to another. The transportation fee consists of two parts:
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>the cost of the transportation on the path between these cities, and
+<dt>2.
+<dd>a certain tax which will be charged whenever any cargo passing through
+one city, except for the source and the destination cities.
+</dd></dt></dd></dt></dl>
+
+<p>
+You must write a program to find the route which has the minimum cost.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input is an integer M, then a blank line followed by M datasets. There is a blank line between datasets.
+
+The data of path cost, city tax, source and destination cities are given
+in each dataset, which is of the form:
+
+<p>
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="160" height="211" src="523img1.gif" alt="\begin{displaymath}\begin{array}{cccc}
+a_{11} & a_{12} & \dots & a_{1N} \\
+a_{2...
+...& \\
+e & f & & \\
+\dots & \dots & & \\
+g & h & &
+\end{array}\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+where <i>a</i><sub><i>ij</i></sub> is the transport cost from city <i>i</i> to city <i>j</i>, 
+
+<i>a</i><sub><i>ij</i></sub> = -1 indicates there is no direct path between
+city <i>i</i> and city <i>j</i>. <i>b</i><sub><i>i</i></sub> represents the tax of passing through city <i>i</i>. And
+the cargo is to be delivered from
+city <i>c</i> to city <i>d</i>, city <i>e</i> to city <i>f</i>, ..., and city <i>g</i> to city <i>h</i>. 
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each datase, you must output the sequence of cities
+passed by and the total cost, which is of the form:
+
+<p>
+
+<p><p>
+<br>
+
+<tt>From </tt><i>c</i><tt> to </tt><i>d</i><tt> :</tt>
+
+<p>
+
+<tt>Path:</tt> <i>c</i><tt>-&gt;</tt><i>c</i><sub>1</sub><tt>-&gt;</tt><img width="25" height="15" align="BOTTOM" border="0" src="523img2.gif" alt="$\dots$"><tt>-&gt;</tt><i>c</i><sub><i>k</i></sub><tt>-&gt;</tt><i>d</i>
+
+<p>
+
+<tt>Total cost :</tt> <img width="25" height="15" align="BOTTOM" border="0" src="523img2.gif" alt="$\dots$">
+
+<p>
+
+<p><p>
+<br>
+
+<img width="25" height="15" align="BOTTOM" border="0" src="523img2.gif" alt="$\dots$">
+
+<p>
+
+<p><p>
+<br>
+
+<tt>From </tt><i>e</i><tt> to </tt><i>f</i><tt> :</tt>
+
+<p>
+
+<tt>Path:</tt> <i>e</i><tt>-&gt;</tt><i>e</i><sub>1</sub><tt>-&gt;</tt><img width="25" height="15" align="BOTTOM" border="0" src="523img2.gif" alt="$\dots$"><tt>-&gt;</tt><i>e</i><sub><i>k</i></sub><tt>-&gt;</tt><i>f</i>
+
+<p>
+
+<tt>Total cost :</tt> <img width="25" height="15" align="BOTTOM" border="0" src="523img2.gif" alt="$\dots$">
+
+<p>
+Print a blank line between datasets,
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+0 3 22 -1 4
+3 0 5 -1 -1
+22 5 0 9 20
+-1 -1 9 0 4
+4 -1 20 4 0
+5 17 8 3 1
+1 3
+3 5
+2 4
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+From 1 to 3 :
+Path: 1--&gt;5--&gt;4--&gt;3
+Total cost : 21
+
+From 3 to 5 :
+Path: 3--&gt;4--&gt;5
+Total cost : 16
+
+From 2 to 4 :
+Path: 2--&gt;1--&gt;5--&gt;4
+Total cost : 17
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

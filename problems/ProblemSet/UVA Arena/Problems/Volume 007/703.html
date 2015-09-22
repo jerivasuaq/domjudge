@@ -1,0 +1,136 @@
+
+
+<html>
+<head>
+<title>Triple Ties: The Organizer's Nightmare</title>
+<meta name="description" content="Triple Ties: The Organizer's Nightmare">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Triple Ties: The Organizer's Nightmare</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+<i>N</i> participants compete in a chess tournament, every player
+competing against each other one single time. The results are registered 
+in a square matrix in the following way:
+
+<p>
+<ul>
+<li>If player <i>i</i> beats player <i>j</i>, the digit 1 must be written at the position (<i>i</i>,<i>j</i>), where <i>i</i> denotes the row and <i>j</i> de column, and the digit 0 at the place (<i>j</i>,<i>i</i>).
+
+<p>
+<li>If the game ends in a draw, both numbers are zero.
+
+<p>
+<li>The digits at the main diagonal are also zero.
+</li></li></li></ul>
+
+<p>
+To establish the final clasification the organizer must face the problem of
+possible ties. The general criterion is that ties should be solved by counting
+the points obtained in the matches between the tied players, but sometimes
+this does not solve the problem. This happens for two players if they reached
+a draw in their respective match; for three tied players, there exist two
+different undecidable situations:
+
+<p>
+<ul>
+<li>If the three matches were draws.
+
+<p>
+<li>If there is a cyclic chain of victories, such as 1 beats 2, 2 beats 3, 3
+beats 1.
+</li></li></ul>
+
+<p>
+Since the organizer wishes to establish different classifications according to
+age groups, nationality, etc. of the participants, it has been decided to
+elaborate a table containing all the triple ties. If all three matches end in
+draws, the three numbers must be annotated in increasing order, and if there
+is a cycle of victories, in the following order: the first in the line beats
+the second, and the second beats the third one. Among the three possibilities
+of expressing this fact, the line must be written in increasing or decreasing
+order. These three-number chains must themselves be listed in lexicographical
+order.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Unlimited number of tests. Each test consists in a line with a positive
+integer <i>N</i> representing the number of players and <i>N</i> lines containing the
+results matrix of the tournament with consecutive digits separated by a blank
+space (
+
+<img width="102" height="32" align="MIDDLE" border="0" src="703img2.gif" alt="$3 \le N \le 100$">).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For every input a line containing the total amount <i>M</i> of undecidable triple
+ties; and, if <i>M</i>&gt;0, <i>M</i> lines, each of them with the three numbers of the
+involved players separated by a blank space and satisfying the order
+requirements, both within the line and in the set of lines.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+0 0 1
+1 0 0
+0 1 0
+3
+0 1 0
+0 0 0
+0 0 0
+3
+0 0 0
+0 0 0
+0 0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+3 2 1
+0
+1
+1 2 3
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

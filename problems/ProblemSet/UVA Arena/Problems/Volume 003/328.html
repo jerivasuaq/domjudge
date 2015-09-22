@@ -1,0 +1,136 @@
+
+
+<html>
+<head>
+<title>The Finite State Text-Processing Machine</title>
+<meta name="description" content="The Finite State Text-Processing Machine">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">The Finite State Text-Processing Machine</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+     A finite state machine (FSM) is essentially a  directed  graph.   Each
+node  in  the graph is  called  a  state;  at any point during execution of
+the FSM, one of the states is said to be the current state.  Each  directed
+edge  between  two  states is called a transition.  When the conditions are
+right, one  of  the  transitions  from  the current state is said to occur,
+and  the current state changes to a new state as determined by the  transition.  Consider the following very simple example.
+<p>
+<center><img src="328img1.gif"></center>
+<p>
+There are two states in this FSM, labelled A and B, and three  transitions,
+labelled   1,   2   and  3.  If  the current state is A, and the conditions
+for transition 1 are met, then the current state  becomes   B.   When   the
+current  state  is  B,  and  the  conditions  for transition 2 are met, the
+current state becomes  A  again.  If  the current state is B and the conditions for transition 3 are met, the current state remains B.
+<p>
+<p>
+     In this problem the input will be  descriptions   of   several   FSMs.
+Each   transition   in   these   FSMs  has  an associated set of characters
+called the input set, and a string called the output  string.   A   transition    can  occur  when  the  current  input  data  character  is  in  the
+transition's input set.  When the transition occurs,  the output string  is
+printed.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+     The input consists of a sequence of  pairs  {FSM  description,   input
+for   the  FSM}.  A  FSM  is  described  by the following sequence of items
+separated by whitespace (blanks, tabs, and end of line characters):
+<p>
+<ul><li> An integer specifying the number of states in the FSM.  For  each   of
+     these  states  there  will  be  the following items, in order:
+<p>
+<ul><li>    A one to eight character name for the  state.   State  names  are
+          case significant, and unique.<li>    An integer specifying the number of transitions  that  leave  the
+          current   state.   For  each  of  these transitions there will be
+          the following data items, in order:
+<p>
+<ul><li>    The set of input characters that enable the transition  (see
+               below).<li>    The name of the  new  current  state  when  this  transition
+               occurs.<li>    The output string (see below).
+</li></li></li></ul></li></li></ul></li></ul>
+<p>
+     The input set and the output  string  are  given   as   sequences   of
+printable  characters  with  no  embedded whitespace.  Several special constructions may  appear  in  these,  however.  When  <code>\b</code> appears it  is  to be  interpreted as a blank.  Treat <code>\n</code> as an end of line, and
+<code>\\</code> as a single
+backslash.  The construction <code>\0</code>  (that is, backslash
+followed by zero) will
+appear  only  as an output string, and means  to  print  nothing  when  the
+transition occurs.  The construction <code>\c</code> appearing as an input
+set  matches
+anything.   That is,  if  none  of  the other transitions are enabled and a
+transition has <code>\c</code> specified as its input set, then it is
+enabled.  When  <code>\c</code>
+appears in an output string, it means to print the current input character.
+This  could  appear  several  times in the same output string.
+<p>
+<p>
+     After the last item in the  description  of  a  FSM  has   been   read
+begin  ``executing&quot;  the  FSM  using  the characters that start on the first
+complete line  following  the  description.   The  beginning   state   will
+always  be  called  <tt>START</tt>.   The final state will  always  be  called  <tt>END</tt>, but  will  not  appear  as  a  state  in  the description of  a  FSM.   All input is guaranteed to be correct.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+     For each input your program should display the FSM number (1, 2,  ...)
+and, beginning on the next line, the output that results from those transitions that occur.  The examples below illustrate this.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Examples</a></font></h2>
+<p>
+     The first example FSM replaces each vowel in a single  line  of  input
+with an asterisk.  The second example will delete each vowel that follows a
+lower or upper case X, again processing only a single line of  input.   The
+final  example  changes  the  case of each odd-numbered vowel in the input;
+processing  stops  when  an  exclamation  point  is  encountered,  and  the
+remainder of the input line is ignored.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+START 3
+      AEIOUaeiou  START *
+      \n          END   \n
+      \c          START \c 
+This is input for example one.
+2
+START 3
+      \c    START \c
+      Xx    SKIP  \c
+      \n    END   \n
+SKIP  4
+      AEIOU START \0
+      aeiou START \0
+      Xx    SKIP  \c
+      \n    END   \n
+XaXxe     Test   XIo  iXixO
+3
+START 12
+   \c START \c    !     FINIS \0
+   A  TWO   a     E     TWO   e
+   I  TWO   i     O     TWO   o
+   U  TWO   u     a     TWO   A
+   e  TWO   E     i     TWO   I
+   o  TWO   O     u     TWO   U
+TWO   4
+  \c  TWO   \c    AEIOU START \c
+   aeiou  START \c  !  FINIS  \0
+FINIS 2
+   \c  FINIS \0   \n    END   \n
+This is some data for FSM number 3.
+!    IGNORED
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Finite State Machine 1:
+Th*s *s *np*t f*r *x*mpl* *n*.
+Finite State Machine 2:
+XXx     Test   Xo  iXx
+Finite State Machine 3:
+ThIs is sOme dAta fOr FSM numbEr 3.</pre>
+<p>
+</body>
+</html>

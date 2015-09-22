@@ -1,0 +1,186 @@
+
+
+
+<html>
+<head>
+<title>Hamiltonian Cycle</title>
+<meta name="description" content="Hamiltonian Cycle">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Hamiltonian Cycle</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A few definitions first:
+<dl>
+<dt><strong>Definition 1</strong>
+<dd>A graph G = (V, E) is called ``dense'' if for each pair of non-adjacent
+vertices <i>u</i> and <i>v</i>,
+
+<img width="124" height="34" align="MIDDLE" border="0" src="775img1.gif" alt="$d(u) + d(v) \ge n$">
+where <i>n</i> = |<i>V</i>| and
+
+
+<img width="36" height="34" align="MIDDLE" border="0" src="775img2.gif" alt="$d(\bullet)$">
+denotes the degree of the vertex <img width="13" height="16" align="BOTTOM" border="0" src="775img3.gif" alt="$\bullet$">.
+<dt><strong>Definition 2</strong>
+<dd>A ``Hamiltonian cycle'' on G is a sequence of vertices
+(
+
+<img width="114" height="30" align="MIDDLE" border="0" src="775img4.gif" alt="$v_{i_1} v_{i_2} \dots v_{i_n} v_{i_1}$">)
+such that
+
+<img width="68" height="32" align="MIDDLE" border="0" src="775img5.gif" alt="$v_{i_l} \neq v_{i_h}$">
+for all <img width="43" height="32" align="MIDDLE" border="0" src="775img6.gif" alt="$l \neq h$">
+and {
+
+<i>v</i><sub><i>i</i><sub><i>l</i></sub></sub>, <i>v</i><sub><i>i</i><sub><i>l</i></sub></sub>} is an edge of G.
+</dd></dt></dd></dt></dl>
+
+<p>
+The problem is: write a program that, given a dense undirected graph G = (V; E) as input, determines
+whether G admits a Hamiltonian cycle on G and outputs that cycle, if there is one,
+or outputs ``<tt>N</tt>'' if there is none.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+A file containing descriptions of graphs, in the form:
+
+<p>
+
+<i>n</i><sub>1</sub>
+
+<p>
+
+
+
+<img width="55" height="30" align="MIDDLE" border="0" src="775img7.gif" alt="$u_{i_1} \ u_{j_1}$">
+
+<p>
+
+
+
+<img width="55" height="30" align="MIDDLE" border="0" src="775img8.gif" alt="$u_{i_2} \ u_{j_2}$">
+
+<p>
+
+<img width="25" height="15" align="BOTTOM" border="0" src="775img9.gif" alt="$\dots$">
+
+<p>
+<i>%</i>
+<p>
+
+<i>n</i><sub>2</sub>
+
+<p>
+
+
+
+<img width="55" height="30" align="MIDDLE" border="0" src="775img7.gif" alt="$u_{i_1} \ u_{j_1}$">
+
+<p>
+
+
+
+<img width="55" height="30" align="MIDDLE" border="0" src="775img8.gif" alt="$u_{i_2} \ u_{j_2}$">
+
+<p>
+
+<img width="25" height="15" align="BOTTOM" border="0" src="775img9.gif" alt="$\dots$">
+
+<p>
+<i>%</i>
+
+<p>
+where <i>n</i><sub><i>i</i></sub> is the number of vertices
+(0 &lt; <i>n</i><sub><i>i</i></sub> &lt; 256)
+and
+
+<img width="54" height="30" align="MIDDLE" border="0" src="775img10.gif" alt="$u_{i_h} \ u_{i_l}$">
+are integers between 1 and <i>n</i> indicating that
+there exists an edge between vertex <i>u</i><sub><i>i</i><sub><i>h</i></sub></sub> and <i>u</i><sub><i>i</i><sub><i>l</i></sub></sub>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output file must contain the sequence of vertices that form a Hamiltonian cycle in the
+form:
+
+<p>
+
+
+
+<img width="111" height="30" align="MIDDLE" border="0" src="775img11.gif" alt="$u_{i_1} \ u_{i_2} \ u_{i_3 } \ \dots$">
+
+<p>
+or containing:
+
+<p>
+
+<tt>N</tt>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4
+1 2
+2 3
+2 4
+3 4
+3 1
+%
+6
+1 2
+1 3
+1 6
+3 2
+3 4
+5 2
+5 4
+6 5
+6 4
+%
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 2 4 3 1
+1 3 2 5 4 6 1
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+<br>Update: <i>Mahbub Mushed Suman</i>
+<br><i>2003-12-17</i>
+</address>
+</body>
+</html>
+

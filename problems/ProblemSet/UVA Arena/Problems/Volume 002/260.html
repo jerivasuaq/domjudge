@@ -1,0 +1,95 @@
+
+
+<html>
+<head>
+<title>Il Gioco dell'X</title>
+<meta name="description" content="Il Gioco dell'X">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Il Gioco dell'X</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The game `Il Gioco dell' X' is played
+on a <i>N</i> by <i>N</i> board ( <img width="46" height="26" align="MIDDLE" alt="tex2html_wrap_inline133" src="260img1.gif"> ).  The object of both
+players, say Black and White, is to join
+opposite sides of the board by placing in turn their
+pawns on the board in such a way that a
+path is made from one side to the other by adjacent
+(neighboring) pawns of their own color.
+Although the board is  <img width="52" height="24" align="MIDDLE" alt="tex2html_wrap_inline135" src="260img2.gif">  it is not a square
+but rather diamond-shaped.  Let us denote
+the field on the board in row <i>i</i> and column <i>j</i> by
+ <img width="138" height="27" align="MIDDLE" alt="tex2html_wrap_inline141" src="260img3.gif"> .  The neighbors of (<i>i</i>, <i>j</i>) are:
+<p>
+<pre>                       ( i-1 , j-1 ) , ( i-1 ,  j  ) 
+                       (  i  , j-1 ) , (  i  , j+1 ) 
+                       ( i+1 ,  j  ) , ( i+l , j+1 )</pre>
+<p>
+provided these fields do not fall outside the board.
+<p>
+Black tries to join row 1 with row <i>N</i>, while White
+tries to join column 1 with column <i>N</i>.
+<p>
+lt is a Deep Mathematical Result that this
+game cannot end in a draw (that is, without
+winner).  As we will present to you only
+full boards, there will always be a winner.  It may,
+however, be difficult to see who has won,
+so some computer assistance would be appreciated.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Examples:</a></font></h2>
+<p>
+Example 1 Example 2
+<p>
+<p> <img width="688" height="220" align="BOTTOM" alt="picture23" src="260img4.gif"> <p>
+<p>
+In example 1 White has won, and in example 2 Black has won.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Input</a></font></h2>
+<p>
+The input is a textfile containing a
+number of games.  Each game is given by: one line
+containing an integer <i>N</i>, being the number
+of rows. (<i>N</i> can he any number between 2 and
+200).  This line is followed by <i>N</i> lines,
+each consisting of a row of <i>N</i> characters from the set
+{`<tt>b</tt>',`<tt>w</tt>'} denoting the pawns of Black
+and White respectively.  The numbers of black and white
+pawns will differ by at most one.  Note that
+all positions on the board are filled with pawns.
+The list of games ends with a single zero
+on a line of its own. (Of course, this is not a game
+for which a winner has to be determined.)
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Output</a></font></h2>
+<p>
+The output will be a textfile containing
+one line for each game.  This line should contain
+the number of the game (starting at 1)
+followed by a space, and followed by an uppercase `<tt>B</tt>'
+if Black did win, or followed by an uppercase `<tt>W</tt>' if White did win.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>4
+bbwb
+wwbw
+bbwb
+bwww
+4
+bbwb
+wwbw
+bwwb
+wwbb
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1 W
+2 B</pre>
+<p>
+</body>
+</html>

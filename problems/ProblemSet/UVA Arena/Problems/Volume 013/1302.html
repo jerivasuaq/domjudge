@@ -1,0 +1,111 @@
+<p>
+Hart is engaged in playing an interesting game, Gnome Tetravex, these days. In the game, at the beginning, the player is given <span class="MATH"><i>n</i>*<i>n</i></span>
+<tex2html_verbatim_mark> squares. Each square is divided into four triangles marked four numbers (range from 0 to 9). In a square, the triangles are the left triangle, the top triangle, the right triangle and the bottom triangle. For example, Fig. 1 shows the initial state of <span class="MATH">2*2</span>
+<tex2html_verbatim_mark> squares.
+
+<p>
+<div align="CENTER">
+
+<img width="358" height="294" align="BOTTOM" border="0" src="p2417a.jpg" alt="\epsfbox{p2417a.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+<p>
+<div align="CENTER">Fig. 1 The initial state with <span class="MATH">2*2</span>
+<tex2html_verbatim_mark> squares
+
+</tex2html_verbatim_mark></div>
+
+<p>
+The player is required to move the squares to the termination state. In the termination state, any two adjoining squares should make the adjacent triangle marked with the same number. Fig. 2 shows one of the termination states of the above example.
+
+<p>
+<div align="CENTER">
+
+<img width="358" height="294" align="BOTTOM" border="0" src="p2417b.jpg" alt="\epsfbox{p2417b.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+<p>
+<div align="CENTER">Fig. 2 One termination state of the above example
+
+</div>
+
+<p>
+It seems the game is not so hard. But indeed, Hart is not accomplished in the game. He can finish the easiest game successfully. When facing with a more complex game, he can find no way out.
+
+<p>
+One day, when Hart was playing a very complex game, he cried out, ``The computer is making a goose of me. It's impossible to solve it." To such a poor player, the best way to help him is to tell him whether the game could be solved. If he is told the game is unsolvable, he needn't waste so much time on it.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file consists of several game cases. The first line of each game case contains one integer <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark>, 
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="2417img3.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="2417img3.png" alt="$ \le$">5</span>
+<tex2html_verbatim_mark>, indicating the size of the game.
+
+<p>
+The following <span class="MATH"><i>n</i> <tt>*</tt> <i>n</i></span>
+<tex2html_verbatim_mark> lines describe the marking number of these triangles. Each line consists of four integers, which in order represent the top triangle, the right triangle, the bottom triangle and the left triangle of one square.
+
+<p>
+After the last game case, the integer <tt>0</tt> indicates the termination of the input data set.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+You should make the decision whether the game case could be solved. For each game case, print the game number, a colon, and a white space, then display your judgment. If the game is solvable, print the string ``<tt>Possible</tt>". Otherwise, please print ``<tt>Impossible</tt>" to indicate that there's no way to solve the problem.
+
+<p>
+Print a blank line between each game case.
+
+<p>
+
+<p>
+<br>
+
+<b>Note:</b> Any unwanted blank lines or white spaces are unacceptable.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+5 9 1 4
+4 4 5 6
+6 8 5 4
+0 4 4 3
+2
+1 1 1 1
+2 2 2 2
+3 3 3 3
+4 4 4 4
+0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Game 1: Possible
+
+Game 2: Impossible
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

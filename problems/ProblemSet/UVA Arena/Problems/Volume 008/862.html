@@ -1,0 +1,151 @@
+
+
+<html>
+<head>
+<title>Origami</title>
+<meta name="description" content="Origami">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Origami</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Origami is the old Japanese art of folding single sheets of paper into the forms of animals,
+flowers and other figures. Recently a programmable machine was constructed to make some of
+the simpler kinds of origami. This machine has a large board with coordinate system drawn on it.
+First, a square sheet of paper is placed on the board so that the lower left
+corner has coordinates (0; 0)
+and the upper right corner has coordinates (100; 100). Then the machine follows the program.
+The program consists of several steps. Each step is given as a line in the coordinate system
+at which the origami is to be folded.  The line is represented by two points:  the
+paper is folded from right to left when one is facing the second point from the first.
+The paper on the left side of the line remains in place and the paper on the right side
+is folded flat on top of it.
+
+<p>
+After the execution of the last step one gets a resulting origami. It is necessary to pierce the
+origami in order make a hole for hanging. It is important to choose the place for making a hole
+carefully, because if the origami is too thick in this place it is difficult to make a hole, and if it is
+too thin it is not strong enough for hanging. Your task is to write a program that computes the
+number of layers of a paper in the given point.
+
+<p>
+
+<img width="227" height="254" align="MIDDLE" border="0" src="p862a.gif" alt="$\textstyle \parbox{.40\textwidth}{
+\begin{center}
+\mbox{}
+\epsfbox{p862a.eps}
+\end{center}}$"><img width="348" height="421" align="MIDDLE" border="0" src="p862b.jpg" alt="$\textstyle \parbox{.59\textwidth}{
+\begin{center}
+\mbox{}
+\epsfxsize=3in \epsfbox{p862b.eps}
+\end{center}}$">
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+The first part of the input file contains a program for the origami machine. The first line
+contains the number of steps of the program.  One line follows for each step of the
+program.
+Each line contains fold-line coordinates <span class="MATH"><i>x</i><sub>1</sub></span>, <span class="MATH"><i>y</i><sub>1</sub></span>, <span class="MATH"><i>x</i><sub>2</sub></span>, <span class="MATH"><i>y</i><sub>2</sub></span> (real numbers)
+separated by spaces. The program consists of at most 8 steps.
+The second part of the input file contains several potential points for making a hole. The first
+line contains the number of such places and each of the next lines contains coordinates of the point.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+For each of the potential points write a line containing the number of layers
+pierced through in this point.
+
+<p>
+
+<p>
+<br>
+
+<b>Note:</b> Assume that the paper has zero thickness and therefore folds ideally. The pierced hole is
+a single point. The layers pierced exactly at the border of the paper or at the folded edge
+(within 0.000001) do not count as pierced layers.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+2
+-0.5 -0.5 1 1
+1 75 0 75
+6
+10 60
+80 60
+30 40
+10 10
+50 50
+20 50
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+4
+2
+2
+0
+0
+2
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-08-31
+</address>
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+
+
+<html>
+<head>
+<title>Ecological Bin Packing</title>
+<meta name="description" content="Ecological Bin Packing">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Ecological Bin Packing</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+Bin packing, or the placement of objects of certain weights into
+different bins subject to certain constraints, is an historically
+interesting problem.  Some bin packing problems are NP-complete but are
+amenable to dynamic programming solutions or to approximately optimal
+heuristic solutions.
+<p>
+In this problem you will be solving a bin packing problem that deals
+with recycling glass.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+Recycling glass requires that the glass be separated by color into one
+of three categories: brown glass, green glass, and clear glass.  In this
+problem you will be given three recycling bins, each containing a
+specified number of brown, green and clear bottles.  In order to be
+recycled, the bottles will need to be moved so that each bin contains
+bottles of only one color.
+<p>
+The problem is to minimize the number of bottles that are moved.  You
+may assume that the only problem is to minimize the number of movements
+between boxes.
+<p>
+For the purposes of this problem, each bin has infinite
+capacity and the only constraint is moving the bottles so that each
+bin contains bottles of a single color. The total number of bottles will never exceed 2^31.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input consists of a series of lines with each line containing 9
+integers.  The first three integers on a line represent the number of
+brown, green, and clear bottles (respectively) in bin number 1, the
+second three represent the number of brown, green and clear bottles
+(respectively) in bin number 2, and the last three integers
+represent the number of brown, green, and clear bottles
+(respectively)
+in bin number 3.  For example, the line
+10 15 20 30 12 8 15 8 31
+<p>
+indicates that there are 20 clear bottles in bin 1, 12 green bottles in
+bin 2, and 15 brown bottles in bin 3.
+<p>
+Integers on a line will be separated by one or more spaces.  Your
+program should process all lines in the input file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+For each line of input there will be one line of output indicating what color
+bottles go in what bin to minimize the number of bottle movements.
+You should also print the minimum number of bottle movements.
+<p>
+The output should consist of a string of the
+three upper case characters 'G', 'B',
+'C' (representing the colors green, brown, and clear) representing the
+color associated with each bin.
+<p>
+The first character of the string
+represents
+the color associated with the first bin, the second character of the
+string represents the color associated with the second bin, and the
+third character represents the color associated with the third bin.
+<p>
+The integer indicating the minimum number of bottle movements
+should follow the string.
+<p>
+If more than one order of brown, green, and clear bins
+yields the minimum number of movements
+then the alphabetically first string representing a minimal
+configuration should be printed.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1 2 3 4 5 6 7 8 9
+5 10 5 20 10 5 10 20 10</pre>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>BCG 30
+CBG 50</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+
+<html>
+<head>
+<title>Nasty Virus</title>
+<meta name="description" content="Nasty Virus">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Nasty Virus</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Our programmers have been recently experiencing a strange phenomenon.
+Some old FORTRAN programs that have been working for years suddenly stopped working!!
+A close inspection of the situation revealed the existence of a nasty virus in our computer.
+The virus wakes up every night, and adds random lines,
+some of them valid FORTRAN statements, to all FORTRAN programs.
+(The existing lines are not changed.)
+Furthermore, it was discovered that:
+<ul><li> the virus may insert lines <b>ONLY BEFORE</b> the last line and after the first line;<li> the virus may insert an assignment to a variable ``<i>v</i>'' in one of two ways:
+<ol><li> The original program does not contain any assignment to ``<i>v</i>'' - in this case the new assignment to ``<i>v</i>'' can be inserted anywhere in the original program. (before the last line)<li>
+The original program does contain one or more assignments to ``<i>v</i>'' - in this case the new assignment to ``<i>v</i>'' can be inserted only after the last assignment to ``<i>v</i>'' in the original program. (before the last line)
+</li></li></ol></li></li></ul>
+<p>
+You are to write a program that will read one corrupted FORTRAN program and restores the program
+to its original state.
+<p>
+<p>
+Fortunately, the original FORTRAN programs compute values of certain functions by using
+ONLY assignment statements where the right-hand side
+expression of each assignment statement is an expression over the operators: <tt>+</tt>, <tt>*</tt>, <tt>/</tt>, <tt>-</tt> and
+operands {<tt>a</tt>, <tt>b</tt>, ... <tt>y</tt>, <tt>z</tt>, <tt>0</tt>, <tt>1</tt>, ... <tt>9</tt>}.
+<p>
+Furthermore, our programs contained <b>NO USELESS</b> assignment statements
+(an assignment to a variable, <i>v</i>, is useless if the value of <i>v</i> is not consequently used in the program) and the last assignment statement of the program computed the value of the desired
+function.
+<p>
+Also, our smart programmers always start their program by a line of comment, &quot;<tt>C</tt><i>n</i>&quot;, where <i>n</i> is the number of lines (not counting the comment line itself) contained in the program.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+The input consists of one possible corrupted FORTRAN program containing only assignment statement as described above.
+<p>
+<p>
+The output, consists of the corrupted FORTRAN program in its original state.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>C5
+      x=5+6
+      a=x+7
+      LLWWLLWLL
+      d=x+7
+      if (x-a)10,3,2
+      c=x+b
+      e=2*x
+      a=x*7
+      kljhkjh kjhkjhk kjh
+      y=x*a+c+d</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>C5
+      x=5+6
+      a=x+7
+      d=x+7
+      c=x+b
+      y=x*a+c+d</pre>
+<p>
+</body>
+</html>

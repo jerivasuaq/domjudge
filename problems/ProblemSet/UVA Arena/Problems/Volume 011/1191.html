@@ -1,0 +1,100 @@
+<p>
+Hermes, the Greek God of Speed, has created a two-dimensional colony Massilia in space.
+The colony, consisting of one or more provinces, can be represented by a linear equation
+in 3-dimensional space. In each province there are 3 or 4 cities, each being on their
+convex hull. Now, citizens of each province want to create road network connecting cities
+of their own province. Unfortunately, materials for road construction are not available
+in the colony, and can only be transported from Earth. Total material required to construct
+the roads will be proportional to their length. This is why they are interested to build
+road networks of shortest length connecting different cities of a province. In order to
+minimize length of each network they are also ready to make junctions away from cities,
+if so required.
+
+<p>
+Unfortunately creatures of the colony are pretty weak in mathematics and algorithms.
+They have, therefore, decided to take services of `<em>homo sapiens</em>' of earth, who are believed
+to be good in mathematics and algorithms. Accordingly the chief of Massilia sent an email
+to Academy of Computers and Mathematics (ACM) with Head Quarters at Dhaka to solve the problem.
+ACM has now asked you to help out our friends in Massilia.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The colony is described by an equation 
+<span class="MATH"><i>ax</i> + <i>by</i> + <i>cz</i> = <i>d</i></span>. There are <span class="MATH"><i>N</i></span> provinces in the colony.
+A city in a province can be described by a point in 3-dimension like
+<span class="MATH">(<i>x</i>, <i>y</i>, <i>z</i>)</span>. All the <span class="MATH"><i>x</i></span>, <span class="MATH"><i>y</i></span> and <span class="MATH"><i>z</i></span> coordinates will be within <span class="MATH">-100.00</span> and <span class="MATH">100.00</span>.
+The first line of input will contain <span class="MATH"><i>a</i></span>, <span class="MATH"><i>b</i></span>, <span class="MATH"><i>c</i></span> and <span class="MATH"><i>d</i></span>. Then the number of
+provinces (<span class="MATH"><i>N</i></span>) in the colony will be given in the second line. The remaining lines will
+describe each province one by one.
+
+<p>
+The description of a province starts with the number of cities <span class="MATH"><i>M</i></span> (
+<span class="MATH">3 <img width="18" height="30" align="MIDDLE" border="0" src="2703img1.gif" alt="$ \leq$"> <i>M</i> <img width="18" height="30" align="MIDDLE" border="0" src="2703img1.gif" alt="$ \leq$"> 4</span>) in
+the province in a line followed by <span class="MATH"><i>M</i></span> lines. Each line contains 3 numbers describing respectively
+the <span class="MATH"><i>x</i></span>, <span class="MATH"><i>y</i></span> and <span class="MATH"><i>z</i></span> coordinates of a city in that province.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+You should print one line for each province in the input data as follows:
+
+<p>
+
+<p>
+<br>
+
+<tt>Province # <span class="MATH"><i>p</i></span> : <span class="MATH"><i>L</i></span></tt>
+
+<p>
+
+<p>
+<br>
+Where <span class="MATH"><i>p</i></span> is the serial number of the province as they appear in the input.
+
+<span class="MATH">1 <img width="18" height="30" align="MIDDLE" border="0" src="2703img1.gif" alt="$ \leq$"> <i>p</i> <img width="18" height="30" align="MIDDLE" border="0" src="2703img1.gif" alt="$ \leq$"> <i>N</i></span>, and <span class="MATH"><i>L</i></span> is the minimum length of the road network for that province.
+<span class="MATH"><i>L</i></span> should contain two digits after the decimal point and should be exact up to 2
+decimal points.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+-0.126826 -0.780330 0.612372 3.000000
+2
+3
+11.593475 -0.702393 6.405027
+-43.361881 -34.677124 -48.269711
+-0.380480 -2.340990 1.837117
+4
+-15.033179 6.549108 10.130860
+-13.950171 -53.592907 -66.282234
+49.017246 0.979824 16.299353
+46.824024 12.971205 31.125420
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Province # 1 : 86.43
+Province # 2 : 175.15
+</pre>
+
+<p>

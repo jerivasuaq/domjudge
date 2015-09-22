@@ -1,0 +1,116 @@
+
+
+<html>
+<head>
+<title>A Very Nasty Text Formatter</title>
+<meta name="description" content="A Very Nasty Text Formatter">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">A Very Nasty Text Formatter</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+This problem deals with pretty-printing of an arbitrary text.
+You are given a text (see also
+EBNF below) composed of some paragraphs. Each paragraph is initiated by
+an integer <i>n</i>.
+You are expected to output this paragraph in such a way that every row
+is &lt;CR&gt;-terminated and is except for the last one
+exactly <i>n</i> characters long (&lt;CR&gt; not counted).
+<p>
+<p>
+This justified output should be done by inserting some extra spaces between the words of
+a row. 
+Divide the spaces left as equally as possible among the spaces between words. In case you can't divide them equally, the leftmost
+spaces between words should be longer than the rightmost ones.
+In some cases, you may be forced to hyphenate a word to achieve justified output.
+Do this hyphenation where you want because you do not have to follow any linguistic
+rules. You should do as few hyphenations as possible.
+However, if it is impossible to justify a line of the text, output it
+left-justified.
+The assumptions that
+you can make are
+<p>
+<ol><li> The text follows the EBNF.
+<li> 3 &lt; <i>n</i> &lt; 1000.
+<li> There are no words longer than thousand characters.
+</li></li></li></ol>
+<p>
+<p>
+<p>
+<b>Note 1:</b> The text is built following this EBNF
+<pre>    text = paragraph {paragraph} &lt;eof&gt;.
+    paragraph = n &quot; &quot; word {&quot; &quot; word} &lt;CR&gt;.
+    n = digit {digit}.
+    word = letter {letter} [mark].
+    digit = &quot;0&quot; | &quot;1&quot; | &quot;2&quot; | ... | &quot;8&quot; | &quot;9&quot;.
+    letter = &quot;A&quot; | &quot;B&quot; | ... | &quot;Y&quot; | &quot;Z&quot; | &quot;a&quot; | &quot;b&quot; | ... | &quot;y&quot; | &quot;z&quot;.
+    mark = &quot;.&quot; | &quot;,&quot; | &quot;;&quot; | &quot;:&quot;.</pre>
+<b>Note 2:</b> 
+The explicit &lt;CR&gt;'s and &lt;eof&gt;'s have been added on the sample input and output to make it readable. They won't exist on the input and
+output files.
+
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>20 This is an example of a paragraph which is prettyprinted on a row with a
+length of twenty.&lt;CR&gt;
+15 This is an example of a paragraph which is prettyprinted on a row with a 
+length of fifteen.&lt;CR&gt;
+10 This is an example of a paragraph which is prettyprinted on a row with a
+length of ten.&lt;CR&gt;
+5 This is an example of a paragraph which is prettyprinted on a row with a
+length of five.&lt;CR&gt;
+&lt;eof&gt;</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+This  is  an example&lt;CR&gt;
+of a paragraph which&lt;CR&gt;
+is  prettyprinted on&lt;CR&gt;
+a  row with a length&lt;CR&gt;
+of twenty.&lt;CR&gt;
+This    is   an&lt;CR&gt;
+example   of  a&lt;CR&gt;
+paragraph which&lt;CR&gt;
+is prettyprint-&lt;CR&gt;
+ed   on  a  row&lt;CR&gt;
+with  a  length&lt;CR&gt;
+of fifteen.&lt;CR&gt;
+This is an&lt;CR&gt;
+example of&lt;CR&gt;
+a paragra-&lt;CR&gt;
+ph   which&lt;CR&gt;
+is pretty-&lt;CR&gt;
+printed on&lt;CR&gt;
+a row with&lt;CR&gt;
+a   length&lt;CR&gt;
+of ten.&lt;CR&gt;
+This&lt;CR&gt;
+is an&lt;CR&gt;
+exam-&lt;CR&gt;
+ple&lt;CR&gt;
+of  a&lt;CR&gt;
+para-&lt;CR&gt;
+graph&lt;CR&gt;
+which&lt;CR&gt;
+is p-&lt;CR&gt;
+rett-&lt;CR&gt;
+ypri-&lt;CR&gt;
+nted&lt;CR&gt;
+on  a&lt;CR&gt;
+row&lt;CR&gt;
+with&lt;CR&gt;
+a le-&lt;CR&gt;
+ngth&lt;CR&gt;
+of f-&lt;CR&gt;
+ive.&lt;CR&gt;
+&lt;eof&gt;</pre>
+<p>
+</body>
+</html>

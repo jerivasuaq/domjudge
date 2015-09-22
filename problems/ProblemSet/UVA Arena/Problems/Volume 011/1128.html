@@ -1,0 +1,138 @@
+<p>
+River polution control is a major challenge that authorities face
+in order to ensure future clean water supply. Sewage treatment plants
+are used to clean-up the dirty water comming from cities before being
+discharged into the river. 
+
+<p>
+As part of a coordinated plan, a pipeline is setup in order to connect
+cities to the sewage treatment plants distributed along the river.  It
+is more efficient to have treatment plants running at maximum capacity
+and less-used ones switched off for a period. So, each city has its own
+treatment plant by the river and also a pipe to its neighbouring city
+upstream and a pipe to the next city downstream along the riverside.
+At each city's treatment plant there are three choices:
+
+<ul>
+<li><b>either</b> process any water it may receive from one neighbouring
+  city, together with its own dirty water, discharging the cleaned-up
+  water into the river; 
+</li>
+<li><b>or</b> send its own dirty water, plus any from its downstream
+  neighbour, along to the upstream neighbouring city's treatment plant
+  (provided that city is not already using the pipe to send it's dirty
+  water downstream); 
+</li>
+<li><b>or</b> send its own dirty water, plus any from the upstream
+  neighbour, to the downstream neighbouring city's plant, if the pipe
+  is not being used. 
+</li>
+</ul>
+
+<div align="CENTER">
+<img border="0" src="p2685.jpg">
+</div>
+
+<p>
+The choices above ensure that:
+
+<ul>
+<li>every city must have its water treated somewhere and 
+</li>
+<li>at least one city must discharge the cleaned water into the river.
+</li>
+</ul>
+
+<p>
+Let's represent a city discharging water into the river as "<tt>V</tt>"
+(a downwards flow), passing water onto its neighbours as "<tt>&gt;</tt>" (to
+the next city on its right) or else "<tt>&lt;</tt>" (to the left). When we
+have several cities along the river bank, we assign a symbol to each
+(<tt>V</tt>, <tt>&lt;</tt> or <tt>&gt;</tt>) and list the cities symbols in order.
+For example, <b>two</b> cities, <tt>A</tt> and <tt>B</tt>, can
+
+<ul>
+<li>each treat their own sewage and each discharges clean water into
+  the river. So <tt>A</tt>'s action is denoted <tt>V</tt> as is <tt>B</tt>'s
+  and we write "<tt>VV</tt>" ;  
+</li>
+<li>or else city <tt>A</tt> can send its sewage along the pipe (to the right)
+  to <tt>B</tt> for treatment and discharge, denoted "<tt>&gt;V</tt>";
+</li>
+<li>or else city <tt>B</tt> can send its sewage to (the left to) <tt>    A</tt>, which treats it with its own dirty water and discharges (<tt>V</tt>)
+  the cleaned water into the river. So <tt>A</tt> discharges (<tt>V</tt>)
+    and <tt>B</tt> passes  water to the left (<tt>&lt;</tt>), and we denote
+    this situation as "<tt>V&lt;</tt>".  
+</li>
+</ul>
+
+<p>
+We could not have "<tt>&gt;&lt;</tt>" since this means <tt>A</tt> sends its water
+to <tt>B</tt> and <tt>B</tt> sends its own to <tt>A</tt>, so both are using the
+same pipe and this is not allowed. Similarly "<tt>&#171;</tt>" is not
+possible since <tt>A</tt>'s "<tt>&lt;</tt>" means it sends its water to a
+non-existent city on its left.
+
+<p>
+So we have just <b>3</b> possible set-ups that fit the conditions:
+
+<pre>
+         A    B       A &gt; B       A &lt; B 
+         V    V           V       V             
+  RIVER~ ~ ~ ~ ~     ~ ~ ~ ~ ~   ~ ~ ~ ~ ~RIVER
+          "VV"        "&gt;V"         "V&lt;"
+</pre>
+
+<p>
+If we now consider <b>three</b> cities, we can determine <b>8</b>
+possible set-ups.
+
+<p>
+Your task is to produce a program that given the number of cities 
+ <it>NC</it>
+(or treatment plants) in the river bank, determines the number of
+possible set-ups, <it>NS</it>, that can be made according to the rules define
+above.
+
+<p>
+You need to be careful with your design as the number of cities can be
+as large as 100.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of a sequence of values, one per line, where each
+value represents the number of cities. 
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Your output should be a sequence of values, one per line, where each
+value represents the number of possible set-ups for the corresponding
+number of cities read in the same input line.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+2
+3
+20
+</pre>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>
+3
+8
+102334155
+</pre>
+
+<p>

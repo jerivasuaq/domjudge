@@ -1,0 +1,85 @@
+<p>
+If you have good observations skills, you may found that building a Magic Square is simple. A Magic Square has only an odd number <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> of rows and columns. For this problem you could expect the values to be 
+<span class="MATH">3<img width="18" height="31" align="MIDDLE" border="0" src="3478img1.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="3478img1.png" alt="$ \le$">15</span>
+<tex2html_verbatim_mark>. A Magic Square is created by integer numbers in the range from 1 to <span class="MATH"><i>N</i><sup>2</sup></span>
+<tex2html_verbatim_mark>, with a peculiar property, the ``sum of the numbers" in each row, column and diagonal is the same value.
+
+<p>
+
+<p>
+<br>
+For example the case for <span class="MATH"><i>n</i> = 3</span>
+<tex2html_verbatim_mark> is: 
+
+<p>
+<pre>
+M. Square                Rows          Columns       Diagonals
+ 8 1 6                   8+1+6 = 15    8+3+4 = 15    8+5+2 = 15
+ 3 5 7                   3+5+7 = 15    1+5+9 = 15    4+5+6 = 15
+ 4 9 2                   4+9+2 = 15    6+7+2 = 15
+</pre> 
+
+<p>
+
+<p>
+<br>
+
+<b>Hint:</b> Imagine that the square is rounded. That is, the last row is connected with the first row and the last column is connected with the first column. As shown in the examples, the starting point is the center of the first  row and observe how the numbers are placed following diagonals. There is only one more thing to observe, what happens when you find a cell that is already in use.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+A file with several lines, each line has the value of <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each input line, print <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> and the sum in the first line, followed by the magic square. To see a nice looking square, take into account the maximum length in characters of <span class="MATH"><i>N</i><sup>2</sup></span>
+<tex2html_verbatim_mark> and print each number with the maximum length preceded by one space or blank character. Print one line between squares.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+5
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+n=3, sum=15
+ 8 1 6
+ 3 5 7
+ 4 9 2
+
+n=5, sum=65
+ 17 24  1  8 15
+ 23  5  7 14 16
+  4  6 13 20 22
+ 10 12 19 21  3
+ 11 18 25  2  9
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

@@ -1,0 +1,123 @@
+
+
+<html>
+<head>
+<title>Bingo</title>
+<meta name="description" content="Bingo">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Bingo</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The game of BINGO is another of the great American pastimes.  Our
+version of BINGO is to be played on a square card containing a 5  <img width="19" height="24" align="MIDDLE" alt="tex2html_wrap_inline26" src="370img1.gif">  matrix.
+There are several test cases. The first five lines of the test case will each contain five integer values
+separated by spaces in the range  <img width="85" height="26" align="MIDDLE" alt="tex2html_wrap_inline28" src="370img2.gif"> ; these values are to be placed
+in the corresponding row of the matrix from left to right.  Immediately
+following the values for the card will be a series of lines each
+containing one ``called&quot; number such that  <img width="85" height="26" align="MIDDLE" alt="tex2html_wrap_inline30" src="370img3.gif"> ; the last line will
+contain an invalid ``called&quot; number of zero (0).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+     For this problem, you are to write a program that accepts the integers
+that are to be placed in the cells of a ``BINGO&quot; card.  Then you are to read
+in the ``called&quot; values, which may or may not be the same as the numbers on
+your BINGO card, one at a time until you either find a BINGO, or you run out
+of called numbers.
+<p>
+<p>
+A BINGO occurs when one of the following rules has been fulfilled:
+<p>
+<ol><li> Each of the five elements in a row have either been matched by a
+          called number, or are FREE,<li> Each of the five elements in a column have either been matched by
+          a called number, or are FREE,<li> Each of the four corner elements have either been matched by a
+          called number, or are FREE.<li> Each of the five elements in either prime diagonal have been
+          matched by a called number or are FREE.
+</li></li></li></li></ol>
+<p>
+Any element in the matrix containing a zero (0) after the original load is
+FREE, and is considered to have been matched.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+If you run out of called numbers before you
+find a BINGO, you are to print out the following message immediately
+following the last valid ``called&quot; number:
+<p>
+<pre>No BINGO on this card.</pre>
+<p>
+If you find a BINGO at some point in the input, you are to ignore the rest
+input values, and print out a notification of the BINGO followed by a list of
+comma separated triples in ROW ASCENDING order (and in COLUMN ASCENDING order if tie)
+that represent the Row, Column, and Value of all of the elements making up the BINGO.
+If there is more than a kind of BINGO at the same time, you should output all of them
+ordered by the kind of BINGO, with no blank lines between them.
+The output should have the following format:
+<p>
+<p>
+<p>
+BINGO #<i>N</i><br>
+<i>R</i>,<i>C</i>,<i>V</i><br>
+<i>R</i>,<i>C</i>,<i>V</i><br>
+...<br>
+<i>R</i>,<i>C</i>,<i>V</i><br>
+<p>
+<p>
+Where:
+<p>
+<i>N</i> = kind of BINGO as specified above
+<p>
+<i>R</i> = row subscript from 1 to 5, and
+<p>
+<i>C</i> = column subscript from 1 to 5, and
+<p>
+<i>V</i> = called number value that matched the cell contents, or the
+               word FREE.
+<p>
+<p>
+Print a blank line after each data set.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<pre>
+ 1  2  3  4  5
+11 12 13 14 15
+21 22  0 24 25
+31 32 33 34 35
+91 92 93 94 95
+21
+22
+24
+25
+99
+0
+ 1  2  3  4  5
+11 12 13 14 15
+21 22  0 24 25
+31 32 33 34 35
+91 92 93 94 95
+99
+98
+97
+96
+0
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<pre>
+BINGO #1
+3,1,21
+3,2,22
+3,3,FREE
+3,4,24
+3,5,25
+
+No BINGO on this card.
+
+</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,106 @@
+
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title></title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1 align="left"><font color="#0000FF">Problem C</font></h1>
+
+<h1 align="center"><font color="#0000FF" size="6"><b>Worse Code</b></font></h1>
+
+<p align="center"><font size="5"><b></b></font>&nbsp;</p>
+
+<p align="left">Morse code has been used for a long time in
+telecommunications. Its external representation consists of
+sequences of two distinct <em>atomic symbols</em>: the ``dot'' (a
+short tone) and the ``dash'' (a slightly longer tone). A sequence
+of dots and dashes forms a <em>symbol</em>.</p>
+
+<p align="left">The exact representation associated with each
+symbol was constructed after a statistical analysis of the
+occurrence of the various letters in English text, so as to give
+to the most frequent letters the shortest representation. For
+instance, the letter <tt>E</tt> is represented as a single <em>dot</em>
+while the letter <tt>T</tt> is a single <em>dash</em>. In regular
+morse code, symbols are separated by a small pause (the <em>space</em>
+atomic symbol).</p>
+
+<p align="left">&nbsp;</p>
+
+<h2><font color="#0000FF">Problem</font></h2>
+
+<p>The technology you are employing does not allow for spaces to
+separate symbols, so different arrangements have to be made:
+you'll have to make do with a <em>Worse Code</em>, in which there
+may be only two distinct symbols (the <em>dot</em> and the <em>dash</em>).</p>
+
+<p>You are asked to write a program that evaluates the resourses
+necessary to transmit a particular sentence in Worse Code. In
+order to do that, your program has to be able to produce the
+optimal Worse code, tailored for the input sentence.</p>
+
+<p>The problem can be formulated as follows: </p>
+
+<ul>
+    <li>With just an input sentence, to (internally) determine an
+        optimal Worse Code for that sentence and display the
+        length (in number of ``dash-dot'' atomic symbols) of the
+        resulting coded message. </li>
+</ul>
+
+<p><font color="#0000FF"></font>&nbsp;</p>
+
+<h2><font color="#0000FF">Input</font></h2>
+
+<p>Several input sentences, each sentence in one or more lines and terminated with a
+blank line or the end-of-file character.</p>
+
+<p>Notes: </p>
+
+<ul>
+    <li>Sequences of whitespace and newlines within a sentence are to be converted
+        into a single space character, except if they are at the
+        end of the sentence, in which case they are ignored.</li>
+    <li>Lower case letters are mapped to the corresponding upper
+        case equivalents. Any other characters, including
+        accented letters, are simply ignored.</li>
+</ul>
+
+<h2><font color="#0000FF">Output</font></h2>
+
+<p>The number of atomic symbols (dot or dash) in the optimal
+Worse Code representation for each input sentence on a line by itself.</p>
+
+<p> </p>
+
+<p>&nbsp;</p>
+
+<h2><font color="#0000FF">Sample Input</font></h2>
+
+<pre>THE QUICK BROWN FOX JUMPS
+OVER THE LAZY DOG.
+
+Don't make codes for letters not appearing
+in the text!</pre>
+
+<h2><font color="#0000FF">Sample Output</font></h2>
+
+<pre>192
+204</pre>
+
+<hr>
+
+<blockquote>
+    <p align="center"><font size="4">MIUP'2002: 2nd. Portuguese
+    National ACM Programming Contest</font></p>
+</blockquote>
+
+<hr>
+</body>
+</html>

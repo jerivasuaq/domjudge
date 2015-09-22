@@ -1,0 +1,77 @@
+
+
+<html>
+<head>
+<title>What Base Is This?</title>
+<meta name="description" content="What Base Is This?">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">What Base Is This?</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In positional notation we know the position of a digit indicates
+the weight of that digit toward the  value of a number.  For example, in
+the base 10 number 362 we know that 2 has the weight  <img width="23" height="15" align="BOTTOM" alt="tex2html_wrap_inline28" src="343img1.gif"> , 6  has the
+weight  <img width="23" height="15" align="BOTTOM" alt="tex2html_wrap_inline30" src="343img2.gif"> , and 3 has the weight  <img width="23" height="15" align="BOTTOM" alt="tex2html_wrap_inline32" src="343img3.gif"> , yielding the value 
+ <img width="205" height="30" align="MIDDLE" alt="tex2html_wrap_inline34" src="343img4.gif"> , or  just 300 + 60 + 2.  The same mechanism is
+used for numbers expressed in other bases.  While  most people assume
+the numbers they encounter everyday are expressed using base 10, we know
+ that other bases are possible.  In particular, the number 362 in base 9
+or base 14 represents a  totally different value than 362 in base 10.
+<p>
+<p>
+For this problem your program will presented with a sequence of
+pairs of integers.  Let’'s call the  members of a pair <i>X</i> and <i>Y</i>.  What
+your program is to do is determine the smallest base for <i>X</i> and  the
+smallest base for <i>Y</i> (likely different from that for <i>X</i>) so that <i>X</i> and <i>Y</i>
+represent the same value.
+<p>
+<p>
+Consider, for example, the integers 12 and 5.  Certainly these
+are not equal if base 10 is used for  each.  But suppose 12 was a base 3
+number and 5 was a base 6 number?  12 base 3 =  <img width="111" height="30" align="MIDDLE" alt="tex2html_wrap_inline52" src="343img5.gif"> ,
+or 5 base 10, and certainly 5 in any base is equal to 5 base 10.  So 12
+and 5 <i>can</i> be equal, if  you select the right bases for each of them!
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+On each line of the input data there will be a pair of
+integers, <i>X</i> and <i>Y</i>, separated by one or more  blanks; leading and
+trailing blanks may also appear on each line, are are to be ignored. 
+The bases  associated with <i>X</i> and <i>Y</i> will be between 1 and 36 (inclusive),
+and as noted above, need not be the  same for <i>X</i> and <i>Y</i>.  In representing
+these numbers the digits 0 through 9 have their usual decimal 
+interpretations.  The uppercase alphabetic characters <tt>A</tt> through <tt>Z</tt>
+represent digits with values 10  through 35, respectively.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each pair of integers in the input display a
+message similar to those shown in the examples  shown below.  Of course
+if the two integers cannot be equal regardless of the assumed base for 
+each, then print an appropriate message; a suitable illustration is
+given in the examples.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>12   5
+    10     A
+12 34
+  123   456
+  1    2
+  10   2</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>12 (base 3) = 5 (base 6)
+10 (base 10) = A (base 11)
+12 (base 17) = 34 (base 5)
+123 is not equal to 456 in any base 2..36
+1 is not equal to 2 in any base 2..36
+10 (base 2) = 2 (base 3)</pre>
+<p>
+</body>
+</html>

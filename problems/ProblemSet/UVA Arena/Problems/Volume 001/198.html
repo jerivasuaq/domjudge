@@ -1,0 +1,113 @@
+
+
+<html>
+<head>
+<title>Peter's Calculator</title>
+<meta name="description" content="Peter's Calculator">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Peter's Calculator</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Unfortunately, Peter's Calculator broke down last week. Now Peter is left
+with his computer, which has no calculator application, and paper and pencil,
+which is too tiresome for an engineer. As one of Peter's friends, you are
+asked to write him a calculator application. After talking to him, you figure
+out the following: 
+<ul><li> Peter does only integer arithmetic. The operations he needs are addition,
+subtraction and multiplication.<li> He would like to use an arbitrary number of variables whose names are
+not longer than 50 characters.<li> His main way of doing calculations are to type in a few formulas and
+to assign them to variables. Some formulas are complicated expressions,
+which can refer to yet undefined variables, while other formulas consist
+of a single number. Then Peter asks for the value of some variables, i.e.
+he evaluates the formulas.<li> Peters wants to redefine some variables and then to reevaluate formulas
+that depend on these variables. 
+</li></li></li></li></ul>
+<p>
+The input strictly adheres to the following syntax (given in EBNF):
+<p>
+<pre>file = line { line } &lt;EOF&gt;.
+line = [ assignment | print | reset ] &lt;CR&gt;.
+assignment = var &quot;:=&quot; expression.
+print = &quot;PRINT&quot; var.
+reset = &quot;RESET&quot;.
+expression = term { addop term }.
+term = factor { mulop factor }.
+factor = &quot;(&quot; expression &quot;)&quot; | var | number.
+addop = &quot;+&quot; | &quot;-&quot;.
+mulop = &quot;*&quot;.</pre>
+<p>
+In the Extended Backus-Naur Formalism (EBNF), <tt>A = B C</tt> declares
+that the grammatical construct <tt>A </tt> consists of a <tt>B </tt> followed
+by a <tt>C </tt>. <tt>A = B | C </tt> means that <tt>A </tt> consists of a
+<tt>B </tt> or, alternatively, of a <tt>C </tt>. <tt>A = [ B ] </tt> defines
+construct <tt>A </tt> to be either a <tt>B </tt> or nothing and <tt>A = 
+B  </tt> tells you that <tt>A </tt> consists of the concatenation of any
+number of <tt>B</tt>'s (including none).
+<p>
+<p>
+The production <tt>var </tt> stands for the name of a variable, which starts
+with a letter followed by up to 49 letters or digits. Letters may be uppercase
+or lowercase. The production <tt>number </tt> stands for a integer number.
+The precise syntax for these productions are given below. The case of letters
+is important for both variables and statements.
+<p>
+<pre>var = letter { letter | digit }.
+number = [ &quot;-&quot; ] digit { digit }.
+letter = &quot;A&quot; | &quot;B&quot; | ... | &quot;Z&quot; | &quot;a&quot; | &quot;b&quot; | ... | &quot;z&quot;.
+digit = &quot;0&quot; | &quot;1&quot; | ... | &quot;8&quot; | &quot;9&quot;.</pre>
+<p>
+<p>
+Between the parts of a grammatical construct but not within the names of
+variables or integer numbers, any number of spaces may appear. <code>&lt;EOF&gt;</code>
+stands for the end of the input file and <code>&lt;CR&gt;</code> stands for the new-line
+character. All lines in the input file are shorter than 200 characters.
+<p>
+<p>
+The value of a variable is said to be undefined: 
+<ul><li> if it has not yet been defined or it refers to a variable, which has
+not yet been defined;<li> if the definition of the variable contains a cycle. 
+</li></li></ul>
+<p>
+Your are to write a program that implements Peter's calculator. It should
+store all variable definitions and for each &quot;<tt>PRINT</tt>&quot; statement
+evaluate the specified variable based on the latest variable definitions.
+If your program encounters a &quot;<tt>RESET</tt>&quot; statement, it should delete
+all stored variables so that all variables become undefined.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file contains calculations adhering to the syntax given above.
+Each line contains either an assignment to a variable, a &quot;<tt>PRINT</tt>&quot;
+statement, a &quot;<tt>RESET</tt>&quot; statement or nothing.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each <tt>&quot;PRINT&quot;</tt> statement found in the input file, your program
+should output a line containing the numerical value of the specified variable
+or the word <tt>&quot;UNDEF&quot;</tt> if the variable is undefined.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>a := b + c
+b := 3
+c := 5
+PRINT d
+PRINT a
+b := 8
+PRINT a
+RESET
+PRINT a</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>UNDEF
+8
+13
+UNDEF</pre>
+<p>
+</body>
+</html>

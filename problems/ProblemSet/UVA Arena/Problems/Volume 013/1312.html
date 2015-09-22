@@ -1,0 +1,130 @@
+<div align="CENTER">
+
+<img width="403" height="257" align="BOTTOM" border="0" src="p2689.gif" alt="\epsfbox{p2689.eps}">
+</div>
+
+<p>
+Once upon a time there was a greedy King who ordered his chief Architect to
+build a field for royal cricket inside his park. The King was so greedy, that he
+would not  listen to his Architect's proposals to build a field right in the
+park center with pleasant patterns of trees specially planted around and beautiful walks
+inside tree alleys for spectators. Instead, he ordered neither to cut nor to plant
+even a single tree in his park, but demanded to build the largest possible cricket
+field for his pleasure. If the Kind finds that the Architect has dared to touch even
+a single tree in his park or designed a smaller field that it was possible, then
+the Architect will loose his head. Moreover, he demanded his Architect to introduce
+at once a plan of the field with its exact location and size.
+
+<p>
+Your task is to help poor Architect to save his head, by writing a program that
+will find the maximum possible size of the cricket field and its location inside
+the park to satisfy King's requirements.
+
+<p>
+The task is somewhat simplified by the fact, that King's park has a rectangular shape
+and is situated on a flat ground. Moreover, park's borders are perfectly aligned with
+North-South and East-West lines. At the same time, royal cricket is always played on a
+square field that is also aligned with North-South and East-West lines. Architect has
+already established a Cartesian coordinate system and has precisely measured the
+coordinates of every tree. This coordinate system is, of course, aligned with
+North-South and East-West lines. Southwestern corner of the park has coordinates
+(0, 0) and Northeastern corner of the part has coordinates <span class="MATH">(<i>W</i>, <i>H</i>)</span>, where <span class="MATH"><i>W</i></span> and <span class="MATH"><i>H</i></span>
+are the park width and height in feet respectively.
+
+<p>
+For this task, you may neglect the diameter of the trees. Trees cannot be
+inside the cricket field, but may be situated on its side. The cricket field may
+also touch park's border, but shall not lie outside the park.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The first line of the input file contains three integer numbers <span class="MATH"><i>N</i></span>, <span class="MATH"><i>W</i></span>, and <span class="MATH"><i>H</i></span>,
+separated by spaces. <span class="MATH"><i>N</i></span> (
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="2689img2.gif" alt="$ \le$"><i>N</i><img width="18" height="30" align="MIDDLE" border="0" src="2689img2.gif" alt="$ \le$">100</span>) is the number of
+trees in the park. <span class="MATH"><i>W</i></span> and <span class="MATH"><i>H</i></span> (
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2689img2.gif" alt="$ \le$"><i>W</i>, <i>H</i><img width="18" height="30" align="MIDDLE" border="0" src="2689img2.gif" alt="$ \le$">10000</span>)
+are the park width and height in feet respectively.
+
+<p>
+Next <span class="MATH"><i>N</i></span> lines describe coordinates of trees in the park. Each line contains
+two integer numbers <span class="MATH"><i>X</i><sub>i</sub></span> and <span class="MATH"><i>Y</i><sub>i</sub></span> separated by a space
+(
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="2689img2.gif" alt="$ \le$"><i>X</i><sub>i</sub><img width="18" height="30" align="MIDDLE" border="0" src="2689img2.gif" alt="$ \le$"><i>W</i></span>, 
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="2689img2.gif" alt="$ \le$"><i>Y</i><sub>i</sub><img width="18" height="30" align="MIDDLE" border="0" src="2689img2.gif" alt="$ \le$"><i>H</i></span>) that represent
+coordinates of <span class="MATH"><i>i</i></span>-th tree. All trees are located at different coordinates.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+Write to the output file a single line with three integer numbers <span class="MATH"><i>P</i></span>, <span class="MATH"><i>Q</i></span>, and <span class="MATH"><i>L</i></span>
+separated by spaces, where <span class="MATH">(<i>P</i>, <i>Q</i>)</span> are coordinates of the cricket field Southwestern
+corner, and <span class="MATH"><i>L</i></span> is a length of its sides. If there are multiple possible field
+locations with a maximum size, then output any one.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+7 10 7
+3 2
+4 2
+7 0
+7 3
+4 5
+2 4
+1 7
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+4 3 4
+</pre>
+
+<p>
+
+<p><p>
+<br>
+
+<b>Note:</b> This is a sample input and output that corresponds to the park plan that
+is shown on the picture.
+
+<p>

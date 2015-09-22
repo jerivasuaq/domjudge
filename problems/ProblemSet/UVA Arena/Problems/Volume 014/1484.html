@@ -1,0 +1,94 @@
+
+<p>
+Alice and Bob are going on a trip. Alice is a lazy girl who wants to minimize the total 
+travelling distance, while Bob as an active boy wants to maximize it. At the same time, 
+they cannot let the value to be less than a given integer <span class="MATH"><i>L</i></span> since that will make them 
+miss too much pleasure, and they cannot let the value to be greater than a given integer 
+<span class="MATH"><i>R</i></span> since they don't want to get too exhausted. 
+
+<p>
+The city they are visiting has <span class="MATH"><i>n</i></span> spots and the spots are connected by directed edges. 
+The spots are connected in such a way that 
+they form a tree and the root will always be at spot 0. They take turns to select which 
+edge to go. Both of them choose optimally. Bob will go first.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+There are multiple test cases. For every test case, the first line has three integers, 
+<span class="MATH"><i>n</i></span>, <span class="MATH"><i>L</i></span> and <span class="MATH"><i>R</i></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="5088img1.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="5088img1.png" alt="$ \le$">500000, 0<img width="18" height="31" align="MIDDLE" border="0" src="5088img1.png" alt="$ \le$"><i>L</i>, <i>R</i><img width="18" height="31" align="MIDDLE" border="0" src="5088img1.png" alt="$ \le$">1000000000)</span>. The next <span class="MATH"><i>n</i> - 1</span> lines 
+each has three integers <span class="MATH"><i>a</i></span>, <span class="MATH"><i>b</i></span> and <span class="MATH"><i>c</i></span>, indicating that there is an edge going from 
+spot <span class="MATH"><i>a</i></span> to spot <span class="MATH"><i>b</i></span> with length <span class="MATH"><i>c</i></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="5088img1.png" alt="$ \le$"><i>c</i><img width="18" height="31" align="MIDDLE" border="0" src="5088img1.png" alt="$ \le$">1000)</span>. The spots are labeled from 0 
+to <span class="MATH"><i>n</i> - 1</span>. 
+
+<p>
+There is a blank line after each test case. 
+
+<p>
+Proceed to the end of file.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+If the total distance is not within the range <span class="MATH">[<i>L</i>, <i>R</i>]</span>, print "<tt>Oh, my god!</tt>" on a 
+single line. Otherwise, print the most value Bob can get.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 2 4 
+0 1 1 
+0 2 5 
+
+7 2 8 
+0 1 1 
+0 2 1 
+1 3 1 
+1 4 10 
+2 5 1 
+2 6 5
+
+7 4 8 
+0 1 1 
+0 2 1 
+1 3 1 
+1 4 2 
+2 5 1 
+2 6 5
+ 
+4 2 6 
+0 1 1 
+1 2 1 
+1 3 5
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Oh, my god! 
+2 
+6 
+2
+</pre> 
+
+<p>

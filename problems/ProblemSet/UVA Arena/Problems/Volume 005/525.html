@@ -1,0 +1,106 @@
+
+
+<html>
+<head>
+<title>Milk Bottle Data</title>
+<meta name="description" content="Milk Bottle Data">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Milk Bottle Data</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+There is a box of the shape of an 
+
+<img width="58" height="32" align="MIDDLE" border="0" src="525img1.gif" alt="$N \times N$">
+lattice. Each grid of the lattice may contain a milk bottle or
+none. Mr. Smith wrote down the data of the box by making a record for each
+row from left to right
+and each column from top to bottom. In each record, `1' indicaes that there
+is a bottle in the
+corresponding grid and `0' does not. Unfortunately, the order of these
+records is thrown into confusion, and some of these records have corrupted.
+
+<p>
+
+<p>
+<br>
+Now it's up to you to provide a program to recover these data:
+i.e. to give the original arrangement of the box and give real values for
+those corrupted data.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains a line with a integer N indicating the number of test cases. A blank line follows. After that there are N test cases, where `2' denotes that the
+corresponding character has
+been corrupted. Each line in the file represents a record. You should output
+the original
+arrangement of the box, and show the record number for each column on the
+top of the lattice, and
+show the record number for each row to the left of the lattice.
+There is a blank line between datasets.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, you are required to give only one possible result if there are many, and you
+should give the 
+indication `<tt>impossible</tt>' if there is no possibility of original arrangement.
+Print a blank line between datasets.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>1
+
+01210
+21120
+21001
+12110
+12101
+12101
+00011
+22222
+11001
+10010
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+     9  8  6  2  7
+
+4    1  0  1  1  0
+10   1  0  0  1  0
+1    0  1  1  1  0
+3    0  1  0  0  1
+5    1  1  1  0  1
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

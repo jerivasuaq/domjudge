@@ -1,0 +1,150 @@
+
+
+<html>
+<head>
+<title>Instant Complexity</title>
+<meta name="description" content="Instant Complexity">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Instant Complexity</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Analyzing the run-time complexity of algorithms is an important tool for designing efficient programs that solve a problem. An algorithm that runs in linear time is usually much faster than an
+algorithm that takes quadratic time for the same task, and thus should be preferred.
+
+<p>
+
+<p>
+<br>
+Generally, one determines the run-time of an algorithm in relation to the `size' <i>n</i> of the input,
+which could be the number of objects to be sorted, the number of points in a given polygon, and so
+on. Since determining a formula dependent on <i>n</i> for the run-time of an algorithm is no easy task, it
+would be great if this could be automated. Unfortunately, this is not possible in general, but in this
+problem we will consider programs of a very simple nature, for which it is possible. Our programs
+are built according to the following rules (given in BNF), where 
+
+&lt; <i>number</i> &gt; can be any non-negative integer:
+
+<p>
+<ul>
+<li>
+
+&lt; <i>Program</i> &gt; ::= "<tt>BEGIN</tt>" 
+
+&lt; <i>Statementlist</i> &gt; "<tt>END</tt>"
+<li>
+
+&lt; <i>Statementlist</i> &gt; ::= 
+
+&lt; <i>Statement</i> &gt; | &lt; <i>Statement</i> &gt; 
+
+&lt; <i>Statementlist</i> &gt;
+<li>
+
+&lt; <i>Statement</i> &gt; ::= 
+
+&lt; <i>LOOP</i>-<i>Statement</i> &gt; | &lt; <i>OP</i>-<i>Statement</i> &gt;
+<li>
+
+&lt; <i>LOOP</i>-<i>Statement</i> &gt; ::= 
+
+&lt; <i>LOOP</i>-<i>Header</i> &gt; &lt; <i>Statementlist</i> &gt; "<tt>END</tt>"
+<li>
+
+&lt; <i>LOOP</i>-<i>Header</i> &gt; ::= "<tt>LOOP</tt>" 
+
+&lt; <i>number</i> &gt; | "<tt>LOOP n</tt>"
+<li>
+
+&lt; <i>OP</i>-<i>Statement</i> &gt; ::= "<tt>OP</tt>" 
+
+&lt; <i>number</i> &gt;</li></li></li></li></li></li></ul>
+
+<p>
+The run-time of such a program can be computed as follows: the execution of an OP-statement
+costs as many time-units as its parameter specifies. The statement list enclosed by a LOOP-statement
+is executed as many times as the parameter of the statement indicates, i.e., the given constant number
+of times, if a number is given, and <i>n</i> times, if <tt>n</tt> is given. The run-time of a statement list is the sum of
+the times of its constituent parts. The total run-time therefore generally depends on <i>n</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file starts with a line containing the number <i>k</i> of programs in the input. Following this are
+<i>k</i> programs which are constructed according to the grammar given above. Whitespace and newlines
+can appear anywhere in a program, but not within the keywords <tt>BEGIN</tt>, <tt>END</tt>, <tt>LOOP</tt> and <tt>OP</tt> or in an
+integer value. The nesting depth of the LOOP-operators will be at most 10.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each program in the input, first output the number of the program, as shown in the sample
+output. Then output the run-time of the program in terms of <i>n</i>; this will be a polynomial of degree Y<img width="40" height="30" align="MIDDLE" border="0" src="586img2.gif" alt="$\le 10$">.
+Print the polynomial in the usual way, i.e., collect all terms, and print it in the form
+``<code>Runtime = </code><i>a</i><code>*n^10+</code><i>b</i><code>*n^9+ . . . +</code><i>i</i><code>*n^2+</code> <i>j</i><code>*n+k</code>'', where terms with zero coefficients are left
+out, and factors of 1 are not written. If the runtime is zero, just print ``<tt>Runtime = 0</tt>''.
+
+<p>
+Output a blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+2
+BEGIN
+LOOP n
+OP 4
+LOOP 3
+LOOP n
+OP 1
+END
+OP 2
+END
+OP 1
+END
+OP 17
+END
+BEGIN
+OP 1997 LOOP n LOOP n OP 1 END END
+END
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Program #1
+Runtime = 3*n^2+11*n+17
+
+Program #2
+Runtime = n^2+1997
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

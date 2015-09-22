@@ -1,0 +1,149 @@
+
+
+<html>
+<head>
+<title>Trial of the Millennium</title>
+<meta name="description" content="Trial of the Millennium">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Trial of the Millennium</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In what is becoming known as the &quot;trial of the millennium,&quot; the Swamp County 
+District Court is handling the highest profile case ever to reach the 
+county court system.  Learning from the experience of people involved in the 
+&quot;trial of the century,&quot; the Swamp County judiciary decided to adopt 
+a few new rules to avoid gridlock in court proceedings.  Among 
+the new rules is a cap on the total amount of time each side is 
+allowed to present its case.
+<p>
+<p>
+Each side will be allowed 8 hours for opening arguments, 240 hours for
+evidence presentations, and 16 hours for closing arguments.  With this
+ground rule set, the court hopes to be able to bring the case to the
+jury in less than five months.  While this rule hopefully will
+help to ensure a speedier trial, it presents a huge challenge to both 
+the prosecution and the defense teams.  Both teams must figure out 
+how to best utilize their allocated time slots by presenting the 
+most convincing and comprehensible evidence to the jurors.
+<p>
+<p>
+Your team has been contracted by the Swamp County District Attorney's Office to
+develop a decision support system to help the prosecution team formulate
+its strategies in selecting what material from its pool of evidence to
+present.  Since the system may prove to be useful for future trials
+that have presentation time limits imposed, the D. A.'s Office has requested 
+that you make the system flexible enough to handle other cases.
+<p>
+<p>
+The decision support system will select the material based on the 
+score that the prosecution team assigns to each piece of evidence and the 
+time cost associated with presenting it to the jury.  The more useful 
+the piece of evidence is, the higher its score.  The prosecution team 
+therefore has to come up with a set of evidence with the highest 
+aggregate score.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+<b>
+The input begins with a single positive integer on a line by itself indicating 
+the number of the cases following, each of them as described below. 
+This line is followed by a blank line, and there is also a blank line between 
+two consecutive inputs.
+</b>
+<p>
+<p>
+Input to the decision support system consists of the total allowed
+time for evidence presentation on the first line followed by entries 
+for all the evidence that the prosecutor has.  Each line presents one 
+piece of evidence, with the first field showing its score, the 
+second field indicating the estimated amount of time for its 
+presentation, and the third field containing its general 
+description.  Fields are separated from each other by spaces, and the third
+field may contain embedded spaces.
+<p>
+<p>
+The score is based on a 1-10 integer scale while the time cost is expressed 
+in full hours.  
+In any given trial, the amount of time allowed for evidence presentation of the prosecution team shall not exceed 240 hours. The 
+total number of evidence items shall be less than or equal to 100, and the 
+length of the evidence description shall be no greater than 68
+characters.  Evidence items may appear in the list in any order.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+<b>
+For each test case, the output must follow the description below. 
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+Output will be a list of evidence to be presented along with the cost 
+and benefit each of them brings, the aggregate score, and the total
+time for their presentation.  Label the columns and the totals, following the
+format of the sample output below.
+If no evidence can be presented in the time allowed, the program should print 
+this single line message:
+<p>
+<p>
+<p>
+<tt>There is not enough time to present any evidence. Drop the charges.</tt>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+1
+
+240
+5 4 Inspector supervising evidence collection at the crime scene
+3 4 Crime scene photos
+4 8 411 operator recording
+3 8 Officer who arrested defendant in a previous incident
+2 8 Victim's neighbor 2
+1 8 Victim's neighbor 3
+6 40 The victim's cousin
+8 48 The defendant's current housemate
+10 60 Coroner's report
+5 16 SCSD Crime Lab technician 1
+4 16 Taxi cab driver
+2 16 SCSD Crime Lab technician 2
+1 16 The defendant's personal trainer
+5 24 Officer responsible for making the arrest
+3 24 Victim's neighbor 1
+2 24 The victim's supervisor at work
+1 24 Pizza delivery person
+3 1 A discarded plastic fork at the crime scene
+5 32 The victim's brother
+7 40 The victim's personal physician
+1 1 An email the victim sent to his cousin the week before the incident
+2 2 Bloody sock
+6 64 Blood analysis results by chief criminalist of the SCSD Crime Lab</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+Score  Time  Description
+-----  ----  -----------
+  3      1   A discarded plastic fork at the crime scene
+  1      1   An email the victim sent to his cousin the week before the incident
+  2      2   Bloody sock
+  5      4   Inspector supervising evidence collection at the crime scene
+  3      4   Crime scene photos
+  4      8   411 operator recording
+  3      8   Officer who arrested defendant in a previous incident
+  2      8   Victim's neighbor 2
+  5     16   SCSD Crime Lab technician 1
+  4     16   Taxi cab driver
+  5     24   Officer responsible for making the arrest
+  7     40   The victim's personal physician
+  8     48   The defendant's current housemate
+ 10     60   Coroner's report
+
+Total score: 62 points
+ Total time: 240 hours</pre>
+<p>
+</body>
+</html>

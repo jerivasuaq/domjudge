@@ -1,0 +1,102 @@
+
+
+<html>
+<head>
+<title>Mutant Flatworld Explorers</title>
+<meta name="description" content="Mutant Flatworld Explorers">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Mutant Flatworld Explorers</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+Robotics, robot motion planning, and machine learning are areas that
+cross the boundaries of many of the subdisciplines that comprise
+Computer Science: artificial intelligence, algorithms and complexity,
+electrical and mechanical engineering to name a few.  In addition,
+robots as ``turtles'' (inspired by work by Papert, Abelson,
+and diSessa) and as ``beeper-pickers'' (inspired by work by Pattis) have
+been studied and used by students as an introduction to programming for
+many years.
+<p>
+This problem involves determining the position of a robot exploring a
+pre-Columbian flat world.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+Given the dimensions of a rectangular grid and a sequence of robot
+positions and instructions, you are to write a program that determines
+for each sequence of robot positions and instructions the final position
+of the robot.
+<p>
+A robot <em>position</em> consists of a grid coordinate (a pair of
+integers: x-coordinate followed by y-coordinate) and an orientation
+(N,S,E,W for north, south, east, and west).  A robot <em>instruction</em>
+is a string of the letters '<em>L</em>', '<em>R</em>', and '<em>F</em>' which
+represent, respectively, the instructions:
+<ul><li> <em>Left</em>: the robot turns left 90 degrees and remains on the
+current grid point.<li> <em>Right</em>: the robot turns right 90 degrees and remains on the
+current grid point.<li> <em>Forward</em>: the robot moves forward one grid point in the
+direction of the current orientation and mantains the same orientation.
+</li></li></li></ul>
+<p>
+The direction <em>North</em> corresponds to the direction from grid point
+(<i>x</i>,<i>y</i>) to grid point (<i>x</i>,<i>y</i>+1).
+<p>
+Since the grid is rectangular and bounded, a robot that moves ``off'' an
+edge of the grid is lost forever.  However, lost robots leave a robot
+``scent'' that prohibits future robots from dropping off the world at
+the same grid point.  The scent is left at the last grid position the
+robot occupied before disappearing over the edge.  An instruction to
+move ``off'' the world from a grid point from which a robot has been
+previously lost is simply ignored by the current robot.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The first line of input is the upper-right coordinates of the rectangular
+world, the lower-left coordinates are assumed to be 0,0.
+<p>
+The remaining input consists of a sequence of robot positions and
+instructions (two lines per robot).  A position consists of two integers
+specifying the initial coordinates of the robot and an orientation
+(N,S,E,W), all separated by white space on one line.  A robot
+instruction is a string of the letters 'L', 'R', and 'F' on one line.
+<p>
+Each robot is processed sequentially, i.e., finishes executing the robot
+instructions before the next robot begins execution.
+<p>
+Input is terminated by end-of-file.
+<p>
+You may assume that all initial robot positions are within the bounds of
+the specified grid.  The maximum value for any coordinate is 50.  All
+instruction strings will be less than 100 characters in length.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+For each robot position/instruction in the input, the output should
+indicate the final grid position and orientation of the robot.  If a
+robot falls off the edge of the grid the word ``LOST'' should be printed
+after the position and orientation.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5 3
+1 1 E
+RFRFRFRF
+3 2 N
+FRRFLLFFRRFLL
+0 3 W
+LLFFFLFLFL</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1 1 E
+3 3 N LOST
+2 3 S</pre>
+<p>
+</body>
+</html>

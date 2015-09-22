@@ -1,0 +1,58 @@
+<p>
+You must have heard of the Josephus problem in connection with link lists. It dealt with finding the only survivor among <span class="MATH"><i>n</i></span> persons. Here you have a game with a rather happy outcome. Suppose <span class="MATH"><i>n</i></span> players stand in a circle. Counting from player number 1 every alternate player is temporarily removed (for example, at first 2 is removed) to finally end up with the single survivor. After the survivor has been determined each player with number higher than the survivor is paid Tk. 1 and permanently removed from the circle. The same operation is repeated with the remaining players, and players with number higher than the survivor are paid Tk. 1 each and removed from the circle again. Once such an operation fails to decrease the number of players in the circle, each of them is paid Tk. 2 and the game ends. Your problem is to determine total amount of money Josephus will have to pay to all players. 
+
+<p>
+<div align="CENTER">
+
+<img width="547" height="209" align="BOTTOM" border="0" src="p2346.gif" alt="\epsfbox{p2346.eps}">
+</div>
+
+<p>
+For example, with 5 players in the first round survivor is 3, so players number 4 and 5 are paid Taka 1 each and removed from the game. In the next round survivor is player number 3 again. Consequently no one could be removed, therefore each of them is paid Taka 2, so in total 
+<span class="MATH">(2 + 2 <tt>x</tt> 3 =)</span> 8 will be paid for this game.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input for every problem instance is an integer not exceeding 32,767 in a separate line. Input terminates with end of file.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Output for each problem instance is an integer not exceeding 65,535 which represents the amount of Taka to be paid in total to all the players.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5
+10
+7
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+8
+13
+14
+</pre> 
+
+<p>

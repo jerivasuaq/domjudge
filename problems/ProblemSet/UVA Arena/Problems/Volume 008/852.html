@@ -1,0 +1,118 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Problem</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1 align="left"><font color="#0000FF">Problem A</font></h1>
+
+<h1 align="center"><font color="#0000FF">Deciding victory in Go</font></h1>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">The history of Go stretches back some 3000 years
+and the rules have remained essentially unchanged throughout this
+very long period. The game probably originated in China or the
+Himalayas. In the Far East, where it originated, Go enjoys great
+popularity today and interest in the game is growing steadily in
+Europe and America.&nbsp;</p>
+
+<p>A game of Go starts with an empty square board and each player
+has an unlimited supply of stones, one taking the black stones,
+the other taking white. The basic object of the game is to use
+one&#146;s stones to form territories by surrounding vacant areas
+of the board. It is also possible to capture the opponent&#146;s
+stones by completely surrounding them. The players take turns,
+placing one of their stones on a vacant point at each turn, Black
+playing first. Note that the stones are placed on the
+intersections of the lines rather than in the squares (there are
+no diagonal connections). Once played, stones are not moved
+although they may be captured, in which case they are removed
+from the board. At the end of the game (when both players pass)
+the players count one point for each vacant point inside their
+own territory and one point for every stone they have on the
+board. The player with the larger total of points wins.</p>
+
+<h2><font color="#0000FF"><b>Problem</b></font></h2>
+
+<p>Given a certain Go board position; decide the number of points
+of each player.</p>
+
+<p>&nbsp;</p>
+
+<div align="center">
+<center>
+<table border="0" cellpadding="10" cellspacing="10">
+    <tr>
+        <td><img src="p852.gif" width="200" height="200"></td>
+        <td width="400"><p><font color="#0000FF"><b>Example</b></font></p>
+        <p>Black has surrounded 15 points of territory: 3 at the
+        top of the board, 2 points just below, 9 in the lower
+        right corner plus one point for the territory at
+        intersection a. Adding the actual stones on board (24
+        stones), Black has a total of 39 points.White&#146;s
+        territory is 17 points: 11 on the left sector plus 6 on
+        the right sector. With 24 stones on board, he has a total
+        of 41 points. So, White wins the game by two
+        points.Notice that intersection b does not belong to
+        either player.</p>
+        </td>
+    </tr>
+</table>
+</center></div>
+
+<p align="center">&nbsp;</p>
+
+<h2><font color="#0000FF"><b>Input</b></font></h2>
+
+<p>The input file will contain one line with one integer defining
+the number of board positions. On the following lines the
+positions are presented. Each position consists of nine lines of
+nine characters: X for black stones, O for white stones and a
+&#145;.&#146; (a dot) for empty intersections. There is no empty
+line separating each problem set.&nbsp;</p>
+
+<h2><font color="#0000FF"><b>Output</b></font></h2>
+
+<p>Correct output consists of a set of lines (one for each
+problem solution) where each line consists of: Black &lt;Black
+points&gt; White &lt;White points&gt; newline.</p>
+
+<h2><font color="#0000FF"><b>Sample Input</b></font></h2>
+
+<blockquote>
+    <p><font face="Courier New"><b>1<br>
+    OX..XXO..<br>
+    OXX.XOO..<br>
+    OOXX.XO.O<br>
+    .OOX.XOO.<br>
+    ..OOXXXOO<br>
+    ..OO.X.XO<br>
+    ..OOXX.XX<br>
+    ..OX.X...<br>
+    ..OXX....&nbsp;</b><br>
+    </font></p>
+</blockquote>
+
+<h2><font color="#0000FF"><b>Sample Output</b></font></h2>
+
+<blockquote>
+    <p>Black 39 White 41</p>
+</blockquote>
+
+
+<p>
+<br><hr>
+<address>
+
+João Neto, MIUP'2002
+</address>
+
+</body>
+</html>
+

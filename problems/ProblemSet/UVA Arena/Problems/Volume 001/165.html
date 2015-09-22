@@ -1,0 +1,72 @@
+
+
+<html>
+<head>
+<title>Stamps</title>
+<meta name="description" content="Stamps">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Stamps</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The government of Nova Mareterrania requires that various legal
+documents have stamps attached to them so that the government can
+derive revenue from them. In terms of recent legislation, each class
+of document is limited in the number of stamps that may be attached to
+it. The government wishes to know how many different stamps, and of
+what values, they need to print to allow the widest choice of values
+to be made up under these conditions. Stamps are always valued in
+units of $1.
+<p>
+<p>
+This has been analysed by government mathematicians who have derived a
+formula for <i>n</i>(<i>h</i>,<i>k</i>), where <i>h</i> is the number of stamps that may be
+attached to a document, <i>k</i> is the number of denominations of stamps
+available, and <i>n</i> is the largest attainable value in a continuous
+sequence starting from $1. For instance, if <i>h</i>=3, <i>k</i>=2 and the
+denominations are $1 and $4, we can make all the values from $1 to
+$6 (as well as $8, $9 and $12). However with the same values of <i>h</i>
+and <i>k</i>, but using $1 and $3 stamps we can make all the values from
+$1 to $7 (as well as $9). This is maximal, so <i>n</i>(3,2) = 7.
+<p>
+<p>
+Unfortunately the formula relating <i>n</i>(<i>h</i>,<i>k</i>) to <i>h</i>, <i>k</i> and the values of
+the stamps has been lost--it was published in one of the government
+reports but no-one can remember which one, and of the three
+researchers who started to search for the formula, two died of boredom
+and the third took a job as a lighthouse keeper because it provided
+more social stimulation.
+<p>
+The task has now been passed on to you. You doubt the existence of a
+formula in the first place so you decide to write a program that, for
+given values of <i>h</i> and <i>k</i>, will determine an optimum set of stamps and
+the value of <i>n</i>(<i>h</i>,<i>k</i>).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will consist of several lines, each containing a value for <i>h</i> and
+<i>k</i>. The file will be terminated by two zeroes (0 0). For technical
+reasons the sum of <i>h</i> and <i>k</i> is limited to 9. (The President lost his
+little finger in a shooting accident and cannot count past 9).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output will consist of a line for each value of <i>h</i> and <i>k</i> consisting of
+the <i>k</i> stamp values in ascending order right justified in fields 3
+characters wide, followed by a space and an arrow (<code>-&gt;</code>) and the value
+of <i>n</i>(<i>h</i>,<i>k</i>) right justified in a field 3 characters wide.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>3 2
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>  1  3 -&gt;  7</pre>
+<p>
+</body>
+</html>

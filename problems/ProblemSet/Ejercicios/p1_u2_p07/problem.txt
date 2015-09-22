@@ -1,0 +1,25 @@
+Ejercicio 7. 
+
+Programa que calcula la suma de numeros introducidos por un usuario hasta que el total supera 101.
+
+Entrada: 
+	serie de números enteros.
+	
+Salida:
+	total de la suma.
+
+
+Ejemplos:
+==============================================================
+entrada:
+5 10 50 -20 100
+--------------------------------------------------------------
+salida:
+145
+==============================================================
+entrada:
+101 -1 2
+--------------------------------------------------------------
+salida:
+102
+

@@ -1,0 +1,128 @@
+
+
+<html>
+<head>
+<title>Islands</title>
+<meta name="description" content="Islands">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Islands</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Now that the Eurotunnel between France and Great Britain is in operation, the French
+government is thinking about a new project to expand the connections with their British neighbors.
+Inspired by the movie ``Bridges of Madison County," their prime architect Clouseau has been
+working on a plan to connect France to the Channel Islands by building a number of bridges.
+
+<p>
+
+<p>
+<br>
+To minimize the costs of the bridges, a necessity to get the plan approved, Clouseau has been
+working hard to find the best places to build the bridges that connect the islands to France. He
+has figured out that connecting each island to France individually is not the cheapest solution; it
+is cheaper to construct a bridge between one island and France, and build additional bridges to
+connect the other islands indirectly. Clouseau, however, is unable to find the best places to build
+the bridges because of the irregular shapes of the islands.
+
+<p>
+
+<p>
+<br>
+By approximating the islands as circles, Clouseau was able to report his boss, Mr. Dreyfus, an
+estimate of the length of the interconnecting bridges. Mr. Dreyfus, however, is not satisfied and
+demands that Clouseau report by Monday the <em>exact</em> length of the bridges needed based on the
+actual shapes of the Channel Islands. If Clouseau does not report on time he will be fired. Would
+you be so kind to help out Clouseau and write a program that computes the minimum length of
+the bridges needed to interconnect the Channel Islands?
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The first line of input contains the number of test cases. A test case consists of one line holding
+the number of islands (
+<span class="MATH">2<img width="18" height="30" align="MIDDLE" border="0" src="889img1.png" alt="$ \le$"><i>N</i><img width="18" height="30" align="MIDDLE" border="0" src="889img1.png" alt="$ \le$">100</span>), followed by <span class="MATH"><i>N</i></span> lines that describe the islands. An island is
+a polygon, which is described as a number (
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="889img1.png" alt="$ \le$"><i>P</i><img width="18" height="30" align="MIDDLE" border="0" src="889img1.png" alt="$ \le$">25</span>) that gives the number of points followed
+by <span class="MATH"><i>P</i></span> pairs of coordinates. Each coordinate is an integer in the range 
+<span class="MATH">[- 1000..1000]</span>.
+The points are listed in order such that by connecting consecutive points, and the last point
+to the first, the perimeter of the island is given.  It is guaranteed that islands do not touch or intersect.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case output one line reporting the minimal interconnect as follows:
+
+<p>
+
+<p>
+<br>
+
+<tt>The minimal interconnect consists of <span class="MATH"><i>N</i></span> bridges with a total length of <span class="MATH"><i>L</i></span></tt>
+
+<p>
+Where <span class="MATH"><i>N</i></span> is the number of bridges, and <span class="MATH"><i>L</i></span> is the total length, which should be printed as a floating
+point number with an accuracy of three digits.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+3
+4 0 0 0 1 1 1 1 0
+4 2 0 2 1 3 1 3 0
+3 4 0 5 0 5 1
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+The minimal interconnect consists of 2 bridges with a total length of 2.000
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+<b>Testsetter:</b> Joachim Wulff (Little Joey)
+<br>
+<b>Special thanks:</b> Ruben Spaans
+</address>
+</body>
+</html>
+

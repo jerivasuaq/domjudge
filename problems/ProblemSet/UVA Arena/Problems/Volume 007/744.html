@@ -1,0 +1,112 @@
+
+
+<html>
+<head>
+<title>Triangular Museum</title>
+<meta name="description" content="Triangular Museum">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Triangular Museum</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A museum has <i>K</i><sup>2</sup> triangular rooms, where (
+
+<img width="93" height="32" align="MIDDLE" border="0" src="744img1.gif" alt="$0 \leY K \leY 10$">). All rooms have the same size and there is exactly one guard in each room. The shape of the museum itself is also triangular, as exemplified in Figure 1, where a museum with 3<sup>2</sup> triangular rooms is shown. The names <tt>AA</tt>, <tt>BB</tt>, <tt>CC</tt>, ... are guard names (a guard name is a sequence of at most 10 letters). Thus
+guard <tt>DD</tt> is at the top room of the initial configuration presented in Figure 1.
+
+<p>
+Each two adjacent rooms are separated by exactly one wall, which has a door that
+connects the rooms. Since the guards would also like to appreciate the art in the museum, they agree to exchange their positions, thus forming a new configuration, previously agreed upon. The order in which the guards move to their new positions obey a few rules. These rules, for security reasons, do not allow guards to leave their positions all at the same time.
+The only way they can move is by exchanging their positions with guards in adjacent rooms, one pair at a time.
+
+<p>
+The objective of this problem is to find a sequence of exchanges between guards that leads to the new configuration.
+
+<p>
+<pre>
+       Initial Configuration         New Configuration
+               /\                           /\
+              /DD\                         /AA\
+             /---____-\                       /____----\
+            /\    /\                     /\    /\
+           /FF\AA/CC\        ===&gt;       /BB\CC/DD\
+          /____\----/-____---\                 /-____\---/____\----
+         /\    /\    /\               /\    /\    /\
+        /BB\EE/II\GG/HH\             /EE\FF/GG\HH/II\
+       /____\----/--____--\/----____\           /____----\/____\----/____\----
+
+                           Figure 1.
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file may contain several instances of the problem. Each instance consists of two lines: the first contains the integer <i>K</i>; the second line contains the sequence of <i>K</i><sup>2</sup> guard names in the initial configuration (from the top to bottom and left to right) followed by the <i>K</i><sup>2</sup> guard names in the new configuration (also from the top to bottom and left to right).
+
+<p>
+There is at least one blank space between these strings of letters. The last line of the input file contains only the value <tt>0</tt> (zero) which should not be processed.
+
+<p>
+Instances are NOT separated by blank lines.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each instance in the input file, the program must write the value <i>N</i> in a line, where <i>N</i> is the number of exchanges performed between guards in adjacent rooms, followed by <i>N</i> lines, <i>N</i> Y&lt; 4<i>K</i><sup>3</sup>, each with the names of two guards been exchanged; the names of the guards are separated by a blank space. Two instances are separated by a blank line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+3
+DD FF AA CC BB EE II GG HH           AA BB CC DD EE FF GG HH II
+2
+D A B C                              A B C D
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+6
+GG II
+HH II
+EE BB
+DD AA
+BB FF
+DD CC
+
+3
+A B
+A D
+C D
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

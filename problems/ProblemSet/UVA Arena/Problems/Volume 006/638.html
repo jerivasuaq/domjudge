@@ -1,0 +1,144 @@
+
+
+<html>
+<head>
+<title>Finding Rectangles</title>
+<meta name="description" content="Finding Rectangles">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Finding Rectangles</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Consider the point sets in figures 1a, 2a, and 3a.  Using only
+those points as vertices, figures 1b, 2b, and 3b show all the
+rectangles that can be formed with horizontal and vertical sides.  No
+rectangles can be formed from the points in figure 4.
+
+<p>
+<div align="CENTER">
+<img src="p638.gif">
+</div>
+
+<p>
+Your task is to write a program that can find all rectangles that
+can be formed from a given set of points.  The example input and
+output given below correspond to the figures above.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains one or more point sets, followed by a
+line containing the number 0 that signals the end of the file.  Each
+point set begins with a line containing <i>n</i>, the number of points, and
+is followed by <i>n</i> lines that describe the points.  Each point
+description contains a capital letter that is the label of the point,
+then a space, the horizontal coordinate, a space, and the vertical
+coordinate.  Within each set, points labels occur in alphabetical
+order.  
+
+<p>
+Note that since each point is labelled with a capital letter
+there can be at most 26 points.  All coordinates are nonnegative integers 
+less than 50.  Points within a set are unique.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output for each point set starts with ``<tt>Point set </tt>", followed by
+the number of the point set and a colon.  If there are no rectangles,
+``<tt> No rectangles</tt>" appears after the colon.  If there are rectangles,
+they are listed starting on the next line.  A blank precedes each
+rectangle.  Each rectangle is given by its vertex labels, in clockwise
+order from the upper left, so the order is upper left, upper right,
+lower right, lower left.  
+The rectangles are listed ten per line,
+except for the last line, where there may be as few as one.
+The rectangles are listed in alphabetical order.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+7
+A 1 1     
+B 2 1     
+C 3 1     
+D 2 3     
+E 3 3     
+F 1 4     
+G 3 4     
+8         
+B 1 1      
+D 2 1      
+F 4 1      
+J 4 4      
+L 2 4
+M 2 3
+N 4 3      
+P 1 2      
+12
+A 1 5
+B 2 5
+C 1 4
+D 2 4
+E 1 3
+F 2 3
+G 1 2
+H 2 2
+I 1 1
+J 2 1
+K 1 0
+L 2 0
+5
+B 1 1
+D 2 1
+L 2 4
+N 2 3
+P 1 2
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Point set 1:
+ DECB FGCA
+Point set 2:
+ LJFD LJNM MNFD
+Point set 3:
+ ABDC ABFE ABHG ABJI ABLK CDFE CDHG CDJI CDLK EFHG
+ EFJI EFLK GHJI GHLK IJLK
+Point set 4: No rectangles
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-17</i>
+</address>
+</body>
+</html>
+

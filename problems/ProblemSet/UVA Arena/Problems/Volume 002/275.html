@@ -1,0 +1,89 @@
+
+
+<html>
+<head>
+<title>Expanding Fractions</title>
+<meta name="description" content="Expanding Fractions">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Expanding Fractions</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In this problem you are to print the decimal expansion of a quotient of
+two integers. As you well know, the decimal expansions of many integer quotients
+result in decimal expansions with repeating sequences of digits. You must
+identify these. You will print the decimal expansion of the integer quotient
+given, stopping just as the expansion terminates or just as the repeating
+pattern is to repeat itself <i>for the first time</i>. If there is a repeating
+pattern, you will say how many of the digits are in the repeating pattern.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+There will be multiple input instances, each instance consists of two positive
+integers on a line. The first integer represents the numerator of the fraction
+and the second represents the denominator. In this problem, the numerator
+will always be less than the denominator and the denominator will be less
+than 1000. Input terminates when numerator and denominator are both zero.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each input instance, the output should consist of the decimal expansion
+of the fraction, <i>starting with the decimal point</i>. If the expansion terminates,
+you should print the complete decimal expansion. If the expansion is infinite,
+you should print the decimal expansion up to, but not including the digit
+where the repeated pattern first repeats itself.
+<p>
+<p>
+For instance, 4/11 = .3636363636...,
+should be printed as <tt>.36</tt>. (Note that the shortest repeating pattern should
+be found. In the above example, <tt>3636</tt> and <tt>363636</tt>, among others, are repeating
+patterns, but the shortest repeating pattern is <tt>36</tt>.)
+<p>
+Since some of these
+expansions may be quite long, multiple line expansions should each contain
+exactly 50 characters on each line (except the last line, which, of course,
+may be shorter) - that includes the beginning decimal point.
+<p>
+On the line immediately following the last line of the decimal expansion
+there should be a line saying either ``<tt>This expansion terminates.</tt>&quot;,
+or ``<tt>The last <i>n</i> digits repeat forever.</tt>&quot;, where <i>n</i> is the number
+of digits in the repeating pattern.
+<p>
+<p>
+Output for each input instance (including the last input instance) should
+be followed by a blank line.
+<p>
+<p>
+<p>
+<b>Helpful hint:</b>
+The number of digits before the pattern is repeated will never be more than
+the value of the denominator.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3 7
+345 800
+112 990
+53 122
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>.428571
+The last 6 digits repeat forever.
+
+.43125
+This expansion terminates.
+
+.113
+The last 2 digits repeat forever.
+
+.4344262295081967213114754098360655737704918032786
+885245901639
+The last 60 digits repeat forever.</pre>
+<p>
+</body>
+</html>

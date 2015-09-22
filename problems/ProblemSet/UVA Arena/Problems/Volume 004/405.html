@@ -1,0 +1,157 @@
+
+
+<html>
+<head>
+<title>Message Routing</title>
+<meta name="description" content="Message Routing">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Message Routing</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The International Standards Organization has defined a Message Handling 
+System (MHS) called <tt>X.400</tt>.  One of the functional units of a MHS, the 
+MTA, handles routing of messages.  Routing is performed based on 
+components of the Originator/Recipient name.  For the purposes of this 
+problem, valid components of an O/R name (in order of widest scope to 
+narrowest scope) are Country (C), Administrative Management Domain 
+(ADMD), Private Management Domain (PRMD), and Organization Name (O).  
+Each MTA uses its own routing table to forward messages on to the next 
+MTA or delivering the message locally.
+<p>
+<p>
+Your program is to simulate a collection of MTAs processing messages.  
+Each time a message arrives (or is submitted) to an MTA, the MTA uses 
+the O/R name of the message and the MTA's routing table to forward the 
+message on to the appropriate MTA.  If the MTA finds that the message's 
+final destination is itself, it will deliver the message locally.  Your 
+program is to simulate this message-forwarding activity to trace the 
+path of mail through the set of MTAs.
+<p>
+<p>
+The routing function is accomplished by comparing the supplied fields 
+of entries in the routing table against the O/R name components of the 
+message.  Each routing table entry refers to exactly one MTA although  
+MTAs may have multiple entries in the routing table.  The first routing 
+table entry (starting from the top) whose fields match the 
+corresponding O/R name components in the message is selected and the 
+message is forwarded to that MTA.  It is possible for routing table 
+entries to contain a wildcard (denoted by an asterisk); wildcard 
+components always match the contents of the corresponding O/R name 
+component in the message.
+<p>
+<p>
+MTAs are also responsible for routing error detection and recovery.  If 
+an MTA detects that it has received a message that it has handled 
+before (a circular routing path is detected), it will place the message 
+in the undeliverable queue and generate a non-delivery report.  In 
+addition, if an MTA is unable to route a message (ie no routing table 
+entry match the message's O/R name), it will place the message in the 
+undeliverable queue and generate a routing error report.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input to your program will consist of a series of message routing 
+scenarios.  Input for each scenario starts with a single line that 
+contains a single integer ( <img width="90" height="26" align="MIDDLE" alt="tex2html_wrap_inline28" src="405img1.gif"> ) indicating the number of MTAs
+in the scenario.  Subsequent lines will contain a description for each 
+of the <i>M</i> MTAs.
+<p>
+<p>
+Each MTA description starts with a line containing the name of the MTA 
+(a left justified alphabetic string of 1 to 10 characters with no 
+embedded spaces) in columns 1-10 and an integer ( <img width="71" height="26" align="MIDDLE" alt="tex2html_wrap_inline32" src="405img2.gif"> ) in column
+12 indicating the number of entries in the MTA's routing table.  Each 
+of the following <i>I</i> lines will then contain a valid name of an adjacent 
+MTA in columns 1-10 followed by the Country, ADMD, PRMD, and 
+Organization Name in columns 15-24, 30-39, 45-54, and 60-69 
+respectively.  Each O/R name component will consist of 1 to 10 
+alphabetic characters left-justified in their field with no embedded 
+blanks.  Alternatively, an O/R name component may contain a single 
+asterisk (<tt>*</tt>) in the first column in the field indicating a wild-card 
+match in the field.
+<p>
+<p>
+Following the description of the MTAs, there will be a single line 
+containg a single integer (0&lt;<i>N</i>&lt;32768) indicating the number of messages
+to be sent in the simulation.  Each of the subsequent <i>N</i> lines will 
+contain the description of exactly one message.  Each message 
+description contains a valid name of one of the MTAs described above 
+left-justified in columns 1-10 followed by the Country, ADMD, PRMD, and 
+Organization Name in columns 15-24, 30-39, 45-54, and 60-69 
+respectively.  Each O/R name component will consist of 1 to 10 
+alphabetic characters left-justified in their field with no embedded 
+blanks and the MTA name is where the message is submitted and the 
+simulation begins.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each scenario, you are to print ``<tt>Scenario # X</tt>&quot; where <i>X</i> is the
+number of the scenario starting with 1 and incrementing for subsequent 
+scenarios.  Each of the following <i>N</i> lines will contain the number of 
+the message left-justified in column 1 
+immediately followed by one of the following messages:
+<p>
+<p>
+``<code> -- delivered to MTA_NAME</code>&quot;,
+``<code> -- circular routing detected by MTA_NAME</code>&quot;, or
+<p>
+``<code> -- unable to route at MTA_NAME</code>&quot;.
+<p>
+<p>
+In all three messages, <code>MTA_NAME</code> is replaced by the name of the MTA
+generating the report.  Other than <code>MTA_NAME</code>, you are to print the
+string exactly as above including spacing and dashes. After the list of message reports, you are to print a single blank line 
+and continue processing with the next scenario.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5 
+NAULINS    3 
+HOUSTON       US            SHIP            *              UHDOWNTOWN 
+NAULINS       US            SHIP            *              UNO 
+DALLAS        US            AIR             UT             * 
+HOUSTON    4 
+HOUSTON       US            *               UH             UHDT 
+SANANTONIO    US            BUS             UT             UTSA 
+DALLAS        US            AIR             UT             * 
+NAULINS       US            SHIP            *              UNO 
+DALLAS     7 
+DALLAS        US            *               UT             UTD 
+DALLAS        US            *               UT             UTA 
+HOUSTON       US            *               UH             * 
+SANANTONIO    US            AIR             UT             UTSA 
+OKLAHOMA      US            BUS             *              OU 
+NAULINS       US            AIR             *              UNO 
+HOUSTON       US            SHIP            *              * 
+OKLAHOMA   3 
+OKLAHOMA      US            *               *              OU 
+DALLAS        US            AIR             *              * 
+SANANTONIO    US            BUS             *              * 
+SANANTONIO 5 
+HOUSTON       *             *               *              UNO 
+HOUSTON       US            BUS             UH             * 
+DALLAS        US            AIR             *              * 
+SANANTONIO    US            *               UT             UTSA 
+OKLAHOMA      US            BUS             *              * 
+5 
+SANANTONIO    US            AIR             COLLEGE        UNO 
+OKLAHOMA      US            BUS             UH             UHDT 
+DALLAS        US            SHIP            COLLEGE        UNO 
+NAULINS       US            AIR             COLLEGE        OU 
+HOUSTON       US            AIR             UT             UTSA</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Scenario # 1 
+1 -- unable to route at HOUSTON 
+2 -- delivered to HOUSTON 
+3 -- delivered to NAULINS 
+4 -- unable to route at NAULINS 
+5 -- circular routing detected by DALLAS</pre>
+<p>
+</body>
+</html>

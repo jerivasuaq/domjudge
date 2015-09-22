@@ -1,0 +1,151 @@
+
+
+<html>
+<head>
+<title>Egyptian Multiplication</title>
+<meta name="description" content="Egyptian Multiplication">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Egyptian Multiplication</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In 1858, A. Henry Rhind, a Scottish antiquary, came into possession of a
+document which is now called the Rhind Papyrus. Titled ``Directions
+for Attaining Knowledge into All Obscure Secrets&quot;, the document provides
+important clues as to how the ancient Egyptians performed arithmetic.
+<p>
+<p>
+There is no zero in the number system. There are separate characters denoting
+ones, tens, hundreds, thousands, ten-thousands, hundred-thousands, millions
+and ten-millions. For the purposes of this problem, we use near ASCII equivalents
+for the symbols:
+<p>
+<ul><li> <tt>|</tt> for one (careful, it's a vertical line, not 1)<li> <tt>n</tt> for ten<li> <tt>9</tt> for hundred<li> <tt>8</tt> for thousand<li> <tt>r</tt> for ten-thousand
+</li></li></li></li></li></ul>
+<p>
+(The actual Egyptian hieroglyphs were more picturesque but followed the
+general shape of these modern symbols. For the purpose of this problem,
+we will not consider numbers greater than 99,999.)
+<p>
+<p>
+Numbers were written as a group of ones preceded in turn by groups of tens,
+hundreds, thousands and ten-thousands. Thus our number 4,023 would be rendered:
+<tt>||| nn 8888</tt>. Notice that a zero digit is indicated by a group consisting
+of none of the corresponding symbol. The number 40,230 would thus be rendered:
+<tt>nnn 99 rrrr</tt>. (In the Rhind Papyrus, the groups are drawn more picturesquely,
+often spread across more than one horizontal line; but for the purposes
+of this problem, you should write numbers all on a single line.)
+<p>
+<p>
+To multiply two numbers <i>a</i> and <i>b</i>, the Egyptians would work with two columns
+of numbers. They would begin by writing the number <tt>|</tt> in the left column
+beside the number <i>a</i> in the right column. They would proceed to form new
+rows by doubling the numbers in both columns. Notice that doubling can be
+effected by copying symbols and normalizing by a carrying process if any
+group of symbols is larger than 9 in size. Doubling would continue as long
+as the number in the left column does not exceed the other multiplicand
+<i>b</i>. The numbers in the first column that summed to the multiplicand <i>b</i> were
+marked with an asterisk. The numbers in the right column alongside the asterisks
+were then added to produce the result.
+<p>
+<p>
+Below, we show the steps corresponding
+to the multiplication of 483 by 27:
+<p>
+<pre>| *                             ||| nnnnnnnn 9999
+|| *                            |||||| nnnnnn 999999999
+||||                            || nnn 999999999 8
+|||||||| *                      |||| nnnnnn 99999999 888
+|||||| n *                      |||||||| nn 9999999 8888888
+The solution is:  | nnnn 888 r</pre>
+<p>
+(The solution came from adding together:
+<pre>||| nnnnnnnn 9999
+|||||| nnnnnn 999999999
+|||| nnnnnn 99999999 888
+|||||||| nn 9999999 8888888.)</pre>
+<p>
+You are to write a program to perform this Egyptian multiplication.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will consist of several pairs of nonzero numbers written in the Egyptian
+system described above. There will be one number per line; each number will
+consist of groups of symbols, and each group is terminated by a single space
+(including the last group). Input will be terminated by a blank line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each pair of numbers, your program should print the steps described
+above used in Egyptian multiplication. Numbers in the left column should
+be flush with the left margin. Each number in the left and right column will
+be represented by groups of symbols, and each group is terminated by a single
+space (including the last group). If there is an asterisk in the left column,
+it should be separated from the end of the left number by a single space.
+Up to the 34th character position should then be filled with spaces. Numbers
+in the right column should begin at the 35th character position on the line
+and end with a newline character.
+<p>
+<p>
+Test data will be chosen to ensure that
+no overlap can occur. After showing each of the doubling steps, your program
+should print the string: ``<tt>The solution is: </tt>&quot; followed by the product
+of the two numbers in Egyptian notation (modulus 100000).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+||
+||
+||| 
+|||| 
+nnnnnn 9 
+||| n 
+n 
+9 
+||| 
+8
+
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+|                                 || 
+|| *                              |||| 
+The solution is: ||||
+|                                 ||| 
+||                                |||||| 
+|||| *                            || n 
+The solution is: || n 
+| *                               nnnnnn 9 
+||                                nn 999 
+|||| *                            nnnn 999999 
+|||||||| *                        nnnnnnnn 99 8 
+The solution is: nnnnnnnn 88 
+|                                 n 
+||                                nn 
+|||| *                            nnnn 
+||||||||                          nnnnnnnn 
+|||||| n                          nnnnnn 9 
+|| nnn *                          nn 999 
+|||| nnnnnn *                     nnnn 999999 
+The solution is: 8 
+|                                 ||| 
+||                                |||||| 
+||||                              || n 
+|||||||| *                        |||| nn 
+|||||| n                          |||||||| nnnn 
+|| nnn *                          |||||| nnnnnnnnn 
+|||| nnnnnn *                     || nnnnnnnnn 9 
+|||||||| nn 9 *                   |||| nnnnnnnn 999 
+|||||| nnnnn 99 *                 |||||||| nnnnnn 9999999 
+|| n 99999 *                      |||||| nnn 99999 8 
+The solution is: 888
+</pre>
+<p>
+</body>
+</html>

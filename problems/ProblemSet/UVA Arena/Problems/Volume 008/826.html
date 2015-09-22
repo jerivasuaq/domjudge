@@ -1,0 +1,190 @@
+
+
+<html>
+<head>
+<title>Symbolic Numerical System</title>
+<meta name="description" content="Symbolic Numerical System">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Symbolic Numerical System</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+Let <span class="MATH"><i>A</i></span> be an alphabet defined by a list of <span class="MATH"><i>k</i></span> different symbols,
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<i>A</i> = [<i>s</i><sub>0</sub>,..., <i>s</i><sub>k</sub>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i>k</i><img width="18" height="30" align="MIDDLE" border="0" src="826img1.png" alt="$\displaystyle \ge$">3),
+</div><p>
+and <span class="MATH"><i>p</i>(<sup> . </sup>)</span> the function that associate to each symbol of the alphabet the
+corresponding position in the list (first element
+with position zero). The symbols in the alphabet will be called <em>digits</em>
+and are assumed to be one character length. Fix
+a digit <span class="MATH"><i>b</i></span> of the alphabet, called the base, such that 
+<span class="MATH"><i>p</i>(<i>b</i>)<img width="18" height="30" align="MIDDLE" border="0" src="826img2.png" alt="$ \ge$">2</span>. Then,
+for any integer <span class="MATH"><i>N</i></span> there exists a sequence of <span class="MATH"><i>r</i></span> digits
+
+<span class="MATH"><i>d</i><sub>0</sub>,..., <i>d</i><sub>r - 1</sub></span> (<span class="MATH"><i>r</i></span> depending on <span class="MATH"><i>N</i></span>) satisfying 
+<span class="MATH"><i>p</i>(<i>d</i><sub>i</sub>) &lt; <i>p</i>(<i>b</i>)</span>
+(
+<span class="MATH"><i>i</i> = 0,..., <i>r</i> - 1</span>) and such that <span class="MATH"><i>N</i></span> can be decomposed in
+the following way:
+<br>
+<div align="CENTER" class="mathdisplay">
+
+<table cellpadding="0" align="CENTER" width="100%">
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT"><i>N</i></td>
+<td width="10" align="CENTER" nowrap="">=</td>
+<td align="LEFT" nowrap=""><i>p</i>(<i>d</i><sub>0</sub>)&#215;[<i>p</i>(<i>b</i>)]<sup>0</sup> + <i>p</i>(<i>d</i><sub>1</sub>)&#215;[<i>p</i>(<i>b</i>)]<sup>1</sup> + ... + <i>p</i>(<i>d</i><sub>r - 1</sub>)&#215;[<i>p</i>(<i>b</i>)]<sup>r - 1</sup></td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td width="10" align="CENTER" nowrap="">=</td>
+<td align="LEFT" nowrap=""><i>p</i>(<i>d</i><sub>0</sub>) + <i>p</i>(<i>d</i><sub>1</sub>)&#215;<i>p</i>(<i>b</i>) + ... + <i>p</i>(<i>d</i><sub>r - 1</sub>)&#215;[<i>p</i>(<i>b</i>)]<sup>r - 1</sup>.</td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p>
+
+<p>
+We say that <span class="MATH"><i>N</i></span> is represented (under the alphabet <span class="MATH"><i>A</i></span>) in base <span class="MATH"><i>b</i></span> as
+
+<p>
+<div align="CENTER" class="mathdisplay">
+(<i>d</i><sub>r - 1</sub>...<i>d</i><sub>1</sub><i>d</i><sub>0</sub>)<sub>b</sub>.
+</div><p>
+
+<p>
+For example, let 
+<span class="MATH"><i>A</i> = [0, 1, 2, 3, 4, 5, 6, 7]</span>. As far as the decimal number 2548 is equal to
+<br>
+<div align="CENTER" class="mathdisplay">
+
+<table cellpadding="0" align="CENTER" width="100%">
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td>&nbsp;</td>
+<td align="LEFT" nowrap="">0 + 0&#215;7 + 3&#215;7<sup>2</sup> + 0&#215;7<sup>3</sup> + 1&#215;7<sup>4</sup></td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td width="10" align="CENTER" nowrap="">=</td>
+<td align="LEFT" nowrap=""><i>p</i>(0) + <i>p</i>(0)&#215;<i>p</i>(7) + <i>p</i>(3)&#215;[<i>p</i>(7)]<sup>2</sup> + <i>p</i>(0)&#215;[<i>p</i>(7)]<sup>3</sup> + <i>p</i>(1)&#215;[<i>p</i>(7)]<sup>4</sup>,</td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p>
+it is represented in base 7 as
+
+<p>
+<div align="CENTER" class="mathdisplay">
+(10300)<sub>7</sub>
+</div><p>
+
+<p>
+Another example: the usual binary system is obtained choosing 
+<span class="MATH"><i>A</i> = [0, 1, 2]</span> and <span class="MATH"><i>b</i> = 2</span>.
+
+<p>
+
+<p>
+<br>
+Given an alphabet <span class="MATH"><i>A</i></span>, not containing the symbol question mark (<tt>?</tt>),
+and given (partial information about) three numbers
+represented in an unknown base <span class="MATH"><i>b</i></span>, write a program that determines,
+if possible, the base <span class="MATH"><i>b</i></span> for which the third number
+is the sum of the first two. If there are several solutions, the
+base <span class="MATH"><i>b</i></span> with the smallest position <span class="MATH"><i>p</i>(<i>b</i>)</span> must be presented.
+Assume that the maximum length of the alphabet and of the numbers
+is 70 characters.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The input contains four lines terminated by newline character. The first
+defines the alphabet <span class="MATH"><i>A</i></span>; the others the three
+numbers, possibly with some digits deleted (marked with the question
+mark symbol). To ensure the uniqueness of the
+output, it is assumed that for the same position the three numbers
+have at most one digit deleted (at most one question
+mark symbol for each position).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+In the output write four lines: the first with the desired base;
+the others with the three numbers completely specified
+(the question marks must be replaced with the appropriate digits).
+If the sum is not possible, there must be no output.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+*!30zx9bdk
+?z
+b
+!*?
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+d
+bz
+b
+!*0
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Delfim Marado Torres, MIUP'2001
+</address>
+</body>
+</html>
+

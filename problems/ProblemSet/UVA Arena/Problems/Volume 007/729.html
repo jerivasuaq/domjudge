@@ -1,0 +1,120 @@
+
+
+<html>
+<head>
+<title>The Hamming Distance Problem</title>
+<meta name="description" content="The Hamming Distance Problem">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The Hamming Distance Problem</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The Hamming distance between two strings of bits (binary integers) is the
+number of corresponding bit positions that differ.  This can be found by
+using XOR on corresponding bits or equivalently, by adding corresponding
+bits (base 2) without a carry.  For example, in the two bit strings that
+follow:
+<pre>
+                               A      0 1 0 0 1 0 1 0 0 0
+                               B      1 1 0 1 0 1 0 1 0 0
+                            A XOR B = 1 0 0 1 1 1 1 1 0 0
+</pre>
+
+<p>
+The Hamming distance (<i>H</i>) between these 10-bit strings is 6, the number of
+1's in the XOR string.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input consists of several datasets. The first line of the input contains the number of datasets, and it's
+followed by a blank line. Each dataset contains
+<i>N</i>, the length of the bit strings and <i>H</i>, the Hamming distance, on the same line.
+There is a blank line between test cases.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>For each dataset print
+a list of all possible bit strings of length <i>N</i> that are
+Hamming distance <i>H</i>
+from the bit string containing all 0's (origin).  That is, all bit strings
+of length <i>N</i> with exactly <i>H</i> <tt>1</tt>'s printed in ascending lexicographical
+order.
+
+<p>
+
+<p>
+<br>
+The number of such bit strings is equal to the combinatorial
+symbol <i>C</i>(<i>N</i>,<i>H</i>). This is the number of possible combinations of <i>N</i>-<i>H</i> zeros
+and <i>H</i> ones.  It is equal to
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="93" height="47" src="729img1.gif" alt="\begin{displaymath}{N!} \over {(N-H)! H!}
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+This number can be very large.  The program should work for 
+
+<img width="132" height="32" align="MIDDLE" border="0" src="729img2.gif" alt="$1 \le H \le N
+\le 16$">.
+
+<p>Print a blank line between datasets.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+4 2
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+0011
+0101
+0110
+1001
+1010
+1100
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-31</i>
+</address>
+</body>
+</html>
+

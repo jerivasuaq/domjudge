@@ -1,0 +1,223 @@
+
+
+<html>
+<head>
+<title>Postscript</title>
+<meta name="description" content="Postscript">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Postscript</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The year is 1976 and a small upstart company has just invented the 
+first  (albeit crude) laser postscript printer.  They have hired you to 
+write Release 1 of the the postscript printer's device driver.  Release 
+1 is very limited (with only two very limited fonts) since some nay-
+sayers in the industry believe that postscript printers will never take 
+off.
+<p>
+<p>
+The device driver reads in a series of commands which describe 
+positions of text characters on the output page.  (Graphics will be in 
+release 2.)  Each page is a 60 x 60 grid of characters.  Each grid 
+position can contain only the following characters: 
+<tt>ABCDEFGHIJKLMNOPQRSTUVWXYZ .*</tt>
+<p>
+The alphabetic characters above and the blank comprise the character 
+set of the first font (C1).  The asterisk ( <tt>*</tt> ) is the base character 
+from which the enlarged courier font (C5) is created.  Each C5 
+character is defined on a 5 (rows)  <img width="9" height="18" align="MIDDLE" alt="tex2html_wrap_inline115" src="403img1.gif">  6 (columns) grid which contains 
+either <tt>*</tt>'s or periods (<tt>.</tt>).  The C5 font characters are as follows.
+<p>
+<p>
+<p>
+<code>.***..  ****..  .****.  ****..  *****.  *****.  .****.  *...*.  *****.</code>
+<p>
+<code>*...*.  *...*.  *...*.  *...*.  *.....  *.....  *.....  *...*.  ..*...</code>
+<p>
+<code>*****.  ****..  *.....  *...*.  ***...  ***...  *..**.  *****.  ..*...</code>
+<p>
+<code>*...*.  *...*.  *.....  *...*.  *.....  *.....  *...*.  *...*.  ..*...</code>
+<p>
+<code>*...*.  ****..  .****.  ****..  *****.  *.....  .***..  *...*.  *****.</code>
+<p>
+<code>  A       B       C       D       E       F       G       H       I   </code>
+<p>
+<code> </code>
+<p>
+<code>..***.  *...*.  *.....  *...*.  *...*.  .***..  ****..  .***..  ****..</code>
+<p>
+<code>...*..  *..*..  *.....  **.**.  **..*.  *...*.  *...*.  *...*.  *...*.</code>
+<p>
+<code>...*..  ***...  *.....  *.*.*.  *.*.*.  *...*.  ****..  *...*.  ****..</code>
+<p>
+<code>*..*..  *..*..  *.....  *...*.  *..**.  *...*.  *.....  *..**.  *..*..</code>
+<p>
+<code>.**...  *...*.  *****.  *...*.  *...*.  .***..  *.....  .****.  *...*.</code>
+<p>
+<code>  J       K       L       M       N       O       P       Q       R   </code>
+<p>
+<code> </code>
+<p>
+<code>.****.  *****.  *...*.  *...*.  *...*.  *...*.  *...*.  *****.  ...... </code>
+<p>
+<code>*.....  *.*.*.  *...*.  *...*.  *...*.  .*.*..  .*.*..  ...*..  ...... </code>
+<p>
+<code>.***..  ..*...  *...*.  .*.*..  *.*.*.  ..*...  ..*...  ..*...  ...... </code>
+<p>
+<code>....*.  ..*...  *...*.  .*.*..  **.**.  .*.*..  ..*...  .*....  ...... </code>
+<p>
+<code>****..  .***..  .***..  ..*...  *...*.  *...*.  ..*...  *****.  ...... </code>
+<p>
+<code>  S       T       U       V       W       X       Y       Z     blank  </code>
+<p>
+<b>Note</b> that the sixth column of each character contains only periods.  
+This is to define a natural spacing useful in strings.
+<p>
+<p>
+Your device driver is to read formatting commands from an input stream 
+and format characters from fonts C1 and C5 onto a  <img width="55" height="24" align="MIDDLE" alt="tex2html_wrap_inline117" src="403img2.gif">  grid which
+initially contains periods in every grid postion (a blank piece of 
+paper).  Each format command may cause the contents of any of the cell 
+positions to change with possible overrides to cell postions.  Note 
+that blanks from either font and empty cell positions (containing 
+periods) from the C5 font <b>do not</b> overwrite the contents of cells. It
+is also possible that the commands cause formatting that would be 
+placed off of either side or the bottom; such formatting is simply 
+truncated.  Formatting continues until an end-of-page command is 
+reached.
+<p>
+<p>
+The input stream consists of a series of lines each containing exactly 
+one command and its argument(s).  Each command begins in column 1 with 
+a period and is followed by 0 to 4 arguments.  Possible input commands 
+to your device driver are as follows.
+<p>
+<p> <img width="707" height="157" align="BOTTOM" alt="tabular42" src="403img3.gif"> <p>
+<p>
+All commands start in column 1 of the input line and arguments (if any) 
+will be separated by at least one space.  Each command will have 
+exactly the arguments as prescribed in the above table.  (Input 
+ranges/values will be adhered to and there will be no extraneous or 
+missing arguments.)
+<p>
+<ul><li> The ``<tt>.P</tt>&quot;/place command places a string of font F whose top left corner
+is at location (<i>R</i>,<i>C</i>) with the first character in the string and 
+continues horizontally to the right across the page.<li> The ``<tt>.L</tt>&quot;/left justify command places a string of font F whose top left
+corner is at location (<i>R</i>, 1) with the first character in the string and 
+continues horizontally to the right across the page.<li> The ``<tt>.R</tt>&quot;/right justify command places a string of font F whose top
+right corner is at location (<i>R</i>, 60) with the last character in the 
+string and continues horizontally to the left across the page.<li> The ``<tt>.C</tt>&quot;/center command horizontally centers a string of font F on the
+page with the top row of string at row <i>R</i>.  If the centering cannot be 
+exact on the grid (ie the string takes an odd number of cells 
+horizontally), the string should be centered equally on either side of 
+the 31st column.<li> The ``<tt>.EOP</tt>&quot; command signals the end of page.  This command signals your
+program to output/flush its internal buffer, and start formatting a new 
+blank page with the next line of input.  You are guaranteed that &quot;.EOP&quot; 
+is the last line/command of the input file. 
+</li></li></li></li></li></ul>
+<p>
+Argument 1 indicates the font to be used in the command.  Argument 2 
+indicates the row (<i>R</i>) in which text is to be placed.  If the font is 
+C5, then text will be placed in rows <i>R</i> through <i>R</i>+4.  Argument 3 (if 
+included) indicates the leftmost position of a string.  Argument 4 is a 
+string of up to 60 valid characters (upper case letters or space if font is C5, or any printable character if font is C1) 
+delimited by the `<code>|</code>'.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input to your program will consist of a series of commands and their 
+arguments (exactly 1 per line).  You are to start with a ``blank&quot; piece
+of paper and read the input file formatting and flushing paper until 
+end of file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+With each ``<tt>.EOP</tt>&quot; command, you are to output the  <img width="55" height="24" align="MIDDLE" alt="tex2html_wrap_inline117" src="403img2.gif">  grid
+representing
+the current format of the page.  In order to denote the end of page for 
+the judges, you are to follow each outputted page with a blank line, a 
+line of 60 dashes ( `<tt>-</tt>' ), and another blank line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>.C C5 3 |ACM| 
+.C C1 10 |SOUTH CENTRAL REGION PROBLEM FOUR SAMPLE OUTPUT| 
+.C C5 20 |OVERFLOW CENTERED LARGE FONT| 
+.C C5 30 |CENTERED| 
+.P C1 33 11 |LINE THAT OVERWRITES THROUGH CENTERED| 
+.L C1 40 |SMALL FONT LINE IS LEFT JUSTIFIED ON ROW FORTY| 
+.R C5 50 |RIGHT| 
+.P C5 57 10 |BOTTOM AND RIGHT TRUNCATION| 
+.EOP</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>............................................................ 
+............................................................ 
+......................***...****.*...*...................... 
+.....................*...*.*...*.**.**...................... 
+.....................*****.*.....*.*.*...................... 
+.....................*...*.*.....*...*...................... 
+.....................*...*..****.*...*...................... 
+............................................................ 
+............................................................ 
+.......SOUTH.CENTRAL.REGION.PROBLEM.FOUR.SAMPLE.OUTPUT...... 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+.****.*****.*...*.*****.*****.****..*****.****........*..... 
+*...*.*.....**..*.*.*.*.*.....*...*.*.....*...*.......*..... 
+*.....***...*.*.*...*...***...****..***...*...*.......*..... 
+*.....*.....*..**...*...*.....*..*..*.....*...*.......*..... 
+.****.*****.*...*..***..*****.*...*.*****.****........*****. 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+.......****.*****.*...*.*****.*****.****..*****.****........ 
+......*...*.*.....**..*.*.*.*.*.....*...*.*.....*...*....... 
+......*.....***...*.*.*...*...***...****..***...*...*....... 
+......*...LINE.THAT.OVERWRITES*THROUGH.CENTERED.*...*....... 
+.......****.*****.*...*..***..*****.*...*.*****.****........ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+SMALL.FONT.LINE.IS.LEFT.JUSTIFIED.ON.ROW.FORTY.............. 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+............................................................ 
+..............................****..*****..****.*...*.*****. 
+..............................*...*...*...*.....*...*.*.*.*. 
+..............................****....*...*..**.*****...*... 
+..............................*..*....*...*...*.*...*...*... 
+..............................*...*.*****..***..*...*..***.. 
+............................................................ 
+............................................................ 
+.........****...***..*****.*****..***..*...*........***..*.. 
+.........*...*.*...*.*.*.*.*.*.*.*...*.**.**.......*...*.**. 
+.........****..*...*...*.....*...*...*.*.*.*.......*****.*.* 
+.........*...*.*...*...*.....*...*...*.*...*.......*...*.*..
+
+------------------------------------------------------------</pre>
+<p>
+</body>
+</html>

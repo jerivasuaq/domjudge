@@ -1,0 +1,149 @@
+
+
+<html>
+<head>
+<title>Machine Repair Simulation</title>
+<meta name="description" content="Machine Repair Simulation">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Machine Repair Simulation</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A system is composed of 1, 2, or 3 machines and a repairman responsible for
+maintaining these machines. Normally, the machines are running and producing
+a product. At random points in time, the machines fail and are fixed by the
+repairman. If a second or third machine fails while the repairman is busy
+fixing the first machine, these machines will wait on the services of the
+repairman in a first come, first served order. When repair on a machine is
+complete, the machine will begin running again and producing a product. The
+repairman will then repair the next machine waiting. When all machines are
+running, the repairman becomes idle.
+
+<p>
+Write a program that will simulate this system for a fixed period of time and
+calculate the fraction of time the machines are busy (utilization) and the
+fraction of time the repairman is busy (utilization). Machines are busy when
+producing parts and the repairman is busy when repairing machines.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input and Output</a>&nbsp;</font>
+</h2>
+The input file is composed of three parts each separated by a header record.
+The first part is a list of 50 random machine running times until failure.
+The second part is a list of 50 random machine repair times. The third part
+is a list of the cases to be simulated. Each case specifies the length of
+the simulation and the number of machines assigned to the repairman. Cases
+end with the specification of a 0 length and an assignment of 0 machines.
+Each case will use the same random machine running times and repair times,
+starting at the beginning.
+
+<p>
+A sample input file and the corresponding output file (print results accurately rounded to 3
+decimal places) is provided below. Diagrams are also provided to illustrate
+the simulation process.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Machine running times (10 five column fields per record)
+ 7.0  4.5 13.0 10.5  3.0 12.0 ...................
+Machine repair times (10 five column fields per record)
+ 9.5  2.5  4.5 12.0  5.7  1.5 ...................
+Cases (2 five column fields per record)
+ 20.0    1
+ 20.0    3
+   .     .
+   .     .
+  0.0    0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+       No of     Utilization
+Case Machines Machine Repairman
+
+ 1       1       .525   .475
+ 2       3       .558   .775
+ .       .         .      .
+ .       .         .      .
+</pre>
+
+<p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br> 
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Case 1 Simulation</a>&nbsp;</font>
+</h2>
+
+<p>
+<img src="p749a.gif">
+
+<p>
+
+<p>
+<br>
+
+<p>
+<pre>
+Machine Utilization   = (7 + 3.5)/20 = .525
+Repairman Utilization =     (9.5)/20 = .475
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">
+Case 2 Simulation</a>&nbsp;</font>
+</h2>
+
+<p>
+<img src="p749b.gif">
+
+<p>
+
+<p>
+<br>
+
+<p>
+<pre>
+Machine Utilization   = ((7+3)+(4.5+6)+(13))/(3*20) = .558
+Repairman Utilization =                   (15.5)/20 = .775
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

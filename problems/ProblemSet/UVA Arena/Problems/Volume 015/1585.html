@@ -1,0 +1,65 @@
+<p>
+There is an objective test result such as ``<tt>OOXXOXXOOO</tt>". An `<tt>O</tt>' means a correct answer of a problem and an `<tt>X</tt>' means a wrong answer. The score of each problem of this test is calculated by itself and its just previous consecutive `<tt>O</tt>'s only when the answer is correct. For example, the score of the 10th problem is 3 that is obtained by itself and its two previous consecutive `<tt>O</tt>'s. 
+
+<p>
+Therefore, the score of ``<tt>OOXXOXXOOO</tt>" is 10 which is calculated by ``1+2+0+0+1+0+0+1+2+3". 
+
+<p>
+You are to write a program calculating the scores of test results. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to read from standard input. The input consists of <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> test cases. The number of test cases <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> is given in the first line of the input. Each test case starts with a line containing a string composed by `<tt>O</tt>' and `<tt>X</tt>' and the length of the string is more than 0 and less than 80. There is no spaces between `<tt>O</tt>' and `<tt>X</tt>'. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to write to standard output. Print exactly one line for each test case. The line is to contain the score of the test case. 
+
+<p>
+The following shows sample input and output for five test cases. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 
+OOXXOXXOOO 
+OOXXOOXXOO 
+OXOXOXOXOXOXOX 
+OOOOOOOOOO 
+OOOOXOOOOXOOOOX
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+10 
+9 
+7 
+55 
+30
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark>

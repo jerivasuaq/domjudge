@@ -1,0 +1,106 @@
+
+
+<html>
+<head>
+<title>The Postal Worker Rings Once</title>
+<meta name="description" content="The Postal Worker Rings Once">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">The Postal Worker Rings Once</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+Graph algorithms form a very important part of computer science and have
+a lineage that goes back at least to Euler and the famous <em>Seven
+Bridges of K&#246;nigsberg</em> problem.  Many optimization problems involve
+determining efficient methods for reasoning about graphs.
+<p>
+<p>
+This problem involves determining a route for a postal worker so that
+all mail is delivered while the postal worker walks a minimal distance,
+so as to rest weary legs.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+Given a sequence of streets (connecting given intersections) you are to
+write a program that determines the minimal cost tour that traverses
+every street at least once.  The tour must begin and end at the same
+intersection.
+<p>
+<p>
+The ``real-life'' analogy concerns a postal worker who parks a truck at
+an intersection and then walks all streets on the postal delivery route
+(delivering mail) and returns to the truck to continue with the next
+route.
+<p>
+<p>
+The cost of traversing a street is a function of the length of the
+street (there is a cost associated with delivering mail to houses and
+with walking even if no delivery occurs).
+<p>
+<p>
+In this problem the number of streets that meet at a given intersection
+is called the <em>degree</em> of the intersection.  There will be at most
+two intersections with odd degree. All other intersections will have
+even degree, i.e., an even number of streets meeting at that intersection.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input consists of a sequence of one or more postal routes.  A route
+is composed of a sequence of street names (strings), one per line, and
+is terminated by the string ``<em>deadend</em>'' which is NOT part of the
+route.  The first and last letters of each street name specify the two
+intersections for that street, the length of the street name indicates
+the cost of traversing the street.  All street names will consist of
+lowercase alphabetic characters.
+<p>
+<p>
+For example, the name <em>foo</em>
+indicates a street with intersections <i>f</i> and <i>o</i> of length 3, and the
+name <em>computer</em> indicates a street with intersections <i>c</i> and <i>r</i> of
+length 8.  No street name will have the same first and last letter and
+there will be at most one street directly connecting any two
+intersections.  As specified, the number of intersections with odd
+degree in a postal route will be at most two.  In each postal route
+there will be a path between all intersections, i.e., the intersections
+are connected.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+For each postal route the output should consist of the cost of the
+minimal tour that visits all streets at least once.  The minimal tour
+costs should be output in the order corresponding to the input postal routes.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>one
+two
+three
+deadend
+mit
+dartmouth
+linkoping
+tasmania
+york
+emory
+cornell
+duke
+kaunas
+hildesheim
+concord
+arkansas
+williams
+glasgow
+deadend</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>11
+114</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,109 @@
+
+
+<html>
+<head>
+<title>Puncher</title>
+<meta name="description" content="Puncher">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Puncher</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Puncher is a device with several needles for making holes in tickets. At the factory there is a
+rectangular form with <i>M</i> rows and <i>N</i> columns, as shown in the picture (<i>M</i>=3, <i>N</i>=4), to make
+different punchers with 
+
+<img width="124" height="32" align="MIDDLE" border="0" src="770img1.gif" alt="$1, 2, \dots, M \times N$">
+needles. The rows and columns
+of needles are perpendicular to each other. The distance between rows is equal
+to the distance between columns. Obviously, it is possible to make
+
+
+<img width="81" height="38" align="MIDDLE" border="0" src="770img2.gif" alt="$2^{M \times N}-1$">
+different punchers in this way.
+
+<center>
+<img src="p770.gif" alt="p770.eps">
+</center>
+
+<p>
+However, sometimes it is not possible to distinguish tickets that are perforated by different
+punchers. Let us assume that while punching two opposite borders of the ticket are parallel to the
+rows of the needles, the other pair of opposite borders being parallel to the columns of the needles.
+The number of the holes in a perforated ticket is always equal to the number of the needles in the
+corresponding puncher. A composition of the following transformations is allowed:
+
+<p>
+<ul>
+<li>a ticket may be perforated on any side (axial symmetry),
+<li>it may be inserted into the puncher with any of its four borders downwards (rotation by 90,
+180 and 270 degrees),
+<li>parallel translations are also available.
+</li></li></li></ul>
+
+<p>
+Your task is to write a program to determine how many actually different punchers can be made
+with an 
+
+<img width="61" height="32" align="MIDDLE" border="0" src="770img4.gif" alt="$M \times N$">
+form. Two punchers are considered actually different, if
+it is impossible to match using any combination of the above described
+operations the holes in the two tickets perforated by these punchers.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains several test cases, each of them (on a line by itself) consists of two positive integer numbers <i>M</i> (not greater than 4) and <i>N</i> (not greater than 8) separated by a single space.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, write to the output a single integer indicating the number of the actually different punchers, on a line by itself
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 3
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+85
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+

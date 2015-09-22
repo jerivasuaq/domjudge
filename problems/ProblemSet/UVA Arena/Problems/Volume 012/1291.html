@@ -1,0 +1,99 @@
+<p>
+Mr. White, a fat man, now is crazy about a game named ``Dance, Dance, Revolution".  But his 
+dance skill is so poor that he could not dance a dance, even if he dances arduously every time.  
+Does ``DDR" just mean him a perfect method to squander his pounds?  No way.  He still 
+expects that he will be regarded as ``Terpsichorean White" one day.  So he is considering writing 
+a program to plan the movement sequence of his feet, so that he may save his strength on dancing.  
+Now he looks forward to dancing easily instead of sweatily. 
+
+<p>
+``DDR" is a dancing game that requires the dancer to use his feet to tread on the points according 
+to the direction sequence in the game.  There are one central point and four side  points in the 
+game.  Those side points are classified as top, left, bottom and right.  For the sake of 
+explanation, we mark them integers.  That is, the central point is 0, the top is 1, the left is 2, the 
+bottom is 3, and the right is 4, as the figure below shows: 
+
+<p>
+<div align="CENTER">
+
+<img width="218" height="227" align="BOTTOM" border="0" src="2031img1.png" alt="\epsfbox{p2031.eps}">
+</div>
+
+<p>
+At the beginning the dancer's two feet stay on the central point.  According to the direction 
+sequence, the dancer has to move one of his feet to the special points.  For example, if the 
+sequence requires him to move to the top point at first, he may move either of his feet from point 0 
+to point 1 (<span class="textit">Note: Not both of his feet</span>).  Also, if the sequence then requires him to move to the 
+bottom point, he may move either of his feet to point 3, regardless whether to use the foot that 
+stays on point 0 or the one that stays on point 1. 
+
+<p>
+There is a strange rule in the game: moving both of his feet to the same point is not allowed.  For 
+instance, if the sequence requires the dancer to the bottom point and one of his feet already sta ys 
+on point 3, he should stay the very foot on the same point and tread again, instead of moving the 
+other one to point 3. 
+
+<p>
+After dancing for a long time, Mr. White can calculate how much strength will be consumed when 
+he moves from one point to another.  Moving one of his feet from the central point to any side 
+points will consume 2 units of his strength.  Moving from one side point to another adjacent side 
+point will consume 3 units, such as from the top point to the left point.  Moving from one side 
+point to the opposite side point will consume 4 units, such as from the top point to the bottom 
+point.  Yet, if he stays on the same point and tread again, he will use 1 unit. 
+
+<p>
+Assume that the sequence requires Mr. White to move to point 
+<span class="MATH">1 <img width="22" height="17" align="BOTTOM" border="0" src="2031img2.png" alt="$ \rightarrow$"> 2 <img width="22" height="17" align="BOTTOM" border="0" src="2031img2.png" alt="$ \rightarrow$"> 2 <img width="22" height="17" align="BOTTOM" border="0" src="2031img2.png" alt="$ \rightarrow$"> 4</span>.  His feet may 
+stays on (point 0, point 0)
+<span class="MATH"><img width="22" height="17" align="BOTTOM" border="0" src="2031img2.png" alt="$ \rightarrow$"> (0, 1) <img width="22" height="17" align="BOTTOM" border="0" src="2031img2.png" alt="$ \rightarrow$"> (2, 1) <img width="22" height="17" align="BOTTOM" border="0" src="2031img2.png" alt="$ \rightarrow$"> (2, 1) <img width="22" height="17" align="BOTTOM" border="0" src="2031img2.png" alt="$ \rightarrow$"> (2, 4)</span>.  In this couple of integers, the  former number represents the point of his left foot, and the latter represents the point of his right foot.  In this way, he has to consume 8 units of his strength.  If he tries another pas, he will have 
+to consume much more strength.  The 8 units of strength is the least cost. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The input file will consist of a series of direction sequences.  Each direction sequence contains a 
+sequence of numbers.  Ea ch number should either be 1, 2, 3, or 4, and each represents one of the 
+four directions.  A value of 0 in the direction sequence indicates the end of direction sequence.  
+And this value should be excluded from the direction sequence.  The input file ends  if the 
+sequence contains a single 0. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+For each direction sequence, print the least units of strength will be consumed.  The result should 
+be a single integer on a line by itself.  Any more white spaces or blank lines are not allowable. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+1 2 2 4 0 
+1 2 3 4 1 2 3 3 4 2 0 
+0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+8 
+22
+</pre> 
+
+<p>

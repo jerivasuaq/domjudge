@@ -1,0 +1,154 @@
+
+
+<html>
+<head>
+<title>SameGame Simulation</title>
+<meta name="description" content="SameGame Simulation">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">SameGame Simulation</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The one-player game of SameGame is played on an <i>M</i> row by <i>N</i> column
+rectangular grid.  In  each cell of the grid is placed a positive
+integer in the range 0 through 9.  The goal of the game is  to remove
+all the integers from the grid.  The player attempts this by repeatedly
+selecting a cell for  removal. Each time a cell is selected for removal,
+all the cells in the <i>connected region</i> (defined  below) containing the
+same integer found in selected cell are removed, and all cells above
+those  that were removed ``drop down&quot; (toward the bottom of the grid).
+When all the cells in a column  have been removed, then columns to the
+right of the removed column slide to the left.  The game  is over when
+all cells are removed (a win), or when no more cells can be removed. 
+
+<p>
+<p>
+A <i>connected region</i> consists of all cells that can be reached by
+moving horizontally (left or right)  and/or vertically (up or down) from
+any cell in the region, subject to the restriction that all cells in 
+the connected region must contain the same value.
+<p>
+<p>
+Cells will be
+numbered starting with the lower left corner of the grid; this is cell
+(1,1).  The cell  above it is cell (2,1), and the cell to its right is
+cell (1,2).
+<p>
+<p>
+ <img width="282" height="18" align="BOTTOM" alt="tex2html_wrap47" src="339img1.gif"> 
+ <img width="80" height="55" align="BOTTOM" alt="tex2html_wrap49" src="339img2.gif"> 
+<p>
+<p>
+The cells at (1,1), (2,5), (3,1), (3,2) and (3,3) may not be
+successfully selected for removal, since  they aren’'t parts of connected
+regions (i.e., regions that contain at least two connected cells with 
+the same value).  The cell at (2,1) is part of the connected region also
+containing the cells at (2,2)  and (1,2).  Likewise, the connected
+region containing the cell at (1,5) also contains the cells at  (1,4)
+and (2,4), but not the cell at (3,3).  Starting with the original grid
+shown above, the  following selections will result in a win:
+<p>
+<ul><li>
+<pre>  
+1 3 5     
+2 2 3 5 1 
+1 2 3 5 5</pre><li>
+<pre>    5     
+1   3 5 1 
+1 3 3 5 5</pre><li>
+<pre>1   5 1   
+1 5 5 5</pre><li>
+<pre>1         
+1 1</pre>
+</li></li></li></li></ul>
+<p>
+Finally, in step 5, selecting cell (1,1), (1,2) or (2,1) will
+remove the remaining integers from the  grid.
+<p>
+<p>
+In the input for
+this problem your program will be presented with a sequence of grids,
+each having  no more than 10 rows and 40 columns.  For each grid there
+will also be given a sequence of cell  removal selections.  Apply these
+selections, in order, to each grid, ignoring those that are not 
+permitted (e.g. they select non-existant cells, or they select regions
+with fewer than two cells).   Then display the resulting grid or, if
+appropriate, the message <tt>&quot;Game Won&quot;</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input will consist entirely of non-negative integers
+without regard to line structure.  Each grid  and sequence of removal
+selections will begin with values for <i>M</i> and <i>N</i>.  If either of these
+values  is zero, then the input is terminated.
+<p>
+<p>
+Following <i>M</i> and <i>N</i>
+will appear the  <img width="54" height="24" align="MIDDLE" alt="tex2html_wrap_inline59" src="339img3.gif">  integers for the grid, in row major order. 
+That is, the  values are given in order for cells (1,1), (1,2), ...,
+(1,<i>N</i>), (2,1), ..., (<i>M</i>,<i>N</i>).  Following the grid data  will appear pairs of
+integers, each pair indicating the row and column of a grid cell
+selected for  removal.  The end of this sequence will be marked by a
+pair of zeroes.
+<p>
+<p>
+If a game is won, your  program must skip any remaining
+pairs of integers (if any) through and including the pair of  zeroes to
+reach the data for the next grid in the input.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+ As noted
+above, the output for each grid in the input data should be either the
+grid that remains  after considering all selections, or the message
+<tt>&quot;Game Won&quot;</tt>.  Precede the output for each grid  by its sequence in the input; the first grid is numbered 1.
+<p>
+<p>
+Look at the samples below for the <em>exact</em> format.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3 5
+1 2 3 5 5
+2 2 3 5 1
+1 3 5 2 2
+3 5
+2 2
+1 2
+1 2
+1 1
+0 0
+
+3 5
+1 2 3 5 5
+2 2 3 5 1
+1 3 5 2 2
+2 2    1 2   1 4   1 2   
+99 99 0 0
+
+4 3
+1 4 4
+4 4 2
+1 2 3
+3 1 3
+1 2 1 1 1 3 1 1 0 0
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Grid 1.
+    Game Won
+
+Grid 2.
+              
+    1   2     
+    1 2 1     
+
+Grid 3.
+    Game Won</pre>
+<p>
+</body>
+</html>

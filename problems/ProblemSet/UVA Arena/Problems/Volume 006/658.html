@@ -1,0 +1,166 @@
+
+
+<html>
+<head>
+<title>It's not a Bug, it's a Feature!</title>
+<meta name="description" content="It's not a Bug, it's a Feature!">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+It's not a Bug, it's a Feature!</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+It is a curious fact that consumers buying a new software product generally do
+<em>not</em> expect the software to be bug-free. Can you imagine buying a car
+whose steering wheel only turns to the right? Or a CD-player that plays only
+CDs with country music on them? Probably not. But for software systems it
+seems to be acceptable if they do not perform as they should do. In fact, many
+software companies have adopted the habit of sending out patches to fix bugs
+every few weeks after a new product is released (and even charging money for
+the patches).
+
+<p>
+Tinyware Inc. is one of those companies. After releasing a new word processing software this
+summer, they have been producing patches ever since. Only this weekend they have realized a big
+problem with the patches they released. While all patches fix some bugs, they often rely on other
+bugs to be present to be installed. This happens because to fix one bug, the patches exploit the special
+behavior of the program due to another bug.
+
+<p>
+More formally, the situation looks like this. Tinyware has found a total of
+<i>n</i> bugs 
+
+<img width="152" height="34" align="MIDDLE" border="0" src="658img1.gif" alt="$B= \{b_1, b_2, \dots, b_n\}$">
+in their software. And they have
+released <i>m</i> patches 
+
+<img width="105" height="30" align="MIDDLE" border="0" src="658img2.gif" alt="$p_1, p_2, \dots, p_m$">.
+To apply patch <i>p</i><sub><i>i</i></sub> to the
+software, the bugs 
+
+<img width="67" height="38" align="MIDDLE" border="0" src="658img3.gif" alt="$B^+_i \subseteq B$">
+have to be present in the software, and
+the bugs 
+
+<img width="67" height="38" align="MIDDLE" border="0" src="658img4.gif" alt="$B^-_i \subseteq B$">
+must be absent (of course
+
+
+<img width="107" height="38" align="MIDDLE" border="0" src="658img5.gif" alt="$B^+_i \cap B^-_i = \emptyset$">
+holds). The patch then
+fixes the bugs 
+
+<img width="67" height="38" align="MIDDLE" border="0" src="658img6.gif" alt="$F^-_i \subseteq B$">
+(if they have been present) and introduces
+the new bugs 
+
+<img width="67" height="38" align="MIDDLE" border="0" src="658img7.gif" alt="$F^+_i \subseteq B$">
+(where, again, 
+
+<img width="106" height="38" align="MIDDLE" border="0" src="658img8.gif" alt="$F^-_i \cap B^-_i = \emptyset$">).
+
+<p>
+Tinyware's problem is a simple one. Given the original version of their software, which contains
+all the bugs in <i>B</i>, it is possible to apply a sequence of patches to the
+software which results in a bug- free version of the software? And if so,
+assuming that every patch takes a certain time to apply, how long does the
+fastest sequence take?
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input contains several product descriptions. Each description starts with a line containing two
+integers <i>n</i> and <i>m</i>, the number of bugs and patches, respectively. These
+values satisfy 
+
+<img width="88" height="30" align="MIDDLE" border="0" src="658img9.gif" alt="$1 \le n \le 20$">
+and 
+
+<img width="101" height="30" align="MIDDLE" border="0" src="658img10.gif" alt="$1 \le m \le 100$">.
+This is followed by <i>m</i>
+lines describing the <i>m</i> patches in order. Each line contains an integer, the
+time in seconds it takes to apply the patch, and two strings of <i>n</i> characters
+each.
+
+<p>
+The first of these strings describes the bugs that have to be present or absent before the patch can
+be applied. The <i>i</i>-th position of that string is a ``<tt>+</tt>'' if bug <i>b</i><sub><i>i</i></sub>
+has to be present, a ``<tt>-</tt>'' if bug <i>b</i><sub><i>i</i></sub> has to be absent, and a ``<tt>
+0</tt>'' if it doesn't matter whether the bug is present or not.
+
+<p>
+The second string describes which bugs are fixed and introduced by the patch.
+The <i>i</i>-th position of that string is a ``<tt>+</tt>'' if bug <i>b</i><sub><i>i</i></sub> is introduced
+by the patch, a ``<tt>-</tt>'' if bug <i>b</i><sub><i>i</i></sub> is removed by the patch (if it was
+present), and a ``<tt>0</tt>'' if bug <i>b</i><sub><i>i</i></sub> is not affected by the patch (if it
+was present before, it still is, if it wasn't, is still isn't).
+
+<p>
+The input is terminated by a description starting with <i>n</i> = <i>m</i> = 0. This test
+case should not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each product description first output the number of the product. Then output whether there is a
+sequence of patches that removes all bugs from a product that has all <i>n</i> bugs. Note that in such a
+sequence a patch may be used multiple times. If there is such a sequence, output the time taken by
+the fastest sequence in the format shown in the sample output. If there is no such sequence, output
+``<tt>Bugs cannot be fixed.</tt>''.
+
+<p>
+Print a blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 3
+1 000 00-
+1 00- 0-+
+2 0-- -++
+4 1
+7 0-0+ ----
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Product 1
+Fastest sequence takes 8 seconds.
+
+Product 2
+Bugs cannot be fixed.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

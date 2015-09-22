@@ -1,0 +1,184 @@
+
+
+<html>
+<head>
+<title>Mobile Phone Coverage</title>
+<meta name="description" content="Mobile Phone Coverage">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Mobile Phone Coverage</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A mobile phone company ACMICPC (Advanced Cellular, Mobile, and Internet-Connected
+Phone Corporation) is planning to set up a collection of antennas for mobile phones in a city
+called Maxnorm. The company ACMICPC has several collections for locations of antennas as
+their candidate plans, and now they want to know which collection is the best choice.
+
+<p>
+
+<p>
+<br>
+For this purpose, they want to develop a computer program to find the coverage of a collection
+of antenna locations. Each antenna <i>A</i><sub><i>i</i></sub> has power <i>r</i><sub><i>i</i></sub>, corresponding to ``radius''. Usually, the
+coverage region of the antenna may be modeled as a disk centered at the location of the antenna
+
+
+(<i>x</i><sub><i>i</i></sub>, <i>y</i><sub><i>i</i></sub>) with radius <i>r</i><sub><i>i</i></sub>. However, in this city Maxnorm such a coverage region becomes the square
+
+
+<img width="257" height="34" align="MIDDLE" border="0" src="688img1.gif" alt="$[x_i - r_i, x_i + r_i] \times [y_i - r_i, y_i + r_i]$">.
+In other words, the distance between two points 
+
+(<i>x</i><sub><i>p</i></sub>, <i>y</i><sub><i>p</i></sub>) and
+
+
+(<i>x</i><sub><i>q</i></sub>, <i>y</i><sub><i>q</i></sub>) is measured by the max norm 
+
+<img width="191" height="34" align="MIDDLE" border="0" src="688img2.gif" alt="$\max \{ \vert x_p - x_q\vert, \vert y_p - y_q\vert \}$">,
+or, the 
+
+<img width="31" height="32" align="MIDDLE" border="0" src="688img3.gif" alt="$L_{\infty}$">
+norm, in this city
+Maxnorm instead of the ordinary Euclidean norm
+
+
+<img width="193" height="47" align="MIDDLE" border="0" src="688img4.gif" alt="$\sqrt{(x_p - x_q)^2 + (y_p - y_q)^2}$">.
+
+<p>
+
+<p>
+<br>
+As an example, consider the following collection of 3 antennas
+
+<p>
+<pre>
+4.0 4.0 3.0
+5.0 6.0 3.0
+5.5 4.5 1.0
+</pre>
+
+<p>
+depicted in the following figure
+
+<p>
+<div align="CENTER">
+
+<img src="p688.gif">
+</div>
+
+<p>
+where the <i>i</i>-th row represents <i>x</i><sub><i>i</i></sub>, <i>y</i><sub><i>i</i></sub>, <i>r</i><sub><i>i</i></sub> such that 
+
+(<i>x</i><sub><i>i</i></sub>, <i>y</i><sub><i>i</i></sub>) is the position of the <i>i</i>-th antenna and
+<i>r</i><sub><i>i</i></sub> is its power. The area of regions of points covered by at least one antenna is 52.00 in this case.
+
+<p>
+
+<p>
+<br>
+Write a program that finds the area of coverage by a given collection of antenna locations.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input contains multiple data sets, each representing a collection of antenna locations. A
+data set is given in the following format.
+
+<p>
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="86" height="115" src="688img5.gif" alt="\begin{displaymath}\begin{array}{lll}
+n & & \\
+x_1 & y_1 & r_1 \\
+x_2 & y_2 & r_2 \\
+\dots & & \\
+x_n & y_n & r_n
+\end{array}\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+The first integer <i>n</i> is the number of antennas, such that 
+
+<img width="96" height="30" align="MIDDLE" border="0" src="688img6.gif" alt="$2 Y\le n Y\le 100$">.
+The coordinate of the <i>i</i>-th
+antenna is given by 
+
+(<i>x</i><sub><i>i</i></sub>, <i>y</i><sub><i>i</i></sub>), and its power is <i>r</i><sub><i>i</i></sub>. <i>x</i><sub><i>i</i></sub>, <i>y</i><sub><i>i</i></sub> and <i>r</i><sub><i>i</i></sub> are fractional numbers between 0 and 200 inclusive.
+
+<p>
+
+<p>
+<br>
+The end of the input is indicated by a data set with 0 as the value of <i>n</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each data set, your program should output its sequence number (1 for the first data set, 2
+for the second, etc.) and the area of the coverage region. The area should be printed with two
+digits to the right of the decimal point, after rounding it to two decimal places.
+
+<p>
+
+<p>
+<br>
+The sequence number and the area should be printed on the same line with no spaces at the
+beginning and end of the line. The two numbers should be separated by a space.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+4.0 4.0 3.0
+5.0 6.0 3.0
+5.5 4.5 1.0
+2
+3.0 3.0 3.0
+1.5 1.5 1.0
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+1 52.00
+2 36.00
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-05</i>
+</address>
+</body>
+</html>
+

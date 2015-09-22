@@ -1,0 +1,100 @@
+<p>
+Let 
+<span class="MATH"><i>G</i> = (<i>V</i>, <i>E</i>)</span> be a connected graph without loops and multiple edges, where <span class="MATH"><i>V</i></span> and <span class="MATH"><i>E</i></span> are the vertex and edge,
+   respectively, sets of <span class="MATH"><i>G</i></span>. For any two vertices 
+<span class="MATH"><i>u</i>, <i>v</i> <img width="16" height="30" align="MIDDLE" border="0" src="2818img1.gif" alt="$ \in$"> <i>V</i></span> , the <em>distance</em> between vertices <span class="MATH"><i>u</i></span> and <span class="MATH"><i>v</i></span> in <span class="MATH"><i>G</i></span>
+   is the number of edges in a shortest <span class="MATH"><i>u</i> - <i>v</i></span> path. A shortest path between <span class="MATH"><i>u</i></span> and <span class="MATH"><i>v</i></span> is called
+   a <span class="MATH"><i>u</i> - <i>v</i></span> <span class="textit">geodesic</span>. Let <span class="MATH"><i>I</i>(<i>u</i>, <i>v</i>)</span> denote the set of vertices such that a vertex is in <span class="MATH"><i>I</i>(<i>u</i>, <i>v</i>)</span> if and
+   only if it is in some <span class="MATH"><i>u</i> - <i>v</i></span> geodesic of <span class="MATH"><i>G</i></span> and, for a set 
+<span class="MATH"><i>S</i> <img width="18" height="30" align="MIDDLE" border="0" src="2818img2.gif" alt="$ \subseteq$"> <i>V</i></span> ,
+   
+<span class="MATH"><i>I</i>(<i>S</i>) = <img width="41" height="55" align="MIDDLE" border="0" src="2818img3.gif" alt="$\displaystyle \bigcup_{u,v\in S}^{}$"><i>I</i>(<i>u</i>, <i>v</i>)</span>. A vertex set <span class="MATH"><i>D</i></span> in graph <span class="MATH"><i>G</i></span> is called
+   a <span class="textit">geodetic set</span> if <span class="MATH"><i>I</i>(<i>D</i>) = <i>V</i></span> . The <em>geodetic set problem</em> is to verify whether <span class="MATH"><i>D</i></span> is a
+   geodetic set or not. We use Figure 3 as an example. In Figure 3, 
+<span class="MATH"><i>I</i>(2, 5) = {2, 3, 4, 5}</span> since
+   there are two shortest paths between vertices 2 and 5. We can see that vertices 3 and 4 are lying on
+   one of these two shortest paths respectively. However, <span class="MATH"><i>I</i>(2, 5)</span> is not a geodetic set since 
+<span class="MATH"><i>I</i>(2, 5) <img width="18" height="32" align="MIDDLE" border="0" src="2818img4.gif" alt="$ \neq$"> <i>V</i></span> .
+   Vertex set 
+<span class="MATH">{1, 2, 3, 4, 5}</span> is intuitively a geodetic set of <span class="MATH"><i>G</i></span>. Vertex set 
+<span class="MATH"><i>D</i> = {1, 2, 5}</span> is also a geodetic
+   set of <span class="MATH"><i>G</i></span> since vertex 3 (respectively, vertex 4) is in the shortest path between vertices 1 and 5 (respectively,
+   vertices 2 and 5). Thus, <span class="MATH"><i>I</i>(<i>D</i>) = <i>V</i></span> . Besides, vertex sets 
+<span class="MATH">{1, 3, 4}</span> and 
+<span class="MATH">{1, 4, 5}</span> are also geodetic sets.
+   However, 
+<span class="MATH"><i>D</i> = {3, 4, 5}</span> is not a geodetic set since vertex 1 is not in <span class="MATH"><i>I</i>(<i>D</i>)</span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file consists of a given graph and several test cases. The first line contains an integer <span class="MATH"><i>n</i></span> indicating
+the number of vertices in the given graph, where 
+<span class="MATH">2<img width="18" height="30" align="MIDDLE" border="0" src="2818img5.gif" alt="$ \le$"><i>n</i><img width="18" height="30" align="MIDDLE" border="0" src="2818img5.gif" alt="$ \le$">40</span>. The vertices of a graph are labeled from 1
+to <span class="MATH"><i>n</i></span>. Each vertex has a distinct label. The following n lines represent the adjacent vertices of vertex
+
+<span class="MATH"><i>i</i>, <i>i</i> = 1, 2,..., <i>n</i></span>. For example, the second line of the sample input indicates that vertex 1 is adjacent
+with vertices 2 and 3. Note that any two integers in each line are separated by at least one space. After
+these <span class="MATH"><i>n</i></span> lines, there is a line which contains the
+number of test cases. Each test case is shown in one line and represents a given subset <span class="MATH"><i>D</i></span> of vertices.
+You have to determine whether <span class="MATH"><i>D</i></span> is a geodetic set or not.
+
+<p>
+<div align="CENTER">
+
+<img width="191" height="268" align="BOTTOM" border="0" src="p2818.jpg" alt="\epsfbox{p2818.eps}">
+</div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, output `<tt>yes</tt>' in one line if it is a geodetic set or `<tt>no</tt>' otherwise.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5
+2 3
+1 3 4
+1 2 5
+2 5
+3 4
+6
+1 2 3 4 5
+1 2 5
+2 4
+1 3 4
+1 4 5
+3 4 5
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+yes
+yes
+no
+yes
+yes
+no
+</pre>
+
+<p>

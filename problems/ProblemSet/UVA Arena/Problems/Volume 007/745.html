@@ -1,0 +1,174 @@
+
+
+<html>
+<head>
+<title>Numeric Puzzles Again!</title>
+<meta name="description" content="Numeric Puzzles Again!">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Numeric Puzzles Again!</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A different and exciting game is invading all the toy stores around Latin America. It looks the same as a children's jigsaw, but the pieces are constructed entirely using numbers...
+
+<p>
+The pieces may have non-uniform shapes, but they all must construct a perfect 
+
+<img width="58" height="32" align="MIDDLE" border="0" src="745img1.gif" alt="$N \times N$">
+image. For instance, a 5 <img width="27" height="30" align="MIDDLE" border="0" src="745img2.gif" alt="$\times 5$">
+image may be this:
+
+<p>
+<pre>
+11223
+11223
+12233
+11233
+11133
+</pre>
+
+<p>
+Made with three pieces:
+
+<p>
+<pre>
+11
+11
+1
+11
+111
+
+ 22
+ 22
+22
+ 2
+
+ 3
+ 3
+33
+33
+33
+</pre>
+
+<p>
+Your problem is to write a program that solves the puzzle using the apropriate pieces. 
+
+<p>
+Notice that once a solution is found, it can be rotated, giving rise to three other solutions. However, a given piece must not be rotated separately in order for you to solve the puzzle.
+
+<p>
+In addition to the four rotations, a puzzle may have more than one ``true'' solution. You may assume, though, that none of test cases will contain a puzzle with more than one true solution.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file may contain several instances of the problem. Each instance has the following lines, all consecutive in the file:
+
+<p>
+<ul>
+<li>One line with an integer giving the side length of the puzzle (at most 20).
+<li>One line with the number of pieces (at most 9).
+<li>Several lines describing the pieces. Each piece is made up of some combination of the same digit (1...9). The pieces are left-aligned, and need not appear in any particular order.
+</li></li></li></ul>
+
+<p>
+Blank spaces may be used at the beginning of a line and within the pieces in order to define the piece's shape.
+
+<p>
+Each instance ends with a line containing only the <tt>#</tt> character. The input file ends with a line containing only the integer <tt>0</tt> (zero).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+You must display the right puzzle as output. In order to find the right puzzle, you must sum the literal values of the rows of each possible rotation of the image and return the image with the largest total sum. For instance, for the puzzle
+
+<p>
+<pre>
+2 2 3
+2 3 3
+1 1 3
+</pre>
+
+<p>
+the sums are: 223 + 233 + 113 = 569, 333 + 231 + 221 = 785, 311 + 332 + 322 = 965 and 122 + 132 + 333 = 587. Thus the right puzzle is
+
+<p>
+<pre>
+3 1 1
+3 3 2
+3 2 2
+</pre>
+
+<p>
+The output of each instance must end with a blank line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+7
+6
+3333
+33
+3333
+ 33
+ 33
+7  7
+7  7
+7777
+88888
+ 6
+666
+ 66
+  22
+222
+  2
+  5
+ 55
+ 55
+555
+5 5
+#
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+8777333
+8733333
+8733323
+8777323
+8655222
+6665552
+6655555
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

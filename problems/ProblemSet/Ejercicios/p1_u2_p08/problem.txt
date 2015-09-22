@@ -1,0 +1,28 @@
+Ejercicio 8. 
+
+Programa que imprime la tabla de multiplicar de un número introducido por un usuario hasta un límite especificado.
+
+Entrada: 
+	Un número entero positivo, un número entero positivo que indica el límite de la tabla.
+	
+Salida:
+	La tabla de multiplicar
+
+
+Ejemplos:
+==============================================================
+entrada:
+1 10
+--------------------------------------------------------------
+salida:
+1*0=0 1*1=1 1*2=2 1*3=3 1*4=4 1*5=5 1*6=6 1*7=7 1*8=8 1*9=9 1*10=10
+==============================================================
+entrada:
+7 5
+--------------------------------------------------------------
+salida:
+7*0=0 7*1=7 7*2=14 7*3= 21 7*4=28 7*5=35
+==============================================================
+-1 0
+numero no valido
+

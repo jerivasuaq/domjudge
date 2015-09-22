@@ -1,0 +1,225 @@
+
+
+<html>
+<head>
+<title>Dart-a-Mania</title>
+<meta name="description" content="Dart-a-Mania">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Dart-a-Mania</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Description of the Game</a>&nbsp;</font>
+</h2>
+
+<p>
+The game of darts has many variations. One such variation is the
+game of <b>301</b>. In the game of 301 each player starts with a
+score of 301 (hence the name). Each player, in turn, throws three
+darts to score points which are subtracted from the player's
+current score. For instance, if a player has a current score of
+272 and scores 55 points with the three darts, the new score would
+be 217. Each dart that is tossed may strike regions on the
+dartboard that are numbered between 1 and 20. (A value of zero
+indicates that the player either missed the dartboard altogether
+or elected to not throw the dart.) A dart that strikes one of
+these regions will either score the number printed on the
+dartboard, double the number printed, or triple the number
+printed. For example, a player may score 17, 34, or 51 points with
+a toss of one dart that hits one of the regions marked with a 17.
+A third way to score points with one dart is to hit the BULLS EYE
+which is worth 50 points. (There is no provision for doubling or
+tripling the bull's eye score.)
+
+<p>
+
+<p>
+<br>
+The first player to reduce his score to <em>exactly zero</em> wins
+the game. If a player scores more points than his/her current
+score, the player is said to have ``busted" and the new score is
+returned to the last current score.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Problem Statement</a>&nbsp;</font>
+</h2>
+
+<p>
+Given a player's current dart score, write a program to calculate
+all the possible combinations and permutations of scores on
+throwing three darts that would reduce the player's score to
+exactly zero (meaning the player won the game). The output of the
+program should contain the number of combinations and permutations
+found.
+
+<p>
+
+<p>
+<br>
+For example, if the player's current score is 2, then there would be two
+combinations and six permutations. The combinations would be: 1) obtain a score
+of 2 on any one dart and zero on the other two, and 2) obtain a score of one on
+two different darts and zero on the third dart. The order in which this is
+accomplished is not important.
+
+<p>
+
+<p>
+<br>
+With permutations the order is significant; therefore the
+six permutations would be as follows:
+<dl>
+<dt><strong>Dart 1:</strong>
+<dd><tt>2 0 0 1 1 0</tt>
+<dt><strong>Dart 2:</strong>
+<dd><tt>0 2 0 1 0 1</tt>
+<dt><strong>Dart 3:</strong>
+<dd><tt>0 0 2 0 1 1</tt>
+</dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+
+<p>
+<br>
+
+<b>Note:</b> The program doesn't print out the actual permutations
+and combinations, just the total number of each.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file contains a list of integers (each <img width="49" height="30" align="MIDDLE" border="0" src="735img1.gif" alt="$\le 999$">), one
+per line, that represent several players' current scores. A value
+of zero or less will signify the end of the input file.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each positive integer in the input file, 2 or 3 line(s) will
+be written to the output file.
+
+<p>
+
+<p>
+<br>
+If the score can be reduced to zero, your program should write the lines:
+
+<p>
+
+<p>
+<br>
+
+<tt>NUMBER OF COMBINATIONS THAT SCORES </tt><i>x</i> <tt>IS
+</tt><i>c</i>.
+
+<p>
+
+<tt>NUMBER OF PERMUTATIONS THAT SCORES </tt><i>x</i> <tt>IS </tt>
+<i>p</i>.
+
+<p>
+
+<p>
+<br>
+where <i>x</i> is the value of the player's score while <i>c</i>
+and <i>p</i> are the total number of combinations and permutations
+possible, respectively.
+
+<p>
+
+<p>
+<br>
+If it is impossible to reduce the player's score to zero, write the line:
+
+<p>
+
+<p>
+<br>
+
+<tt>THE SCORE OF </tt><i>x</i> <tt>CANNOT BE MADE WITH THREE
+DARTS.</tt>
+
+<p>
+
+<p>
+<br>
+After the line(s) above are printed, your program should write a
+line of 70 asterisks to separate output for different scores. The
+message ``<tt>END OF OUTPUT</tt>" should appear at the end of the
+output file.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+162
+175
+2
+68
+211
+114
+-100
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+NUMBER OF COMBINATIONS THAT SCORES 162 IS 7.
+NUMBER OF PERMUTATIONS THAT SCORES 162 IS 28.
+**********************************************************************
+THE SCORE OF 175 CANNOT BE MADE WITH THREE DARTS.
+**********************************************************************
+NUMBER OF COMBINATIONS THAT SCORES 2 IS 2.
+NUMBER OF PERMUTATIONS THAT SCORES 2 IS 6.
+**********************************************************************
+NUMBER OF COMBINATIONS THAT SCORES 68 IS 187.
+NUMBER OF PERMUTATIONS THAT SCORES 68 IS 1056.
+**********************************************************************
+THE SCORE OF 211 CANNOT BE MADE WITH THREE DARTS.
+**********************************************************************
+NUMBER OF COMBINATIONS THAT SCORES 114 IS 82.
+NUMBER OF PERMUTATIONS THAT SCORES 114 IS 445.
+**********************************************************************
+END OF OUTPUT
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-31</i>
+</address>
+</body>
+</html>
+

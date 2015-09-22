@@ -1,0 +1,77 @@
+
+
+<html>
+<head>
+<title>Bank (Not Quite O.C.R.)</title>
+<meta name="description" content="Bank (Not Quite O.C.R.)">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Bank (Not Quite O.C.R.)</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Banks, always trying to increase their profit, asked their computer experts to come up with a system that can read bank cheques; this would make the processing of cheques cheaper. One of their ideas was to use optical character recognition (ocr) to recognize bank accounts printed using 7 line-segments.
+<p>
+Once a cheque has been scanned, some image processing software would convert the horizontal and vertical bars to ASCII bars `<code>|</code>' and underscores `<code>_</code>'.
+<p>
+The ASCII 7-segment versions of the ten digits look like this:
+<p>
+<center><img src="433img3.gif"></center>
+<p>
+A bank account has a 9-digit account number with a checksum. For a valid account number,
+the following equation holds: <i>(d<sub>1</sub>+2 * d<sub>2</sub> + 3 * d<sub>3</sub> + ... + 9 * d<sub>9</sub>) mod 11 = 0.</i>
+Digits are numbered from right to left like this: d<sub>9</sub>d<sub>8</sub>d<sub>7</sub>d<sub>6</sub>d<sub>5</sub>d<sub>4</sub>d<sub>3</sub>d<sub>2</sub>d<sub>1</sub>.
+<p>
+<p>
+Unfortunately, the scanner sometimes makes mistakes: some line-segments may be missing. Your task is to write a program that deduces the original number, assuming that:
+<ul><li> when the input represents a valid account number, it is the original number;<li> at most one digit is garbled;<li> the scanned image contains no extra segments.
+</li></li></li></ul>
+<p>
+For example, the following input
+<pre>
+    _  _     _  _  _  _  _
+  | _| _||_||_ |_   ||_||_|
+  | _  _|  | _||_|  ||_| _|
+</pre>
+<p>
+used to be ''123456789''.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input Specification</a></font></h2>
+<p>
+The input file starts with a line with one integer specifying the number of account numbers that
+have to be processed. Each account number occupies 3 lines of 27 characters.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output Specification</a></font></h2>
+<p>
+For each test case, the output contains one line with 9 digits if the correct account number can be
+determined, the string ``<tt>failure</tt>'' if no solutions were found and ``<tt>ambiguous</tt>'' if more than one solution was found.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+4
+    _  _     _  _  _  _  _
+  | _| _||_||_ |_   ||_||_|
+  | _  _|  | _||_|  ||_| _|
+    _  _  _  _  _  _     _
+|_||_|| || ||_   |  |  ||_ 
+  | _||_||_||_|  |  |  | _|
+ _  _  _  _  _  _  _  _  _
+|_||_||_||_||_||_||_||_||_|
+|_||_||_||_||_||_||_||_||_|
+ _     _  _  _  _  _  _  _
+|_|  ||_||_||_||_||_||_||_|
+|_|  ||_||_||_||_||_||_||_|
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>123456789
+ambiguous
+failure
+878888888</pre>
+<p>
+</body>
+</html>

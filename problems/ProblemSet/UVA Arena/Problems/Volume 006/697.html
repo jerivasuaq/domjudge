@@ -1,0 +1,133 @@
+
+
+<html>
+<head>
+<title>Jack and Jill</title>
+<meta name="description" content="Jack and Jill">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Jack and Jill</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Jack and Jill went up the hill to fetch a pail of water.  Well, they probably
+need to fetch many pails of water in this problem.  The problem is to determine
+how long it will take Jack and Jill to fetch a specified volume of water.
+
+<p>
+
+<p>
+<br>
+Jack and Jill require <i>UP</i> seconds (always greater than one) to travel
+from the bottom of the hill to the top, where the well is located.  The well
+is a circular cylinder with a diameter of <i>D</i> inches, and before any
+water is removed, the water level is <i>L</i> inches below its top.
+The single bucket, with a capacity of <i>B</i> cubic feet, when dropped into
+the well (with a rope attached, of course) accelerates at 32.2 feet per
+second per second (due to gravity).  The bucket is pulled up at a rate
+of <i>P</i> inches per second.  It requires <i>DOWN</i> seconds to carry the
+bucket to the bottom of the hill and empty it.
+
+<p>
+
+<p>
+<br>
+Jack and Jill begin at the bottom of the hill.  They both immediately go
+to the top of the hill, where Jill fetches water from the well: dropping
+the bucket (which we assume will immediately fill completely when it
+reaches the water), pulling it up, and passing it to Jack (instantaneously).
+Assume the water level in the well drops only after the bucket is lifted.
+Jack then carries the bucket down the hill, empties it (instantaneously), goes
+back up the hill, and gives the bucket to Jill (instantaneously).  This process repeats
+ until the required volume of water (<i>V</i> cubic feet) has been carried
+ to the bottom of the hill.
+
+<p>
+The problem, again, is to determine how long it takes Jack and Jill to
+accomplish their task.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input contains multiple scenarios, each having
+values for 
+
+<i>UP</i>, <i>D</i>, <i>L</i>, <i>B</i>, <i>P</i>, <i>DOWN</i>,
+and <i>V</i> (all positive non-zero real numbers) in that order on a separate line.
+
+<p>
+A line containing a single value less than one appears following the data for
+ the last scenario.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each scenario, display the scenario number (they start with 1 and are
+numbered sequentially), the input values, and the time required, in seconds
+(accurate to two fractional digits).  The samples shown below illustrate an
+acceptable output format. Print a blank line between test cases. By the way, you can assume the well never runs
+ dry, even though its volume only diminishes during Jack and Jill's activities!
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+20.0 36.0 72.0 2.0 10.0 18.0 10.0
+25.0 72.0 200.0 1.5 8.0 30.0 20.0
+0.0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Scenario 1:
+     up hill              20.00 sec
+     well diameter        36.00 in
+     water level          72.00 in
+     bucket volume         2.00 cu ft
+     bucket ascent rate   10.00 in/sec
+     down hill            18.00 sec
+     required volume      10.00 cu ft
+     TIME REQUIRED       232.59 sec
+
+Scenario 2:
+     up hill              25.00 sec
+     well diameter        72.00 in
+     water level         200.00 in
+     bucket volume         1.50 cu ft
+     bucket ascent rate    8.00 in/sec
+     down hill            30.00 sec
+     required volume      20.00 cu ft
+     TIME REQUIRED      1141.63 sec
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-14</i>
+</address>
+</body>
+</html>
+

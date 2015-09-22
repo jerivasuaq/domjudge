@@ -1,0 +1,145 @@
+
+
+<html>
+<head>
+<title>Gangsters</title>
+<meta name="description" content="Gangsters">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Gangsters</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+<i>N</i> gangsters are going to a restaurant. The <i>i</i>-th gangster comes at the
+time <i>T</i><sub><i>i</i></sub> and has the <em>prosperity</em> <i>P</i><sub><i>i</i></sub>. The door of the restaurant has
+<i>K</i>+1 states of openness expressed by the integers in the range [0, <i>K</i>]. The
+state of openness can change by one in one unit of time; i.e. it either opens
+by one, closes by one or remains the same. At the initial moment of time the
+door is closed (state 0). The <i>i</i>-th gangster enters the restaurant only if the
+door is opened specially for him, i.e. when the state of openness coincides
+with his <em>stoutness</em> <i>S</i><sub><i>i</i></sub>. If at the moment of time when the gangster
+comes to the restaurant the state of openness is not equal to his stoutness,
+then the gangster goes away and never returns.
+
+<p>
+
+<p>
+<br>
+The restaurant works in the interval of time [0, <i>T</i>].
+
+<p>
+
+<p>
+<br>
+The goal is to gather the gangsters with the maximal total prosperity in the restaurant 
+by opening and closing the door appropriately.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+The first line of the input is an integer M, then a blank line followed by M datasets. There is a blank line between datasets.<p>
+The first line of each dataset contains the values <i>N</i>, <i>K</i>, and <i>T</i>,
+separated by spaces. (
+
+<img width="326" height="32" align="MIDDLE" border="0" src="672img1.gif" alt="$1 \le N \le 100, 1 \le K \le 100, 0 \le T \le 30000$">)
+
+<p>
+The second line of the dataset contains the moments of time when
+gangsters come to the restaurant 
+
+<img width="110" height="32" align="MIDDLE" border="0" src="672img2.gif" alt="$T_1, T_2, \dots, T_N$">,
+separated by
+spaces. (
+
+<img width="88" height="32" align="MIDDLE" border="0" src="672img3.gif" alt="$0 \le T_i \le T$">
+for 
+
+<img width="114" height="32" align="MIDDLE" border="0" src="672img4.gif" alt="$i = 1, 2, \dots, N$">)
+
+<p>
+The third line of the dataset contains the values of the prosperity of
+gangsters 
+
+<img width="113" height="32" align="MIDDLE" border="0" src="672img5.gif" alt="$P_1, P_2 , \dots, P_N$">,
+separated by spaces. (
+
+<img width="102" height="32" align="MIDDLE" border="0" src="672img6.gif" alt="$0 \le P_i \le 300$">
+for 
+
+<img width="114" height="32" align="MIDDLE" border="0" src="672img4.gif" alt="$i = 1, 2, \dots, N$">)
+
+<p>
+The forth line of the dataset contains the values of the stoutness of
+gangsters 
+
+<img width="111" height="32" align="MIDDLE" border="0" src="672img7.gif" alt="$S_1, S_2, \dots, S_N$">,
+separated by spaces. (
+
+<img width="92" height="32" align="MIDDLE" border="0" src="672img8.gif" alt="$1 \le S_i \le K$">
+for
+
+
+<img width="114" height="32" align="MIDDLE" border="0" src="672img4.gif" alt="$i = 1, 2, \dots, N$">)
+
+
+<p>
+
+<p>
+<br>
+All values in the input file are integers.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, print the single integer - the maximal sum of prosperity of gangsters in 
+the restaurant. In case when no
+gangster can enter the restaurant the output should be 0.
+Print a blank line between datasets.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+4 10 20
+10 16 8 16
+10 11 15 1
+10 7 1 8
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+26
+</pre>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

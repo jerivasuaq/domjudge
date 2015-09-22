@@ -1,0 +1,133 @@
+
+
+<html>
+<head>
+<title>Sorting Slides</title>
+<meta name="description" content="Sorting Slides">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Sorting Slides</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Professor Clumsey is going to give an important talk this afternoon. Unfortunately, he is not a very
+tidy person and has put all his transparencies on one big heap. Before giving the talk, he has to sort the
+slides. Being a kind of minimalist, he wants to do this with the minimum amount of work possible.
+
+<p>
+
+<p>
+<br>
+The situation is like this. The slides all have numbers written on them according to their order in
+the talk. Since the slides lie on each other and are transparent, one cannot see on which slide each
+number is written.
+
+<p>
+<div align="CENTER">
+
+<img src="p663.gif">
+</div>
+
+<p>
+Well, one cannot see on which slide a number is written, but one may deduce which numbers are
+written on which slides. If we label the slides which characters A, B, C, ... as in the figure above, it is
+obvious that D has number 3, B has number 1, C number 2 and A number 4.
+
+<p>
+Your task, should you choose to accept it, is to write a program that automates this process.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of several heap descriptions. Each heap descriptions starts with a line containing
+a single integer <i>n</i>, the number of slides in the heap. The following <i>n</i>
+lines contain four integers <i>x</i><sub><i>min</i></sub>, <i>x</i><sub><i>max</i></sub>, <i>y</i><sub><i>min</i></sub> and <i>y</i><sub><i>max</i></sub>,
+each, the bounding coordinates of the slides. The slides will be labeled as
+A,B,C,... in the order of the input.
+
+<p>
+This is followed by <i>n</i> lines containing two integers each, the <i>x</i>- and
+<i>y</i>-coordinates of the <i>n</i> numbers printed on the slides. The first coordinate
+pair will be for number 1, the next pair for 2, etc. No number will lie on a
+slide boundary.
+
+<p>
+The input is terminated by a heap description starting with <i>n</i> = 0, which
+should not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each heap description in the input first output its number. Then print a series of all the slides
+whose numbers can be uniquely determined from the input. Order the pairs by their letter identifier.
+
+<p>
+If no matchings can be determined from the input, just print the word none on a line by itself.
+
+<p>
+
+<p>
+<br>
+Output a blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4
+6 22 10 20
+4 18 6 16
+8 20 2 18
+10 24 4 8
+9 15
+19 17
+11 7
+21 11
+2
+0 2 0 2
+0 2 0 2
+1 1
+1 1
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Heap 1
+(A,4) (B,1) (C,2) (D,3)
+
+Heap 2
+none
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

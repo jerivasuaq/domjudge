@@ -1,0 +1,70 @@
+
+
+<html>
+<head>
+<title>Towers of Hanoi</title>
+<meta name="description" content="Towers of Hanoi">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Towers of Hanoi</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In 1883, Edouard Lucas invented, or perhaps reinvented, one of the most popular
+puzzles of all times - the Tower of Hanoi, as he called it - which is still
+used today in many computer science textbooks to demonstrate how to write a 
+recursive algorithm or program. First of all, we will make a list of the rules
+of the puzzle:
+<p>
+<ul><li> There are three pegs: <i>A</i>, <i>B</i> and <i>C</i>.<li> There are <i>n</i> disks. The number <i>n</i> is constant while working the puzzle.<li> All disks are different in size.<li> The disks are initially stacked on peg <i>A</i> so that they increase in size
+from the top to the bottom.<li> The goal of the puzzle is to transfer the entire tower from the <i>A</i> peg
+to one of the others pegs.<li> One disk at a time can be moved from the top of a stack either to an 
+empty peg or to a peg with a larger disk than itself on the top of its stack.
+</li></li></li></li></li></li></ul>
+<p>
+A good way to get a feeling for the puzzle is to write a program which will 
+show a copy of the puzzle on the screen and let you simulate moving the disks
+around. The next step could be to write a program for solving the puzzle in
+a efficient way. You don't have to do neither, but only know the actual 
+situation after a given number of moves by using a determinate algorithm.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">The Algorithm</a></font></h2>
+<p>
+It is well known and rather easy to prove that the minimum number of moves
+needed to complete the puzzle with <i>n</i> disks is  <img width="46" height="22" align="MIDDLE" alt="tex2html_wrap_inline44" src="254img1.gif"> . A simple algorithm
+which allows us to reach this optimum is as follows: for odd moves, take the
+smallest disk (number 1) from the peg where it lies to the next one in the
+circular sequence  <img width="104" height="13" align="BOTTOM" alt="tex2html_wrap_inline46" src="254img2.gif"> ; for even moves, make the only possible 
+move not involving disk 1.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Input</a></font></h2>
+<p>
+The input file will consist of a series of lines. Each line will contain two
+integers <i>n</i>, <i>m</i>: <i>n</i>, lying within the range [0,100], will denote the number
+of disks and <i>m</i>, belonging to [0,   <img width="46" height="22" align="MIDDLE" alt="tex2html_wrap_inline44" src="254img1.gif"> ], will be the number of the last
+move. The file will end at a line formed by two zeros.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Output</a></font></h2>
+<p>
+The output will consist again of a series of lines, one for each line of the
+input. Each of them will be formed by three integers indicating the number of
+disks in the pegs <i>A</i>, <i>B</i> and <i>C</i> respectively, when using the algorithm 
+described above.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3 5
+64 2
+8 45
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1 1 1
+62 1 1
+4 2 2</pre>
+<p>
+</body>
+</html>

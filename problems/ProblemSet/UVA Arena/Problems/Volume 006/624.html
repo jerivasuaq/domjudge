@@ -1,0 +1,99 @@
+
+
+<html>
+<head>
+<title>CD</title>
+<meta name="description" content="CD">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+CD</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+You have a long drive by car ahead. You have a tape recorder, but unfortunately
+your best music is on CDs. You need to have it on tapes so the problem to solve
+is: you have a tape <i>N</i> minutes long. How to choose tracks from CD to get most out
+of tape space and have as short unused space as possible.
+
+<p>
+
+<p>
+<br>
+Assumptions:
+<ul>
+<li>number of tracks on the CD. does not exceed 20
+<li>no track is longer than <i>N</i> minutes
+<li>tracks do not repeat
+<li>length of each track is expressed as an integer number
+<li><i>N</i> is also integer
+</li></li></li></li></li></ul>
+
+<p>
+Program should find the set of tracks which fills the tape best and print it
+in the same sequence as the tracks are stored on the CD
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Any number of lines. Each one contains value <i>N</i>, (after space) number of tracks
+and durations of the tracks. For example from first line in sample data: <i>N</i>=5,
+number of tracks=3, first track lasts for 1 minute, second one 3 minutes, next
+one 4 minutes
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Set of tracks (and durations) which are the correct solutions and
+string ``<tt>sum:</tt>" and sum of duration times.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 3 1 3 4
+10 4 9 8 4 2
+20 4 10 5 7 4
+90 8 10 23 1 2 3 4 5 7
+45 8 4 10 44 43 12 9 8 2
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+1 4 sum:5
+8 2 sum:10
+10 5 4 sum:19
+10 23 1 2 3 4 5 7 sum:55
+4 10 12 9 8 2 sum:45
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+</body>
+</html>
+

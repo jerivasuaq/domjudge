@@ -1,0 +1,117 @@
+
+
+<html>
+<head>
+<title>Crosswords (II)</title>
+<meta name="description" content="Crosswords (II)">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Crosswords (II)</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A crossword can be stored as a matrix  <img width="46" height="18" align="MIDDLE" alt="tex2html_wrap_inline26" src="312img1.gif">  of zeros and ones.
+Zero represents white squares
+and one represents black squares. Some squares of the crossword are
+numbered and assigned to
+these numbers are the descriptions of the words that should be written
+either ``across'' or ``down''
+into the crossword. A square is numbered if it is a white square and
+either (a) the square below it is
+white and there is no white square immediately above, or (b) there is
+no white square immediately
+to its left and the square to its right is white. The squares are
+numbered from left to right, from the top line to the bottom line.
+<p>
+From the matrix a crossword diagram can be drawn. In the diagram each
+square is represented
+by a box  <img width="38" height="24" align="MIDDLE" alt="tex2html_wrap_inline28" src="312img2.gif">  characters. Black square and white squares 
+(numbered and not numbered square) are represented as follows
+(where <tt>nnn</tt> is the number of the square):
+<p>
+<pre>++++++                        ++++++         ++++++
+++++++                        +nnn +         +    +
+++++++                        +    +         +    +
+++++++                        ++++++         ++++++</pre>
+<p>
+The remaining characters of the box are spaces. If black squares are given
+at the edges,
+they should be removed from the diagram (see the example). Only use spaces
+as necessary filling
+characters. Don't use any unnecessary spaces at the end of the line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file consists of several blocks of lines each representing a
+crossword. Each block
+starts with the line containing two integers <i>m</i> &lt; 25 and <i>n</i> &lt; 25 separated
+by one space. In each of
+the next <i>m</i> lines there are <i>n</i> numbers 0 or 1, separated by one space.
+The last block will be empty, <i>m</i> = <i>n</i> = 0.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output file contains the corresponding crossword diagram for each except
+the last block.
+After each diagram there is one empty line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>6 7
+1 0 0 0 0 1 1
+0 0 1 0 0 0 0
+0 0 0 0 1 0 0
+0 1 0 0 1 1 1
+0 0 0 1 0 0 0
+1 0 0 0 0 0 1
+5 3
+1 0 1
+0 0 0
+1 1 1
+0 0 0
+1 0 1
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>     +++++++++++++++++++++
+     +001 +    +002 +003 +
+     +    +    +    +    +
+++++++++++++++++++++++++++++++++++++
++004 +    ++++++005 +    +006 +007 +
++    +    ++++++    +    +    +    +
+++++++++++++++++++++++++++++++++++++
++008 +    +009 +    +    +010 +    +
++    +    +    +    +    +    +    +
++++++++++++++++++++++    +++++++++++
++    ++++++011 +    +
++    ++++++    +    +
+++++++++++++++++++++++++++++++++++++
++012 +013 +    ++++++014 +015 +    +
++    +    +    ++++++    +    +    +
+++++++++++++++++++++++++++++++++++++
+     +016 +    +    +    +    +
+     +    +    +    +    +    +
+     ++++++++++++++++++++++++++
+
+     ++++++
+     +001 +
+     +    +
+++++++++++++++++
++002 +    +    +
++    +    +    +
+++++++++++++++++
+
+
+++++++++++++++++
++003 +004 +    +
++    +    +    +
+++++++++++++++++
+     +    +
+     +    +
+     ++++++</pre>
+<p>
+</body>
+</html>

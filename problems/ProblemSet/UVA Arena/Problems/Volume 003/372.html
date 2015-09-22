@@ -1,0 +1,65 @@
+
+
+<html>
+<head>
+<title>WhatFix Notation</title>
+<meta name="description" content="WhatFix Notation">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<p>
+There are three traversal methods commonly used in compilers and calculators:
+<p>
+<pre>     prefix
+     infix
+     postfix</pre>
+<p>
+For example, a single expression can be written in each form
+<p>
+<pre>     infix:    a + b * c
+     prefix:   + a * b c
+     postfix:  a b c * +</pre>
+<p>
+Note that prefix and postfix ARE NOT mirror images of each other!  The
+advantage of prefix and postfix notations is that parentheses are unnecessary
+to prevent ambiguity.
+<p>
+<p>
+In our traversal the following symbols are operators with precedence rules
+going from highest to lowest:
+<p>
+<p>
+<p> <img width="193" height="100" align="BOTTOM" alt="tabular21" src="372img1.gif"> <p><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+You are given two strings. The first string is the infix version of the
+expression. The second string is the prefix version of the expression.
+Determine the postfix version of the expression and print it out on a single
+line.
+<p>
+<p>
+All input will be single characters separated by a space. 
+
+<p> <img width="193" height="100" align="BOTTOM" alt="tabular21" src="372img1.gif"> <p><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Output</a></font></h2>
+<p>
+
+Output must be the
+same, single characters separated by a space. There are no special sentinels
+identifying the end of the data.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>a + b - c
++ a - b c</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>INFIX   =&gt; a + b - c
+PREFIX  =&gt; + a - b c
+POSTFIX =&gt; a b c - +</pre>
+<p>
+</body>
+</html>

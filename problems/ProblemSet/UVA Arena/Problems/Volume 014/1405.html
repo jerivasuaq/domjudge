@@ -1,0 +1,70 @@
+
+<p>
+A ``<span class="textit">letter</span>" lock is a circle, in which we mark some positions equidistant from one another. The positions are numbered clockwise by a zero-based index and there is exactly one English capital letter put in each position. The state of the lock is given by a string, which contains all letters enumerated from position 0 to the end. The lock can change its state by performing rotations: After a rotation, every letter in the circle will move clockwise to the next position. If the lock received a password in form of a string, it will step by step rotate to change its state and verify whether its current state matches the prefix of the password. Whenever it matches, the lock will be unlocked, and the verification process will stop successfully. If the lock moves around and there has been no matched state found, it will delete the first character in the password and retry with the new password, and so on. This process repeats until the lock is unlocked or the password has b!
+ een completely deleted (verification fails). 
+
+<p>
+<div align="CENTER">
+
+<img width="492" height="226" align="BOTTOM" border="0" src="p4002.png" alt="\epsfbox{p4002.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+
+<p>
+Given a sequence of <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> locks, in which the state of any lock is not shorter than the state of its previous lock, one may want to unlock all of them in succession by only one password. The process is as follows: the password is first applied to the first lock in the sequence; the remaining password after unlocking the first lock will be applied again to the second lock, the remaining password after unlocking the second lock will be applied again to the third lock, etc. The process continues until the last lock is unlocked. 
+
+<p>
+Your task is to write a program to find the shortest password (in terms of the number of characters) that can be used to unlock all these <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> locks in succession. If there is more than one solution, just find the first one in lexicographic order.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file consists of several data sets. The first line of the input file contains the number of data sets which is a positive integer and is not bigger than 20. The following lines describe the data sets. 
+
+<p>
+For each data set, there is only one line containing a string that lists all states of the locks separated by one semicolon (``<tt>;</tt>"). In each test case, the number of locks is not greater than 200, the state of every lock is not empty and consists of less than 101 letters.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, write in one line the shortest password to unlock all the locks in succession.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 
+TOPO;POFTTO;THEPOF;HEWOOFT;HEWORLDT 
+WELC;COMEEL;METLCO;TOCOME 
+HEACMT;PROGRAMCM;RAMMINGCON;CONTESTING
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+TOPOFTHEWORLD 
+WELCOMETO 
+THEACMPROGRAMMINGCONTEST
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark>

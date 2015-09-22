@@ -1,0 +1,90 @@
+
+
+<html>
+<head>
+<title>John's trip</title>
+<meta name="description" content="John's trip">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">John's trip</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Little Johnny has got a new car. He decided to drive around the town to
+visit his friends. Johnny
+wanted to visit all his friends, but there was many of them. In each street
+he had one friend. He started
+thinking how to make his trip as short as possible. Very soon he realized
+that the best way to do it was to
+travel through each street of town only once. Naturally, he wanted to
+finish his trip at the same place he
+started, at his parents' house.
+<p>
+The streets in Johnny's town were named by integer numbers from 1 to <i>n</i>,
+<i>n</i> &lt; 1995. The junctions
+were independently named by integer numbers from 1 to <i>m</i>,  <img width="54" height="25" align="MIDDLE" alt="tex2html_wrap_inline32" src="302img1.gif"> .
+All junctions in the town had different numbers. Each street was
+connecting exactly two (not necessarily different) junctions.
+No two streets in the town had the same number. He immediately started to
+plan his round trip. If there
+was more than one such round trip, he would have chosen the one which,
+when written down as a sequence
+of street numbers is lexicographically the smallest.
+<p>
+But Johnny was not
+able to find even one such round trip.
+Help Johnny and write a program which finds the desired shortest round
+trip. If the round trip does
+not exist the program should write a message. Assume that Johnny lives at
+the junction ending the 1st street input
+with smaller number. All streets in the town are two way. There
+exists a way from each street to
+another street in the town. The streets in the town are very narrow and
+there is no possibility to turn back the car once he is in the street.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input file consists of several blocks. Each block describes one town.
+Each line in the block contains
+three integers <i>x</i>, <i>y</i>, <i>z</i>, where <i>x</i> &gt; 0 and <i>y</i> &gt; 0 are the numbers of
+junctions which are connected by the street
+number <i>z</i>. The end of the block is marked by the line containing <i>x</i> = <i>y</i> = 0.
+At the end of the input file there is an empty block, <i>x</i> = <i>y</i> = 0.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output file consists of 2 line blocks corresponding to the blocks of
+the input file. The first line of
+each block contains the sequence of street numbers (single members of the
+sequence are separated by space)
+describing Johnny's round trip. If the round trip cannot be found the
+corresponding output block contains
+the message ``<tt>Round trip does not exist.</tt>''. The second line of each
+block is empty.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1 2 1
+2 3 2
+3 1 6
+1 2 5
+2 3 3
+3 1 4
+0 0
+1 2 1
+2 3 2
+1 3 3
+2 4 4
+0 0
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1 2 3 5 4 6
+
+Round trip does not exist.</pre>
+<p>
+</body>
+</html>

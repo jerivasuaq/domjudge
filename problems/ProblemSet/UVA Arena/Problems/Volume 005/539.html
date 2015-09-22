@@ -1,0 +1,148 @@
+
+
+<html>
+<head>
+<title>The Settlers of Catan</title>
+<meta name="description" content="The Settlers of Catan">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The Settlers of Catan</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Within <em>Settlers of Catan</em>, the 1995 German game of the year, players attempt to dominate an island
+by building roads, settlements and cities across its uncharted wilderness.
+
+<p>
+You are employed by a software company that just has decided to develop a computer version of
+this game, and you are chosen to implement one of the game's special rules:
+
+<p>
+
+<p>
+<br>
+When the game ends, the player who built the longest road gains two extra victory points.
+
+<p>
+
+<p>
+<br>
+The problem here is that the players usually build complex road networks and not just one linear
+path. Therefore, determining the longest road is not trivial (although human players usually see it
+immediately).
+
+<p>
+
+<p>
+<br>
+Compared to the original game, we will solve a simplified problem here: You are given a set of
+nodes (cities) and a set of edges (road segments) of length 1 connecting the nodes.
+The longest road is defined as the longest path within the network that doesn't use an edge twice.
+Nodes may be visited more than once, though.
+
+<p>
+
+<p>
+<br>
+Example: The following network contains a road of length 12.
+
+<p>
+<pre>
+o        o -- o        o
+ \      /      \      /
+  o -- o        o -- o
+ /      \      /      \
+o        o -- o        o -- o
+               \      /
+                o -- o
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file will contain one or more test cases.
+
+<p>
+The first line of each test case contains two integers: the number of nodes <i>n</i> (
+
+<img width="88" height="30" align="MIDDLE" border="0" src="539img1.gif" alt="$2 \le n \le 25$">)
+and the
+number of edges <i>m</i> (
+
+<img width="92" height="30" align="MIDDLE" border="0" src="539img2.gif" alt="$1 \le m \le 25$">). The next <i>m</i> lines describe the <i>m</i> edges. Each edge is given by the
+numbers of the two nodes connected by it. Nodes are numbered from 0 to <i>n</i>-1. Edges are
+undirected. Nodes have degrees of three or less. The network is not neccessarily connected.
+
+<p>
+Input will be terminated by two values of 0 for <i>n</i> and <i>m</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, print the length of the longest road on a single line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 2
+0 1
+1 2
+15 16
+0 2
+1 2
+2 3
+3 4
+3 5
+4 6
+5 7
+6 8
+7 8
+7 9
+8 10
+9 11
+10 12
+11 12
+10 13
+12 14
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+12
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

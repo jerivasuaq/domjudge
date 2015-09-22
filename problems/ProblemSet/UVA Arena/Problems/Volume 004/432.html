@@ -1,0 +1,112 @@
+
+
+<html>
+<head>
+<title>Modern Art</title>
+<meta name="description" content="Modern Art">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Modern Art</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The famous painter Mel Borp is working on a brilliant series of paintings that introduce a
+new experimental style of Modern Art. At first glance, these paintings look deceptively simple,
+since they consist only of triangles of different sizes that seem to be stacked on top of each other.
+Painting these works, however, takes an astonishing amount of consideration, calculation, and
+precision since all triangles are painted without taking the brush off the canvas. How exactly Mel
+paints his works is a well-kept secret.
+<p>
+Recently, he started on the first painting of his new series.
+It was a single triangle, titled  <img width="27" height="26" align="MIDDLE" alt="tex2html_wrap_inline176" src="432img1.gif"> .
+After that, he created  <img width="28" height="26" align="MIDDLE" alt="tex2html_wrap_inline178" src="432img2.gif"> , the basis for his other works (see Figure 1).
+<p>
+<p><a name="151">&#160;</a> <img width="451" height="180" align="BOTTOM" alt="figure24" src="432img3.gif"> <br>
+<strong>Figure:</strong> Early work:  <img width="27" height="26" align="MIDDLE" alt="tex2html_wrap_inline176" src="432img1.gif">  (left) and  <img width="28" height="26" align="MIDDLE" alt="tex2html_wrap_inline178" src="432img2.gif">  (right).<br>
+<p>
+<p>
+Then he decided to take his experimenting one step further, and he painted  <img width="28" height="26" align="MIDDLE" alt="tex2html_wrap_inline184" src="432img4.gif">  and  <img width="27" height="26" align="MIDDLE" alt="tex2html_wrap_inline186" src="432img5.gif"> .
+Compare Figure 1 and Figure 2 to fully appreciate the remarkable progression in his work.
+<p>
+<p><a name="154">&#160;</a> <img width="451" height="180" align="BOTTOM" alt="figure45" src="432img6.gif"> <br>
+<strong>Figure:</strong> Advanced work:  <img width="28" height="26" align="MIDDLE" alt="tex2html_wrap_inline184" src="432img4.gif">  (left) and  <img width="27" height="26" align="MIDDLE" alt="tex2html_wrap_inline186" src="432img5.gif">  (right).<br>
+<p>
+<p>
+Note that the shape of the painting can be deduced from its title,  <img width="27" height="26" align="MIDDLE" alt="tex2html_wrap_inline192" src="432img7.gif"> , as follows:
+<p>
+<ul><li>  <img width="27" height="26" align="MIDDLE" alt="tex2html_wrap_inline176" src="432img1.gif">  is a single triangle (see Figure 1);<li>  <img width="28" height="26" align="MIDDLE" alt="tex2html_wrap_inline178" src="432img2.gif">  consists of a smaller, inverted triangle placed inside  <img width="27" height="26" align="MIDDLE" alt="tex2html_wrap_inline176" src="432img1.gif"> 
+, so that the result consists of four smaller triangles (see Figure 1);<li> if <i>p</i> &gt; 0 and <i>q</i> &gt; 1, then the painting looks like  <img width="44" height="26" align="MIDDLE" alt="tex2html_wrap_inline204" src="432img8.gif"> , except that an inverted triangle has been placed inside the bottom-right triangle of  <img width="44" height="26" align="MIDDLE" alt="tex2html_wrap_inline204" src="432img8.gif"> , splitting it into four smaller triangles (compare for example  <img width="28" height="26" align="MIDDLE" alt="tex2html_wrap_inline178" src="432img2.gif">  and  <img width="28" height="26" align="MIDDLE" alt="tex2html_wrap_inline184" src="432img4.gif">  );<li> if <i>p</i> &gt; 1 and <i>q</i> &gt; 0, the painting looks like  <img width="44" height="26" align="MIDDLE" alt="tex2html_wrap_inline216" src="432img9.gif"> 
+, except that an inverted triangle has been
+placed inside the bottom-left triangle of  <img width="44" height="26" align="MIDDLE" alt="tex2html_wrap_inline216" src="432img9.gif"> 
+, splitting it into four smaller triangles;<li> other values of <i>p</i> and <i>q</i>: it is not a valid title of a painting.
+</li></li></li></li></li></ul>
+<p>
+The triangles of a painting look all the same (each triangle is an isosceles triangle with two
+sides of the same length), but their height and width depend on the size of the canvas Mel used.
+<p>
+<p>
+Mel wanted to end the series with  <img width="41" height="26" align="MIDDLE" alt="tex2html_wrap_inline224" src="432img10.gif"> , the most complex painting he thought he would be
+able to paint. But no matter how many times he tried, he could not get it right. Now he is
+desperate, and he hopes you can help him by writing a program that prints, in order, the starting
+and ending coordinates of the lines Mel has to paint. Of course, you will need to know how Mel
+paints his works, so we will now reveal his secret technique.
+<p>
+<p>
+As an example, take a look at  <img width="28" height="26" align="MIDDLE" alt="tex2html_wrap_inline184" src="432img4.gif">  (see Figure 3):
+<p>
+<p><a name="174">&#160;</a> <img width="192" height="234" align="BOTTOM" alt="figure78" src="432img11.gif"> <br>
+<strong>Figure:</strong>  <img width="28" height="26" align="MIDDLE" alt="tex2html_wrap_inline184" src="432img4.gif"> .<br>
+<p>
+<p>
+Mel always starts at the top of the top triangle, drawing a line straight to the lower-left corner
+of the lower left triangle (in this example, 1-2), continuing with a line to the lower-right corner of
+that triangle (in this example, 2-3). Next, he works his way up by drawing a line to the top of that
+triangle (in this example, 3-4). Now he has either reached the starting point again (finishing yet
+another masterpiece) or he has reached the lower-left corner of another triangle (in this example,
+1-4-5). In the latter case, he continues by drawing the bottom line of that triangle (4-5) and after
+that he starts working on the triangle or triangles that is or are located underneath the lower-right
+corner of that triangle, in the same way. So he continues with (5-3), (3-6), (6-7), (7-8), (8-6), (6-9),
+and (9-1) as the finishing touch.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input Specification</a></font></h2>
+<p>
+The first line of the input contains the number of test cases. Each test case consists of one line
+containing four non-negative integers <i>p</i>, <i>q</i>, <i>x</i>, and <i>y</i>, separated by spaces.  <img width="27" height="26" align="MIDDLE" alt="tex2html_wrap_inline192" src="432img7.gif">  is the title of the
+painting and (<i>x</i>,<i>y</i>) are the coordinates of the top of the top triangle. Further,  <img width="66" height="25" align="MIDDLE" alt="tex2html_wrap_inline242" src="432img12.gif">  and <i>x</i>,<i>y</i> &lt; 32768. All triangles have a nonzero area.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output Specification</a></font></h2>
+<p>
+For every test case, the output contains the pairs of (<i>x</i>,<i>y</i>) integer coordinates of the starting and
+ending points of all lines Mel has to draw for the painting  <img width="27" height="26" align="MIDDLE" alt="tex2html_wrap_inline192" src="432img7.gif"> 
+in the right order, in the format
+<p> <img width="364" height="18" align="BOTTOM" alt="displaymath250" src="432img13.gif"> <p>
+followed by a newline. The output for each test case must be followed by an empty line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2
+0 0 1 1
+1 2 512 1024</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>(1,1)(0,0)
+(0,0)(2,0)
+(2,0)(1,1)
+
+(512,1024)(0,0)
+(0,0)(512,0)
+(512,0)(256,512)
+(256,512)(768,512)
+(768,512)(512,0)
+(512,0)(768,0)
+(768,0)(640,256)
+(640,256)(896,256)
+(896,256)(768,0)
+(768,0)(1024,0)
+(1024,0)(512,1024)</pre>
+<p>
+</body>
+</html>

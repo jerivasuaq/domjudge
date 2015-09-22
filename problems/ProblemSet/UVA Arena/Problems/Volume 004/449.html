@@ -1,0 +1,100 @@
+
+
+<html>
+<head>
+<title>Majoring in Scales</title>
+<meta name="description" content="Majoring in Scales">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Majoring in Scales</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+In western music, the twelve notes used in musical notation are
+arranged in the following order:
+<p>
+<pre>C/B#  C#/Db  D  D#/Eb  E/Fb  F/E#  F#/Gb  G  G#/Ab  A  A#/Bb  B/Cb</pre>
+<p>
+Note that a slash in the above list indicates alternate notations
+for the same note.
+<p>
+<p>
+Any two notes that are adjacent to each other in the above list
+are known as a semitone.  Any two notes that have one note
+separating them in the list above are known as a tone.  A major
+scale is made up of 8 notes.  It starts on one of the above notes
+and moves in the progression tone-tone-semitone-tone-tone-tone-semitone.  For example, the major scale starting on <tt>Db</tt> is made up
+of the following notes:
+<p>
+<pre>Db Eb F Gb Ab Bb C Db</pre>
+<p>
+The following rules also apply to major scales:
+<p>
+<ol><li> The scale will contain each letter from <tt>A</tt> to <tt>G</tt> once and only once, with the exception of the first letter of the scale (which will be repeated as the last note of the scale).<li> The scale may not contain a combination of both flat (<tt>b</tt>)
+     notes and sharp (<tt>#</tt>) notes.
+</li></li></ol>
+<p>
+For the purposes of this problem, we are only concerned with the
+following major scales: <tt>C</tt>, <tt>Db</tt>, <tt>D</tt>, <tt>Eb</tt>, <tt>E</tt>, <tt>F</tt>, <tt>Gb</tt>, <tt>G</tt>, <tt>Ab</tt>, <tt>A</tt>, <tt>Bb</tt>, and <tt>B</tt>.
+<p>
+<p>
+An interval is a distance between two notes on a scale.  It can
+be either ascending or descending.  The names of the intervals
+are derived by the distance between the two notes.  Two notes
+adjacent to each other in a major scale are known as a major
+second.  Two notes in a major scale with three notes separating
+them are known as a major fifth.  An octave is a special interval
+which spans from one occurrence of a note to the next occurrence
+of it in the major scale.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Input and Output</a></font></h2>
+<p>
+Your program is to read an input file that contains major scale
+intervals to calculate, and is to output the results to an output
+file.  The data in the input file will consist of pairs of lines.
+The first line of each pair will contain the major scale to be
+used, and the second line of each pair will contain one or more
+intervals to be calculated.  Each interval to be calculated will
+be separated by a semicolon.  The interval to calculate will be
+specified with a starting note, a direction (<tt>UP</tt> or <tt>DOWN</tt>), and the
+interval itself (<tt>SECOND</tt>, <tt>THIRD</tt>, <tt>FOURTH</tt>, <tt>FIFTH</tt>, <tt>SIXTH</tt>, <tt>SEVENTH</tt>, or <tt>OCTAVE</tt>).  When specifying notes, the lowercase letter &quot;<tt>b</tt>&quot; will be used to represent a flat, and the symbol &quot;<tt>#</tt>&quot; will be used to
+represent a sharp.  No spaces will immediately precede or follow
+a semicolon, but one space will separate the note from the
+direction as well as the direction from the interval.
+<p>
+<p>
+The output file should be formatted as shown below, with a blank line after every test case.  Each pair of lines in
+the input file will produce a line stating the key, followed by
+the results of the calculated intervals, one interval per line.
+If the starting note of the interval is not a part of the major
+scale being used, the program should output &quot;<tt>invalid note for
+this key</tt>&quot;.
+<p>
+<p>
+The following example shows more clearly the format of the input
+and output files:
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>C
+F UP SECOND;G DOWN THIRD
+E
+F# DOWN FOURTH;Bb DOWN SEVENTH;B UP OCTAVE</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Key of C
+F: UP SECOND &gt; G
+G: DOWN THIRD &gt; E
+ 
+Key of E
+F#: DOWN FOURTH &gt; C#
+Bb: invalid note for this key
+B: UP OCTAVE &gt; B</pre>
+<p>
+</body>
+</html>

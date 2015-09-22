@@ -1,0 +1,104 @@
+<p>
+Consider a machine with <i><b>n</b></i> integer registers 
+<i><b>r<sub>1</sub>, r<sub>2</sub>, ..., r<sub>n</sub></b></i>
+and a single type of
+<i>compare-exchange instruction</i>, CE (<i><b>i,j</b></i>) defined as follows, where
+
+<i><b>1 &le; i &lt; j &le; n</b></i> are the register indices:
+<br><br>
+CE(<i><b>i,j</b></i>) : if content(<i><b>r<sub>i</sub></b></i>) &gt;
+content(<i><b>r<sub>j</sub></b></i>)
+then exchange the contents of registers <i><b>r<sub>i</sub></b></i> and <i><b>r<sub>j</sub></b></i>.
+<br><br>
+
+<p>
+A compare-exchange program (shortly CE-program)
+is any finite sequence of compare-exchange instructions.
+A CE-program is called <i>minimum-finding</i> if
+after its execution the register <i><b>r<sub>1</sub></b></i> always contains
+the minimum value among all the initial values in the registers.
+Furthermore, such program is  called <i>reliable</i> if it
+remains a minimum-finding program after removing any single
+compare-exchange instruction.
+
+<p>
+Given a CE-program <i><b>P</b></i>, what is the minimum number of
+instructions that should be added at the end of program <i><b>P</b></i>
+in order to make it reliable?
+
+<p><b>Example:</b></p>
+
+<p>
+Consider the following 3-register CE-program: CE(1,2); CE(2,3); CE(1,2).
+<br>
+In order to make this program reliable it suffices to
+add only two extra instructions, namely CE(1,3)
+and CE(1,2).
+
+<p>
+Write a program that reads the description of a CE-program,
+and determines the minimum number of CE-instructions that
+should be added to make this program reliable.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<p>
+The first line of input contains the number of registers <i><b>n</b></i>,
+where 
+<i><b>0 &le; n &le; 1000</b></i>,
+followed by the number of program instructions <i><b>m</b></i>,
+where 
+<i><b>0 &le; m &le; 3000</b></i>.
+
+<p>
+The next line contains the program itself: a sequence of <i><b>2m</b></i> integers,
+separated by spaces, where each CE-instruction consists of
+two consecutive integers
+on positions <i><b>2j-1</b></i> and <i><b>2j</b></i>, with <i><b>1 &le; j &le; m</b></i>.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+<p>
+The output consists of a single integer: the minimal number of instructions
+that should be added to the input program in order to make this
+program reliable.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+1
+
+3 3
+1 2 2 3 1 2
+</pre>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>
+2
+</pre>
+
+<p>

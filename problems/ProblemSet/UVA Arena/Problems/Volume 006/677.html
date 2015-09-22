@@ -1,0 +1,196 @@
+
+
+<html>
+<head>
+<title>All Walks of length n from the first node</title>
+<meta name="description" content="All Walks of length n from the first node">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+All Walks of length <i>n</i> from the first node</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A computer network can be represented as a graph. Let G = (V, E) be an
+undirected graph, V = 
+
+<img width="142" height="34" align="MIDDLE" border="0" src="677img1.gif" alt="$(v_1 , v_2 , v_3 , \dots, v_m)$">
+represents all nodes,
+where <i>m</i> is the number of nodes, and E represents all edges. The first 
+node is <i>v</i><sub>1</sub> and the last node is <i>v</i><sub><i>m</i></sub> . The number of edges is <i>k</i>. Define
+the adjacency matrix 
+
+<img width="110" height="34" align="MIDDLE" border="0" src="677img2.gif" alt="$A =(a_{ij})_{m \times m}$">
+where
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="360" height="32" src="677img3.gif" alt="\begin{displaymath}a_{ij}=1 \qquad \mbox{if } \{v_i,v_j\} \in \mbox{E, otherwise}
+\qquad a_{ij}=0 \end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+An example of the adjacency matrix and its corresponding graph are as
+follows:
+
+<p>
+
+<img width="282" height="126" align="MIDDLE" border="0" src="677img4.gif" alt="$\textstyle \parbox{.5\textwidth}{
+\begin{displaymath}
+\left [
+\begin{array}{ccc...
+...
+1 & 0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 1 & 0
+\end{array}\right ]
+\end{displaymath}}$">
+<img width="277" height="169" align="MIDDLE" border="0" src="p677.gif" alt="$\textstyle \parbox{.49\textwidth}{
+\begin{center}
+\mbox{}
+\epsfxsize 1in
+\epsfbox{p677.eps}
+\end{center}}$">
+
+<p>
+
+<p>
+<br>
+Calculate
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="124" height="49" src="677img6.gif" alt="\begin{displaymath}A^n = \underbrace{A \cdot A \cdots A}_n
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+and use the Boolean operations where 
+
+0+0 = 0, 0+1=1+0=1, 1+1=1, and
+
+
+<img width="243" height="30" align="MIDDLE" border="0" src="677img7.gif" alt="$0 \cdot 0=0 \cdot 1=1 \cdot 0=0, 1 \cdot 1=1$">.
+The entry in row <i>i</i> and 
+column <i>j</i> of <i>A</i><sub><i>n</i></sub> is 1 if and only if at least there exists a walk of 
+length <i>n</i> between the <i>i</i>-th and <i>j</i>-th nodes of V. In other words, the
+distinct walks of length <i>n</i> between the <i>i</i>-th and <i>j</i>-th nodes of V may be
+more than one. Note that the node in the paths can be repetitive.
+
+<p>
+
+<p>
+<br>
+The following example shows the walks of length 2.
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="555" height="115" src="677img8.gif" alt="\begin{displaymath}A^2 = A \cdot A =
+\left [
+\begin{array}{ccccc}
+0 & 1 & 0 & 1 ...
+...\
+0 & 1 & 1 & 1 & 1 \\
+1 & 1 & 1 & 1 & 1
+\end{array}\right ]
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+
+<p>
+<br>
+Write programs to do above calculation and print out all distinct walks of
+length <i>n</i>. (In this problem we let the maximum walks of length <i>n</i> be 5 and
+the maximum number of nodes be 10.)
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains a number of test examples, the test examples
+are separated by <tt>-9999</tt>. Each test example consists of the number of
+nodes and the length of walks in the first row, and then the adjacency
+matrix.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output file must contain all distinct walks of the length <i>n</i>, and with
+all its nodes different, from the first node, listed in lexicographical order.
+In case there are not walks of length <i>n</i>, just print `<tt>no walk of length
+</tt><i>n</i>'
+
+<p>
+Separate the output of the  different cases by a blank line. 
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 2
+0 1 0 1 0
+1 0 1 0 0
+0 1 0 1 1
+1 0 1 0 1
+0 0 1 1 0
+-9999
+5 3
+0 1 0 1 0
+1 0 1 0 0
+0 1 0 1 1
+1 0 1 0 1
+0 0 1 1 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+(1,2,3)
+(1,4,3)
+(1,4,5)
+
+(1,2,3,4)
+(1,2,3,5)
+(1,4,3,2)
+(1,4,3,5)
+(1,4,5,3)
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-14</i>
+</address>
+</body>
+</html>
+

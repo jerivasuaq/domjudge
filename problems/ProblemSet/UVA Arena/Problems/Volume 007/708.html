@@ -1,0 +1,102 @@
+
+
+<html>
+<head>
+<title>Dreisam Equations</title>
+<meta name="description" content="Dreisam Equations">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Dreisam Equations</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+During excavations in the <em>Dreisamw&#252;ste</em>, a desert on some far away and probably uncivilized planet, sheets of paper containing mysterious symbols had been found. After a long investigation, the project scientists have concluded that the symbols might be parts of equations. If this were true, it would be proof that the <em>Dreisamw&#252;ste</em> was civilized a long long time ago.
+
+<p>
+The problem, however, is that the only symbols found on the sheets are digits, parantheses and equality signs. There is strong evidence that the people living in the <em>Dreisamw&#252;ste</em> knew only of three arithmetic operations: addition, subtraction, and multiplication. It is also known that the people of the <em>Dreisamw&#252;ste</em> did not have prioritization rules for arithmetic operations - they evaluate all terms strictly left to right. For example, for them the term <tt>3 + 3 * 5</tt> would be equal to 30, and not 18.
+
+<p>
+But currently, the sheets do not contain any arithmetic operators. So if the hypothesis is true, and the numbers on the sheets form equations, then the operators must have faded away over time.
+
+<p>
+You are the computer expert who is supposed to find out whether the hypothesis is sensible or not. For some given equations (without arithmetic operators) you must find out if there is a possibility to place <tt>+</tt>, <tt>-</tt>, and <tt>*</tt> in the expression, so that it yields a valid equation. For example, on one sheet, the string ``<tt>18=7 (5 3) 2</tt>" has been discovered. Here, one possible solution is ``<tt>18=7+(5-3)*2</tt>". But if there was a sheet containing ``<tt>5=3 3</tt>", then this would mean that the <em>Dreisamw&#252;ste</em> people did not mean an equation when writing this.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Each equation to deal with occupies one line in the input file. Each line begins with a positive integer (less than 2<sup>30</sup>) followed by an equality sign <tt>=</tt>. (For your convenience, the <em>Dreisamw&#252;ste</em> inhabitants used equations with trivial left sides only.) This is followed by up to 12 positive
+integers forming the right side of the equation. (The product of these numbers will be less than 2<sup>30</sup>.) There might be some parentheses around groups of one or more numbers. There will be no line containing more than 80 characters. There is no other limit for the amount of the parentheses in the equation. There will always be at least one space or parenthesis between two numbers, otherwise the occurrence of white space is unrestricted.
+
+<p>
+The line containing only the number <tt>0</tt> terminates the input, it should not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each equation, output the line ``<tt>Equation #</tt><i>n</i><tt>:</tt>", where <i>n</i> is the number of the equation. Then, output one line containing a solution to the problem, i. e. the equation with the missing <tt>+</tt>, <tt>-</tt>, and <tt>*</tt> signs inserted. Do not print any white space in the equation.
+
+<p>
+If there is no way to insert operators to make the equation valid, then output the line ``<tt>Impossible.</tt>".
+
+<p>
+Output one blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+18 = 7 (5 3) 2
+30 = 3 3 5
+18 = 3 3 5
+5 = 3 3
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Equation #1:
+18=7+(5-3)*2
+
+Equation #2:
+30=3+3*5
+
+Equation #3:
+Impossible.
+
+Equation #4:
+Impossible.
+
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

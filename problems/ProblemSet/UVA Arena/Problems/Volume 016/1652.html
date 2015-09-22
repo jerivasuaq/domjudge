@@ -1,0 +1,83 @@
+
+Little John studies numeral systems. After learning all about fixed-base systems, he
+became interested in more unusual cases. Among those cases he found
+a <span class="textit">Fibonacci system</span>, which represents all natural numbers in an unique way
+using only two digits: zero and one. But unlike usual binary scale of notation,
+in the Fibonacci system you are not allowed to place two <tt>1</tt>s in adjacent positions.
+
+One can prove that if you have number 
+<span class="MATH"><i>N</i> = <img width="112" height="31" align="MIDDLE" border="0" src="4376img1.png" alt="$ \overline{{a_{n}a_{n-1}\ldots a_1}}_{F}^{}$"></span>
+<tex2html_verbatim_mark> in Fibonacci
+system, its value is equal to 
+<span class="MATH"><i>N</i> = <i>a</i><sub>n</sub><sup> . </sup><i>F</i><sub>n</sub> + <i>a</i><sub>n-1</sub><sup> . </sup><i>F</i><sub>n-1</sub> +...+ <i>a</i><sub>1</sub><sup> . </sup><i>F</i><sub>1</sub></span>
+<tex2html_verbatim_mark>,
+where <span class="MATH"><i>F</i><sub>k</sub></span>
+<tex2html_verbatim_mark> is a usual Fibonacci sequence defined by 
+<span class="MATH"><i>F</i><sub>0</sub> = <i>F</i><sub>1</sub> = 1</span>
+<tex2html_verbatim_mark>, 
+<span class="MATH"><i>F</i><sub>i</sub> = <i>F</i><sub>i-1</sub> + <i>F</i><sub>i-2</sub></span>
+<tex2html_verbatim_mark>.
+
+For example, first few natural numbers have the following unique representations in
+Fibonacci system:
+
+<br>
+<div align="CENTER" class="mathdisplay">
+
+<table cellpadding="0" align="CENTER" width="100%">
+<tr valign="MIDDLE"><td nowrap="" width="50%" align="RIGHT">1</td>
+<td width="10" align="CENTER" nowrap="">=</td>
+<td align="LEFT" nowrap="" width="50%">1<sub>F</sub><img width="5" height="31" align="MIDDLE" border="0" src="4376img2.png" alt="$\displaystyle \cr$">2</td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+</table></div>
+<br clear="ALL">
+
+John wrote a very long string (consider it infinite) consisting of consecutive
+representations of natural numbers in Fibonacci system. For example, the first
+few digits of this string are <tt>110100101100010011010</tt>...
+
+He is very interested, how many times the digit <tt>1</tt> occurs in the <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>-th prefix of
+the string. Remember that the <span class="textit"><span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>-th prefix</tex2html_verbatim_mark></span> of the string is just a string consisting of 
+its first <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> characters.
+
+Write a program which determines how many times the digit <tt>1</tt> occurs in 
+<span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>-th prefix of John's string.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+The input file contains several test cases, each of them    as described below.
+
+The input contains a single integer <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> (
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="4376img3.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4376img3.png" alt="$ \le$">10<sup>15</sup></span>
+<tex2html_verbatim_mark>).
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+For each test case, output a single integer -- the number of <tt>1</tt>s in <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>-th prefix of John's string --  on a line by itself.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+21
+</pre>
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>
+10
+</pre>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

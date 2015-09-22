@@ -1,0 +1,60 @@
+<p>
+Taekwondo is the name of a traditional Korean martial art and it is turned into a modern international sport. It is adopted by IOC (International Olympic Committee) as an official game of 2000 Sydney Olympic Games. In Taekwondo, there are individual competitions and team competitions. An individual competition is conducted by two players and a team competition is a set of individual competitions. For two groups of players, we are going to make a team competition where two players for each individual competition are selected from each group. Note that players in each group can participate at most one individual competition.  For fair competition, weights of two players in each individual competition must be very close. Given weights of players in two groups, you are to write a program to find pairs of players so that the sum of the absolute differences of theweights of two players in each competition is minimized.  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file consists of several test cases. The first line of the input file contains an integer representing the number of test cases. The first line of each test case contains two integers. The first integer, <span class="MATH"><i>n</i><sub>1</sub></span>, is the number of players in the first group, and the second integer, <span class="MATH"><i>n</i><sub>2</sub></span>, is the number of players in the second group, where 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="2096img1.png" alt="$ \le$"><i>n</i><sub>1</sub></span>, 
+<span class="MATH"><i>n</i><sub>2</sub><img width="18" height="31" align="MIDDLE" border="0" src="2096img1.png" alt="$ \le$">500</span>.  You have to make 
+<span class="MATH">min{<i>n</i><sub>1</sub>, <i>n</i><sub>2</sub>}</span> pairs of players. Each line of the next <span class="MATH"><i>n</i><sub>1</sub></span> lines contains the weight of the player in the first group and the next <span class="MATH"><i>n</i><sub>2</sub></span> lines contain the weights of players in the second group. Weights of players are in the range of 40.0 to 130.0. You may assume that the precision of weight is one tenth.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+For each test case, your program reports the minimum of the sum of the absolute differences of the weights of two players in each individual competition in the team competition.
+
+<p>
+The following sample input and corresponding correct output represents two test cases.  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2  
+2 3
+44.9 
+50.0 
+77.2 
+86.4 
+59.8 
+4 2  
+44.9 
+50.0 
+77.2 
+86.4 
+59.8 
+58.9
+</pre>  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+42.1 
+23.8
+</pre>

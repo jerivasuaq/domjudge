@@ -1,0 +1,137 @@
+
+
+<html>
+<head>
+<title>Jackpot</title>
+<meta name="description" content="Jackpot">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Jackpot</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+An addicted gambler walks from his home to the casino every day to try his
+luck.
+
+<p>
+He likes most games but the one he likes most is the slot machine, also known
+as the jackpot or the one-armed-bandit. Because of his years of experience he
+exactly knows which, and how many, symbols appear on the wheels of every slot
+machine.
+
+<p>
+
+<p>
+<br>
+Unfortunately all wheels have changed since last time he was in the casino.
+The wheels are completely new, vary in size and are much larger than the
+former ones. He wonders if there's a way to find out which slot machine would
+give him the most profit. He suspects that a lot of calculations are
+involved so he decides that this job can better be done by a computer.
+
+<p>
+
+<p>
+<br>
+Can you build a program for this man which calculates the pay-rate of a
+number of machines, if the complete wheels are known? There are three wheels
+on each machine, all three wheels rotate independently of each other. Each
+line of three times the same symbol pays an amount of money.
+The display of the machine consists of three visible rows. The middle row pays
+10 coins if three identical symbols are shown, both the upper and the lower
+row pay 5 coins. In addition, the line from the upper left corner to the lower
+right as well as the line from the lower left to the upper right corner can
+result in a winning combination. They both pay 7 coins. The pay-rate is
+defined as the average (or expected) amount of money paid by the machine on
+each play.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line gives the number of slot machines <i>s</i>. Then for each slot
+machine follows:
+
+<p>
+
+<p>
+<br>
+a line with the numbers <i>x</i>, <i>y</i>, <i>z</i>, each separated by at least one space (
+
+<img width="129" height="30" align="MIDDLE" border="0" src="561img1.gif" alt="$3 \le x,y,z \le 200$">).
+<i>x</i> is the number of symbols on the first wheel, <i>y</i> the number of symbols on the second wheel and <i>z</i> the number of symbols on the last wheel.
+
+<p>
+
+<p>
+<br>
+3 lines with the symbols on each wheel. A symbol is represented by one capital character. The first line contains the symbols of the first wheel, the second line contains the symbols of the second wheel and the third line contains the symbols of
+ the third wheel.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output consists of <i>s</i> lines with on each line the pay-rate of the corresponding slot machine, with exact 4 digits after the decimal point.
+
+<p>
+
+<p>
+<br>
+
+<b>Note:</b> a variance of 
+
+<img width="67" height="30" align="MIDDLE" border="0" src="561img2.gif" alt="$\pm 0.0001$">
+is allowed in the output due to rounding differences.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+3 4 6
+AAB
+BABA
+BBAAAB
+12 15 18
+CCCCCCCCCCCC
+CCCCCCCCCCCCCCC
+CCCCCCCCCCCCCCCCCC
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+8.5000
+34.0000
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

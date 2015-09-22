@@ -1,0 +1,114 @@
+
+
+<html>
+<head>
+<title>Up and Down Sequences</title>
+<meta name="description" content="Up and Down Sequences">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Up and Down Sequences</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The <i>quality</i> of pseudo random-number generators used in some computations,
+especially simulation, is a
+significant issue. Proposed generation algorithms are subjected to many
+tests to establish their quality, or,
+more usually, their lack of it. One of the common tests is the <i>run test</i>.
+<p>
+In this test, sequences are tested for ``runs up&quot; and ``runs down.&quot;
+<p>
+We will examine series of data values for the ``Up&quot; and ``Down&quot; sequences
+each series contains.
+<p>
+<p>
+Within a series, an ``Up&quot; sequence continues as long as each data-value
+received is not less than the previous data-value.
+An ``Up&quot; sequence terminates when a data-value received is less than the
+previous data-value received.
+<p>
+A ``Down&quot; sequence continues as long as each data-value received is not greater
+than the previous data-value. A ``Down&quot; sequence terminates when a
+data-value received is greater than the previous data-value received.
+<p>
+<p>
+An ``Up&quot; sequence can be initiated by the termination of a ``Down&quot; sequence
+and vice versa. (Sequences
+initiated in this manner have length one at this initiation point.)
+<p>
+<p>
+All the initial data-values are part of an ``Up&quot; sequence, and contribute
+to its length, if the first deviation of the data-values is upwards.
+<p>
+All the initial data-values are part of a ``Down&quot; sequence, and contribute
+to its length, if the first deviation of the data-values is downwards.
+<p>
+<p>
+If the data-values received don't allow classification as either an ``Up&quot;
+or a ``Down&quot; sequence, the data should be considered to have neither sequence.
+<p>
+<p>
+Find the average length of both the ``Up&quot; and the ``Down&quot; sequences
+encountered for each input line in the
+data file. Report these average lengths as each input line is processed.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Each of the separate series to be examined is contained on a single line
+of input.
+<p>
+<p>
+Each series to be analyzed consists of at least one and no more than
+30 unsigned, non-zero integers. Each
+integer in a series has at least one digit and no more than four digits.
+The integers are separated from each
+other by a single blank character. Each of the series will be terminated
+by a single zero (0) digit. This terminator should not be
+considered as being part of the series being analyzed.
+<p>
+<p>
+The <i>set</i> of series to be analyzed is terminated by a single zero (0)
+digit as the input on a line. This terminator should not
+be considered to be a series, and no output should be produced in response
+to its encounter.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+A line with two real values is to be emitted for each input data set
+encountered. It must begin with the message ``<tt>Nr values = <i>N</i>:  </tt>&quot;, where <i>N</i> is the number of input data in the line; and then to continue with the average values for runs.
+<p>
+First, the average ``Up&quot; run
+length, then the average ``Down&quot; run length. Separate these values with
+a space.
+<p>
+Answers must be rounded to six digits after the decimal point.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1 2 3 0
+3 2 1 0
+1 2 3 2 1 0
+2 2 2 2 3 0
+4 4 4 4 3 0
+4 4 4 3 3 3 3 0
+4 4 4 3 3 3 4 0
+5 5 5 5 0
+1 2 3 2 3 4 5 0
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output <font size="3">(Your output, using your chosen
+language, may be default-formatted differently).</font></a></font></h2>
+<p>
+<pre>Nr values = 3:  2.000000 0.000000
+Nr values = 3:  0.000000 2.000000
+Nr values = 5:  2.000000 2.000000
+Nr values = 5:  4.000000 0.000000
+Nr values = 5:  0.000000 4.000000
+Nr values = 7:  0.000000 6.000000
+Nr values = 7:  1.000000 5.000000
+Nr values = 4:  0.000000 0.000000
+Nr values = 7:  2.500000 1.000000</pre>
+</body>
+</html>

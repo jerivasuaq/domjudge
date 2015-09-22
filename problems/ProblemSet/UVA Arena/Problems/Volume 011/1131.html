@@ -1,0 +1,130 @@
+<p>
+You are hired by the french NSA to break the RSA code used on the Pink
+Card. The easiest way to do that is to factor the public modulus and
+you have found the fastest algorithm to do that, except that you have
+to solve a subproblem that can be modeled in the following way.
+
+<p>
+Let  
+<span class="MATH"><i>P</i> = {<i>p</i><sub>1</sub>, <i>p</i><sub>2</sub>,..., <i>p</i><sub>n</sub>}</span> be a set of prime
+numbers. We call <em>relation</em> a set of two primes <span class="MATH">{<i>p</i>, <i>q</i>}</span>, where <span class="MATH"><i>p</i></span>
+and <span class="MATH"><i>q</i></span> are distinct. You have a collection of <span class="MATH"><i>R</i></span> relations 
+<span class="MATH"><i>S</i><sub>i</sub> = {<i>p</i><sub>i</sub>, <i>q</i><sub>i</sub>}</span>.
+If <span class="MATH"><i>S</i></span> and <span class="MATH"><i>T</i></span> are sets of primes, then <span class="MATH"><i>S</i>*<i>T</i></span> will
+denote the product of all the primes in <span class="MATH"><i>S</i></span> and <span class="MATH"><i>T</i></span>. You are
+interested in subproducts of the <span class="MATH">(<i>S</i><sub>i</sub>)'<i>s</i></span> whose product
+make a square.
+
+<p>
+The way you look for these squares is the following. The ultimate goal
+is to count squares that appear in the process.
+Relations arrive one at a time. You maintain a collection
+<span class="MATH"><i>C</i></span> of relations that do not contain any square
+subproduct. This is easy: at first, <span class="MATH"><i>C</i></span> is empty. Then a
+relation arrives and  <span class="MATH"><i>C</i></span> begins to grow. Suppose a new
+relation <span class="MATH">{<i>p</i>, <i>q</i>}</span> arrives. If no square appears when adding <span class="MATH">{<i>p</i>, <i>q</i>}</span> to <span class="MATH"><i>C</i></span>, then <span class="MATH">{<i>p</i>, <i>q</i>}</span> is
+added to the collection. Otherwise, a square is about to appear, we
+increase the number of squares, <b>but we do not store this
+relation</b>, hence <span class="MATH"><i>C</i></span> keeps the desired property.
+
+<p>
+
+<p>
+<br>
+Let us consider an example. First arrives 
+<span class="MATH"><i>S</i><sub>1</sub> = {2, 3}</span> and we put it
+in <span class="MATH"><i>C</i></span>; then arrive 
+<span class="MATH"><i>S</i><sub>2</sub> = {5, 11}</span>, 
+<span class="MATH"><i>S</i><sub>3</sub> = {3, 7}</span> and
+they are stored in <span class="MATH"><i>C</i></span>. Now enters the relation 
+<span class="MATH"><i>S</i><sub>4</sub> = {2, 7}</span>.
+ This relation could be used to form the square:
+
+<p>
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<i>S</i><sub>1</sub>*<i>S</i><sub>3</sub>*<i>S</i><sub>4</sub> = (2*3)*(3*7)*(2*7) = (2*3*7)<sup>2</sup>.
+</div><p>
+
+<p>
+So we count 1 and do not store <span class="MATH"><i>S</i><sub>4</sub></span> in  <span class="MATH"><i>C</i></span>. Now, we
+consider 
+<span class="MATH"><i>S</i><sub>5</sub> = {5, 11}</span> that could make a square with <span class="MATH"><i>S</i><sub>2</sub></span>, so we
+count 1 square more. Then 
+<span class="MATH"><i>S</i><sub>6</sub> = {2, 13}</span> is put into
+ <span class="MATH"><i>C</i></span>. Now 
+<span class="MATH"><i>S</i><sub>7</sub> = {7, 13}</span> could make the square 
+<span class="MATH"><i>S</i><sub>1</sub>*<i>S</i><sub>3</sub>*<i>S</i><sub>6</sub>*<i>S</i><sub>7</sub>.</span>
+ Eventually, we get 3 squares.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input consists of several test cases, each of them following the description below. A blank line
+separates two consecutive cases.
+
+<p>
+Each test case begins with a line containing two integers <span class="MATH"><i>P</i></span> and <span class="MATH"><i>R</i></span>: 
+<span class="MATH"><i>P</i><img width="18" height="30" align="MIDDLE" border="0" src="2940img1.png" alt="$ \le$">10<sup>6</sup></span>
+is the number of primes occurring in the test case; 
+<span class="MATH"><i>R</i>(<img width="18" height="30" align="MIDDLE" border="0" src="2940img1.png" alt="$ \le$">10<sup>6</sup>)</span>
+is the number of sets of primes that arrive. The subsequent <span class="MATH"><i>R</i></span> lines
+each contain two integers <span class="MATH"><i>i</i></span> and <span class="MATH"><i>j</i></span> making a set 
+<span class="MATH">{<i>p</i><sub>i</sub>, <i>p</i><sub>j</sub>}</span> 
+<span class="MATH">(1<img width="18" height="30" align="MIDDLE" border="0" src="2940img1.png" alt="$ \le$"><i>i</i>, <i>j</i><img width="18" height="30" align="MIDDLE" border="0" src="2940img1.png" alt="$ \le$"><i>P</i>)</span>.
+Note that we actually do not deal with the primes, that are irrelevant to the solution.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, output the number of squares that can be formed
+using the preceding rules. A line contains the number of the test
+case, followed by the number of square.
+
+<p>
+The outputs of two consecutive cases will be separated by a blank line.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6 7
+1 2
+3 5
+2 4
+1 4
+3 5
+1 6
+4 6
+
+2 3
+1 2
+1 2
+1 2
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+
+2
+</pre>
+
+<p>

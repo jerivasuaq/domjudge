@@ -1,0 +1,115 @@
+
+
+<html>
+<head>
+<title>Evaluating Simple C Expressions</title>
+<meta name="description" content="Evaluating Simple C Expressions">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Evaluating Simple C Expressions</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+     The task in this problem is  to  evaluate  a  sequence  of  simple   C
+expressions,   buy   you  need  not  know  C  to solve the problem! Each of
+the expressions will appear on a line by itself and will contain  no   more
+than   110  characters.   The  expressions to be evaluated will contain only
+simple integer variables and  a  limited  set  of operators; there will  be
+no  constants  in  the  expressions.   There are  26  variables  which  may
+appear  in  our simple expressions, namely those with the names <tt>a</tt>   through
+<tt>z</tt> (lower-case   letters  only).  At  the  beginning of evaluation of each
+expression, these 26 variables will have the integer values 1  through  26,
+respectively  (that  is,  <tt>a = 1</tt>, <tt>b = 2</tt>, ..., <tt>n = 14</tt>, <tt>o = 15</tt>, ..., <tt>z = 26</tt>). Each variable will appear at most once  in  an  expression,  and  many  variables may  not  be  used  at all.
+<p>
+<p>
+     The operators that  may  appear  in   expressions   include   the   binary
+(two-operand)   <tt>+</tt>   and   <tt>-</tt>,   with   the   usual interpretation.  Thus the
+expression <tt>a + c - d + b</tt>  has  the  value  2  (computed  as  <tt>1 +
+3 - 4  + 2</tt>). The only other operators that may  appear  in  expressions
+are  <tt>++</tt>  and  <tt>--</tt>.  These  are  unary  (one-operand) operators, and may
+appear  before  or  after  any  variable.  When  the  <tt>++</tt>  operator  appears
+before  a variable, that variable's value is incremented  (by  one)  before
+the  variable's   value   is  used  in  determining the value of the entire
+expression.  Thus the value of the expression <tt>++c - b</tt>  is   2,
+with   <tt>c</tt>  being incremented to 4 prior to evaluating the entire expression.
+When the <tt>++</tt>  operator  appears  after  a  variable, that variable is incremented  (again,  by  one) after its value is used to  determine  the  value
+of  the  entire expression.  Thus the value of the expression  <tt>c++ - b</tt>  is  1,  but  <tt>c</tt>  is  incremented  after  the complete expression is
+evaluated; its value will still be 4. The <tt>--</tt> operator  can  also  be  used
+before or  after a variable to decrement (by one) the variable; its  placement
+before  or  after  the  variable  has  the  same significance  as  for
+the  <tt>++</tt>  operator.   Thus  the expression <tt>--c + b--</tt>  has
+the  value  4,  with variables <tt>c</tt> and <tt>b</tt> having the values 2 and  1  following the evaluation of the expression.
+<p>
+<p>
+     Here's another, more algorithmic, approach  to   explaining   the <tt>++</tt>
+and  <tt>--</tt>  operators.  We'll  consider  only the <tt>++</tt> operator, for brevity:
+<p>
+<ol><li> Identify each variable that has a  <tt>++</tt>  operator  before  it.  Write  a simple   assignment  statement  that increments the value of each such
+     variable, and remove  the  <tt>++</tt>  operator  from  before  that   variable in the expression.<li> In a similar manner, identify each variable that  has  a  <tt>++</tt>  operator after  it.  Write  a  simple  assignment statement that increments the
+     value  of  each  of  these,  and   remove   the   <tt>++</tt>   operator   from after  that variable in the expression.<li> Now the expression  has  no  <tt>++</tt>  operators   before   or   after   any variables.   Write   the   statement   that  evaluates  the  remaining
+     expression after those statements written in  step   1,   and   before
+     those  written in step 2.<li> Execute the statements generated in  step  1,  then  those   generated
+     in   step   3,   and   finally   the  one generated in step 2, in that
+     order.
+</li></li></li></li></ol>
+<p>
+     Using this approach,  evaluating  the  expression  <tt>++a + b++</tt>  is
+equivalent to computing
+<p>
+<ul><li> <tt>a = a + 1</tt> (from step 1 of the algorithm)<li> <tt>expression = a + b</tt> (from step 3)<li> <tt>b = b + 1</tt> (from step 2)
+</li></li></li></ul>
+<p>
+where  expression  would receive the value of the complete expression.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+     Your  program is to read expressions, one per line,  until  the end of the file is reached.  Display each expression exactly as it
+was read, then display the value  of  the   entire   expression,   and   on
+separate  lines,  the  value  of  each  variable  after  the expression was
+evaluated.  Do not display  the  value  of  variables that were not used in
+the expression.  The samples shown below illustrate the desired <em>exact</em> output format.
+<p>
+<p>
+     Blanks are to be  ignored  in  evaluating  expressions,  and  you  are
+assured  that  ambiguous expressions like <tt>a+++b</tt> (ambiguous because it could
+be treated as <tt>a++ + b</tt>  or  <tt>a + ++b</tt>) will not appear in the input.  Likewise,  <tt>++</tt>  or <tt>--</tt> operators will never appear both before and after a single variable.  Thus expressions like <tt>++a++</tt> will not be in the input data.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>a + b
+b - z
+a+b--+c++
+c+f--+--a
+   f-- + c-- + d-++e</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Expression: a + b
+    value = 3
+    a = 1
+    b = 2
+Expression: b - z
+    value = -24
+    b = 2
+    z = 26
+Expression: a+b--+c++
+    value = 6
+    a = 1
+    b = 1
+    c = 4
+Expression: c+f--+--a
+    value = 9
+    a = 0
+    c = 3
+    f = 5
+Expression:    f-- + c-- + d-++e
+    value = 7
+    c = 2
+    d = 4
+    e = 6
+    f = 5</pre>
+<p>
+</body>
+</html>

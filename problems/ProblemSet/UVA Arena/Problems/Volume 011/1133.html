@@ -1,0 +1,95 @@
+<p>
+``ABEAS Corp.'' is a very
+small company that owns a single airplane. The customers of ABEAS Corp
+are large airline companies which rent the airplane to accommodate
+occasional overcapacity.
+
+<p>
+Custommers send renting orders that consist of a time interval and a
+price that the custommer is ready to pay for renting the airplane
+during the given time period.
+
+<p>
+Orders of all the custommers are known in advance. Of course, not all
+orders can be acomodated and some orders have to be declined. Eugene
+LAWLER, the Chief Scientific Officer of ABEAS Corp would like to maximize
+the profit of the company.
+
+<p>
+You are requested to compute an optimal solution.
+
+<p>
+
+<p>
+<br>
+Consider for instance the case where the company has 4 orders AF514
+(start time 0, duration 5, price 10), CO5 (start time 3, duration 7,
+price 14), AF515 (start time 5, duration 9, price 7) and BA01 (start
+time 6, duration 9, price 8). The optimal solution consists in
+declining CO5 and AF515 and the gain is 10 + 8 = 18. Note that the
+solution made of AF514 and AF515 is feasible (the airplane is rented
+with no interruption from time 0 to time 14) but non-optimal.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input consists of several test cases, each of them following the description below. A blank line
+separates two consecutive cases.
+
+<p>
+Each test case is described by one <tt>input</tt> file that contains all
+the relevant data: The first line contains the number <span class="MATH"><i>n</i></span> of orders
+
+<span class="MATH">(<i>n</i><img width="18" height="30" align="MIDDLE" border="0" src="2942img1.png" alt="$ \le$">3000)</span>. This line is followed by <span class="MATH"><i>n</i></span>
+lines. Each of which describes an order and contains the name
+identifier of the order (less than 80 characters, with no white space)
+followed by three integer values: the start time of the order, the
+duration of the order and the price the custommer is ready to pay for
+this order (white spaces are used as separators). We assume that
+orders have a strictly positive duration. You can assume that all relevant
+times, prices, and costs are strictly less than <span class="MATH">2<sup>31</sup></span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, you are required to compute an optimal solution for each input
+file. Your program has to write the total price paid by airlines.
+
+<p>
+The outputs of two consecutive cases will be separated by a blank line.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4
+AF514 0 5 10
+CO5 3 7 14
+AF515 5 9 7
+BA01 6 9 8
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+18
+</pre>
+
+<p>

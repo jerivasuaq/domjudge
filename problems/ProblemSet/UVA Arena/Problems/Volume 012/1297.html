@@ -1,0 +1,59 @@
+<p>
+A sawtoothed chess-board is a chess-board whose boundary forms two staircases from left down to right. See the following figure for an example.
+
+<p>
+<div align="CENTER">
+
+<img width="275" height="314" align="BOTTOM" border="0" src="p2178.gif" alt="\epsfbox{p2178.eps}">
+</div>
+
+<p>
+A square is <span class="textit">dominated</span> by a rook if it is in the same row or column with this rook. Your task is to determine the minimun number of rooks such that every square in a sawtoothed chess-board is dominated by at least one rook. For example, see the above figure again. It needs only four rooks located at the squares with a dot to dominate all the squares.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input data will contain multiple test cases. Each test case will consist of less than 100 pairs of integers which represent the row and column indexes of the corner points, in clockwise order, in a sawtoothed chess-board starting from the upper-left most corner. For example, the corner points in the above figure are 
+<span class="MATH"><i>v</i><sub>1</sub>, <i>v</i><sub>2</sub>,..., <i>v</i><sub>12</sub></span>, respectively. Each corner point is represented by its x and y coordinates in the 2-dimensional xy-plane whose values are in the range from 1 to 100. For example, the indexes of <span class="MATH"><i>v</i><sub>1</sub></span>,<span class="MATH"><i>v</i><sub>2</sub></span> and <span class="MATH"><i>v</i><sub>3</sub></span> are (1,1), (1,4) and (3,4), respectively. The input for each test case will be terminated with a pair of zeros, wich are not to be treated as the indexes of a corner point. An additional pair of zeros will follow the last test case.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, determine the minimun number of rooks needed to dominate all of the squares in the sawtoothed chess-board described in the test case. Display, one test case a line, the test case number (they are numbered sequentially starting with 1) and the number of rooks which are separated by one blank.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 1  1 4  3 4  3 6  4 6
+4 7  8 7  8 6  6 6  6 3
+4 3  4 1  0 0  1 1  1 3
+3 3  3 6  5 6  5 2  3 2
+3 1  0 0  0 0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 4
+2 3
+</pre> 
+
+<p>

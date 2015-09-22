@@ -1,0 +1,122 @@
+
+
+<html>
+<head>
+<title>18,000 Seconds Remaining</title>
+<meta name="description" content="18,000 Seconds Remaining">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">18,000 Seconds Remaining</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A feature of many file transfer programs
+is the ability to estimate the amount of time remaining in
+the transfer.  These programs estimate the time remaining based on the number
+of bytes left to be transferred and the rate of transfer in previous seconds.
+You are to write a program to simulate this behavior.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input will be a series of data sets, each set describing one file transfer.
+The first line of each data set will be a single non-negative integer, telling
+the size of the file in bytes.  The subsequent lines will be the number
+of bytes transmitted in each second (all non-negative integers).  The sum
+of the bytes transmitted will equal the number of bytes in the file.
+<p>
+<p>
+The end of input will be indicated by a file size of 0 bytes.
+This data set should not be processed.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output for each data set should begin with a line with the number of
+the data set and the size of the file being transferred.
+Then, there should be update lines estimating how many seconds
+remain, issued once every 5 seconds during the transfer.
+<p>
+<p>
+To estimate the number of seconds remaining,
+first determine the transfer rate (bytes/second) for the
+previous 5 seconds.  If no bytes were transferred during this time, then
+the transfer is <em>stalled</em>, and your
+program should report this.  Otherwise, divide the number of bytes remaining
+to be transferred by the transfer rate for the previous 5 seconds to estimate
+the number of seconds remaining.
+<p>
+<p>
+Report the number of seconds remaining as an integer.
+Always round up in reporting how much time
+is remaining (so if there are 12.2 seconds remaining, you should report
+there are 13 seconds remaining).
+<p>
+<p>
+At the end of the transfer, print a line telling how many seconds the transfer
+took.  Use the format in the Sample Output.
+<p>
+<p>
+There should be one blank line after the output from each data set.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>100
+10
+20
+20
+0
+10
+0
+10
+0
+10
+0
+20
+200
+60
+30
+100
+10
+50
+5
+5
+5
+5
+25
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+1
+1
+1
+1
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Output for data set 1, 100 bytes:
+   Time remaining: 4 seconds
+   Time remaining: 5 seconds
+Total time: 11 seconds
+
+Output for data set 2, 200 bytes:
+Total time: 4 seconds
+
+Output for data set 3, 50 bytes:
+   Time remaining: 1 seconds
+   Time remaining: stalled
+   Time remaining: stalled
+   Time remaining: 0 seconds
+Total time: 20 seconds</pre>
+<p>
+</body>
+</html>

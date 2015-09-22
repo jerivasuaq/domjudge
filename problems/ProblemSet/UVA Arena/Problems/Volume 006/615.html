@@ -1,0 +1,129 @@
+
+
+<html>
+<head>
+<title>Is It A Tree?</title>
+<meta name="description" content="Is It A Tree?">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Is It A Tree?</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A tree is a well-known data structure that is either empty (null,
+void, nothing) or
+is a set of one or more nodes connected by directed edges between
+nodes satisfying the following properties.
+
+<p>
+<ul>
+<li>There is exactly one node, called the root, to which no directed
+edges point.
+<li>Every node except the root has exactly one edge pointing to it.
+<li>There is a unique sequence of directed edges from the root to each node.
+</li></li></li></ul>
+
+<p>
+For example, consider the illustrations below, in which nodes are
+represented by circles and
+edges are represented by lines with arrowheads.  The first two of these are
+trees, but the last is not.
+
+<p>
+
+<img width="176" height="264" align="MIDDLE" border="0" src="615img2.gif" alt="$\textstyle \parbox{.3\textwidth}{
+\begin{center}
+\mbox{}
+\epsfxsize 1.5in
+\epsfbox{p615a.eps}
+\end{center}}$">
+<img width="233" height="290" align="MIDDLE" border="0" src="615img3.gif" alt="$\textstyle \parbox{.4\textwidth}{
+\begin{center}
+\mbox{}
+\epsfxsize 2in
+\epsfbox{p615b.eps}
+\end{center}}$">
+<img width="176" height="264" align="MIDDLE" border="0" src="615img4.gif" alt="$\textstyle \parbox{.29\textwidth}{
+\begin{center}
+\mbox{}
+\epsfxsize 1.5in
+\epsfbox{p615c.eps}
+\end{center}}$">
+
+<p>
+In this problem you will be given several descriptions of collections of nodes
+connected by directed edges.  For each of these you are to determine if
+the collection satisfies the definition of a tree or not.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input will consist of a sequence of descriptions (test cases) followed by a
+pair of negative integers.  Each test case will consist of a
+sequence of edge descriptions
+followed by a pair of zeroes  Each edge description will consist of a pair
+of integers;
+the first integer identifies the node from which the edge begins, and the
+second integer identifies the node to which the edge is directed.
+Node numbers will always be greater than zero.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case display the line ``<tt>Case </tt><i>k</i><tt> is a tree.</tt>"
+or the line ``<tt>Case </tt><i>k</i><tt> is not a tree.</tt>", where <i>k</i>
+corresponds to the test case number (they are sequentially numbered starting with 1).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6 8  5 3  5 2  6 4
+5 6  0 0
+
+8 1  7 3  6 2  8 9  7 5
+7 4  7 8  7 6  0 0
+
+3 8  6 8  6 4
+5 3  5 6  5 2  0 0
+-1 -1
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Case 1 is a tree.
+Case 2 is a tree.
+Case 3 is not a tree.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-24</i>
+</address>
+</body>
+</html>
+

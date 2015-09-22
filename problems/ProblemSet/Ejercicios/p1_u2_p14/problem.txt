@@ -1,0 +1,32 @@
+Ejercicio 14. 
+
+Porgrama que dibuja asteriscos en forma de triángulo. 
+La longitud mínima debe ser 1.
+La longitud máxima debe ser 80.
+
+Entrada: 
+	Un entero positivo menor a 80.
+	
+Salida:
+	Un triangulo dibujado.
+
+
+Ejemplos:
+==============================================================
+entrada:
+6
+--------------------------------------------------------------
+salida:
+*
+**
+***
+****
+*****
+******
+==============================================================
+entrada:
+1
+--------------------------------------------------------------
+salida:
+*
+

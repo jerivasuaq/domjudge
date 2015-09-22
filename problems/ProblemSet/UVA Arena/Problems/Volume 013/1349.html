@@ -1,0 +1,111 @@
+<p>
+A big city wants to improve its bus transportation system. One of the improvement is to add scenic routes which go es through attractive places. Your task is to construct a bus-route-plan for sight-seeing buses in a city. 
+
+<p>
+You are given a set of scenic lo cations. For each of these given lo cations, there should be only one bus route that passes this lo cation, and that bus route should pass this lo cation exactly once. The number of bus routes is unlimited. However, each route should contain at least two scenic lo cations. 
+
+<p>
+From location <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark> to location <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark> , there may or may not be a connecting street. If there is a street from location <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark> to location <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark> , then we say <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark> is an out-neighbor of <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>. The length of the street from <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark> is <span class="MATH"><i>d</i> (<i>i</i>, <i>j</i>)</span>
+<tex2html_verbatim_mark>. The streets might be one way. So it may happen that there is a street from <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark>, but no street from <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>. In case there is a street from <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark> and also a street from <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>, the lengths <span class="MATH"><i>d</i> (<i>i</i>, <i>j</i>)</span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>d</i> (<i>j</i>, <i>i</i>)</span>
+<tex2html_verbatim_mark> might be different. The route of each bus must follow the connecting streets and must be a cycle. For example, the route of Bus A might be from location 1 to location 2, from location 2 to location 3, and then from location 3 to location 1. The route of Bus B might be from location 4 to location 5, then from location 5 to location 4. The length of a bus route is the sum of the lengths of the streets in this bus route. The total length of the bus-route-plan is the sum of the lengths of all the bus routes used in the plan. A bus-route-plan is optimal if it has the minimum total length. You are required to compute the total length of an optimal bus-route-plan.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file consists of a number of test cases. The first line of each test case is a positive integer <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark>, which is the number of locations. These <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> locations are denoted by positive integers 
+<span class="MATH">1, 2,..., <i>n</i></span>
+<tex2html_verbatim_mark>. The next <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> lines are information about connecting streets between these lo cations. The <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th line of these <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> lines consists of an even number of positive integers and a 0 at the end. The first integer is a lo cation <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark> which is an out-neighbor of location <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>, and the second integer is <span class="MATH"><i>d</i> (<i>i</i>, <i>j</i>)</span>
+<tex2html_verbatim_mark>. The third integer is another location <span class="MATH"><i>j'</i></span>
+<tex2html_verbatim_mark> which is an out-neighbor of <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>, and the fourth integer is <span class="MATH"><i>d</i> (<i>i</i>, <i>j'</i>)</span>
+<tex2html_verbatim_mark>, and so on. In general, the <span class="MATH">(2<i>k</i> - 1)</span>
+<tex2html_verbatim_mark>th integer is a location <span class="MATH"><i>t</i></span>
+<tex2html_verbatim_mark> which is an out-neighbor of location <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>, and the <span class="MATH">2<i>k</i></span>
+<tex2html_verbatim_mark>th integer is <span class="MATH"><i>d</i> (<i>i</i>, <i>t</i>)</span>
+<tex2html_verbatim_mark>. 
+
+<p>
+The next case starts immediately after these <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> lines. A line consisting of a single `<tt>0</tt>' indicates the end of the input file. 
+
+<p>
+Each test case has at most 99 locations. The length of each street is a positive integer less than 100.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The output contains one line for each test case. If the required bus-route-plan exists, then the output is a positive number, which is the total length of an optimal bus-route-plan. Otherwise, the output is a letter `<tt>N</tt>'.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 
+2 2 3 1 0 
+1 1 3 2 0 
+1 3 2 7 0  
+8 
+2 3 3 1 0 
+3 3 1 1 4 4 0
+1 2 2 7 0 
+5 4 6 7 0 
+4 4 3 9 0 
+7 4 8 5 0 
+6 2 5 8 8 1 0
+6 6 7 2 0
+3 
+2 1 0 
+3 1 0 
+2 1 0
+0
+</pre>  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+7 
+25 
+N
+</pre></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

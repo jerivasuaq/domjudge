@@ -1,0 +1,84 @@
+
+
+<html>
+<head>
+<title>Software Allocation</title>
+<meta name="description" content="Software Allocation">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Software Allocation</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A computing center has ten different
+computers (numbered 0 to 9) on which applications can
+run.  The computers are not multi-tasking,
+so each machine can run only one application at
+any time.  There are 26 applications,
+named A to Z. Whether an application can run on a
+particular computer can be found in a job description (see below).
+<p>
+<p>
+Every morning, the users bring in their
+applications for that day.  It is possible that two
+users bring in the same application; in
+that case two different, independent computers will be
+allocated for that application.
+<p>
+<p>
+A clerk collects the applications, and for
+each different application he makes a list of computers
+on which the application could run.
+Then, he assigns each application to a computer.
+Remember: the computers are <i>not</i> multi-tasking,
+so each computer must handle at most one
+application in total. (An application takes
+a day to complete, so that sequencing i.e. one
+application after another on the same machine is not possible.)
+<p>
+A job description consists of
+<p>
+<ol><li> one upper case letter <tt>A...Z</tt>, indicating the application.<li> one digit <tt>1...9</tt>, indicating the number of users who brought in the application.<li> a blank (space character.)<li> one or more different digits <tt>0...9</tt>, indicating the computers
+      on which the application can run.<li> a terminating semicolon `<tt>;</tt>'.<li> an end-of-line.
+</li></li></li></li></li></li></ol><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input for your program is a textfile.
+For each day it contains one or more job descriptions,
+separated by a line containing only the
+end-of-line marker.  The input file ends with the
+standard end-of-file marker.  For each
+day your program determines whether an allocation of
+applications to computers can be done,
+and if so, generates a possible allocation.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output is also a textfile.  For each
+day it consists of one of the following:
+<p>
+<ul><li> ten characters from the set {`<tt>A</tt>'...`<tt>Z</tt>' , `<tt>_</tt>'},
+indicating the applications allocated to
+computers 0 to 9 respectively if an allocation
+was possible.  An underscore `<tt>_</tt>' means
+that no application is allocated to the corresponding computer.<li> a single character `<tt>!</tt>', if no allocation was possible.
+</li></li></ul>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>A4 01234;
+Q1 5;
+P4 56789;
+
+A4 01234;
+Q1 5;
+P5 56789;</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>AAAA_QPPPP
+!</pre>
+<p>
+</body>
+</html>

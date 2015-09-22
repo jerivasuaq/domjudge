@@ -1,0 +1,134 @@
+
+
+<html>
+<head>
+<title>Fence</title>
+<meta name="description" content="Fence">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Fence</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+There is an area bounded by a fence on some flat field. The fence has the
+height <i>h</i> and in the plane projection it has a form of a closed polygonal
+line (without self-intersections), which is specified by Cartesian coordinates
+(<i>X</i><sub><i>i</i></sub>, <i>Y</i><sub><i>i</i></sub>) of its <i>N</i> vertices. At the point with coordinates (0, 0) a lamp
+stands on the field. The lamp may be located either outside or inside the
+fence, but not on its side as it is shown in the following sample pictures
+(parts shown in a thin line are not illuminated by the lamp): 
+
+<p>
+<div align="CENTER">
+
+<img src="p667.gif">
+</div>
+
+<p>
+The fence is
+perfectly black, i.e. it is neither reflecting, nor diffusing, nor letting the
+light through. Research and experiments showed that the following law
+expresses the intensity of light falling on an arbitrary illuminated point of
+this fence:
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="62" height="43" src="667img1.gif" alt="\begin{displaymath}I_0 = {k \over r} \ ,
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+where <i>k</i> is a known constant value not depending on the point in question, <i>r</i>
+is the distance between this point and the lamp in the plane projection. The
+illumination of an infinitesimal narrow vertical board with the width <i>dl</i> and
+the height <i>h</i> is
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="178" height="31" src="667img2.gif" alt="\begin{displaymath}dI = I_0 \cdot \mid \cos a \mid \cdot dl \cdot h \ ,
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+where <i>I</i><sub>0</sub> is the intensity of light on that board of the fence, <i>a</i> is the
+angle in the plane projection between the normal to the side of the fence at
+this point and the direction to the lamp. 
+
+<p>
+
+<p>
+<br>
+You are to write a program that will
+find the total illumination of the fence that is defined as the sum of
+illuminations of all its illuminated boards.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input is an integer M, then a blank line followed by M datasets. There is a blank line between datasets.
+
+<p>The first line of each dataset contains the numbers <i>k</i>, <i>h</i> and <i>N</i>,
+separated by spaces. <i>k</i> and <i>h</i> are real constants. <i>N</i> (
+
+<img width="102" height="32" align="MIDDLE" border="0" src="667img3.gif" alt="$3 \le N \le 100$">)
+is the number of vertices of the fence. Then <i>N</i> lines follow, every line
+contains two real numbers <i>X</i><sub><i>i</i></sub> and <i>Y</i><sub><i>i</i></sub> , separated by a space.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, write to the output file the total illumination of the fence rounded to the second 
+digit after the decimal point. Print a blank line between datasets.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+0.5 1.7 3
+1.0 3.0
+2.0 -1.0
+-4.0 -1.0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+5.34
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

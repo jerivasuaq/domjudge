@@ -1,0 +1,125 @@
+
+
+<html>
+<head>
+<title>The Boggle Game</title>
+<meta name="description" content="The Boggle Game">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The Boggle Game</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The language PigEwu has a very simple syntax. Each word in this language has exactly 4 letters. Also each word contains exactly two vowels (y is consider a vowel in PigEwu). For 
+instance, "maar" and "even" are legitimate words, "arts" is not a legal word. 
+
+<p>
+In the game boggle, you are given a 4x4 array of letters and asked to find all words contained in it. A word 
+in our case (PigEwu) will thus be a sequence of 4 distinct squares (letters) that form a legal word and such 
+that each square touches (have a corner or edge in common) the next square.
+
+<p>
+For example: 
+
+<p>
+<pre>
+      A  S  S  D 
+      S  B  E  Y
+      G  F  O  I
+      H  U  U  K
+</pre>
+
+<p>
+In this board a (partial) list of legal words include:
+
+<p>
+<pre>
+ASGU    SABO    FOIK    FOYD    SYDE    HUFO
+</pre>
+
+<p>
+BEBO is a legal word but it is not on this boggle board (there are no two B's here).
+
+<p>
+Write a program that reads a pair of Boggle boards and lists all PigEwu words that are common to both 
+boards.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file will include a few data sets. Each data set will be a pair of boards
+as shown in the sample input.  All entries will be upper case letters. Two  consecutive entries on same board  
+will be separated by one blank. The first row in the first board will be on the same line as the first row of the 
+second board.  They will be separated by four spaces, the same will hold for the remaining 3 rows.  Board 
+pairs will be separated by a blank line.  The file will be terminated by `<tt>#</tt>'.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each pair of boggle boards, output an alphabetically-sorted list of all common words, each word on a separate line; or the 
+statement "<tt>There are no common words for this pair of boggle boards.</tt>"
+<br><br>
+Separate the output for each pair of 
+boggle boards with a blank line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+D F F B    W A S U
+T U G I    B R E T
+O K J M    Y A P Q
+K M B E    L O Y R
+
+Z W A V    G S F U
+U N C O    A H F T
+Y T G I    G N A L
+H G P M    B O O B
+
+#
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+There are no common words for this pair of boggle boards.
+
+ANGO
+AOGN
+GNAO
+GOAN
+NAOG
+NGOA
+OANG
+OGNA
+</pre>
+<p>
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-24</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,163 @@
+
+
+<html>
+<head>
+<title>Dropping Balls</title>
+<meta name="description" content="Dropping Balls">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Dropping Balls</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A  number  of  <i>K</i> balls  are  dropped  one  by  one  from  the  root  of  a 
+fully  binary  tree structure  FBT. Each  time  the  ball  being  dropped 
+first  visits  a  non-terminal  node.  It then  keeps  moving down, either 
+follows  the  path  of  the  left  subtree,  or  follows  the path of the
+right subtree, until it stops at one of the leaf nodes of FBT. To determine a
+ball's moving direction a flag is set up in every non-terminal node with two
+values, either <b>false</b> or <b>true</b>. Initially, all of the flags are
+<b>false</b>. When visiting a non-terminal node if the flag's current value at
+this node is <b>false</b>, then the ball will first switch this flag's value,
+i.e., from the <b>false</b> to the <b>true</b>, and then follow the left subtree
+of this node to keep moving down. Otherwise, it will also switch this flag's
+value, i.e., from the <b>true</b> to the <b>false</b>, but will follow the right
+subtree of this node to keep moving down. Furthermore, all nodes of FBT are
+sequentially numbered, starting at 1 with nodes on depth 1, and then those on
+depth 2, and so on. Nodes on any depth are numbered from left to right. 
+
+<p>
+
+<p>
+<br>
+For example, Fig. 1 represents a fully binary tree of maximum depth 4 with
+the node numbers 1, 2, 3, ..., 15. Since all of the flags are initially set to
+be <b>false</b>, the first ball being dropped will switch flag's values at node
+1, node 2, and node 4 before it finally stops at position 8. The second ball
+being dropped will switch flag's values at node 1, node 3, and node 6, and
+stop at position 12. Obviously, the third ball being dropped will switch
+flag's values at node 1, node 2, and node 5 before it stops at position 10. 
+
+<p>
+<div align="CENTER">
+
+<img src="p679.gif">
+
+<p>
+
+<p>
+<br>
+Fig. 1: An example of FBT with the maximum depth 4 and sequential
+node numbers. 
+</div>
+
+<p>
+
+<p><p>
+<br>
+Now consider a number of test cases where two values will be given for each test. The
+first value is <i>D</i>, the maximum depth of FBT, and the second one is <i>I</i>, 
+the <i>I</i><sup><i>th</i></sup> ball being dropped. You may assume the value of <i>I</i> will not
+exceed the total number of leaf nodes for the given FBT. 
+
+<p>
+Please write a program to determine the stop position <i>P</i> for
+each test case.
+
+<p>
+
+<p>
+<br>
+For each test cases the range of two parameters <i>D</i> and <i>I</i> is as below:
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="255" height="30" src="679img1.gif" alt="\begin{displaymath}2 \le D \le 20, \mbox{ and } 1 \le I \le 524288.
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Contains <i>l</i>+2 lines.
+<pre><tt>
+Line 1 		 <i>I</i> the number of test cases 
+Line 2 		 <img width="48" height="32" align="MIDDLE" border="0" src="679img2.gif" alt="$D_1 \ I_1$">
+test case #1, two decimal numbers that are separatedby one blank 
+... 		 		 
+Line <i>k</i>+1 <img width="49" height="32" align="MIDDLE" border="0" src="679img3.gif" alt="$D_k \ I_k$">
+test case #<i>k</i> 
+Line <i>l</i>+1 <img width="42" height="32" align="MIDDLE" border="0" src="679img4.gif" alt="$D_l \ I_l$">
+test case #<i>l</i> 
+Line <i>l</i>+2 <tt>-1</tt> 		 a constant -1 representing the end of the input file
+</tt></pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Contains <i>l</i> lines.
+<pre><tt>
+Line 1 		 the stop position <i>P</i> for the test case #1 
+... 		 
+Line <i>k</i> the stop position <i>P</i> for the test case #<i>k</i> 
+... 		 
+Line <i>l</i> the stop position <i>P</i> for the test case #<i>l</i>
+</tt></pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5
+4 2
+3 4
+10 1
+2 2
+8 128
+-1
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+12
+7
+512
+3
+255
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-14</i>
+</address>
+</body>
+</html>
+

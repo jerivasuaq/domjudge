@@ -1,0 +1,194 @@
+
+
+<html>
+<head>
+<title>Triangle Partition</title>
+<meta name="description" content="Triangle Partition">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Triangle Partition</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Suppose that a triangle and a number of points inside the triangle are given. Your job is to find
+a partition of the triangle so that the set of the given points are divided into three subsets of equal size.
+
+<p>
+
+<p>
+<br>
+Let A, B and C denote the vertices of the triangle. There are <i>n</i> points, P<sub>1</sub>, P<sub>2</sub>, ...,P<sub><i>n</i></sub>, given
+inside <img width="20" height="32" align="MIDDLE" border="0" src="691img1.gif" alt="$\triangle$">ABC. You are requested to find a point Q such that each of the three triangles <img width="20" height="32" align="MIDDLE" border="0" src="691img1.gif" alt="$\triangle$">QBC,
+<img width="20" height="32" align="MIDDLE" border="0" src="691img1.gif" alt="$\triangle$">QCA and <img width="20" height="32" align="MIDDLE" border="0" src="691img1.gif" alt="$\triangle$">QAB contains the same number of points. Points on the boundary line are counted in
+both triangles. For example, a point on the line QA is counted in <img width="20" height="32" align="MIDDLE" border="0" src="691img1.gif" alt="$\triangle$">QCA and also in <img width="20" height="32" align="MIDDLE" border="0" src="691img1.gif" alt="$\triangle$">QAB. If
+Q coincides a point, the point is counted in all three triangles.
+
+<p>
+
+<p>
+<br>
+It can be proved that there always exists a point Q satisfying the above condition if <i>n</i>=3*<i>k</i>, with <i>k</i>=1,2... In this problem, <i>n</i> can be any number, and there will be at least a valid point Q for every test case. The problem will be easily understood from the figure below.
+
+<p>
+<div align="CENTER">
+
+<img src="p691.gif">
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of multiple data sets, each representing a set of points. A data set is given in the following format.
+
+<p>
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="53" height="115" src="691img2.gif" alt="\begin{displaymath}\begin{array}{cc}
+n & \\
+x_1 & y_1 \\
+x_2 & y_2 \\
+\dots & \\
+x_n & y_n
+\end{array}\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+The first integer <i>n</i> is the number of points, such that
+
+<img width="96" height="30" align="MIDDLE" border="0" src="691img3.gif" alt="$1 \leY n \leY 300$">.
+The coordinate of a point P<sub><i>i</i></sub> is given by
+(<i>x</i><sub><i>i</i></sub>,<i>y</i><sub><i>i</i></sub>). <i>x</i><sub><i>i</i></sub> and <i>y</i><sub><i>i</i></sub> are integers between 0 and 1000.
+
+<p>
+
+<p>
+<br>
+The coordinates of the triangle ABC are fixed. They are A(0, 0), B(1000, 0) and C(0, 1000).
+
+<p>
+
+<p>
+<br>
+Each of P<sub><i>i</i></sub> is located strictly inside the triangle ABC, not on the side BC, CA nor AB. No two
+points can be connected by a straight line running through one of the vertices of the triangle.
+Speaking more precisely, if you connect a point P<sub><i>i</i></sub> with the vertex A by a straight line, another
+point P<sub><i>j</i></sub> never appears on the line. The same holds for B and C.
+
+<p>
+
+<p>
+<br>
+The end of the input is indicated by a 0 as the value of <i>n</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each data set, your program should output the coordinate of the point Q. The format of the output is as follows.
+
+<p>
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="37" height="32" src="691img4.gif" alt="\begin{displaymath}q_x \ q_y\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+For each data set, a line of this format should be given. No extra lines are allowed. On the contrary, any number of space characters may be inserted before <i>q</i><sub><i>x</i></sub>, between <i>q</i><sub><i>x</i></sub> and <i>q</i><sub><i>y</i></sub>, or after <i>q</i><sub><i>y</i></sub>.
+
+<p>
+
+<p>
+<br>
+Each of <i>q</i><sub><i>x</i></sub> and <i>q</i><sub><i>y</i></sub> should be represented by a fractional number 
+(e.g., <tt>3.1415926</tt>) but not with an
+exponential part (e.g., <tt>6.023e+23</tt> is not allowed). At least seven digits
+should follow the decimal point.
+
+<p>
+
+<p>
+<br>
+Note that there is no unique ``correct answer'' in this problem. In general, there are infinitely
+many points which satisfy the given condition. Your result may be any one of these ``possible answers''.
+
+<p>
+
+<p>
+<br>
+In your program, you should be careful to minimize the effect of numeric errors in the handling
+of floating-point numbers. However, it seems inevitable that some rounding errors exist in the
+output. We expect that there is an error of 
+
+<img width="84" height="37" align="MIDDLE" border="0" src="691img5.gif" alt="$0.5 \times 10^{-4}$">
+in the output, and will judge your result accordingly.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+100 500
+200 500
+300 500
+5
+100 300
+100 600
+200 100
+200 700
+500 100
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+166.6666666 555.5555555
+275.0000000 145.0000000
+</pre>
+
+<p>
+
+<p><p>
+<br>
+
+<b>Note:</b> As mentioned above, the results shown here are not the only solutions. Many other coordinates for the point Q are also acceptable.
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-25</i>
+</address>
+</body>
+</html>
+

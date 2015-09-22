@@ -1,0 +1,114 @@
+
+
+<html>
+<head>
+<title>Caesar Cypher</title>
+<meta name="description" content="Caesar Cypher">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Caesar Cypher</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+One of the earliest encrypting systems is attributed to Julius Caesar: if the
+letter to be encrypted is
+the <i>N</i>th letter in the alphabet, replace it with the (<i>N</i>+<i>K</i>)th where <i>K</i> is some fixed integer (Caesar
+used <i>K</i> = 3). We usually treat a space as zero and all arithemtic is then done
+modulo 27. Thus for <i>K</i> = 1 the message `<tt>ATTACK AT DAWN</tt>' becomes `<tt>BUUBDLABUAEBXO</tt>'.
+
+<p>
+
+<p>
+<br>
+Decrypting such a message is trivial since one only needs to try 26 different
+values of <i>K</i>. This
+process is aided by knowledge of the language, since then one can determine
+when the decrypted
+text forms recognisable words. If one does not know the language, then a
+dictionary would be necessary.
+
+<p>
+
+<p>
+<br>
+Write a program that will read in a dictionary and some encrypted text,
+determine the value of <i>K</i>
+that was used, and then decrypt the cyphertext to produce the original
+message. The original
+message contained only letters and spaces and has been encrypted using the
+above method. The
+most suitable value of <i>K</i> will be the one which produces the most matches with
+the words in the dictionary.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input will consist of a dictionary and the encrypted text. The dictionary will
+consist of no more than
+100 lines each containing a word in uppercase characters and not more than 20
+characters in length.
+The dictionary portion will be terminated by a line consisting of a single `<tt>#</tt>'.
+The encrypted text
+will follow immediately and will consist of a single line containing no more
+than 250 characters.
+Note that the dictionary will not necessarily contain all the words in the
+original text, although it
+will certainly contain a large portion of them. It may also contain words that
+are not in the original
+text. The dictionary will not appear in any particular order.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output will consist of the decrypted text. Lines should be as long as
+possible, but not exceeding 60 characters and no word may cross a linebreak.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+THIS
+DAWN
+THAT
+THE
+ZORRO
+OTHER
+AT
+THING
+#
+BUUBDLA PSSPABUAEBXO
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+ATTACK ZORRO AT DAWN
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

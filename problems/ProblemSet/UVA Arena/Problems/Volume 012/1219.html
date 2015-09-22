@@ -1,0 +1,102 @@
+
+<p>
+Barry Bennett, the coach of the Bings football team, wants to arrange his team for an important match against the Bangs. He decides on the formation he wants to play, for example 4-4-2, meaning that there will be four defenders, four midfielders, and two strikers (and of course, one goalkeeper). Your task is to determine the players who will play. For each available player, we know his role (e.g. midfielder). For each role, the players are selected in ascending order of their numbers. When the players are selected, you must determine the captain too, who is the player with the longest record in the team play. In case two players have the same record, the one with bigger number is chosen. Note that the captain is chosen among the players that are selected in the arrange.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The input consists of multiple test cases. The first 22 lines of each test case contain the data for the 22 available players in this format:
+
+<p>
+
+<p>
+<br>
+
+
+<span class="MATH"><i>number</i>&nbsp;<i>name</i>&nbsp;<i>role</i>&nbsp;<i>year</i><sub>1</sub> - <i>year'</i><sub>1</sub>&nbsp;<i>year</i><sub>2</sub> - <i>year'</i><sub>2</sub>&nbsp;...</span>
+<tex2html_verbatim_mark>
+
+<p>
+
+<p>
+<br>
+
+<span class="MATH"><i>number</i></span>
+<tex2html_verbatim_mark> is the player number (unique positive integer less than 100). <span class="MATH"><i>name</i></span>
+<tex2html_verbatim_mark> is a string of at most 20 letters. <span class="MATH"><i>role</i></span>
+<tex2html_verbatim_mark> is a single character among <tt>G</tt>, <tt>D</tt>, <tt>M</tt>, <tt>S</tt>, for goalkeeper, defender, midfielder, and striker respectively. Each 
+<span class="MATH"><i>year</i><sub>i</sub> - <i>year'</i><sub>i</sub></span>
+<tex2html_verbatim_mark> pair 
+<span class="MATH">(<i>year</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="3791img1.png" alt="$ \le$"><i>year'</i><sub>i</sub>)</span>
+<tex2html_verbatim_mark> shows the player has been a member of the team between the specified years (inclusive). The years are in four-digit format. There is at least one and at most 20 such pairs, and the same year is not repeated more than once in the list. There is a 23-rd line describing the desired formation, like <tt>4-4-2</tt> in that format. Note that there are only three numbers in the formation (so, 4-3-2-1 is not valid), none of them is zero, and their sum is always 10. The input is terminated by a line containing a single `<tt>0</tt>'.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+For each test case, output a list of 11 players chosen in the arrange. Each line must contain the player number, his name and his role, separated by single blank characters. The players must be sorted according to their role, in the order of goalkeeper, defenders, midfielders, and strikers. The players with the same role are sorted according to ascending order of their numbers. There is an exception that the captain always comes as the first player in the entire list. If it is not possible to arrange the team conforming to the desired formation, write a single line containing `<tt>IMPOSSIBLE TO ARRANGE</tt>' in the output. There should be a blank line after the output for each test case.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+9 PlayerA M 2000-2001 2003-2006
+2 PlayerB M 2004-2006
+10 PlayerC D 2001-2005
+1 PlayerD D 2000-2001 2002-2004
+11 PlayerE S 2003-2006
+8 PlayerF M 2005-2006
+22 PlayerG S 2005-2006
+25 PlayerH G 2000-2001 2002-2003 2005-2006
+6 PlayerI D 2003-2006
+26 PlayerJ D 2003-2004 2000-2001
+18 PlayerK M 2003-2004
+19 PlayerL M 2000-2001 2003-2006
+7 PlayerM S 2003-2006 1999-2001
+21 PlayerN S 2003-2006
+13 PlayerO S 2005-2006
+15 PlayerP G 2001-2006
+14 PlayerQ D 2003-2004
+5 PlayerR S 2000-2005
+20 PlayerS G 2000-2002 2003-2003
+12 PlayerT M 2004-2005
+3 PlayerU D 2000-2005
+4 PlayerV M 2001-2004
+4-4-2
+0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+7 PlayerM S
+15 PlayerP G
+1 PlayerD D
+3 PlayerU D
+6 PlayerI D
+10 PlayerC D
+2 PlayerB M
+4 PlayerV M
+8 PlayerF M
+9 PlayerA M
+5 PlayerR S
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

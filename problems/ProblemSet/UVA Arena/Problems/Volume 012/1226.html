@@ -1,0 +1,85 @@
+
+<p>
+We suspect that for every positive integer <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> there exists an integer of the form 
+<span class="MATH">11...10...0</span>
+<tex2html_verbatim_mark> (a sequence of 1's followed by 0 or more 0's) that is divisible by <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>. For example, with <span class="MATH"><i>N</i> = 3</span>
+<tex2html_verbatim_mark>, 111 is divisible by 3, with <span class="MATH"><i>N</i> = 4</span>
+<tex2html_verbatim_mark>, 100 is divisible by 4, with <span class="MATH"><i>N</i> = 7</span>
+<tex2html_verbatim_mark>, 11111 is divisible by 7. We want to verify this for some integers. The solution to this problem is to find two different numbers <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>Q</i></span>
+<tex2html_verbatim_mark> in the form of 
+<span class="MATH">11...1</span>
+<tex2html_verbatim_mark> (a sequence of 1's) that have the same remainder when dividing by <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>. The difference <span class="MATH"><i>D</i></span>
+<tex2html_verbatim_mark> between <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>Q</i></span>
+<tex2html_verbatim_mark> will be in the form of 
+<span class="MATH">11...10...0</span>
+<tex2html_verbatim_mark> and divisible by <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>. 
+
+<p>
+In order to solve this problem, we have to start with finding the remainder when dividing a number in the form of 
+<span class="MATH">11...1</span>
+<tex2html_verbatim_mark> by <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>. Your task is to write a program to do this.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file consists of several data sets. The first line of the input file contains the number of data sets which is a positive integer and is not bigger than 20. The following lines describe the data sets. 
+
+<p>
+Each data set is described by two lines. The first line contains the integer <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1 &lt; <i>N</i> &lt; 10<sup>9</sup>)</span>
+<tex2html_verbatim_mark>. The second line contains the integer number <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> (<span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> contains at least one digit and at most 2000 digits).
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, write in one line the remainder when dividing <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> by <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+4 
+11 
+5 
+111
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 
+1
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

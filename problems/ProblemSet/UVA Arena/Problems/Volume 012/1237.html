@@ -1,0 +1,85 @@
+
+<p>
+Auto-mobile Charting &amp; Manufacturing (ACM) is a company that specializes in manufacturing automobile spare parts. Being one of the leading automotive companies in the world, ACM are sure to keep up the latest information in that world. In the 100-year anniversary of the company, ACM compiled a huge list of range of prices of any automobiles ever recorded in the history. ACM then wants to develop a program that they called Automobile Expert System or AES for short. 
+
+<p>
+The program receives a price <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> as an input, and searches through the database for a car maker in which <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> falls in their range of lowest price <span class="MATH"><i>L</i></span>
+<tex2html_verbatim_mark> and highest price <span class="MATH"><i>H</i></span>
+<tex2html_verbatim_mark> of car they ever made. The program then output the car maker name. If the database contains no or more than one car maker that satisfies the query, the program produce output ``<tt>UNDETERMINED</tt>" (without quotes). Not so expert, huh? You are about to develop that program for ACM.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The input begins with a line containing an integer <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(<i>T</i><img width="18" height="31" align="MIDDLE" border="0" src="4142img1.png" alt="$ \le$">10)</span>
+<tex2html_verbatim_mark>, the number of test cases follow. Each case begins with the size of the database <span class="MATH"><i>D</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(<i>D</i> &lt; 10000)</span>
+<tex2html_verbatim_mark>. The next each of <span class="MATH"><i>D</i></span>
+<tex2html_verbatim_mark> lines contains <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>L</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>H</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(0 &lt; <i>L</i> &lt; <i>H</i> &lt; 1000000)</span>
+<tex2html_verbatim_mark> which are the name of the maker (contains no whitespace and will never exceeds 20 characters), the car's lowest price the maker ever made, and the car's highest price the maker ever made respectively. Then there is the number of query <span class="MATH"><i>Q</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(<i>Q</i> &lt; 1000)</span>
+<tex2html_verbatim_mark>. follows. Each of the next <span class="MATH"><i>Q</i></span>
+<tex2html_verbatim_mark> lines contains an integer <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(0 &lt; <i>P</i> &lt; 1000000)</span>
+<tex2html_verbatim_mark>, the query price. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+Output for each query should be one line containing the name of the maker, or the string ``<tt>UNDETERMINED</tt>" (without quotes) if there is no maker or more than one maker that satisfies the query. You should separate output for different case by one empty line.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 
+4 
+HONDA 10000 45000 
+PEUGEOT 12000 44000 
+BMW 30000 75900 
+CHEVROLET 7000 37000 
+4 
+60000 
+7500 
+5000 
+10000
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+BMW 
+CHEVROLET 
+UNDETERMINED 
+UNDETERMINED
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

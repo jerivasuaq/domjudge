@@ -1,0 +1,123 @@
+Korea has many tourist attractions. One of them is an archipelago (Dadohae in Korean), a cluster of small islands scattered in the 
+southern and western coasts of Korea. The Korea Tourism Organization (KTO) plans to promote a new tour program on these islands. 
+For this, The KTO wants to designate two or more islands of the archipelago as a tour belt. 
+
+<p>
+There are <span class="MATH"><i>n</i></span> islands in the archipelago. 
+The KTO focuses on the synergy effect created when some islands are selected for a tour belt. Synergy effects are assigned to several 
+pairs of islands. A synergy effect <span class="MATH"><i>SE</i>(<i>u</i>, <i>v</i>)</span> or <span class="MATH"><i>SE</i>(<i>v</i>, <i>u</i>)</span> between two islands <span class="MATH"><i>u</i></span> and <span class="MATH"><i>v</i></span> is a positive integer which represents 
+a value anticipated when both <span class="MATH"><i>u</i></span> and <span class="MATH"><i>v</i></span> 
+are included in a tour belt. The KTO wants to select two or more islands for the tour belt so that the economic benefit of the tour 
+belt is as high as possible. 
+
+<p>
+To be precise, we define a connected graph <span class="MATH"><i>G</i> = (<i>V</i>, <i>E</i>)</span>, where <span class="MATH"><i>V</i></span> is a set of <span class="MATH"><i>n</i></span> vertices and <span class="MATH"><i>E</i></span> is a set of <span class="MATH"><i>m</i></span> edges. Each 
+vertex of <span class="MATH"><i>V</i></span> represents an island in the archipelago, and an edge <span class="MATH">(<i>u</i>, <i>v</i>)</span> of <span class="MATH"><i>E</i></span> exists if a synergy effect <span class="MATH"><i>SE</i>(<i>u</i>, <i>v</i>)</span> is defined 
+between two distinct 
+vertices (islands) <span class="MATH"><i>u</i></span> and <span class="MATH"><i>v</i></span> of <span class="MATH"><i>V</i></span>. Let <span class="MATH"><i>A</i></span> be a subset consisting of at least two vertices in <span class="MATH"><i>V</i></span>. An edge <span class="MATH">(<i>u</i>, <i>v</i>)</span> is an 
+<span class="textit">inside edge</span> of <span class="MATH"><i>A</i></span> if both <span class="MATH"><i>u</i></span> and <span class="MATH"><i>v</i></span> are in <span class="MATH"><i>A</i></span>. 
+An edge <span class="MATH">(<i>u</i>, <i>v</i>)</span> is a <span class="textit">border edge</span> of <span class="MATH"><i>A</i></span> if one of <span class="MATH"><i>u</i></span> and <span class="MATH"><i>v</i></span> is in <span class="MATH"><i>A</i></span> and the other is not in <span class="MATH"><i>A</i></span>. 
+
+<p>
+A vertex set <span class="MATH"><i>B</i></span> of a connected subgraph of <span class="MATH"><i>G</i></span> with 
+<span class="MATH">2<img width="18" height="31" align="MIDDLE" border="0" src="4848img1.png" alt="$ \le$">| <i>B</i>|<img width="18" height="31" align="MIDDLE" border="0" src="4848img1.png" alt="$ \le$"><i>n</i></span> is called a 
+<span class="textit">candidate</span> for the tour belt if the synergy effect of every inside edge of <span class="MATH"><i>B</i></span> is larger than the synergy effect of any 
+border edge of <span class="MATH"><i>B</i></span>. 
+A candiate will be chosen as the final tour belt by the KTO. There can be many possible candidates in <span class="MATH"><i>G</i></span>. Note that <span class="MATH"><i>V</i></span> itself is a candidate 
+because there are no border edges. The graph in Figure 1(a) has three candidates {1,2}, {3,4} and {1,2,3,4}, but {2,3,4} is not a 
+candidate because there are inside 
+edges whose synergy effects are not larger than those of some border edges. The graph in Figure 1(b) contains six candidates,
+ {1,2}, {3,4}, {5,6}, {7,8}, {3,4,5,6} and {1,2,3,4,5,6,7,8}. 
+But {1,2,7,8} is not a candidate because it does not form a connected subgraph of <span class="MATH"><i>G</i></span>, i.e., there are no edges 
+connecting {1,2} and {7,8}.
+
+<p>
+<div align="CENTER">
+
+<img width="1102" height="378" align="BOTTOM" border="0" src="p4848.png" alt="\epsfbox{p4848.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 1. Graphs and their good subsets marked by gray ellipses.
+
+</div>
+
+<p>
+The KTO will decide one candidate in <span class="MATH"><i>G</i></span> as the final tour belt. For this, the KTO asks you to find all candidates in <span class="MATH"><i>G</i></span>. You write a program 
+to print the sum of the sizes of all candidates in a given graph <span class="MATH"><i>G</i></span>. For
+example, the graph in Figure 1(a) contains three candidates and the sum of their sizes is <span class="MATH">2 + 2 + 4 = 8</span>, and the graph in 
+Figure 1(b) contains six candidates 
+and the sum of their sizes is 
+<span class="MATH">2 + 2 + 2 + 2 + 4 + 8 = 20</span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to read input from standard input. The input consists of <span class="MATH"><i>T</i></span> test cases. The number of test cases <span class="MATH"><i>T</i></span> is given in the first 
+line of the input. Each test case starts with a line containing two integers <span class="MATH"><i>n</i></span> (
+<span class="MATH">2<img width="18" height="31" align="MIDDLE" border="0" src="4848img1.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4848img1.png" alt="$ \le$">5, 000</span>) 
+and <span class="MATH"><i>m</i></span> (
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4848img1.png" alt="$ \le$"><i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="4848img1.png" alt="$ \le$"><img width="52" height="46" align="MIDDLE" border="0" src="4848img3.png" alt="$ {{n(n-1)} \over 2}$"></span>), where <span class="MATH"><i>n</i></span> represents the number of vertices (islands) 
+and <span class="MATH"><i>m</i></span> represents the number of edges of a connected graph <span class="MATH"><i>G</i></span>. Islands are numbered from 1 to <span class="MATH"><i>n</i></span>. In the following <span class="MATH"><i>m</i></span> lines, 
+the synergy effects 
+assigned to <span class="MATH"><i>m</i></span> edges are given; each line contains three integers, <span class="MATH"><i>u</i></span>, <span class="MATH"><i>v</i></span>, and <span class="MATH"><i>k</i></span> (
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4848img1.png" alt="$ \le$"><i>u</i><img width="18" height="34" align="MIDDLE" border="0" src="4848img4.png" alt="$ \ne$"><i>v</i><img width="18" height="31" align="MIDDLE" border="0" src="4848img1.png" alt="$ \le$"><i>n</i></span>, 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4848img1.png" alt="$ \le$"><i>k</i><img width="18" height="31" align="MIDDLE" border="0" src="4848img1.png" alt="$ \le$">10<sup>5</sup></span>), where <span class="MATH"><i>k</i></span> 
+is the synergy effect between two distinct islands <span class="MATH"><i>u</i></span> and <span class="MATH"><i>v</i></span>, i.e., 
+<span class="MATH"><i>SE</i>(<i>u</i>, <i>v</i>) = <i>SE</i>(<i>u</i>, <i>v</i>) = <i>k</i></span>. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to write to standard output. Print exactly one line for each test case. Print the sum of the sizes 
+of all candidates for a test case.
+
+<p>
+The following shows sample input and output for two test cases. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+4 6
+1 2 3
+2 3 2
+4 3 4
+1 4 1
+2 4 2
+1 3 2
+8 7
+1 2 2
+2 3 1
+3 4 4
+4 5 3
+5 6 4
+6 7 1
+7 8 2
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+8
+20
+</pre> 
+
+<p>

@@ -1,0 +1,86 @@
+
+
+<html>
+<head>
+<title>The Cat in the Hat</title>
+<meta name="description" content="The Cat in the Hat">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">The Cat in the Hat</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+(An homage to Theodore Seuss Geisel)
+<p> 
+The Cat in the Hat is a nasty creature,<br> 
+But the striped hat he is wearing has a rather nifty feature.
+<p>
+With one flick of his wrist he pops his top off.
+<p>
+Do you know what's inside that Cat's hat?<br> 
+A bunch of small cats, each with its own striped hat.
+<p>
+Each little cat does the same as line three,<br> 
+All except the littlest ones, who just say ``Why me?''
+<p>
+Because the littlest cats have to clean all the grime,<br> 
+And they're tired of doing it time after time!
+  <p><h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+A clever cat walks into a messy room which he needs to clean.  Instead
+of doing the work alone, it decides to have its helper cats do the
+work.  It keeps its (smaller) helper cats inside
+its hat.  Each helper cat also has helper cats in its own hat,
+and so on.  Eventually, the cats reach a smallest size. These smallest
+cats have no additional cats in their hats.
+These unfortunate smallest cats have to do the cleaning.
+<p>
+The number of cats inside each (non-smallest)
+cat's hat is a constant, <i>N</i>.  The
+height of these cats-in-a-hat is  <img width="30" height="31" align="MIDDLE" alt="tex2html_wrap_inline35" src="107img1.gif">  times the height of the cat
+whose hat they are in.
+<blockquote> The smallest cats are of height one; <br> 
+these are the cats that get the work done.
+</blockquote>
+All heights are positive integers.
+<p>
+Given the height of the initial cat and the number of worker cats (of
+height one), find the number of cats that are not doing any work (cats
+of height greater than one) and also determine the sum of all the cats'
+heights (the height of a stack of all cats standing one on top of another).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input consists of a sequence of cat-in-hat specifications.  Each
+specification is a single line consisting of two positive integers,
+separated by
+white space.  The first integer is the height of the initial cat, and
+the second integer is the number of worker cats.
+<p>
+A pair of 0's on a line indicates the end of input.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+For each input line (cat-in-hat specification),
+print the number of cats that are not
+working, followed by a space, followed by the height of the stack of cats.
+There should be one output line for each input line other than the ``0 0''
+that terminates input.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>216 125
+5764801 1679616
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>31 671
+335923 30275911</pre>
+<p>
+</body>
+</html>

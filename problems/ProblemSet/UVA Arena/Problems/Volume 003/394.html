@@ -1,0 +1,87 @@
+
+
+<html>
+<head>
+<title>Mapmaker</title>
+<meta name="description" content="Mapmaker">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Mapmaker</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The Cybersoft Computer Company (a leader in programming languages) has
+hired you to work on a new programming language named A<code>--</code>.
+Your task is to work on the array mapping tasks of the language.  You
+will take an array reference such as <code>x[5,6]</code> and map it to an
+actual physical address.  In preparation for doing this, you will
+write a program that will read in several array declarations and
+references and give the physical address of each reference.  The
+physical address output by the program should be an integer number in
+base 10.
+<p>
+<p>
+The physical address of an array reference  <img width="112" height="27" align="MIDDLE" alt="tex2html_wrap_inline34" src="394img1.gif">  is
+calculated from the formula  <img width="234" height="25" align="MIDDLE" alt="tex2html_wrap_inline36" src="394img2.gif"> , where the constants  <img width="70" height="25" align="MIDDLE" alt="tex2html_wrap_inline38" src="394img3.gif">  are calculated as specified
+below.
+<p>
+<p>
+<p> <img width="362" height="145" align="BOTTOM" alt="tabular20" src="394img4.gif"> <p><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line of the input file contains two positive integers.  The
+first integer specifies <i>N</i>, the number of arrays defined in the data
+file, and the second integer specifies <i>R</i>, the number of array
+references for which addresses should be calculated.  The next <i>N</i>
+lines each define an array, one per line, and the following <i>R</i> lines
+contain one array reference per line for which an address should be
+calculated.
+<p>
+<p>
+Each line which defines an array contains, in the following order, the
+name of the array (which is limited to 10 characters), a positive
+integer which specifies the base address of the array, a positive
+integer which specifies the size in bytes of each array element, and
+<i>D</i>, the number of dimensions in the array (no array will have fewer
+than 1 or more than 10 dimensions).  This is followed on the same line
+by <i>D</i> pairs of integers which represent the lower and upper bounds,
+respectively, of dimensions  <img width="48" height="12" align="BOTTOM" alt="tex2html_wrap_inline90" src="394img5.gif">  of the array.
+<p>
+<p>
+Each line which specifies an array reference contains the name of the
+array followed by the integer indexes  <img width="90" height="25" align="MIDDLE" alt="tex2html_wrap_inline92" src="394img6.gif">  where <i>D</i>
+is the dimension of the array.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output file should contain the array references and the physical
+addresses.  There should be one array reference and physical address
+per line.  The formatting guidelines below <em>must</em> be adhered to.
+<p>
+<p>
+For each line of output:
+<p>
+<ol><li> Output the name of the array<li> Output a left square bracket<li> Output each index value (each pair of indexes should have a
+single comma and space between them)<li> Output a right square bracket, a space, an equal sign, and
+another space<li> Output the physical address
+</li></li></li></li></li></ol><h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3 4
+ONE       1500 2 2 0 3 1 5
+TWO       2000 4 3 1 4 0 5 5 10
+THREE     3000 1 1 1 9
+ONE       2 4
+THREE     7
+TWO       2 0 6
+TWO       3 3 9</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>ONE[2, 4] = 1526
+THREE[7] = 3006
+TWO[2, 0, 6] = 2148
+TWO[3, 3, 9] = 2376</pre>
+<p>
+</body>
+</html>

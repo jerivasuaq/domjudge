@@ -1,0 +1,159 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 10">
+<meta name="Originator" content="Microsoft Word 10">
+<link rel="File-List" href="p1_files\filelist.xml">
+<link rel="Edit-Time-Data" href="p1_files\editdata.mso">
+
+<title>Little Bishops</title>
+
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:.5in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.preformatted, li.preformatted, div.preformatted
+	{mso-style-name:preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" style='tab-interval:.5in'>
+
+<div class="Section1">
+<center><b>
+<b><font face="Times New Roman,Arial Helvetica" size="6">Little Bishops</font></b><br></b>
+</center>
+
+<p class="MsoNormal" style='text-align:justify'><span style='color:black'>&nbsp;</span></p>
+
+<p class="MsoNormal" style='text-align:justify'>A bishop is a piece used in the
+game of chess which is played on a board of square grids. A bishop can only move
+diagonally from its current position and two bishops attack each other if one
+is on the path of the other. In the following figure, the dark squares
+represent the reachable locations for bishop <b><i>B</i><sub>1</sub></b> form
+its current position.&nbsp; The figure also shows that the bishops <b><i>B</i><sub>1</sub></b>
+and <b><i>B</i><sub>2</sub></b> are in attacking positions whereas <b><i>B</i><sub>1</sub></b>
+and <b><i>B</i><sub>3</sub></b> are not. <b><i>B</i><sub>2</sub></b> and <b><i>B</i><sub>3</sub></b>
+are also in non-attacking positions. </p>
+
+<p class="MsoNormal" style='text-align:justify'>&nbsp;</p>
+
+<p class="MsoNormal" align="center" style='text-align:center'><img width="224" height="223" src="p861.jpg"></p>
+
+<p class="MsoNormal" style='text-align:justify'>&nbsp;</p>
+
+<p class="MsoNormal" style='text-align:justify'>Now, given two numbers <b style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-style:italic'>n</span></b>
+and <b style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-style:
+italic'>k</span></b>, your job is to determine the number of ways one can put <b style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-style:italic'>k</span></b>
+bishops on an <b style='mso-bidi-font-weight:normal'><i>n &times; n</i></b>
+chessboard so that no two of them are in attacking positions. </p>
+
+<p class="MsoNormal" style='text-align:justify'><span style='color:black'>&nbsp;</span></p>
+<b><font face="Times New Roman,Arial Helvetica" size="5">Input</font></b><br>
+
+<p class="MsoNormal"><span style='color:black'>&nbsp;</span>The input file may
+contain multiple test cases. Each test case occupies a single line in the input
+file and contains two integers <b style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-style:italic'>n</span></b> <b style='mso-bidi-font-weight:
+normal'>(1 &le; n &le; 8)</b> and <b style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-style:
+italic'>k</span> (0 &le; k &le; n<sup>2</sup>)</b>. </p>
+
+<p class="MsoNormal" style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style='text-align:justify'>A test case containing two zeros
+for <b style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-style:
+italic'>n</span></b> and <b style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-style:italic'>k</span></b> terminates the input and you
+won’t need to process this particular input.</p>
+
+<p class="MsoNormal" style='text-align:justify'><span style='color:black'>&nbsp;</span></p>
+
+<b><font face="Times New Roman,Arial Helvetica" size="5">Output</font></b><br>
+
+<p class="MsoNormal" style='text-align:justify'>For each test case in the input
+print a line containing the total number of ways one can put the given number
+of bishops on a chessboard of the given size so that no two of them are in
+attacking positions. You may safely assume that this number will be less than <b style='mso-bidi-font-weight:normal'>10<sup>15</sup></b>.</p>
+
+<p class="MsoNormal" style='text-align:justify'><b><span style='font-size:14.0pt;
+color:black'>&nbsp;</span></b></p>
+
+<b><font face="Times New Roman,Arial Helvetica" size="5">Sample Input</font></b><br>
+<font face="Courier,Times New Roman,Arial Helvetica" size="3">
+8 6<br>
+4 4<br>
+0 0<br>
+</font>
+<p class="MsoNormal" style='text-align:justify'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<b><font face="Times New Roman,Arial Helvetica" size="5">Sample Output</font></b><br>
+
+<font face="Courier,Times New Roman,Arial Helvetica" size="3">
+
+5599888<br>
+260<br>
+</font>
+<div class="MsoNormal" align="center" style='text-align:center'>
+
+<hr size="2" width="100%" align="center">
+
+</div>
+
+<p class="MsoNormal" style='mso-outline-level:1'><b><span style='mso-bidi-font-size:
+10.0pt;color:black'>Problem setter: Rezaul Alam
+Chowdhury<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+
+<p class="MsoNormal"><span style='font-family:"Courier New"'>&nbsp;</span></p>
+
+</div>
+<center>
+"I think Garry Kasparov will like this problem very much!!!"
+</center>
+</body>
+
+</html>

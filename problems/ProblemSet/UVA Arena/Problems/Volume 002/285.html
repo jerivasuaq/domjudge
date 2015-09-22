@@ -1,0 +1,79 @@
+
+
+<html>
+<head>
+<title>Crosswords</title>
+<meta name="description" content="Crosswords">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1>
+<center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF"><a name="SECTION0001000000000000000000">Crosswords</a></font></b></td></tr></table></center></h1>
+<p>
+This problem deals with crosswords, as they are known from every newspaper. A cross-word is words arranged horizontally and vertically in a rectangle. Two words can share
+one character where they are crossing. The problem is to decide whether the crossword
+is solved correctly or not.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input file contains several test cases. Each test has any number of lines of the format:
+<tt><b>word</b> <b>x</b> <b>y</b> <b>d</b></tt>.<br>
+<tt><b>word</b>, <b>x</b>, <b>y</b></tt> and <tt><b>d</b></tt> are
+in standard text
+format. <tt><b>x</b></tt> and <tt><b>y</b></tt> mean the coordinate of the starting point of
+the <tt><b>word</b></tt> and <tt><b>d</b></tt> is the
+direction in which the <tt><b>word</b></tt> is written. <tt><b>x</b></tt> and <tt><b>y</b></tt> are positive integers less than 100. The length the <tt><b>word</b></tt> is less than 10. Between <tt><b>word</b> <b>x</b> <b>y</b> <b>d</b></tt> there is exactly one space and <tt><b>word</b></tt> begins from the first column. The coordinate system starts at
+the upper
+left of the rectangle with the coordinates <i>(1,1)</i>. The direction is given
+by a single
+character where <tt><b>u</b></tt> means upwards, <tt><b>r</b></tt> means right, <tt><b>d</b></tt> means down and <tt><b>l</b></tt> means left.
+Given crossword will always be correct.
+<p>These lines are follwed by a <tt>#</tt> symbol, and then the test contains the ``solution&quot; in the following format:
+The first line of the ``solution&quot; is the
+minimal width <i>(minimal right edge coordinate)</i> of the crossword, and the second line is the minimal height <i>(minimal bottom coordinate)</i> of the crossword needed to make crossword.
+The third line is all the
+characters of the ``solution&quot; <i>(only lower case characters - a ... z)</i> listed from left to right, from top to bottom at the end of which stands single <tt>$</tt> symbol <i>(<tt>$</tt> is not a part of the ``solution&quot; and just indicates the end of the ``solution&quot; line)</i>. The <b>EOF</b> indicates the end of input file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each test case output must be one of the following sentences:
+<p>
+<ul>
+<li> <tt>The solution is correct.</tt>
+</li></ul>
+<p>
+or
+<ul>
+<li> <tt>The solution is incorrect.</tt>
+</li></ul><h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>second 1 1 r
+vis 1 3 r
+file 2 4 u
+castle 3 1 d
+end 6 3 u
+#
+6
+6
+second la  nvis  e ft  l  e   $
+sample 1 4 r
+output 1 7 r
+for 3 3 u
+crossword 1 1 d
+is 2 5 l
+correct 1 1 r
+#
+7
+9
+correctr o    o f    sample  si     w      output r      d      $</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>The solution is correct.
+The solution is correct.</pre>
+<p>
+</body>
+</html>

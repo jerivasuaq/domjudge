@@ -1,0 +1,157 @@
+
+
+<html>
+<head>
+<title>Horse Shoe Scoring</title>
+<meta name="description" content="Horse Shoe Scoring">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Horse Shoe Scoring</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The game of horseshoes is played by tossing horseshoes at a post that is
+driven into the ground.
+Four tosses generally make up a game. The scoring of a toss depends on
+where the horseshoe lands
+with respect to the post. If the center of the post is within the region
+bounded by the interior of the
+horseshoe and the imaginary line connecting the two legs of the horseshoe,
+and the post is not
+touching the horseshoe, it is a ``ringer" and worth five points. If any
+part of the horseshoe is
+touching the post, it is a ``toucher" and worth 2 points. If the toss is
+neither a ringer nor a toucher and some part of the horseshoe will touch the post when it is pivoted around its point B, it is a
+``swinger" and worth 1 point. Any horseshoe which does not fit any of the
+scoring definitions scores zero points. See the figures below for examples of each of the scoring possibilities.
+
+<p>
+<div align="CENTER">
+<img src="p569a.gif">
+</div>
+
+<p>
+This program uses mathematical horseshoes that are semicircles with radius 10
+centimeters. The
+location of the horseshoe is the given by two points: the centerpoint of
+the semicircle, measured in
+centimeters relative to x and y axes, and the point that exactly bisects the
+semicircle. The post is at
+location (0,0) and is 2 centimeters in diameter. The top of the post is
+level with the ground allowing
+the horseshoe to lay on top of the post; therefore, a ``toucher" would mean
+that any part of the
+horseshoe lies within the circle with a radius of 1 centimeter centered
+at (0, 0).
+
+<p>
+
+<p>
+<br>
+Each ``turn" consists of four tosses. The purpose of your program is to
+determine the score of the
+``turn" by computing the sum of the point values for each of the four tosses.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input to your program is a series of turns, and a turn consists of four
+horseshoe positions. Each line
+of input consists of two coordinate pairs representing the position of a
+toss. Each coordinate
+consists of a floating point (<i>X</i>,<i>Y</i>) coordinate pair (
+
+<img width="181" height="32" align="MIDDLE" border="0" src="569img1.gif" alt="$-100.0 \le X,Y \le 100.0$">)
+with up to 3 digits of
+precision following the decimal point; the first and second numbers are
+the <i>X</i> and <i>Y</i> coordinates of
+the centerpoint of the horseshoe semicircle (Point A) and the third and
+fourth numbers are the <i>X</i>
+and <i>Y</i> coordinates of the point (B) which bisects the horseshoe semicircle. All coordinates are in centimeters.
+You can be assured that
+the distance between points A and B for each horseshoe will be 10 +- 0.000001
+centimeters. The figure
+below illustrates the meanings of the values on each line.
+
+<p>
+<div align="CENTER">
+<img src="p569b.gif">
+
+</div>
+
+<p>
+The first four lines of input define the horseshoe positions for the first
+turn; lines 5 through 8 define
+the second turn, etc. 
+There are at most 9999 turns in the input file, and every turn contains four
+horseshoe positions. Your program should continue reading input to the
+end of file.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The first line of output for your program should be the string ``<tt>Turn Score</tt>"
+in columns 1 through
+10. For each ``turn", your program should print the number of the turn
+right-justified in columns 1-4
+(turns are numbered starting with 1), a single space (ASCII character
+32 decimal) in columns 5 through 8
+, and the score for the turn right-justified in columns 9 and 10 with a
+single leading blank for scores
+0 to 9. Numbers that are right-justified should be preceded by blanks,
+not zeroes, as the fill character.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+76.5 53.3 76.5 43.3
+-5.1 1.0 4.9 1.0
+5.1 0.7 5.1 -9.3
+7.3 14.61 7.3 4.61
+23.1 17.311 23.1 27.311
+-23.1 17.311 -23.1 27.311
+-23.1 -17.311 -23.1 -27.311
+23.1 -17.311 23.1 -27.311
+76.5 53.3 76.5 43.3
+76.5 53.3 76.5 43.3
+-1.0 -2.0 9.0 -2.0
+1.0 -2.0 9.0 4.0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Turn Score
+   1    11
+   2     0
+   3    10 
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

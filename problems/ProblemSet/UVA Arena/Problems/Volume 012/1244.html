@@ -1,0 +1,59 @@
+<p>
+In Ragannagar ( a small town in India), people are obsessed with palindromes . There are<strong> N </strong>road junctions(also callled points) labeled <strong>0</strong> to <strong>N-1</strong> and roads exist between every pair of points. Roads are onewayed and for the road connecting point <strong>i</strong> to point <strong>j</strong> ( <strong>i</strong> <><strong>j</strong>) the direction to travel is <strong>i</strong> to <strong>j.</strong> Each road is labeled with a letter between 'A' to 'Z' . Rajar ,the traveler, wants to travel from point <strong>0</strong> to point <strong>N-1</strong>. However he wants to cover the longest palindromic path.
+</p><p>
+<img alt="" src="p4336.jpg" width="400">
+</p><p>
+In the above arrangement the possible paths to take are:- </p>
+<ul>
+<li> ACCA</li>
+<li> ABA</li>
+<li> ACB</li>
+<li> BCA</li>
+<li> AD</li>
+<li> BB</li>
+<li> AA</li>
+<li> C</li>
+</ul>
+<p>
+The largest palindrome amongst these is ACCA, so Rajar will take this path. Given the above configuration, help him decide which path to take.
+</p>
+<h3>Input</h3>
+<p>
+The first line of input will contain an integer denoting the number of test cases<strong> T </strong><=25. each="" test="" case="" will="" be="" formatted="" as="" follows:-=""></=25.></p><ul>
+<li>
+The first line of each test case contains an integer denoting 2<=></=><strong>N</strong> <></li>
+<li>
+The next<strong> N </strong>lines contain<strong> N </strong>characters each. Each character is a letter
+between 'A' to 'Z'. The jth character in the ith line denotes the label
+for the road between i to j and this will be equal to the ith character
+in the jth line.The ith character of the ith line will be * denoting no
+road exists.
+</li>
+</ul>
+<h3>Output</h3>
+<p>Output one line per case - <br>
+The longest palindromic path available or "NO PALINDROMIC PATH" if none exists.<i><strong>Note that quotes are for clarity only.</strong></i><br>
+In case more than one longest path exists output the lexicographically smallest one.<br>
+
+</p><p>
+</p><h3><a name="Sample_Input"></a> Sample Input </h3>
+<pre>
+2
+5
+*ABAC
+A*CBD
+BC*CB
+ABC*A
+CDBA*
+5
+*AXYZ
+A*BQR
+XB*BT
+YQB*A
+ZRTA*
+</pre>
+<h3>Sample Output</h3>
+<pre>
+ACCA
+ABBA
+</pre>

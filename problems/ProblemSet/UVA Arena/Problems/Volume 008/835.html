@@ -1,0 +1,162 @@
+
+
+<html>
+<head>
+<title>Square of Primes</title>
+<meta name="description" content="Square of Primes">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Square of Primes</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Figure 1 shows a square. Each row, each column and the two
+diagonals can be read as a five digit prime number. Both diagonals
+are read from left to right.
+
+<p>
+<div align="CENTER">
+<table cols="5">
+<col align="CENTER"><col align="CENTER"><col align="CENTER"><col align="CENTER"><col align="CENTER">
+<tr><td valign="BASELINE" align="CENTER" nowrap="">
+1 </td><td valign="BASELINE" align="CENTER" nowrap=""> 1 </td><td valign="BASELINE" align="CENTER" nowrap=""> 3 </td><td valign="BASELINE" align="CENTER" nowrap=""> 5 </td><td valign="BASELINE" align="CENTER" nowrap=""> 1 </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+3 </td><td valign="BASELINE" align="CENTER" nowrap=""> 3 </td><td valign="BASELINE" align="CENTER" nowrap=""> 2 </td><td valign="BASELINE" align="CENTER" nowrap=""> 0 </td><td valign="BASELINE" align="CENTER" nowrap=""> 3 </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+3 </td><td valign="BASELINE" align="CENTER" nowrap=""> 0 </td><td valign="BASELINE" align="CENTER" nowrap=""> 3 </td><td valign="BASELINE" align="CENTER" nowrap=""> 2 </td><td valign="BASELINE" align="CENTER" nowrap=""> 3 </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+1 </td><td valign="BASELINE" align="CENTER" nowrap=""> 4 </td><td valign="BASELINE" align="CENTER" nowrap=""> 0 </td><td valign="BASELINE" align="CENTER" nowrap=""> 3 </td><td valign="BASELINE" align="CENTER" nowrap=""> 3 </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+3 </td><td valign="BASELINE" align="CENTER" nowrap=""> 3 </td><td valign="BASELINE" align="CENTER" nowrap=""> 3 </td><td valign="BASELINE" align="CENTER" nowrap=""> 1 </td><td valign="BASELINE" align="CENTER" nowrap=""> 1
+</td></tr>
+</table>
+
+</div>
+<p>
+<div align="CENTER"></div>
+<p>
+<br>
+<div align="CENTER">Figure 1 - Example square of primes.
+
+</div>
+
+<p>
+Using the data in the input file, write a program that constructs
+such squares.
+
+<p>
+
+<ul>
+<li>The prime numbers must have the same digit sum (11
+in the example).
+</li>
+<li>The digit in the top left-hand corner of the squares
+is pre-determined (1 in the example).
+</li>
+<li>A prime number may be used more than once in the same
+square.
+</li>
+<li>If there are several solutions, all must be present.
+</li>
+</ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The input file contains two lines. The first line contains a
+single integer which is the digit sum of the prime numbers. The
+second contains the digit in the top left corner of the square.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+In the output, write five lines for each solution found, where
+each line in turn consists of a five digit prime number. The
+solutions must be in ascending order, separated by an empty line.
+(the above example has three solutions)
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+11
+1
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+11351
+14033
+30323
+53201
+13313
+
+11351
+33203
+30323
+14033
+33311
+
+13313
+13043
+32303
+50231
+13331
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Gabriel David, ACM-UP'2001
+</address>
+</body>
+</html>
+

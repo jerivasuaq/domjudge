@@ -1,0 +1,81 @@
+
+
+<html>
+<head>
+<title>Block Voting</title>
+<meta name="description" content="Block Voting">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Block Voting</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Different types of electoral systems exist. In a block voting system the members of a party do
+not vote individually as they like, but instead they must collectively accept or reject a proposal.
+Although a party with many votes clearly has more power than a party with few votes, the votes
+of a small party can nevertheless be crucial when they are needed to obtain a majority. Consider
+for example the following five-party system:
+<p>
+<p> <img width="130" height="133" align="BOTTOM" alt="tabular21" src="435img1.gif"> <p>
+<p>
+Coalition {A,B} has 7 + 4 = 11 votes, which is not a majority. When party C joins coalition
+{A,B}, however, {A,B,C} becomes a winning coalition with 7+4+2 = 13 votes. So even though C is a small party, it can play an important role.
+<p>
+As a measure of a party's power in a block voting system, John F. Banzhaf III proposed to use the <em>power index</em>. The key idea is that a party's power is determined by the number of minority
+coalitions that it can join and turn into a (winning) majority coalition. Note that the empty
+coalition is also a minority coalition and that a coalition only forms a majority when it has more
+than half of the total number of votes. In the example just given, a majority coalition must have at least 13 votes.
+<p>
+In an ideal system, a party's power index is proportional to the number of members of that party.
+<p>
+<p>
+Your task is to write a program that, given an input as shown above, computes for each party
+its power index.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input Specification</a></font></h2>
+<p>
+The first line contains a single integer which equals the number of test cases that follow. Each of
+the following lines contains one test case.
+<p>
+The first number on a line contains an integer <i>P</i> in [1  <img width="20" height="2" align="BOTTOM" alt="tex2html_wrap_inline36" src="435img2.gif">  20] which equals the number of parties for that test case. This integer is followed by <i>P</i> positive integers, separated by spaces. Each of these integers represents the number of members of a party in the electoral system. The <i>i</i>-th number represents party number <i>i</i>. No electoral system has more than 1000 votes.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output Specification</a></font></h2>
+<p>
+For each test case, you must generate <i>P</i> lines of output, followed by one empty line. <i>P</i> is the number of parties for the test case in question. The <i>i</i>-th line (<i>i</i> in [ <img width="47" height="12" align="BOTTOM" alt="tex2html_wrap_inline52" src="435img3.gif"> ]) contains the sentence:
+<p>
+<tt>party <i>i</i> has power index <i>I</i></tt>
+<p>
+where <i>I</i> is the power index of party <i>i</i>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3
+5 7 4 2 6 6
+6 12 9 7 3 1 1
+3 2 1 1</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>party 1 has power index 10
+party 2 has power index 2
+party 3 has power index 2
+party 4 has power index 6
+party 5 has power index 6
+
+party 1 has power index 18
+party 2 has power index 14
+party 3 has power index 14
+party 4 has power index 2
+party 5 has power index 2
+party 6 has power index 2
+
+party 1 has power index 3
+party 2 has power index 1
+party 3 has power index 1
+
+</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,121 @@
+
+
+<html>
+<head>
+<title>FORCAL</title>
+<meta name="description" content="FORCAL">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">FORCAL</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+FORCAL is the programming language well known to programmers who are
+interested in
+compiler construction and especially to students attending Dr. C. Ompiler
+class. The FORCAL syntax is defined as follows:
+<ul><li> The only data type is integer.<li> All identifiers are implicitly declared and are not longer than
+32 characters. Identifiers are
+composed of letters, digits and underscores. At least one character of
+the identifier is not a digit.<li> Literals are strings of at most 8 digits.<li> Comments begin with -- and end at the end of the line in which they start.<li> Statement types are
+<pre><tt> 
+Assignment:
+<p>
+	<img width="5" height="27" align="MIDDLE" alt="tex2html_wrap_inline42" src="309img1.gif"> identifier <img width="4" height="27" align="MIDDLE" alt="tex2html_wrap_inline44" src="309img2.gif">  :=  <img width="5" height="27" align="MIDDLE" alt="tex2html_wrap_inline42" src="309img1.gif"> expression <img width="4" height="27" align="MIDDLE" alt="tex2html_wrap_inline44" src="309img2.gif"> 
+<p>
+	where expressions are constructed from identifiers, literals, operators +, -,
+<p>
+	and parentheses as follows:
+<p>
+	1) all identifiers and literals are expressions,
+<p>
+	2) if <i>a</i>, <i>b</i> are expressions then <i>a</i> + <i>b</i>, <i>a</i> - <i>b</i>, +<i>a</i>, -<i>a</i>, (<i>a</i>) are expressions.
+<p>
+Input/Output:
+<p>
+	<b>read</b>(List of identifiers);
+<p>
+	<b>write</b>(List of expressions)
+<p>
+	(Items in the list are separated by comma)
+<p>
+</tt></pre><li> <b>begin</b>, <b>end</b>, <b>read</b>, and <b>write</b> are reserved words.<li> Each statement is terminated by a semicolon.<li> FORCAL is not case-sensitive, for example <b>BegIN</b> is the same keyword as <b>beGin</b>.
+</li></li></li></li></li></li></li></li></ul>
+<p>
+<p>
+FORCAL tokens are defined to be: the identifiers or the literals or the
+symbols <tt>+ - ( ) := ; ,</tt> or the reserved words.
+<p>
+<p>
+<p>
+<b>NOTES:</b>
+<ul><li> the assign operator is to be considered one FORCAL token,<li> spaces, tabs, end-of-lines are allowed between the tokens,<li> no part of any comment is a token,<li> successive tokens that are either identifiers, literals or reserved
+words must be separated by a space or tab or end-of-line,<li> no token is allowed to contain a space or a tab or end-of-line.
+</li></li></li></li></li></ul>
+<p>
+<p>
+Help the students of Dr. C. Ompiler to write a program which reads lines of
+text an recognizes the FORCAL tokens in them.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file consists of several blocks of lines. Each block contains lines
+of text and is terminated by one empty line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output file consists of blocks corresponding to the blocks in the input
+file. In the lines of
+each block there are successively stored the FORCAL tokens recognized by
+the program (just one
+token on each line). Each token must be written on the output line in
+exactly the same form as
+it appears in the input text. If the program encounters a string that is
+neither a FORCAL token,
+nor comment, nor space, tab, end-of-line, it is to write the string
+<tt>TOKEN ERROR</tt> on a new line and
+continues by processing the next block in the input file. The program writes
+one empty line after each block of the output file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>A1:= A + (-B);
+
+A123 A123 )
+01.2 A B
+C
+
+:= A beGIn
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>A1
+:=
+A
++
+(
+-
+B
+)
+;
+
+A123
+A123
+)
+01
+TOKEN ERROR
+
+:=
+A
+beGIn
+
+TOKEN ERROR
+</pre>
+<p>
+</body>
+</html>

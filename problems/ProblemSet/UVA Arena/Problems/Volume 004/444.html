@@ -1,0 +1,65 @@
+
+
+<html>
+<head>
+<title>Encoder and Decoder</title>
+<meta name="description" content="Encoder and Decoder">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Encoder and Decoder</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Being in charge of the computer department of the Agency of
+International Espionage, you are asked to write a program that
+will allow a spy to encode and decode their messages.
+<p>
+You can assume a spy's message is at most 80 characters long, and
+it includes all the upper and lowercase letters of the alphabet
+plus the space, and any of the following characters:
+<p>
+<pre>!  ,  .  :  ;  ?</pre>
+<p>
+The following is an ASCII table of the valid characters in a
+message:
+<p>
+<pre>     &quot;A&quot;  65   &quot;a&quot;  97   &quot; &quot;  32
+     &quot;B&quot;  66   &quot;b&quot;  98   &quot;!&quot;  33
+      .         .        &quot;,&quot;  44
+      .         .        &quot;.&quot;  46
+      .         .        &quot;:&quot;  58
+     &quot;Y&quot;  89   &quot;y&quot;  121  &quot;;&quot;  59
+     &quot;Z&quot;  90   &quot;z&quot;  122  &quot;?&quot;  63</pre>
+<p>
+The algorithm that you should use to encode messages is to take
+the ASCII value of each character in the message, starting with
+the last character in the message and ending with the first
+character in the message.  You should then add on to the coded
+message this ASCII value written in reverse order.  For example,
+if the ASCII value is 123, the encoded message should contain the
+string &quot;<tt>321</tt>&quot;.  There should be no spaces separating the numbers
+in the encoded message.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+The input file consists of one or more lines with a normal (not encoded) or encoded message each.
+<p>
+<p>
+Output file must have the same number of lines with the corresponding encoded message or the decoded one, respectively.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>abc
+798999
+Have a Nice Day !</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>998979
+cba
+332312179862310199501872379231018117927</pre>
+<p>
+</body>
+</html>

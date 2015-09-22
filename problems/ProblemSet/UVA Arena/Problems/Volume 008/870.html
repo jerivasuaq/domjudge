@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Intersecting Rectangles<p></title>
+</head>
+<body bgcolor="white">
+
+<h1 align="center">Intersecting Rectangles<p></h1>
+
+<font color="#0000FF"><h2>Background</h2></font>
+
+<p align="justify"> Consider, in a 2D space, a set of rectangles with edges that are parallel to the axis X and Y. One is the main rectangle and there are intersections between several rectangles. According to these intersections, one or more closed polygons called "islands" can be defined. The main island is the one that contains the main rectangle.<br>
+<p><center>
+<img src="p870a.gif" width="327" height="241" border="0"><br>
+<b>Figure 1</b> - The ten rectangles are defining 3 islands
+</center>
+<p align="justify"> The proposed problem is to evaluate the area of the main island. For example, in Figure 1, considering that polygon 1 is the main polygon, the main island is composed by polygons 1,2,3,5 and 10, so the problem here is to evaluate the area of the polygon presented in Figure 2.
+<p><center>
+<img src="p870b.gif" width="147" height="111" border="0"><br>
+<b>Figure 2</b> - The polygon defined by the main island
+</center>
+
+<font color="#0000FF"><h2>Problem</h2></font>
+
+<p align="justify"> Given a list of rectangles, starting with the main rectangle, the problem is to identify the main island and evaluate the correspondent area. Each rectangle is geometrically characterized by the coordinates of its bottom-left and upper-right corners; the maximum number of rectangles is 100; as a simplification, it can be considered that no coincidences between edges and vertices exist.
+
+<font color="#0000FF"><h2>Input</h2></font>
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<p align="justify"> The first line of the input contains the number of rectangles <b>N</b> (integer format) to be considered. Each one of the following <b>N</b> lines contains the coordinates of bottom-left and upper-right vertices of a rectangle, in the sequence <b>x<sub>min</sub> y<sub>min</sub> x<sub>max</sub> y<sub>max</sub></b>, separated by a single space. The first rectangle given is the main one.
+
+<font color="#0000FF"><h2>Output</h2></font>
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+<p align="justify"> One integer number that represents the main island area as defined above.
+
+
+<p><center>
+<img src="p870c.gif" width="363" height="350" border="0"><br>
+<b>Figure 3</b> - Sample input
+</center>
+
+<font color="#0000FF"><h2>Sample Input</h2></font>
+<pre>1<br><br>9<br>2 5 8 8<br>4 6 10 10<br>5 7 6 12<br>9 9 11 11
+12 7 15 8<br>1 3 3 6<br>4 2 8 3<br>13 6 14 9<br>2 1 11 4
+
+</pre><font color="#0000FF"><h2>Sample Output</h2></font>
+<pre>70
+
+</pre>
+<p>
+<br><hr>
+<address>
+University of Porto ACM Programming Contest / Round 12/ 2000
+</address>
+</body>
+</html>

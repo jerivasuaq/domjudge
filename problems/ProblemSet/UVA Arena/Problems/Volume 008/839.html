@@ -1,0 +1,148 @@
+
+
+<html>
+<head>
+<title>Not so Mobile</title>
+<meta name="description" content="Not so Mobile">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Not so Mobile</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Before being an ubiquous communications gadget, a <em>mobile</em> was
+just a structure made of strings and wires suspending colourfull
+things. This kind of mobile is usually found hanging over cradles
+of small babies.
+
+<p>
+<div align="CENTER">
+
+<img src="p839a.jpg" alt="\epsfbox{p839a.eps}">
+</div>
+
+<p>
+The figure illustrates a simple mobile. It is just a wire,
+suspended by a string, with an object on each side. It can also be
+seen as a kind of lever with the fulcrum on the point where the
+string ties the wire.  From the lever principle we know that to
+balance a simple mobile the product of the weight of the objects
+by their distance to the fulcrum must be equal. That is
+
+<span class="MATH"><i>W</i><sub>l</sub>&#215;<i>D</i><sub>l</sub> = <i>W</i><sub>r</sub>&#215;<i>D</i><sub>r</sub></span>
+where <span class="MATH"><i>D</i><sub>l</sub></span> is the left distance, <span class="MATH"><i>D</i><sub>r</sub></span> is the
+right distance, <span class="MATH"><i>W</i><sub>l</sub></span> is the left weight and <span class="MATH"><i>W</i><sub>r</sub></span>
+is the right weight.
+
+<p>
+
+<p>
+<br>
+In a more complex mobile the object may be replaced by a
+sub-mobile, as shown in the next figure. In this case it is not so
+straightforward to check if the mobile is balanced so we need you
+to write a program that, given a description of a mobile as input,
+checks whether the mobile is in equilibrium or not.
+
+<p>
+<div align="CENTER">
+
+<img src="p839b.jpg" alt="\epsfbox{p839b.eps}">
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The input is composed of several lines, each containing 4 integers
+separated by a single  space. The 4 integers represent the
+distances of each object to the fulcrum and their  weights, in the
+format: 
+<span class="MATH"><i>W</i><sub>l</sub>&nbsp;<i>D</i><sub>l</sub>&nbsp;<i>W</i><sub>r</sub>&nbsp;<i>D</i><sub>r</sub></span>
+
+<p>
+If <span class="MATH"><i>W</i><sub>l</sub></span> or <span class="MATH"><i>W</i><sub>r</sub></span> is zero then there is a sub-mobile hanging from
+that end and the following lines define the the sub-mobile. In
+this case we compute the weight of the sub-mobile as the sum of
+weights of all its objects, disregarding the weight of the wires
+and strings. If both <span class="MATH"><i>W</i><sub>l</sub></span> and <span class="MATH"><i>W</i><sub>r</sub></span> are zero then the following
+lines define two sub-mobiles: first the left then the right one.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+Write `<tt>YES</tt>' if the mobile is in equilibrium, write `<tt>NO</tt>' otherwise.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+0 2 0 4
+0 3 0 1
+1 1 1 1
+2 4 4 2
+1 6 3 2
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+YES
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Jose Paulo Leal, ACM-UP'2001
+</address>
+</body>
+</html>
+

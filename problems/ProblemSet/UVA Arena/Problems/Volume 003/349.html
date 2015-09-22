@@ -1,0 +1,156 @@
+
+
+<html>
+<head>
+<title>Transferable Voting (II)</title>
+<meta name="description" content="Transferable Voting (II)">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Transferable Voting (II)</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The Transferable Vote system for determining the winner of an election
+requires that a successful candidate obtain an absolute majority of the
+votes cast, even when there are more than
+two candidates. To achieve this goal, each voter completes his or her
+ballot by listing <i>all</i> the candidates in order of preference. Thus if
+there are five candidates for a single position, each
+voter's ballot must contain five choices, from first choice to fifth choice.
+<p>
+<p>
+In this problem you are to determine the winner, if any, of elections
+using the Transferable Vote system. If there are <i>c</i> candidates for the
+single position, then each voter's ballot will
+include <i>c</i> distinct choices, corresponding to identifying the voter's
+first place, second place,  <img width="19" height="2" align="BOTTOM" alt="tex2html_wrap_inline32" src="349img1.gif"> , and <i>n</i>th place selections. Invalid
+ballots will be discarded, but their presence will be noted.
+A ballot is invalid if a voter's choices are not distinct (choosing the
+same candidate as first and second choice isn't permitted) or if any of
+the choices aren't legal (that is, in the range 1 to <i>c</i>).
+<p>
+<p>
+For each election candidates will be assigned sequential numbers starting
+with 1. The maximum number of voters in this problem will be 100, and
+the maximum number of candidates will be 5.
+<pre>                               Table A                 Table B
+                   -------------------------------    --------- 
+                   Voter    First   Second  Third
+                            Choice  Choice  Choice
+                     1        1       2       4
+                     2        1       3       2       1   3   2
+                     3        3       2       1       3   2   1
+                     4        3       2       1       3   2   1
+                     5        1       2       3       1   2   3
+                     6        2       3       1       3   1
+                     7        3       2       1       3   2   1
+                     8        3       1       1
+                     9        3       2       1       3   2   1
+                    10        1       2       3       1   2   3
+                    11        1       3       2       1   3   2
+                    12        2       3       1       3   1</pre>
+<p>
+Consider a very small election. In Table A are the votes from the 12 voters
+for the three candidates. Voters 1 and 8 cast invalid ballots; they will
+not be counted. This leaves 10 valid
+ballots, so a winning candidate will require at least 6 votes (the least
+integer value greater than half the number of valid ballots) to win.
+Candidates 1 and 3 each have 4 first choice votes,
+and candidate 2 has two. There is no majority, so the candidate with the
+fewest first choice votes, candidate 2, is eliminated. If there had been
+several candidates with the fewest first
+choice votes, any of them, selected at random, could be selected for
+elimination.
+<p>
+<p>
+With candidate 2 eliminated, we advance the second and third choice candidates
+from those voters who voted for candidate 2 as their first choice. The result
+of this action is shown in
+Table B. Now candidate 3 has picked up 2 additional votes, giving a total
+of 6. This is sufficient for election. Note that if voter 12 had cast the
+ballot ``2 1 3&quot; then there would have been
+a tie between candidates 1 and 3.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+There will be one or more elections to consider. Each will begin with a
+line containing the number of candidates and the number of voters,
+<i>c</i> and <i>n</i>. Data for the last election will be
+followed by a line containing two zeroes.
+<p>
+<p>
+Following the first line for each election will be <i>n</i> additional lines each
+containing the choices from a single ballot. Each line will contain only
+<i>c</i> non-negative integers separated by whitespace.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each election, print a line identifying the election number (they are
+numbered sequentially starting with 1). If there were any invalid ballots,
+print an additional line specifying the
+number of such. Finally, print a line indicating the winner of the election,
+if any, or indication of a tie; be certain to identify the candidates who
+are tied. Look at the samples below for the <em>exact</em> output format.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3 12
+1 2 4
+1 3 2
+3 2 1
+3 2 1
+1 2 3
+2 3 1
+3 2 1
+3 1 1
+3 2 1
+1 2 3
+1 3 2
+2 3 1
+3 12
+1 2 4
+1 3 2
+3 2 1
+3 2 1
+1 2 3
+2 3 1
+3 2 1
+3 1 1
+3 2 1
+1 2 3
+1 3 2
+2 1 3
+4 15
+4 3 1 2
+4 1 2 3
+3 1 4 2
+1 3 2 4
+4 1 2 3
+3 4 2 1
+2 4 3 1
+3 2 1 4
+3 1 4 2
+1 4 2 3
+3 4 1 2
+3 2 1 4
+4 1 3 2
+3 2 1 4
+4 2 1 4
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Election #1
+   2 bad ballot(s)
+   Candidate 3 is elected.
+Election #2
+   2 bad ballot(s)
+   The following candidates are tied: 1 3
+Election #3
+   1 bad ballot(s)
+   Candidate 3 is elected.</pre>
+<p>
+</body>
+</html>

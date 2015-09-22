@@ -1,0 +1,25 @@
+Ejercicio 3.
+
+Programa que lee el numero de minutos una llamada telefónica (cada una tiene un costo de 1.16 pesos). Este programa te devuelve el total de tu factura. El programa no debe aceptar minutos negativos. El programa lee el número de minutos y muestra como resultado el total de la deuda.
+
+Ejemplos:
+==============================================================
+entrada:
+10.5
+--------------------------------------------------------------
+salida:
+12.18
+==============================================================
+entrada:
+-1
+--------------------------------------------------------------
+salida:
+no valido.
+==============================================================
+entrada:
+0
+--------------------------------------------------------------
+salida:
+sin deuda.
+
+

@@ -1,0 +1,126 @@
+
+
+<html>
+<head>
+<title>Equation Solver</title>
+<meta name="description" content="Equation Solver">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Equation Solver</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Write a program that can solve linear equations with one variable.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input Specification</a>&nbsp;</font>
+</h2>
+The input file will contain a number of equations, each one on a separate
+line. All equations are
+strings of less than 100 characters which strictly adhere to the following
+grammar (given in EBNF):
+
+<p>
+<pre>
+    Equation   := Expression '=' Expression
+    Expression := Term { ('+' | '-') Term }
+    Term       := Factor { '*' Factor }
+    Factor     := Number | 'x' | '(' Expression ')'
+    Number     := Digit | Digit Number
+    Digit      := '0' | '1' | ... | '9'
+</pre>
+
+<p>
+Although the grammar would allow to construct non-linear equations
+like ``<i>x</i>*<i>x</i>=25", we guarantee
+that all equations occuring in the input file will be linear in <i>x</i>. We
+further guarantee that all
+sub-expressions of an equation will be linear in <i>x</i> too. That means, there
+won't be test cases like
+
+<p>
+<br><p>
+<div align="CENTER">
+
+
+
+<i>x</i>*<i>x</i>-<i>x</i>*<i>x</i>+<i>x</i>=0
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+which is a linear equation but contains non-linear
+sub-expressions (<i>x</i>*<i>x</i>).
+
+<p>
+Note that all numbers occuring in the input are non-negative integers,
+while the solution for <i>x</i> is a real number.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output Specification</a>&nbsp;</font>
+</h2>
+For each test case, print a line saying ``<tt>Equation #</tt><i>i</i> (where <i>i</i> is the number
+of the test case) and a line with one of the following answers:
+
+<p>
+<ul>
+<li>If the equation has no solution, print ``<tt>No solution.</tt>".
+<li>If the equation has infinitely many solutions, print ``<tt>Infinitely many solutions.</tt>".
+<li>If the equation has exactly one solution, print ``<tt>x = </tt><i>solution</i>" where <i>solution</i> is replaced by the
+appropriate real number (printed to six decimals).
+</li></li></li></ul>
+
+<p>
+
+<p>
+<br>
+Print a blank line after each test case, but the last one.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+x+x+x=10
+4*x+2=19
+3*x=3*x+1+2+3
+(42-6*7)*x=2*5-10
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Equation #1
+x = 3.333333
+
+Equation #2
+x = 4.250000
+
+Equation #3
+No solution.
+
+Equation #4
+Infinitely many solutions.
+</pre>
+
+<p>
+
+<p>
+</body>
+</html>

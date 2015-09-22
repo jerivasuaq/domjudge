@@ -1,0 +1,85 @@
+
+<p>
+The desire to explore the unknown has been a driving force in  human history since the dawn of time. From the earliest
+documented accounts,  ancient civilizations had explored the earth by sailing  around. Early  adventurers were motivated
+by religious beliefs, the desire conquest, the need to establish trade routes, and hunger for gold.
+
+<p>
+You never know what will happen before the exploration. Neither does Bruce Lee. Someday, Mr. Lee entered a desolate
+tropical rainforest. And after several days' exploring, he came in front of a cave with something blinking in it.
+A beautiful girl named Vivian came out just before he tried to go into the cave. And Vivian told Mr. Lee that he must
+answer some questions before he entered the cave. As the best friend of Mr. Lee, you should help him to work it out.
+
+<p>
+You will get <span class="MATH"><i>k</i></span> positive integers 
+<span class="MATH"><i>p</i><sub>1</sub>, <i>p</i><sub>2</sub>...<i>p</i><sub>i</sub>...<i>p</i><sub>k</sub></span> (
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2955img1.png" alt="$ \le$"><i>i</i><img width="18" height="30" align="MIDDLE" border="0" src="2955img1.png" alt="$ \le$"><i>k</i></span>) from Vivian. From these
+numbers, you can calculate <span class="MATH"><i>N</i></span>,
+
+<p>
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<i>N</i> = <img width="26" height="69" align="MIDDLE" border="0" src="2955img2.png" alt="$\displaystyle \prod_{i=1}^{k}$"><i>p</i><sub>i</sub><sup>e<sub>i</sub></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(0<img width="18" height="30" align="MIDDLE" border="0" src="2955img3.png" alt="$\displaystyle \le$"><i>e</i><sub>i</sub><img width="18" height="30" align="MIDDLE" border="0" src="2955img3.png" alt="$\displaystyle \le$">10,<img width="27" height="69" align="MIDDLE" border="0" src="2955img4.png" alt="$\displaystyle \sum_{i=1}^{k}$"><i>e</i><sub>i</sub> <img width="18" height="30" align="MIDDLE" border="0" src="2955img5.png" alt="$\displaystyle \geq$"> 1, 1<img width="18" height="30" align="MIDDLE" border="0" src="2955img3.png" alt="$\displaystyle \le$"><i>i</i><img width="18" height="30" align="MIDDLE" border="0" src="2955img3.png" alt="$\displaystyle \le$"><i>k</i>);
+</div><p>
+you may decide the integers <span class="MATH"><i>e</i><sub>i</sub></span>'s as  you  wish.  From  one  <span class="MATH"><i>N</i></span>,  you  can  calculate  corresponding  <span class="MATH"><i>M</i></span>,  which
+equals  to  the  sum  of  all divisors of <span class="MATH"><i>N</i></span>. Now, you should tell Vivian whether or not there is an <span class="MATH"><i>M</i></span> which is the
+power of 2 (1,2, 4, 8, and 16 ...so on). If there's no <span class="MATH"><i>N</i></span> can make <span class="MATH"><i>M</i></span> equal to the power of 2,
+tell Vivian  ``NO". If <span class="MATH"><i>M</i></span> equals to some <span class="MATH">2<sup>x</sup></span>, then show her the exponent <span class="MATH">(<i>x</i>)</span>. And if there are several <span class="MATH"><i>x</i></span>,
+only show her the largest one.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input contains several testcases. For each testcase, the first line contains only one integer <span class="MATH"><i>k</i></span> 
+<span class="MATH">(0 &lt; <i>k</i><img width="18" height="30" align="MIDDLE" border="0" src="2955img1.png" alt="$ \le$">100)</span>,
+representing the number of positive integers. Then there are <span class="MATH"><i>k</i></span> positive integers
+
+<span class="MATH"><i>p</i><sub>1</sub>, <i>p</i><sub>2</sub>...<i>p</i><sub>i</sub>...<i>p</i><sub>k</sub></span> 
+<span class="MATH">(1 &lt; <i>p</i><sub>i</sub> &lt; 2<sup>31</sup>, 1<img width="18" height="30" align="MIDDLE" border="0" src="2955img1.png" alt="$ \le$"><i>i</i><img width="18" height="30" align="MIDDLE" border="0" src="2955img1.png" alt="$ \le$"><i>k</i>)</span> in the second line, representing
+the given numbers.
+
+<p>
+Input is terminated by end of file.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each testcase, you should output your result in a single line. If you can find <span class="MATH"><i>N</i></span> from the given numbers,
+output the largest exponent. Otherwise, output  `<tt>NO</tt>'. Extra spaces are not allowed.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+2
+3
+2 3 4
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+NO
+2
+</pre>
+
+<p>

@@ -1,0 +1,101 @@
+
+
+<html>
+<head>
+<title>Pi</title>
+<meta name="description" content="Pi">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Pi</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Professor Robert A. J. Matthews of the Applied Mathematics and Computer
+Science Department at the
+University of Aston in Birmingham, England has recently described howthe
+positions of stars across the
+night skymay be used to deduce a surprisingly accurate value of  <img width="8" height="8" align="BOTTOM" alt="tex2html_wrap_inline43" src="412img1.gif"> .
+This result followed from the application of certain theorems in number theory.
+<p>
+<p>
+Here, we don'thave the night sky, but can use the same theoretical basis to
+form an estimate for  <img width="8" height="8" align="BOTTOM" alt="tex2html_wrap_inline43" src="412img1.gif"> :
+<p>
+<blockquote> Given any pair of whole numbers chosen from a large, random collection of
+numbers, the
+probability that the twonumbers have no common factor other than one (1) is
+</blockquote>
+<p> <img width="259" height="35" align="BOTTOM" alt="displaymath47" src="412img2.gif"> <p>
+<p>
+For example, using the <i>small</i> collection of numbers:
+2, 3, 4, 5, 6; there are 10 pairs that can be formed:
+(2,3), (2,4), etc. Six of the 10 pairs: (2,3), (2,5), (3,4), (3,5), (4,5)
+and (5,6) have no common factor other
+than one. Using the ratio of the counts as the probability we have:
+<p>
+<p> <img width="302" height="73" align="BOTTOM" alt="displaymath49" src="412img3.gif"> <p>
+<p>
+In this problem, you'll receive a series of data sets. Each data set
+contains a set of pseudo-random positive
+integers. For each data set, find the portion of the pairs which may be
+formed that have nocommon factor
+other than one (1), and use the method illustrated above to obtain an
+estimate for  <img width="8" height="8" align="BOTTOM" alt="tex2html_wrap_inline43" src="412img1.gif"> . Report this estimate for each data set.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input consists of a series of data sets.
+<p>
+The first line of each data set contains a positive integer value, <i>N</i>,
+greater than one (1) and less than 50.
+<p>
+There is one positive integer per line for the next <i>N</i> lines that constitute
+the set for which the pairs are to be
+examined. These integers are each greater than 0 and less than 32768.
+<p>
+Each integer of the input stream has its first digit as the first character
+on the input line.
+<p>
+The set size designator, <i>N</i>, will be zero to indicate the end of data.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+A line with a single real value is to be emitted for each input data set
+encountered. This value is the estimate for  <img width="8" height="8" align="BOTTOM" alt="tex2html_wrap_inline43" src="412img1.gif">  for the data set.
+An output format like the sample below should be used. Answers must be rounded to six digits after the decimal point.
+<p>
+For some data sets, it may be impossible to estimate a value for  <img width="8" height="8" align="BOTTOM" alt="tex2html_wrap_inline43" src="412img1.gif"> .
+This occurs when there are <i>no</i> pairs
+without common factors. In these cases, emit the single-line message:
+<p>
+<p>
+<p>
+<tt>No estimate for this data set.</tt>
+<p>
+<p>
+<p>
+exactly, starting with the first character, <tt>&quot;N&quot;</tt>, as the first character
+on the line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5
+2
+3
+4
+5
+6
+2
+13
+39
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output <font size="3">(Your output for the float/real, using
+your chosen language, may be default-formatted differently).</font></a></font></h2>
+<p>
+<pre>3.162278
+No estimate for this data set.</pre>
+</body>
+</html>

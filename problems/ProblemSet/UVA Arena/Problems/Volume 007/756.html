@@ -1,0 +1,108 @@
+
+
+<html>
+<head>
+<title>Biorhythms</title>
+<meta name="description" content="Biorhythms">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Biorhythms</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Some people believe that there are three cycles in a person's life that start the day he or she is born.
+These three cycles are the physical, emotional, and intellectual cycles, and they have periods of lengths
+23, 28, and 33 days, respectively. There is one peak in each period of a cycle. At the peak of a cycle,
+a person performs at his or her best in the corresponding field (physical, emotional or mental). For
+example, if it is the mental curve, thought processes will be sharper and concentration will be easier.
+
+<p>
+
+<p>
+<br>
+Since the three cycles have different periods, the peaks of the three cycles generally occur at different
+times. We would like to determine when a triple peak occurs (the peaks of all three cycles occur in the
+same day) for any person. For each cycle, you will be given the number of days from the beginning of
+the current year at which one of its peaks (not necessarily the first) occurs. You will also be given a
+date expressed as the number of days from the beginning of the current year. You task is to determine
+the number of days from the given date to the next triple peak. The given date is not counted. For
+example, if the given date is 10 and the next triple peak occurs on day 12, the answer is 2, not 3. If a
+triple peak occurs on the given date, you should give the number of days to the next occurrence of a
+triple peak.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+You will be given a number of cases. The input for each case consists of one line of four integers <i>p</i>,
+<i>e</i>, <i>i</i>, and <i>d</i>. The values <i>p</i>, <i>e</i>, and <i>i</i> are the number of days from the beginning of the current year at
+which the physical, emotional, and intellectual cycles peak, respectively. The value <i>d</i> is the given date
+and may be smaller than any of <i>p</i>, <i>e</i>, or <i>i</i>. All values are non-negative and at most 365, and you may
+assume that a triple peak will occur within 21252 days of the given date. The end of input is indicated
+by a line in which 
+
+<i>p</i> = <i>e</i> = <i>i</i> = <i>d</i> = -1.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, print the case number followed by a message indicating the number of days to the next triple peak, in the form:
+
+<p>
+<pre>
+Case 1: the next triple peak occurs in 1234 days.
+</pre>
+
+<p>
+Use the plural form ``<tt>days</tt>'' even if the answer is 1.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+0 0 0 0
+0 0 0 100
+5 20 34 325
+4 5 6 7
+283 102 23 320
+203 301 203 40
+-1 -1 -1 -1
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Case 1: the next triple peak occurs in 21252 days.
+Case 2: the next triple peak occurs in 21152 days.
+Case 3: the next triple peak occurs in 19575 days.
+Case 4: the next triple peak occurs in 16994 days.
+Case 5: the next triple peak occurs in 8910 days.
+Case 6: the next triple peak occurs in 10789 days.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

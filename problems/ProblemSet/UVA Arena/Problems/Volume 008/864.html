@@ -1,0 +1,151 @@
+
+
+<html>
+<head>
+<title>Scheme Pretty-Printing</title>
+<meta name="description" content="Scheme Pretty-Printing">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Scheme Pretty-Printing</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Scheme is an expression language.  This means that everything that is
+entered to the Scheme interpreter/compiler is an expression.
+Expressions are separated by blank space (blank, tabs, new-lines).
+Expressions can be in several forms:
+
+<p>
+
+<ol>
+<li>numbers - a sequence of digits, possibly preceded by a `<tt>+</tt>'
+or `<tt>-</tt>', possibly including a single `<tt>.</tt>' following at least
+one digit
+</li>
+<li>strings - a sequence of characters (not including newlines)
+preceded and followed by `<tt>"</tt>', with any included double-quote
+characters preceded by a `<code>\</code>', such as
+<code>"This `\"' is a double-quote"</code>
+</li>
+<li>special constants - a `<code>#</code>' followed by any characters up to
+blank space
+</li>
+<li>compound expressions - a (possibly empty) sequence of
+expressions surrounded by parentheses
+</li>
+<li>identifiers - a sequence of non-blank characters not including
+the characters: <code>#</code>, <code>"</code>, <code>\</code>, <code>(</code>, and <code>)</code>
+</li>
+</ol>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+A sequence of Scheme expressions.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The same sequence of expressions, reformatted to make them more
+readable.  The rules you must follow are:
+
+<p>
+
+<ol>
+<li>All top level expressions will start with no leading blanks on a line.
+</li>
+<li>A compound expression with the first sub-expression being the
+identifier <code>`define</code>' is a define-form. The second sub-expression
+will be an identifier and should go on the same line as the word
+<code>`define</code>'. If the third (and last) expression is compound it
+should start on the following line, indented 3 spaces.  Otherwise, the
+whole define-form should be on a single line.
+</li>
+<li>A compound expressions with the first sub-expression being the
+identifier <code>`lambda</code>' is a lambda-form. The second sub-expression
+will be an identifier or compound expression and should go on the same line as the word
+<code>`lambda</code>'. All subsequent expressions should start on a new line,
+indented by an additional 3 spaces
+</li>
+<li>A compound expressions with the first sub-expression being the
+identifier <code>`if</code>' is an if-form. The second sub-expression
+will be an identifier or compound expression and should go on the same line as the word
+<code>`if</code>'. All subsequent expressions should start on a new line,
+indented by an additional 4 spaces
+</li>
+<li>All other compound expressions are function applications.  If
+any of the sub-expressions are compound, the first two sub-expressions
+will be on the same line and all subsequent sub-expressions will be on
+new lines, indented to align with the second sub-expression.
+</li>
+<li>In all other cases, all blank space between elements of a
+compound expression will be replaced by a single space.
+</li>
+</ol>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+(define abc+ (lambda (@1 $f) (if (if
+$f a     b) (@1
+ 3 4) (bcdefg (d e) (f "g")))))
+           (define
+     a 42)
+(+ a (- b c))
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+(define abc+
+   (lambda (@1 $f)
+      (if (if $f
+              a
+              b)
+          (@1 3 4)
+          (bcdefg (d e)
+                  (f "g")))))
+(define a 42)
+(+ a
+   (- b c))
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-08-31
+</address>
+</body>
+</html>
+

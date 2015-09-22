@@ -1,0 +1,80 @@
+
+
+<html>
+<head>
+<title>TeX Quotes</title>
+<meta name="description" content="TeX Quotes">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">TeX Quotes</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+TeX is a typesetting language developed by Donald Knuth. It takes source
+text together with a few typesetting instructions and produces, one hopes,
+a beautiful document. Beautiful documents use `` and &quot;
+to delimit quotations, rather than the mundane <tt>&quot;</tt> which is what is provided
+by most keyboards. Keyboards typically do not have an oriented double-quote,
+but they do have a left-single-quote <tt>`</tt> and a right-single-quote <tt>'</tt>. Check
+your keyboard now to locate the left-single-quote key <tt>`</tt> (sometimes called
+the ``backquote key&quot;) and the right-single-quote key <tt>'</tt> (sometimes
+called the ``apostrophe&quot; or just ``quote&quot;). Be careful
+not to confuse the left-single-quote <tt>`</tt> with the ``backslash&quot; key
+<code>\</code>. TeX lets the user type two left-single-quotes <tt>``</tt> to create a left-double-quote ``
+and two right-single-quotes <tt>''</tt> to create a right-double-quote ''. Most typists,
+however, are accustomed to delimiting their quotations with the un-oriented
+double-quote <tt>&quot;</tt>.
+<p>
+<p>
+If the source contained
+<p>
+<tt>&quot;To be or not to be,&quot; quoth the bard, &quot;that is the question.&quot;</tt>
+<p>
+then the typeset document produced by TeX would not contain the desired
+form:
+<p>
+<p>
+<p>
+``To be or not to be,&quot; quoth the bard, ``that is the question.&quot;
+<p>
+<p>
+In order to produce the desired form, the source file must
+contain the sequence:
+<p>
+<tt>``To be or not to be,'' quoth the bard, ``that is the question.''</tt>
+<p>
+<p>
+You are to write a program which converts text containing double-quote (<tt>&quot;</tt>)
+characters into text that is identical except that double-quotes have been
+replaced by the two-character sequences required by TeX for delimiting quotations
+with oriented double-quotes. The double-quote (<tt>&quot;</tt>) characters should
+be replaced appropriately by either <tt>``</tt> if the <tt>&quot;</tt> opens a quotation and
+by <tt>''</tt> if the <tt>&quot;</tt> closes a quotation. Notice that the question of nested
+quotations does not arise: The first <tt>&quot;</tt> must be replaced by <tt>``</tt>, the
+next by <tt>''</tt>, the next by <tt>``</tt>, the next by <tt>''</tt>, the next by <tt>``</tt>, the next by <tt>''</tt>, and so on.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Input will consist of several lines of text containing an even number of
+double-quote (<tt>&quot;</tt>) characters. Input is ended with an end-of-file character.
+The text must be output exactly as it was input except that:
+<p>
+<ul><li> the first <tt>&quot;</tt> in each pair is replaced by two <tt>`</tt> characters: <tt>``</tt> and<li> the second <tt>&quot;</tt> in each pair is replaced by two <tt>'</tt> characters: <tt>''</tt>.
+</li></li></ul><h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>&quot;To be or not to be,&quot; quoth the Bard, &quot;that
+is the question&quot;.
+The programming contestant replied: &quot;I must disagree.
+To `C' or not to `C', that is The Question!&quot;</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>``To be or not to be,'' quoth the Bard, ``that
+is the question''.
+The programming contestant replied: ``I must disagree.
+To `C' or not to `C', that is The Question!''</pre>
+<p>
+</body>
+</html>

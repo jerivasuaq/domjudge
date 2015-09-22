@@ -1,0 +1,113 @@
+
+
+<html>
+<head>
+<title>Mirror Maze</title>
+<meta name="description" content="Mirror Maze">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Mirror Maze</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In a galaxy far far away from our's, there
+lived a team of scientists who invented a device
+that could kill all computervirusses that do
+terrible things to MS-DOS computers.  This device
+could do its job in the entire universe
+because it used a magic laser beam.  But, just like in all
+great devices, this device had a strange
+component in it.  This component is a two-dimensional
+maze with black holes and mirrors in it.
+Nobody knew the reason for this component but the
+scientists said it was a crucial component.
+<p>
+<p>
+This maze has two openings in it.
+One of these openings is in front of the magic laser.  All
+the mirrors in the maze have two reflecting sides.
+These mirrors always make an angle of 45
+degrees with the laser beam but they can be
+rotated over 90 degrees, so each mirror can be
+in 2 states only.  The laser beam will be
+totally absorbed by a black hole. The laser beam may
+cross itself (with an angle of 90 degrees) in an empty place of the maze.
+<p>
+<p>
+In this problem you are given several
+mazes (one at a time) in which you have to position
+the mirrors in such a way that the
+laser beam can travel from one entrance to the other.
+The border of each maze is marked by
+black holes (except for two places which are the two
+entrances of the maze).  The mirrors in
+the given mazes will probably not have a correct angle
+to reflect a laser beam from one entrance
+of the maze to the other.  The mirrors in the given
+mazes can be positioned in such a way
+that a laser beam can travel through the maze.
+<p>
+<p>
+Your program must read the mazes from
+the input file and position the mirrors in it in such
+a way that a laser beam that enters
+through one entrance exits through the other.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input for your program is a textflle.
+This file contains severas mazes.  A specification of a
+single maze is given by the following description:
+<p>
+<ul><li> First a line that contains two positive
+  integers (say <i>M</i> and <i>N</i>) separated by one space
+  which specify the number of columns and
+  the number of rows (in that order) of the maze
+  to come.  These integers can have a value from 3 to 50 inclusive.<li> On the next <i>N</i> lines follows the maze
+  with the mirrors and black holes.  Mirrors are given
+  by a <code>\</code> (backslash) or a <tt>/</tt> (divide).
+   Here <code>\</code> and <tt>/</tt> correspond to the 2 states of a mirror.
+   Black holes are given by <tt>*</tt> (star).
+   Empty places in the maze are given by dots.
+</li></li></ul>
+<p>
+The last line of the input file is given by `<tt>-1 -1</tt>'.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output file is a textfile which
+contains the resulting mazes.  The mazes in the output
+file must be separated from each other by one empty line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>4 5
+****
+*\/*
+*./.
+*..*
+*.**
+4 4
+*.**
+*.\*
+*\\*
+**.*
+-1 -1</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>****
+*/\*
+*.\.
+*..*
+*.**
+
+*.**
+*.\*
+*\\*
+**.*</pre>
+<p>
+</body>
+</html>

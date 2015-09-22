@@ -1,0 +1,100 @@
+
+<p>
+A network is composed of <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> computers connected by <span class="MATH"><i>N</i> - 1</span>
+<tex2html_verbatim_mark> communication links such that
+any two computers can be communicated via a unique route. Two computers are said to be
+<span class="textit">adjacent</span> if there is a communication link between them. The <span class="textit">neighbors</span> of a computer is the set
+of computers which are adjacent to it. In order to quickly access and retrieve large amounts of
+information, we need to select some computers acting as <span class="textit">servers</span> to provide resources to their
+neighbors. Note that a server can serve all its neighbors. A set of servers in the network forms
+a <span class="textit">perfect service</span> if every client (non-server) is served by <span class="textbf">exactly one</span> server. The problem is
+to find a minimum number of servers which forms a perfect service, and we call this number
+<span class="textit">perfect service number</span>.
+
+<p>
+We assume that <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(<img width="18" height="31" align="MIDDLE" border="0" src="3685img1.png" alt="$ \le$">10000)</span>
+<tex2html_verbatim_mark> is a positive integer and these <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> computers are numbered
+from 1 to <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>. For example, Figure 1 illustrates a network comprised of six computers, where
+black nodes represent servers and white nodes represent clients. In Figure 1(a), servers 3
+and 5 do not form a perfect service because client 4 is adjacent to both servers 3 and 5 and thus it
+is served by two servers which contradicts the assumption. Conversely, servers 3 and 4 form a
+perfect service as shown in Figure 1(b). This set also has the minimum cardinality. Therefore,
+the perfect service number of this example equals two.
+
+<p>
+<div align="CENTER">
+
+<img width="982" height="383" align="BOTTOM" border="0" src="p3685.jpg" alt="\epsfbox{p3685.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+
+<p>
+Your task is to write a program to compute the perfect service number.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of a number of test cases. The format of each test case is as follows: The first
+line contains one positive integer, <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark>, which represents the number of computers in the network.
+The next <span class="MATH"><i>N</i> - 1</span>
+<tex2html_verbatim_mark> lines contain all of the communication links and one line for each link. Each line
+is represented by two positive integers separated by a single space. Finally, a `<tt>0</tt>' at the <span class="MATH">(<i>N</i> + 1)</span>
+<tex2html_verbatim_mark>-th
+line indicates the end of the first test case.
+
+<p>
+The next test case starts after the previous ending symbol `<tt>0</tt>'. A `<tt>-1</tt>' indicates the end of the
+whole inputs.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The output contains one line for each test case. Each line contains a positive integer, which is
+the perfect service number.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6 
+1 3
+2 3
+3 4
+4 5
+4 6
+0 
+2 
+1 2
+-1
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 
+1
+</pre> 
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

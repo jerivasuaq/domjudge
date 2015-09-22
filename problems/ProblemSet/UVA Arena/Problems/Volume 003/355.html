@@ -1,0 +1,56 @@
+
+
+<html>
+<head>
+<title>The Bases Are Loaded</title>
+<meta name="description" content="The Bases Are Loaded">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">The Bases Are Loaded</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Write a program to convert a whole number specified in any base (2..16) to
+a whole number in any other base (2..16). ``Digits&quot; above 9
+are represented by single capital letters; e.g. 10 by A, 15 by F, etc.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Each input line will consist of three values. The first value will be a
+positive integer indicating the base of the number. The second value is
+a positive integer indicating the base we wish to convert to. The third
+value is the actual number (in the first base) that we wish to convert.
+This number will have letters representing any digits higher than 9 and
+may contain invalid ``digits&quot;. It will not exceed 10 characters. Each
+of the input values on a single line will be separated by at least one space.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Program output consists of the original number followed by the string ``<tt>base</tt>&quot;, followed by the original base number, followed by the
+string ``<tt>=</tt>&quot; followed by the converted number followed by the string ``<tt>base</tt>&quot; followed by the new base. If the original number is invalid,
+output the statement
+<p>
+<p>
+<p>
+<em>original Value</em> <tt>is an illegal base</tt> <em>original Base</em> <tt>number</tt>
+<p>
+<p>
+<p>
+where <em>original Value</em> is replaced by the value to be converted and <em>original Base</em> is replaced by the original base value.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>2 10 10101
+5 3 126
+15 11 A4C</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>10101 base 2 = 21 base 10 
+126 is an illegal base 5 number 
+A4C base 15 = 1821 base 11</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<p>
+You are going to build a new house. To know the minimum construction cost of the roof, you want to know its height. But you have the information only on the boundary of the house, so you have to compute the height of the roof from the boundary information. The formal description is as follows. The boundary of a house is defined as a rectilinear polygon with only axis-parallel edges, horizontal or vertical. Let <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> be the rectilinear polygon with <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> vertices. A <span class="textit">straight skeleton</span> SK(<span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark>) is a trace of the vertices of <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> when <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> is shrunk, each edge moving at the same speed and keeping the same direction. Figure 1 (a) and (b) show the shrinking process for <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> and SK(<span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark>), respectively. 
+
+<p>
+Now we assume that <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> is on the XY plane, and <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> is shrunk at unit speed while moving upward (+Z-direction) at unit speed. Then <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> traces a three dimensional polyhedral surface, called <span class="textit">terrain</span>, and SK(<span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark>) can be seen as the projection of the edges of this terrain onto the XY plane. From the definition, each face of this terrain lies inside a plane that makes a dihedral angle 45º with XY plane. Another fact for this terrain is that each of its faces is bounded by at least one edge of <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark>. We call this terrain the <span class="textit">roof</span> of the polygon <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark>. For instance, Figure 1 (c) shows the roof. The height of a point <span class="MATH"><i>q</i></span>
+<tex2html_verbatim_mark> on the roof is the altitude, i.e., distance between <span class="MATH"><i>q</i></span>
+<tex2html_verbatim_mark> and its projected point on the XY plane. The height of a roof is the maximum height of points on the roof. 
+
+<p>
+Your task is to compute the height of the roof of the input rectilinear polygon <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark>.
+
+<p>
+<div align="CENTER">
+
+<img width="892" height="231" align="BOTTOM" border="0" src="p3362.gif" alt="\epsfbox{p3362.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+<p>
+<div align="CENTER">Figure 1
+
+</div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to read the input from standard input. The input consists of <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> test cases. The number of test cases <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> is given in the first line of the input. Each test case starts with a line containing an integer <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark>, the number of vertices of the input polygon <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark>, 
+<span class="MATH">4<img width="18" height="31" align="MIDDLE" border="0" src="3362img2.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="3362img2.png" alt="$ \le$">1, 000</span>
+<tex2html_verbatim_mark>. In the next line, <span class="MATH">(<i>x</i>, <i>y</i>)</span>
+<tex2html_verbatim_mark>-coordinates of the <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> vertices of <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> are given according to the counterclockwise order. The first pair of integers is <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> coordinates of the first vertex of <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark>, and the second pair is <span class="MATH"><i>x</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>y</i></span>
+<tex2html_verbatim_mark> coordinates of the second vertex of <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark>, and so on. The coordinates are separated by a single space, and are positive integer values between 1 and 100,000, both inclusive. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to write to standard output. Print exactly one line for each test case. For each test case, print the height of the roof of <span class="MATH"><i>P</i></span>
+<tex2html_verbatim_mark> with exactly one digit in the fraction part. The following shows sample input and output for three test cases.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+4
+1 1 4 1 4 4 1 4 
+6
+4 1 8 1 8 6 1 6 1 4 4 4 
+14 
+1 1 4 1 4 2 7 2 7 1 11 1 11 10 8 10 8 8 
+1 8 1 6 3 6 3 4 1 4
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1.5 
+2.0 
+3.0
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

@@ -1,0 +1,154 @@
+
+
+<html>
+<head>
+<title>Lattice Practices</title>
+<meta name="description" content="Lattice Practices">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Lattice Practices</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Once upon a time, there was a king who loved beautiful costumes very much. The king had a
+special cocoon bed to make excellent cloth of silk. The cocoon bed had 16 small square rooms,
+forming a 4<img width="18" height="30" align="MIDDLE" border="0" src="687img1.gif" alt="$\times$">4 lattice, for 16 silkworms. The cocoon bed can be depicted as follows:
+
+<p>
+<div align="CENTER">
+
+<img src="p687a.gif">
+</div>
+
+<p>
+The cocoon bed can be divided into 10 rectangular boards, each of which has 5 slits:
+
+<p>
+<div align="CENTER">
+
+<img src="p687b.gif">
+</div>
+
+<p>
+Note that, except for the slit depth, there is no difference between the left side and the right
+side of the board (or, between the front and the back); thus, we cannot distinguish a symmetric
+board from its rotated image as is shown in the following:
+
+<p>
+<div align="CENTER">
+
+<img src="p687c.gif">
+</div>
+
+<p>
+Slits have two kinds of depth, either shallow or deep. The cocoon bed should be constructed by
+fitting five of the boards vertically and the others horizontally, matching a shallow slit with a deep slit.
+
+<p>
+
+<p>
+<br>
+Your job is to write a program that calculates the number of possible configurations to make the
+lattice. You may assume that there is no pair of identical boards. Notice that we are interested
+in the number of essentially different configurations and therefore you should not count mirror
+image configurations and rotated configurations separately as different configurations.
+
+<p>
+
+<p>
+<br>
+The following is an example of mirror image and rotated configurations, showing vertical and
+horizontal boards seperately, where shallow and deep slits are denoted by `1' and `0' respectively.
+
+<p>
+<div align="CENTER">
+
+<img src="p687d.gif">
+</div>
+
+<p>
+Notice that a rotation may exchange positions of a vertical board and a horizontal board.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of multiple data sets, each in a line. A data set gives the patterns of slits of
+10 boards used to construct the lattice. The format of a data set is as follows:
+
+<p>
+<pre>
+xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
+</pre>
+
+<p>
+Each <tt>x</tt> is either `<tt>0</tt>' or `<tt>1</tt>'. `<tt>0</tt>' means a deep slit, and `<tt>1</tt>' a shallow slit. A block of five slit
+descriptions corresponds to a board. There are 10 blocks of slit descriptions in a line. Two
+adjacent blocks are separated by a space.
+
+<p>
+
+<p>
+<br>
+For example, the first data set in the Sample Input means the set of the following 10 boards:
+
+<p>
+<div align="CENTER">
+
+<img src="p687e.gif">
+</div>
+
+<p>
+The end of the input is indicated by a line consisting solely of three characters ``<tt>END</tt>''.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each data set, the number of possible configurations to make the lattice from the given 10
+boards should be output, each in a separate line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+10000 01000 00100 11000 01100 11111 01110 11100 10110 11110
+10101 01000 00000 11001 01100 11101 01110 11100 10110 11010
+END
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+40
+6
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-05</i>
+</address>
+</body>
+</html>
+

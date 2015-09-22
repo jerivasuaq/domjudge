@@ -1,0 +1,143 @@
+
+<html><head><title>Transferable Voting</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta content="Transferable Voting" name="description">
+<meta content="htmlatex" name="keywords">
+<meta content="document" name="resource-type">
+<meta content="global" name="distribution"><link href="htmlatex.css" rel="STYLESHEET">
+<meta content="MSHTML 6.00.2600.0" name="GENERATOR"></head>
+<body lang="EN" bgcolor="#ffffff">
+<h1><br clear="all">
+<center>
+<table bgcolor="#0060f0">
+  <tbody>
+  <tr>
+    <td><b><font color="#c0ffff" size="5">&nbsp;<a name="SECTION0001000000000000000000">Transferable 
+  Voting</a></font>&nbsp;</b></td></tr></tbody></table></center></h1>
+<p>In Fredonia, elections are conducted using a transferable vote system. When 
+they enter the polling booth, Fredonians are presented with a list of candidates 
+like 
+<p>
+<p>
+<p>1. Tammy Fay Bakker 
+<p>2. Jimmy Hoffa 
+<p>3. Al Capone 
+<p>4. Bonnie Parker 
+<p>5. Elmer Fudd 
+<p>
+<p>A vote is cast by typing the numbers of the candidates in the preferred 
+order. Thus a Fredonian who likes Jimmy Hoffa best, with Elmer Fudd second, but 
+who does not care about the other three candidates, would type: 
+<p><pre>2 5</pre>
+<p>Each integer corresponds to the number preceding a valid candidate on the 
+list. No number should appear more than once on a single ballot. Ballots which 
+do not meet these rules are called <i>spoiled ballots</i>. Unspoiled ballots are 
+called valid ballots. Your program should count these spoiled ballots. The 
+outcome of the election should be the same as if the spoiled ballots had never 
+been cast. 
+<p>When polling is complete, the outcome of the election is calculated as 
+follows. 
+<p>
+<ul>
+  <li>First, all the first-preference votes (on valid ballots) are counted.
+  <li>After this count, if the number of votes for any candidate is more than 
+  half of the number of valid ballots, that candidate is declared the winner.
+  <li>Otherwise, the candidate(s) with the fewest number of votes is (are) 
+  eliminated. Ballot papers on which an eliminated candidate is mentioned are 
+  effectively modified by deleting that candidate, thereby ``promoting" any 
+  lower-preference non-eliminated candidates. (A valid ballot from which all 
+  candidates have been eliminated remains a valid ballot.)
+  <li>If, after the elimination, there are any remaining candidates, the 
+  first-preference votes are counted again to determine a winner.
+  <li>If, after the elimination, no candidates are left, the election is 
+  declared indecisive. </li></li></li></li></li></ul>
+<p>
+<p>You are to write a program to calculate the outcome of Fredonian elections. 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>The input begins with a single positive integer on a line by itself 
+indicating the number of the cases following, each of them as described below. 
+This line is followed by a blank line, and there is also a blank line between 
+two consecutive inputs.<br>The input consists of a list of candidates and a list 
+of ballots separated by a blank line (a newline by itself on an otherwise empty 
+line). The list of candidates is an ordered list of up to 20 candidates, one per 
+line. Each candidate's name can be up to 20 characters long. The first 
+candidate's name will be preceded by the string ``<tt>1. </tt>";, the second by 
+``<tt>2. </tt>" , etc. The list of ballots consists of at most 1000 ballots. 
+There are no blank ballots: each ballot has at least one integer. Each ballot 
+consists of a sequence of integers, which are separated by single spaces, and is 
+terminated by a newline. The list of ballots is terminated by an end-of-file. 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>For each test case, the output must follow the description below. The outputs 
+of two consecutive cases will be separated by a blank line.<br>Your program 
+should produce the following output. As each candidate is eliminated, a message 
+to that e ect must be printed. If more than one candidate is eliminated in the 
+same round (because they each had the minimum number of first-preference votes 
+at that stage) then their eliminations should be output in the order in which 
+the candidates originally were input. An elimination is recorded like this: 
+<p><pre>John Minor with 3 votes is eliminated.</pre>
+<p>Next your program should either declare the winner, like 
+<p><pre>The winner of the election is Clint Eastwood.</pre>
+<p>or declare that the election was indecisive by printing 
+<p><pre>The election was indecisive.</pre>
+<p>Finally, you should print a count of the valid ballots and the spoiled 
+ballots. For example, 
+<p><pre>There were 457 valid ballots and 3 spoiled ballots.</pre>
+<p>After this last line there should be no blank line. 
+<p>
+<h2><font color="#0070e8"><a name="SECTION0001003000000000000000">Sample 
+input</a></font></h2><pre><p>2<br><p>
+
+1. Betty Boop<br>
+2. Elmer Fudd<br>
+3. Olive Oyl<br><p>
+
+1 2 3<br>
+1 2 3<br>
+1 2 3<br>
+2 1 3<br>
+2 1 3<br>
+2 1 3<br>
+3 1 2<br>
+3 1 2<br>
+3 1 2<br><p>
+
+1. Bill Clinton<br>
+2. Barbara Bush<br>
+3. Margaret Thatcher<br>
+4. John Minor<br>
+5. Clint Eastwood<br>
+6. Jesse Ventura<br>
+7. Sonny Bono<br>
+8. Cher<br><p>
+
+2 4 6 8<br>
+1 2 3<br>
+5 7<br>
+8<br>
+6 6<br>
+5<br>
+5<br>
+5<br>
+5 7 2<br>
+8<br>
+3 2 5<br></p></pre>
+<h2><font color="#0070e8"><a name="SECTION0001003000000000000000">Sample 
+output</a></font></h2><pre>Betty Boop with 3 votes is eliminated.<br>
+Elmer Fudd with 3 votes is eliminated.<br>
+Olive Oyl with 3 votes is eliminated.<br>
+The election was indecisive.<br>
+There were 9 valid ballots and 0 spoiled ballots.<br>
+
+John Minor with 0 votes is eliminated.<br>
+Jesse Ventura with 0 votes is eliminated.<br>
+Sonny Bono with 0 votes is eliminated.<br>
+Bill Clinton with 1 votes is eliminated.<br>
+Barbara Bush with 1 votes is eliminated.<br>
+Margaret Thatcher with 1 votes is eliminated.<br>
+The winner of the election is Clint Eastwood.<br>
+There were 10 valid ballots and 1 spoiled ballots.<br>
+
+
+</pre></body></html>

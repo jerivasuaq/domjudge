@@ -1,0 +1,159 @@
+
+
+<html>
+<head>
+<title>Synchronous Design</title>
+<meta name="description" content="Synchronous Design">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Synchronous Design</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The designers of digital integrated circuits (IC) are very concerned about
+the correctness of their designs because, unlike software, ICs cannot be
+easily tested. Real tests are not possible until the design has been finalized
+and the IC has been produced.
+<p>
+<p>
+To simulate the behavior of a digital IC and to more or less guarantee that
+the final chip will work, all of today's digital ICs are based
+on a <i>synchronous design</i>.
+<p>
+<p><a name="27">&#160;</a> <img align="BOTTOM" alt="figure22" src="192img2.gif"> <br>
+<strong>Figure:</strong> The critical path (dashed line) takes 43ns to settle<br>
+<p>
+<p>
+In a synchronous design, an external clock signal triggers the IC to go
+from a well defined and stable state to the next one. On the active edge
+of the clock, all input and output signals and all internal nodes are stable
+in either the high or low state. Between two consecutive edges of the clock,
+the signals and nodes are allowed to change and may take any intermediate
+state. The behavior of a synchronous network is predictable and will not
+fail due to hazards or glitches introduced by irregularities of the real
+circuit.
+<p>
+<p>
+To analyze whether an IC has a synchronous design, we distinguish between
+<i>synchronous</i> and  <img width="157" height="25" align="MIDDLE" alt="tex2html_wrap_inline65" src="192img3.gif"> . Flip flops are synchronous
+nodes. On the active edge of the clock, the output of the flip flop changes
+to the state of the input and holds that state throughout the next clock
+cycle. Synchronous nodes are connected to the clock signal.
+<p>
+<p>
+Simple gates like ANDs or ORs are asynchronous nodes. Their output changes
+- with a short delay - whenever one of their inputs changes. During that
+transition phase, the output can even go into some undefined or intermediate
+state.
+<p>
+<p>
+For simplicity, we assume that all inputs of the circuits are directly connected
+to the output of a synchronous node outside the circuit and that all outputs
+of the circuit are directly connected to the input of a synchronous node
+outside the circuit.
+<p>
+For an IC to have a synchronous design, mainly two requirements must be
+met:
+<p>
+<ul><li> The  <img width="99" height="25" align="MIDDLE" alt="tex2html_wrap_inline67" src="192img4.gif">  introduced between two synchronous nodes must
+be smaller or equal than the clock period so there is enough time for nodes
+to become stable. In figure 1, the round-ended boxes are asynchronous nodes
+whereas the square boxes are synchronous nodes. The delay introduced on
+the dashed path is 43ns and exceeds the given clock period of 30ns.<li> There may be  <img width="76" height="25" align="MIDDLE" alt="tex2html_wrap_inline69" src="192img5.gif">  composed exclusively of asynchronous nodes.
+In the real circuit such cycles could oscillate. In figure 2, the dashed
+path constitutes a cycle of asynchronous nodes. 
+</li></li></ul>
+<p>
+Figure 3 shows a circuit with a synchronous design. It does not contain
+cycles composed of asynchronous nodes and the longest path between two synchronous nodes is shorter than the clock period of 30ns.
+<p>
+<p><a name="36">&#160;</a> <img align="BOTTOM" alt="figure31" src="192img6.gif"> <br>
+<strong>Figure:</strong> The design contains a cycle (dashed line)<br>
+<p>
+<p>
+<p><a name="43">&#160;</a> <img align="BOTTOM" alt="figure38" src="192img7.gif"> <br>
+<strong>Figure:</strong> A synchronous design<br>
+<p>
+<p>
+Your are to write a program that decides for a given IC whether it has a
+synchronous design or not. You are given a network of synchronous and asynchronous
+nodes, a delay for each node, some inputs and outputs and the clock period.
+<p>
+You may safely assume that
+<p>
+<ul><li> the delays introduced between any input and any output of the same node
+are equal, i.e. equal to the delay given for that node,<li> synchronous nodes have no delay at all,<li> all connections between two nodes connect an output to an input. 
+</li></li></li></ul>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file contains several circuits. The first line gives the number
+of circuits in the file.
+<p>
+<p>
+For each circuit in the file, the first line contains the clock period for
+the circuit, given as an integer number in nanoseconds. The next line gives
+the number of nodes. The following lines each contain a node, described
+by a letter and a integer number. The letter is '<tt>i</tt>' for an input, '<tt>o</tt>' for
+an output, '<tt>a</tt>' for an asynchronous node and '<tt>s</tt>' for a synchronous node.
+The number gives the delay introduced by the node as an integer number in
+nanoseconds (only meaningful for an asynchronous node). Nodes are implicitly
+numbered, starting at zero.
+<p>
+After the nodes, the number of connections for the circuit follows. Each
+following line contains a pair of integer numbers denoting a connection
+between the output and the input of two nodes. The connection links an output
+of the node given by the first number and an input of the node given by
+the second number.
+<p>
+<p>
+The clock signal is not given in the input file. We assume that all synchronous
+nodes are properly connected to the clock signal.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each circuit in the input file, your output file should contain a line
+with one of the following messages:
+<p>
+<ul><li> <tt>&quot;Synchronous design. Maximum delay: &lt;ss&gt;.&quot;</tt>
+if the circuit has a synchronous design.
+<p>
+&lt;<i>ss</i>&gt; should be replaced
+by the longest delay found on any path between two synchronous nodes.<li> <tt>&quot;Circuit contains cycle.&quot;</tt> if the circuit contains
+a cycle composed exclusively of asynchronous nodes.<li> <tt>&quot;Clock period exceeded.&quot;</tt> if there is a path between
+two synchronous nodes that is longer than the given clock period and there
+are no cycles composed of asynchronous nodes. 
+</li></li></li></ul><h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+30
+10
+i 0
+i 0
+i 0
+i 0
+o 0
+o 0
+a 9
+a 11
+a 8
+s 0
+9
+0 8
+1 7
+2 6
+3 6
+6 7
+7 8
+8 4
+7 9
+9 5</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Synchronous design. Maximum delay: 28.</pre>
+<p>
+</body>
+</html>

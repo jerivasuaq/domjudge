@@ -1,0 +1,53 @@
+
+
+<html>
+<head>
+<title>Polygons</title>
+<meta name="description" content="Polygons">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Polygons</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Given two convex polygons, they may or may not overlap.  If they do
+overlap, they will do so to differing degrees and in different ways. 
+Write a program that will read in the coordinates of the corners of two
+convex polygons and calculate the `exclusive or' of the two areas,
+that is the area that is bounded by exactly one of the polygons.  The
+desired area is shaded in the following diagram:
+<p>
+<p> <img width="464" height="207" align="BOTTOM" alt="picture23" src="137img1.gif"> <p><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will consist of pairs of lines each containing the number of
+vertices of the polygon, followed by that many pairs of integers
+representing the x,y coordinates of the corners in a clockwise
+direction. All the coordinates will be positive integers less than 100.
+For each pair of polygons (pair of lines in the data file), your
+program should print out the desired area correct to two decimal places.
+The input will end with a line containing a zero (0).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output will consist of a single line containing the desired area written
+as a succession of eight (8) digit fields with two (2) digits after the 
+decimal point.  There will not be enough cases to need more than one line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>3  5 5  8 1  2 3
+3  5 5  8 1  2 3
+4  1 2  1 4  5 4  5 2
+6  6 3  8 2  8 1  4 1  4 2  5 3
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<tt> <img width="68" height="21" align="MIDDLE" alt="tex2html_wrap_inline34" src="137img2.gif"> 0.00 <img width="52" height="21" align="MIDDLE" alt="tex2html_wrap_inline36" src="137img3.gif"> 13.50</tt>
+<p>
+where  <img width="13" height="21" align="MIDDLE" alt="tex2html_wrap_inline38" src="137img4.gif">  represents a single space.
+<p>
+</body>
+</html>

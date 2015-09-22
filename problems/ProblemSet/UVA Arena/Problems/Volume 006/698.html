@@ -1,0 +1,138 @@
+
+
+<html>
+<head>
+<title>Index</title>
+<meta name="description" content="Index">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Index</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The index found near the end of a textbook is an essential feature, and is
+possibly referenced more frequently than the table of contents. Of course
+only selected terms appear in the index. In this problem you will create a
+small index.
+
+<p>
+
+<p>
+<br>
+A normal index must deal with upper- and lower-case terms, unusual
+punctuation, and index terms with multiple words. In this problem index
+terms will consist only of single words consisting of sequences of at
+most 10 letters and digits, with all letters converted to upper case
+in the index. Punctuation preceding or following an index term will be
+ignored. No terms will have imbedded punctuation. An index will frequently
+have lists of references that exceed the length of a line, but in this
+problem that problem will be ignored. Each index term and the list of lines
+ on which it appears appear as a single separate line in the output.
+
+<p>
+
+<p>
+<br>
+A normal index identifies the page on which a term appears. To keep the
+size of the input for this problem manageable, your index will identify the
+line on which a term appears. Lines in the text to be indexed are numbered
+sequentially, starting with 1.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input for this problem will consist of multiple test cases. Each test
+case has two components: the list of index terms, and the text to be indexed.
+The list of index terms will have one term per line starting in column one
+with the end of line immediately following the last character in the term.
+The list of index terms will be unordered, and the individual terms may
+include both upper- and lower-case characters (which are, of course,
+to be converted to upper case only). An empty line will follow the last index term.
+ The text to be indexed consists of an arbitrary number of lines followed by
+ an empty line. An extra empty line will follow the last test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, the output is to begin with identification of the case
+(they are numbered sequentially, starting with 1). The index lines follow
+this, including one line for each index term appearing in the text; index
+terms that do not appear in the text do not appear in the output.
+ Each line contains the index term,
+a space, and a comma-separated list of the line numbers on which
+ the index term appears. If an index term appears on several consecutive lines,
+then the index specifies the range of lines on which it appears, indicated by
+the first and last line number in the range, separated by a hyphen. The
+example input and output following illustrate all of the cases you
+will need to consider.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+empty
+character
+of
+for
+it
+
+An empty line has no characters in it at all (except for
+the end of line character). No word will have more than
+ten characters in it. The end of the cases will be followed
+by another empty line. It follows the empty line ending the
+text of the last case.
+
+Repeat
+A
+line
+
+A repeat of a word on a line does not result in a repeat of the
+line number in the index.
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Case 1
+CHARACTER 2
+EMPTY 1, 4
+FOR 1
+IT 1, 3-4
+OF 2-3, 5
+
+Case 2
+A 1
+LINE 1-2
+REPEAT 1
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-14</i>
+</address>
+</body>
+</html>
+

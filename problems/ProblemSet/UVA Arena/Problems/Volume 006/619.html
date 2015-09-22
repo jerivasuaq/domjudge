@@ -1,0 +1,102 @@
+
+
+<html>
+<head>
+<title>Numerically Speaking</title>
+<meta name="description" content="Numerically Speaking">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Numerically Speaking</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A developer of crossword puzzles (and other similar word games) has decided
+to develop a mapping between every possible word with from one to twenty
+characters and unique integers.  The mapping is very simple, with the ordering
+being done first by the length of the word, and then alphabetically.
+Part of the list is shown below.
+<pre>
+    a          1
+    b          2
+    ...
+    z          26
+    aa         27
+    ab         28
+    ...
+    snowfall   157,118,051,752
+    ...
+</pre>
+
+<p>
+Your job in this problem is to develop a program which can translate, bidirectionally,
+between the unique word numbers and the corresponding words.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input to the program is a list of words and numbers, one per line starting
+in column one, followed by a line containing a single asterisk in column one.
+A number will consist only of decimal digits (<tt>0</tt> through <tt>9</tt>) followed immediately
+by the end of line (that is, there will be no commas in input numbers).  A word
+will consist of between one and twenty lowercase alphabetic characters (<tt>a</tt>
+through <tt>z</tt>).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output is to contain a single line for each word or number in the input data.
+This line is to contain the word starting in column one, followed by an appropriate
+number of blanks, and the corresponding word number starting in column 23.  Word
+numbers that have more than three digits must be separated by commas at thousands,
+millions, and so forth.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+29697684282993
+transcendental
+28011622636823854456520
+computationally
+zzzzzzzzzzzzzzzzzzzz
+*
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+elementary            29,697,684,282,993
+transcendental        51,346,529,199,396,181,750
+prestidigitation      28,011,622,636,823,854,456,520
+computationally       232,049,592,627,851,629,097
+zzzzzzzzzzzzzzzzzzzz  20,725,274,851,017,785,518,433,805,270
+</pre>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-24</i>
+</address>
+</body>
+</html>
+

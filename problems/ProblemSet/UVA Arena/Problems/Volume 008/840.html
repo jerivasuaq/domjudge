@@ -1,0 +1,145 @@
+
+
+<html>
+<head>
+<title>Deadlock Detection</title>
+<meta name="description" content="Deadlock Detection">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Deadlock Detection</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In Operating Systems a special resource-allocation graph algorithm
+can be used to detect whether there is any deadlock in the system.
+A resource-allocation graph is a directed graph consisting of two
+different types of nodes 
+<span class="MATH"><i>P</i> = <i>P</i><sub>1</sub>, <i>P</i><sub>2</sub>,..., <i>P</i><sub>n</sub></span>, the set
+consisting of all active processes in the system, and 
+<span class="MATH"><i>R</i> = <i>R</i><sub>1</sub>, <i>R</i><sub>2</sub>,..., <i>R</i><sub>m</sub></span>, the set consisting of all resource types in
+the system.
+
+<p>
+A directed edge from process <span class="MATH"><i>P</i><sub>i</sub></span> to resource
+<span class="MATH"><i>R</i><sub>j</sub></span> is denoted by
+
+<span class="MATH"><i>P</i><sub>i</sub> <img width="33" height="16" align="BOTTOM" border="0" src="840img1.png" alt="$ \longrightarrow$"> <i>R</i><sub>j</sub></span>
+and means that process <span class="MATH"><i>P</i><sub>i</sub></span> requested an
+instance resource type <span class="MATH"><i>R</i><sub>j</sub></span>, and is currently waiting for that
+resource. A directed edge from resource type <span class="MATH"><i>R</i><sub>j</sub></span>
+to process <span class="MATH"><i>P</i><sub>i</sub></span>, is
+denoted by 
+<span class="MATH"><i>R</i><sub>j</sub> <img width="33" height="16" align="BOTTOM" border="0" src="840img1.png" alt="$ \longrightarrow$"> <i>P</i><sub>i</sub></span> and means that an instance of
+resource type <span class="MATH"><i>R</i><sub>j</sub></span> has been allocated to process <span class="MATH"><i>P</i><sub>i</sub></span>.
+
+<p>
+The following figure illustrates a resource-allocation graph where
+processes are denoted by circles and resources by squares. Notice
+that if there is a circular wait among the processes, then it
+implies that a deadlock has occurred.
+
+<p>
+<div align="CENTER">
+
+<img src="p840.jpg" alt="\epsfbox{p840.eps}">
+</div>
+
+<p>
+Given a resource allocation graph in which each resource type has
+exactly one instance, your job is to determine whether there is a
+deadlock in the system. In case a deadlock exists, you must also
+show the sequence of processes and resources involved.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+We will assume that processes are named by capital letters and
+resources by small letters, so we limit to 26 the number of
+processes and/or resources. Therefore, the first line of input
+consists of three numbers <span class="MATH"><i>N</i></span>, <span class="MATH"><i>M</i></span> and <span class="MATH"><i>E</i></span>, respectively, the number of
+processes, the number of resources and the number of edges. The
+edges are given in the following lines as pairs of letters linked
+by a `<tt>-</tt>' character. Edges are separated by spaces or newlines.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The output must be `<tt>NO</tt>' if no deadlock is detected. In case a
+deadlock is detected, the output must be `<tt>YES</tt>' followed by the
+sequence or sequences of circular waits detected, one per line. If
+more then one sequence is found, they should all be output in
+increasing order of their length.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+2 2 4
+A-b B-a
+a-A b-B
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+YES
+A-b-B-a-A
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Fernando Silva, ACM-UP'2001
+</address>
+</body>
+</html>
+

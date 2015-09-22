@@ -1,0 +1,87 @@
+
+<p>
+Mr. Furion is a math teacher. His students are very lazy and they do not 
+like to do their homework. One day, Mr. Furion decides to give them a 
+special problem in order to see whether his students are talents in 
+math or they are just too lazy to do their homework. The problem is: 
+
+<p>
+
+<p>
+<br>
+Given an integer <span class="MATH"><i>k</i></span>, <span class="MATH"><i>n</i></span> integers 
+<span class="MATH"><i>m</i><sub>1</sub>, <i>m</i><sub>2</sub>...<i>m</i><sub>n</sub></span>, and a 
+formula below: 
+
+<p>
+<span class="MATH"><i>X</i><sub>1</sub></span> xor <span class="MATH"><i>X</i><sub>2</sub></span> xor <span class="MATH"><i>X</i><sub>3</sub></span> <span class="MATH">...</span> xor <span class="MATH"><i>X</i><sub>n</sub></span> = <span class="MATH"><i>k</i></span> 
+
+<p>
+Please figure out that how many integral solutions of the formula can 
+satisfy: 
+
+<p>
+
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="5101img1.png" alt="$ \le$"><i>X</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="5101img1.png" alt="$ \le$"><i>m</i><sub>i</sub>(<i>i</i> = 1...<i>n</i>)</span>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+There are at most 100 test cases. 
+
+<p>
+The first line of each test case contains two integers <span class="MATH"><i>n</i></span> and <span class="MATH"><i>k</i></span>. 
+The second line of each test contains <span class="MATH"><i>n</i></span> integers: 
+
+<span class="MATH"><i>m</i><sub>1</sub>, <i>m</i><sub>2</sub>...<i>m</i><sub>n</sub></span>. The meaning of <span class="MATH"><i>n</i></span>,<span class="MATH"><i>k</i></span>, 
+
+<span class="MATH"><i>m</i><sub>1</sub>, <i>m</i><sub>2</sub>...<i>m</i><sub>n</sub></span> are described above. 
+
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="5101img1.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="5101img1.png" alt="$ \le$">50, 0<img width="18" height="31" align="MIDDLE" border="0" src="5101img1.png" alt="$ \le$"><i>k</i>, <i>m</i><sub>1</sub>, <i>m</i><sub>2</sub>...<i>m</i><sub>n</sub><img width="18" height="31" align="MIDDLE" border="0" src="5101img1.png" alt="$ \le$">2<sup>31</sup> - 1)</span> 
+
+<p>
+The input is ended by ``<tt>0 0</tt>"
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+You should output a integer for each test case, which is the number of 
+solutions. As the number might be very large, you should only output 
+the number modulo 1000000003.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+11 2047 
+1024 512 256 128 64 32 16 8 4 2 1 
+10 2047 
+1024 512 256 128 64 32 16 8 4 2 
+0 0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 
+0
+</pre> 
+
+<p>

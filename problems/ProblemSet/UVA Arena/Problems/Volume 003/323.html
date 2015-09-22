@@ -1,0 +1,100 @@
+
+
+<html>
+<head>
+<title>Jury Compromise</title>
+<meta name="description" content="Jury Compromise">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Jury Compromise</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In Frobnia, a far-away country, the verdicts in court trials are
+determined by a jury consisting of members of the general public. Every time a
+trial is set to begin, a jury has to be selected, which is done as follows.
+First, several people are drawn randomly from the public. For
+each person in this pool, defence and prosecution assign a grade
+from 0 to 20 indicating their preference for this person. 0 means total
+dislike, 20 on the other hand means that this person
+is considered ideally suited for the jury.
+<p>
+<p>
+Based on the grades of the two parties, the judge selects the jury.
+In order to ensure a fair trial, the tendencies of the jury to favour
+either defence or prosecution should be as balanced
+as possible. The jury therefore has to be chosen in a way that
+is satisfactory to both parties.
+<p>
+<p>
+We will now make this more precise: given a pool of <i>n</i> potential jurors
+and two values  <img width="12" height="25" align="MIDDLE" alt="tex2html_wrap_inline44" src="323img1.gif">  (the defence's value) and  <img width="14" height="17" align="MIDDLE" alt="tex2html_wrap_inline46" src="323img2.gif"> 
+(the prosecution's value) for each potential juror <i>i</i>, you are to select
+a jury of <i>m</i> persons. If  <img width="13" height="25" align="MIDDLE" alt="tex2html_wrap_inline52" src="323img3.gif">  is a subset of { <img width="57" height="25" align="MIDDLE" alt="tex2html_wrap_inline54" src="323img4.gif"> } with <i>m</i>
+elements, then  <img width="130" height="27" align="MIDDLE" alt="tex2html_wrap_inline58" src="323img5.gif"> 
+and  <img width="129" height="27" align="MIDDLE" alt="tex2html_wrap_inline60" src="323img6.gif"> 
+are the total values of this jury for defence and prosecution.
+<p>
+For an optimal jury  <img width="13" height="25" align="MIDDLE" alt="tex2html_wrap_inline52" src="323img3.gif"> , the value  <img width="122" height="27" align="MIDDLE" alt="tex2html_wrap_inline64" src="323img7.gif"> 
+must be minimal. If there are several jurys with minimal
+ <img width="122" height="27" align="MIDDLE" alt="tex2html_wrap_inline64" src="323img7.gif"> ,
+one which maximizes  <img width="104" height="27" align="MIDDLE" alt="tex2html_wrap_inline68" src="323img8.gif">  should be selected
+since the jury should be as ideal as possible for both parties.
+<p>
+<p>
+You are to write a program that implements this jury selection
+process and chooses an optimal jury given a set of candidates.
+<p>
+<p>
+<p>
+<b>Note:</b> If your solution is based on an inefficient algorithm, it
+may not execute in the allotted time.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file contains several jury selection rounds. Each round starts
+with a line containing two integers <i>n</i> and <i>m</i>. <i>n</i> is the number of
+candidates and <i>m</i> the number of jury members.
+These values will satisfy  <img width="90" height="25" align="MIDDLE" alt="tex2html_wrap_inline78" src="323img9.gif"> ,  <img width="86" height="25" align="MIDDLE" alt="tex2html_wrap_inline80" src="323img10.gif">  and of
+course  <img width="48" height="24" align="MIDDLE" alt="tex2html_wrap_inline82" src="323img11.gif"> . The following <i>n</i> lines contain the two integers  <img width="14" height="17" align="MIDDLE" alt="tex2html_wrap_inline46" src="323img2.gif"> 
+and  <img width="12" height="25" align="MIDDLE" alt="tex2html_wrap_inline44" src="323img1.gif">  for  <img width="86" height="25" align="MIDDLE" alt="tex2html_wrap_inline90" src="323img12.gif"> . A blank line separates each round from
+the next.
+<p>
+<p>
+The file ends with a round that has <i>n</i> = <i>m</i> = 0.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each round output a line containing the number of the jury
+selection round (<tt>`Jury #1'</tt>, <tt>`Jury #2'</tt>, etc.).
+<p>
+On the next line print the values  <img width="41" height="27" align="MIDDLE" alt="tex2html_wrap_inline94" src="323img13.gif">  and  <img width="40" height="27" align="MIDDLE" alt="tex2html_wrap_inline96" src="323img14.gif">  of your
+jury as shown below and on another line print the numbers of the <i>m</i> chosen
+candidates in ascending order. Output a blank
+before each individual candidate number.
+<p>
+<p>
+Output an empty line after each test case.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>4 2
+1 2
+2 3
+4 1
+6 2
+
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Jury #1
+Best jury has value 6 for prosecution and value 4 for defence:
+ 2 3
+
+</pre>
+<p>
+</body>
+</html>

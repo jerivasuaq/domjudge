@@ -1,0 +1,110 @@
+
+
+<html>
+<head>
+<title>Recognizing Good ISBNs</title>
+<meta name="description" content="Recognizing Good ISBNs">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Recognizing Good ISBNs</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Most books now published are assigned a code which uniquely identifies the
+book.  The International Standard Book Number, or ISBN, is normally a
+sequence of 10 decimal digits, but in some cases, the capital letter X may
+also appear as the tenth digit.  Hyphens are included at various places in
+the ISBN to make them easier to read, but have no other significance.  The
+sample input and expected output shown below illustrate many valid, and a
+few invalid, forms for ISBNs.
+<p>
+<p>
+Actually, only the first nine digits in an ISBN are used to identify a book.
+The tenth character serves as a check digit to verify that the preceding 9
+digits are correctly formed.  This check digit is selected so that the value
+computed as shown in the following algorithm is evenly divisible by 11.
+Since the check digit may sometimes need to be as large as 10 to guarantee
+divisibility by 11, a special symbol was selected by the ISBN designers to
+represent 10, and that is the role played by X.
+<p>
+<p>
+The algorithm used to check an ISBN is relatively simple.  Two sums, <i>s</i>1 and
+<i>s</i>2, are computed over the digits of the ISBN, with <i>s</i>2 being the sum of the
+partial sums in <i>s</i>1 after each digit of the ISBN is added to it.  The ISBN
+is correct if the final value of <i>s</i>2 is evenly divisible by 11.
+<p>
+<p>
+An example will clarify the procedure.  Consider the (correct) ISBN
+0-13-162959-X (for Tanenbaum's Computer Networks).  First look at the
+calculation of <i>s</i>1:
+<p>
+<pre>       -----------------------------------------------------------------
+       digits in the ISBN    0   1   3   1   6   2   9   5   9   10(X)
+       partial sums          0   1   4   5  11  13  22  27  36   46
+       -----------------------------------------------------------------</pre>
+<p>
+The calculation of <i>s</i>2 is done by computing the total of the partial sums
+in the calculation of <i>s</i>1:
+<p>
+<pre>       -----------------------------------------------------------------
+       s2 (running totals)   0   1   5  10  21  34  56  83  119  165
+       -----------------------------------------------------------------</pre>
+<p>
+We now verify the correctness of the ISBN by noting that 165 is, indeed,
+evenly divisible by 11.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input data for this problem will contain one candidate ISBN per line of
+input, perhaps preceded and/or followed by additional spaces.  No line will
+contain more than 80 characters, but the candidate ISBN may contain illegal
+characters, and more or fewer than the required 10 digits.  Valid ISBNs may
+include hyphens at arbitrary locations.  The end of file marks the end of
+the input data.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output should include a display of the candidate ISBN and a statement
+of whether it is legal or illegal.  The expected output shown below
+illustrates the expected form.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>0-89237-010-6
+0-8306-3637-4      
+  0-06-017758-6
+    This_is_garbage
+1-56884-030-6
+    0-8230-2571-3
+    0-345-31386-0
+    0-671-88858-7
+    0-8104-5687-7
+    0-671-74119-5
+    0-812-52030-0
+    0-345-24865-1-150
+0-452-26740-4
+    0-13-139072-4
+    0-1315-2447-X</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>0-89237-010-6 is correct.
+0-8306-3637-4 is correct.
+0-06-017758-6 is correct.
+This_is_garbage is incorrect.
+1-56884-030-6 is correct.
+0-8230-2571-3 is correct.
+0-345-31386-0 is correct.
+0-671-88858-7 is correct.
+0-8104-5687-7 is correct.
+0-671-74119-5 is correct.
+0-812-52030-0 is correct.
+0-345-24865-1-150 is incorrect.
+0-452-26740-4 is correct.
+0-13-139072-4 is correct.
+0-1315-2447-X is correct.</pre>
+<p>
+</body>
+</html>

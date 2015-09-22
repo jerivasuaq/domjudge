@@ -1,0 +1,181 @@
+
+
+<html>
+<head>
+<title>Partial differential equations</title>
+<meta name="description" content="Partial differential equations">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Partial differential equations</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In engineering sciences, partial differential equations play an important
+and central role. For example, the temperature of a metal plate can be expressed
+as a partial differential equation if the temperature on the boundaries
+is known. This is called a boundary value problem.
+<p>
+Usually, it is not easy to solve these problems. Analytical solutions exist
+only in very special cases. But there are some more or less &quot;good&quot;
+numerical ways to solve boundary value problems.
+<p>
+<p>
+We now will look at one method which works with finite difference approximations
+for the derivatives of a function. For this approach, we do not look at
+an analytical function <i>u</i>(<i>x</i>) but we are only interested in
+the values of <i>u</i> at a finite set of discrete points  <img width="104" height="27" align="MIDDLE" alt="tex2html_wrap_inline118" src="199img1.gif"> . The distance between two adjacent
+points,  <img width="13" height="17" align="MIDDLE" alt="tex2html_wrap_inline120" src="199img2.gif">  and  <img width="30" height="18" align="MIDDLE" alt="tex2html_wrap_inline122" src="199img3.gif"> , is constant:  <img width="100" height="26" align="MIDDLE" alt="tex2html_wrap_inline124" src="199img4.gif">  (cf. figure 1).
+<p>
+<p><a name="31">&#160;</a> <img align="BOTTOM" alt="figure26" src="199img5.gif"> <br>
+<strong>Figure:</strong> <i>u</i>(<i>x</i>) at some discrete points  <img width="13" height="17" align="MIDDLE" alt="tex2html_wrap_inline120" src="199img2.gif"> <br>
+<p>
+<p>
+The finite difference approximation of a first derivative of the function
+<i>u</i>(<i>x</i>) is
+<p>
+<p> <img width="500" height="40" align="BOTTOM" alt="equation33" src="199img6.gif"> <p>
+<p>
+The second derivative is approximated by
+<p>
+<p> <img width="506" height="42" align="BOTTOM" alt="equation39" src="199img7.gif"> <p>
+<p>
+This approximation works with 2-dimensional functions <i>u</i>(<i>x</i>,<i>y</i>) as well.
+For simplicity we only work on square problems, i.e.
+(<i>x</i>, <i>y</i>) is element of  <img width="89" height="27" align="MIDDLE" alt="tex2html_wrap_inline136" src="199img8.gif"> . Again, the area of the
+function is discretized in a similar way:  <img width="225" height="31" align="MIDDLE" alt="tex2html_wrap_inline138" src="199img9.gif"> ,
+for some integer  <img width="41" height="25" align="MIDDLE" alt="tex2html_wrap_inline140" src="199img10.gif"> . We only look at the values of <i>u</i>(<i>x</i>,<i>y</i>) at the
+discrete points  <img width="198" height="28" align="MIDDLE" alt="tex2html_wrap_inline144" src="199img11.gif"> .
+With this discretization, we have a function  <img width="23" height="17" align="MIDDLE" alt="tex2html_wrap_inline146" src="199img12.gif">  as shown in figure 2:
+<p>
+<p><a name="111">&#160;</a> <img align="BOTTOM" alt="figure50" src="199img13.gif"> <br>
+<strong>Figure:</strong> Function  <img width="23" height="17" align="MIDDLE" alt="tex2html_wrap_inline146" src="199img12.gif">  in the discretization area<br>
+<p>
+<p>
+<p>
+On the boundary,  <img width="60" height="28" align="MIDDLE" alt="tex2html_wrap_inline150" src="199img14.gif">  is given by 4 known functions:
+<p>
+<p> <img width="500" height="84" align="BOTTOM" alt="equation57" src="199img15.gif"> <p>
+<p>
+The points  <img width="18" height="25" align="MIDDLE" alt="tex2html_wrap_inline152" src="199img16.gif">  cover the inner points of the discretization
+area, i.e. the area without the boundary. They are numbered from left to
+right and from top to bottom like English text.
+<p>
+<p>
+What we now want to do is to solve the poisson-equation in
+the area  <img width="89" height="27" align="MIDDLE" alt="tex2html_wrap_inline136" src="199img8.gif"> :
+<p>
+<p> <img width="500" height="42" align="BOTTOM" alt="equation62" src="199img17.gif"> <p>
+<p>
+with the above boundary conditions. <i>f</i>(<i>x</i>,<i>y</i>) is a
+given 2-dimensional function. With equation (2) and the above discretization,
+the poisson-equation can be approximated at
+<p>
+<p> <img width="572" height="36" align="BOTTOM" alt="equation66" src="199img18.gif"> <p>
+<p>
+where  <img width="21" height="26" align="MIDDLE" alt="tex2html_wrap_inline158" src="199img19.gif">  is the function <i>f</i>(<i>x</i>,<i>y</i>), evaluated at the discrete
+points  <img width="49" height="28" align="MIDDLE" alt="tex2html_wrap_inline162" src="199img20.gif"> .
+<p>
+<p>
+Formula (5) can be written in a more readable form, depending on the position
+of the discrete points:
+<p>
+<p> <img width="546" height="67" align="BOTTOM" alt="displaymath164" src="199img21.gif"> <p>
+<p>
+A similar equation, which we will use as an example below, is:
+<p>
+<p> <img width="546" height="67" align="BOTTOM" alt="displaymath166" src="199img22.gif"> <p>
+<p>
+We call the  <img width="37" height="24" align="MIDDLE" alt="tex2html_wrap_inline168" src="199img23.gif">  matrix on the left hand side <i>v</i> and
+the  <img width="37" height="24" align="MIDDLE" alt="tex2html_wrap_inline168" src="199img23.gif">  matrix on the right hand side <i>g</i>.
+<p>
+<p>
+Now, equation (6b) can be formulated in
+every point of the discrete area of figure 2:
+<p>
+<p> <img width="758" height="86" align="BOTTOM" alt="equation92" src="199img24.gif"> <p>
+<p>
+and (7) is a linear equation system for the values of <i>u</i>(<i>x</i>,<i>y</i>) at the
+points  <img width="69" height="25" align="MIDDLE" alt="tex2html_wrap_inline178" src="199img25.gif">  and  <img width="17" height="25" align="MIDDLE" alt="tex2html_wrap_inline180" src="199img26.gif"> .
+<p>
+<p>
+By rearranging and adding the terms on each line, the linear equation system
+can be formulated as:
+<p>
+<p> <img width="500" height="18" align="BOTTOM" alt="equation101" src="199img27.gif"> <p>
+<p>
+where <i>a</i> is a  <img width="38" height="24" align="MIDDLE" alt="tex2html_wrap_inline184" src="199img28.gif">  matrix and <i>b</i> is a vector with 4 elements. Vector
+<i>z</i> represents the unknown values of <i>u</i>(<i>x</i>,<i>y</i>) at the
+points  <img width="69" height="25" align="MIDDLE" alt="tex2html_wrap_inline178" src="199img25.gif">  and  <img width="17" height="25" align="MIDDLE" alt="tex2html_wrap_inline180" src="199img26.gif"> .
+<p>
+<p>
+You are to write a program that creates the linear equation system (7) in
+the form (8) for any two matrices <i>v</i> and <i>g</i> (6). As input, the
+two matrices <i>v</i> and <i>g</i> and the functions  <img width="81" height="25" align="MIDDLE" alt="tex2html_wrap_inline204" src="199img29.gif">  , and <i>f</i>
+are given. Also, a parameter <i>n</i> is given as the number of discretization
+intervals. Thus,  <img width="43" height="31" align="MIDDLE" alt="tex2html_wrap_inline210" src="199img30.gif"> . As the result, your program should calculate the
+matrix <i>a</i> and the vector <i>b</i>. For this more general case, there
+are  <img width="58" height="30" align="MIDDLE" alt="tex2html_wrap_inline216" src="199img31.gif">  inner points and <i>a</i> and <i>b</i> must
+be sized accordingly.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file consists of <i>m</i> tests. The number <i>m</i> is given
+in the first line of the file. The first line of each test contains the
+number <i>n</i> which gives the number of discretizations intervals as defined
+above. You may assume that  <img width="82" height="25" align="MIDDLE" alt="tex2html_wrap_inline228" src="199img32.gif"> . Then the  <img width="37" height="24" align="MIDDLE" alt="tex2html_wrap_inline168" src="199img23.gif">  matrices <i>v</i>
+and <i>g</i> follow. The following four lines contain the functions  <img width="59" height="25" align="MIDDLE" alt="tex2html_wrap_inline236" src="199img33.gif">  and  <img width="13" height="25" align="MIDDLE" alt="tex2html_wrap_inline238" src="199img34.gif"> , each
+given as a vector of order <i>n</i>+1, containing the values for 0, <i>h</i>,
+2<i>h</i>, ..., 1. Finally, the function <i>f</i> is given as a <i>n</i>+1 by <i>n</i>+1
+matrix. Like the vectors before, it contains the values for  <img width="149" height="25" align="MIDDLE" alt="tex2html_wrap_inline252" src="199img35.gif"> . Each row contains from left to right the
+function values for increasing <i>x</i> values while each column contains
+from top to bottom the function values for decreasing <i>y</i> values.
+<p>
+<p>
+A vector occupies one line. Its values are given in ascending order, separated
+by a space. A <i>n</i> by <i>n</i> matrix occupies <i>n</i> lines. Its rows
+are given in ascending order as vectors, which occupy one line each. All
+values found in the input file are integer values.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each test found in the input file, your program should output the matrices
+<i>a</i> and <i>b</i>. Matrix <i>a</i> is a  <img width="141" height="30" align="MIDDLE" alt="tex2html_wrap_inline270" src="199img36.gif"> 
+matrix (the discretization area (cf. figure 2) contains  <img width="58" height="30" align="MIDDLE" alt="tex2html_wrap_inline216" src="199img31.gif"> 
+inner points, which are unknown). The vector <i>b</i> is of order
+ <img width="58" height="30" align="MIDDLE" alt="tex2html_wrap_inline216" src="199img31.gif"> . They should be output in the same format as the
+vectors and matrices in the input file. Your output should only contain
+integer values. Note that the expression  <img width="15" height="31" align="MIDDLE" alt="tex2html_wrap_inline278" src="199img37.gif">  yields
+an integer number and that all other calculations can also be done using
+integer numbers.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+3
+1 0 2
+0 -4 0
+3 0 4
+0 5 0
+6 0 7
+0 8 0
+3 4 5 6
+0 1 2 3
+3 2 1 0
+6 5 4 3
+1 1 1 1
+2 2 2 2
+3 3 3 3
+4 4 4 4</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>-36 0 0 36
+0 -36 27 0
+0 18 -36 0
+9 0 0 -36
+-35 -188 -189 -315</pre>
+<p>
+</body>
+</html>

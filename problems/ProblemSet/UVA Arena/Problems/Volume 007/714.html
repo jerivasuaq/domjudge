@@ -1,0 +1,133 @@
+
+
+<html>
+<head>
+<title>Copying Books</title>
+<meta name="description" content="Copying Books">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Copying Books</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Before the invention of book-printing, it was very hard to
+make a copy of a book. All the contents had to be re-written by hand by
+so called <em>scribers</em>. The scriber had been given a book and after
+several months he finished its copy. One of the most famous scribers lived
+in the 15th century and his name was Xaverius Endricus Remius Ontius
+Xendrianus (<em>Xerox</em>). Anyway, the work was very annoying and boring.
+And the only way to speed it up was to hire more scribers.
+
+<p>
+
+<p>
+<br>
+Once upon a time, there was a theater ensemble that wanted to play famous
+Antique Tragedies. The scripts of these plays were divided into many books
+and actors needed more copies of them, of course. So they hired many scribers
+to make copies of these books. Imagine you have <i>m</i> books (numbered
+
+
+<img width="84" height="30" align="MIDDLE" border="0" src="714img1.gif" alt="$1, 2, \dots, m$">)
+that may have different number of pages
+(
+
+<img width="105" height="30" align="MIDDLE" border="0" src="714img2.gif" alt="$p_1, p_2, \dots, p_m$">)
+and you want to
+make one copy of each of them. Your task is to divide these books among
+<i>k</i> scribes, <img width="53" height="32" align="MIDDLE" border="0" src="714img3.gif" alt="$k \le m$">.
+Each book can be assigned to a single scriber only, and every scriber
+must get a continuous sequence of books. That means, there exists
+an increasing succession of numbers 
+
+<img width="290" height="32" align="MIDDLE" border="0" src="714img4.gif" alt="$0 = b_0 <
+b_1 < b_2, \dots < b_{k-1} \le b_k = m$">
+such that <i>i</i>-th scriber gets a sequence
+of books with numbers between <i>b</i><sub><i>i</i>-1</sub>+1 and <i>b</i><sub><i>i</i></sub>.
+The time needed to make a copy of all the books is determined by the scriber
+who was assigned the most work. Therefore, our goal is to minimize the
+maximum number of pages assigned to a single scriber. Your task is to find
+the optimal assignment.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of <i>N</i> cases. The first line of the input
+contains only positive integer <i>N</i>. Then follow the cases.
+Each case consists of exactly two lines. At the first line, there are 
+two integers <i>m</i> and <i>k</i>, 
+
+<img width="134" height="32" align="MIDDLE" border="0" src="714img5.gif" alt="$1 \le k \le m \le 500$">.
+At the second line, there are integers 
+
+<img width="97" height="30" align="MIDDLE" border="0" src="714img6.gif" alt="$p_1, p_2, \dots p_m$">
+separated by spaces. All these values are positive and less than 10000000.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each case, print exactly one line.
+The line must contain the input succession 
+
+<img width="97" height="30" align="MIDDLE" border="0" src="714img6.gif" alt="$p_1, p_2, \dots p_m$">
+divided into exactly <i>k</i> parts such that the maximum sum of a single part should be as small as possible. Use the slash character (`<tt>/</tt>') to separate the parts.
+There must be exactly one space character between any two successive numbers
+and between the number and the slash.
+
+<p>
+
+<p>
+<br>
+If there is more than one solution, print the one that minimizes the work
+assigned to the first scriber, then to the second scriber etc. But each
+scriber must be assigned at least one book.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+2
+9 3
+100 200 300 400 500 600 700 800 900
+5 4
+100 100 100 100 100
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+100 200 300 400 500 / 600 700 / 800 900
+100 / 100 / 100 / 100 100
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-15</i>
+</address>
+</body>
+</html>
+

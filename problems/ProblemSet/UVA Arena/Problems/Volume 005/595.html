@@ -1,0 +1,166 @@
+
+
+<html>
+<head>
+<title>A Major Problem</title>
+<meta name="description" content="A Major Problem">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+A Major Problem</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In western music the twelve notes used in musical notation are identified with the capital letters A 
+through G, possibly followed by a sharp `#' or flat `b' character, and are arranged as shown below.  A 
+slash is used to identify alternate notations of the same note.
+
+<p>
+<pre>
+C/B#   C#/Db   D   D#/Eb   E/Fb   F/E#   F#/Gb   G   G#/Ab   A   A#/Bb   B/Cb
+</pre>
+
+<p>
+Any two adjacent notes in the above list are separated by a <em>semitone</em>.  Any two notes that have exactly 
+one note separating them in the above list are separated by a <em>tone</em>.  A <em>major scale</em> is composed of eight 
+notes; it begins on one of the above notes and follows the progression tone-tone-semitone-tone-tone-
+tone-semitone from left to right in the list above, wrapping from B/Cb to C/B# when necessary.  For 
+example, the major scales starting on C and Db, respectively, are made up of the following notes:
+
+<p>
+<pre>
+C   D   E  F   G   A   B  C
+Db  Eb  F  Gb  Ab  Bb  C  Db
+</pre>
+
+<p>
+The following rules also apply to major scales:
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>The scale will contain each letter from A to G once and only once, with the exception of first letter 
+of the scale which repeated as the last letter of the scale.
+<dt>2.
+<dd>The scale may not contain a combination of both flat and sharp notes.
+</dd></dt></dd></dt></dl>
+
+<p>
+The note which begins a major scale is referred to as the key of the scale.  For example, the scales above 
+are the scales for the major keys of C and Db, respectively.  Transposing notes from one scale to 
+another is a simple matter of replacing a note in one scale with the note in the corresponding position of 
+another scale.  For example, the note F in the major key of C would transpose to the note Gb in the 
+major key of Db since both notes occupy the same position (fourth) in their respective scales.
+
+<p>
+
+<p>
+<br>
+The object of this problem is to write a program that will transpose notes from one major scale to 
+another.  An input file will contain several lines, each of which contains a source key, target key, and list 
+of one or more notes to be transposed.  An output file should be generated which indicates the 
+transposed notes, as well as indicating major scales that are not valid and notes that are not valid in a 
+given major scale.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Each line of the input, except for the last, will contain two musical keys followed by a list of notes to be 
+transposed from the major scale of the first key to the major scale of the second key.  Each list is 
+terminated by a single asterisk character.  The final line of the input contains only a single asterisk.  All 
+notes on a line and the terminating asterisk are delimited by a single space
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each input line which defines a transposition problem, several lines will be produced in the output 
+file.  If the source and target keys are valid, then the first output line for each input line should read 
+``<tt>Transposing from </tt><i>X</i> <tt>to </tt><i>Y</i><tt>:</tt>" where <i>X</i> is the source key and <i>Y</i> is the target key.  
+<b>If either the source or 
+target key is not valid</b>,  output one line which reads ``<tt>Key of </tt><i>X</i>(or <i>Y</i>) <tt>is not a valid major key</tt>", 
+where <i>X</i>(or <i>Y</i>) is the key that is not valid.  If both the source and target key are not valid, report 
+only the source key. The remainder of the input for that line is to be skipped.  
+
+<p>
+<br>
+For input lines which contain valid source and target keys, the first output line will be followed by one 
+output line for each note to be transposed.  If the note is a valid note in the major scale of the source 
+key then the output line should read ``<i>M</i><tt> transposes to </tt><i>N</i>" where <i>M</i> is the note in the source key and <i>N</i> 
+is the corresponding note in the target key.  If the input note is not a valid note in the major scale of the 
+source key then the output line should read ``<i>M</i><tt> is not a valid note in the </tt><i>X</i><tt> major scale</tt>" where <i>M</i> is the 
+input note and <i>X</i> is the source key.  Observe that for either valid or non-valid notes the output line 
+begins with precisely two spaces.
+
+<p>
+
+<p>
+<br>
+Print a blank line between the output data for each input line.  All output formatting 
+rules described above must be observed precisely. 
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+C Db F *
+Db C Gb *
+C B# A B *
+C D A A# B Bb C *
+A# Bb C *
+*
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Transposing from C to Db:
+  F transposes to Gb
+
+Transposing from Db to C:
+  Gb transposes to F
+
+Key of B# is not a valid major key
+
+Transposing from C to D:
+  A transposes to B
+  A# is not a valid note in the C major scale
+  B transposes to C#
+  Bb is not a valid note in the C major scale
+  C transposes to D
+
+Key of A# is not a valid major key
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

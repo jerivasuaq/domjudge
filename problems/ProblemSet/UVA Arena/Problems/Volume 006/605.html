@@ -1,0 +1,100 @@
+
+
+<html>
+<head>
+<title>The Rotating Disk</title>
+<meta name="description" content="The Rotating Disk">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The Rotating Disk</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A neat puzzle consists of a circular track with <i>n</i> marbles numbered <img width="63" height="30" align="MIDDLE" border="0" src="605img1.gif" alt="$1,\dots,n$">.
+The marbles are arranged in a random order, and they can be moved around the
+track without altering their relative order. In one section of the track there is a 
+rotating disk. The disk contains 4 marbles. The disk can be rotated by 180 
+degrees so that the inner order of the 4 marbles is reversed. Your mission, 
+should you choose to accept it, is to write a program that will read the content of 
+a puzzle and use the rotating disk to rearrange the marbles in natural order.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The following example will demonstrate a description of a puzzle and display of
+moves. The size of the track will vary from one data set to another. 
+
+<p>
+Each data set will be a permutation of the integers <img width="63" height="30" align="MIDDLE" border="0" src="605img1.gif" alt="$1,\dots,n$">
+on a single line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+In your output echo the initial track, followed by the rotations.
+Mark the four rotated disks by placing * as the boundary as shown below. You must not
+ display moves around the whole track. 
+In case there are no
+possiblity to put the disks in natural order, simply write the initial track
+and the statement: "<tt>It is not possible to rearrange these disks in natural
+order.</tt>"
+<br><br>
+The outputs of two consecutive cases will be separated by a blank line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+8 1 2 3 7 10 4 6 5 9
+1 2 3 5 4
+6 5 4 3 1 2
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output:</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+8 1 2 3 7 10 4 6 5 9
+8 1 2 3 7 10 *9 5 6 4*
+4 8 1 2 3 7 *6 5 9 10*
+4 *3 2 1 8* 7 6 5 9 10
+4 3 2 1 *5 6 7 8* 9 10
+*1 2 3 4* 5 6 7 8 9 10
+
+1 2 3 5 4
+It is not possible to rearrange these disks in natural order.
+
+6 5 4 3 1 2
+*3 4 5 6* 1 2
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-24</i>
+</address>
+</body>
+</html>
+

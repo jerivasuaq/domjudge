@@ -1,0 +1,160 @@
+
+<p>
+
+<p>
+<br>
+We are examining two specific classes of languages (a possibly infinite set of strings) in this problem. Fortunately (or maybe unfortunately), we are not given the strings contained in each language directly, rather we are given two deterministic finite automatons that describe such languages. 
+
+<p>
+Your task here is simple: to determine if the languages described by the two automatons are the same. 
+
+<p>
+For those of you who are unfamiliar with the concept of deterministic finite automata, you may use the following information: 
+
+<p>
+<blockquote>
+<span class="textit">A deterministic finite automata (DFA) is a 5-tuple, 
+<span class="MATH">(<i>S</i>,<img width="17" height="15" align="BOTTOM" border="0" src="4358img1.png" alt="$ \Sigma$">, <i>T</i>, <i>s</i>, <i>A</i>)</span>
+<tex2html_verbatim_mark>, consisting of</tex2html_verbatim_mark></span>
+</blockquote>
+<p>
+<ul>
+<li><span class="textit">a finite set of states (<span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark>)</tex2html_verbatim_mark></span> 
+</li>
+<li><span class="textit">a finite set called the alphabet <span class="MATH">(<img width="17" height="15" align="BOTTOM" border="0" src="4358img1.png" alt="$ \Sigma$">)</span>
+<tex2html_verbatim_mark></tex2html_verbatim_mark></span>
+</li>
+<li><span class="textit">a transition function 
+<span class="MATH">(<i>T</i> : <i>S</i>&#215;<img width="17" height="15" align="BOTTOM" border="0" src="4358img1.png" alt="$ \Sigma$"> <img width="22" height="16" align="BOTTOM" border="0" src="4358img2.png" alt="$ \rightarrow$"> <i>S</i>)</span>
+<tex2html_verbatim_mark></tex2html_verbatim_mark></span> 
+</li>
+<li><span class="textit">a start state <span class="MATH">(<i>s</i> <img width="16" height="31" align="MIDDLE" border="0" src="4358img3.png" alt="$ \in$"> <i>S</i>)</span>
+<tex2html_verbatim_mark></tex2html_verbatim_mark></span>
+</li>
+<li><span class="textit">a set of accept states 
+<span class="MATH">(<i>A</i> <img width="18" height="31" align="MIDDLE" border="0" src="4358img4.png" alt="$ \subseteq$"> <i>S</i>)</span>
+<tex2html_verbatim_mark></tex2html_verbatim_mark></span>
+</li>
+</ul>
+<p>
+<blockquote><span class="textit">Let <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark> be a DFA such that 
+<span class="MATH"><i>M</i> = (<i>S</i>,<img width="17" height="15" align="BOTTOM" border="0" src="4358img1.png" alt="$ \Sigma$">, <i>T</i>, <i>s</i>, <i>A</i>)</span>
+<tex2html_verbatim_mark>, and 
+<span class="MATH"><i>X</i> = <i>x</i><sub>0</sub><i>x</i><sub>1</sub>...<i>x</i><sub>n</sub></span>
+<tex2html_verbatim_mark> be a string over the alphabet <span class="MATH"><img width="17" height="15" align="BOTTOM" border="0" src="4358img1.png" alt="$ \Sigma$"></span>
+<tex2html_verbatim_mark>. <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark> accepts the string <span class="MATH"><i>X</i></span>
+<tex2html_verbatim_mark> if a sequence of states, 
+<span class="MATH"><i>r</i><sub>0</sub>, <i>r</i><sub>1</sub>,..., <i>r</i><sub>n</sub></span>
+<tex2html_verbatim_mark>, exists in <span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark> with the following conditions:</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></span> 
+</blockquote>
+<p>
+<ol>
+<li><span class="MATH"><i>r</i><sub>0</sub> = <i>s</i></span>
+<tex2html_verbatim_mark> 
+</tex2html_verbatim_mark></li>
+<li>
+<span class="MATH"><i>r</i><sub>i+1</sub> = <i>T</i>(<i>r</i><sub>i</sub>, <i>x</i><sub>i</sub>)</span>
+<tex2html_verbatim_mark>, <span class="textit">for</span> 
+<span class="MATH"><i>i</i> = 0,..., <i>n</i> - 1</span>
+<tex2html_verbatim_mark> 
+</tex2html_verbatim_mark></tex2html_verbatim_mark></li>
+<li>
+<span class="MATH"><i>r</i><sub>n</sub> <img width="16" height="31" align="MIDDLE" border="0" src="4358img3.png" alt="$ \in$"> <i>A</i></span>
+<tex2html_verbatim_mark>. 
+</tex2html_verbatim_mark></li>
+</ol>
+<p>
+<blockquote>
+<div align="RIGHT">
+- Wikipedia
+
+</div>
+</blockquote> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+There are multiple test cases in the input file. 
+
+<p>
+The first line of each test case is one integer, <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(2<img width="18" height="31" align="MIDDLE" border="0" src="4358img5.png" alt="$ \le$"><i>T</i><img width="18" height="31" align="MIDDLE" border="0" src="4358img5.png" alt="$ \le$">26)</span>
+<tex2html_verbatim_mark>, the size of the alphabet. In each test case, the description of automaton A comes before that of automaton B. The description of each automaton starts with one line containing <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4358img5.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4358img5.png" alt="$ \le$">2000)</span>
+<tex2html_verbatim_mark>, the number of states in the automaton, followed by <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> lines, each line of the format: 
+<span class="MATH"><i>F</i>, <i>X</i><sub>0</sub>, <i>X</i><sub>1</sub>,..., <i>X</i><sub>T-1</sub></span>
+<tex2html_verbatim_mark>, 
+<span class="MATH">(<i>F</i> <img width="16" height="31" align="MIDDLE" border="0" src="4358img3.png" alt="$ \in$"> {0, 1}, -1<img width="18" height="31" align="MIDDLE" border="0" src="4358img5.png" alt="$ \le$"><i>X</i><sub>i</sub> &lt; <i>N</i>)</span>
+<tex2html_verbatim_mark>. If <span class="MATH"><i>F</i> = 1</span>
+<tex2html_verbatim_mark>, then the state is an accepting state; also, if 
+<span class="MATH"><i>X</i><sub>i</sub> = - 1</span>
+<tex2html_verbatim_mark>, it means that the state has no corresponding transition available for character <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>. The start state of both finite automatons will always be state 0. 
+
+<p>
+Two successive test cases are separated by a blank line. A case with a single `<tt>0</tt>' indicates the end of the input file, and should not be processed by your program.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, please print `<tt>Yes</tt>' if the two languages described by the automatons are equivalent; output `<tt>No</tt>' otherwise. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 
+3 
+1 -1 1
+0 -1 2
+0 -1 0
+2
+1 -1 1
+0 -1 0
+
+3 
+4 
+1 -1 -1 1
+1 -1 -1 2
+1 -1 -1 3
+1 -1 -1 1
+2 
+1 -1 -1 1
+1 -1 -1 0
+
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case #1: No 
+Case #2: Yes
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

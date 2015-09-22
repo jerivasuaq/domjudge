@@ -1,0 +1,28 @@
+Ejercicio 18. 
+
+Según la fórmula de Taylor, podemos expresar la función exponencial e^x mediante la siguiente serie:
+
+	e^x= 1 + x/(1!) + x^2/(2!) + x^3/(3!) + x^4/(4!) + ....
+
+Hacer un programa que calcule la aproximacion de e^x, dados x y el numero de terminos.
+
+Por ejemplo si se realiza una estimacion de e^2 con 3 términos, el calcula es el siguiente:
+
+	e^2	= 1 + 2/(1!) + 2^2/(2!) + 2^3/(3!)
+		= 1 + 2 + 4/4 + 8/6
+		= 5.3333
+
+Ejemplos:
+==============================================================
+entrada:
+2 3
+--------------------------------------------------------------
+salida:
+5.3333
+==============================================================
+entrada:
+2 1000
+--------------------------------------------------------------
+salida:
+7.3890
+

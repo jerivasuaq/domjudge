@@ -1,0 +1,100 @@
+
+
+<html>
+<head>
+<title>Gossiping</title>
+<meta name="description" content="Gossiping">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Gossiping</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+There was a public bus transport in one town. All buses had circular lines. Each line had at
+least two stops. Some lines had some stops in common. When two or more bus drivers met on
+some stop they announced each other all news they knew, so that after leaving the stop they all
+knew the same news. All drivers started driving their buses at the same time and at this time each
+driver knew some news that was not known to any other driver. Each bus ran all the time along a
+fixed bus line. Different buses running along the same bus line started possibly on different stops
+of the bus line at the beginning.
+
+<p>
+The operation of buses was highly synchronized. The time necessary to get from one stop to
+next stop was equal for all stops and all lines.
+
+<p>
+There were <i>n</i> lines (
+
+0 &lt; <i>n</i> &lt; 20), <i>d</i> drivers (and also <i>d</i> buses) (
+
+0 &lt; <i>d</i> &lt; 30) numbered by
+integers from 1 to <i>d</i>, and <i>s</i> bus stops (
+
+0 &lt; <i>s</i> &lt; 50) numbered by integers from 1 to <i>s</i>.
+
+<p>
+The drivers' gossiping club would like to know whether each driver, in some time, would learn
+all news from his colleagues. Write a program that will answer this question.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file consists of blocks of lines. Each block except the last describes one town. In the
+first line of the block there are integers <i>n</i>, <i>d</i> and <i>s</i> described above separated by one space. The
+next 2<i>n</i> lines contain descriptions of <i>n</i> bus lines (2 lines for each bus line) as follows: In the first line
+there are stop numbers on the corresponding bus line separated by one space. The stops are listed
+in the order the bus passes them. After passing the last stop listed on the line the bus goes again
+to the first stop listed on the line. The second line describes on which stops the individual buses
+operating on the bus line started at the beginning. The description consists of pairs <i>s</i><sub><i>i</i></sub>, <i>d</i><sub><i>i</i></sub>, where
+<i>s</i><sub><i>i</i></sub> is a stop number on the bus line and <i>d</i><sub><i>i</i></sub> is the number of driver driving the bus. All numbers
+<i>s</i><sub><i>i</i></sub>, <i>d</i><sub><i>i</i></sub> on the line are separated by one space. The last block consists of just one line containing <tt>0 0 0</tt>, i.e. three zeros separated by one space.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output file contains the lines corresponding to the blocks in the input file. A line contains
+<tt>Yes</tt> if the corresponding block in the input file describes a situation where each driver will learn,
+in some time, all news from his colleagues. Otherwise it contains <tt>No</tt>. There is no line in the output
+file corresponding to the last ``null'' block of the input file.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 3 5
+1 2 3
+1 1 2 2
+2 3 4 5
+2 3
+0 0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Yes
+</pre>
+
+<p>
+</body>
+</html>

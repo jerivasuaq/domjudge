@@ -1,0 +1,63 @@
+
+
+<html>
+<head>
+<title>The Doors</title>
+<meta name="description" content="The Doors">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">The Doors</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You are to find the length of the shortest path through a chamber
+containing obstructing walls.  The chamber will always have sides at
+<i>x</i>=0, <i>x</i>=10, <i>y</i>=0, and <i>y</i>=10.  The initial and final points of the
+path are always (0,5) and (10,5).  There will also be from 0 to 18
+vertical walls inside the chamber, each with two doorways.  The figure
+below illustrates such a chamber and also shows the path of minimal
+length.
+<p>
+<center><img src="393img1.gif"></center>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input data for the illustrated chamber would appear as follows.
+<p>
+<pre>2
+4 2 7 8 9
+7 3 4.5 6 7</pre>
+<p>
+The first line contains the number of interior walls.  Then there is a
+line for each such wall, containing five real numbers.  The first
+number is the <i>x</i> coordinate of the wall (0&lt;<i>x</i>&lt;10), and the remaining four are
+the <i>y</i> coordinates of the ends of the doorways in that wall.  The <i>x</i>
+coordinates of the walls are in increasing order, and within each line
+the <i>y</i> coordinates are in increasing order.  The input file will
+contain at least one such set of data.  The end of the data comes when
+the number of walls is -1.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output file should contain one line of output for each chamber.
+The line should contain the minimal path length rounded to two decimal
+places past the decimal point, and always showing the two decimal
+places past the decimal point.  The line should contain no blanks.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+5 4 6 7 8
+2
+4 2 7 8 9
+7 3 4.5 6 7
+-1</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>10.00
+10.06</pre>
+<p>
+</body>
+</html>

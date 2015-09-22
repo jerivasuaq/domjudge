@@ -1,0 +1,95 @@
+
+
+<html>
+<head>
+<title>Greedy Gift Givers</title>
+<meta name="description" content="Greedy Gift Givers">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Greedy Gift Givers</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+This problem involves determining, for a group of gift-giving friends,
+how much more each person gives than they receive (and vice versa for
+those that view gift-giving with cynicism).
+<p>
+<p>
+In this problem each person sets aside some money for gift-giving and
+divides this money evenly among all those to whom gifts are given.
+<p>
+<p>
+However, in any group of friends, some people are more giving than
+others (or at least may have more acquaintances) and some people have
+more money than others.
+<p>
+<p>
+Given a group of friends, the money each person in the group spends on
+gifts, and a (sub)list of friends to whom each person gives gifts; you
+are to write a program that determines how much more (or less) each
+person in the group gives than they receive.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input is a sequence of gift-giving groups.  
+A group consists of several lines:
+<ul><li> the number of people in the group,<li> a list of the names of each person in the group,<li> a line for each person in the group consisting of
+the name of the person,
+the amount of money spent on gifts, the number of people to whom
+gifts are given, and the names of those to whom gifts are given.
+</li></li></li></ul>
+<p>
+All names are lower-case letters, there are no more than 10 people in a
+group, and no name is more than 12 characters in length.  Money is a
+non-negative integer less than 2000.
+<p>
+<p>
+The input consists of one or more groups and is terminated by end-of-file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+For each group of gift-givers, the name of each person in the group
+should be printed on a line followed by the net gain (or loss) received
+(or spent) by the person.  Names in a group should be printed in the
+same order in which they first appear in the input.
+<p>
+<p>
+The output for each group should be separated from other groups by a
+blank line.  All gifts are integers.  Each person gives the same integer
+amount of money to each friend to whom any money is given, and gives as
+much as possible.  Any money not given is kept and is part of a person's
+``net worth'' printed in the output.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5
+dave laura owen vick amr
+dave 200 3 laura owen vick
+owen 500 1 dave
+amr 150 2 vick owen
+laura 0 2 amr vick
+vick 0 0
+3
+liz steve dave
+liz 30 1 steve
+steve 55 2 liz dave
+dave 0 2 steve liz</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>dave 302
+laura 66
+owen -359
+vick 141
+amr -150
+
+liz -3
+steve -24
+dave 27</pre>
+<p>
+</body>
+</html>

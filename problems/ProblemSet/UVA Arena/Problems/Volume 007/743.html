@@ -1,0 +1,104 @@
+
+
+<html>
+<head>
+<title>The MTM Machine</title>
+<meta name="description" content="The MTM Machine">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The MTM Machine</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The MTM is one of the first digital machines ever designed. The aim of the machine is to process positive integer numbers, but due to the primitive nature of the machine only some numbers are accepted for processing; such numbers are called <em>acceptable</em>. When a number is accepted by MTM, the machine outputs another number, according to the rules stated below. When a number is not accepted, the machine simply outputs <tt>NOT ACCEPTABLE</tt>.
+
+<p>
+A number is a non empty string of decimal digits. Given two numbers <i>N</i> and <i>M</i>, when we write <i>NM</i> we mean the number formed by the digits of <i>N</i> followed immediately by the digits of <i>M</i>. For example, if <i>N</i> is 856 and <i>M</i> is 112 then <i>NM</i> is 856112. For any number <i>X</i>, the associate of <i>X</i> is the number <i>X</i>2<i>X</i>. For example, the associate of 78 is 78278.
+
+<p>
+We say that a number <i>X</i> <em>produces</em> a number <i>Y</i>, if number <i>X</i> is acceptable and when given as input to the machine MTM, the number returned by the machine is <i>Y</i>.
+
+<p>
+The behaviour of the MTM machine is governed by the following rules:
+
+<p>
+<dl>
+<dt><strong>Rule 0:</strong>
+<dd>A number containing the digit 0 (zero) is not acceptable.
+<dt><strong>Rule 1:</strong>
+<dd>Given any number <i>X</i> not containing a digit zero, then number 2<i>X</i> produces <i>X</i>. For example, 234 produces 34.
+<dt><strong>Rule 2:</strong>
+<dd>Given any pair of numbers <i>X</i>, <i>Y</i>, if <i>X</i> produces <i>Y</i> then 3<i>X</i> produces the associate of <i>Y</i>. For example, 25 produces 5 by Rule 1, so 325 produces 525.
+<dt><strong>Rule 3:</strong>
+<dd>No other numbers are acceptable.
+</dd></dt></dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+Your task here is to write a program that simulates the MTM machine.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains a set of test cases. Each test case appears in a separate line, and consists of a single positive number <i>N</i>, 
+
+<i>N</i> &lt; 10<sup>32</sup>, to be processed by the MTM machine.
+The file ends with a line containing the number 0 that should not be processed.
+
+<p>
+You may assume that the largest number output by the machine has at most
+1000 digits.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, your program should write one line with the output produced by the machine if the corresponding number is acceptable; otherwise your program should write <tt>NOT ACCEPTABLE</tt>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+20
+22
+42
+32
+33289
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+NOT ACCEPTABLE
+2
+NOT ACCEPTABLE
+NOT ACCEPTABLE
+89289289289
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

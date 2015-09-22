@@ -1,0 +1,126 @@
+
+
+<html>
+<head>
+<title>Named Extension Dialing</title>
+<meta name="description" content="Named Extension Dialing">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Named Extension Dialing</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The marketing research group of the S&amp;TC (String &amp; Tin
+Can) telephone company recently concluded its analysis of
+leading-edge services that could be developed for its CENTREX
+(business user) customers. The analysis showed that ``Named
+Extension Dialing'' (NED) has the highest profit potential. To
+maximize profit by minimizing non-recurring expenses, S&amp;TC
+has contracted your team to develop a module for the automated
+attendant system that implements NED.
+
+<p>
+
+<p>
+<br>
+Currently when a call is placed to a business' primary number,
+the caller is greeted with the pleasant, and almost human,
+message ``You have reached XYZ Corporation. If you know your
+party's extension, please dial it now, or stay on the line for an
+operator.'' NED will allow the sentence, ``If you know your
+party's name, dial the first letter of the first name followed by
+the first letters of the last name of your party now,'' to be
+added to the message.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input to your software module will be a directory of names and
+extensions, one per line, followed by lines containing arbitrary
+numeric strings dialed by people calling XYZ Corporation. These strings
+will have more than 1 digit. Each
+directory entry consists of a first name, one space, a last name,
+one space, and a 4-digit phone extension. Names can contain any
+combination of up to twenty lower and upper case letters. No
+input line will exceed 80 characters.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dialed number, the program is to output, on one line
+starting in the first column, the list of extensions to which the
+number could be referring. If the dialed number exactly matches
+an extension, output the extension; otherwise, 
+output the list of extensions that correspond with names that match the
+dialed number, the numbers should be output in the same order as they
+appeared in the input.
+Multiple extensions that match a dialed number are to be
+separated from each other by single spaces. The dialed number
+must match the characters in the name exactly. (Homophonic
+matching of names was already completed in an earlier contest.)
+If the input fails to match any names or extensions, output `<tt>0</tt>'.
+
+<p>
+<div align="CENTER">
+
+<img width="294" height="255" align="BOTTOM" border="0" src="p886.jpg" alt="\epsfbox{p886.eps}">
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+Barry Charles 4384
+John Smith 2315
+Susan Small 5764
+Alexis Baxter 4652
+Kim Rohde 6678
+22
+5764
+2345
+22298
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+4384 4652
+5764
+0
+4652
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-09-16
+</address>
+</body>
+</html>
+

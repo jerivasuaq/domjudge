@@ -1,0 +1,122 @@
+<p>
+We are to predict some facts about the behavior of a single processor designed
+for running two programs in parallel. Programs are sequences of commands according
+to the following grammar:
+
+<p>
+<table cols="3">
+<col align="RIGHT"><col align="CENTER"><col align="LEFT">
+<tr><td valign="BASELINE" align="RIGHT" nowrap="">
+<span class="MATH">&lt;</span>Program<span class="MATH">&gt;</span> </td><td valign="BASELINE" align="CENTER" nowrap=""> 
+<span class="MATH"><img width="22" height="16" align="BOTTOM" border="0" src="2344img1.gif" alt="$ \rightarrow$"></span> </td><td valign="BASELINE" align="LEFT" nowrap="">  <span class="MATH">&lt;</span>Command<span class="MATH">&gt;</span><span class="MATH"><sup>*</sup></span> </td></tr>
+<tr><td valign="BASELINE" align="RIGHT" nowrap=""> 
+<span class="MATH">&lt;</span>Command<span class="MATH">&gt;</span> </td><td valign="BASELINE" align="CENTER" nowrap=""> 
+<span class="MATH"><img width="22" height="16" align="BOTTOM" border="0" src="2344img1.gif" alt="$ \rightarrow$"></span> </td><td valign="BASELINE" align="LEFT" nowrap="">  <span class="MATH">&lt;</span>Variable<span class="MATH">&gt;</span> := <span class="MATH">&lt;</span>Operand<span class="MATH">&gt;</span> <span class="MATH">&lt;</span>Operator<span class="MATH">&gt;</span>
+<span class="MATH">&lt;</span>Operand<span class="MATH">&gt;</span> </td></tr>
+<tr><td valign="BASELINE" align="RIGHT" nowrap=""> 
+<span class="MATH">&lt;</span>Operator<span class="MATH">&gt;</span> </td><td valign="BASELINE" align="CENTER" nowrap=""> 
+<span class="MATH"><img width="22" height="16" align="BOTTOM" border="0" src="2344img1.gif" alt="$ \rightarrow$"></span> </td><td valign="BASELINE" align="LEFT" nowrap=""> + <span class="MATH">|</span> - </td></tr>
+<tr><td valign="BASELINE" align="RIGHT" nowrap=""> 
+<span class="MATH">&lt;</span>Operand<span class="MATH">&gt;</span> </td><td valign="BASELINE" align="CENTER" nowrap=""> 
+<span class="MATH"><img width="22" height="16" align="BOTTOM" border="0" src="2344img1.gif" alt="$ \rightarrow$"></span> </td><td valign="BASELINE" align="LEFT" nowrap="">  <span class="MATH">&lt;</span>Variable<span class="MATH">&gt;</span> <span class="MATH">|</span> <span class="MATH">&lt;</span>Constant<span class="MATH">&gt;</span></td></tr>
+</table>
+
+<p>
+A <span class="MATH">&lt;</span>Variable<span class="MATH">&gt;</span> is a sequence of (at most 20) alphanumeric characters
+(A...Z, a...z, and 0...9) starting with a letter (not case sensitive).
+A <span class="MATH">&lt;</span>constant<span class="MATH">&gt;</span> is an unsigned integer number (less than 100). There may be
+arbitrary number of blank or tab characters between tokens.
+
+<p>
+Before execution, programs are translated into machine language. A statement
+of the form X := Y + Z is translated to the following set of machine instructions:
+
+<p>
+<pre>
+Mov R1, Y
+Mov R2, Z
+Add R1, R2
+Mov X, R1
+</pre>
+
+<p>
+A MOV instruction copies the content of its second operand into
+its first operand. An `<tt>Add (Sub)</tt>' instruction, adds
+(subtracts) its second operand from its first operand and the
+result is stored in the first operand. Note that Y and Z denote
+either a variable or an integer constant. Instructions generated
+for the command X := Y - Z is similar to the above instructions,
+except that `<tt>Sub</tt>' command is used instead of `<tt>Add</tt>'.
+
+<p>
+The processor is given two machine language programs and starts executing them
+from the first instruction. In each step, it randomly selects one of the two
+programs and runs the next instruction from the selected program. This continues
+until one program reaches its end. In this situation, the remaining instructions
+from the other one are executed sequentially to the end and the processor stops.
+It is assumed that all variables are shared between two programs, but each program
+has a separate register set. The goal of this program is to compute the expected
+final value of all variables among all possible executions of the programs.
+More precisely, we want to consider every possible execution of the two programs
+and for each variable, calculate the average of its final value in different executions.
+It is assumed that the initial value of all variables is zero.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The first line of the input file contains a single integer <span class="MATH"><i>t</i></span> (
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2344img2.gif" alt="$ \le$"><i>t</i><img width="18" height="30" align="MIDDLE" border="0" src="2344img2.gif" alt="$ \le$">10</span>), the number of test cases, followed by the input
+data for each test case. The data for each test case consists of a
+pair of programs. Each program is written as a sequence of
+consecutive lines, each line containing exactly one command.
+Programs end with a line containing only the word `<tt>END</tt>'. You
+may assume that no variable in any program is named `END'. There
+is no blank line between programs of one test case. There are at
+least one and at most 25 lines in each program. Total number of
+variables in two programs is no more than 10.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, the output file should contain the expected
+final value of all variables in alphabetical order of variable
+names (digits precede letters in this order). Output for different
+test cases should be separated by exactly one blank line. Round
+the numbers in the output to 4 digits after decimal point. Do not
+omit trailing zeros after decimal point (e.g. write 1.2000 instead
+of 1.2).
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 S := 1 + 3
+END
+S := S+S
+END
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3.0000
+</pre>
+
+<p>

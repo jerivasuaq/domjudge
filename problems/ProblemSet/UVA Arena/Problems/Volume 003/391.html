@@ -1,0 +1,92 @@
+
+
+<html>
+<head>
+<title>Mark-up</title>
+<meta name="description" content="Mark-up">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Mark-up</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Mark-up languages are computer languages that assist in the formatting
+of text files. Special
+keywords are used to mark the text to allow control of fonts, page
+styles, paragraph styles, etc.
+TeX, troff, and HTML are examples of mark-up languages.
+<p>
+<p>
+Spell checking can be difficult to adapt to these special texts.
+In general, special processors or
+spell checkers must be created in order to accommodate mark-up
+languages. A special processor
+would recognize the mark-up language and strip it from the text
+so that the ``plain'' text could
+then be processed by a spell checker. For this problem, you are to
+write such a processor for a small
+mark-up language so that the output of your program will be the
+plain text without the mark-ups.
+<p>
+<p>
+The mark-up language to consider is one which allows the modification
+of fonts within the text.
+Each markup command will be preceded by a <code>\</code> character.
+If the letter following the <code>\</code> character
+is not a recognized command from the table below then the character
+following the <code>\</code> is printed as
+part of the plain text. For instance, the mark-up <code>\\</code> can
+be used to print a single <code>\</code>.
+<p>
+<dl compact=""><dt><strong> <img width="7" height="27" align="MIDDLE" alt="tex2html_wrap_inline31" src="391img1.gif"> <tt>b</tt></strong>
+<dd> toggle bold font on/off (default state is off)
+<dt><strong> <img width="7" height="27" align="MIDDLE" alt="tex2html_wrap_inline31" src="391img1.gif"> <tt>i</tt></strong>
+<dd> toggle italics font on/off (default state is off)
+<dt><strong> <img width="7" height="27" align="MIDDLE" alt="tex2html_wrap_inline31" src="391img1.gif"> <tt>s</tt></strong>
+<dd> set font size; the <tt>s</tt> is immediately followed by
+an optional number; if the number is
+missing then the command will restore the previous size
+<dt><strong> <img width="7" height="27" align="MIDDLE" alt="tex2html_wrap_inline31" src="391img1.gif"> <tt>*</tt></strong>
+<dd> toggle processing of mark-ups on/off; if processing
+is toggled off then mark-ups are
+considered to be literal text (default state is on)
+<p>
+ </dd></dt></dd></dt></dd></dt></dd></dt></dl>
+<p>
+The number following the <code>SPMamp</code>&amp; command can have a decimal point
+so 12, 9.5, 11., and .5 should all be recognized as valid numbers.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+The input file will be plain text containing mark-ups from the language
+above. At the start, processing of mark-ups should be on.
+The file should be processed until the end-of-file is encountered.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>\s18.\bMARKUP sample\b\s
+
+\*For bold statements use the \b command.\*
+
+If you wish to \iemphasize\i something use the \\i command.
+
+For titles use \s14BIG\s font sizes, 14 points usually works well.
+
+Remember that all of the commands toggle except for the \\s command.</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>MARKUP sample
+
+For bold statements use the \b command.
+
+If you wish to emphasize something use the \i command.
+
+For titles use BIG font sizes, 14 points usually works well.
+
+Remember that all of the commands toggle except for the \s command.</pre>
+<p>
+</body>
+</html>

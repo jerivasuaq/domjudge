@@ -1,0 +1,68 @@
+
+
+<html>
+<head>
+<title>Fermat vs. Pythagoras</title>
+<meta name="description" content="Fermat vs. Pythagoras">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Fermat vs. Pythagoras</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+Computer generated and assisted proofs and verification occupy a small
+niche in the realm of Computer Science.  The first proof of the
+four-color problem was completed with the assistance of a computer
+program and current efforts in verification have succeeded in verifying
+the translation of high-level code down to the chip level.
+<p>
+This problem deals with computing quantities relating to part of
+Fermat's Last Theorem: that there are no integer solutions of  <img width="94" height="26" align="MIDDLE" alt="tex2html_wrap_inline29" src="106img1.gif">  for <i>n</i> &gt; 2.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+Given a positive integer <i>N</i>, you are to write a program that computes two
+quantities regarding the solution of
+<p> <img width="296" height="19" align="BOTTOM" alt="displaymath22" src="106img2.gif"> <p>
+where <i>x</i>, <i>y</i>, and <i>z</i> are constrained to be positive integers
+less than or equal to <i>N</i>.   You
+are to compute the number of triples (<i>x</i>,<i>y</i>,<i>z</i>) such that <i>x</i><per></per><i>y</i><per></per>
+<i>z</i>, and they are relatively prime, i.e., have no common divisor larger than
+1.  You are also to compute the number of values  <img width="78" height="25" align="MIDDLE" alt="tex2html_wrap_inline51" src="106img3.gif">  such that
+<i>p</i> is not part of any triple (not just relatively prime triples).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input consists of a sequence of positive
+integers, one per line.  Each integer
+in the input file will be less than or equal to 1,000,000.  Input is
+terminated by end-of-file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+For each integer <i>N</i> in the input file print two integers separated by a
+space.  The first integer is the number of relatively prime triples
+(such that each component of the triple is  <img width="33" height="26" align="MIDDLE" alt="tex2html_wrap_inline57" src="106img4.gif"> ).  The second number
+is the number of positive
+integers  <img width="33" height="26" align="MIDDLE" alt="tex2html_wrap_inline57" src="106img4.gif">  that are not part of any triple whose
+components are all  <img width="33" height="26" align="MIDDLE" alt="tex2html_wrap_inline57" src="106img4.gif"> .  There should be one output line for each
+input line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>10
+25
+100</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1 4
+4 9
+16 27</pre>
+<p>
+</body>
+</html>

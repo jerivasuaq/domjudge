@@ -1,0 +1,128 @@
+<p>
+In an extended version of the game <em>Lights Out</em>&#169;, is a puzzle with
+5 rows of 6 buttons each (the actual puzzle has 5 rows of 5 buttons each). Each
+button has a light. When a button is pressed, that button and each of its (up to
+four) neighbors above, below, right and left, has the state of its light reversed.
+(If on, the light is turned off; if off, the light is turned on.) Buttons in the
+corners change the state of 3 buttons; buttons on an edge change the state of 4
+buttons and other buttons change the state of 5. For example, if the buttons marked
+<b>X</b> on the left below were to be pressed, the display would change to the
+image on the right.
+
+<p>
+<div align="CENTER">
+
+<img width="629" height="188" align="BOTTOM" border="0" src="p2561a.gif" alt="\epsfbox{p2561a.eps}">
+</div>
+
+<p>
+The aim of the game is, starting from any initial set of lights on in the display,
+to press buttons to get the display to a state where all lights are off. When
+adjacent buttons are pressed, the action of one button can undo the effect of
+another. For instance, in the display below, pressing buttons marked X in the left
+display results in the right display.  Note that the buttons in row 2 column 3
+and row 2 column 5 both change the state of the button in row 2 column 4, so that,
+in the end, its state is unchanged.
+
+<p>
+<div align="CENTER">
+
+<img width="639" height="188" align="BOTTOM" border="0" src="p2561b.gif" alt="\epsfbox{p2561b.eps}">
+</div>
+
+<p>
+
+<p>
+<br>
+
+<b>Note:</b>
+
+<p>
+
+<ol>
+<li>It does not matter what order the buttons are pressed.
+</li>
+<li>If a button is pressed a second time, it exactly cancels the effect of the
+first press, so no button ever need be pressed more than once.
+</li>
+<li>As illustrated in the second diagram, all the lights in the first row may
+be turned off, by pressing the corresponding buttons in the second row. By repeating
+this process in each row, all the lights in the first four rows may be turned out.
+Similarly, by pressing buttons in columns 2, 3 ..., all lights in the
+first 5 columns may be turned off.
+</li>
+</ol>
+
+<p>
+Write a program to solve the puzzle.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The first line of the input is a positive integer <span class="MATH"><i>n</i></span> which is the number of puzzles
+that follow.  Each puzzle will be five lines, each of which has six <tt>0</tt>'s
+or <tt>1</tt>'s separated by one or more spaces.  A `<tt>0</tt>' indicates that the light
+is off, while a `<tt>1</tt>' indicates that the light is on initially.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each puzzle, the output consists of a line with the string: `<tt>PUZZLE #<span class="MATH"><i>m</i></span></tt>',
+where <span class="MATH"><i>m</i></span> is the index of the puzzle in the input file.  Following that line, is
+a puzzle-like display (in the same format as the input) .  In this case, <tt>1</tt>'s
+indicate buttons that must be pressed to solve the puzzle, while <tt>0</tt>'s indicate
+buttons, which are not pressed.  There should be exactly one space between each `<tt>0</tt>'
+or `<tt>1</tt>' in the output puzzle-like display.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+0 1 1 0 1 0
+1 0 0 1 1 1
+0 0 1 0 0 1
+1 0 0 1 0 1
+0 1 1 1 0 0
+0 0 1 0 1 0
+1 0 1 0 1 1
+0 0 1 0 1 1
+1 0 1 1 0 0
+0 1 0 1 0 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Ouput</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+PUZZLE #1
+1 0 1 0 0 1
+1 1 0 1 0 1
+0 0 1 0 1 1
+1 0 0 1 0 0
+0 1 0 0 0 0
+PUZZLE #2
+1 0 0 1 1 1
+1 1 0 0 0 0
+0 0 0 1 0 0
+1 1 0 1 0 1
+1 0 1 1 0 1
+</pre>
+
+<p>

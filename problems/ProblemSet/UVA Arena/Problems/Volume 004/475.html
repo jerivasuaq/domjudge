@@ -1,0 +1,108 @@
+
+
+<html>
+<head>
+<title>Wild Thing</title>
+<meta name="description" content="Wild Thing">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Wild Thing</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Command interfaces to modern operating systems often include a number of <em>metacharacters</em>
+which provide powerful features that allow a user to accomplish a lot of work without resorting to traditional programming. One of the most common metacharacters is a <em>wildcard</em> character.
+<p>
+Wildcard characters are used within filenames to permit the user to generically specify a
+group of files that a command should act upon. A wildcard character itself matches zero or
+more characters in the same position as the wildcard.
+<p>
+Suppose a user wanted to print all files ending in <tt>.c</tt>, delete all files beginning with <code>old_</code> , and copy <em>all</em> files (no matther what they are named) to a floppy disk. With wildcard metacharacters, all of this can be done using only three commands instead of using a separate command for each file involved. The metacharacter sequences for these commands would be
+as follows:
+<pre>*.c
+old_*
+*</pre>
+<p>
+Write a program that will accept an input pattern which may contain wildcard characters
+and decide whether or not each of the filenames that follow it matches the pattern.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file will contain a series of datasets. Each dataset will consist of a pattern line
+followed by a list of filenames to compare against the pattern. For the purposes of this
+program, a filename may consist of any group of one to twenty characters, not including
+asterisks. None of these characters should receive special treatment (periods, for example,
+should behave as any other characters matched).
+<p>
+The pattern line may include zero or more wildcard characters. A wildcard character
+will be represented by an asterisk (<tt>*</tt>).
+<p>
+The list of filenames will appear one per line following the pattern line. There will be an
+unknown number of filenames in the list.
+<p>
+All lines of input will be one to twenty characters in length, including the pattern line.
+The input file will contain an unknown number of datasets, each separated by a blank line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output for this program will be a short report showing the pattern and the filenames
+from the subsequent list that match the pattern. Filenames that do not match the pattern
+should not be printed out. The results from each input dataset should be separated by one
+blank line.
+<p>
+<p>
+See the example for the exact format. Notice that ``<tt>MATCHES FOR PATTERN: HELLO</tt>'' was not displayed, because there were no matches in its filename list.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>C*AT
+COMFILE.DAT
+COST.DATA
+CAT
+%XCAT
+COAT
+CATCH
+
+*A*
+MOUNTAIN.TXT
+ALFRED
+PROG1A
+SECOND.ED
+PROG1A.PAS
+
+HELLO
+NOTHING
+
+B**N*
+NIBBLE.BIT
+BANANA
+BNXJ.25
+BORN
+ABNORMAL.LIS
+BRANDISH.SRD
+BITNET</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>MATCHES FOR THE PATTERN: C*AT
+COMFILE.DAT
+CAT
+COAT
+
+MATCHES FOR THE PATTERN: *A*
+MOUNTAIN.TXT
+ALFRED
+PROG1A
+PROG1A.PAS
+
+MATCHES FOR THE PATTERN: B**N*
+BANANA
+BNXJ.25
+BORN
+BRANDISH.SRD
+BITNET</pre>
+<p>
+</body>
+</html>

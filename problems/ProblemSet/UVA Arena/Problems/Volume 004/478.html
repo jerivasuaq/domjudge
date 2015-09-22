@@ -1,0 +1,85 @@
+
+
+<html>
+<head>
+<title>Points in Figures: Rectangles, Circles, and Triangles</title>
+<meta name="description" content="Points in Figures: Rectangles, Circles, and Triangles">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Points in Figures: Rectangles, Circles, and Triangles</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Given a list of figures (rectangles, circles, and triangles) and a list of points in the <i>x</i>-<i>y</i> plane, determine for each point which figures (if any) contain the point.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+There will be n(Ÿ 10) figures descriptions, one per line. The first character will designate
+the type of figure (``<tt>r</tt>'', ``<tt>c</tt>'', ``<tt>t</tt>'' for rectangle, circle, or triangle, respectively). This character will be followed by values which describe that figure.
+<ul><li> For a rectangle, there will be four real values designating the <i>x</i>-<i>y</i> coordinates of the
+upper left and lower right corners.<li> For a circle, there will be three real values, designating the <i>x</i>-<i>y</i> coordinates of the center
+and the radius.<li> For a triangle, there will be six real values designating the <i>x</i>-<i>y</i> coordinates of the
+vertices.
+</li></li></li></ul>
+The end of the list will be signalled by a line containing an asterisk in column one.
+<p>
+<p>
+The remaining lines will contain the <i>x</i>-<i>y</i> coordinates, one per line, of the points to be tested. The end of this list will be indicated by a point with coordinates 9999.9 9999.9; these values should not be included in the output.
+<p>
+Points coinciding with a figure border are not considered inside.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each point to be tested, write a message of the form:
+<pre>Point i is contained in figure j</pre>
+for each figure that contains that point. If the point is not contained in any figure, write a
+message of the form:
+<pre>Point i is not contained in any figure</pre>
+Points and figures should be numbered in the order in which they appear in the input.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>r 8.5 17.0 25.5 -8.5
+c 20.2 7.3 5.8
+t -1.0 -1.0 10.1 2.2 .4 1.4
+r 0.0 10.3 5.5 0.0
+c -5.0 -5.0 3.7
+t 20.3 9.8 10.0 -3.2 17.5 -7.7
+r 2.5 12.5 12.5 2.5
+c 5.0 15.0 7.2
+t -10.0 -10.0 10.0 25.0 30.0 -10.0
+*
+2.0 2.0
+4.7 5.3
+6.9 11.2
+20.0 20.0
+17.6 3.2
+-5.2 -7.8
+9999.9 9999.9</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Point 1 is contained in figure 4
+Point 1 is contained in figure 9
+Point 2 is contained in figure 4
+Point 2 is contained in figure 7
+Point 2 is contained in figure 9
+Point 3 is contained in figure 7
+Point 3 is contained in figure 8
+Point 3 is contained in figure 9
+Point 4 is not contained in any figure
+Point 5 is contained in figure 1
+Point 5 is contained in figure 2
+Point 5 is contained in figure 6
+Point 5 is contained in figure 9
+Point 6 is contained in figure 5
+Point 6 is contained in figure 9</pre>
+<p>
+<center><img src="478img2.gif"></center>
+<p>
+Diagrama of sample input figures and data points
+<p>
+</body>
+</html>

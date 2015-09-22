@@ -1,0 +1,107 @@
+
+
+<html>
+<head>
+<title>Clock solitaire</title>
+<meta name="description" content="Clock solitaire">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Clock solitaire</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+One card set is (52 cards) used in clock solitaire. Each card corresponds to
+one hour.
+
+<p>
+<pre><tt>
+<tt>J</tt> 		 one o'clock 
+<tt>2,3,...,10</tt> 		 2 o'clock, 3 o'clock etc. 
+<tt>A</tt> 		 11 o'clock 
+<tt>Q</tt> 		 12 o'clock 
+<tt>K</tt> 		 centre of the clock board
+</tt></pre>
+
+<p>
+We give out cards placing (covers up) 4 cards per each hour and centre of
+clock board. The aim if the game is to uncover all the cards and rearranging
+them so that each card lies on its corresponding hour.
+
+<p>
+
+<p>
+<br>
+The first move is to uncover the lowest card from the centre. Holding one
+card in hand we can make only one sort of movement - place the card on its
+corresponding hour (or in the centre if it is a king) and take the lowest
+card from its heap. We iterate this procedure as long as possible.
+
+<p>
+The game is successful if you manage to uncover all the cards and -
+consequently - lost if even single card remains uncovered.
+
+<p>
+
+<p>
+<br>
+Widely known International Association of Solitaire Fans was curious which
+card sequence produces best results (meaning highest number of successful
+games). You are to help them by writing a program which reads the initial
+cards layout and checks how many of 52 cyclic shifts of this string are
+successful.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Each input file contains a few sequences of 52 cards separated by end line
+marks. We give out cards clockwise, starting from the lowest on the first hour
+and finishing with the uppermost in the center. End if file is marked by a
+line contains 0.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each card sequence print one line with the number of successful games
+among 52 its cyclic shifts.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p><pre>
+7 J 9 3 J Q K A 2 3 4 5 6 7 8 9 T 8 Q K A 2 3 4 5 6 7 8 9 T J Q K A 2 3 4 5 6 7 8 9 T J Q K A 2 T 4 5 6
+0
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+4
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,108 @@
+<p>
+A polynomial p(x) of degree n can be used to approximate a function f(x) by setting the coeficients of
+p(x) to match the first n coeficients of the power series of f(x) (expanded about x = 0). For example,
+
+<p align="center">
+<img src="2101a.gif">
+
+<p style='line-height:25.0pt'>
+Unfortunately, polynomials are "nice" and they do not work well when they are used to approximate
+functions that behave poorly (e.g. those with singularities). To overcome this problem, we can instead
+approximate functions by rational functions of the form <i>p(x)/q(x)</i>, where <i>p(x)</i> and <i>q(x)</i>
+are polynomials. You have been asked by Approximate Calculation Machinery to solve this problem, so they can
+incorporate your solution into their approximate calculation software.
+
+<p>
+Given <i>m</i>, <i>n</i>, and the first <i>m + n</i> coeficients of the power series of <i>f(x)</i>, we wish to compute two
+polynomials <i>p(x)</i> and <i>q(x)</i> of degrees at most <i>m-1</i> and <i>n-1</i>, respectively, such that the power series
+expansion of <i>q(x)·f(x)-p(x)</i> has <i>0</i> as its first <i>m+n-1</i> coefficients, and <i>1</i> as its coefficient corresponding
+to the <i>x<sup>m+n-1</sup></i> term. In other words, we want to find <i>p(x)</i> and <i>q(x)</i> such that
+<p>
+
+<p align="center">
+<img src="2101b.gif">
+
+<p>
+where ... contains terms with powers of <i>x</i> higher than <i>m+n-1</i>. From this, f(x) can
+be approximated by <i>p(x)/q(x)</i>.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Background Definitions</a>&nbsp;</font>
+</h2>
+
+<p>
+A polynomial <i>p(x)</i> of degree n can be written as <i>p<sub>0</sub> + p<sub>1</sub>·x + p<sub>2</sub>·x<sup>2</sup> + ...
++ p<sub>n</sub>·x<sup>n</sup></i>, where <i>p<sub>i</sub></i>'s are integers in this problem.
+
+<p>
+A power series expansion of <i>f(x)</i> about <i>0</i> can be written as <i>f<sub>0</sub> + f<sub>1</sub>·x +
+f<sub>2</sub>·x<sup>2</sup></i> + ..., where <i>f<sub>i</sub></i>'s are integers in this problem.
+
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input will consist of multiple cases. Each case will be specified on one line, in the form
+<p>
+<i>m n f<sub>0</sub> f<sub>1</sub> ... f<sub>m+n-1</sub></i><br>
+<p>
+where <i>f<sub>i</sub></i> is the coefficient of <i>x<sup>i</sup></i> in the power series expansion
+of <i>f</i>. You may assume that <i>1&le;m</i>, <i>1&le;n&le;4</i>, <i>2&le;m+n&le;10</i>, and <i>f<sub>i</sub></i> are
+integers such that |<i>f<sub>i</sub></i>|&le;5. The end of input will be indicated by a line containing
+<i>m=n=0</i>, and no coefficients for <i>f</i>. You may assume that there is a unique solution for the
+given input.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, print two lines of output. Print the polynomial <i>p(x)</i> on the first line, and then <i>q(x)</i>
+on the second line. The polynomial <i>p(x)</i> should be printed as a list of pairs <i>(p<sub>i</sub>,i)</i> arranged in ascending
+order in i, such that <i>p<sub>i</sub></i> is a non-zero coefficient for the term <i>x<sup>i</sup></i>. Each non-zero coefficient <i>p<sub>i</sub></i> should be
+printed as <i>a/b</i>, where <i>b > 0</i> and <i>a/b</i> is the coefficient expressed in lowest terms. In addition, if <i>b = 1</i>
+then print only <i>a</i> (and omit <i>b</i>). If <i>p(x) = 0</i>, print a line containing only <i>(0,0)</i>. Separate the pairs in
+the list by one space. The polynomial <i>q(x)</i> should be printed in the same manner. Insert a blank line
+between cases.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 2 0 0 1 1
+4 2 1 2 3 4 5 -2
+1 1 2 3
+1 4 -5 0 -2 1-2
+0 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+(0,0)
+(1,1)
+
+(-4/33,0) (-1/11,1) (-2/33,2) (-1/33,3)
+(-4/33,0) (5/33,1)
+
+(2/3,0)
+(1/3,0)
+
+(25/6,0)
+(-5/6,0) (1/3,2) (-1/6,3)
+</pre>
+
+<p>

@@ -1,0 +1,75 @@
+
+
+<html>
+<head>
+<title>Telephone Tangles</title>
+<meta name="description" content="Telephone Tangles">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Telephone Tangles</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A large company wishes to monitor the cost of phone calls made by its
+personnel.  To achieve this the PABX logs, for each call, the number
+called (a string of up to 15 digits) and the duration in minutes.
+Write a program to process this data and produce a report specifying
+each call and its cost, based on standard Telecom charges.
+<p>
+<p>
+International (IDD) numbers start with two zeroes (00) followed by a country
+code (1-3 digits) followed by a subscriber's number (4-10 digits).
+National (STD) calls start with one zero (0) followed by an area code
+(1-5 digits) followed by the subscriber's number (4-7 digits).  The
+price of a call is determined by its destination and its duration.
+Local calls start with any digit other than 0 and are free.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will be in two parts.  The first part will be a table of IDD and STD
+codes, localities and prices as follows:
+<p>
+<blockquote> Code <img width="13" height="21" align="MIDDLE" alt="tex2html_wrap_inline45" src="139img1.gif"> Locality name$price in cents per minute
+</blockquote>
+<p>
+where  <img width="13" height="21" align="MIDDLE" alt="tex2html_wrap_inline45" src="139img1.gif">  represents a space.  Locality names are 25 characters
+or less.  This section is terminated by a line containing 6 zeroes (000000).
+<p>
+<p>
+The second part contains the log and will consist of a series of
+lines, one for each call, containing the number dialled and the
+duration.  The file will be terminated a line containing a single <tt>#</tt>.
+The numbers will not necessarily be tabulated, although there will be
+at least one space between them.  Telephone numbers will not be
+ambiguous.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output will consist of the called number, the country or area called, the
+subscriber's number, the duration, the cost per minute and the total cost
+of the call, as shown below.  Local calls are costed at zero.  If the number
+has an invalid code, list the area as ``<tt>Unknown</tt>'' and the cost as -1.00.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>088925 Broadwood$81
+03 Arrowtown$38
+0061 Australia$140
+000000
+031526        22
+0061853279  3
+0889256287213   122
+779760 1
+002832769 5
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<tt>
+<p> <img width="450" height="115" align="BOTTOM" alt="tabular28" src="139img2.gif"> <p>
+</tt>
+<p>
+</body>
+</html>

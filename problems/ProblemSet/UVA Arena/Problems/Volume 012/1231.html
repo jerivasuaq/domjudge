@@ -1,0 +1,110 @@
+
+<p>
+In the first morning of every summer, when the first ray of sunlight breaks into the oak forest, Jayjay, the flying squirrel, quickly climbs to the top of an oak tree in the forest. From there, he starts his descent to the ground, and tries to gather as many acorns from the trees on his way down. Being a flying squirrel, Jayjay can choose, at any moment, to climb down the tree trunk or to fly from one tree to any other tree on his descending journey. However, he loses <span class="MATH"><i>f</i></span>
+<tex2html_verbatim_mark> feet of height every time he flies from one tree to another. 
+
+<p>
+Suppose the forest has <span class="MATH"><i>t</i></span>
+<tex2html_verbatim_mark> oak trees, and all the trees have the same height of <span class="MATH"><i>h</i></span>
+<tex2html_verbatim_mark> feet. Given the height of every acorn on each tree, write a program to compute the maximal possible number of acorns Jayjay can collect by choosing a tree to climb and descend as described. 
+
+<p>
+Figure 2 shows an example of <span class="MATH"><i>t</i> = 3</span>
+<tex2html_verbatim_mark> oak trees with three, six, and five acorns, respectively. The white circles and grey line indicate a path for Jayjay to collect the maximal possible number of eight acorns, assuming that the height he loses for each flight is <span class="MATH"><i>f</i> = 2</span>
+<tex2html_verbatim_mark>. 
+
+<p>
+<div align="CENTER">
+
+<img width="871" height="731" align="BOTTOM" border="0" src="p4106.png" alt="\epsfbox{p4106.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of a line containing the number <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark> of datasets, followed by <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark> datasets, followed by a line containing the number `<tt>0</tt>'. 
+
+<p>
+The first line of each dataset contains three integers, <span class="MATH"><i>t</i></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>h</i></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>f</i></span>
+<tex2html_verbatim_mark>, separated by a blank. The first integer <span class="MATH"><i>t</i></span>
+<tex2html_verbatim_mark> is the number of oak trees in the forest. The second integer <span class="MATH"><i>h</i></span>
+<tex2html_verbatim_mark> is the height (in feet) of all the oak trees. The third integer, <span class="MATH"><i>f</i></span>
+<tex2html_verbatim_mark>, is the height (in feet) that Jayjay loses every time he flies from one tree to another. You may assume that <span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4106img2.png" alt="$ \le$"><i>t</i></span>
+<tex2html_verbatim_mark>, 
+<span class="MATH"><i>h</i><img width="18" height="31" align="MIDDLE" border="0" src="4106img2.png" alt="$ \le$">2000</span>
+<tex2html_verbatim_mark>, and 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4106img2.png" alt="$ \le$"><i>f</i><img width="18" height="31" align="MIDDLE" border="0" src="4106img2.png" alt="$ \le$">500</span>
+<tex2html_verbatim_mark>. 
+
+<p>
+The first line of each dataset is followed by <span class="MATH"><i>t</i></span>
+<tex2html_verbatim_mark> lines. The <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th line specifies the height of every acorn on the <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th tree. The line begins with a non-negative integer <span class="MATH"><i>a</i></span>
+<tex2html_verbatim_mark> that specifies how many acorns the <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th tree has. Each of the following <span class="MATH"><i>a</i></span>
+<tex2html_verbatim_mark> integers <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> indicates that an acorn is at height <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> on the <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th tree. The positive integers in each line are sorted in ascending order, and repetitions are allowed. Thus, there can be more than one acorn at the same height on the same tree. You can assume that 
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="4106img2.png" alt="$ \le$"><i>a</i><img width="18" height="31" align="MIDDLE" border="0" src="4106img2.png" alt="$ \le$">2000</span>
+<tex2html_verbatim_mark>, for each <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The output consists of one line for each dataset. The <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark>-th line contains one single integer, which is the maximal possible number of acorns Jayjay can collect in one single descent for dataset <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark>.
+
+<p>
+
+<p>
+<br>
+
+<span class="textbf">Note:</span>
+This dataset and Jayjay's path to collect the maximal number of 8 acorns are shown in Figure 2.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+1 
+3 10 2 
+3 1 4 10 
+6 3 5 7 8 9 9 
+5 3 4 5 6 9 
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+8
+</pre>
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

@@ -1,0 +1,108 @@
+
+
+<html>
+<head>
+<title>Triangle</title>
+<meta name="description" content="Triangle">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Triangle</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A triangle is a basic shape of planar geometry. It consists of three straight
+lines and three angles in between. Figure 1 shows how the sides and angles
+are usually labeled.
+<p>
+<p><a name="27">&#160;</a> <img align="BOTTOM" alt="figure22" src="194img1.gif"> <br>
+<strong>Figure:</strong> Triangle<br>
+<p>
+<p>
+A look into a book about geometry shows that many formulas for triangles
+exist:
+<p>
+<p> <img width="303" height="16" align="BOTTOM" alt="displaymath48" src="194img2.gif"> <p>
+<p>
+<p> <img width="329" height="39" align="BOTTOM" alt="displaymath50" src="194img3.gif"> <p>
+<p>
+<p> <img width="322" height="16" align="BOTTOM" alt="displaymath52" src="194img4.gif"> <p>
+<p>
+<p> <img width="337" height="17" align="BOTTOM" alt="displaymath54" src="194img5.gif"> <p>
+<p>
+<p> <img width="364" height="38" align="BOTTOM" alt="displaymath56" src="194img6.gif"> <p>
+<p>
+The values of <i>a</i>, <i>b</i>, <i>c</i>,  <img width="10" height="8" align="BOTTOM" alt="tex2html_wrap_inline64" src="194img7.gif"> ,  <img width="10" height="25" align="MIDDLE" alt="tex2html_wrap_inline66" src="194img8.gif"> ,
+and  <img width="9" height="17" align="MIDDLE" alt="tex2html_wrap_inline68" src="194img9.gif">  form a set of six parameters that fully define a triangle.
+If a large enough subset of these parameters is given, the missing ones
+can be calculated by using the formulas above.
+<p>
+<p>
+You are to write a program that calculates the missing parameters for a
+given subset of the six parameters of a triangle. For some sets of parameters,
+it is not possible to calculate the triangle because either too few is known
+about the triangle or the parameters would lead to an invalid triangle.
+The sides of a valid triangle are greater than 0 and the angles are greater
+than 0 and less than  <img width="8" height="8" align="BOTTOM" alt="tex2html_wrap_inline70" src="194img10.gif"> . Your program should detect this case and output:
+<tt>&quot;Invalid input.&quot;</tt> The same phrase should be output if
+more than the minimal set needed to compute the triangle is given but the
+parameters conflict with each other, e.g. all three angles are given but
+their sum is greater than  <img width="8" height="8" align="BOTTOM" alt="tex2html_wrap_inline70" src="194img10.gif"> .
+<p>
+<p>
+Other sets of parameters can lead to more than one but still a finite number
+of valid solutions for the triangle. In such a case, your program should
+output: <tt>&quot;More than one solution.&quot;</tt>
+<p>
+In all other cases, your program should compute the missing parameters and
+output all six parameters.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line of the input file contains a number indicating the number
+of parameter sets to follow. Each following line consists of six numbers,
+separated by a single blank character. The numbers are the values for the
+parameters <i>a</i>,  <img width="10" height="8" align="BOTTOM" alt="tex2html_wrap_inline64" src="194img7.gif"> , <i>b</i>,  <img width="10" height="25" align="MIDDLE" alt="tex2html_wrap_inline66" src="194img8.gif"> , <i>c</i>, and
+ <img width="9" height="17" align="MIDDLE" alt="tex2html_wrap_inline68" src="194img9.gif">  respectively. The parameters are labeled as shown in figure
+1. A value of -1 indicates that the corresponding parameter is undefined
+and has to be calculated. All floating-point numbers include at least eight
+significant digits.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Your program should output a line for each set of parameters found in the
+input file. If a unique solution for a valid triangle can be found for the
+given parameters, your program should output the six parameters <i>a</i>,
+ <img width="10" height="8" align="BOTTOM" alt="tex2html_wrap_inline64" src="194img7.gif"> , <i>b</i>,  <img width="10" height="25" align="MIDDLE" alt="tex2html_wrap_inline66" src="194img8.gif"> , <i>c</i>,  <img width="9" height="17" align="MIDDLE" alt="tex2html_wrap_inline68" src="194img9.gif"> , separated by
+a blank character. Otherwise the line should contain the phrase
+<p>
+<tt>&quot;More than one solution.&quot;</tt> or
+<p>
+<tt>&quot;Invalid input.&quot;</tt>
+<p>
+as explained above.
+<p>
+<p>The numbers in the output file should include at least six
+significant digits. Your calculations should be precise enough
+to get the six most significant digits correct (i.e. a relative
+error of 0.000001 is allowed).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+4
+47.9337906847 0.6543010109 78.4455517579 1.4813893731 66.5243757656 1.0059022695
+62.72048064 2.26853639 -1.00000000 0.56794657 -1.00000000 -1.00000000
+15.69326944 0.24714213 -1.00000000 1.80433105 66.04067877 -1.00000000
+72.83685175 1.04409241 -1.00000000 -1.00000000 -1.00000000 -1.00000000</pre>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+47.933791 0.654301 78.445552 1.481389 66.524376 1.005902
+62.720481 2.268536 44.026687 0.567947 24.587225 0.305110
+Invalid input.
+Invalid input.</pre>
+<p>
+</body>
+</html>

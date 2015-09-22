@@ -1,0 +1,89 @@
+
+
+<html>
+<head>
+<title>Matrix Chain Multiplication</title>
+<meta name="description" content="Matrix Chain Multiplication">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Matrix Chain Multiplication</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Suppose you have to evaluate an expression like A*B*C*D*E where A,B,C,D and E are matrices.
+Since matrix multiplication is associative, the order in which multiplications are performed is
+arbitrary. However, the number of elementary multiplications needed strongly depends on the
+evaluation order you choose.
+<p>
+<p>
+For example, let A be a 50*10 matrix, B a 10*20 matrix and C a 20*5 matrix.
+There are two different strategies to compute A*B*C, namely (A*B)*C and A*(B*C).
+<p>
+The first one takes 15000 elementary multiplications, but the second one only 3500.
+<p>
+<p>
+Your job is to write a program that determines the number of elementary multiplications needed for
+a given evaluation strategy.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input Specification</a></font></h2>
+<p>
+Input consists of two parts: a list of matrices and a list of expressions.
+<p>
+The first line of the input file contains one integer <i>n</i> ( <img width="81" height="25" align="MIDDLE" alt="tex2html_wrap_inline28" src="442img1.gif"> ), representing the number of
+matrices in the first part. The next <i>n</i> lines each contain one capital letter, specifying the name of the
+matrix, and two integers, specifying the number of rows and columns of the matrix.
+<p>
+<p>
+The second part of the input file strictly adheres to the following syntax (given in EBNF):
+<p>
+<pre>SecondPart = Line { Line } &lt;EOF&gt;
+Line       = Expression &lt;CR&gt;
+Expression = Matrix | &quot;(&quot; Expression Expression &quot;)&quot;
+Matrix     = &quot;A&quot; | &quot;B&quot; | &quot;C&quot; | ... | &quot;X&quot; | &quot;Y&quot; | &quot;Z&quot;</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output Specification</a></font></h2>
+<p>
+For each expression found in the second part of the input file, print one line containing the word &quot;<tt>error</tt>&quot; if evaluation of the expression leads to an error due to non-matching matrices. Otherwise print one line containing the number of elementary multiplications needed to evaluate the expression in the way specified by the parentheses.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>9
+A 50 10
+B 10 20
+C 20 5
+D 30 35
+E 35 15
+F 15 5
+G 5 10
+H 10 20
+I 20 25
+A
+B
+C
+(AA)
+(AB)
+(AC)
+(A(BC))
+((AB)C)
+(((((DE)F)G)H)I)
+(D(E(F(G(HI)))))
+((D(EF))((GH)I))</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>0
+0
+0
+error
+10000
+error
+3500
+15000
+40500
+47500
+15125</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,139 @@
+
+
+<html>
+<head>
+<title>The Net</title>
+<meta name="description" content="The Net">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The Net</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Taking into account the present interest in the Internet, a smart information
+routing becomes a must. This job is done by routers situated in the nodes of
+the network. Each router has its own list of routers which are visible for
+him (so called ``routing table"). It is obvious that the information should be
+directed in the way which minimizes number of routers it has to pass (so
+called ``hop count").
+
+<p>
+
+<p>
+<br>
+Your task is to find an optimal route (minimal hop count) for the given
+network form the source of the information to its destination.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+First line contains number of routers in the network (<i>n</i>). Next <i>n</i> lines contain
+description of the network. Each line contains router <i>ID</i>, followed by a hyphen
+and comma separated list of <i>ID</i>s of visible routers. The list is sorted in
+ascending order. Next line contains a number of routes (<i>m</i>) you should determine.
+The consecutive <i>m</i> lines contain starting and ending routers for the route separated by a single space. 
+
+<p>
+Input data may contain descriptions of many networks.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each network you should output a line with 5 hyphens and then, for each
+route, a list of routers passed by information sent from starting to
+destination routers. 
+
+<p>
+In case passing of information is impossible (no
+connection exists) you should output a string ``<tt>connection impossible</tt>". In case
+of multiple routes with the same `hop count' the one with lower <i>ID</i>s should be
+outputted (in case of route form router 1 to 2 as 1 3 2 and 1 4 2 the 1 3 2 should be outputted).
+
+<p>
+
+<p><p>
+<br>
+
+<b>Assumptions:</b> A number of routers is not greater than 300 and there are at least 2 routers in the network. Each routers ``sees" no more than 50 routers.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6
+1-2,3,4
+2-1,3
+3-1,2,5,6
+4-1,5
+5-3,4,6
+6-3,5
+6
+1 6
+1 5
+2 4
+2 5
+3 6
+2 1
+10
+1-2
+2-
+3-4
+4-8
+5-1
+6-2
+7-3,9
+8-10
+9-5,6,7
+10-8
+3
+9 10
+5 9
+9 2
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+-----
+1 3 6
+1 3 5
+2 1 4
+2 3 5
+3 6
+2 1
+-----
+9 7 3 4 8 10
+connection impossible
+9 6 2
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+</body>
+</html>
+

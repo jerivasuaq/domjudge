@@ -1,0 +1,118 @@
+
+
+<html>
+<head>
+<title>Prime Land</title>
+<meta name="description" content="Prime Land">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Prime Land</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Everybody in the Prime Land is using a prime base number system. In this system, each
+positive integer <i>x</i> is represented as follows: Let 
+
+<img width="59" height="34" align="MIDDLE" border="0" src="516img1.gif" alt="$\{p_i\}_{i=0}^{\infty}$">
+denote the increasing sequence of all prime
+numbers. We know that <i>x</i> &gt; 1 can be represented in only one way in the form of product of
+powers of prime factors. This implies that there is an integer <i>k</i><sub><i>x</i></sub> and uniquely determined integers
+
+
+
+<font size="4">e<sub>k<sub>x</sub></sub>,
+e<sub>k<sub>x</sub>-1</sub>,...,e<sub>1</sub>,e<sub>0</sub>,(<i>e</i><sub><i>k</i><sub><i>x</i></sub></sub> &gt;
+0),</font> that 
+
+
+<img width="229" height="38" align="MIDDLE" border="0" src="516img3.gif" alt="$x = p_{k_x}^{e_{k_x}} \cdot p_{k_x-1}^{e_{k_x-1}} \cdot \dots \cdot p_1^{e_1} \cdot p_{0}^{e_0}$">.
+The sequence
+
+<div align="CENTER">
+
+
+
+<img width="160" height="31" src="516img4.gif" alt="\begin{displaymath}(e_{k_x}, e_{k_x-1}, \dots, e_1, e_0)\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+is considered to be the representation of <i>x</i> in prime base number system.
+
+<p>
+It is really true that all numerical calculations in prime base number system can seem to us
+a little bit unusual, or even hard. In fact, the children in Prime Land learn to add to subtract
+numbers several years. On the other hand, multiplication and division is very simple.
+
+<p>
+Recently, somebody has returned from a holiday in the Computer Land where small smart
+things called computers have been used. It has turned out that they could be used to make
+addition and subtraction in prime base number system much easier. It has been decided to make
+an experiment and let a computer to do the operation ``minus one''.
+
+<p>
+Help people in the Prime Land and write a corresponding program.
+
+<p>
+For practical reasons we will write here the prime base representation as a sequence of such <i>p</i><sub><i>i</i></sub>
+and <i>e</i><sub><i>i</i></sub> from the prime base representation above for which <i>e</i><sub><i>i</i></sub> &gt; 0. We will keep decreasing order with regard to <i>p</i><sub><i>i</i></sub>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file consists of lines (at least one) each of which except the last contains prime base
+representation of just one positive integer greater than 2 and less or equal 32767. All numbers in
+the line are separated by one space. The last line contains number 0.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output file contains one line for each but the last line of the input file. If <i>x</i> is a positive
+integer contained in a line of the input file, the line in the output file will contain <i>x</i> - 1 in prime
+base representation. All numbers in the line are separated by one space. There is no line in the
+output file corresponding to the last ``null'' line of the input file.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+17 1
+5 1 2 1
+509 1 59 1
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 4
+3 2
+13 1 11 1 7 1 5 1 3 1 2 1
+</pre>
+
+<p>
+
+<p>
+</body>
+</html>

@@ -1,0 +1,257 @@
+
+
+<html>
+<head>
+<title>Shark</title>
+<meta name="description" content="Shark">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Shark</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+After several attacks by sharks this summer, namely in Florida and
+in Australia, but also in the Algarve, in southern Portugal, the
+local beach guardians are worried. They got together and decided
+to implement for the next beach season an automated shark
+detection system. Its a simple idea. They will rent airtime in a
+commercial satellite and take pictures of the seashore using
+submarine vision mode. In this operating mode, cameras are able to
+photograph underwater sea animals with incredible precision, even
+if the waters are not very clear.
+
+<p>
+
+<p>
+<br>
+The photos are transmitted by
+radio to the central computer of the beach guardians association,
+where they are analyzed. The main goal of such processing is to
+detect sharks, in order to issue an immediate shark alarm to the
+corresponding beach, if that is the case.
+
+<p>
+
+<p>
+<br>
+Processing is rather
+sophisticated, since not all sea animals are sharks: there are
+small fish (sardines), slightly larger fish (mackerel, salmons),
+large fish (groupers), sea mammals (dolphins, whales), reptiles
+(turtles). When seen from afar (from the satellite, that is),
+dolphins are similar to sharks, but the system must distinguish
+them or we risk raising false alarms just because a group of
+easygoing dolphins has approached the beach to play with the
+tourists.
+
+<p>
+
+<p>
+<br>
+Satellite photographs are digitally preprocessed and are
+now represented by a grid. In each square in the grid there is
+either a lower case letter (from `<tt>a</tt>' to `<tt>z</tt>') or there is nothing,
+i.e., the square is empty. Each sea animal is represented by a set
+of adjacent squares in the grid all bearing the same letter. Two
+grid squares are adjacent if they have one side in common.
+
+<p>
+
+<p>
+<br>
+All animals have a distinct rectangular shape, except sharks, as
+explained below. Single square animals (i.e., animals which fill
+one square only) are sardines. Two square animals (filling a 1 by
+2 rectangle) are mackerels; longer animals with width 1 are
+salmons. Square animals larger than sardines are turtles (there
+can be 2 by 2, 3 by 3, etc., turtles). Groupers are rectangular
+with width 2 and length greater than 2. Dolphins are rectangular
+with width 3 and length greater than 3. Whales are rectangular
+with width 4 and length greater than 4. Finally sharks are similar
+to dolphins, having width 3, but their shape is not a rectangle.
+As a matter of fact, the tail fin for dolphins is horizontal and
+that is what gives dolphins a digitalized rectangular shape.
+Sharks, on the other hand, have a vertical tail fin, which is
+recognized by an extra square along the middle row of squares that
+represent the body of the shark.
+
+<p>
+
+<p>
+<br>
+All other shapes will have been
+erased during preprocessing, which guarantees that no unknown
+species can occur in the digitalized representation. As an
+example, consider the following photograph, where we can observe
+all the mentioned species.
+
+<p>
+<div align="CENTER">
+<table cols="12" border="" frame="BOX" rules="GROUPS">
+<colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER">
+<tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">
+b </td><td></td><td></td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> c </td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> f </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td valign="BASELINE" align="CENTER" nowrap=""> h </td><td></td><td></td><td></td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">b </td><td valign="BASELINE" align="CENTER" nowrap=""> a </td><td valign="BASELINE" align="CENTER" nowrap=""> a </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> c </td><td valign="BASELINE" align="CENTER" nowrap=""> a </td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> j </td><td valign="BASELINE" align="CENTER" nowrap=""> k </td><td valign="BASELINE" align="CENTER" nowrap=""> y </td><td valign="BASELINE" align="CENTER" nowrap=""> y </td><td valign="BASELINE" align="CENTER" nowrap=""> y </td></tr>
+</tbody><tbody>
+<tr><td></td><td></td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> c </td><td valign="BASELINE" align="CENTER" nowrap=""> a </td><td valign="BASELINE" align="CENTER" nowrap=""> k </td><td></td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> y </td><td valign="BASELINE" align="CENTER" nowrap=""> y </td><td valign="BASELINE" align="CENTER" nowrap=""> y </td></tr>
+</tbody><tbody>
+<tr><td></td><td></td><td></td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> c </td><td valign="BASELINE" align="CENTER" nowrap=""> a </td><td></td><td></td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> y </td><td valign="BASELINE" align="CENTER" nowrap=""> y </td><td valign="BASELINE" align="CENTER" nowrap=""> y </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td></td><td></td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> u </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> u </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> z </td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td></tr>
+</tbody><tbody>
+<tr><td></td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">t </td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td><td valign="BASELINE" align="CENTER" nowrap=""> u </td></tr>
+</tbody><tbody>
+<tr><td></td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td valign="BASELINE" align="CENTER" nowrap=""> t </td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td valign="BASELINE" align="CENTER" nowrap=""> s </td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> u </td><td></td></tr>
+</tbody><tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> h </td><td valign="BASELINE" align="CENTER" nowrap=""> h </td><td></td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td></td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> f </td><td valign="BASELINE" align="CENTER" nowrap=""> f </td><td valign="BASELINE" align="CENTER" nowrap=""> f </td><td valign="BASELINE" align="CENTER" nowrap=""> h </td><td valign="BASELINE" align="CENTER" nowrap=""> h </td><td></td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td></td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> f </td><td valign="BASELINE" align="CENTER" nowrap=""> f </td><td valign="BASELINE" align="CENTER" nowrap=""> f </td><td valign="BASELINE" align="CENTER" nowrap=""> h </td><td valign="BASELINE" align="CENTER" nowrap=""> h </td><td></td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> h </td><td valign="BASELINE" align="CENTER" nowrap=""> h </td><td></td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> p </td><td valign="BASELINE" align="CENTER" nowrap=""> p </td><td valign="BASELINE" align="CENTER" nowrap=""> p </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> b </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td valign="BASELINE" align="CENTER" nowrap=""> g </td><td></td><td valign="BASELINE" align="CENTER" nowrap=""> p </td><td valign="BASELINE" align="CENTER" nowrap=""> p </td><td valign="BASELINE" align="CENTER" nowrap=""> p </td></tr>
+</tbody>
+</colgroup></colgroup></colgroup></colgroup></colgroup></colgroup></colgroup></colgroup></colgroup></colgroup></colgroup></colgroup></table>
+
+</div>
+
+<p>
+On the upper left corner
+we see 3 mackerels. More to the right there are 2 salmons (one
+bigger than the other). Still more to the right, 6 beautiful
+sardines swim merrily. On the upper right corner, a giant turtle
+watches a ferocious shark, just below. There are 2 other smaller
+sharks and a large dolphin in the center rows. On the lower left
+corner a whale peacefully sits next to a second dolphin. On the
+lower right corner, 3 groupers wonder what they are doing in this
+crowded part of the ocean.
+
+<p>
+
+<p>
+<br>
+Your task is to write a program
+that processes a digitalized representation of a sea photograph in
+the format explained above and outputs the number of sardines, the
+number of mackerels, the number of salmons, the number of
+groupers, the number of turtles, the number of dolphins, the
+number of whales and the number of sharks present.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+The first line of input contains two numbers, <span class="MATH"><i>L</i></span> and <span class="MATH"><i>C</i></span>, representing
+the number of lines and the number of columns in
+the grid, respectively. Each of the remaining <span class="MATH"><i>L</i></span> lines contains
+exactly <span class="MATH"><i>C</i></span> characters, which are either lowercase letters or
+points. These lines represent the grid. A letter means that an
+animal or a part of an animal occupies the corresponding
+square. Points indicate that the corresponding square is empty.
+
+<p>
+The maximum number of lines and number of columns
+for the grid is 64.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+The output is just one line with 8 numbers: the number of sardines,
+the number of mackerels, the number of salmons,
+the number of groupers, the number of turtles, the number of dolphins,
+the number of whales and the number of sharks,
+as counted in the input. There is a single space between consecutive
+numbers and nothing else on the line (other than
+the end of line marker).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+16 12
+b...c.fgh...
+baabca.jkyyy
+...bcak..yyy
+....ca...yyy
+zzzzzz...uuu
+zzzzzz.s.uuu
+zzzzzzsssuuu
+.tttt.sssuuu
+ttttt.sssuuu
+.tttt.sss.u.
+.........hh.
+bbbb..fffhh.
+bbbb..fffhh.
+bbbbgggg.hh.
+bbbbgggg.ppp
+bbbbgggg.ppp
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+6 3 2 3 1 2 1 3
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Pedro Guerreiro, MIUP'2001
+</address>
+</body>
+</html>
+

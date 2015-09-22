@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>UP ACM Programming Contest (2002) / Round 2: Problem A</title>
+</head>
+
+<body>
+
+<p><p>
+<br>
+
+<div align="CENTER">
+<font size="+2"><b>Overlapping Rectangles</b></font></div>
+
+<p><p>
+<br>
+Consider a set of rectangles in <i>2D</i> space as illustrated in the
+given figure.  Overlapping or not, they define a set of regions with
+different shapes. In the example of the figure, there are twelve regions,
+identified from <i>A</i> to <i>L</i>).  Let <i>OD</i> (Overlapping
+Depth) be the number of rectangles that overlap in each region (in the
+figure, the number associated to each region corresponds to its
+<b>OD</b>).
+
+Consider now a horizontal line, <i>y=y<sub>L</sub></i>. This line traverses the above
+structure and finds different values of <i>OD</i>. Note that there can
+be repeated values of <i>OD</i>, hence, there can be more than one maximum
+value of <i>OD</i>.
+
+In the example of the figure, the maximum value of <i>OD</i> is 3 and
+it appears wice (regions <i>E</i> and <i>G</i>).
+
+<p>
+<img src="p883.gif">
+<p>
+
+<h2>Problem</h2>
+
+Given a set of rectangles and a horizontal line, the problem consists
+in the evaluation of the <i>OD<sub>FM</sub></i>, that is the <u>first</u>
+maximum value of <i>OD</i>, found when the horizontal line is followed from
+left to right (this corresponds to region <i>E</i>, in the example of the
+figure). The result must also contain the correspondent limits,
+<i>x<sub>Left</sub></i> and <i>x<sub>Right</sub></i>. In order to avoid
+numerical problems, it is ensured that there are no coincidences
+between edges of different rectangles or between edges and the horizontal line.
+
+<h2>Input</h2>
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+The input is a text file, containing several lines as follows. The first
+text line of the input contains the number <i>NR</i> (integer format) of
+rectangles. It is followed by <i>NR</i> text lines containing, each
+one, with the coordinates of two opposed vertices of a rectangle, in
+the sequence <i>x<sub>1</sub></i>, <i>y<sub>1</sub></i>,
+<i>x<sub>2</sub></i>, <i>y<sub>2</sub></i>, separated by single
+spaces. No order is supposed, in this case, for point 1 and point 2
+and numbers may be written in integer or decimal format.
+
+The next text line is the number <i>NL</i> (integer format) of
+horizontal lines to process. It is followed by <i>NL</i> text lines,
+each one containing the value <i>y<sub>L</sub></i> defining the
+horizontal line (integer or decimal format).
+
+The separator between values in a text line is the space character.
+
+<h2>Output</h2>
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+
+<i>NL</i> text lines, each one containing the three values that
+characterise the problem solution for a horizontal line (in this
+order): <i>OD<sub>FM</sub></i> (integer format), <i>x<sub>Left</sub></i> and 
+<i>x<sub>Right</sub></i> (decimal format with two decimal digits). If
+the horizontal line does not intersect any rectangle, the output text
+line contains only the value 0 (integer format). 
+
+The separator between values in a text line is the space
+character. The output text lines must keep the order of the input text
+lines related to horizontal lines.
+
+<h2>Sample Input</h2>
+
+<pre>
+1
+
+3
+-5.00 -2.00 -1.00 2.0
+2.5 -1 -4.5 1.0
+4 3 0 -4
+4
+-0.2
+-4.50
+-3.8
+1.50
+</pre>
+
+<h2>Sample Output</h2>
+
+<pre>
+2 -4.50 -1.00
+0
+1 0.00 4.00
+1 -5.00 -1.00
+</pre>
+
+<p>
+<br><hr>
+<i>
+Augusto Sousa, CPUP'2002 Round 2<br>
+University of Porto Local Contest
+</i>
+
+</body>
+</html>

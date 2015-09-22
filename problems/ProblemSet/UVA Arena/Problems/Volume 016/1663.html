@@ -1,0 +1,67 @@
+<p>
+Mike is the owner of a cheese factory. He has <span class="MATH">2<sup>N</sup></span>
+<tex2html_verbatim_mark> cheeses and each cheese is given a binary number from <span class="MATH">00...0</span>
+<tex2html_verbatim_mark> to <span class="MATH">11...1</span>
+<tex2html_verbatim_mark>. To keep his cheese free from viruses, he made himself a purifying machine to clean virus-infected cheese. As a talented programmer, his purifying machine is built in a special way. His purifying machine has <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> switches, each switch has three states, <tt>1</tt>, <tt>0</tt> and <tt>*</tt>. An operation of this machine is a cleaning action according to the states of the <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> switches. During one operation, at most one switch can be turned to state <tt>*</tt>, which can substitute for either <tt>1</tt> or <tt>0</tt>. When the machine is turned to a specific state, an operation will clean all the cheeses with corresponding binary numbers. For example, if <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> equals 6 and the switches are turned to <tt>01*100</tt>, the cheeses numbered <tt>010100</tt> and <tt>011100</tt> are under operation by the machine. 
+
+<p>
+One day, Mike's machine was infected. When Mike found out, he had already done some operations and the cheeses operated by this infected machine were infected too. He cleaned his machine as quickly as he could, and now he needs to clean the infected cheeses with the minimum number of operations. If a cheese is infected, cleaning this cheese with the machine one or more times will make this cheese free from virus again; but if a cheese is not infected, operation on this cheese will make it go bad. 
+
+<p>
+Now given the infected operations Mike has done, you need to find out the minimum number of operations that must be performed to clean all the infected cheeses without making any clean cheese go bad.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+There are several test cases. Each test case starts with a line containing two numbers <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="3461img1.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="3461img1.png" alt="$ \le$">10, 1<img width="18" height="31" align="MIDDLE" border="0" src="3461img1.png" alt="$ \le$"><i>M</i><img width="18" height="31" align="MIDDLE" border="0" src="3461img1.png" alt="$ \le$">1000)</span>
+<tex2html_verbatim_mark>. <span class="MATH"><i>N</i></span>
+<tex2html_verbatim_mark> is the number of switches in the machine and <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark> is the number of infected operations Mike has done. Each of the following <span class="MATH"><i>M</i></span>
+<tex2html_verbatim_mark> lines contains a switch state of the machine. A test case with <span class="MATH"><i>N</i> = <i>M</i> = 0</span>
+<tex2html_verbatim_mark> ends the input and should not be processed.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, output one line containing an integer, which is the minimum number of operations Mike needs to do.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+3 3 
+*01 
+100 
+011 
+0 0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

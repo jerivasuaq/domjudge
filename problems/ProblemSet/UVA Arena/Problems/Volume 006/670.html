@@ -1,0 +1,157 @@
+
+
+<html>
+<head>
+<title>The dog task</title>
+<meta name="description" content="The dog task">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The dog task</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Hunter Bob often walks with his dog Ralph. Bob walks with a constant speed and his route is a 
+polygonal line (possibly self-
+intersecting) whose vertices are specified by <i>N</i> pairs of integers 
+(<i>X</i><sub><i>i</i></sub>, <i>Y</i><sub><i>i</i></sub>) - their Cartesian coordinates.
+
+<p>
+
+<p>
+<br>
+Ralph walks on his own way but always meets his master at the specified <i>N</i>
+points. The dog starts his journey simultaneously with Bob at the point (<i>X</i><sub>1</sub>,
+<i>Y</i><sub>1</sub>) and finishes it also simultaneously with Bob at the point (<i>X</i><sub><i>N</i></sub> , <i>Y</i><sub><i>N</i></sub>).
+
+<p>
+
+<p>
+<br>
+Ralph can travel at a speed that is up to two times greater than his master's speed. 
+While Bob travels in a straight line from one
+point to another the cheerful dog seeks trees, bushes, hummocks and all other kinds of 
+<em>interesting places</em> of the local landscape
+which are specified by <i>M</i> pairs of integers (<i>X</i>'<sub><i>j</i></sub>,<i>Y</i>'<sub><i>j</i></sub>). However, after leaving his 
+master at the point (<i>X</i><sub><i>i</i></sub> , <i>Y</i><sub><i>i</i></sub>) (where 
+
+<img width="82" height="32" align="MIDDLE" border="0" src="670img1.gif" alt="$1 \le i < N$">)
+the dog visits at most one interesting place before meeting his master again at the point 
+(
+
+<i>X</i><sub><i>i</i>+1</sub> , <i>Y</i><sub><i>i</i>+1</sub>).
+
+<p>
+
+<p>
+<br>
+Your task is to find the dog's route, which meets the above requirements and allows him to 
+visit the maximal possible number
+of interesting places. The answer should be presented as a polygonal line that represents 
+Ralph's route. The vertices of this
+route should be all points (<i>X</i><sub><i>i</i></sub> , <i>Y</i><sub><i>i</i></sub>) and the maximal number of
+interesting places (
+
+<i>X</i>'<sub><i>j</i></sub>, <i>Y</i>'<sub><i>j</i></sub>X). The latter should be visited (i.e.
+listed in the route description) at most once.
+
+<p>
+
+<p>
+<br>
+An example of Bob's route (solid line), a set of interesting places (dots) and one of the 
+best Ralph's routes (dotted line) are
+presented in the following picture:
+
+<p>
+<div align="CENTER">
+
+<img src="p670.gif">
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input is an integer L, then a blank line followed by L datasets. There is a blank line between datasets.
+
+<p>The first line of each dataset contains two integers <i>N</i> and <i>M</i>, separated
+by a space (
+
+<img width="210" height="32" align="MIDDLE" border="0" src="670img2.gif" alt="$2 \le N \le 100, 0 \le M \le 100$">). The second
+line contains <i>N</i> pairs of integers 
+
+<img width="149" height="32" align="MIDDLE" border="0" src="670img3.gif" alt="$X_1, Y_1, \dots, X_N, Y_N$">,
+separated by
+spaces, that represent Bob's route. The third line contains <i>M</i> pairs of
+integers 
+
+<img width="154" height="34" align="MIDDLE" border="0" src="670img4.gif" alt="$X'_1, Y'_1, \dots, X'_M, Y'_M$">,
+separated by spaces, that represent interesting places.
+
+<p>
+
+<p>
+<br>
+All points in the input file are different and their coordinates are integers
+not greater than 1000 by the absolute value.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The first line of each dataset should contain the single integer <i>K</i> - the
+number of vertices of the best dog's route. The second line should contain <i>K</i>
+pairs of coordinates 
+
+<img width="156" height="34" align="MIDDLE" border="0" src="670img5.gif" alt="$X''_1, Y''_1, \dots, X''_K, Y''_K$">,
+separated by spaces, that 
+represent this route. If there are
+several such routes, then you may write any of them.
+
+<p>Print a blank line between datasets.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+4 5
+1 4 5 7 5 2 -2 4
+-4 -2 3 9 1 2 -1 3 8 -3
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+6
+1 4 3 9 5 7 5 2 1 2 -2 4
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-05-22</i>
+</address>
+</body>
+</html>
+

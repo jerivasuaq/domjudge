@@ -1,0 +1,89 @@
+
+
+<html>
+<head>
+<title>Pendulum</title>
+<meta name="description" content="Pendulum">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Pendulum</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Consider a pendulum hanging on a string from a hook on a wall. When
+pushed, this pendulum will swing back and forth. Now imagine other hooks
+on the wall, placed in the path of our pendulum's string. The pendulum
+will bend around them, possibly even loop around them. In
+general, it will follow a much more complex path than before. After
+some time, the pendulum's motion will repeat, the pendulum will
+follow a <i>periodic orbit</i>. What we would like you to do
+is to compute the distance travelled by the pendulum as it completes
+one cycle of the orbit.
+<p>
+<p>
+More formally, we place a cartesian coordinate system on the wall.
+The pendulum's string is affixed at the origin (0,0).
+As usual, the <i>x</i>-axis points to the right and the <i>y</i>-axis points
+upwards. The string of the pendulum has a length of <i>r</i>. The pendulum
+is released at position (-<i>r</i>,0) and therefore starts swinging to
+the right. Furthermore, there are <i>n</i> additional hooks
+distributed over the plane which may influence the path of the pendulum.
+<p>
+<p>
+In our ideal world, the following assumptions are true:
+<p>
+<ul><li> The diameters of the hooks and of the string are zero.<li> The pendulum loses no energy (e.g. by friction).<li> The pendulum will never hit a hook, only its string will.<li> The pendulum's string is made of some futuristic material that only
+bends where it touches a hook but is otherwise rigid.
+</li></li></li></li></ul>
+<p>
+Your program should simulate the movement of the pendulum and output
+the spatial length of the periodic orbit that it finally enters. As you
+may remember from physics: due to gravity, the pendulum will never
+reach a height greater than the one it started from! That is,
+it will never get above the <i>x</i>-axis. It will either reach its initial
+height again or circle endlessly around a hook in the wall.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file contains several test cases. Each case begins with a
+line containing an integer <i>n</i> (the number of hooks,  <img width="90" height="25" align="MIDDLE" alt="tex2html_wrap_inline44" src="319img1.gif"> )
+and a real <i>r</i> (the length of the pendulum's string).
+The following <i>n</i> lines each contain two integers specifying the <i>x</i>-
+and <i>y</i>-coordinate of the corresponding hook.
+<p>
+The file ends with a case having <i>r</i> = 0, which should not be processed.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each case output a line containing the number of the
+case (<tt>`Pendulum #1'</tt>, <tt>`Pendulum #2'</tt>, etc.).
+<p>
+Then print a line that contains the distance which the pendulum travels
+for completing one cycle of its periodic orbit. Do not count the
+distance travelled to reach the starting point of the orbit. (Adhere to
+the format shown in the output sample.) The distance should be
+exact to two digits to the right of the decimal point.
+<p>
+Output a blank line after each test case.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2 16.0
+3 -4
+-3 -4
+1 18.0
+5 -12
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Pendulum #1
+Length of periodic orbit = 87.66
+
+Pendulum #2
+Length of periodic orbit = 31.42</pre>
+<p>
+</body>
+</html>

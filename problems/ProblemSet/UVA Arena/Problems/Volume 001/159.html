@@ -1,0 +1,69 @@
+
+
+<html>
+<head>
+<title>Word Crosses</title>
+<meta name="description" content="Word Crosses">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Word Crosses</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A <em>word cross</em> is formed by printing a pair of words, the first
+horizontally and the second vertically, so that they share a common
+letter. A <em>leading word cross</em> is one where the common letter is
+as near as possible to the beginning of the horizontal word, and, for
+this letter, as close as possible to the beginning of the vertical
+word. Thus DEFER and PREFECT would cross on the first 'E' in each
+word, PREFECT and DEFER would cross on the 'R'. <em>Double leading
+  word crosses</em> use two pairs of words arranged so that the two
+horizontal words are on the same line and each pair forms a leading
+word cross.
+<p>
+<p>
+Write a program that will read in sets of four words and form them (if
+possible) into double leading word crosses.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will consist of a series of lines, each line containing four
+words (two pairs). A word consists of 1 to 10 upper case letters, and
+will be separated from its neighbours by at least one space. The file
+will be terminated by a line consisting of a single <tt>#</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output will consist of a series of double leading word crosses as
+defined above. Leave exactly three spaces between the horizontal
+words. If it is not possible to form both crosses, write the message
+`<tt>Unable to make two crosses</tt>'. Leave 1 blank line
+between output sets.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>MATCHES CHEESECAKE PICNIC EXCUSES
+PEANUT BANANA VACUUM  GREEDY
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre> C
+ H
+ E
+ E
+ S
+ E          E
+ C          X
+MATCHES   PICNIC
+ K          U
+ E          S
+            E
+            S
+
+Unable to make two crosses</pre>
+<p>
+</body>
+</html>

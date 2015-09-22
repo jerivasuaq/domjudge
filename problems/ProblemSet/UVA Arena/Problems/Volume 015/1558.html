@@ -1,0 +1,140 @@
+<p>
+Christiane and Matthias are playing a new game, the <em>Number Game</em>. The rules of the
+Number Game are:
+
+<p>
+Christian and Matthias take turns in choosing integer numbers greater than or
+equal to 2. The following rules restrict the set of numbers which may be chosen:
+
+<p>
+<dl>
+<dt><strong>R1</strong></dt>
+<dd>A number which has already been chosen by one of the players or a multiple of
+  such a number cannot be chosen. (A number <span class="MATH"><i>z</i></span> is a <em>multiple</em> of a number <span class="MATH"><i>y</i></span> if <span class="MATH"><i>z</i></span>
+  can be written as <span class="MATH"><i>y</i>·<i>x</i></span> and <span class="MATH"><i>x</i></span> is a positive integer.)
+
+<p>
+</dd>
+<dt><strong>R2</strong></dt>
+<dd>A sum of two such multiples cannot be chosen either.
+
+<p>
+</dd>
+<dt><strong>R3</strong></dt>
+<dd>For simplicity, a number which is greater than 20 cannot be chosen either. This
+  enables a lot more NPCs (Non-Personal-Computers) to play this game.
+</dd>
+</dl>
+
+<p>
+The player who cannot choose any number anymore looses the Number Game.
+
+<p>
+Here is an example: Matthias starts by choosing 4. Then Christiane is not allowed to
+choose 4, 8, 12,
+etc. Let us assume her move is 3. Now, the numbers 3, 6, 9, etc. are excluded, too;
+furthermore, numbers
+like: 7 = 3 + 4, 10 = 2 <span class="MATH"><sup> . </sup></span> 3 + 4, 11 = 3 + 2 <span class="MATH"><sup> . </sup></span> 4, 13 = 3 <span class="MATH"><sup> . </sup></span> 3 + 4,
+...are not available. So, in fact, the only
+numbers left are 2 and 5. Matthias now says 2. Since 5 = 2 + 3 is now forbidden,
+too, he wins because there is no number for Christiane's move left.
+
+<p>
+Your task is to write a program which will help to play the Number Game. In general,
+i.e., without
+rule <b>R3</b>, this game may go on forever. However, with rule <b>R3</b>, it is
+possible to write a program that finds a strategy to win the game.
+
+<p>
+
+
+<p>
+Given a game situation (a list of numbers which are not yet forbidden), your program
+should output all
+<em>winning moves</em>. A winning move is a move by which the player whose turn it is can
+force a win no matter
+what the other player will do. Now we define these terms more formally:
+
+<p>
+
+<ul>
+<li>A <em>loosing position</em> is a position in which either
+
+<ol>
+<li>all numbers are forbidden, or
+</li>
+<li>no winning move exists.
+</li>
+</ol>
+</li>
+<li>A <em>winning position</em> is a position in which a winning move exists.
+</li>
+<li>A <em>winning move</em> is a move after which the position is a loosing position.
+</li>
+</ul>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The first line contains the number of scenarios.
+
+<p>
+The input for each scenario describes a game position. It begins with a line containing
+the number
+<span class="MATH"><i>a</i></span>, 
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="2336img1.gif" alt="$ \le$"><i>a</i> &lt; 20</span> of numbers which are still available. Next follows a single line
+with the <span class="MATH"><i>a</i></span> numbers still available, separated by single blanks.
+
+<p>
+You may assume that all game positions in the input could really occur in the
+Number Game (for
+example, if 3 is not in the list of numbers available, 6 will not be, either).
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The output for each scenario begins with a line containing `<tt>Scenario #<span class="MATH"><i>i</i></span>:</tt>',
+where <span class="MATH"><i>i</i></span> is the number of
+the scenario starting at 1. In the next line either print `<tt>There is no winning move.</tt>'
+if this is true
+for the position of the current scenario, or `<tt>The winning moves
+are: 
+<span class="MATH"><i>w</i><sub>1</sub>&nbsp;<i>w</i><sub>2</sub>&nbsp;...&nbsp;<i>w</i><sub>k</sub></span>.</tt>' where the
+<span class="MATH"><i>w</i><sub>i</sub></span> are all the winning moves, in ascending order, separated by single blanks.
+The output for each scenario should be followed by a blank line.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+2
+1
+2
+2
+2 3
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001005000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Scenario #1:
+The winning moves are: 2.
+
+Scenario #2:
+There is no winning move.
+</pre>
+
+<p>

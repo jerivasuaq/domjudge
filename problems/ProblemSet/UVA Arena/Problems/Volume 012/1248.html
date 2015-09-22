@@ -1,0 +1,97 @@
+
+<p>
+A factory produces products as follows. There are <span class="MATH"><i>N</i></span> days in the coming production season. 
+Each morning the factory orders materials. At noon the materials will arrive and shipped 
+into a warehouse. In the afternoon the factory produces products using the material in 
+the warehouse. There is only one kind of material and one kind of product, and one unit 
+of materials can make one unit of product. The factory needs to produce exactly <span class="MATH"><i>d</i><sub>i</sub></span> 
+products on the <span class="MATH"><i>i</i></span>-th day of the production season, where <span class="MATH"><i>i</i></span> is between 1 and <span class="MATH"><i>N</i></span>. Also if 
+the factory does not use all the materials in the warehouse, it can use them later, but 
+the material can only be stored in the warehouse for up to 2 days, after that they cannot 
+be used to make products. That is, if a material was shipped to the factory on the <span class="MATH"><i>i</i></span>-th 
+day, it can be used only on the <span class="MATH"><i>i</i></span>-th and <span class="MATH"><i>i</i> + 1</span>-th day. 
+
+<p>
+We want to order materials for this factory with minimum cost. Let <span class="MATH"><i>p</i><sub>i</sub></span> be the price of 
+material on the <span class="MATH"><i>i</i></span>-th day and <span class="MATH"><i>n</i><sub>i</sub></span> be the maximum number of units of material one can order 
+on the <span class="MATH"><i>i</i></span>-th day. Both <span class="MATH"><i>p</i><sub>i</sub></span> and <span class="MATH"><i>n</i><sub>i</sub></span> are changing daily. Note that we may want to 
+order more materials when they are cheap, but keep in mind that we can order at most <span class="MATH"><i>n</i><sub>i</sub></span> 
+units on the <span class="MATH"><i>i</i></span>-th day, and we must use the materials within two days after we order them. 
+Fortunately, the warehouse is large enough to store all materials for the entire 
+production season, so we do not need to worry about its capacity. Instead we only need 
+to determine the amount of materials to order for each day, so that we can produce <span class="MATH"><i>d</i><sub>i</sub></span> 
+products on the <span class="MATH"><i>i</i></span>-th day, and the entire material cost is minimized.
+
+<p>
+
+<p>
+<br>
+
+<span class="textbf">Technical Specification</span>
+
+<ol>
+<li>The number of cases is a positive integer no more than 100. 
+</li>
+<li>The number of days <span class="MATH"><i>N</i></span> is a positive integer no more than 1000. 
+</li>
+<li>
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4526img1.png" alt="$ \le$"><i>p</i><sub>i</sub>, <i>d</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="4526img1.png" alt="$ \le$">100</span>, 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4526img1.png" alt="$ \le$"><i>n</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="4526img1.png" alt="$ \le$">10000</span> for every <span class="MATH"><i>i</i></span>.
+</li>
+</ol>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The first line of the input file contains an integer indicating the number of test cases to 
+follow. The first line of the test case has the number of days (<span class="MATH"><i>N</i></span>) in the production 
+season. Each of the next <span class="MATH"><i>N</i></span> lines has the price of material per unit (<span class="MATH"><i>p</i><sub>i</sub></span>), the maximum 
+number of units of material (<span class="MATH"><i>n</i><sub>i</sub></span>) the factory can order, and the amount of materials (<span class="MATH"><i>d</i><sub>i</sub></span>) 
+ordered for that day.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, output the minimum material cost to produce all products. It is 
+assumed that there exists a solution.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 
+3 
+59 5 1 
+96 9 1 
+67 6 11
+3 
+26 3 1 
+76 9 11
+56 6 2
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1000 
+874
+</pre>
+
+<p>

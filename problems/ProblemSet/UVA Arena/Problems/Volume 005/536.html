@@ -1,0 +1,116 @@
+
+
+<html>
+<head>
+<title>Tree Recovery</title>
+<meta name="description" content="Tree Recovery">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Tree Recovery</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Little Valentine liked playing with binary trees very much. Her favorite
+game was constructing
+randomly looking binary trees with capital letters in the nodes.
+
+<p>
+This is an example of one of her creations:
+
+<p>
+<pre>
+                                    D
+                                   / \
+                                  /   \
+                                 B     E
+                                / \     \
+                               /   \     \ 
+                              A     C     G
+                                         /
+                                        /
+                                       F
+</pre>
+
+<p>
+To record her trees for future generations, she wrote down two strings
+for each tree: a preorder
+traversal (root, left subtree, right subtree) and an inorder traversal
+(left subtree, root, right subtree).
+
+<p>
+For the tree drawn above the preorder traversal is <tt>DBACEGF</tt> and the
+inorder traversal is <tt>ABCDEFG</tt>.
+
+<p>
+She thought that such a pair of strings would give enough information to
+reconstruct the tree later (but she never tried it).
+
+<p>
+
+<p>
+<br>
+Now, years later, looking again at the strings, she realized that
+reconstructing the trees was indeed
+possible, but only because she never had used the same letter twice
+in the same tree.
+
+<p>
+However, doing the reconstruction by hand, soon turned out to be tedious.
+
+<p>
+So now she asks you to write a program that does the job for her!
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input Specification</a>&nbsp;</font>
+</h2>
+The input file will contain one or more test cases.
+Each test case consists of one line containing two strings preord and
+inord, representing the
+preorder traversal and inorder traversal of a binary tree. Both strings
+consist of unique capital
+letters. (Thus they are not longer than 26 characters.)
+
+<p>
+Input is terminated by end of file.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output Specification</a>&nbsp;</font>
+</h2>
+For each test case, recover Valentine's binary tree and print one line
+containing the tree's postorder
+traversal (left subtree, right subtree, root).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+DBACEGF ABCDEFG
+BCAD CBAD
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+ACBFGED
+CDAB
+</pre>
+
+<p>
+</body>
+</html>

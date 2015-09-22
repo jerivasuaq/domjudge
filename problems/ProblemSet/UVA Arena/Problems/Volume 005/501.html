@@ -1,0 +1,248 @@
+
+
+<html>
+<head>
+<title>Black Box</title>
+<meta name="description" content="Black Box">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Black Box</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Our Black Box represents a primitive database. It can save an integer array
+and has a special <i>i</i>
+variable. At the initial moment Black Box is empty and <i>i</i> equals 0. This
+Black Box processes a
+sequence of commands (transactions). There are two types of transactions:
+
+<p>
+<ul>
+<li>ADD(<i>x</i>): put element <i>x</i> into Black Box;
+<li>GET: increase <i>i</i> by 1 and give an <i>i</i>-minimum out of all
+integers containing in the Black Box.
+</li></li></ul>
+
+<p>
+Keep in mind that <i>i</i>-minimum is a number located at <i>i</i>-th place after
+Black Box elements sorting by non-descending.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Example</a>&nbsp;</font>
+</h2>
+Let us examine a possible sequence of 11 transactions:
+
+<p>
+
+<p>
+<br>
+
+<table cellpadding="3">
+<tr><td align="LEFT"><b> N</b></td>
+<td align="LEFT"><b> Transaction</b></td>
+<td align="LEFT"><b> i</b></td>
+<td align="LEFT"><b> Black Box contents after transaction</b></td>
+<td align="LEFT"><b> Answer</b></td>
+</tr>
+<tr><td align="LEFT">&nbsp;</td>
+<td align="LEFT">&nbsp;</td>
+<td align="LEFT">&nbsp;</td>
+<td align="LEFT">(elements are arranged by non-descending)</td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+<tr><td align="LEFT">1</td>
+<td align="LEFT">ADD(3)</td>
+<td align="LEFT">0</td>
+<td align="LEFT">3</td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+<tr><td align="LEFT">2</td>
+<td align="LEFT">GET</td>
+<td align="LEFT">1</td>
+<td align="LEFT"><b> 3</b></td>
+<td align="LEFT">3</td>
+</tr>
+<tr><td align="LEFT">3</td>
+<td align="LEFT">ADD(1)</td>
+<td align="LEFT">1</td>
+<td align="LEFT">1, 3</td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+<tr><td align="LEFT">4</td>
+<td align="LEFT">GET</td>
+<td align="LEFT">2</td>
+<td align="LEFT">1, <b> 3</b></td>
+<td align="LEFT">3</td>
+</tr>
+<tr><td align="LEFT">5</td>
+<td align="LEFT">ADD(-4)</td>
+<td align="LEFT">2</td>
+<td align="LEFT">-4, 1, 3</td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+<tr><td align="LEFT">6</td>
+<td align="LEFT">ADD(2)</td>
+<td align="LEFT">2</td>
+<td align="LEFT">-4, 1, 2, 3</td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+<tr><td align="LEFT">7</td>
+<td align="LEFT">ADD(8)</td>
+<td align="LEFT">2</td>
+<td align="LEFT">-4, 1, 2, 3, 8</td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+<tr><td align="LEFT">8</td>
+<td align="LEFT">ADD(-1000)</td>
+<td align="LEFT">2</td>
+<td align="LEFT">-1000, -4, 1, 2, 3, 8</td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+<tr><td align="LEFT">9</td>
+<td align="LEFT">GET</td>
+<td align="LEFT">3</td>
+<td align="LEFT">-1000, -4, <b> 1</b>, 2, 3, 8</td>
+<td align="LEFT">1</td>
+</tr>
+<tr><td align="LEFT">10</td>
+<td align="LEFT">GET</td>
+<td align="LEFT">4</td>
+<td align="LEFT">-1000, -4, 1, <b> 2</b>, 3, 8</td>
+<td align="LEFT">2</td>
+</tr>
+<tr><td align="LEFT">11</td>
+<td align="LEFT">ADD(2)</td>
+<td align="LEFT">4</td>
+<td align="LEFT">-1000, -4, 1, 2, 2, 3, 8</td>
+<td align="LEFT">&nbsp;</td>
+</tr>
+</table>
+
+<p>
+
+<p>
+<br>
+It is required to work out an efficient algorithm which treats a given
+sequence of transactions. The
+maximum number of ADD and GET transactions: 30000 of each type.
+
+<p>
+
+<p>
+<br>
+Let us describe the sequence of transactions by two integer arrays:
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>
+
+<img width="167" height="34" align="MIDDLE" border="0" src="501img2.gif" alt="$A(1), A(2), \dots, A(M)$">:
+a sequence of elements which are being
+included into Black Box. A values
+are integers not exceeding 2 000 000 000 by their absolute value,
+
+
+<img width="90" height="32" align="MIDDLE" border="0" src="501img3.gif" alt="$M \le 30000$">
+. For the Example we have 
+
+<i>A</i>=(3, 1, -4, 2, 8, -1000, 2).
+<p>
+<dt>2.
+<dd>
+
+<img width="155" height="34" align="MIDDLE" border="0" src="501img4.gif" alt="$u(1), u(2), \dots, u(N)$">
+: a sequence setting a number of elements which are being included into
+Black Box at the moment of first, second, ... and <i>N</i>-transaction GET. For
+the Example  we have 
+
+<i>u</i>=(1, 2, 6, 6).
+</dd></dt></dd></dt></dl>
+
+<p>
+The Black Box algorithm supposes that natural number sequence
+
+
+<img width="155" height="34" align="MIDDLE" border="0" src="501img4.gif" alt="$u(1), u(2), \dots, u(N)$">
+is sorted in
+non-descending order, <img width="63" height="32" align="MIDDLE" border="0" src="501img5.gif" alt="$N \le M$">
+and for each <i>p</i> (
+
+<img width="84" height="32" align="MIDDLE" border="0" src="501img6.gif" alt="$1 \le p \le N$">)
+an
+inequality 
+
+<img width="111" height="34" align="MIDDLE" border="0" src="501img7.gif" alt="$p \le u(p) \le M$">
+is valid. It
+follows from the fact that for the <i>p</i>-element of our <i>u</i> sequence we
+perform a GET transaction giving
+<i>p</i>-minimum number from our 
+
+<img width="181" height="34" align="MIDDLE" border="0" src="501img8.gif" alt="$A(1), A(2), \dots, A(u(p))$">
+sequence.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input is an integer K, then a blank line followed by K datasets. There is a blank line between datasets.
+
+<p>Input for each dataset contains (in given order):
+
+
+<img width="373" height="34" align="MIDDLE" border="0" src="501img9.gif" alt="$M, N, A(1), A(2), \dots, A(M), u(1), u(2), \dots, u(N)$">.
+All numbers are divided by spaces and (or) carriage return characters.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, write to the output Black Box answers sequence for a given sequence of
+transactions. The numbers can be separated with spaces and end-of-line characters. Print
+a blank line between datasets.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+7 4
+3 1 -4 2 8 -1000 2
+1 2 6 6
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+3
+1
+2
+</pre>
+
+<p>
+
+<p>
+</body>
+</html>

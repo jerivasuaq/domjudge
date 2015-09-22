@@ -1,0 +1,85 @@
+
+
+<html>
+<head>
+<title>Bits</title>
+<meta name="description" content="Bits">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Bits</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+It is not always easy to transfer data from one computer system to the other. You need
+proper standards for data encoding, and may also need to compress data to save bandwidth
+and thus reduce costs.
+<p>
+<p>
+To assist the designer in making implementation choices related to the available band-width, a tool is required that computes the size of each message in bits. The tool has to read and interpret the format of each message to do so.
+<p>
+<p>
+A message can best be described by giving the underlying grammar, which uses the following terminals:
+<p>
+<p>
+<p> <img width="440" height="60" align="BOTTOM" alt="tabular20" src="293img1.gif"> <p>
+<p>
+<p>
+A message is defined by the following grammar:
+<p>
+<p>
+<p> <img width="399" height="190" align="BOTTOM" alt="tabular26" src="293img2.gif"> <p>
+<p>
+<p>
+Note that the message grammar is specified according to the following notational conventions:
+<p>
+<p>
+<p> <img width="354" height="82" align="BOTTOM" alt="tabular71" src="293img3.gif"> <p>
+<p>
+<p>
+Any two tokens may be separated by an arbitrary amount of white space (blanks, tabs an
+newlines). White space does not occur within tokens.
+<p>
+<p>
+The (minimal) amount of bits needed to transmit a message can be computed using the
+following rules:
+<p>
+<p>
+<p> <img width="672" height="103" align="BOTTOM" alt="tabular74" src="293img4.gif"> <p><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input Specification</a></font></h2>
+<p>
+The input contains on the first line the number of test cases (N). Each test case will contain
+message according to the grammar above. Messages may be separated by an arbitrary amount
+of white space. You may assume that the input is syntactically correct.
+For each range `<i>L</i>..<i>H</i>',
+it holds that  <img width="49" height="26" align="MIDDLE" alt="tex2html_wrap_inline109" src="293img5.gif"> . A string consists of a positive number of characters.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output Specification</a></font></h2>
+<p>
+For each message, output the
+sentence: <tt>'A &quot;</tt><i>id</i><tt>&quot; message requires</tt> <i>S</i> <tt>bits.'</tt>,
+where id is the identifier of the message and <i>S</i> its size in bits.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Example Input</a></font></h2>
+<p>
+<pre>3
+year : [1970..2030]
+team : {
+        name : string(14)
+        members : array [1..3] of {
+                sex : ( male, female )
+                name : string(20)
+                age : [16..30]
+        }
+        position : [1..40]
+}
+jurynames : array [1..3] of string(20)</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Example Output</a></font></h2>
+<p>
+<pre>A &quot;year&quot; message requires 6 bits.
+A &quot;team&quot; message requires 539 bits.
+A &quot;jurynames&quot; message requires 420 bits.</pre>
+<p>
+</body>
+</html>

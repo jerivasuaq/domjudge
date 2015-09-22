@@ -1,0 +1,151 @@
+<p>
+Little Tom is learning how to program. He has just written some programs
+but is afraid to run them, because he does not know if they will ever stop.
+Please write a program to help him.
+
+<p>
+This is not as easy a task as it may seem, because the computer Tom has is
+not deterministic.
+
+<p>
+Given a program written by Tom, your program should tell him whether his
+program can possibly stop and if so, what is the shortest possible time
+before it stops.
+
+<p>
+The computer consists of 32 1-bit registers and the
+program consists of <span class="MATH"><i>n</i></span> instructions. The registers are
+numbered from 0 to 31 and the instructions are numbered from 0 to
+<span class="MATH"><i>n</i> - 1</span>.
+
+<p>
+Below, ``<tt>MEM[<span class="MATH"><i>a</i></span>]</tt>" stands for the contents of the <span class="MATH"><i>a</i></span>-th register,
+
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="2944img1.png" alt="$ \le$"><i>a</i>, <i>b</i> &lt; 32</span>, 
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="2944img1.png" alt="$ \le$"><i>x</i> &lt; <i>n</i></span>, 
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="2944img1.png" alt="$ \le$"><i>c</i><img width="18" height="30" align="MIDDLE" border="0" src="2944img1.png" alt="$ \le$">1</span>.
+
+<p>
+The instruction set is the following:
+
+<p>
+<div align="CENTER">
+<table cols="2" border="" frame="BOX" rules="GROUPS">
+<colgroup><col align="LEFT"><colgroup><col align="LEFT">
+<tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap="">
+<b>Instruction</b> </td><td valign="BASELINE" align="LEFT" nowrap=""> <b>Semantics</b> </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><tt>AND </tt><span class="MATH"><i>a</i>&nbsp;<i>b</i></span> </td><td valign="BASELINE" align="LEFT" nowrap=""> <tt>MEM[<span class="MATH"><i>a</i></span>] := MEM[<span class="MATH"><i>a</i></span>]</tt> and <tt>MEM[<span class="MATH"><i>b</i></span>]</tt>  </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><tt>OR </tt><span class="MATH"><i>a</i>&nbsp;<i>b</i></span> </td><td valign="BASELINE" align="LEFT" nowrap=""> <tt>MEM[<span class="MATH"><i>a</i></span>] := MEM[<span class="MATH"><i>a</i></span>]</tt> or <tt>MEM[<span class="MATH"><i>b</i></span>]</tt>  </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><tt>XOR </tt><span class="MATH"><i>a</i>&nbsp;<i>b</i></span> </td><td valign="BASELINE" align="LEFT" nowrap=""> <tt>MEM[<span class="MATH"><i>a</i></span>] := MEM[<span class="MATH"><i>a</i></span>]</tt> xor <tt>MEM[<span class="MATH"><i>b</i></span>]</tt>   </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><tt>NOT </tt><span class="MATH"><i>a</i></span> </td><td valign="BASELINE" align="LEFT" nowrap=""> <tt>MEM[<span class="MATH"><i>a</i></span>] :=</tt> not <tt>MEM[<span class="MATH"><i>a</i></span>]</tt>  </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><tt>MOV </tt><span class="MATH"><i>a</i>&nbsp;<i>b</i></span> </td><td valign="BASELINE" align="LEFT" nowrap=""> <tt>MEM[<span class="MATH"><i>a</i></span>] := MEM[<span class="MATH"><i>b</i></span>]</tt> </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><tt>SET </tt><span class="MATH"><i>a</i>&nbsp;<i>c</i></span> </td><td valign="BASELINE" align="LEFT" nowrap=""> <tt>MEM[<span class="MATH"><i>a</i></span>] := <span class="MATH"><i>c</i></span></tt>   </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><tt>RANDOM </tt><span class="MATH"><i>a</i></span> </td><td valign="BASELINE" align="LEFT" nowrap=""> <tt>MEM[<span class="MATH"><i>a</i></span>] :=</tt> random value (0 or 1)  </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><tt>JMP </tt><span class="MATH"><i>x</i></span> </td><td valign="BASELINE" align="LEFT" nowrap=""> jump to instruction number <span class="MATH"><i>x</i></span> </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><tt>JZ </tt><span class="MATH"><i>x</i>&nbsp;<i>a</i></span> </td><td valign="BASELINE" align="LEFT" nowrap=""> jump to instruction number <span class="MATH"><i>x</i></span> if <tt>MEM[<span class="MATH"><i>a</i></span>] =</tt> 0  </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="LEFT" nowrap=""><tt>STOP</tt> </td><td valign="BASELINE" align="LEFT" nowrap=""> stop the program  </td></tr>
+</tbody>
+</colgroup></colgroup></table>
+
+</div>
+
+<p>
+The last instruction of a program is always `<tt>STOP</tt>' (although there can
+be more than one <tt>STOP</tt> instruction). Every program starts with the
+instruction number 0. Before the start, the contents of the registers are
+random. Each instruction (including <tt>STOP</tt>) takes 1 processor cycle to
+execute.
+
+<p>
+
+<p>
+<br>
+Write a program that:
+
+<ul>
+<li>reads the program from the standard input,
+</li>
+<li>computes the shortest possible running time of the program,
+</li>
+<li>writes the result to the standard output.
+</li>
+</ul>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input consists of several test cases, each of them following the description below. A blank line
+separates two consecutive cases.
+
+<p>
+The first line of the input contains integer <span class="MATH"><i>n</i></span> (
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2944img1.png" alt="$ \le$"><i>n</i><img width="18" height="30" align="MIDDLE" border="0" src="2944img1.png" alt="$ \le$">16</span>) being the
+number of instructions of the program. Each of the next <span class="MATH"><i>n</i></span> lines contains
+one instruction of the program in the format given above.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, the first and only line of the output should contain the shortest possible
+running time of the program, measured in processor cycles. If the program
+cannot stop, output should contain the word `<tt>HANGS</tt>'.
+
+<p>
+The outputs of two consecutive cases will be separated by a blank line.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5
+SET 0 1
+JZ 4 0
+RANDOM 0
+JMP 1
+STOP
+
+5
+MOV 3 5
+NOT 3
+AND 3 5
+JZ 0 3
+STOP
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6
+
+HANGS
+</pre>
+
+<p>

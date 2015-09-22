@@ -1,0 +1,73 @@
+<p>
+Bill is trying to compactly represent sequences of capital alphabetic
+characters from `<tt>A</tt>' to `<tt>Z</tt>' by folding repeating subsequences inside them.
+For example, one way to represent a sequence `<tt>AAAAAAAAAABABABCCD</tt>' is
+`<tt>10(A)2(BA)B2(C)D</tt>'. He formally defines folded sequences of characters
+along with the unfolding transformation for them in the following way:
+
+<ul>
+<li>A sequence that contains a single character from `<tt>A</tt>' to `<tt>Z</tt>' is
+considered to be a folded sequence. Unfolding of this sequence
+produces the same sequence of a single character itself.
+</li>
+<li>If <span class="MATH"><i>S</i></span> and <span class="MATH"><i>Q</i></span> are folded sequences, then <span class="MATH"><i>SQ</i></span> is also a folded sequence.
+If <span class="MATH"><i>S</i></span> unfolds to <span class="MATH"><i>S'</i></span> and <span class="MATH"><i>Q</i></span> unfolds to <span class="MATH"><i>Q'</i></span>, then <span class="MATH"><i>SQ</i></span> unfolds to <span class="MATH"><i>S'Q'</i></span>.
+</li>
+<li>If <span class="MATH"><i>S</i></span> is a folded sequence, then <span class="MATH"><i>X</i>(<i>S</i>)</span> is also a folded sequence,
+where <span class="MATH"><i>X</i></span> is a decimal representation of an integer number greater than 1.
+If <span class="MATH"><i>S</i></span> unfolds to <span class="MATH"><i>S'</i></span>, then <span class="MATH"><i>X</i>(<i>S</i>)</span> unfolds to <span class="MATH"><i>S'</i></span> repeated <span class="MATH"><i>X</i></span> times.
+</li>
+</ul>
+
+<p>
+According to this definition it is easy to unfold any given folded
+sequence. However, Bill is much more interested in the reverse
+transformation. He wants to fold the given sequence in such a way that
+the resulting folded sequence contains the least possible number of
+characters.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input file contains several test cases, one per line. Each of them
+contains a single line of characters from `<tt>A</tt>' to `<tt>Z</tt>'
+with at least 1 and at most 100 characters.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each input case write a different output line.
+This must be a single line that contains the shortest
+possible folded sequence that unfolds to the sequence that is given
+in the input file. If there are many such sequences then write
+any one of them.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+AAAAAAAAAABABABCCD
+NEERCYESYESYESNEERCYESYESYES
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+9(A)3(AB)CCD
+2(NEERC3(YES))
+</pre>
+
+<p>

@@ -1,0 +1,112 @@
+
+
+<html>
+<head>
+<title>DDF</title>
+<meta name="description" content="DDF">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+DDF</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+An integer <i>a</i> is a positive factor of an integer <i>b</i> if
+<i>a</i> is greater than zero and there exist some integer <i>n</i> such that 
+
+<img width="76" height="32" align="MIDDLE" border="0" src="547img1.gif" alt="$a \times n = b$">.
+
+<p>
+Consider a sequence of integer 
+
+<img width="130" height="30" align="MIDDLE" border="0" src="547img2.gif" alt="$x_1, x_2, x_3, \dots, x_n$">.
+This sequence is a Decimal-Digit Factor Sequence (DDF) if each number in
+the sequence is a positive integer where <i>x</i><sub>1</sub> &gt; 1 and for all positive
+integers <i>i</i> &gt; 1, <i>x</i><sub><i>i</i>+1</sub> is the sum of the digits of all positive factors of
+<i>x</i><sub><i>i</i></sub>.
+
+<p>
+The following is a DDF:
+
+<p>
+<pre>
+	17, 9, 13, 5, 6, ...
+positive factor of 17 = 1, 17
+	1 + (1 + 7) = 9
+positive factor of 9 = 1, 3, 9
+	1 + 3 + 9 = 13
+positive factor of 13 = 1, 13
+	1 + (1 + 3) = 5
+positive factor of 5 = 1, 5
+	1 + 5 = 6
+</pre>
+
+<p>
+It is known that any DDF beginning whit a number greater than or equal to
+1000 repeats no number greater than or equal to 1000 and contains a number
+less than 1000. In addition, every DDF beginning whit a number less than
+1000 contains no number greater than 999. Thus, every DDF must eventually
+repeat number less than 1000. It has also been show that every DDF
+eventually repeats a single number. That is, for each DDF, there exists a
+number <i>x</i><sub><i>n</i></sub>, called the last term, such that for all <i>j</i> &gt;<i>n</i>, <i>x</i><sub><i>j</i></sub> = <i>x</i><sub><i>n</i></sub>.
+
+<p>
+Write a program that will find the longest DDF. 
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input and Output</a>&nbsp;</font>
+</h2>
+You have to read the input
+file each line will have two numbers <i>m</i>, <i>n</i> which define the range were you
+have to find the longest DDF. In non case <i>m</i> and <i>n</i> will be greater than
+3000. Many DDF's will have the same last term, so you program should
+report only the first one. If there are many DDF's with maximum lenght, you should report the one starting with the
+smallest number. 
+<br><br>
+You can take the exact format from the example below.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+200 500
+100 150
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Input1: 200 500
+Output1: 285 66 36 46 18 30 27 22 9 13 5 6 12 19 11 3 4 7 8 15 
+Input2: 100 150
+Output2: 102 36 46 18 30 27 22 9 13 5 6 12 19 11 3 4 7 8 15
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

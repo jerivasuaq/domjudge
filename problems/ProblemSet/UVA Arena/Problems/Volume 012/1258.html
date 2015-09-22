@@ -1,0 +1,187 @@
+
+<p>
+In Nowhere town, people use ``coin and slot" as their money. There are 2 types of coins 
+called size1 and size2. Size2 coin is twice the thickness of size1. People stack their 
+coins in slots and  use them as money. There are many size of slots. The slot of size <span class="MATH"><i>n</i></span> 
+is able to stack up <span class="MATH"><i>n</i></span> size1  coins. Only filled-­up slot is considered as legal money. 
+The value of each filled-­up slot is the  distinct ways its can stack coins inside. For 
+example, for size-­1 slot, there is only one way to  stack a single size1 coin inside. 
+For size-­2 slot, there are 2 ways to stack two size1 coins or one  size2  coin  inside. 
+And for size-­5 slot, there are 8 ways to stack coins inside, which can  be  illustrated as 
+follow: 1 1 1 1 1, 1 1 1 2, 1 1 2 1, 1 2 1 1, 2 1 1 1, 1 2 2, 2 1 2, 2 2 1. So the value  
+of   filled   up slot  with  size-­1,  size-­2  and size-­5 are  1,  2 and  8  (monetary)  units  
+respectively  (regardless of the type of coins or the ways they are stacked). 
+
+<p>
+
+<p>
+<br>
+Mr. Thinktwice is an owner of a grocery store in this town. He noticed that customers are 
+likely  to go to the shop that can return the (money) change in the form that suits their 
+customer. And  from his little survey, he found that most customers would like to get 
+their amount of change in  the form according to these 2 simple constraints.    
+
+<p>
+
+<p>
+<br>
+<dl compact="">
+<dt>1.</dt>
+<dd>The number of slots is minimum.    
+</dd>
+<dt>2.</dt>
+<dd>The size of each slot must be different from each other by at least 2. -This means that customers does not want any slots with the same size and it will be
+easier for them to distinguish these differences if the sizes are not too close. 
+</dd>
+</dl>
+
+<p>
+
+<p>
+<br>
+So Mr. Thinktwice ask you to write a program that can give him a series of slot sizes for 
+a given  amount of change according to the previous constraints. Moreover, the series 
+must be sorted in  descending order. For more specific, any amount of change can be 
+written in this formula. 
+
+<p>
+
+<p>
+<br>
+<br>
+<div align="CENTER" class="mathdisplay">
+
+<table cellpadding="0" align="CENTER" width="100%">
+<tr valign="MIDDLE"><td nowrap="" width="50%" align="RIGHT"><i>X</i></td>
+<td width="10" align="CENTER" nowrap="">=</td>
+<td align="LEFT" nowrap="" width="50%"><img width="27" height="63" align="MIDDLE" border="0" src="4721img1.png" alt="$\displaystyle \sum^{{n}}_{{i=1}}$"><i>T</i>(<i>s</i><sub>i</sub>)</td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" width="50%" align="RIGHT">&nbsp;</td>
+<td width="10" align="CENTER" nowrap="">=</td>
+<td align="LEFT" nowrap="" width="50%"><i>T</i>(<i>s</i><sub>1</sub>) + <sup> ... </sup> + <i>T</i>(<i>s</i><sub>i</sub>) + <sup> ... </sup> + <i>T</i>(<i>s</i><sub>n</sub>),&nbsp; &nbsp;<i>s</i><sub>1</sub> <img width="22" height="31" align="MIDDLE" border="0" src="4721img2.png" alt="$\displaystyle \gg$"> <i>s</i><sub>2</sub> <img width="22" height="31" align="MIDDLE" border="0" src="4721img2.png" alt="$\displaystyle \gg$"> <sup> ... </sup> <img width="22" height="31" align="MIDDLE" border="0" src="4721img2.png" alt="$\displaystyle \gg$"> <i>s</i><sub>i</sub> <img width="22" height="31" align="MIDDLE" border="0" src="4721img2.png" alt="$\displaystyle \gg$"> <sup> ... </sup> <img width="22" height="31" align="MIDDLE" border="0" src="4721img2.png" alt="$\displaystyle \gg$"> <i>s</i><sub>n</sub> &gt; 0</td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+</table></div>
+<br clear="ALL">
+
+where  
+
+<p>
+<dl compact="">
+<dt><span class="MATH"><i>X</i></span></dt>
+<dd>is an amount of change. 
+</dd>
+<dt><span class="MATH"><i>n</i></span></dt>
+<dd>is the total number of slot. 
+</dd>
+<dt><span class="MATH"><i>s</i><sub>i</sub></span></dt>
+<dd>is the size of <span class="MATH"><i>i</i></span>-th slot. 
+</dd>
+<dt><span class="MATH"><i>T</i></span></dt>
+<dd>is a function 
+mapping from a slot size to a number of  distinct ways of stacking coins. 
+</dd>
+</dl>
+
+<p>
+and when 
+<span class="MATH"><i>j</i> <img width="22" height="31" align="MIDDLE" border="0" src="4721img3.png" alt="$ \gg$"> <i>k</i> <img width="18" height="18" align="BOTTOM" border="0" src="4721img4.png" alt="$ \equiv$"> <i>j</i><img width="18" height="31" align="MIDDLE" border="0" src="4721img5.png" alt="$ \ge$"><i>k</i> + 2</span>
+
+<p>
+
+<p><p>
+<br>
+For example :  
+
+<p>
+
+<p>
+<br>
+<br>
+<div align="CENTER" class="mathdisplay">
+
+<table cellpadding="0" align="CENTER" width="100%">
+<tr valign="MIDDLE"><td nowrap="" width="50%" align="RIGHT">10</td>
+<td width="10" align="CENTER" nowrap="">=</td>
+<td align="LEFT" nowrap="" width="50%"><i>T</i>(5) + <i>T</i>(2)</td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" width="50%" align="RIGHT">&nbsp;</td>
+<td width="10" align="CENTER" nowrap="">=</td>
+<td align="LEFT" nowrap="" width="50%">8 + 2</td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" width="50%" align="RIGHT">1, 000, 000</td>
+<td width="10" align="CENTER" nowrap="">=</td>
+<td align="LEFT" nowrap="" width="50%"><i>T</i>(29) + <i>T</i>(25) + <i>T</i>(23) + <i>T</i>(11) + <i>T</i>(9)</td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" width="50%" align="RIGHT">&nbsp;</td>
+<td width="10" align="CENTER" nowrap="">=</td>
+<td align="LEFT" nowrap="" width="50%">832, 040 + 121, 393 + 46, 368 + 144 + 55</td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+</table></div>
+<br clear="ALL">
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+Input is a standard input which contains a set of integer. Each line of the input is an 
+amount of  change which represents by a positive integer less than or equal to 
+5,000,000,000,000,000,000  or  
+<span class="MATH">5 <tt>x</tt> 10<sup>18</sup></span>. The input is terminated when the EOF 
+(End-­Of-­File) is reached. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>  
+
+<p>
+For each amount of change, generate 4 lines of output data. The first line is the amount 
+of change  itself. The second line is a series of slot sizes (in descending order) 
+separated by spaces. (The  maximum slot size is less than or equal to 90.) The third 
+line is a series of corresponding slot  values. The fourth line is a blank line.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+1 
+10 
+1000000
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 
+1 
+1 
+
+10 
+5 2
+8 2
+
+1000000 
+29 25 23 11 9 
+832040 121393 46368 144 55
+</pre> 
+
+<p>

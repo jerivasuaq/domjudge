@@ -1,0 +1,144 @@
+
+
+<html>
+<head>
+<title>Triangle War</title>
+<meta name="description" content="Triangle War">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Triangle War</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Triangle War is a two-player game played on the following triangular grid:
+
+<p>
+<div align="CENTER">
+
+<img src="p751a.gif">
+</div>
+
+<p>
+Two players, A and B, take turns filling in any dotted line connecting two dots, with A starting first. Once a line is filled, it cannot be filled again. If the line filled by a player completes one or more triangles, she owns the completed triangles and she is awarded another turn (i.e. the opponent skips a
+turn). The game ends after all dotted lines are filled in, and the player with the most triangles wins the game. The difference in the number of triangles owned by the two players is not important.
+
+<p>
+
+<p>
+<br>
+For example, if A fills in the line between 2 and 5 in the partial game on the left below:
+
+<p>
+<div align="CENTER">
+
+<img src="p751b.gif">
+</div>
+
+<p>
+Then, she owns the triangle labelled A and takes another turn to fill in the line between 3 and 5. B can
+now own 3 triangles (if he wishes) by filling in the line between 2 and 3, then the one between 5 and 6,
+and finally the one between 6 and 9. B would then make one more move before it is A's turn again.
+
+<p>
+
+<p>
+<br>
+In this problem, you are given a number of moves that have already been made. From the partial
+game, you should determine which player will win assuming that each player plays a perfect game from
+that point on. That is, assume that each player always chooses the play that leads to the best possible
+outcome for himself/herself.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+You will be given a number of games in the input. The first line of input is a positive integer indicating
+the number of games to follow. Each game starts with an integer 
+
+<img width="92" height="30" align="MIDDLE" border="0" src="751img1.gif" alt="$6 Y\le m Y\le 18$">
+indicating the number of
+moves that have been made in the game. The next <i>m</i> lines indicate the moves made by the two players
+in order, each of the form <i>i j</i> (with <i>i</i> &lt; <i>j</i>) indicating that the line between <i>i</i> and <i>j</i> is filled in that
+move. You may assume that all given moves are legal.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each game, print the game number and the result on one line as shown below. If A wins, print the
+sentence ``<tt>A wins.</tt>'' If B wins, print ``<tt>B wins.</tt>''
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+4
+6
+2 4
+4 5
+5 9
+3 6
+2 5
+3 5
+7
+2 4
+4 5
+5 9
+3 6
+2 5
+3 5
+7 8
+6
+1 2
+2 3
+1 3
+2 4
+2 5
+4 5
+10
+1 2
+2 5
+3 6
+5 8
+4 7
+6 10
+2 4
+4 5
+4 8
+7 8
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Game 1: B wins.
+Game 2: A wins.
+Game 3: A wins.
+Game 4: B wins.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

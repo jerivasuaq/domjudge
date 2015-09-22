@@ -1,0 +1,127 @@
+
+
+<html>
+<head>
+<title>Call Forwarding</title>
+<meta name="description" content="Call Forwarding">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Call Forwarding</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Thanks to computer technology the functionality of phone systems
+has been greatly enhanced in the last ten years.  We have
+automated menus, sophisticated answering machines, conference
+call capabilities, group addressing and so on.  A common feature of
+a company's phone system is the ability to set call forwarding. For
+example, if Bob at the Nobody's Home Company (NHC) goes on
+vacation, he sets things up so that all calls coming to him are
+forwarded to his associate Jane.  This problem addresses how
+phone systems might keep track of call forwarding.
+<p>
+<p>
+The phones at the NHC all have four digit
+extensions.  Employees can set call forwarding by entering the
+appropriate information through their telephone interface.  If an
+employee is going to be away they enter the following information:
+their extension, the time they are leaving, how long they will be
+away, and the extension that their calls should be forwarded to,
+with the following constraints:
+<p>
+<ul><li> All extensions consist of four digits.<li> The extensions 0000 and 9999 are reserved for special use and
+     will not be entered as information by an employee.<li> Times are recorded in increments of 1 hour and are based on a
+     clock that begins at 0000 at midnight every New Year's Eve. 
+     Therefore, when describing the time they are leaving,
+     employees always use an integer between 0000 and 8784
+     (which is 366*24).  The call forwarding system is completely
+     reset at the beginning of the year.<li> A call forward set to start at time <i>X</i> for a duration of <i>Y</i> will be
+     in effect from time <i>X</i> to time <i>X</i>+<i>Y</i> inclusive.
+</li></li></li></li></ul>
+<p>
+Users are ``good&quot; about the requests they enter.  They follow the
+format rules. They do not enter a request such that the duration of
+the request would go past the end of the year. They do not enter
+two requests for their extension that overlap in time.  Even though
+the users enter correct, clear, non-overlapping information from
+their own point of view, a degenerate situation can still occur in a
+call forwarding system, if requests have been made in such a way
+as to forward a call back to the original target of the call.  For
+example if Bob forwards his calls to Sue, and Sue forwards her
+calls to Joe, and Joe forwards his calls to Bob then when somebody
+calls any of these three people their calls would be forwarded
+forever.  To prevent this situation the call forwarding system uses
+the ``dead end&quot; number 9999.  Any calls made to an extension
+involved in such a degenerate situation will be forwarded to the
+special 9999 extension.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line contains an integer <i>N</i> between 1 and 10
+describing how many call forwarding systems will be simulated by
+your program.  Each call forwarding system will be represented by
+0 to 100  `<em>source time duration target</em>' lines.  These lines represent
+the requests by the users to set up a call forwarding from the
+`<em>source</em>' to the  `<em>target</em>' starting at the  `<em>time</em>' for a length of `<em>duration</em>', and will be in the form  `<em>dddd dddd dddd dddd</em>'. A line with 0000 in the  `<em>source</em>' position indicates the end of this portion
+of the input. The call forwarding requests are listed in the order
+received. They will be followed by 1 or more  `<em>time extension</em>'
+lines, in the form  `<em>dddd dddd</em>', in non-decreasing order by  `<em>time</em>'
+representing calls made into the system at  `<em>time</em>' to  `<em>extension</em>'. A line with 9000 in the  `<em>time</em>' position indicates the end of this
+portion of the input.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The first line of output must read <tt>CALL FORWARDING OUTPUT</tt>.  This will be followed by sections of information about
+each of the call forwarding systems being simulated.  Each of these
+sections should be headed by the line <tt>SYSTEM</tt> <i>N</i>, where <i>N</i> is the
+number (1, 2, ...) of the system.  Within the section there should be
+a line describing the result of each of the calls made into the
+system, with the format ``<tt>AT</tt> <em>dddd</em> <tt>CALL TO</tt> <em>dddd</em> <tt>RINGS</tt> dddd&quot;. 
+The final line of output should read <tt>END OF OUTPUT</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2
+1111 0100 0200 2222
+1111 0301 0500 4444
+2222 0200 0200 3333
+3333 0250 1000 1111
+7777 1000 2000 7777
+0000
+0050 1111
+0150 1111
+0200 1111
+0225 2222
+0270 1111
+0320 1111
+0320 3333
+0900 3000
+1250 3333
+1250 7777
+9000
+0000
+3000 1111
+9000</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>CALL FORWARDING OUTPUT
+SYSTEM 1
+AT 0050 CALL TO 1111 RINGS 1111
+AT 0150 CALL TO 1111 RINGS 2222
+AT 0200 CALL TO 1111 RINGS 3333
+AT 0225 CALL TO 2222 RINGS 3333
+AT 0270 CALL TO 1111 RINGS 9999
+AT 0320 CALL TO 1111 RINGS 4444
+AT 0320 CALL TO 3333 RINGS 4444
+AT 0900 CALL TO 3000 RINGS 3000
+AT 1250 CALL TO 3333 RINGS 1111
+AT 1250 CALL TO 7777 RINGS 9999
+SYSTEM 2
+AT 3000 CALL TO 1111 RINGS 1111
+END OF OUTPUT</pre>
+<p>
+</body>
+</html>

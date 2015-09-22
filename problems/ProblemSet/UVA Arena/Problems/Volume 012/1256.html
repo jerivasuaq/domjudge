@@ -1,0 +1,106 @@
+
+<p>
+A very important aspect of web portals is customer reviews. The customers can rate any 
+product  in the web portal. Generally, a customer can rate a product from one star to 
+five star. Based on  the rating of all the customers the average customer rating for a 
+product is shown. Look at the  figure to get a clear idea.
+
+<p>
+<div align="CENTER">
+
+<img width="700" height="196" align="BOTTOM" border="0" src="p4715.png" alt="\epsfbox{p4715.eps}">
+</div>
+
+<p>
+For example if 
+three customers rate a  product   as   3   star,   4   star   and   4   star  
+respectively   then   the   average   rating  will be (3+4+4)/3 = 3.67 (Rounded to  
+two digits after the decimal point). In  the   figure   on   the   left   847   
+customers  have rated a product and 597, 189, 26, 11 and 24 customers have rated the 
+product as 5 star, 4  star,   3   star,   2   star   and   1   star   respectively.   
+So   the   average   rating   is:  
+
+<p>
+<p>
+</p>
+<div align="CENTER" class="mathdisplay">
+<img width="348" height="56" align="MIDDLE" border="0" src="4715img2.png" alt="$\displaystyle {\frac{{597 \times 5 + 189 \times 4 + 26 \times 3 + 11 \times 2 + 24 \times 1}}{{847}}}$"> = 4.56316411
+</div><p> 
+(Rounded to eight digits after the decimal point). 
+
+<p>
+Most web portals display the total number of people who have rated the product (As more 
+people  rates the product the more reliable the rating is) but do not display the numeric 
+value of the  average   rating.  In the  web portal  of warzone (A  renowned web portal)  
+the total  number   of  customers that have rated a product (In the figure above the total 
+847 customers have rated the  product) and the average rating is stored in two different 
+tables. The average rating is stored,  rounded to <span class="MATH"><i>n</i></span> (<span class="MATH">0 &lt; <i>n</i> &lt; 9</span>) digits after the decimal point 
+so its value is not always the exact average  value. Unfortunately, the table that stored 
+the total number of people that rated different products  somehow got corrupted. All 
+information available in the database now is the average rating  (rounded to at most eight 
+digits after the decimal point). They do not want to lose the huge  number of customer 
+ratings they have received throughout 10-­15 years but also they cannot  cheat with their 
+customers by guessing the number of raters or voters. So from the average rating  they 
+want to determine the minimum possible number of people that rated that product. You  
+have to help them find it out by writing a program.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file can contain up to 2000 lines of inputs. Each line contains a non-­negative 
+floating-­point number <span class="MATH"><i>v</i></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4715img3.png" alt="$ \le$"><i>v</i><img width="18" height="31" align="MIDDLE" border="0" src="4715img3.png" alt="$ \le$">5)</span>. This number will have minimum one digit and maximum 
+eight digits after the decimal point. If this number has <span class="MATH"><i>n</i></span> digits after the decimal 
+point then you have to  assume that the value of the average is given rounded to <span class="MATH"><i>n</i></span> digits 
+after the decimal point. 
+
+<p>
+Input is terminated by a line containing a negative number.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+For each line of input produce one line of output. This line contains the serial of output 
+followed  by an integer <span class="MATH"><i>T</i></span> which denotes the minimum number of voter that is required 
+for this average  rating. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1.15 
+4.56316411 
+4.56316 
+3.67 
+3.66 
+-1.00
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case 1: 13 
+Case 2: 847
+Case 3: 190
+Case 4: 3 
+Case 5: 29
+</pre> 
+
+<p>

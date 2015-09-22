@@ -1,0 +1,94 @@
+
+<p>
+Crimes in city of Megacity are going high. To fight the crimes, the authorities have 
+created a  highway patrol. The city consists of a number of one-­way roads. At the ends 
+of each road, there  is a base station for the patrol troops. Each base station has a 
+number of troops. At the beginning,  each station sends a troop along all the outgoing 
+highways from that station. The troop patrols the  highway and whenever it reaches the 
+station on the other side of the highway, it waits there, and  the troop that has been 
+waiting there the most, is sent along the highway that has not been  patrolled the 
+longest time.  
+
+<p>
+Soon, they faced some difficulties, cause, the frequency of patrolling a highway is more 
+and  more dependent on the number of highways that started and ended at the base station. 
+If the  number of highways started at a base station is more than the number of highways 
+ended there,  the roads are patrolled less frequently. And if, no highways end at some 
+base station, then, the  highways started from there, will not be patrolled more than once.  
+
+<p>
+In   this   situation,   the   highway   patrol   decided   to   remove   some   highways   
+from   the   patrolling  schedule, so that, at each base station, the number of highways 
+started and ended at any base  station will be equal. The rest of the highways will be 
+monitored using video surveillance. But,  due to some security issues, there are some 
+highways that have to be patrolled.  
+
+<p>
+Now, given the cost of patrolling highways, and that of installing video surveillance, 
+find the  minimum cost of monitoring the whole city. Please keep in mind that, video 
+surveillance can not  substitute the highway patrol completely. So, there has to be 
+at least one highway that will be  patrolled. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+First line of the input contains an integer <span class="MATH"><i>T</i></span> 
+<span class="MATH">(<i>T</i><img width="18" height="31" align="MIDDLE" border="0" src="4722img1.png" alt="$ \le$">70)</span>, the number of test cases. 
+This is followed by <span class="MATH"><i>T</i></span> test cases. Each test case starts with two integers <span class="MATH"><i>N</i></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4722img1.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4722img1.png" alt="$ \le$">100)</span> and <span class="MATH"><i>M</i></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4722img1.png" alt="$ \le$"><i>M</i><img width="18" height="31" align="MIDDLE" border="0" src="4722img1.png" alt="$ \le$">1000)</span>, the  number of base stations and highways. This is 
+followed by <span class="MATH"><i>M</i></span> lines, each containing 5 integers,  <span class="MATH"><i>u</i>, <i>v</i>, <i>p</i>, <i>s</i>, <i>x</i></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4722img1.png" alt="$ \le$"><i>u</i>, <i>v</i><img width="18" height="31" align="MIDDLE" border="0" src="4722img1.png" alt="$ \le$"><i>N</i>, 0<img width="18" height="31" align="MIDDLE" border="0" src="4722img1.png" alt="$ \le$"><i>p</i>, <i>s</i><img width="18" height="31" align="MIDDLE" border="0" src="4722img1.png" alt="$ \le$">1000000)</span> where <span class="MATH"><i>u</i></span> and <span class="MATH"><i>v</i></span> means, the highway starts from base station <span class="MATH"><i>u</i></span>,   
+and   ends   at  <span class="MATH"><i>v</i></span>,  <span class="MATH"><i>p</i></span> is   the   cost   of   patrolling   and  <span class="MATH"><i>s</i></span> is   the   
+cost   of   installing   video  surveillance. If the highway must be patrolled, then 
+<span class="MATH"><i>x</i></span> will be one. Otherwise it will be zero. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For   each   test   case,   output   the   case   number,   followed   by   the   
+minimum   cost   to   monitor   the  highways.   If it is  not possible to patrol 
+satisfying the given constraints, output ``<tt>impossible</tt>"  (without quotes). 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+2 
+4 5 
+1 2 10 25 0  
+2 3 10 5 0  
+3 1 10 5 0  
+2 4 10 5 0  
+4 3 30 5 0  
+4 5  
+1 2 10 25 0  
+2 3 10 5 0  
+3 1 10 5 0  
+2 4 10 5 0  
+4 3 30 5 1
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case 1: 40 
+Case 2: 65
+</pre>

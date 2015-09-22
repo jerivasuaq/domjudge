@@ -1,0 +1,36 @@
+Ejercicio 17. 
+
+Crear un programa que considere las siguientes opciones:
+
+1) Sumatorio
+2) Factorial
+
+Luego de esto se pide al usuario que introduzca algún número.
+
+Si el usuario elige la opcion 1, se calcula el sumatorio del número. 
+
+Si el usuario elige la opción 2, se calcula el factorial. 
+
+Tras calcular el resultado, el programa volverá a pedir la operación a elegir.
+
+Ejemplos:
+==============================================================
+entrada:
+1 4
+--------------------------------------------------------------
+salida:
+10
+==============================================================
+entrada:
+2 4
+--------------------------------------------------------------
+salida:
+24
+==============================================================
+entrada:
+0
+--------------------------------------------------------------
+salida:
+Numero no valido.
+
+

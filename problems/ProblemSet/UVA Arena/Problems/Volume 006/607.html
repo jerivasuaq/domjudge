@@ -1,0 +1,164 @@
+
+
+<html>
+<head>
+<title>Scheduling Lectures</title>
+<meta name="description" content="Scheduling Lectures">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Scheduling Lectures</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+You are teaching a course and must cover <i>n</i> (
+
+<img width="105" height="30" align="MIDDLE" border="0" src="607img1.gif" alt="$1 \le n \le 1000$">)
+topics. The
+length of each lecture
+is <i>L</i> (
+
+<img width="98" height="32" align="MIDDLE" border="0" src="607img2.gif" alt="$1 \le L \le 500$">)
+minutes. The topics require 
+
+<img width="94" height="30" align="MIDDLE" border="0" src="607img3.gif" alt="$t_1, t_2, \dots, t_n$">
+(
+
+<img width="83" height="32" align="MIDDLE" border="0" src="607img4.gif" alt="$1 \le t_i \le L$">)
+minutes each. For
+each topic, you must decide in which lecture it should be covered. There are two scheduling
+restrictions:
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>Each topic must be covered in a single lecture. It cannot be divided
+into two lectures. This reduces discontinuity between lectures.
+<dt>2.
+<dd>Topic <i>i</i> must be covered before topic <i>i</i> + 1 for all 
+
+<img width="76" height="31" align="MIDDLE" border="0" src="607img5.gif" alt="$1 \le i < n$">.
+Otherwise, students may not have the prerequisites to understand topic <i>i</i> + 1.
+</dd></dt></dd></dt></dl>
+
+<p>
+With the above restrictions, it is sometimes necessary to have free time at
+the end of a lecture.
+If the amount of free time is at most 10 minutes, the students will be happy
+to leave early.
+However, if the amount of free time is more, they would feel that their
+tuition fees are wasted.
+Therefore, we will model the dissatisfaction index (DI) of a lecture by the
+formula:
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="247" height="66" src="607img6.gif" alt="\begin{displaymath}DI = \cases{0 & if $t=0$, \cr
+-C & if $1 \le t \le 10$, \cr
+(t-10)^2 & otherwise}
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+where <i>C</i> is a positive integer, and <i>t</i> is the amount of free time at the end
+of a lecture. The total dissatisfaction index is the sum of the DI for each
+lecture.
+
+<p>
+
+<p>
+<br>
+For this problem, you must find the minimum number of lectures that is
+needed to satisfy the
+above constraints. If there are multiple lecture schedules with the minimum
+number of lectures,
+also minimize the total dissatisfaction index.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of a number of cases. The first line of each case contains
+the integer <i>n</i>, or 0
+if there are no more cases. The next line contains the integers <i>L</i> and <i>C</i>.
+These are followed by <i>n</i> integers 
+
+<img width="94" height="30" align="MIDDLE" border="0" src="607img3.gif" alt="$t_1, t_2, \dots, t_n$">.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each case, print the case number, the minimum number of lectures used,
+and the total
+dissatisfaction index for the corresponding lecture schedule on three
+separate lines. Output a blank line between cases.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6
+30 15
+10
+10
+10
+10
+10
+10
+10
+120 10
+80
+80
+10
+50
+30
+20
+40
+30
+120
+100
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Case 1:
+Minimum number of lectures: 2
+Total dissatisfaction index: 0
+
+Case 2:
+Minimum number of lectures: 6
+Total dissatisfaction index: 2700
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-04-06</i>
+</address>
+</body>
+</html>
+

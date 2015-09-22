@@ -1,0 +1,119 @@
+
+
+<html>
+<head>
+<title>Slash Maze</title>
+<meta name="description" content="Maze">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Slash Maze</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+By filling a rectangle with slashes (/) and backslashes (
+
+<img width="13" height="34" align="MIDDLE" border="0" src="705img1.gif" alt="$\backslash$">), you
+can generate nice little mazes. Here is an example:
+
+<p>
+<div align="CENTER">
+
+<img src="p705.gif">
+</div>
+
+<p>
+As you can see, paths in the maze cannot branch, so the whole maze only
+contains cyclic paths and paths entering somewhere and leaving
+somewhere else. We are only interested in the cycles. In our example,
+there are two of them.
+
+<p>
+Your task is to write a program that counts the cycles and finds the
+length of the longest one. The length is defined as the number of
+small squares the cycle consists of (the ones bordered by gray lines
+in the picture). In this example, the long cycle has length 16 and
+the short one length 4.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input contains several maze descriptions. Each description begins with one
+line containing two integers <i>w</i> and <i>h</i> (
+
+<img width="108" height="32" align="MIDDLE" border="0" src="705img2.gif" alt="$1 \le w, h \le 75$">), the width and the height of the maze. The next <i>h</i> lines represent the maze itself, and contain <i>w</i> characters each; all these characters will be either ``<code>/</code>" or ``<code>\</code>".
+
+<p>
+The input is terminated by a test case beginning with <i>w</i> = <i>h</i> = 0. This case should not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each maze, first output the line ``<tt>Maze #</tt><i>n</i><tt>:</tt>'', where <i>n</i> 
+is the number of the maze. Then, output the line
+``<i>k</i><tt>Cycles; the longest has length </tt><i>l</i><tt>.</tt>'', where
+<i>k</i> is the number of cycles in the maze and <i>l</i> the length of the longest of the cycles. If the maze does not contain any cycles, output the line ``<tt>There are no cycles.</tt>".
+
+<p>
+Output a blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6 4
+\//\\/
+\///\/
+//\\/\
+\/\///
+3 3
+///
+\//
+\\\
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Maze #1:
+2 Cycles; the longest has length 16.
+
+Maze #2:
+There are no cycles.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

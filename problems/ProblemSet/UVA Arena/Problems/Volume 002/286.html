@@ -1,0 +1,102 @@
+
+
+<html>
+<head>
+<title>Dead Or Not - That Is The Question</title>
+<meta name="description" content="Dead Or Not - That Is The Question">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr>
+<td><b><font size="5" color="#C0FFFF"><a name="SECTION0001000000000000000000">Dead Or Not - That Is The Question</a></font></b>
+</td></tr></table></center></h1>
+<p>
+On a standard checkerboard ( <b>8 x 8</b>  squares) the only black piece is
+the king. The only
+limitation to the number and kind of white pieces is the number of
+squares left (63). This
+means that apart from the black king there can be between zero and 63
+white pieces on
+the board.
+<p>
+<p>
+Your objective is to determine whether the black king is under check and cannot move to the square which is not attacked<i>(checkmate)</i> or is not under check but there is no square to go which is not attacked <i>(draw)</i> or there exists a square where it can move <i>(game is not over)</i>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Input consists of several lines. Each line of the input file contains the description of the boards state is a
+64-character string with
+each character representing a square on the board (row after row).
+The black king will always present in this string. The white king will never be the neighbour of the black king on the board and only one white king will present on the board. The white pawns will never be on positions x1 <i>(x = a, b, c, d, e, f, g, h)</i>.  The possible values for each character are:
+<p><pre>
+<table width="400" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="150"><b>&lt;space&gt;</b></td>
+<td><b>no figure on this square</b></td>
+</tr>
+<tr>
+<td width="150"><b>K</b></td>
+<td><b>black king</b></td>
+</tr>
+<tr>
+<td width="150"><b>p</b></td>
+<td><b>white pawn</b></td>
+</tr>
+<tr>
+<td width="150"><b>r</b></td>
+<td><b>white rook</b></td>
+</tr>
+<tr>
+<td width="150"><b>n</b></td>
+<td><b>white knight</b></td>
+</tr>
+<tr>
+<td width="150"><b>b</b></td>
+<td><b>white bishop</b></td>
+</tr>
+<tr>
+<td width="150"><b>q</b></td>
+<td><b>white queens</b></td>
+</tr>
+<tr>
+<td width="150"><b>k</b></td>
+<td><b>white king</b></td>
+</tr>
+</table>
+</pre>
+<p>
+<p>
+<ul>
+<li> <b>PAWN</b>: one of the chessmen of least value having the power to move only forward ordinarily one square at a time, to capture only diagonally forward, and be promoted to any piece except a king upon reaching the eighth rank
+<li> <b>ROOK</b>: either of two pieces of the same color in a set of chessmen having the power  move along the ranks or files across any number of unoccupied squares. Also called castle
+<li> <b>KNIGHT</b>: either of two pieces of the same color in a set of chessmen having an L-shaped move of two squares in one row and one square in a perpendicular row over squares that may be occupied
+to
+<li> <b>BISHOP</b>: either of two pieces of each color in a set of chessmen having the power to move diagonally across any number of adjoining unoccupied squares
+<li> <b>QUEEN</b>: the most privileged piece of each color in a set of chessmen having the power to move in any direction across any number of unoccupied squares
+<li> <b>KING</b>: the principal piece of each color in a set of chessmen having the power to move ordinarily one square in any direction and to capture opposing men but being obliged never to enter or remain in check
+</li></li></li></li></li></li></ul>
+<p>
+Suppose the chessboard starts at the lower left corner with the field a/1. Therefore
+white is playing upwards (Starting at a-h/1-8).
+ <b>EOF</b> indicates the end of the input file.
+<p>
+The output consists of : <tt>&quot;checkmate&quot;</tt> or <tt>&quot;draw&quot;</tt> or <tt>&quot;game is not over&quot;</tt> without quotes.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>knnnnnnnpppppppppppppppprrrrrrrrrrrrrrrrnnnbqbqbnKnbqbqbnnnbqbqb
+nrnrbqnnnpbnbbnqrkbrbprpnrpprqprqpnpnnbprbrqrqnnnnprpppKnqrrbqqq
+nrrqbqbrnrpprpbpnbnprqnnnnbrppqqpqpnKqnpnpqrrprrnnbqqnrbqknbqqnn
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>draw
+checkmate
+game is not over</pre>
+<p>
+</body>
+</html>

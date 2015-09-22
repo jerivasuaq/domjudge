@@ -1,0 +1,144 @@
+
+
+<html>
+<head>
+<title>Skyscraper Floors</title>
+<meta name="description" content="Skyscraper Floors">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Skyscraper Floors</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+What a great idea it is to build skyscrapers! Using not too
+large area of land, which is very expensive in many cities today, the
+skyscrapers offer an extremely large utility area for flats or offices. 
+The only disadvantage is that it takes too long to get to the upper 
+floors. Of course these skyscrapers have to be equiped not only 
+with a stairway but also with several elevators. But even using 
+ordinary elevators is very slow. Just imagine you want to get from 
+the very top floor to the base floor and many other people on other 
+floors want the same. As a result the elevator stops on almost every 
+floor and since its capacity is limited and the elevator is already 
+full from the upper floors, most stops are useless and just cause 
+a delay. If there are more elevators in the skyscrapers, this problem 
+is a little bit eliminated but still not completely. Most people just 
+press all the buttons of all the elevators and then take the first 
+one so that all elevators will stop on the floor anyway.
+
+<p>
+
+<p>
+<br>
+However, the solution exists as we shall see. The Antique Comedians of
+Midilesia headquarters reside in a skyscraper with a very special
+elevator system. The elevators do not stop on every floor but only on
+every <i>X</i>-th floor.
+Moreover each elevator can go just to a certain floor <i>Y</i>
+(called starting floor) and cannot go any lower. There is one
+high-capacity elevator which can stop on every elevator's starting
+floor.
+
+<p>
+
+<p>
+<br>
+The ACM has a big problem. The headquarters should be moved to
+another office this week, possibly on a different floor. 
+Unfortunately, the high-capacity elevator is
+out of order right now so it is not always possible to go to the base
+floor. One piece of furniture cannot be moved using the stairway because it
+is too large to pass through the stairway door. You are to write
+a program that decides whether it is possible to move a piece of
+furniture from the original office to the other.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of <i>N</i> cases. The first line contains only
+one positive integer <i>N</i>. Then follow the cases.
+Each case starts with a line containing four integers 
+<i>F</i>, <i>E</i>, <i>A</i>, <i>B</i>, where <i>F</i>,
+
+
+<img width="143" height="32" align="MIDDLE" border="0" src="718img1.gif" alt="$1 \le F < 50000000$">
+determines the number of floors in the
+skyscraper (this means that there are floors 0 to
+<i>F</i>-1), <i>E</i>, 
+
+0 &lt; <i>E</i> &lt; 100 is the number of elevators and
+<i>A</i>, <i>B</i>, 
+
+<img width="108" height="32" align="MIDDLE" border="0" src="718img2.gif" alt="$0 \le A,B < F$">
+are numbers of the
+two floors between which the piece of furniture should be moved. Then
+follow <i>E</i> lines. Each of them contains description of one elevator.
+There are exactly two integers <i>X</i> and <i>Y</i>, <i>X</i> &gt; 0, <img width="50" height="32" align="MIDDLE" border="0" src="718img3.gif" alt="$Y \ge 0$">
+at
+each line. <i>Y</i> determines, that the elevator starts on the
+<i>Y</i>-th floor and <i>X</i> determines, that it stops on every
+<i>X</i>-th floor, e.g. for <i>X</i> = 3, <i>Y</i> = 7 the
+elevator stops on floors 7, 10, 13, 16, etc.).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each case, print exactly one line.
+If floor <i>B</i> is reachable from floor <i>A</i> not using the
+stairway, print the sentence
+`<tt>It is possible to move the furniture.</tt>', otherwise print 
+`<tt>The furniture cannot be moved.</tt>'.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+2
+22 4 0 6
+3 2
+4 7
+13 6
+10 0
+1000 2 500 777
+2 0
+2 1
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+It is possible to move the furniture.
+The furniture cannot be moved.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-15</i>
+</address>
+</body>
+</html>
+

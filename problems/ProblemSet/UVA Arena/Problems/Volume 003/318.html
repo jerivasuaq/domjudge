@@ -1,0 +1,93 @@
+
+
+<html>
+<head>
+<title>Domino Effect</title>
+<meta name="description" content="Domino Effect">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Domino Effect</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Did you know that you can use domino bones for other things besides
+playing Dominoes? Take a number of dominoes and build a row by standing
+them on end with only a small distance in between. If you do it right,
+you can tip the first domino and cause all others to fall down
+in succession (this is where the phrase ``domino effect'' comes from).
+<p>
+<p>
+While this is somewhat pointless with only a few dominoes, some people
+went to the opposite extreme in the early Eighties. Using millions of
+dominoes of different colors and materials to fill whole halls with elaborate
+patterns of falling dominoes, they created (short-lived) pieces of art.
+In these constructions, usually not only one but several rows of dominoes
+were falling at the same time. As you can imagine, timing is an
+essential factor here.
+<p>
+<p>
+It is now your task to write a program that, given such a system of
+rows formed by dominoes, computes when and where the last domino falls.
+The system consists of several ``key dominoes'' connected by rows of
+simple dominoes. When a key domino falls, all rows connected to the domino
+will also start falling (except for the ones that have already fallen).
+When the falling rows reach other key dominoes that have not fallen yet,
+these other key dominoes will fall as well and set off the rows connected
+to them. Domino rows may start collapsing at either end. It is even possible
+that a row is collapsing on both ends, in which case the last domino falling
+in that row is somewhere between its key dominoes. You can assume
+that rows fall at a uniform rate.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file contains descriptions of several domino systems. The
+first line of each description contains two integers: the number <i>n</i> of key
+dominoes ( <img width="90" height="25" align="MIDDLE" alt="tex2html_wrap_inline29" src="318img1.gif"> ) and the number <i>m</i> of rows between them.
+The key dominoes are numbered from 1 to <i>n</i>. There is at most one row
+between any pair of key dominoes and the domino graph is connected, i.e.
+there is at least one way to get from a domino to any other domino
+by following a series of domino rows.
+<p>
+The following <i>m</i> lines each contain three integers <i>a</i>, <i>b</i>, and <i>l</i>,
+stating that there is a row between key dominoes <i>a</i> and <i>b</i> that
+takes <i>l</i> seconds to fall down from end to end.
+<p>
+<p>
+Each system is started by tipping over key domino number 1.
+<p>
+<p>
+The file ends with an empty system (with <i>n</i> = <i>m</i> = 0), which should not
+be processed.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each case output a line stating the number of the case (<tt>`System #1'</tt>,
+<tt>`System #2'</tt>, etc.). Then output a line containing the time when the
+last domino falls, exact to one digit to the right of the decimal point,
+and the location of the last domino falling, which is either at a key
+domino or between two key dominoes. Adhere to the format shown in the
+output sample. If you find several solutions, output only one of them.
+Output a blank line after each system.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2 1
+1 2 27
+3 3
+1 2 5
+1 3 5
+2 3 5
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>System #1
+The last domino falls after 27.0 seconds, at key domino 2.
+
+System #2
+The last domino falls after 7.5 seconds, between key dominoes 2 and 3.</pre>
+<p>
+</body>
+</html>

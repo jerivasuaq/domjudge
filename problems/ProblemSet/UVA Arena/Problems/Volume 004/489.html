@@ -1,0 +1,77 @@
+
+
+<html>
+<head>
+<title>Hangman Judge</title>
+<meta name="description" content="Hangman Judge">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Hangman Judge</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In ``Hangman Judge,'' you are to write a program that judges a series of Hangman games. For
+each game, the answer to the puzzle is given as well as the guesses. Rules are the same as the
+classic game of hangman, and are given as follows:
+<ol><li> The contestant tries to solve to puzzle by guessing one letter at a time.<li> Every time a guess is correct, all the characters in the word that match the guess will be
+``turned over.'' For example, if your guess is ``o'' and the word is ``book'', then both ``o''s in the
+solution will be counted as ``solved.''<li> Every time a wrong guess is made, a stroke will be added to the drawing of a hangman, which
+needs 7 strokes to complete. Each unique wrong guess only counts against the contestant once.
+<p>
+<pre>   ______   
+   |  |     
+   |  O     
+   | /|\    
+   |  |     
+   | / \    
+ __|_       
+ |   |______
+ |_________|</pre><li> If the drawing of the hangman is completed before the contestant has successfully guessed all
+the characters of the word, the contestant loses.<li> If the contestant has guessed all the characters of the word before the drawing is complete, the
+contestant wins the game.<li> If the contestant does not guess enough letters to either win or lose, the contestant chickens out.
+</li></li></li></li></li></li></ol>
+<p>
+Your task as the ``Hangman Judge'' is to determine, for each game, whether the contestant wins,
+loses, or fails to finish a game.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Your program will be given a series of inputs regarding the status
+of a game. All input will be in lower case. The first line of each section will contain a number to
+indicate which round of the game is being played; the next line will be the solution to the puzzle;
+the last line is a sequence of the guesses made by the contestant. A round number of <tt>-1</tt> would indicate the end of all games (and input).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output of your program is to indicate which round of the game the contestant is currently playing as well as the result of the game. There are three possible results:
+<p>
+<pre>You win.
+You lose.
+You chickened out.</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+cheese
+chese
+2
+cheese
+abcdefg
+3
+cheese
+abcdefgij
+-1</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Round 1
+You win.
+Round 2
+You chickened out.
+Round 3
+You lose.</pre>
+<p>
+</body>
+</html>

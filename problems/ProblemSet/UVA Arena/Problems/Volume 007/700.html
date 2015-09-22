@@ -1,0 +1,114 @@
+
+
+<html>
+<head>
+<title>Date Bugs</title>
+<meta name="description" content="Date Bugs">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Date Bugs</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+There are rumors that there are a lot of computers having a problem with the year 2000. As they use only two digits to represent the year, the date will suddenly turn from 1999 to 1900. In fact, there are also many other, similar problems. On some systems, a 32-bit integer is used to store the number of seconds that have elapsed since a certain fixed date. In this way, when 2<sup>32</sup> seconds (about 136 Years) have elapsed, the date will jump back to whatever
+the fixed date is.
+
+<p>
+Now, what can you do about all that mess? Imagine you have two
+computers <i>C</i><sub>1</sub> and <i>C</i><sub>2</sub> with two different bugs: One with the
+ordinary Y2K-Bug (i.e. switching to <i>a</i><sub>1</sub>:=1900 instead of <i>b</i><sub>1</sub>:=2000) and one
+switching to <i>a</i><sub>2</sub>:=1904 instead of <i>b</i><sub>2</sub>:=2040. Imagine that the <i>C</i><sub>1</sub> displays the year <i>y</i><sub>1</sub>:=1941 and <i>C</i><sub>2</sub> the year <i>y</i><sub>2</sub>:=2005. Then you know the following (assuming that there are no other bugs): the real year can't be 1941, since, then, both computers would show the (same) right date. If the year would be 2005, <i>y</i><sub>1</sub> would be 1905, so this is impossible, too. Looking only at <i>C</i><sub>1</sub>, we know that the real year is one of the following: 1941, 2041, 2141, etc. We now can calculate what <i>C</i><sub>2</sub> would display in these years: 1941, 1905, 2005, etc. So in fact, it is possible that the actual year is 2141.
+
+<p>
+To calculate all this manually is a lot of work. (And you don't really want to do it each time you forgot the actual year.) So, your task is to write a program which does the calculation for you: find the first possible real year, knowing what some other computers say (<i>y</i><sub><i>i</i></sub>) and knowing their bugs (switching to <i>a</i><sub><i>i</i></sub>
+instead of <i>b</i><sub><i>i</i></sub>). Note that the year <i>a</i><sub><i>i</i></sub> is definitely not after the year the computer was built. Since the actual year can't be before the year the
+computers were built, the year your program is looking for can't be before any <i>a</i><sub><i>i</i></sub>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains several test cases, in which the actual year
+has to be calculated. The description of each case starts with a
+line containing an integer <i>n</i> (
+
+<img width="88" height="30" align="MIDDLE" border="0" src="700img1.gif" alt="$1 \le n \le 20$">), the number of
+computers. Then, there is one line containing three integers 
+
+<i>y</i><sub><i>i</i></sub>, <i>a</i><sub><i>i</i></sub>, <i>b</i><sub><i>i</i></sub> 
+for each computer (
+
+<img width="191" height="32" align="MIDDLE" border="0" src="700img2.gif" alt="$0 \le a_i \le y_i < b_i < 10000$">).
+<i>y</i><sub><i>i</i></sub> is the year the computer displays, <i>b</i><sub><i>i</i></sub> is the year in which the
+bug happens (i.e. the first year which can't be displayed by this
+computer) and <i>a</i><sub><i>i</i></sub> is the year that the computer displays instead of
+<i>b</i><sub><i>i</i></sub>.
+
+<p>
+The input is terminated by a test case with <i>n</i>=0. It should not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, output the line ``<tt>Case #</tt><i>k</i><tt>:</tt>'', where <i>k</i> 
+is the number of the situation. Then, output the line ``<tt>The actual year is </tt><i>z</i><tt>.</tt>'', where <i>z</i> is the smallest possible year (satisfying all computers and being greater or equal to 
+
+<img width="110" height="31" align="MIDDLE" border="0" src="700img3.gif" alt="$u=\max_{i=1}^n a_i$">). If there
+is no such year less than 10000, output ``<tt>Unknown bugs detected.</tt>''.
+
+<p>
+Output a blank line after each case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+1941 1900 2000
+2005 1904 2040
+2
+1998 1900 2000
+1999 1900 2000
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case #1:
+The actual year is 2141.
+
+Case #2:
+Unknown bugs detected.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

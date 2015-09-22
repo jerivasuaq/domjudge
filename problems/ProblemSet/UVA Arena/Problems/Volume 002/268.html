@@ -1,0 +1,73 @@
+
+
+<html>
+<head>
+<title>Double Trouble</title>
+<meta name="description" content="Double Trouble">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Double Trouble</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The secret service of Hudonia has always had a strong appetite for strange
+numbers. This appetite seemed strongest when Hudonia was in trouble. The
+numbers they were looking for had the following property. Whenever you would
+right-rotate the number (that is, take away the last digit and put it in
+front of the number), you would end up with double the original number.
+Numbers possessing this property were called double-trouble numbers. For
+example, <i>X</i> = 421052631578947368 is a double-trouble number, since 2<i>X</i> = 842105263157894736
+which is a right rotation of <i>X</i>.
+<p>
+<p>
+The number <i>X</i> is a double-trouble number in the number system with base 10.
+Any number system with base  <img width="41" height="25" align="MIDDLE" alt="tex2html_wrap_inline33" src="268img1.gif"> , however, has many such double-trouble
+numbers. In the binary number system (base <i>p</i> = 2), for example, we have
+the double-trouble numbers 01 and 0101. Notice that the leading zeros are
+necessary here in order to obtain the proper number after right rotation.
+<p>
+<p>
+The secret service seemed to like the smallest double-trouble numbers in
+a number system most. For example, in the binary number system the smallest
+double-trouble number is 01. In the decimal (<i>p</i> = 10) number system, the
+smallest double-trouble number is 052631578947368421. Being a patriotic
+Hudonian, you are asked to write a program that computes for a given base
+p of a number system the smallest double-trouble number in that system.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file consist of a sequence of numbers, one per line, ended by
+end-of-file. Each number is less than 200.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output file consists of,
+for each number <i>p</i> in the input file, the smallest double-trouble number
+(including any necessary leading zeros) in the number system with base <i>p</i>.
+The double-trouble numbers are given in the format analogous to the example
+below and in the same order as in the input file.
+<p>
+No blank line should appear at the end of the output.
+Digits in a base-<i>p</i> number system are given in
+decimal representation, and each digit (including the last one) is followed
+by a single space.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>2
+10
+35</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>For base 2 the double-trouble number is
+0 1
+For base 10 the double-trouble number is
+0 5 2 6 3 1 5 7 8 9 4 7 3 6 8 4 2 1
+For base 35 the double-trouble number is
+11 23</pre>
+<p>
+</body>
+</html>

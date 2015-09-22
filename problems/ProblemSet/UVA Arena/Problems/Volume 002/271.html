@@ -1,0 +1,72 @@
+
+
+<html>
+<head>
+<title>Simply Syntax</title>
+<meta name="description" content="Simply Syntax">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Simply Syntax</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+In the land of Hedonia the official language is Hedonian. A Hedonian professor
+had noticed that many of her students still did not master the syntax of
+Hedonian well. Tired of correcting the many syntactical mistakes, she decided
+to challenge the students and asked them to write a program that could check
+the syntactical correctness of any sentence they wrote. Similar to the nature
+of Hedonians, the syntax of Hedonian is also pleasantly simple. Here are
+the rules:
+<p>
+<dl compact=""><dt>0.
+<dd> The only characters in the language are the characters <tt>p</tt>
+through <tt>z</tt> and <tt>N</tt>, <tt>C</tt>, <tt>D</tt>, <tt>E</tt>, and <tt>I</tt>.
+<p>
+<dt>1.<dd> Every character from <tt>p</tt> through <tt>z</tt> is a correct sentence.
+<p>
+<dt>2.<dd> If <i>s</i> is a correct sentence, then so is <tt>N</tt><i>s</i>.
+<p>
+<dt>3.<dd> If <i>s</i> and <i>t</i> are correct sentences, then so are
+<tt>C</tt><i>st</i>, <tt>D</tt><i>st</i>, <tt>E</tt><i>st</i> and <tt>I</tt><i>st</i>.
+<p>
+<dt>4.<dd> Rules 0. to 3. are the only rules to determine the syntactical correctness
+of a sentence.
+<p>
+ </dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dl>
+<p>
+You are asked to write a program that checks if sentences satisfy the syntax
+rules given in Rule 0. - Rule 4.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input consists of a number of sentences consisting only of characters
+<tt>p</tt> through <tt>z</tt> and <tt>N</tt>, <tt>C</tt>, <tt>D</tt>, <tt>E</tt>, and <tt>I</tt>. Each sentence is ended by a new-line
+character. The collection of sentences is terminated by the end-of-file
+character. If necessary, you may assume that each sentence has at most 256
+characters and at least 1 character.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output consists of the answers <tt>YES</tt> for each well-formed sentence and
+<tt>NO</tt> for each not-well-formed sentence. The answers are given in the same
+order as the sentences. Each answer is followed by a new-line character,
+and the list of answers is followed by an end-of-file character.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>Cp
+Isz
+NIsz
+Cqpq</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>NO
+YES
+YES
+NO</pre>
+<p>
+</body>
+</html>

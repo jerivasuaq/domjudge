@@ -1,0 +1,37 @@
+Ejercicio 11. 
+
+Programa que le pide al usuario un número entero positivo menor a 1000 y calcula todos los divisores menores o iguales de este mismo número, mostrandolos en pantalla.
+
+Entrada: 
+	Un entero positivo.
+	
+Salida:
+	Los divisores menores del número.
+
+
+Ejemplos:
+==============================================================
+entrada:
+8
+--------------------------------------------------------------
+salida:
+8 4 2 1
+==============================================================
+entrada:
+-1
+--------------------------------------------------------------
+salida:
+Numero no valido.
+==============================================================
+entrada:
+21
+--------------------------------------------------------------
+salida:
+21 7 3 1
+==============================================================
+entrada:
+103
+--------------------------------------------------------------
+salida:
+103 1
+

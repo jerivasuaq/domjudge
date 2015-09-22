@@ -1,0 +1,95 @@
+<p>
+Eshita is a very ecologically conscious person. She works late and every night before going home she makes sure that all the lights are turned off at her workplace to conserve electricity. The workplace is represented as a 2-dimensional grid. Each square in the grid has 4 neighbors in up, down, left, and right directions. The electrical wiring is such that the sides of the grid wrap around i.e., the leftmost and the rightmost columns are neighbors. Similarly, the top and bottom rows are neighbors. This ensures that each of the squares in the grid has 4 neighbors.
+
+<p>
+To standardize our notation, assume that the upper left-most square of the board is position (0, 0). Rows run horizontally and the top row is row 0. Columns are vertical and column 0 is the left-most column. Any reference to a square is by row then column; thus the square (4, 6) means row 4, column 6. 
+
+<p>
+So, in figure 1, the grid has 4 columns and 4 rows (all the grids will have same number of rows and columns). The shaded square is denoted as (2, 3). The four neighbors of the square (2, 3) are squares (1, 3),  (3, 3), (2, 2) and (2, 0). Similarly, the four neighbors of the square (0, 0) are squares (3, 0), (1, 0), (0, 1), and (0, 3).
+
+<p>
+<div align="CENTER">
+
+<img width="243" height="212" align="BOTTOM" border="0" src="p2353a.gif" alt="\epsfbox{p2353a.eps}">
+</div>
+
+<p>
+Eshita is told that each square of the grid is a switch and a light. When a switch in some square is pushed, the light in that square and its neighboring squares toggle their ON/OFF state. Figure 2 shows a sequence where, starting from a grid with all the lights OFF, switches (1, 1), and (0, 0) have been pushed. The ON lights are shown as shaded.
+
+<p>
+<div align="CENTER">
+
+<img width="810" height="210" align="BOTTOM" border="0" src="p2353b.gif" alt="\epsfbox{p2353b.eps}">
+</div>
+
+<p>
+Given a grid with some of the lights ON, Eshita needs to say whether it is possible to turn all the lights OFF by pushing some sequence of button pushes. For example, in the first configuration of the 3<span class="MATH"><tt>x</tt></span>3 grid in figure 3, all the lights can be turned OFF by pushing the switches (0, 0), (1, 1) and (2, 2) (some other lights may be turned ON in the intermediate stages, but at the end of this sequence all the lights will be turned off). But in the second configuration, it is not possible to turn all the lights off by pushing any sequence of switches.
+
+<p>
+<div align="CENTER">
+
+<img width="481" height="166" align="BOTTOM" border="0" src="p2353c.gif" alt="\epsfbox{p2353c.eps}">
+</div>
+
+<p>
+Your task is to write a program, which given some arbitrary configuration of a grid will determine whether all the lights can be turned off or not.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file contains the descriptions of several grids. Each grid starts with a line containing an integer <span class="MATH"><i>size</i></span>, specifying the number of rows and cloumns in the grid 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="2353img4.png" alt="$ \le$"><i>size</i><img width="18" height="31" align="MIDDLE" border="0" src="2353img4.png" alt="$ \le$">40)</span>. Next line has a single integer <span class="MATH"><i>n</i></span>, specifying the number of lights that are turned on. The following <span class="MATH"><i>n</i></span> lines contain two integers each, namely the <span class="MATH"><i>row</i></span> and <span class="MATH"><i>column</i></span> of each of ON light. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each of the grids output ``<tt>Yes</tt>" or ``<tt>No</tt>" on a line of its own. The output will be ``<tt>Yes</tt>" if all the lights in the configuration can be turned off and ``<tt>No</tt>" if it is not possible.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>  
+5 
+11 
+0 0 
+0 1 
+0 2 
+0 4 
+1 4 
+2 1 
+2 2 
+2 3 
+3 2 
+4 2 
+4 4 
+3 
+3 
+0 1 
+0 2 
+1 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>  
+Yes 
+No
+</pre>
+

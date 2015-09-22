@@ -1,0 +1,146 @@
+
+
+<html>
+<head>
+<title>The Game</title>
+<meta name="description" content="The Game">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The Game</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+One morning, you wake up and think: ``I am such a good programmer. Why
+not make some money?'' So you decide to write a computer game.
+
+<p>
+The game takes place on a rectangular board consisting of 
+
+<img width="49" height="32" align="MIDDLE" border="0" src="710img1.gif" alt="$w \times h$">
+squares. Each square might or might not contain a game piece, as shown in the picture.
+
+<p>
+One important aspect of the game is whether two game pieces can be connected by
+a path which satisfies the two following properties:
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>It consists of straight segments, each one being either
+horizontal or vertical.
+<dt>2.
+<dd>It does not cross any other game pieces.
+</dd></dt></dd></dt></dl>
+
+<p>
+(It <em>is</em> allowed that the path leaves the board temporarily.)
+
+<p>
+Here is an example:
+
+<p>
+<div align="CENTER">
+
+<img src="p710.gif">
+</div>
+
+<p>
+The game pieces at (1,3) and at (4, 4) can be connected. The game pieces at (2, 3) and (3, 4) cannot be connected; each path would cross at least one other game piece.
+
+<p>
+The part of the game you have to write now is the one testing whether two 
+game pieces  can be connected according to the rules above.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file contains descriptions of several different game situations. The first line of each description contains two integers <i>w</i> and <i>h</i> (
+
+<img width="108" height="32" align="MIDDLE" border="0" src="710img2.gif" alt="$1 \le w, h
+\le 75$">), the width and the height of the board. The next <i>h</i> lines
+describe the contents of the board; each of these lines contains exactly <i>w</i> characters: a ``<tt>X</tt>'' if there is a game piece at this location, and a
+space if there is no game piece.
+
+<p>
+Each description is followed by several lines containing four integers 
+
+<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>, <i>x</i><sub>2</sub>, <i>y</i><sub>2</sub> each satisfying  
+
+<img width="228" height="32" align="MIDDLE" border="0" src="710img3.gif" alt="$1 \le x_1, x_2 \le w, 1 \le y_1, y_2 \le h$">.
+These are the coordinates of two game pieces. (The upper left corner has the coordinates (1, 1).) These two game pieces will always be different. The list of pairs of game pieces for a board will be terminated by a line containing 
+``<tt>0 0 0 0</tt>".
+
+<p>
+The entire input is terminated by a test case starting with <i>w</i>=<i>h</i>=0. This test case should not be procesed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each board, output the line ``<tt>Board #</tt><i>n</i><tt>:</tt>'', where <i>n</i> 
+is the number of the board. Then, output one line for each pair of
+game pieces associated with the board description. Each of these lines has to start with ``<tt>Pair </tt><i>m</i><tt>: </tt>'', where <i>m</i> is the number of the pair (starting the count with 1 for each board). Follow this by ``<i>k</i><tt>segments.</tt>'', where <i>k</i> is the minimum number of segments for a path connecting  the two game pieces, or ``<tt>impossible.</tt>'', if it is not possible
+to connect the two game pieces  as described above.
+
+<p>
+Output a blank line after each board.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 4
+XXXXX
+X   X
+XXX X
+ XXX 
+2 3 5 3
+1 3 4 4
+2 3 3 4
+0 0 0 0
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Board #1:
+Pair 1: 4 segments.
+Pair 2: 3 segments.
+Pair 3: impossible.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,107 @@
+<p>
+Let <span class="MATH"><i>x</i></span> and <span class="MATH"><i>y</i></span> be two strings over some finite alphabet <span class="MATH"><i>A</i></span>. We would like to transform <span class="MATH"><i>x</i></span> into <span class="MATH"><i>y</i></span> allowing only operations given below: 
+
+<p>
+
+<p>
+<br>
+<span class="textbf">Deletion:</span> a letter in <span class="MATH"><i>x</i></span> is missing in <span class="MATH"><i>y</i></span> at a corresponding position. 	
+
+<p>
+<span class="textbf">Insertion:</span> a letter in <span class="MATH"><i>y</i></span> is missing in <span class="MATH"><i>x</i></span> at a corresponding position. 
+
+<p>
+<span class="textbf">Change:</span> letters at corresponding positions are distinct 
+
+<p>
+
+<p>
+<br>
+Certainly, we would like to minimize the number of all possible operations. 
+
+<p>
+
+<p>
+<br>
+<span class="textbf">Illustration</span>
+
+<p>
+<pre>
+A  G  T  A  A  G  T  *  A  G  G  C
+|  |  |           |     |     |  |
+A  G  T  *  C  *  T  G  A  C  G  C
+</pre> 
+
+<p>
+<span class="textbf">Deletion:</span> <span class="MATH"><tt>*</tt></span> in the bottom line 
+
+<p>
+<span class="textbf">Insertion:</span> <span class="MATH"><tt>*</tt></span> in the top line 
+
+<p>
+<span class="textbf">Change:</span> when the letters at the top and bottom are distinct
+
+<p>
+
+<p>
+<br>
+This tells us that to transform <span class="MATH"><i>x</i></span> = AGTCTGACGC into <span class="MATH"><i>y</i></span> = AGTAAGTAGGC we could be required to perform 5 operations (2 changes, 2 deletions and 1 insertion). If we want to minimize the number operations, we should do it like
+<pre>
+A  G  T  A  A  G  T  A  G  G  C
+|  |  |        |     |     |  |
+A  G  T  C  T  G  *  A  C  G  C
+</pre>
+
+and 4 moves would be required (3 changes and 1 deletion).
+
+<p>
+In this problem we would always consider strings <span class="MATH"><i>x</i></span> and <span class="MATH"><i>y</i></span> to be fixed, such that the number of letters in <span class="MATH"><i>x</i></span> is <span class="MATH"><i>m</i></span> and the number of letters in <span class="MATH"><i>y</i></span> is <span class="MATH"><i>n</i></span> where <span class="MATH"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="3170img1.png" alt="$ \ge$"><i>m</i></span>. 
+
+<p>
+Assign 1 as the cost of an operation performed. Otherwise, assign 0 if there is no operation performed. 
+
+<p>
+Write a program that would minimize the number of possible operations to transform any string <span class="MATH"><i>x</i></span> into a string <span class="MATH"><i>y</i></span>. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+Input contains several datasets. Each dataset consists of the strings <span class="MATH"><i>x</i></span> and <span class="MATH"><i>y</i></span> prefixed by their respective lengths, one in each line. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+For each dataset, an integer representing the minimum number of possible operations to transform any string <span class="MATH"><i>x</i></span> into a string <span class="MATH"><i>y</i></span>. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+10 AGTCTGACGC 
+11 AGTAAGTAGGC
+</pre>  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+4
+</pre> 
+
+<p>

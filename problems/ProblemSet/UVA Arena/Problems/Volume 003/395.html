@@ -1,0 +1,108 @@
+
+
+<html>
+<head>
+<title>Board Silly</title>
+<meta name="description" content="Board Silly">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Board Silly</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You are a member of a team of programmers whose task is to write a
+board game.  Your job is to write the part that examines a board
+layout and enumerates all possible moves for a given player.  The game
+you are writing is played on an 8 by 8 grid of squares (similar to a
+chess or checker board but the squares are all the same color).  The
+rows are labeled with the letters A through H from top to bottom.  The
+columns are labeled with the numbers 1 through 8 from left to right.
+<p>
+<p>
+At any particular time in the game, each player may have from 1 to 12
+pieces on the board (there is only one type of piece for each player).
+Valid moves are determined by the following rules:
+<p>
+<ol><li> Pieces may be moved in a straight line, either left, right, up,
+down or diagonally.<li> The number of spaces a piece may be moved is determined by the
+total number of pieces in the row, column or diagonal in which the
+piece is being moved.  Pieces may only be moved by this exact number,
+no more, no less.<li> A player may jump over his own pieces.<li> A player may not jump over his opponent's pieces.<li> A player may capture an opponent's piece by landing on it.<li> A player may not land on a space he already occupies.
+<p>
+</li></li></li></li></li></li></ol><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file consists of one or more board layouts followed by which
+piece, either '<tt>X</tt>' or '<tt>O</tt>' (that's an ``oh'' not a zero), for which
+moves should be displayed for.  Each board is specified as 8 lines of
+8 characters each.  Each board position will contain an '<tt>X</tt>', an '<tt>O</tt>' or a period.  The '<tt>X</tt>' and '<tt>O</tt>' position represent the occupied positions,
+and the periods represent empty board positions.  Immediately
+following each board is line containing a single '<tt>X</tt>' or '<tt>O</tt>' character,
+and it is for this piece that moves should be displayed.  The end of
+the input is indicated by the end of the file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output file should contain one line for each possible move.  The
+moves must be printed in alphabetical order.  Each line should specify the
+origin and destination of each piece, in that order, separated by a
+single dash character.  Each board location (origins and destinations)
+should be specified as a row letter followed by a column number.  If
+no moves are possible then the output should simply specify ``<tt>No moves
+are possible</tt>''.  The output for each board should be separated by a
+single blank line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>O.......
+O......X
+O.....XX
+O....XXX
+.O...XXX
+........
+..O..XXX
+........
+O
+..OXO...
+..OOO...
+........
+........
+........
+........
+........
+........
+X</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>A1-A2
+A1-C3
+A1-E1
+B1-A2
+B1-B3
+B1-D3
+B1-F1
+C1-B2
+C1-C4
+C1-D2
+C1-G1
+D1-C2
+D1-D5
+D1-F3
+D1-H1
+E2-D2
+E2-D3
+E2-E6
+E2-F1
+E2-F2
+E2-G4
+G3-F2
+G3-F3
+G3-H3
+G3-H4
+
+No moves are possible</pre>
+<p>
+</body>
+</html>

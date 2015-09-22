@@ -1,0 +1,129 @@
+
+
+<html>
+<head>
+<title>Filling the Gaps</title>
+<meta name="description" content="Filling the Gaps">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Filling the Gaps</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+At the largest conference on coding and cryptography the following theorem
+needed a proof or a counterexample: Suppose you are given a set of words
+of equal length; each word consisting of <tt>0</tt>'s, <tt>1</tt>'s and/or <tt>*</tt>'s. Furthermore
+suppose the pattern of <tt>*</tt>'s is different for all words in the set. By this
+we mean: if you replace all <tt>0</tt>'s and <tt>1</tt>'s by say <tt>$</tt> you obtain different words.
+
+<p>
+
+<p>
+<br>
+The claim is: if you replace the <tt>*</tt>'s by <tt>0</tt>'s and <tt>1</tt>'s in all possible ways, then you obtain a set that is at least as big as the set you started with.
+
+<p>
+
+<p>
+<br>
+Example:
+
+<p>
+<tt>{ 10*, *0*, *00 }</tt> produces <tt>{ 100, 101, 000, 001 }</tt>
+
+<p>
+<tt>{ 100, 101, 10* }</tt> produces <tt>{ 100, 101 }</tt>
+
+<p>
+
+<p>
+<br>
+Notice that the set in the latter example does not satisfy the condidtion
+mentioned above, so it does not provide a counterexample.
+
+<p>
+
+<p>
+<br>
+You program has to check for a number of cases:
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>Whether the pattern of <tt>*</tt>'s is different for all words in the set and:
+<dt>2.
+<dd>Compute the number of words obtained by replacing the <tt>*</tt>'s by <tt>0</tt>'s and <tt>1</tt>'s.
+</dd></dt></dd></dt></dl>
+
+<p>
+The words will not be longer than 15 symbols.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input is a text-file that presents a sequence of sets. Each set is
+described as follows. The first line gives two integers: the length of the
+words and the number of the words. Then follow the words, each on a separate
+line. The end of the sequence of sets is indicated by a set with wordlength
+0 and number of words equal to 0.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output is a textfile that contains one line for each set. if the pattern
+of <tt>*</tt>'s is different for all the words in this set this line should contain
+<tt>YES</tt> (in uppercase), followed by a space and the number of
+obtained words, otherwise it should contain <tt>NO</tt> (uppercase) only.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 3
+10*
+*0*
+*00
+4 3
+1100
+1101
+110*
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+YES 4
+NO
+YES 0
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

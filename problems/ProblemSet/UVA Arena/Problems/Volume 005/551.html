@@ -1,0 +1,107 @@
+
+
+<html>
+<head>
+<title>Nesting a Bunch of Brackets</title>
+<meta name="description" content="Nesting a Bunch of Brackets">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Nesting a Bunch of Brackets</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In this problem we consider expressions containing brackets that are properly
+nested. These expressions are obtained by juxtaposition of properly netsted
+expressions in a pair of matching brackets, the left one an opening
+and the right one a closing bracket.
+
+<p>
+
+<p>
+<br>
+
+<tt>( a + $ ( b = ) ( a ) )</tt> is properly nested
+
+<p>
+
+<p><p>
+<br>
+
+<tt>( a + $ ) b = ) ( a ( )</tt> is not
+
+<p>
+
+<p>
+<br>
+In this problem we have several pairs of brackets, so we have to impose a
+second condition on the expression: the matching brackets should be of the same
+kind. Consequently <tt>(())</tt> is OK, but <tt>([))</tt> is not. The pairs of brackets are:
+
+<p>
+<pre>
+(   )
+[   ]
+{   }
+&lt;   &gt;
+(*   *)
+</pre>
+
+<p>
+The two characters `<tt>(*</tt>' should be interpreted as one symbol, not as an opening bracket `<tt>(</tt>' followed immediately by an asterisk, and similarly for `<tt>*)</tt>'. The combination `<tt>(*)</tt>' should be interpreted as `<tt>(*</tt>' followed by `<tt>)'</tt>.
+
+<p>
+Write a program that checks wheter expressions are properly nested. If the expression is not properly nested your program should determine the position of the offending bracket, that is the length of the shortest prefix of the expression that can not be extended to a properly nested expression. Don't forget `<tt>(*</tt>' counts as one, as does `<tt>*)</tt>'. The characters that are not brackets also count as one.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input is a text-file. Each line contains an expression to be checked followed by and end-of-line marker. No line contains more than 3000 characters. The input ends with a standard end-of-file marker.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output is a textfile. Each line contains the result of the check of the corresponding inputline,
+that is <tt>YES</tt> (in upper case), if the expression is OK, and (if it is not OK) <tt>NO</tt> followed by a space and the position of the error.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+(*a++(*)
+(*a{+}*)
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+NO 6
+YES
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+
+
+<html>
+<head>
+<title>Factorial Frequencies</title>
+<meta name="description" content="Factorial Frequencies">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Factorial Frequencies</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+     In an attempt  to   bolster   her   sagging   palm-reading   business,
+Madam   Phoenix  has  decided  to  offer  several numerological  treats  to
+her  customers.  She  has  been  able  to   convince    them    that    the
+frequency    of occurrence of the digits in the decimal  representation  of
+factorials  bear  witness  to  their  futures.  Unlike  palm-reading,  however,  she  can't   just   conjure   up   these  frequencies,  so  she  has
+employed  you  to  determine these values.
+<p>
+<p>
+     Recall that the definition of <i>n</i>! (that is, <i>n</i> factorial) is just  <img width="140" height="24" align="MIDDLE" alt="tex2html_wrap_inline28" src="324img1.gif"> . As she expects to use either the day of the week, the day of
+the month, or  the  day  of  the  year  as  the  value  of  <i>n</i>,   you   must
+be  able  to determine the number of  occurrences  of  each  decimal  digit
+in  numbers  as  large  as  366  factorial  (366!), which has 781 digits.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+     The input data for the program is  simply  a  list  of  integers   for
+which   the   digit  counts  are  desired.  All  of these input values will
+be less than or equal to 366 and greater  than  0,  except  for  the   last
+integer,   which will be zero.  Don't bother to process  this  zero  value;
+just  stop  your  program  at  that  point.  The  output  format  isn't  too
+critical,   but   you   should  make  your  program  produce  results  that
+look  similar  to  those shown below.
+<p>
+<p>
+     Madam Phoenix will be forever (or longer)  in  your  debt;  she  might
+even  give  you  a  trip  if  you  do  your  job well!
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3
+8
+100
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>3! --
+   (0)    0    (1)    0    (2)    0    (3)    0    (4)    0
+   (5)    0    (6)    1    (7)    0    (8)    0    (9)    0
+8! --
+   (0)    2    (1)    0    (2)    1    (3)    1    (4)    1
+   (5)    0    (6)    0    (7)    0    (8)    0    (9)    0
+100! --
+   (0)   30    (1)   15    (2)   19    (3)   10    (4)   10
+   (5)   14    (6)   19    (7)    7    (8)   14    (9)   20</pre>
+<p>
+</body>
+</html>

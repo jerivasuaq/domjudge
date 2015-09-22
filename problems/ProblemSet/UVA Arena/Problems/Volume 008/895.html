@@ -1,0 +1,108 @@
+
+
+<html>
+<head>
+<title>Word Problem</title>
+<meta name="description" content="Word Problem">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Word Problem</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In a popular puzzle often found in newspapers, a set of letters is provided, and the challenge is to
+find how many different words can be made from these letters.  This problem is designed to take all
+the fun out of it by automating the process.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input will be in two parts.
+The first part will be a dictionary of less than 1000 lines, containing words to be searched for.
+Each line will contain one word of up to 10 characters.  Each word will be in lower case.  The words
+will be in alphabetical order.  The end of the dictionary will be indicated by a line consisting of a
+single `<tt>#</tt>' character.
+
+<p>
+
+<p>
+<br>
+After the dictionary there will be data for several word puzzles, each on a separate line.  Each puzzle
+line will have from one to 7 lower case letters, separated by one or more spaces.  Your task is to arrange
+some or all of these letters to form words in the dictionary.  The list of puzzles will be terminated by a
+line consisting of a single `<tt>#</tt>'.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each puzzle line in the input, a single line of output
+should be produced, containing the number of different words in the dictionary that can be formed using the
+letters in the puzzle line.
+
+<p>
+
+<p>
+<br>
+Note that each letter may be used only as many times as it appears in the puzzle line.  For instance,
+the puzzle line `<tt>u l l</tt>' may produce the word `<tt>lul</tt>' but not the word `<tt>lull</tt>'.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+ant
+bee
+cat
+dog
+ewe
+fly
+gnu
+#
+b e w
+b b e e w w
+t a n c u g d
+#
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+0
+2
+3
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-07-08
+</address>
+</body>
+</html>
+

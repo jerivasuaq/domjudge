@@ -1,0 +1,101 @@
+
+A college student Ji-Sung has a roommate, Young-Pyo, who shares a room with him in the dormitory. Since they have lived together for a long time, they also share household facilities, for example, a hair dryer, an electric iron, a battery charger, etc. So the time periods when they want to use one facility should not overlap. 
+
+<div align="CENTER">
+
+
+<img width="473" height="383" align="BOTTOM" border="0" src="p3605a.jpg" alt="\epsfbox{p3605a.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+Some day, Ji-Sung and Young-Pyo both have a sequence of facilities 
+<span class="MATH"><i>O</i><sub>i<sub>1</sub></sub>, <i>O</i><sub>i<sub>2</sub></sub>,..., <i>O</i><sub>i<sub>n</sub></sub></span>
+<tex2html_verbatim_mark> and 
+<span class="MATH"><i>O</i><sub>j<sub>1</sub></sub>, <i>O</i><sub>j<sub>2</sub></sub>,..., <i>O</i><sub>j<sub>m</sub></sub></span>
+<tex2html_verbatim_mark> , respectively, which they want to use in this order. Here a facility can be used more than once, that is, 
+<span class="MATH"><i>O</i><sub>i<sub>k</sub></sub> = <i>O</i><sub>i<sub>l</sub></sub></span>
+<tex2html_verbatim_mark> , for some <span class="MATH"><i>k</i>, <i>l</i></span>
+<tex2html_verbatim_mark>. It takes <span class="MATH"><i>p</i><sub>i</sub></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>q</i><sub>i</sub></span>
+<tex2html_verbatim_mark> time units that Ji-Sung and Young-Pyo use the facility <span class="MATH"><i>o</i><sub>i</sub></span>
+<tex2html_verbatim_mark>, respectively. The problem is to minimize the finishing time by which they have used all facilities. 
+
+For example, Ji-Sung and Young-Pyo share household facilities 
+<span class="MATH"><i>O</i><sub>1</sub>, <i>O</i><sub>2</sub>, <i>O</i><sub>3</sub></span>
+<tex2html_verbatim_mark> which they use during 1, 2, 1 and 2, 1, 3 time units, respectively. At some day, they use the facilities 
+<span class="MATH"><i>O</i><sub>1</sub>, <i>O</i><sub>3</sub>, <i>O</i><sub>1</sub>, <i>O</i><sub>2</sub></span>
+<tex2html_verbatim_mark> and 
+<span class="MATH"><i>O</i><sub>1</sub>, <i>O</i><sub>2</sub>, <i>O</i><sub>1</sub>, <i>O</i><sub>3</sub></span>
+<tex2html_verbatim_mark> in order, respectively. Then the following figure represents the schedule which minimizes the finishing time. The minimum finishing time is 8 in this example.
+
+<div align="CENTER">
+
+
+<img width="912" height="217" align="BOTTOM" border="0" src="p3605b.jpg" alt="\epsfbox{p3605b.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+Your program is to read from standard input. The input consists of <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> test cases. The number of test cases <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> is given on the first line of the input. The first line of each test case contains an integer <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> , 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="3605img3.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="3605img3.png" alt="$ \le$">50</span>
+<tex2html_verbatim_mark>, the number of facilities. The second and third line of each test case contain a sequence of <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> integers between 1 and 100, where the <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>-th number, 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="3605img3.png" alt="$ \le$"><i>i</i><img width="18" height="31" align="MIDDLE" border="0" src="3605img3.png" alt="$ \le$"><i>n</i></span>
+<tex2html_verbatim_mark>, represents the number of time units during which Ji-Sung and Young-Pyo use the facility <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark>, respectively. The fourth line of each test case contains two integer numbers <span class="MATH"><img width="16" height="14" align="BOTTOM" border="0" src="3605img4.png" alt="$ \alpha$"></span>
+<tex2html_verbatim_mark> and <span class="MATH"><img width="15" height="34" align="MIDDLE" border="0" src="3605img5.png" alt="$ \beta$"></span>
+<tex2html_verbatim_mark> , 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="3605img3.png" alt="$ \le$"><img width="16" height="14" align="BOTTOM" border="0" src="3605img4.png" alt="$ \alpha$"></span>
+<tex2html_verbatim_mark> , 
+<span class="MATH"><img width="15" height="34" align="MIDDLE" border="0" src="3605img5.png" alt="$ \beta$"><img width="18" height="31" align="MIDDLE" border="0" src="3605img3.png" alt="$ \le$">300</span>
+<tex2html_verbatim_mark> , the lengths of the sequences of facilities which Ji-Sung and Young-Pyo will use at the day, respectively. The fifth and sixth line of each test case contain a sequence of integers between 1 and <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark>, representing a sequence of facilities which Ji-Sung and Young-Pyo will use in order at the day, respectively.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+Your program is to write to standard output. Print exactly one line for each test case. The line contains the minimum time by which both Ji-Sung and Young-Pyo finish to use all the facilities. 
+
+The following shows sample input and ouput for three test cases.
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>
+3 
+2 
+1 2 
+2 1 
+2 2 
+1 2 
+1 2 
+2 
+2 1 
+1 3 
+3 2 
+1 2 1
+2 1 
+3 
+2 1 3 
+1 2 1
+4 4 
+1 2 1 3 
+1 3 1 2
+</pre>
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2> 
+
+<pre>
+4 
+6 
+8
+</pre>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

@@ -1,0 +1,140 @@
+
+
+<html>
+<head>
+<title>Burrows Wheeler Decoder</title>
+<meta name="description" content="Burrows Wheeler Decoder">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Burrows Wheeler Decoder</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The <em>Burrows Wheeler transform</em> is used in one of the most effective text compression methods. We explain the transform below by using, as an example, the input text <tt>BANANA</tt>.
+
+<p>
+<dl>
+<dt><strong>Step 1.</strong>
+<dd>Let <i>t</i> be the size of the input text (in our example <i>t</i> = 6). We obtain a matrix <i>M</i> with dimensions 
+
+<img width="38" height="30" align="MIDDLE" border="0" src="741img1.gif" alt="$t \times t$">.
+The first line of <i>M</i> corresponds to the input text. The <i>i</i>-th line, for 
+
+<img width="87" height="31" align="MIDDLE" border="0" src="741img2.gif" alt="$i = 2, \dots, t$">,
+corresponds to a circular left shift of <i>i</i> - 1 positions with respect to the
+input text. For <tt>BANANA</tt>, we obtain the following matrix <i>M</i>:
+<p>
+<pre>
+  1 2 3 4 5 6
+1 B A N A N A
+2 A N A N A B
+3 N A N A B A
+4 A N A B A N
+5 N A B A N A
+6 A B A N A N
+</pre>
+
+<p>
+<dt><strong>Step 2.</strong>
+<dd>We sort the lines of matrix <i>M</i> lexicographically to obtain a new matrix <i>P</i>. In our example, we get the following matrix <i>P</i>:
+
+<p>
+<pre>
+  1 2 3 4 5 6
+1 A B A N A N
+2 A N A B A N
+3 A N A N A B
+4 B A N A N A
+5 N A B A N A
+6 N A N A B A
+</pre>
+
+<p>
+<dt><strong>Step 3.</strong>
+<dd>The Burrows Wheeler transform for <tt>BANANA</tt> is then given by the last column (i.e. column <i>t</i>) of matrix <i>P</i> and by the number of the row of <i>P</i> that corresponds to the input text. In our example, the last column of <i>P</i> is <tt>NNBAAA</tt> and the row of <i>P</i> which contains <tt>BANANA</tt> is the fourth one. Therefore, the Burrows Wheeler transform for <tt>BANANA</tt> is the
+pair (<tt>NNBAAA</tt>, <tt>4</tt>).
+</dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+The goal of this problem is to implement the <em>Inverse Burrows Wheeler transform</em>. Given the last column of a matrix <i>P</i> and the number of the row of <i>P</i> which contains the input text, your program should obtain the input text.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file may contain several instances of the problem, occurring consecutively in the input file, without any blank lines separating them. Each instance has two lines:
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>The first line contains the entries in the last column of matrix <i>P</i>, starting from the first row. Each entry is an uppercase letter, NOT separated by any blank spaces from its neighbour entries.
+<dt>2.
+<dd>The second line contains the integer number corresponding to the row of <i>P</i> which contains the input text.
+</dd></dt></dd></dt></dl>
+
+<p>
+The last instance of the input file consists of the two lines
+
+<p>
+<pre>
+END
+0
+</pre>
+
+<p>
+You may assume that the input text of each instance contains at most 300
+letters.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each instance of the problem, your program should print the input text as consecutive letters in a single line. The output of each instance is separated from the next by a blank line.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+NNBAAA
+4
+OMOEULCG
+1
+END
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+BANANA
+
+COGUMELO
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

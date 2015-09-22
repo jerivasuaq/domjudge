@@ -1,0 +1,112 @@
+One cumbersome problem in chemistry is the task of making the number of atoms balanced in a chemical equation. Our problem is concerned with this.
+
+<p>
+
+<p>
+<br>
+Chemists obey these rules when they present chemical equations:
+
+<ol>
+<li>Each element name is abbreviated by at most two letters. The first letter is always in upper-case and the second letter if exists, is a lower-case letter (e.g. Calcium is represented by <em>Ca</em>, Oxygen by <em>O</em>, and Chlorine by <em>Cl</em>).
+</li>
+<li>Each molecule is composed of a number of atoms. To represent a molecule, we concatenate the abbreviated names of its composite atoms. For example, <em>NaCl</em> represents Sodium Chloride. Each atom name may be followed by a frequency number. For example, Calcium Chloride <em>CaCl2</em> consists of one atom of Calcium and two atoms of Chlorine. If the frequency is not given, it is assumed to be 1 (so <em>HCl</em> is equivalent to <em>H1Cl1</em>). For the sake of simplicity, you may assume that the frequency of an occurrence of an atom is at most 9 (so we do not have <em>C11H22O11</em> in the problem input). Note that there may be several occurrences of the same atom in the molecule formula, like <em>H</em> atom in <em>CH3COOH</em>. 
+</li>
+<li>In ordinary chemical reactions, a number of molecules combine and result in a number of other molecules. For example a well known sample of neutralization is:
+
+<p>
+<div align="CENTER" class="mathdisplay">
+2<i>HCl</i> + <i>CaO</i>2<i>H</i>2 <img width="22" height="30" align="MIDDLE" border="0" src="2974img1.gif" alt="$\displaystyle \rightarrow$"> <i>CaCl</i>2 + 2<i>H</i>2<i>O</i>
+</div><p>
+
+<p>
+This means two molecules of chlorohydric acid (<em>HCl</em>) with one molecule of Calcium Hydroxide results in one molecule of Calcium Chloride (<em>CaCl2</em>) and two molecules of water.
+</li>
+<li>In every chemical reaction, the total number of each atom in the right side of the equation equals the total number of that atom in the left side (that is why it is called an equation!).
+</li>
+</ol>
+
+<p>
+Your task is to write a program to find appropriate coefficients 
+<span class="MATH"><i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>,..., <i>x</i><sub>M</sub></span> and 
+<span class="MATH"><i>y</i><sub>1</sub>, <i>y</i><sub>2</sub>,..., <i>y</i><sub>N</sub></span> to balance an (imbalanced) equation like
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<i>A</i><sub>1</sub> + <i>A</i><sub>2</sub> + <i>A</i><sub>3</sub> + <sup> ... </sup> + <i>A</i><sub>M</sub> <img width="22" height="30" align="MIDDLE" border="0" src="2974img1.gif" alt="$\displaystyle \rightarrow$"> <i>B</i><sub>1</sub> + <i>B</i><sub>2</sub> + <i>B</i><sub>3</sub> + <sup> ... </sup> + <i>B</i><sub>N</sub>
+</div><p>
+in the following way:
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<i>x</i><sub>1</sub><i>A</i><sub>1</sub> + <i>x</i><sub>2</sub><i>A</i><sub>2</sub> + <i>x</i><sub>3</sub><i>A</i><sub>3</sub> + <sup> ... </sup> + <i>x</i><sub>M</sub><i>A</i><sub>M</sub> <img width="22" height="30" align="MIDDLE" border="0" src="2974img1.gif" alt="$\displaystyle \rightarrow$"> <i>y</i><sub>1</sub><i>B</i><sub>1</sub> + <i>y</i><sub>2</sub><i>B</i><sub>2</sub> + <i>y</i><sub>3</sub><i>B</i><sub>3</sub> + <sup> ... </sup> + <i>y</i><sub>N</sub><i>B</i><sub>N</sub>
+</div><p>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The first line contains an integer <span class="MATH"><i>t</i></span> (
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2974img2.gif" alt="$ \le$"><i>t</i><img width="18" height="30" align="MIDDLE" border="0" src="2974img2.gif" alt="$ \le$">10</span>), the number of test cases. Each test case consists of a single line containing an expression like:
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<i>A</i><sub>1</sub> + <i>A</i><sub>2</sub> + <i>A</i><sub>3</sub> + <sup> ... </sup> + <i>A</i><sub>M</sub> = <i>B</i><sub>1</sub> + <i>B</i><sub>2</sub> + <i>B</i><sub>3</sub> + <sup> ... </sup> + <i>B</i><sub>N</sub>
+</div><p>
+
+<p>
+Each <span class="MATH"><i>A</i><sub>i</sub></span> or <span class="MATH"><i>B</i><sub>i</sub></span> is a formula of a molecule according to the rules given in items 1 and 2.
+
+<p>
+
+<p>
+<br>
+The input equations are given in a way that if they can be balanced, <span class="MATH"><i>x</i><sub>i</sub></span> and <span class="MATH"><i>y</i><sub>i</sub></span> coefficients can be in the range of 1 to 9. There are less than 10 molecules and there are less than 10 different types of atoms, in a given equation. Additionally, you may assume molecules contain no more than 3 different kinds of atoms. You may also assume that there is no blank character in the input file, and the maximum length of the input lines is 200 characters.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output will be one line per test case containing the list of required coefficients, separated by blank characters, in the following order:
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<i>x</i><sub>1</sub>&nbsp;<i>x</i><sub>2</sub>&nbsp;...&nbsp;<i>x</i><sub>M</sub>&nbsp;<i>y</i><sub>1</sub>&nbsp;<i>y</i><sub>2</sub>&nbsp;...&nbsp;<i>y</i><sub>N</sub>
+</div><p>
+
+<p>
+The coefficients should be integers in the range of 1..9. Obviously, there may be more than one answer for a test case. In such situations, print the answer which minimizes the number: 
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<i>x</i><sub>1</sub><i>x</i><sub>2</sub>...<i>x</i><sub>M</sub><i>y</i><sub>1</sub><i>y</i><sub>2</sub>...<i>y</i><sub>N</sub>
+</div><p>
+(This is an <span class="MATH">(<i>M</i> + <i>N</i>)</span>-digit decimal number whose digits are <span class="MATH"><i>x</i><sub>i</sub></span> and <span class="MATH"><i>y</i><sub>i</sub></span> coefficients.) If the equation is impossible to balance, the output line should be `<tt>IMPOSSIBLE</tt>'.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+3
+HCl+CaO2H2=CaCl2+H2O
+HCl+H2SO4=NaCl
+HCl+NaOH=NaCl+H2O
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+2 1 1 2
+IMPOSSIBLE
+1 1 1 1
+</pre> 
+
+<p>

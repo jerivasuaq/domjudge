@@ -1,0 +1,186 @@
+
+
+<html>
+<head>
+<title>Centipede Collisions</title>
+<meta name="description" content="Centipede Collisions">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Centipede Collisions</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A small boy named Tommy has some toy centipedes that are a series of 1
+centimeter segments. Tommy assembles his centipedes to any length he
+likes and places them on a  <img width="54" height="24" align="MIDDLE" alt="tex2html_wrap_inline79" src="411img1.gif">  centimeter board that allows the
+centipedes to travel in 1 centimeter wide tracks that criss-cross the
+board.
+<p>
+<p>
+The centipedes travel only parallel to either the <i>x</i> or <i>y</i> axis on
+the board. Centipede segments of the same centipede advance at the same
+time and centipedes advance in cyclic numerical order (all of centipede
+0 first, then 1, etc.). When more than one segment of two or more
+centipedes occupy the same <i>x</i>,<i>y</i> coordinate, there is a centipede
+collision.
+<p>
+<p>
+Anytime a collision occurs, all segments occupying the
+collistion site stop and continue to occupy the collision site. All
+remaining segments on a centipede detach from the segment involved in
+the collision and continue their march until another collision occurs or
+an existing collision site is encountered or until the segments fall off
+the edge of the board. Anytime a segment enters a collision site, it
+becomes part of the collision.
+<p>
+<p>
+Since Tommy left home without his centipede set, his mother has hired
+you to write a simulation program for his entertainment. Your program
+will simulate his board with a text printout of his grids. For example,
+Tommy may simulate 5 centipedes on his board that start out as shown on
+the grid on the left and finish as shown on the grid on the right (note
+the example grid is only  <img width="55" height="24" align="MIDDLE" alt="tex2html_wrap_inline87" src="411img2.gif">  whereas Tommy's is  <img width="54" height="24" align="MIDDLE" alt="tex2html_wrap_inline79" src="411img1.gif"> .)
+<p>
+9<code>    . . . . . . . . . .</code> <code>    . . . . . . . . . .</code>
+<p>
+   8<code>    . . . . . . . . . .</code> <code>    . . . . . . . . . .</code>
+<p>
+   7<code>    1 1 1 1 1 . . . . .</code> <code>    . . . . . X . . . X</code>
+<p>
+   6<code>    . 0 . . . . . . . .</code> <code>    . . . . . . . . . .</code>
+<p>
+   5<code>    . 0 . . . . . . . 3</code> <code>    . . . . . . . . . .</code>
+<p>
+   4<code>    . 0 . . . 2 . . . 3</code> <code>    . . . . . . . . . .</code>
+<p>
+   3<code>    . 0 . . . 2 . . . 3</code> <code>    . . . . . . . . . .</code>
+<p>
+   2<code>    . . . . . 2 . . . 3</code> <code>    . . . . . . . . . .</code>
+<p>
+   1<code>    . . . . . 2 . . . 3</code> <code>    . . . . . . . . . .</code>
+<p>
+   0<code>    . . . . . 2 4 4 4 3</code> <code>    . X . . . . . . . .</code>
+<p>
+<i>Y</i><code>                       </code> <i>Y</i><code>                       </code>
+<p>
+/<i>X</i> /<i>X</i>
+<p>
+<pre><tt> 
+Where 		 <tt>0</tt> 		 represents a centipede segment traveling from top to bottom,
+<p>
+		 <tt>1</tt> 		 represents a centipede segment traveling from left to right,
+<p>
+		 <tt>2</tt> 		 represents a centipede segment traveling from bottom to top,
+<p>
+		 <tt>3</tt> 		 represents a centipede segment traveling from bottom to top,
+<p>
+		 <tt>4</tt> 		 represents a centipede segment traveling from right to left, and
+<p>
+		 <tt>X</tt> 		 represents a collision site involving 2 or more segments.
+<p>
+</tt></pre>
+<p>
+<p>
+Your program will simulate up to 10 centipedes that travel on a  <img width="54" height="24" align="MIDDLE" alt="tex2html_wrap_inline79" src="411img1.gif"> 
+board. Tommy has 100 segments that he may use in his simulation. Of
+course, no centipede can be longer than 30 segments.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input to your program will consist of a series of simulation sets.
+The first line of each input set will be a single integer ( <img width="87" height="26" align="MIDDLE" alt="tex2html_wrap_inline101" src="411img3.gif"> )
+representing the number of centipedes in the simulation. (Centipedes
+are numbered 0 through <i>N</i>-1 in the same order as the input.)
+<p>
+<p>
+The next <i>N</i>
+lines will each represent one centipede and will contain a single
+direction character followed by 3 integers. The direction character can
+be `<tt>U</tt>', `<tt>D</tt>', `<tt>L</tt>', or `<tt>R</tt>' for ``<tt>Up</tt>&quot;,
+``<tt>Down</tt>&quot;, ``<tt>Left</tt>&quot;, or ``<tt>Right</tt>&quot;
+respectively and indicate the direction of travel. The next integer
+( <img width="83" height="26" align="MIDDLE" alt="tex2html_wrap_inline107" src="411img4.gif"> ) indicates the length of the centipede in segments. The
+second and third integers indicate the <i>x</i>,<i>y</i> coordinates of the lead
+segment ( <img width="104" height="27" align="MIDDLE" alt="tex2html_wrap_inline111" src="411img5.gif"> ). The next <i>L</i>-1 segments of the centipede occupy
+the <i>L</i>-1 board positions extending in the opposite direction from the
+direction of travel starting adjacent to the lead segment.
+<p>
+<p>
+You can be
+assured that no centipede segment will originate off the board nor will
+the original configuration involve any collisions.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each input simulation set, you should print (exactly) the following
+lines as the first two lines of output (starting in column 4).
+<p>
+<pre>   0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2
+   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9</pre>
+<p>
+The next 30 lines represent the state of the board after the simulation
+has completed (all centipede segments have entered a collision site or
+fallen off the edge of the board). Columns 1 and 2 should contain the
+row number (rows are numbered 29 down to 00) with leading zeroes. Even
+numbered columns between 4 and 62 (inclusive) represent the contents of
+the board cells. Board cells can contain either an <tt>X</tt> or a period. A
+period represents an empty cell and <tt>X</tt> represents a cell that contains 2
+or more centipede segments involved in a collision. The last line of
+each output set is a blank line.
+<p>
+<p>
+Follow the Sample Output for the exact format of the expected output.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>10
+R 9 11 23
+U 8 11 17
+U 5 15 15
+U 5 15 8
+D 9 23 13
+U 6 23 6
+R 9 8 9
+L 13 17 0
+U 12 13 11
+L 5 20 9</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>   0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2
+   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9
+29 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+28 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+27 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+26 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+25 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+24 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+23 . . . . . . . . . . . X . . . X . . . . . . . . . . . . . .
+22 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+20 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+19 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+18 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+13 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+12 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+10 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+09 . . . . . . . . . . . . . X . X . . . . . . . X . . . . . .
+08 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+07 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+06 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+05 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+04 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+03 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+02 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+01 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+00 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</pre>
+<p>
+</body>
+</html>

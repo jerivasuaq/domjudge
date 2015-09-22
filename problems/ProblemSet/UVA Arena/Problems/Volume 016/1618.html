@@ -1,0 +1,101 @@
+<p>
+Cheolsoo is a cryptographer in ICPC(International Cryptographic Program Company). Recently, Cheolsoo 
+developed  a  cryptographic  algorithm  called  ACM(Advanced  Cryptographic  Method).  ACM  uses  a  <em>key</em>  to 
+encrypt a message. The encrypted message is called a <em>cipher text</em>.  In ACM, to decrypt a cipher text, the same 
+key used in the encryption should be applied. That is, the encryption key and the decryption key are the same.
+So, the sender and receiver should agree on a key before they communicate securely using ACM. Soon after 
+Cheolsoo finished the design of ACM, he asked its analysis on security to Younghee who is a cryptanalyst in 
+ICPC.  
+
+<p>
+
+<p>
+<br>
+Younghee has an interest in breaking cryptosystems. Actually, she developed many attacking methods for 
+well-known cryptographic algorithms.  Some  cryptographic  algorithms have <em>weak  keys</em>.  When a  message  is 
+encrypted with a weak  key, the message can be recovered easily without the key from the cipher text. So, 
+weak key should not be used when encrypting a message. After many trials, she found the characteristic of 
+weak keys in ACM. ACM uses a sequence of mutually distinct positive integers  
+<span class="MATH">(<i>N</i><sub>1</sub>, <i>N</i><sub>2</sub>,..., <i>N</i><sub>k</sub>)</span> as  a  key. 
+Younghee found that weak keys in ACM have the following two special patterns:  
+
+<p>
+<div align="CENTER">
+There are four integers  
+<span class="MATH"><i>N</i><sub>p</sub>, <i>N</i><sub>q</sub>, <i>N</i><sub>r</sub>, <i>N</i><sub>s</sub>(1<img width="18" height="30" align="MIDDLE" border="0" src="3232img1.gif" alt="$ \le$"><i>p</i> &lt; <i>q</i> &lt; <i>r</i> &lt; <i>s</i><img width="18" height="30" align="MIDDLE" border="0" src="3232img1.gif" alt="$ \le$"><i>k</i>)</span> in the key such that 
+</div>
+<p>
+<div align="CENTER">(1)  
+<span class="MATH"><i>N</i><sub>q</sub> &gt; <i>N</i><sub>s</sub> &gt; <i>N</i><sub>p</sub> &gt; <i>N</i><sub>r</sub></span> or 
+<span class="MATH"><i>N</i><sub>q</sub> &lt; <i>N</i><sub>s</sub> &lt; <i>N</i><sub>p</sub> &lt; <i>N</i><sub>r</sub></span>
+</div>
+
+<p>
+For example, the key (10, 30, 60, 40, 20, 50) has the pattern in (1); (_, 30, 60, _, 20, 50). So, the key is a 
+weak key in ACM. But, the key (30, 40, 10, 20, 80, 50, 60, 70) is not weak because it does not have any 
+pattern in the above.  
+
+<p>
+
+<p>
+<br>
+Now, Younghee wants to find an efficient method to determine, for a given key, whether it is a weak key or 
+not. Write a program that can help Younghee. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of <span class="MATH"><i>T</i></span> test cases. The number of test cases <span class="MATH"><i>T</i></span> is 
+given in the first line of the input file. Each test case starts with a line containing an integer <span class="MATH"><i>k</i></span>, the length of a sequence repressenting
+a key, 
+<span class="MATH">4<img width="18" height="30" align="MIDDLE" border="0" src="3232img1.gif" alt="$ \le$"><i>k</i><img width="18" height="30" align="MIDDLE" border="0" src="3232img1.gif" alt="$ \le$">5, 000</span>. In the next line, <span class="MATH"><i>k</i></span> mutually distinct 
+positive integers are given. There is a single space between the 
+integers, and the integers are between 1 and 100,000, both inclusive.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Print exactly one line for each test case. Print `<tt>YES</tt>' if the sequence is a weak key. Otherwise, print `<tt>NO</tt>'. 
+
+<p>
+The following shows sample input and output for three test cases. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3                                                 
+6                                                 
+10 30 60 40 20 50                                 
+8                                                 
+30 40 10 20 80 50 60 70   
+4 
+1 2 20 9
+</pre>  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+YES 
+NO 
+NO
+</pre>  
+
+<p>

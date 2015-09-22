@@ -1,0 +1,121 @@
+
+
+<html>
+<head>
+<title>Polygon Visibility</title>
+<meta name="description" content="Polygon Visibility">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Polygon Visibility</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+As a building block of a new graphic tool, a visibility function has to be designed: Given two convex polygons, it is necessary to identify the set of points <b>in the plane</b> from which the visibility of the second polygon is obstructed by the first one. More precisely, you are looking for the points <i>P</i>, not in the interior of the first polygon, for which there is a point
+<i>Q</i> in the second polygon such that the <em>interior</em> of the line segment 
+
+<img width="32" height="38" align="MIDDLE" border="0" src="746img1.gif" alt="$\overline{PQ}$">
+contains some point
+of the first polygon. Your task is to write a program that implements that building block.
+
+<p>
+You may assume that the two polygons have no common points and that neither one is degenerate.
+
+<p>
+The set of points from which the visibility is obstructed can be described by a finite set of finite segments together with two infinite lines. Remember that the points in the interior of
+the first polygon are not included in the set of points from which the visibility is obstructed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains several instances. Each instance consists of the following consecutive lines:
+
+<p>
+<ul>
+<li>One line containing two positive integers <i>N</i> and <i>M</i> separated by one or more blank spaces. These are the number of vertices of the first and the second polygons. You may assume 
+
+<img width="145" height="32" align="MIDDLE" border="0" src="746img2.gif" alt="$3 \leY N, M \leY 10000$">.
+<li><i>N</i> lines containing each a pair of coordinates in the <i>XY</i> plane, separated by one or more blank spaces. These are the vertices of the first polygon. Every coordinate is an integer number in the range 1..10000.
+<li><i>M</i> lines containing each a pair of coordinates in the <i>XY</i> plane, separated by one or more blank spaces. These are the vertices of the second polygon.
+</li></li></li></ul>
+
+<p>
+The vertices of each polygon appear in clockwise order. The input file ends with a line containing <tt>0 0</tt> and should not be processed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each instance, you must write a line that identifies that instance, followed by a description of the set of points from which the visibility is obstructed. The description is formed by one
+of the infinite lines, the vertices that define the finite segments, and the second infinite line.
+
+<p>
+Each line and each vertex must appear in a separate line of output. Each infinite line must be represented by the slope of the line, rounded to three digits to the right of the decimal
+point. If the line is vertical, the word <tt>VERTICAL</tt> must replace its slope value. Each vertex must be represented with its coordinates, separated by a space. To avoid ambiguity, the
+vertices must be given in clockwise order with respect to the first polygon.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+3 3
+10 20
+20 20
+20 10
+10 10
+7 5
+5 7
+4 3
+20 19
+25 15
+20 10
+15 15
+10 20
+10 10
+5 15
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Instance 1
+VERTICAL
+10 20
+20 20
+20 10
+0.000
+Instance 2
+1.000
+15 15
+20 19
+25 15
+20 10
+-1.000
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

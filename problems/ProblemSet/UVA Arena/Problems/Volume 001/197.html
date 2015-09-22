@@ -1,0 +1,179 @@
+
+
+<html>
+<head>
+<title>Cube</title>
+<meta name="description" content="Cube">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Cube</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+There was once a 3 by 3 by 3 cube built of 27 smaller cubes. It has fallen
+apart into seven pieces: 
+
+<p>
+
+<p>
+<div align="CENTER"><a name="55"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1:</strong>
+The seven pieces that once formed a cube</caption>
+<tr><td><img width="559" height="289" border="0" src="197img1.gif" alt="\begin{figure}\begin{center}
+\mbox{}
+\epsfbox{p197a.eps}\end{center}\end{figure}"></td></tr>
+</table>
+</div><p>
+
+<p>
+The seven pieces can be assembled in many ways to again form the cube. Figure
+2 shows one of these possibilities. The first square stands for the front
+plane, the next one for the middle plane and the last one for the back plane
+of the cube. The letters in the cells stand for the name of piece filling
+out the corresponding space in the cube. The name of the seven pieces can
+be found in figure 1.
+
+<p>
+
+<p>
+<div align="CENTER"><a name="82"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 2:</strong>
+Two possibilities of assembling the cube</caption>
+<tr><td><img width="295" height="161" border="0" src="197img2.png" alt="\begin{figure}\begin{center}
+\begin{tabular}{\vert ccc\vert c\vert ccc\vert c\ve...
+...c \\
+\cline{1-3} \cline{5-7} \cline{9-11}
+\end{tabular}\end{center}\end{figure}"></td></tr>
+</table>
+</div><p>
+
+<p>
+You are to write a program that outputs all possibilities of assembling
+the cube but suppress solutions that are mere rotations of another solution.
+
+<p>
+
+<p>
+<br>
+
+<b>Hint:</b>
+Piece <span class="MATH"><i>a</i></span> is the only part that, by rotation and translation, cannot
+be transformed into itself. In order to avoid solutions that are mere rotations
+of an already found solution, you may restrict transformations of piece
+<span class="MATH"><i>a</i></span> to translations. 
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file has several test cases. Each test case indicates
+the initial position of piece `<tt>a</tt>'. You can translate it, but you
+mustn't rotate it.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each solution found, your program should output a line containing the
+solution as a string. The string is a linearized form of the cube. Each
+letter stands for the piece filling out the corresponding space in the cube.
+It is linearized as follows: 
+
+<ul>
+<li>The string consists of substrings representing the front, middle and
+back plane. 
+</li>
+<li>Each substring consists of substrings representing the top, middle and
+bottom row. 
+</li>
+<li>Each row substring consists of letters representing the left, middle
+and right cell. 
+</li>
+</ul>
+The solutions in figure 2 would be represented like this: 
+<pre>
+adcaccaacddgbfgffedggbfebee
+aababbadcffegfcddcfeeggedgc
+</pre>
+
+<p>
+It is very important that your program uses the naming convention given
+in figure 1 and linearizes the cube as explained above.
+
+<p>
+Print a blank line after each test case. 
+
+<p>
+
+<p>
+<div align="CENTER"><a name="97"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 3:</strong>
+Positions of the cells in the string</caption>
+<tr><td><img width="479" height="340" border="0" src="197img3.gif" alt="\begin{figure}\begin{center}
+\mbox{}
+\epsfbox{p197b.eps}\end{center}\end{figure}"></td></tr>
+</table>
+</div><p>
+
+<p>
+Figure 3 again shows how the cells of the cube are linearized.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+aa.a..a....................
+.........a..a..aa..........
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+aababbadcggeffcddcgeegfedfc
+aababbadceffgdcgdceefedfggc
+...
+aababbadcffegfcddcfeeggedgc
+
+adcaccaacfddfebgeeffdggbgeb
+...
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2001-06-15
+</address>
+</body>
+</html>
+

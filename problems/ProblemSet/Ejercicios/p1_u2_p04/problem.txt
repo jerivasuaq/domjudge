@@ -1,0 +1,23 @@
+Ejercicio 4. 
+
+Programa que calcula el valor absoluto de un numero y verifica si dicho número es par o impar, imprimiendo en pantalla cada caso del que se trate. 
+
+Entrada: 
+	el número a evaluar. 
+Salida:
+	el valor absoluto del número, par o impar.
+
+Ejemplos:
+==============================================================
+entrada:
+-10
+--------------------------------------------------------------
+salida:
+10 par
+==============================================================
+entrada:
+15
+--------------------------------------------------------------
+salida:
+15 impar
+

@@ -1,0 +1,53 @@
+
+
+<html>
+<head>
+<title>The Decoder</title>
+<meta name="description" content="The Decoder">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">The Decoder</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Write a complete program that will correctly decode a set of
+characters into a valid message. Your program should
+read a given file of a simple coded set of characters and print the 
+exact message that the characters contain. The code key for this 
+simple coding is a one for one character substitution based upon a
+<em>single arithmetic manipulation</em> of the printable portion of the 
+ASCII character set.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+For example: with the input file that contains:
+<p>
+<pre>1JKJ'pz'{ol'{yhklthyr'vm'{ol'Jvu{yvs'Kh{h'Jvywvyh{pvu5
+1PIT'pz'h'{yhklthyr'vm'{ol'Pu{lyuh{pvuhs'I|zpulzz'Thjopul'Jvywvyh{pvu5
+1KLJ'pz'{ol'{yhklthyr'vm'{ol'Kpnp{hs'Lx|pwtlu{'Jvywvyh{pvu5</pre>
+<p>
+your program should print the message:
+<pre>*CDC is the trademark of the Control Data Corporation.
+*IBM is a trademark of the International Business Machine Corporation.
+*DEC is the trademark of the Digital Equipment Corporation.</pre>
+<p>
+Your program should accept all sets of characters that use the same
+encoding scheme and should print the actual message of each set of
+characters.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1JKJ'pz'{ol'{yhklthyr'vm'{ol'Jvu{yvs'Kh{h'Jvywvyh{pvu5
+1PIT'pz'h'{yhklthyr'vm'{ol'Pu{lyuh{pvuhs'I|zpulzz'Thjopul'Jvywvyh{pvu5
+1KLJ'pz'{ol'{yhklthyr'vm'{ol'Kpnp{hs'Lx|pwtlu{'Jvywvyh{pvu5</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>*CDC is the trademark of the Control Data Corporation.
+*IBM is a trademark of the International Business Machine Corporation.
+*DEC is the trademark of the Digital Equipment Corporation.</pre>
+<p>
+</body>
+</html>

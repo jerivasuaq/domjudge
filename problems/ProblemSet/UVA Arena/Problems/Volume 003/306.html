@@ -1,0 +1,77 @@
+
+
+<html>
+<head>
+<title>Cipher</title>
+<meta name="description" content="Cipher">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Cipher</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Bob and Alice started to use a brand-new encoding scheme. Surprisingly it
+is not a Public Key Cryptosystem, but their encoding and decoding
+is based on secret keys. They chose the secret key at their last
+meeting in Philadelphia on February 16th, 1996. They chose as a secret
+key a sequence of <i>n</i> distinct integers,  <img width="72" height="17" align="MIDDLE" alt="tex2html_wrap_inline27" src="306img1.gif">  , greater than
+zero and less or equal to <i>n</i>. The encoding is based on the following principle.
+The message is written down below the key, so that characters in the message
+and numbers in the key are
+correspondingly aligned. Character in the message at the position <i>i</i> is
+written in the encoded message at the position  <img width="13" height="17" align="MIDDLE" alt="tex2html_wrap_inline33" src="306img2.gif"> , where  <img width="13" height="17" align="MIDDLE" alt="tex2html_wrap_inline33" src="306img2.gif"> 
+is the corresponding number in the key. And then the encoded message is
+encoded in
+the same way. This process is repeated <i>k</i> times. After <i>k</i>th encoding they
+exchange their message.
+<p>
+The length of the message is always less or equal than <i>n</i>. If the message
+is shorter than <i>n</i>, then spaces
+are added to the end of the message to get the message with the length <i>n</i>.
+<p>
+<p>
+Help Alice and Bob and write program which reads the key and then a sequence
+of pairs consisting of
+<i>k</i> and message to be encoded <i>k</i> times and produces a list of encoded messages.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file consists of several blocks. Each block has a number
+ <img width="90" height="25" align="MIDDLE" alt="tex2html_wrap_inline51" src="306img3.gif">  in the first line. The
+next line contains a sequence of <i>n</i> numbers pairwise distinct and each
+greater than zero and less or equal
+than <i>n</i>. Next lines contain integer number <i>k</i> and one message of ascii
+characters separated by one space.
+The lines are ended with eol, this eol does not belong to the message. The
+block ends with the separate line
+with the number 0. After the last block there is in separate line the number 0.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output is divided into blocks corresponding to the input blocks. Each block
+contains the encoded input
+messages in the same order as in input file. Each encoded message in the
+output file has the lenght <i>n</i>. After each block there is one empty line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>
+10
+4 5 3 7 2 8 1 6 10 9
+1 Hello Bob
+1995 CERC
+0
+0
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+BolHeol  b
+C RCE     
+</pre>
+<p>
+</body>
+</html>

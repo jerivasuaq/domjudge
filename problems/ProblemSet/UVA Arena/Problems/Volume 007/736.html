@@ -1,0 +1,166 @@
+
+
+<html>
+<head>
+<title>Lost in Space</title>
+<meta name="description" content="Lost in Space">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Lost in Space</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+This program should search for strings in an <i>N</i> by <i>N</i> array of
+characters. In the context of this problem, a ``character" is any
+printable ASCII character (ASCII values 32 thru 126, inclusive).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>Input starts with an integer on a line by itself containing the number of datasets, followed by a blank line.
+Each dataset contains the following:
+
+<p>
+<ul>
+<li>line 1: the value of <i>N</i> (<img width="40" height="30" align="MIDDLE" border="0" src="736img1.gif" alt="$\le 50$">),
+<li>lines 2 to <i>N</i>+1: <i>N</i>-character-long strings, possibly including blanks,
+(However please note that since some PC editors automatically
+truncate trailing blanks, none of the lines in the input file will
+contain trailing blanks. That is, every line will end with some
+non-blank character. Leading and imbedded blanks are permissible.)
+<li>lines <i>N</i>+2 through end of file: strings 1 to <i>N</i> characters long, containing no
+blanks.
+</li></li></li></ul>
+
+<p>
+Lines 2 through <i>N</i>+1 of the file represent the contents of the
+<i>N</i> by <i>N</i> array, line 2 for row 1, line 3 for row 2, etc.
+
+<p>
+
+<p>
+<br>
+For Line <i>N</i>+2 and after, you are to determine each (and every)
+position at which the string appears in the array. ``Appears"
+means that the first character of the string matches the character
+at the position, and that subsequent characters in the string
+match the characters in the array (skipping over any blanks in the
+array) going in any of the eight possible directions `<tt>E</tt>
+(right), <tt>NE</tt> (diagonally up and right), <tt>N</tt> (up), <tt>
+NW</tt> (diagonally up and left), <tt>W</tt> (left), <tt>SW</tt> (diagonally
+down and left), <tt>S</tt> (down), and <tt>SE</tt> (diagonally down and
+right). The string you are looking for may not ``wrap around" from
+one edge of the array to another.
+
+<p>The is a blank line between datasets.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output for each string in each dataset will be:
+<ul>
+<li>a blank line
+<li>the string itself
+<li>Either the message ``<tt>not found</tt>"
+
+<p>
+OR
+
+<p>
+A listing of every starting position and direction at which the
+string is found, using the format:
+
+<p>
+(row,column) - dir [for example, (5,3) - <tt>NW</tt>]
+
+<p>
+</li></li></li></ul>
+
+<p>
+
+<p>
+<br>
+If the string appears more than once, you must report each
+occurrence.  The order in which you have to output multiple occurrences is:
+first by increasing row number, second by increasing column number when same
+row and finally (when both row and column are equal) by direction in clockwise
+order, beginning with the <tt>N</tt>orth.
+
+<p>Print an extra blank line between datasets.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+4
+LOST
+I  N
+SP A
+C  E
+ANT
+LOT
+S
+PT
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+ANT
+(3,4) - N
+
+LOT
+not found
+
+S
+(1,3) - N
+(1,3) - NE
+(1,3) - E
+(1,3) - SE
+(1,3) - S
+(1,3) - SW
+(1,3) - W
+(1,3) - NW
+(3,1) - N
+(3,1) - NE
+(3,1) - E
+(3,1) - SE
+(3,1) - S
+(3,1) - SW
+(3,1) - W
+(3,1) - NW
+
+PT
+(3,2) - NE
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-09-04</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+
+
+<html>
+<head>
+<title>Robotic Stacker</title>
+<meta name="description" content="Robotic Stacker">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<p>
+   A certain warehouse has ordered a robotic unit that can pick up, move
+and place various size boxes. It was ordered to provide a capability of using
+the warehouse floor space to the maximum extent by stacking boxes as high
+as possible.  The first task is to stack simple boxes in a bin that is 1 foot
+wide by 6 feet long and is 20 feet high. The boxes come into the warehouse
+on a conveyor belt one at a time. The task is for the robot to pick up the
+next box, move it from the conveyor area, and place it in the bin. The boxes
+on the conveyor are packaged groups of boxes that are a cube of 1 foot to a
+side. They are grouped in four sizes: one packaged box, two packaged boxes,
+three packaged boxes in a row, and four packaged boxes in a row. As with
+all new automated inovations, management wants to witness a simulated
+stacking exercise before committing the robot to full autonomous operation.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+   Write a complete program that accepts as input a list of boxes
+by size (number in the packaged group). This list will look like this:
+<p>
+<pre>4234443131..........</pre>
+<p>
+   This means that the first package to be stacked has 4 boxes, the second
+has 2 boxes, the third has 3, the fourth has 4 boxes, the fifth has 4 boxes
+etc.
+<p>
+Your program must accept the input list sequentially and stack as many packages as it can. Packages must be stacked intact.... cannot be split apart into component boxes.
+<p>
+Assume that all packages stacked horizontally are fully supported throughout their length wherever they stack on top of an existing box. All packages must rest on top of an existing package or on the floor.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Output</a></font></h2>
+<p>
+The output, for each line of the input, must be a line with two integer numbers separated by a space: the (maximum) number of packages you stacked and the number of the 120 possible box locations which are empty at the end.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>44444444444444444444444444444444444444444444
+333333333333333333333333333333333333333422221111</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>30 0
+39 3</pre>
+<p>
+</body>
+</html>

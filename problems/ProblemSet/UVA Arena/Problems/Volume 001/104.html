@@ -1,0 +1,112 @@
+
+
+<html>
+<head>
+<title>Arbitrage</title>
+<meta name="description" content="Arbitrage">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Arbitrage</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+The use of computers in the finance industry has been marked with
+controversy lately as programmed trading -- designed to take advantage
+of extremely small fluctuations in prices -- has been outlawed at many
+Wall Street firms.  The ethics of computer programming is a fledgling
+field with many thorny issues.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+<em>Arbitrage</em> is the trading of one currency for another with the
+hopes of taking advantage of small differences in conversion rates among
+several currencies in order to achieve a profit.  
+For example, if $1.00 in U.S. currency buys 0.7 British pounds
+currency, &#163;1 in British currency buys 9.5 French francs, and 1
+French franc buys 0.16 in U.S. dollars, then an arbitrage trader can
+start with $1.00 and earn  <img width="209" height="24" align="MIDDLE" alt="tex2html_wrap_inline29" src="104img1.gif"> 
+dollars thus earning a profit of 6.4 percent.
+<p>
+You will write a program that determines whether a sequence of currency
+exchanges can yield a profit as described above.
+<p>
+To result in successful arbitrage, a sequence of
+exchanges must begin and end with the same currency, but any starting
+currency may be considered.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input file consists of one or more conversion tables.  You must
+solve the arbitrage problem for each of the tables in the input file.
+<p>
+Each table is
+preceded by an integer <i>n</i> on a line by itself giving the dimensions of the
+table.  The maximum dimension is 20; the minimum dimension is 2.
+<p>
+The table then follows in row major order but with the diagonal
+elements of the table missing (these are assumed to have value 1.0).
+Thus the first row of the table represents the conversion rates between
+country 1 and <i>n</i>-1 other countries, i.e., the amount of currency of
+country <i>i</i> ( <img width="70" height="25" align="MIDDLE" alt="tex2html_wrap_inline37" src="104img2.gif"> ) that can be purchased with one unit of
+the currency of country 1.
+<p>
+Thus each table consists of <i>n</i>+1 lines in the input file: 1 line
+containing <i>n</i> and <i>n</i> lines representing the conversion table.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+For each table in the input file you must determine whether a sequence
+of exchanges exists that results in a profit of more than 
+1 percent (0.01).  If a sequence exists you
+must print the sequence of exchanges that results in a profit.  If there
+is more than one sequence that results in a profit of more
+than 1 percent you must print a 
+sequence of minimal length, i.e., one of the sequences that uses the
+fewest exchanges of currencies to yield a profit.   
+<p>
+<p>
+Because the IRS (United States Internal Revenue Service) notices lengthy
+transaction sequences, all profiting sequences must consist of <i>n</i> or
+fewer transactions where <i>n</i> is the dimension of the table giving
+conversion rates. The sequence 1 2 1 represents two conversions.
+<p>
+If a profiting sequence exists you must print 
+the sequence of exchanges that
+results in a profit.  The sequence is printed as a sequence of integers
+with the integer <i>i</i> representing the  <img width="17" height="15" align="BOTTOM" alt="tex2html_wrap_inline51" src="104img3.gif">  line of the conversion
+table (country <i>i</i>).  The first integer in the sequence is the country 
+from which the profiting sequence starts.  This integer also ends the
+sequence.
+<p>
+If no profiting sequence of <i>n</i> or fewer transactions
+exists, then the line
+<pre>no arbitrage sequence exists</pre>
+should be printed.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3
+1.2 .89
+.88 5.1
+1.1 0.15
+4
+3.1    0.0023    0.35
+0.21   0.00353   8.13 
+200    180.559   10.339
+2.11   0.089     0.06111
+2
+2.0
+0.45</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1 2 1
+1 2 4 1
+no arbitrage sequence exists</pre>
+<p>
+</body>
+</html>

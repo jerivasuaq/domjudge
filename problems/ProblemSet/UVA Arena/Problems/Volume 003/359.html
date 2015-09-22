@@ -1,0 +1,104 @@
+
+
+<html>
+<head>
+<title>Sex Assignments And Breeding Experiments</title>
+<meta name="description" content="Sex Assignments And Breeding Experiments">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Sex Assignments And Breeding Experiments</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Everyone is familiar with the pictorial representation of family trees.
+In these &quot;pictures&quot; one uses points and lines to represent family
+structures and interfamily relationships. Thus, if M and F are the
+parents of three children, two boys and one girl, we have the figure
+below:
+<p>
+<center><img src="359img4.gif"></center>
+<p>
+The next figure might represent the inter-family relationship of two
+families
+<p>
+<center><img src="359img5.gif"></center>
+<p>
+It is easy to conceive of a large number of such pictures. Some can represent
+family trees and some cannot. You are to consider the
+problem of characterizing those which can represent family trees. We will
+actually work in a simpler context than that of human
+relationships. Most human societies preclude family trees of the forms
+shown below.
+<p>
+<center><img src="359img6.gif"></center>
+<p>
+It is, however, quite complicated to give conditions which would eliminate
+pictures of this sort. For simplicity, we suppose that we are
+dealing with a population which is completely characterized by the condition
+of bisexual reproduction (M &amp; F). If the picture or graph
+is such that by a proper assignment of sexes to the members of the
+population, the picture represents the results of a breeding
+experiment which could theoretically take place, then we say the graph is
+sexy. Otherwise the graph is not sexy. You must write a
+program to examine an arbitrary directed graph and determine if it is sexy.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will be a series of descriptions of graphs in the following form:
+<p>
+<p>
+An integer <i>n</i> indicating the number of nodes in the graph, followed by
+an integer <i>m</i> indicating the number of directed edges in the graph
+will appear on the first line of input. The next <i>m</i> lines of the file
+will each contain a pair <i>x</i>, <i>y</i> of integers in the range 1 - <i>n</i>. Each pair will represent a directed edge from node <i>x</i> to node <i>y</i>. Input is terminated by end-of-file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each graph in the input file, you will output the appropriate one of
+the following statements.
+<p>
+<p>
+<p>
+<tt>Graph number </tt> <i>i</i> <tt>is sexy</tt>
+<p>
+<tt>Graph number </tt> <i>i</i> <tt>is not sexy</tt>
+<p>
+<p>
+The number <i>i</i> represents the number of the graph in the input file.
+<p>
+<p>
+We are adopting the convention that the existence of a directed edge
+from <i>x</i> to <i>y</i> indicates that <i>x</i> is a parent of <i>y</i>. Further, each individual
+usually has exactly two parents. No individual can have two parents of
+the same sex or more than two parents. Breeding experiments do
+not extend into the indefinite past. A point is always reached where
+one or both of the parents of a member of the population are
+unknown. The nodes with no parents would appear on the top level of
+a sexy graph. Births of individuals are assumed to be sequential in
+time. Thus the following graph is not sexy.
+<p>
+<center><img src="359img7.gif"></center>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>5 6 
+1 3 
+2 3 
+1 4 
+2 4 
+1 5 
+2 5 
+3 3 
+1 2 
+2 3 
+3 1</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>Graph number 1 is sexy
+Graph number 2 is not sexy</pre>
+<p>
+</body>
+</html>

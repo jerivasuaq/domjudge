@@ -1,0 +1,229 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Problem</title> </head>
+
+<body bgcolor="#FFFFFF">
+
+<h1 align="left"><font color="#0000FF">Problem E</font></h1>
+
+<h1 align="center"><font color="#0000FF">The Vigen&egrave;re Cipher</font></h1>
+
+<p>&nbsp;</p>
+
+<p>For many centuries, most - if not all - known methods for
+enciphering messages considered a single cipher alphabet. For
+example, Julius Caesar used a substitution cipher that replaced
+each letter in the plaintext message by a letter three places
+further down in the alphabet ('A' would be 'D' and so on). </p>
+
+<p>Sometime in the 16<sup>th</sup> century, a French diplomat
+called Blaise de Vigen&egrave;re perfected a new cipher based on
+previous work by Leon Alberti, Johannes Trithemius and Giovanni
+Porta. The most significant breakthrough was the use of <i>multiple
+cipher alphabets</i>, which turned the cipher impregnable to
+frequency analysis (a technique for deducing the plaintext from a
+ciphertext).</p>
+
+<h3>How to encipher a plaintext message</h3>
+
+<p>The first step in encipherment is to draw a <i>Vigen&egrave;re
+square</i>:</p>
+
+<pre>                   P L A I N T E X T  L E T T E R S
+
+           | a b c d e f g h i j k l m n o p q r s t u v w x y z
+ ----------+----------------------------------------------------
+    1  (A) | B C D E F G H I J K L M N O P Q R S T U V W X Y Z A
+    2  (B) | C D E F G H I J K L M N O P Q R S T U V W X Y Z A B
+    3  (C) | D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+    4  (D) | E F G H I J K L M N O P Q R S T U V W X Y Z A B C D
+    5  (E) | F G H I J K L M N O P Q R S T U V W X Y Z A B C D E
+ C  6  (F) | G H I J K L M N O P Q R S T U V W X Y Z A B C D E F
+ I  7  (G) | H I J K L M N O P Q R S T U V W X Y Z A B C D E F G
+ P  8  (H) | I J K L M N O P Q R S T U V W X Y Z A B C D E F G H
+ H  <u>9  (I) | J K L M N O P Q R S T U V W X Y Z A B C D E F G H I</u>
+ E  10 (J) | K L M N O P Q R S T U V W X Y Z A B C D E F G H I J
+ R  11 (K) | L M N O P Q R S T U V W X Y Z A B C D E F G H I J K
+    12 (L) | M N O P Q R S T U V W X Y Z A B C D E F G H I J K L
+ A  <u>13 (M) | N O P Q R S T U V W X Y Z A B C D E F G H I J K L M</u>
+ L  14 (N) | O P Q R S T U V W X Y Z A B C D E F G H I J K L M N
+ P  15 (O) | P Q R S T U V W X Y Z A B C D E F G H I J K L M N O
+ H  <u>16 (P) | Q R S T U V W X Y Z A B C D E F G H I J K L M N O P</u>
+ A  17 (Q) | R S T U V W X Y Z A B C D E F G H I J K L M N O P Q
+ B  18 (R) | S T U V W X Y Z A B C D E F G H I J K L M N O P Q R
+ E  19 (S) | T U V W X Y Z A B C D E F G H I J K L M N O P Q R S
+ T  20 (T) | U V W X Y Z A B C D E F G H I J K L M N O P Q R S T
+ S  <u>21 (U) | V W X Y Z A B C D E F G H I J K L M N O P Q R S T U</u>
+    22 (V) | W X Y Z A B C D E F G H I J K L M N O P Q R S T U V
+    23 (W) | X Y Z A B C D E F G H I J K L M N O P Q R S T U V W
+    24 (X) | Y Z A B C D E F G H I J K L M N O P Q R S T U V W X
+    25 (Y) | Z A B C D E F G H I J K L M N O P Q R S T U V W X Y
+    26 (Z) | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</pre>
+
+<p>&nbsp;</p>
+
+<p>Then, the multiple cipher alphabets (rows in the Vigen&egrave;re
+square) to be used in the encipherment must be chosen. A
+practical way of doing this is via a <i>keyword</i>. For example,
+the keyword 'MIUP' selects the cipher alphabets 13, 9, 21 and 16
+(see underlined rows in the Vigen&egrave;re square).</p>
+
+<p>In the final step, each letter in the plaintext message is
+enciphered according to the corresponding cipher alphabet. For
+example, suppose the plaintext message is 'programming' and the
+keyword is 'MIUP.' The encoded message would be:</p>
+
+<pre> plaintext message -  p  r  o  g   r  a  m  m   i  n  g
+ keyword           -  M  I  U  P   M  I  U  P   M  I  U
+ cipher alphabets  -  13 9  21 16  13 9  21 16  13 9  21
+ ----------------- -  ----------------------------------
+ encoded message   -  C  A  J  W   E  J  H  C   V  W  B</pre>
+
+<p>The letter 'p' in the plaintext message is enciphered using
+cipher alphabet 13 into the letter 'C'. The 'C' comes from the
+intersection of column 'p' with row 13 in the Vigen&egrave;re square.
+The second letter in the plaintext message, 'r', is enciphered
+into the letter 'A' using cipher alphabet 9 (check the
+intersection of column 'r' with row 9), and so on. If necessary,
+as in this case, the keyword can be repeated multiple times to
+match the length of the plaintext message.</p>
+
+<h3>How to decipher an encoded message</h3>
+
+<p>The decipherment of an encoded message requires the keyword
+that was used to encipher the plaintext message. For example,
+suppose the encoded message is 'CAJWEJHCVWB' and the keyword is
+'MIUP'.</p>
+
+<pre> encoded message   -  C  A  J  W   E  J  H  C   V  W  B
+ keyword           -  M  I  U  P   M  I  U  P   M  I  U
+ cipher alphabets  -  13 9  21 16  13 9  21 16  13 9  21
+ ----------------- -  ----------------------------------
+ plaintext message -  p  r  o  g   r  a  m  m   i  n  g</pre>
+
+<p>The multiple cipher alphabets of 'MIUP' are, again, 13, 9, 21
+and 16 (grey rows in the Vigen&egrave;re square above). Each plaintext
+message letter is obtained by finding the corresponding encoded
+letter in the row of the current cipher alphabet and then
+checking the letter on top of the column. For example, the letter
+'p' in the plaintext message is on top of the column where 'C'
+(the encoded letter) appears in row (cipher alphabet) 13. The
+decipherment ends when the last encoded letter is deciphered.</p>
+
+<p>(This background was written based on Simon Singh's &quot;The
+Code Book,&quot; p. 45-51.)</p>
+
+<p>&nbsp;</p>
+
+<h2><font color="#0000FF">Input</font></h2>
+
+<p>The input will consist of multiple lines.</p>
+
+<p>Each line contains a message enciphered
+with the Vigen&egrave;re cipher (in uppercase). The only knowledge
+about each message is that <i>after being deciphered</i> it
+represents a 3 digit number written as text (for example:
+'oneoneone' or 'zerozeroseven').</p>
+
+<h2><font color="#0000FF">Output</font></h2>
+
+<p>Separate the output of each input line with a single blank line.</p>
+
+<p>For each line, the output is all possible decipherments of the encoded
+message. For example, the encoded message 'PQRPQRPQR' means
+'oneoneone' when the keyword is 'ACM', but also means 'oneonetwo'
+or 'oneonesix' when the keywords are, respectively, 'ACMACMVTC'
+and 'ACMACMWHT', and so on.</p>
+
+<p>Each decipherment is written in a single line, as shown in the
+sample output. The text to the left of the '-&gt;' symbol is the
+keyword (in uppercase) and to the right is the corresponding
+plaintext 3 digit number (in lowercase). There should be <i>no
+empty line</i> between decipherments of the same input message.</p>
+
+<p>Note: the output must be sorted in descending order by value
+of the plaintext number ('nineninenine' &gt; 'ninenineeight' &gt;
+... &gt; 'zerozeroone' &gt; 'zerozerozero').</p>
+
+<p>&nbsp;</p>
+
+<h2><font color="#0000FF">Sample Input</font></h2>
+
+<pre>
+PQRPQRPQR
+PQRPQRPQR
+</pre>
+
+<h2><font color="#0000FF">Sample Output</font></h2>
+
+<pre>
+WHTWHTWHT -&gt; sixsixsix
+WHTWHTVTC -&gt; sixsixtwo
+WHTWHTACM -&gt; sixsixone
+WHTVTCWHT -&gt; sixtwosix
+WHTVTCVTC -&gt; sixtwotwo
+WHTVTCACM -&gt; sixtwoone
+WHTACMWHT -&gt; sixonesix
+WHTACMVTC -&gt; sixonetwo
+WHTACMACM -&gt; sixoneone
+VTCWHTWHT -&gt; twosixsix
+VTCWHTVTC -&gt; twosixtwo
+VTCWHTACM -&gt; twosixone
+VTCVTCWHT -&gt; twotwosix
+VTCVTCVTC -&gt; twotwotwo
+VTCVTCACM -&gt; twotwoone
+VTCACMWHT -&gt; twoonesix
+VTCACMVTC -&gt; twoonetwo
+VTCACMACM -&gt; twooneone
+ACMWHTWHT -&gt; onesixsix
+ACMWHTVTC -&gt; onesixtwo
+ACMWHTACM -&gt; onesixone
+ACMVTCWHT -&gt; onetwosix
+ACMVTCVTC -&gt; onetwotwo
+ACMVTCACM -&gt; onetwoone
+ACMACMWHT -&gt; oneonesix
+ACMACMVTC -&gt; oneonetwo
+ACMACMACM -&gt; oneoneone
+
+WHTWHTWHT -&gt; sixsixsix
+WHTWHTVTC -&gt; sixsixtwo
+WHTWHTACM -&gt; sixsixone
+WHTVTCWHT -&gt; sixtwosix
+WHTVTCVTC -&gt; sixtwotwo
+WHTVTCACM -&gt; sixtwoone
+WHTACMWHT -&gt; sixonesix
+WHTACMVTC -&gt; sixonetwo
+WHTACMACM -&gt; sixoneone
+VTCWHTWHT -&gt; twosixsix
+VTCWHTVTC -&gt; twosixtwo
+VTCWHTACM -&gt; twosixone
+VTCVTCWHT -&gt; twotwosix
+VTCVTCVTC -&gt; twotwotwo
+VTCVTCACM -&gt; twotwoone
+VTCACMWHT -&gt; twoonesix
+VTCACMVTC -&gt; twoonetwo
+VTCACMACM -&gt; twooneone
+ACMWHTWHT -&gt; onesixsix
+ACMWHTVTC -&gt; onesixtwo
+ACMWHTACM -&gt; onesixone
+ACMVTCWHT -&gt; onetwosix
+ACMVTCVTC -&gt; onetwotwo
+ACMVTCACM -&gt; onetwoone
+ACMACMWHT -&gt; oneonesix
+ACMACMVTC -&gt; oneonetwo
+ACMACMACM -&gt; oneoneone
+</pre>
+
+<p>
+<br><hr>
+<address>
+
+Ant&oacute;nio Ferreira, MIUP'2002
+</address>
+
+</body>
+</html>

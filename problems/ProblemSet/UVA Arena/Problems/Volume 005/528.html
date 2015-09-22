@@ -1,0 +1,169 @@
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>The Problem of Train Setout</title>
+<meta name="description" content="The Problem of Train Setout">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<link rel="STYLESHEET" href="http://uscoj.im.usc.edu.tw/~wjcheng/uva/5/htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tbody><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+The Problem of Train Setout</a>&nbsp;</font></b></td></tr></tbody></table></center>
+</h1>
+
+<p>
+At a railway station there is only one out channel. There are two kinds
+of trains : the express train
+and ordinary train. The ordinary train should wait to setout until all
+the express train have setout.
+But if an ordinary train is just setouting, the incoming express train should
+wait until the ordinary
+train leaves. The leaving time of express train and ordinary train are <i>L</i><sub><i>e</i></sub>
+and <i>L</i><sub><i>o</i></sub>. And the time
+between the arriving of two express train is <i>A</i><sub><i>e</i></sub> and of ordinary train is <i>A</i><sub><i>o</i></sub>.
+The total observation
+time is <i>T</i>. You should work out a program to illustrate the number of trains
+waiting to setout at any
+time, and calculate the average time of the two kinds of trains waiting <i>W</i><sub><i>e</i></sub>,
+<i>W</i><sub><i>o</i></sub>, and the average
+time of the all trains waiting <i>W</i><sub><i>t</i></sub>, and the time every train waited <i>W</i>(<i>t</i>).
+Assume that the setout
+channel is empty at first and a express train comes first. And the output
+channel will never be empty.
+
+</p><p>
+
+</p><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input is a <b>number of lines</b> of five numbers that represent 
+
+<i>A</i><sub><i>e</i></sub>, <i>A</i><sub><i>o</i></sub>, <i>L</i><sub><i>e</i></sub>, <i>L</i><sub><i>o</i></sub>, <i>T</i>
+respectively.
+
+<p>
+
+</p><h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The first part of the output is an array of the waiting trains, one element
+per line. There are three
+numbers in a line. First is the time, second is the number of waiting express
+trains, the third is the
+number of waiting ordinary trains. At the end of the array, there is a 0.
+
+<p>
+
+</p><p>
+<br>
+After the array , there is a line contains three numbers are 
+
+<i>W</i><sub><i>e</i></sub>, <i>W</i><sub><i>o</i></sub>, <i>W</i><sub><i>t</i></sub>.
+
+</p><p>
+
+</p><p>
+<br>
+The last part of the output is
+also an array, one element per line. There are two elements per line. The
+first one is the train. If the
+train is an express train, then the first element begins with <tt>E</tt>, followed
+by the number of the express
+train, (the number is according to the incoming order of the train); else
+it begins with <tt>O</tt>, followed
+by the number of the ordinary train. The second is the time the train
+has waited.
+<br>
+<b>Separate the output for each input line with a single blank line.</b>
+
+</p><p>
+
+</p><h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>3 6 6 2 30
+3 6 6 2 30
+</pre>
+
+<p>
+
+</p><h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>0 0 0
+3 1 0
+6 1 1
+9 2 1
+12 2 2
+15 3 2
+18 3 3
+21 4 3
+24 4 4
+27 5 4
+30 5 5
+0
+6 12 8
+0
+E1 0
+E2 3
+E3 6
+E4 9
+E5 12
+E6 15
+E7 12
+E8 9
+E9 6
+E10 3
+E11 0
+O1 24
+O2 18
+O3 12
+O4 6
+O5 0
+
+0 0 0
+3 1 0
+6 1 1
+9 2 1
+12 2 2
+15 3 2
+18 3 3
+21 4 3
+24 4 4
+27 5 4
+30 5 5
+0
+6 12 8
+0
+E1 0
+E2 3
+E3 6
+E4 9
+E5 12
+E6 15
+E7 12
+E8 9
+E9 6
+E10 3
+E11 0
+O1 24
+O2 18
+O3 12
+O4 6
+O5 0
+</pre>
+
+<p>
+<br></p><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+
+
+
+</body></html>

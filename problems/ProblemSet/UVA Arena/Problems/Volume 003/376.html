@@ -1,0 +1,63 @@
+
+
+<html>
+<head>
+<title>More Triangles ... THE AMBIGUOUS CASE</title>
+<meta name="description" content="More Triangles ... THE AMBIGUOUS CASE">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">More Triangles ... THE AMBIGUOUS CASE</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The ambiguous case in trigonometry calls for the solution of triangles when
+given two sides and the angle opposite one of them.  You are to write a
+program that accepts such data and reports all solutions.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input data for each case will consist of a single input line containing
+three real numbers separated by an arbitrary number of spaces.  The first two
+real numbers on each input line represent the lengths of two sides of a
+triangle.  The third real number on each input line is an angle (measured in
+degrees) which is opposite the second of the two given sides.  The stream of
+input cases is terminated when all three pieces of data are zero.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Your program is to read the data and analyze the data for each case, and
+produce a report of the results according to the format shown below.  Each
+case report consists of the number of solutions for the case, and the
+corresponding solutions (to two decimal places) when the number of solutions
+is nonzero. If there are two solutions, you should print them in decreasing
+order. Please assign a case number to each set of data starting with 1.
+
+<p>No trailing spaces should be print. All numbers are aligned to the right.
+Follow the column specification shown in sample output.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2.00 2.00 30.00
+2.00 3.00 130.00
+1.00 1.00 90.00
+698.64 217.77 5.52
+0.00 0.00 0.00
+</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+Case    A      B    THETA  # of    Side   Side
+ #     side   side  (deg)  Triags    1      2
+   1   2.00   2.00  30.00     1     3.46
+   2   2.00   3.00 130.00     1     1.29
+   3   1.00   1.00  90.00     0
+   4 698.64 217.77   5.52     2   902.54 488.26
+
+END OF REPORT for 4 cases
+</pre>
+<p>
+</body>
+</html>

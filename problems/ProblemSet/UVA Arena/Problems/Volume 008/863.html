@@ -1,0 +1,125 @@
+
+
+<html>
+<head>
+<title>Process Scheduling</title>
+<meta name="description" content="Process Scheduling">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Process Scheduling</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In batch programming, there are many tasks that need to be
+completed in minimal overall time.  Accurate information about
+the total runtime and interdependencies of processes is often available
+to the scheduler, allowing optimal schedulings to be found.  This problem considers processes
+that can run on different CPUs at the same time, but which are
+interdependent.  That is to say, some processes cannot start until
+others have completed.  Scheduling processes optimally prevents CPUs
+from being idle unnecessarily.
+
+<p>
+Your task is to find a way of using <span class="MATH"><i>n</i></span> processors to run
+<span class="MATH"><i>p</i></span> processes, minimizing the number of time slices until they are all
+finished.  Some processes may be dependent on processes that depend on
+other processes, but there will be no dependency loops.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+The first line of input will consist of two integers, the number of processors
+(<span class="MATH"><i>n</i></span>) and the number of processes (<span class="MATH"><i>p</i></span>).  Both numbers will be
+positive; <span class="MATH"><i>p</i> &lt; 100</span> and <span class="MATH"><i>n</i> &lt; 21</span>.
+
+<p>
+There will be <span class="MATH"><i>p</i></span> additional lines representing the processes.
+Each of these lines will contain an integer representing the number of
+CPU time slices required for the process and zero or more integers
+representing the processes that must finish before this process may
+start.  Processes are numbered from 1 to <span class="MATH"><i>p</i></span>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+Output consists of <span class="MATH"><i>n</i></span> columns of width two, with a single
+space between columns.  The <span class="MATH"><i>i</i></span>-th line corresponds
+to the processes running during the <span class="MATH"><i>i</i></span>-th time
+slice.  The process numbers should be right-justified.  The scheduling
+of processes should minimize the amount of time until all of the
+processes have completed their tasks.
+Trailing spaces are acceptable, provided that they do not extend beyond
+the right of the last column.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+3 5
+4
+3
+2 4 2
+2 1
+1 3
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+ 1  1  2
+ 1  1  2
+ 4  4  2
+ 3  3
+ 5
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-08-31
+</address>
+</body>
+</html>
+

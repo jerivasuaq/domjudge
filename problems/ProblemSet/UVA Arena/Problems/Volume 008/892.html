@@ -1,0 +1,121 @@
+
+
+<html>
+<head>
+<title>Finding words</title>
+<meta name="description" content="Finding words">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Finding words</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A common problem when processing incoming text is to isolate the words in the text.  This is made more
+difficult by the punctuation; words have commas, ``quote marks", (even brackets) next to them, or hy-phens
+in the middle of the word.  This punctuation doesn't count as letters when the words have to be looked up
+in a dictionary by the program.
+
+<p>
+
+<p>
+<br>
+For this problem, you must separate out ``clean" words from text, that is, words with no attached or embedded
+non-letters.  A ``word" is any continuous string of non-whitespace characters, with whitespace characters on
+each side of it.  For this problem, a ``whitespace" character is a space character or an end-of-line character,
+or the start or end of the file (so that, for example, if the input file consists of `<tt>Anne Bob</tt>', where there is a
+space character between the A and B but no other, then there are two words, `<tt>Anne</tt>' and `<tt>Bob</tt>').
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input will consist of lines with no more
+than 60 characters in each line.  Every line will be terminated by a character which isn't whitespace (which
+will be followed immediately by an end-of-line character).  The input will be terminated by a line consisting
+of a single `<tt>#</tt>'.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output must be the lines of the incoming text, with
+the non-letters stripped away from each word.  A non-letter is any character which is not a letter (a - z and A - Z)
+and not a whitespace character.  Your program must not change the letters and space characters.  When a non-letter occurs in the middle of a
+word (ie there is no whitespace character next to it), it must be simply removed (see what happens to the
+word `<tt>doesn't</tt>' in the example).  A word which consists entirely of non-letters will therefore be removed entirely.
+
+<p>
+
+<p>
+<br>
+There is a special rule for a hyphen (`<tt>-</tt>') when it is the very last character in a line:
+
+<ul>
+<li>the word part before the hyphen and the first word part on the next line form a single word;
+</li>
+<li>this complete word must be written on a line by itself;
+</li>
+<li>you can assume that there will always be a space before the word part on the first line, and a space after
+the word part on the second line. These 2 spaces must appear in the output.
+</li>
+</ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+A common problem when processing incoming text is to isolate
+the words in the text.  This is made more difficult by the
+punctuation; words have commas, "quote marks",
+(even brackets)      next to them, or hy-
+phens in the middle of the word.  This punctuation doesn't
+count as letters when the words have to be looked up in a
+# dictionary by the 12345 "**&amp;! program.
+#
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+A common problem when processing incoming text is to isolate
+the words in the text  This is made more difficult by the
+punctuation words have commas quote marks
+even brackets      next to them or 
+hyphens
+ in the middle of the word  This punctuation doesnt
+count as letters when the words have to be looked up in a
+ dictionary by the   program
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Miguel Revilla
+2004-07-08
+</address>
+</body>
+</html>
+

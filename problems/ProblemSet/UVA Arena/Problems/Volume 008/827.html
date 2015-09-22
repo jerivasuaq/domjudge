@@ -1,0 +1,179 @@
+
+
+<html>
+<head>
+<title>Buddy Memory Allocator</title>
+<meta name="description" content="Buddy Memory Allocator">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Buddy Memory Allocator</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+Memory management, specially memory allocation to processes,
+is a fundamental issue in operating systems. A fixed
+partitioning scheme limits the number of active processes and
+may use space inefficiently if there is a poor match
+between available partition sizes and process sizes. A dynamic
+partitioning scheme is more complex to maintain and
+includes the overhead of compaction. An interesting compromise
+is the buddy system.
+
+<p>
+In a buddy system, the entire memory space available for allocation
+is initially treated as a single block whose size is
+a power of 2. When the first request is made, if its size is greater
+than half of the initial block then the entire block
+is allocated. Otherwise, the block is split in two equal companion
+buddies. If the size of the request is greater than
+half of one of the buddies, then allocate one to it. Otherwise,
+one of the buddies is split in half again. This method
+continues until the smallest block greater than or equal to
+the size of the request is found and allocated to it.
+
+<p>
+In this method, when a process terminates the buddy block
+that was allocated to it is freed. Whenever possible, an
+unnallocated buddy is merged with a companion buddy in
+order to form a larger free block. Two blocks are said to be
+companion buddies if they resulted from the split of the
+same direct parent block.
+
+<p>
+The following figure illustrates the buddy system at work,
+considering a 1024k (1-megabyte) initial block and the
+process requests as shown at the left of the table.
+
+<p>
+<div align="CENTER">
+
+<img src="p827.gif" alt="\epsfbox{p827.eps}">
+</div>
+
+<p>
+Your task is to implement a buddy memory manager and simulate it at work.
+You will be given the upper and lower
+sizes admissible for blocks in the system and a list of requests.
+A request is made for a process and it may either be for
+a block of a certain size or just an indication of termination.
+Requests should be attended in a firstcome firstserved
+basis. After serving all requests, your program should display
+the state of the buddy system at that point, indicating
+which processes are in memory and which blocks are free.
+
+<p>
+Notice that, whenever there is a request that corresponds to a
+block of size <span class="MATH"><i>s</i></span>, your program should select the block of
+that size that was most recently declared free. Furthermore,
+when a block is split in two, the left-one (lower addresses)
+should be selected before the right-one.
+
+<p>
+You can assume that the list of requests is such that all requests
+can always be served. In other words, you can make
+the following assumptions: no process will request more than
+the available memory; processes are uniquely identified
+while active; and no request for process termination is issued
+before its corresponding request for memory allocation.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The first line of input consists of two numbers, <span class="MATH"><i>U</i></span> and <span class="MATH"><i>L</i></span>,
+that determine the upper (<span class="MATH">2<sup>U</sup><i>k</i></span>) and lower (<span class="MATH">2<sup>L</sup><i>k</i></span>) block sizes
+admissable. You can assume <span class="MATH"><i>U</i> &gt; <i>L</i> &gt; 0</span>. The following input lines are
+requests being made, one per line. A request is defined by two values,
+<span class="MATH"><i>P</i></span> and <span class="MATH"><i>S</i></span>, where <span class="MATH"><i>P</i></span> is a capital letter that identifies the
+process associated with the request, and <span class="MATH"><i>S</i></span> (<span class="MATH"><img width="18" height="30" align="MIDDLE" border="0" src="827img2.png" alt="$ \geq$"> 0</span>) is a number. If <span class="MATH"><i>S</i> &gt; 0</span> then it is a memory block request; Otherwise (<span class="MATH"><i>S</i> = 0</span>) it is a
+request indicating that process <span class="MATH"><i>P</i></span> has terminated.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+The output must list the state of the buddy immediatly after
+having served the last request. This corresponds to listing
+the processes still in memory, if any, and the free blocks
+(holes) available. Processes and holes must be listed in a
+left to right order as you traverse the buddy (i.e. from lower
+addresses towards upper memory addresses). The output
+format for processes is <span class="MATH"><i>P</i> : <i>S</i></span>, <span class="MATH"><i>P</i></span> is the process identifier and <span class="MATH"><i>S</i></span>
+its size, and for holes is <tt>Hole:</tt><span class="MATH"><i>S</i></span> where <span class="MATH"><i>S</i></span> is the size of
+the free block.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+10 4
+A 70
+B 35
+C 80
+A 0
+D 60
+B 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Hole:128
+Hole:64
+D:60
+C:80
+Hole:128
+Hole:512
+</pre>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+Fernando Silva, MIUP'2001
+</address>
+</body>
+</html>
+

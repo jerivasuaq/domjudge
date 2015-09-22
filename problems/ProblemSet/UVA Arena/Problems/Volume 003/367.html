@@ -1,0 +1,104 @@
+
+
+<html>
+<head>
+<title>Halting Factor Replacement Systems</title>
+<meta name="description" content="Halting Factor Replacement Systems">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Halting Factor Replacement Systems</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A Factor Replacement System (FRS) transforms an input integer to another
+integer by applying rules.  Each rule specifies how a set of prime
+factors of the input integer are replaced by a second
+set of prime factors.  Consider these rules:
+<p>
+<p>
+<p> <img width="407" height="37" align="BOTTOM" alt="tabular21" src="367img1.gif"> <p>
+<p>
+<p>
+Rule 1 specifies that if the integer has one factor of two, one factor of three,
+and two factors of five, then those factors
+are removed and replaced with two factors of
+seven.  Using this rule, the integer 450
+(<img width="100" height="28" align="MIDDLE" alt="tex2html_wrap_inline36" src="367img2.gif"> )
+becomes 147 ( <img width="62" height="28" align="MIDDLE" alt="tex2html_wrap_inline38" src="367img3.gif"> ), but the
+integer 44 ( <img width="72" height="28" align="MIDDLE" alt="tex2html_wrap_inline40" src="367img4.gif"> ) is unaltered. Rule 2 specifies
+that a factor of two should be removed from the integer.
+Thus 147 is unaltered
+by this rule but 44 becomes 22 with one application of the rule.
+<p>
+<p>
+The FRS rules are ordered.  For a given input,
+the rules are examined in order to find a match. When
+a match is found, the rule is applied once and the process
+begins again with the first rule. An FRS halts
+when no rules can be applied.  In the above example,
+the FRS terminates on input
+450 with output value 147 and on input 44 with output 11.
+<p>
+<p>
+Given the rules of an FRS and several positive
+integers, produce the result of applying the FRS to each integer.
+It is guaranteed that the FRS will halt for each input integer.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Each FRS description begins with a line containing
+a non-negative integer <i>n</i> ( <img width="49" height="25" align="MIDDLE" alt="tex2html_wrap_inline44" src="367img5.gif"> ),
+the number of rules. The next <i>n</i> lines contain the rules. Each rule consists
+of two positive integers separated by at least one space;
+the first integer is the left part of the rule and the second
+integer is the right part of the rule, as described above.  The
+next line contains a non-negative
+integer <i>k</i>, the number of input integers.
+Each of the next <i>k</i> lines contains a single integer to be input to the FRS.
+<p>
+<p>
+Your program must stop processing input when it reaches an FRS in which
+<i>n</i> is zero.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each data set, output a line indicating the
+data set number.  For each input integer, output
+a single line containing the input integer and the final FRS value, as shown
+in the Sample Output. Leave a blank line after
+the output from different FRS's.
+<p>
+<p>
+Note that although all numbers used in the input file for rules and FRS
+input values are 32 bit integers,
+the output value from an FRS may exceed the maximum value that can be
+represented by a 32 bit integer (or even a floating point number).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2
+150 49
+2 1
+2
+450
+44
+2
+9 4
+3 1
+1
+27
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>FRS #1:
+     450 becomes 147
+     44 becomes 11
+
+FRS #2:
+     27 becomes 4</pre>
+<p>
+</body>
+</html>

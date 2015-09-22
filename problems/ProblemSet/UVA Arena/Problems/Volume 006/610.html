@@ -1,0 +1,168 @@
+
+
+<html>
+<head>
+<title>Street Directions</title>
+<meta name="description" content="Street Directions">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Street Directions</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+According to the Automobile Collision Monitor (ACM), most fatal traffic
+accidents occur on
+two-way streets. In order to reduce the number of fatalities caused by
+traffic accidents, the
+mayor wants to convert as many streets as possible into one-way streets.
+You have been hired
+to perform this conversion, so that from each intersection, it is
+possible for a motorist to drive
+to all the other intersections following some route.
+
+<p>
+
+<p>
+<br>
+You will be given a list of streets (all two-way) of the city.
+Each street connects two intersections,
+and does not go through an intersection. At most four streets
+meet at each intersection, and
+there is at most one street connecting any pair of intersections.
+It is possible for an intersection
+to be the end point of only one street. You may assume that it
+is possible for a motorist to drive
+from each destination to any other destination when every street is
+a two-way street.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of a number of cases. The first line of each case
+contains two integers <i>n</i> and
+<i>m</i>. The number of intersections is <i>n</i> (
+
+<img width="105" height="30" align="MIDDLE" border="0" src="610img1.gif" alt="$2 \leY n \leY 1000$">), and the
+number of streets is <i>m</i>. The
+next <i>m</i> lines contain the intersections incident to each of the <i>m</i>
+streets. The intersections are
+numbered from 1 to <i>n</i>, and each street is listed once. If the
+pair <img width="25" height="31" align="MIDDLE" border="0" src="610img2.gif" alt="$i\ j$">
+is present, <img width="25" height="31" align="MIDDLE" border="0" src="610img3.gif" alt="$j\ i$">
+will not be
+present. End of input is indicated by <i>n</i> = <i>m</i> = 0.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each case, print the case number (starting from 1) followed
+by a blank line. Next, print
+on separate lines each street as the pair <img width="25" height="31" align="MIDDLE" border="0" src="610img2.gif" alt="$i\ j$">
+to indicate that
+the street has been assigned the
+direction going from intersection <i>i</i> to intersection <i>j</i>. For a
+street that cannot be converted into
+a one-way street, print both <img width="25" height="31" align="MIDDLE" border="0" src="610img2.gif" alt="$i\ j$">
+and <img width="25" height="31" align="MIDDLE" border="0" src="610img3.gif" alt="$j\ i$">
+on two different lines.
+The list of streets can be printed
+in any order. Terminate each case with a line containing a
+single `<tt>#</tt>' character.
+
+<p>
+
+<p>
+<br>
+
+<b>Note:</b> There may be many possible direction assignments satisfying
+the requirements. Any such assignment is acceptable.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+7 10
+1 2
+1 3
+2 4
+3 4
+4 5
+4 6
+5 7
+6 7
+2 5
+3 6
+7 9
+1 2
+1 3
+1 4
+2 4
+3 4
+4 5
+5 6
+5 7
+7 6
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+1
+
+1 2
+2 4
+3 1
+3 6
+4 3
+5 2
+5 4
+6 4
+6 7
+7 5
+#
+2
+
+1 2
+2 4
+3 1
+4 1
+4 3
+4 5
+5 4
+5 6
+6 7
+7 5
+#
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-24</i>
+</address>
+</body>
+</html>
+

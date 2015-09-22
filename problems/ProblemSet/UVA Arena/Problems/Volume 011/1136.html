@@ -1,0 +1,108 @@
+<p>
+In Episode III of Star Wars (whose alleged
+title is <em>How I became Vader</em>), R2-D2 (Artoo-Detoo) is again
+confronted to a tedious work. He is responsible for the loading of
+the republic transport starships in the fastest way. Imagine a huge
+space area where <span class="MATH"><i>n</i></span> starships are parked. Each starship has a
+capacity of <span class="MATH"><i>K</i></span> cubic femtoparsec. Containers <span class="MATH"><i>C</i><sub>i</sub></span> arrive one at a time
+with some volume <span class="MATH"><i>v</i><sub>i</sub></span> (expressed in cubic femtoparsec). R2-D2 wants to
+minimize the number of starships used for a given sequence of containers.
+
+<p>
+Smart as he is, R2-D2 knows for sure that the problem is a hard one,
+even with the force being around. Here is the heuristics he selected
+to solve his problem. Start with
+all starships ready to load, and numbered <span class="MATH"><i>S</i><sub>0</sub></span>, <span class="MATH"><i>S</i><sub>1</sub></span>, etc.. When
+container <span class="MATH"><i>C</i><sub>j</sub></span> arrives, select the starship of minimal index <span class="MATH"><i>i</i></span> that can
+contain <span class="MATH"><i>C</i><sub>j</sub></span> and put it in <span class="MATH"><i>S</i><sub>i</sub></span>. In some sense, this heuristics
+minimizes the move of the container arriving before its loading.
+
+<p>
+At the end of the <span class="MATH"><i>n</i></span> arrivals, R2-D2 counts the number <span class="MATH"><i>s</i></span> of
+starships used and he measures the <em>total waste</em> <span class="MATH"><i>w</i></span> of the sequence. For
+<span class="MATH"><i>i</i> = 0..<i>s</i> - 1</span>, the <em>waste</em> in starship <span class="MATH"><i>i</i></span> is given by the unused volume.
+
+<p>
+Your task is to simulate the algorithm of R2-D2.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Input consists of several test cases, each of them following the description below. A blank line
+separates two consecutive cases.
+
+<p>
+Each test file begins with capacity <span class="MATH"><i>K</i></span> on a line 
+<span class="MATH">(<i>K</i><img width="18" height="30" align="MIDDLE" border="0" src="2945img1.png" alt="$ \le$">1000)</span>,
+followed by the number of containers in the sequence, <span class="MATH"><i>n</i></span> on the
+second line 
+<span class="MATH">(1<img width="18" height="30" align="MIDDLE" border="0" src="2945img1.png" alt="$ \le$"><i>n</i><img width="18" height="30" align="MIDDLE" border="0" src="2945img1.png" alt="$ \le$">10<sup>6</sup>)</span>. There are two possible formats for
+the remaining lines. If it contains one integer, then this is the next
+<span class="MATH"><i>v</i><sub>i</sub></span>. If it begins with the character `<tt>b</tt>' (for block), it is
+followed by 2 integers <span class="MATH"><i>r</i></span> and <span class="MATH"><i>v</i></span>. This means that the <span class="MATH"><i>r</i></span> next
+containers arriving have volume <span class="MATH"><i>v</i></span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, your program must output the number <span class="MATH"><i>s</i></span> of starships used, followed by
+a blank, followed by the total waste <span class="MATH"><i>w</i></span>.
+
+<p>
+The outputs of two consecutive cases will be separated by a blank line.
+
+<p>
+
+<p>
+<br>
+In the first sample input below, you load starship <span class="MATH"><i>S</i><sub>0</sub></span> with 50 and 25 and starship <span class="MATH"><i>S</i><sub>1</sub></span> with
+70, so that the waste is (100-75)+(100-70)=55. The answer must be `<tt>2 55</tt>'
+
+<p>
+The second case which corresponds to the sequence 50, 40, 40, 20. <span class="MATH"><i>S</i><sub>0</sub></span> will
+contain 90, <span class="MATH"><i>S</i><sub>1</sub></span> will contain 60, so that the waste is 10+40=50
+and the answer will be: `<tt>2 50</tt>'.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+100
+3
+50
+25
+70
+
+100
+4
+50
+b 2 40
+20
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 55
+
+2 50
+</pre>
+
+<p>

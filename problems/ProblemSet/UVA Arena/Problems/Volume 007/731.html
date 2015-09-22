@@ -1,0 +1,173 @@
+
+
+<html>
+<head>
+<title>Numerical Summation of a Series</title>
+<meta name="description" content="Numerical Summation of a Series">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Numerical Summation of a Series</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Produce a table of the values of the series
+<br><p>
+<div align="CENTER">
+
+
+
+<table width="100%" align="CENTER">
+<tr valign="MIDDLE"><td align="CENTER" nowrap=""><img width="153" height="55" src="731img1.gif" alt="\begin{displaymath}\psi (x) = \sum_{k=1}^{\infty} {1 \over {k(k+x)}}
+\end{displaymath}"></td>
+<td width="10" align="RIGHT">
+(1)</td></tr>
+</table>
+</div>
+<br clear="ALL"><p>
+for the 3001 values of <i>x</i>, 
+
+<img width="198" height="30" align="MIDDLE" border="0" src="731img2.gif" alt="$x= 0.0, 0.1, 0.2, \dots, 300.0$">.
+All entries of the
+table must have a relative error less than 1.0e-10 (10 digits of
+precision).  This problem is based on a problem from Hamming (1962), when
+mainframes were very slow by today's microcomputer standards.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+This problem has no input file.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The output is to be written into a file.  The output is to be
+formatted as two columns with the values of <i>x</i> and <i>y</i>(<i>x</i>)
+printed as in the C <tt>printf</tt> or the Pascal <tt>writeln</tt>.
+
+<p>
+<pre>
+printf("%6.2f%17.12f\n", x, psix )
+
+writeln(x:6:2,psix:17:12)
+</pre>
+
+<p>
+As an example, the sample output below shows 4 acceptable lines out of
+3001, which might appear in the output file.
+
+<p>
+The values of <i>x</i> should start at 0.00 and increase by 0.1 until the line
+with <i>x</i>=300.00 is output.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Process</a>&nbsp;</font>
+</h2>
+
+<p>
+The problem with summing the sequence in equation 1 is that too many terms
+may be required to complete the summation in the given time.  Additionally,
+if enough terms were to be summed, roundoff would render any typical double
+precision computation useless for the desired precision.
+
+<p>
+
+<p>
+<br>
+To improve the convergence of the summation process note that
+
+<p>
+<br><p>
+<div align="CENTER">
+
+
+
+<table width="100%" align="CENTER">
+<tr valign="MIDDLE"><td align="CENTER" nowrap=""><img width="165" height="46" src="731img3.gif" alt="\begin{displaymath}{1 \over {k(k+1)}} = {1 \over k} - {1 \over {k+1}}
+\end{displaymath}"></td>
+<td width="10" align="RIGHT">
+(2)</td></tr>
+</table>
+</div>
+<br clear="ALL"><p>
+which implies <i>y</i>(1)=1.0.
+One can then produce a series for 
+
+<i>y</i>(<i>x</i>) - <i>y</i>(1)
+which converges faster than the original series.  This series not only
+converges much faster, it also reduces roundoff loss.
+
+<p>
+
+<p>
+<br>
+This process of finding a faster converging series may be repeated again on
+the second series to produce a third sequence, which converges even more
+rapidly than the second.
+
+<p>
+
+<p>
+<br>
+The following equation is helpful in determining how may items are
+required in summing the series above.
+
+<p>
+<br><p>
+<div align="CENTER">
+
+
+
+<table width="100%" align="CENTER">
+<tr valign="MIDDLE"><td align="CENTER" nowrap=""><img width="322" height="55" src="731img4.gif" alt="\begin{displaymath}\sum_{k=n}^{\infty} {1 \over {k^r}} < \int_{n-1}^{\infty} {1 \over
+{x^r}} dx \quad \mbox{ for } k>1 \mbox{ and } r \ge 1
+\end{displaymath}"></td>
+<td width="10" align="RIGHT">
+(3)</td></tr>
+</table>
+</div>
+<br clear="ALL"><p>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+  0.00   1.644934066848
+  0.10   1.534607244904
+...
+  1.00   1.000000000000
+...
+  2.00   0.750000000000
+...
+300.00   0.020942212934
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-31</i>
+</address>
+</body>
+</html>
+

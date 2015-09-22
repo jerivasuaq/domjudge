@@ -1,0 +1,350 @@
+
+
+<html>
+<head>
+<title>Pipeline Scheduling</title>
+<meta name="description" content="Pipeline Scheduling">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Pipeline Scheduling</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+An arithmetic pipeline is designed to process more than one task simultaneously in an overlap-
+ping manner. It includes function units and data paths among them. Tasks are processed by
+pipelining; at each clock, one or more units are dedicated to a task and the output produced
+for the task at the clock is cascading to the units that are responsible for the next stage; since
+each unit may work in parallel with the others at any clock, more than one task may be being
+processed at a time by a single pipeline.
+
+<p>
+
+<p>
+<br>
+In this problem, a pipeline may have a feedback structure, that is, data paths among function units may have directed loops as shown in the next figure.
+
+<p>
+
+<p>
+<br>
+
+<b>Example of a feedback pipeline</b>
+
+<p>
+<div align="CENTER">
+
+<img src="p690.gif">
+</div>
+
+<p>
+Since an arithmetic pipeline in this problem is designed as special purpose dedicated hardware,
+we assume that it accepts just a single sort of task. Therefore, the timing information of a
+pipeline is fully described by a simple table called a <em>reservation table</em>, which specifies the function units that are busy at each clock when a task is processed without overlapping execution.
+
+<p>
+
+<p>
+<br>
+
+<b>Example of ``reservation table''</b>
+
+<p>
+
+<p>
+<br>
+
+<table cellpadding="3" border="1">
+<tr><td align="CENTER">clock</td>
+<td align="CENTER">0</td>
+<td align="CENTER">1</td>
+<td align="CENTER">2</td>
+<td align="CENTER">3</td>
+<td align="CENTER">4</td>
+<td align="CENTER">5</td>
+<td align="CENTER">6</td>
+</tr>
+<tr><td align="CENTER">unit0</td>
+<td align="CENTER">X</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">X</td>
+<td align="CENTER">X</td>
+<td align="CENTER">.</td>
+</tr>
+<tr><td align="CENTER">unit1</td>
+<td align="CENTER">.</td>
+<td align="CENTER">X</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+</tr>
+<tr><td align="CENTER">unit2</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">X</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+</tr>
+<tr><td align="CENTER">unit3</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">X</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+</tr>
+<tr><td align="CENTER">unit4</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">X</td>
+</tr>
+</table>
+
+<p>
+
+<p>
+<br>
+In reservation tables, `X' means ``the function unit is busy at that clock'' and `.' means ``the function unit is not busy at that clock.'' In this case, once a task enters the pipeline, it is processed by unit0 at the first clock, by unit1 at the second clock, and so on. It takes seven clock cycles to perform a task.
+
+<p>
+
+<p>
+<br>
+Notice that no special hardware is provided to avoid simultaneous use of the same function unit.
+
+<p>
+
+<p>
+<br>
+Therefore, a task must not be started if it would conflict with any tasks being processed. For
+instance, with the above reservation table, if two tasks, say task 0 and task 1, were started at
+clock 0 and clock 1, respectively, a conflict would occur on unit0 at clock 5. This means that
+you should not start two tasks with single cycle interval. This invalid schedule is depicted in
+the following process table, which is obtained by overlapping two copies of the reservation table
+with one being shifted to the right by 1 clock.
+
+<p>
+
+<p>
+<br>
+
+<b>Example of ``conflict''</b>
+
+<p>
+
+<p>
+<br>
+
+<table cellpadding="3" border="1">
+<tr><td align="CENTER">clock</td>
+<td align="CENTER">0</td>
+<td align="CENTER">1</td>
+<td align="CENTER">2</td>
+<td align="CENTER">3</td>
+<td align="CENTER">4</td>
+<td align="CENTER">5</td>
+<td align="CENTER">6</td>
+<td align="CENTER">7</td>
+</tr>
+<tr><td align="CENTER">unit0</td>
+<td align="CENTER">0</td>
+<td align="CENTER">1</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">0</td>
+<td align="CENTER">C</td>
+<td align="CENTER">1</td>
+<td align="CENTER">.</td>
+</tr>
+<tr><td align="CENTER">unit1</td>
+<td align="CENTER">.</td>
+<td align="CENTER">0</td>
+<td align="CENTER">1</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+</tr>
+<tr><td align="CENTER">unit2</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">0</td>
+<td align="CENTER">1</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+</tr>
+<tr><td align="CENTER">unit3</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">0</td>
+<td align="CENTER">1</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+</tr>
+<tr><td align="CENTER">unit4</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">.</td>
+<td align="CENTER">0</td>
+<td align="CENTER">1</td>
+</tr>
+</table>
+
+<p>
+(`0's and `1's in this table except those in the first row represent tasks 0 and 1, respectively, and `C' means the conflict.)
+
+<p>
+
+<p>
+<br>
+Your job is to write a program that reports the minimum number of clock cycles in which the given pipeline can process 10 tasks.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of multiple data sets, each representing the reservation table of a pipeline. A data set is given in the following format.
+
+<p>
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="169" height="137" src="690img1.gif" alt="\begin{displaymath}\begin{array}{cccc}
+n & & & \\
+x_{0,0} & x_{0,1} & \dots & x...
+..._{3,n-1} \\
+x_{4,0} & x_{4,1} & \dots & x_{4,n-1}
+\end{array}\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+The integer <i>n</i>(&lt; 20) in the first line is the width of the reservation table, or the number of clock
+cycles that is necessary to perform a single task. The second line represents the usage of unit0,
+the third line unit1, and so on. <i>x</i><sub><i>i</i>,<i>j</i></sub> is either `<tt>X</tt>' or `<tt>.</tt>'. The former means <em>reserved</em> and the latter <em>free</em>. There are no spaces in any input line. For simplicity, we only consider those pipelines that
+consist of 5 function units. The end of the input is indicated by a data set with 0 as the value of <i>n</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each data set, your program should output a line containing an integer number that is the
+minimum number of clock cycles in which the given pipeline can process 10 tasks.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+7
+X...XX.
+.X.....
+..X....
+...X...
+......X
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+34
+</pre>
+
+<p>
+
+<p><p>
+<br>
+
+<b>Note:</b> In this sample case, it takes 41 clock cycles to process 10 tasks if each task is started as early as
+possible under the condition that it never conflicts with any previous tasks being processed.
+
+<p>
+
+<pre>
+      | 00000000001111111111222222222233333333334
+clock | 01234567890123456789012345678901234567890
+-------------------------------------------------
+unit0 | 0.1.00112.3.22334.5.44556.7.66778.9.8899.
+unit1 | .0.1.....2.3.....4.5.....6.7.....8.9.....
+unit2 | ..0.1.....2.3.....4.5.....6.7.....8.9....
+unit3 | ...0.1.....2.3.....4.5.....6.7.....8.9...
+unit4 | ......0.1.....2.3.....4.5.....6.7.....8.9
+</pre>
+
+(The digits in the table except those in the clock row represent the task number.)
+
+<p>
+
+<p>
+<br>
+However, it takes only 34 clock cycles if each task is started at every third clock.
+
+<p>
+<pre>
+      | 0000000000111111111122222222223333
+clock | 0123456789012345678901234567890123
+------------------------------------------
+unit0 | 0..100211322433544655766877988.99.
+unit1 | .0..1..2..3..4..5..6..7..8..9.....
+unit2 | ..0..1..2..3..4..5..6..7..8..9....
+unit3 | ...0..1..2..3..4..5..6..7..8..9...
+unit4 | ......0..1..2..3..4..5..6..7..8..9
+</pre>
+
+(The digits in the table except those in the clock row represent the task number.)
+
+<p>
+
+<p>
+<br>
+This is the best possible schedule and therefore your program should report 34 in this case.
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-05</i>
+</address>
+</body>
+</html>
+

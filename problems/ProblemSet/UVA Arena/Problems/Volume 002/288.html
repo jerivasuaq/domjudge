@@ -1,0 +1,67 @@
+
+
+<html>
+<head>
+<title>Arithmetic Operations With Large Integers</title>
+<meta name="description" content="Arithmetic Operations With Large Integers">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Arithmetic Operations With Large Integers</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+This problem is about calculations with large numbers. Large means numbers with at
+most one thousand digits. The operations are limited to addition, substraction, multiplication and raising to a higher power.
+<p>
+There are no limitations to the operants of addition, substraction and multiplication. The
+base in raising to higher powers is positive and smaller than ten. The exponent is positive.
+<p>
+<p>
+The inputfile consists of a valid expression with any number of operations. There are no
+parentheses, but the normal arithmetic priority rules are still valid.
+<p>
+An example of a valid expression is: <tt>12345678 * 129876 + 2**1993</tt>.
+An invalid expression
+is: <tt>12345678 * 129876 + 12**1993</tt> because the base is greater than nine.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+
+The input contains several test cases, each one on a different line. Each test case contains numbers and operands in the following
+way: <tt>n op n { op n }</tt> . <tt>n</tt> is a
+positive decimal number with at most one thousand digits,
+stored as an ASCII-text. <tt>op</tt>
+is one of the following: <tt>+, -, *, **</tt> (<tt>**</tt>
+means ``raising to higher powers''). There can be
+at most one hundred operations per test case. There are no spaces 
+or other illegal characters in the input.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+
+The output contains the exact result of the evaluated expressions 
+given in the input. Print each test case in a different line.
+Each test case won't have more than three thousand characters.
+
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>12345678*129876+2**1993</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+896977105683011347056900938420064050017435704756793125373158388145129891712\\
+789307700515223684770523373785909874208955291755561688174261977676508872005\\
+197801086953040197752187505381087095625350558038492109870986287356370809737\\
+409093338414265941143390397695285610643740694879918793932122262001282984143\\
+224073001319601441082075018589725061828585163552941409601583724270514300953\\
+188533095947591884905338415676554651534516617357655143781579373852994152663\\
+198702360093129335607684294312805938140290754926427776409574872859496315224\\
+893901812925850900592061583009183090068756428459147015355107518672556877720
+</pre>
+<p>
+</body>
+</html>

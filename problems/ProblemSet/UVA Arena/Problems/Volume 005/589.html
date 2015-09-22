@@ -1,0 +1,137 @@
+
+
+<html>
+<head>
+<title>Pushing Boxes</title>
+<meta name="description" content="Pushing Boxes">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Pushing Boxes</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Imagine you are standing inside a two-dimensional maze composed of square cells which may or
+may not be filled with rock. You can move north, south, east or west one cell at a step. These moves
+are called <em>walks</em>.
+
+<p>
+One of the empty cells contains a box which can be moved to an adjacent free cell by standing
+next to the box and then moving in the direction of the box. Such a move is called a <em>push</em>. The box
+cannot be moved in any other way than by pushing, which means that if you push it into a corner you
+can never get it out of the corner again.
+
+<p>
+One of the empty cells is marked as the target cell. Your job is to bring the box to the target cell
+by a sequence of walks and pushes. As the box is very heavy, you would like to minimize the number
+of pushes. Can you write a program that will work out the best such sequence?
+
+<p>
+<div align="CENTER">
+<img src="p589.gif">
+</div>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains the descriptions of several mazes. Each maze description starts with a line
+containing two integers <i>r</i> and <i>c</i> (both <img width="40" height="30" align="MIDDLE" border="0" src="589img1.gif" alt="$\leY 20$">)
+representing the number of rows and columns of the
+maze.
+
+<p>
+Following this are <i>r</i> lines each containing <i>c</i> characters. Each character describes one cell of the
+maze. A cell full of rock is indicated by a `<tt>#</tt>' and an empty cell is represented by a `<tt>.</tt>'. Your starting
+position is symbolized by `<tt>S</tt>', the starting position of the box by `<tt>B</tt>' and the target cell by `<tt>T</tt>'.
+
+<p>
+Input is terminated by two zeroes for <i>r</i> and <i>c</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each maze in the input, first print the number of the maze, as shown in the sample output. Then,
+if it is impossible to bring the box to the target cell, print ``<tt>Impossible.</tt>''.
+
+<p>
+Otherwise, output a sequence that minimizes the number of pushes. If there is more than one such
+sequence, choose the one that minimizes the number of total moves (walks and pushes). If there is
+still more than one such sequence, any one is acceptable.
+
+<p>
+Print the sequence as a string of the characters <tt>N</tt>, <tt>S</tt>, <tt>E</tt>, <tt>W</tt>, <tt>n</tt>, <tt>s</tt>, <tt>e</tt> and <tt>w</tt> where uppercase letters
+stand for pushes, lowercase letters stand for walks and the different letters stand for the directions north, south, east and west.
+
+<p>
+Output a single blank line after each test case.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1 7
+SB....T
+1 7
+SB..#.T
+7 11
+###########
+#T##......#
+#.#.#..####
+#....B....#
+#.######..#
+#.....S...#
+###########
+8 4
+....
+.##.
+.#..
+.#..
+.#.B
+.##S
+....
+###T
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Maze #1
+EEEEE
+
+Maze #2
+Impossible.
+
+Maze #3
+eennwwWWWWeeeeeesswwwwwwwnNN
+
+Maze #4
+swwwnnnnnneeesssSSS
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

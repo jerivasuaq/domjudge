@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>ACM - Porto</title>
+<style>a:hover {color:#FA1F00}</style>
+</head>
+
+
+
+<p align="center"><b><font size="5" face="Arial" color="#000000">Storing images
+in a sequence</font></b></p>
+
+<b><font size="3"><a name="back">Background</a></font></b><p>
+
+
+
+<p>&nbsp;&nbsp; A web server for a site must store a set of large images in
+a sequential device, like a magnetic tape cassette. The images appear in the
+pages of the site, one per page. There are links between the pages where the
+images belong, so we know which image(s) might be required after some image is
+serve<br>For each image, we consider as direct neighbours the
+images which are <b>one</b> link away. If we have four images and image 1 is
+linked to image 4, and image 2 is linked to images 3 and 4, we may represent
+this graphically as follows:</p>
+
+<p align="center"><img border="0" src="p867a.gif" width="378" height="176"><br><b>Figure
+2.1</b> - Links between images</p>
+
+<p>&nbsp;&nbsp; If the images are stored in a sequential device,
+they must be ordered, and the distance between those that are directly linked
+depends on the ordering. Two possible orderings for the example above are:</p>
+
+<p align="center"><img border="0" src="p867b.gif" width="268" height="114">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="p867c.gif" width="268" height="114"></p>
+
+<b><font size="3"><a name="problem">Problem</a></font></b></p>
+
+<p>&nbsp;&nbsp; Given a set of (bi-directional) image dependencies, find an ordering that minimises the
+maximum distance for two linked images. There are at most 25 images</p>
+
+<b><font size="3"><a name="input">Input</a></font></b><p>
+<b>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+<p>
+<p>
+
+<p>&nbsp;&nbsp; The first input line contains the number <b>N</b> of
+images. Each of the subsequent N lines, one for each image, contains the number
+of the image and the numbers of its neighbour images, separated by single
+spaces.</p>
+
+<b><font size="3"><a name="output">Output</a></font></b></p>
+<b>
+For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+<p>
+
+<p>&nbsp;&nbsp; Two lines, the first with the maximum distance
+between linked images and the second with an ordering of the images.</p>
+
+
+<p><b>Sample Input</b><br>1<br><br>4<br>1 4<br>2 3 4<br>3 2<br>4 2 1</p>
+
+<p><b>Sample Output</b><br>1<br>3 2 4 1</p>
+
+<p>&nbsp;</p>
+
+
+
+
+</html>

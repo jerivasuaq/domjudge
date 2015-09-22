@@ -1,0 +1,101 @@
+
+<p>
+Singapore will host a Formula One race in 2008. The race will be held on a 5.067km long street circuit, consisting of 14 left hand turns and 10 right hand turns. In the run up to the F1 race, the number of illegal night street racing activities have been on the rise. Such races consists of several rounds around a designated street circuit. 
+
+<p>
+<div align="CENTER">
+
+<img width="653" height="507" align="right" border="0" src="p4110a.png" alt="\epsfbox{p4110a.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+
+<p>
+The authorities would like to deploy a new vehicle monitoring system in order to catch these illegal Saint Andrew's Road, part of the Formula One circuit racers. The system consists of a (Kenny Pek, Piccom) number of cameras mounted along various roads. For the system to be effective, there should be at least one camera along each of the possible circuits. 
+
+<p>
+The Singapore road system can be represented as a series of junctions and connecting bidirectional roads (see Figure 5). A possible racing circuit consists of a start junction followed by a path consisting of three or more roads that eventually leads back to the start junction. Each road in a racing circuit can be traversed only in one direction, and only once. 
+
+<p>
+Your task is to write a program that computes the optimal placement of the vehicle-monitoring cameras. You will be provided with a description of a connected road network to be monitored in terms of the roads and junctions. The junctions are identified by the bigger numbers in Figure 5. A camera can be deployed on the roads (and not the junctions). 
+
+<p>
+<div align="CENTER">
+
+<img width="870" height="400" align="bottom" border="0" src="p4110b.png" alt="\epsfbox{p4110b.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+
+<p>
+The cost of deploying a camera depends on the road on which it is placed. The smaller numbers by the roads in Figure 5 indicate the cost of deploying a camera on that road. Your job is to select a set of roads that minimizes the total cost of deployment while ensuring that there is at least one camera along every possible racing circuit (i.e. loop in the road network).
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of a line containing the number <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark> of datasets, followed by <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark> datasets, followed by a line containing the number `<tt>0</tt>'. 
+
+<p>
+The first line of each dataset contains two positive integers, <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark>, separated by a blank, which represent the number of junctions and number of roads, respectively. You may assume that 
+<span class="MATH">0 &lt; <i>n</i> &lt; 10000</span>
+<tex2html_verbatim_mark> and 
+<span class="MATH">0 &lt; <i>m</i> &lt; 100000</span>
+<tex2html_verbatim_mark>. For simplicity, we label each of the <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> junctions from 1 to <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark>. The following <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark> lines of each dataset each describes one road. Each line consists of three positive integers which are the labels of two different junctions and the cost of deploying a camera on this road. The cost of deploying a camera is between 1 and 1000.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The output consists of one line for each dataset. The <span class="MATH"><i>c</i></span>
+<tex2html_verbatim_mark>-th line contains one single number, representing the minimal cost of setting up the vehicle monitoring system such that there is at least one camera along every possible circuit.
+
+<p>
+
+<p>
+<br>
+
+<span class="textbf">Note:</span>
+This data set depicts the situation shown in Figure 5. The two cameras show where cameras might be placed in order to monitor each circuit at minimal cost. Since each of the cameras have a cost of 3, the total minimal cost is 6.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+1 
+6 7 
+1 2 5
+2 3 3
+1 4 5
+4 5 4
+5 6 4
+6 3 3
+5 2 3
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6
+</pre></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

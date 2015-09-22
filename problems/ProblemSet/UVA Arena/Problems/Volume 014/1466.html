@@ -1,0 +1,132 @@
+Believe it or not, the streets of ACM city are laid out in an exact grid pattern, as shown in Figure 1. Each crossing in the streets is 
+indentified with its vertical and horizontal street number. Some buildings in this city are so important that they need to be under 
+surveillance by the police at all time. Since each building occupies an entire block of the streets, we can simply think of it as a 
+cell of the grid. For an example, the black cells in Figure 1 represent important buildings. The building numbered 1 is located at a 
+block surrounded by four crossings (3,7), (3,8), (4,7) and (4,8). 
+
+<p>
+The APD (ACM Police Department) decided to assign one police officer 
+to each of the important buildings and let them keep watch of the buildings. The police officer must reside at one of the four crossings 
+surrounding the building he is in charge of. For an example, the officer in charge of building 1 in Figure 1 has to reside at one of the 
+four crossings (3,7), (3,8), (4,7), and (4,8). 
+
+<p>
+The officers should be able to communicate with each other. Since the chief of police was 
+a huge fan of toys, he got rid of all walkie-talkies in the department, and instead forced the officers to use ``string phones". 
+As you may know, a string phone is made of two paper cups (or, sometimes, two steel cans) linked by a string. For a string phone to 
+work properly, the string should be kept tight. Since strings cannot pass though the buildings, they always run along the streets. 
+Therefore, for two officers located at crossings <span class="MATH">(<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>)</span> and <span class="MATH">(<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>)</span>, respectively, to be able to communicate, the length of the 
+string phone they share must be equal to 
+<span class="MATH">| <i>x</i><sub>1</sub> - <i>x</i><sub>2</sub>| + | <i>y</i><sub>1</sub> - <i>y</i><sub>2</sub>|</span>, which is called <span class="textit">the shortest distance along the streets</span> between the 
+two crossings.
+
+<p>
+<div align="CENTER">
+
+<img width="388" height="381" align="BOTTOM" border="0" src="p4849a.png" alt="\epsfbox{p4849a.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 1. Streets of ACM city and locations of important buildings
+
+</div>
+
+<p>
+Now, you have to help the officers to find their locations so that every string phone they have works properly. You are given the 
+locations of <span class="MATH"><i>n</i></span> important buildings which are numbered from 1 through <span class="MATH"><i>n</i></span>. The buildings are apart from each other enough for no two 
+buildings to have a crossing surrounding them in common. You are also given information about which couples of the officers share 
+string phones and what the lengths of the strings are. This information is given as a form of weighted connected graph as depicted 
+in Figure 2(a). Node <span class="MATH"><i>i</i></span>, 
+<span class="MATH"><i>i</i> = 1, 2,..., <i>n</i></span>, of the graph represents the officer who is in charge of building <span class="MATH"><i>i</i></span>. The existence of an edge 
+<span class="MATH">(<i>i</i>, <i>j</i>)</span> implies that two officers in charge of buildings <span class="MATH"><i>i</i></span> and <span class="MATH"><i>j</i></span>, respectively, share a string phone, and the weight of the edge represents 
+the length of the string phone. This graph is always a connected graph. Your goal is to determine if it is possible to locate <span class="MATH"><i>n</i></span> officers 
+so that every string phone works properly. Figure 2(b) shows an example of such locations for our example. In Figure 2(b), the small 
+circles denote the crossings at which the officers are located. You can easily verify that the shortest distances along the streets 
+between them are all met by the lengths of the string phones they have.
+
+<p>
+<div align="CENTER">
+
+<img width="659" height="393" align="BOTTOM" border="0" src="p4849b.png" alt="\epsfbox{p4849b.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 2. Lengths of string phones and proper locations of officers
+
+</div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to read from standard input. The input consists of <span class="MATH"><i>T</i></span> test cases. The number of test cases <span class="MATH"><i>T</i></span> is given in the 
+first line of the input. The first line of each test case contains one integer <span class="MATH"><i>n</i></span>, which is the number of important buildings, 
+where 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4849img3.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4849img3.png" alt="$ \le$">3, 000</span>. In the following <span class="MATH"><i>n</i></span> lines, each line contains two integers <span class="MATH"><i>x</i></span>, and <span class="MATH"><i>y</i></span> which mean, assuming that it is the <span class="MATH"><i>i</i></span>-th 
+line among those <span class="MATH"><i>n</i></span> lines, that building <span class="MATH"><i>i</i></span> is located so that it is surrounded by the four street crossings <span class="MATH">(<i>x</i>, <i>y</i>)</span>, <span class="MATH">(<i>x</i> + 1, <i>y</i>)</span>, <span class="MATH">(<i>x</i>, <i>y</i> + 1)</span>, 
+and <span class="MATH">(<i>x</i> + 1, <i>y</i> + 1)</span>, where 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4849img3.png" alt="$ \le$"><i>x</i>, <i>y</i><img width="18" height="31" align="MIDDLE" border="0" src="4849img3.png" alt="$ \le$">3, 000, 000</span>. The next line contains another integer <span class="MATH"><i>m</i></span> which is the number of edges of the graph, 
+where 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4849img3.png" alt="$ \le$"><i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="4849img3.png" alt="$ \le$">300, 000</span> . In the following <span class="MATH"><i>m</i></span> lines, each line contains three integers <span class="MATH"><i>u</i></span>, <span class="MATH"><i>v</i></span>, and <span class="MATH"><i>d</i></span> which represent that there is 
+an edge between vertex <span class="MATH"><i>u</i></span> and <span class="MATH"><i>v</i></span> of which the weight is <span class="MATH"><i>d</i></span>, where 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4849img3.png" alt="$ \le$"><i>d</i><img width="18" height="31" align="MIDDLE" border="0" src="4849img3.png" alt="$ \le$">3, 000, 000</span>. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to write to standard 
+output. Print exactly one line for each test case. The output for each test case should be either `<tt>possible</tt>' 
+or `<tt>impossible</tt>' depending on 
+whether it is possible to place all officers satisfying given conditions or not.
+
+<p>
+The following shows sample input and output for two test cases. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+4
+3 7
+4 2
+8 3
+7 7
+5
+1 2 6
+1 4 5
+2 3 4
+2 4 7
+3 4 5
+3
+1 1
+1 4
+4 1
+3
+1 2 7
+2 3 6
+3 1 4
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+possible
+impossible
+</pre> 
+
+<p>

@@ -1,0 +1,125 @@
+
+
+<html>
+<head>
+<title>Puzzle (II)</title>
+<meta name="description" content="Puzzle">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Puzzle (II)</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Little Barborka has just started to learn how to solve a picture puzzle. She has started with
+a small one containing 15 pieces. Her daddy tries to solve the puzzle too. To make it a little bit
+harder for himself, he has turned all puzzle pieces upside down so that he cannot see pictures on
+the pieces. Now he is looking for a solution of the puzzle. Normally the solution should exist but
+he is not sure whether Barborka has not replaced some pieces of the puzzle by pieces of another
+similar puzzle. Help him and write a program which reads a description of a set of puzzle pieces
+and decides whether it is possible to assembly the pieces into a rectangle with given side lengths or
+not.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file consists of blocks of lines. Each block except the last describes one puzzle
+problem. In the first line of the block there are integers <i>n</i> and <i>m</i>, 
+
+<img width="102" height="30" align="MIDDLE" border="0" src="519img1.gif" alt="$0 < n, m Y\le 6$">
+separated by one
+space. The integers <i>n</i>, <i>m</i> indicate the number of rows and columns in the puzzle respectively. The
+description of individual puzzle pieces is in the following 
+
+<img width="52" height="30" align="MIDDLE" border="0" src="519img2.gif" alt="$n \times m$">
+lines of the block. Each piece is a
+rectangle 3 centimeters wide and 4 centimeters high with possible juts or cavities in the middle of
+its sides. For each side of a puzzle piece just one of the following possibilities is true (see picture):
+
+<p>
+<ul>
+<li>there is no jut or cavity on the side, i.e., the side is flat - such sides can be used only on edges
+of the final picture when assembling the puzzle,
+<li>there is one jut in the middle of the side,
+<li>there is one cavity in the middle of the side.
+</li></li></li></ul>
+
+<p>
+<div align="CENTER">
+<br>
+<img align="BOTTOM" border="0" src="519img4.gif" alt="\begin{picture}(2301,2118)(0,-10)
+\put(585.000,912.000){\arc{450.000}{1.5708}{4....
+...{\SetFigFont{14}{16.8}{\rmdefault}{\mddefault}{\updefault}jut}}}}}
+\end{picture}">
+<br>
+</div>
+
+<p>
+As is usual, two pieces can be placed side by side only if one has a jut and the other has a
+cavity on corresponding sides. We will denote the flat sides by <tt>F</tt>, the sides with juts by <tt>O</tt> and the
+sides with cavities by <tt>I</tt>. Each piece is described by four letters characterizing its top, right, bottom,
+and left side. To make the task easier the pieces can be used only as they are described i.e. they cannot be turned.
+
+<p>
+After each block there is an empty line. The last block consists of just one line containing 0 0, i.e. two zeros separated by one space.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output file contains the lines corresponding to the blocks in the input file. A line contains
+<tt>YES</tt> if the corresponding block in the input file describes a puzzle that can be correctly assembled.
+Otherwise it contains <tt>NO</tt>. There is no line in the output file corresponding to the last ``null'' block of the input file.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 5
+FOOF
+FOOI
+FOOI
+FOOI
+FFOI
+IOOF
+IOOI
+IOOI
+IOOI
+IFOI
+IOFF
+IOFI
+IOFI
+IOFI
+IFFI
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+YES
+</pre>
+
+<p>
+
+<p>
+</body>
+</html>

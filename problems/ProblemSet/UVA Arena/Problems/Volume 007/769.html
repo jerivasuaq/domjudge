@@ -1,0 +1,180 @@
+
+
+<html>
+<head>
+<title>Magic of David Copperfield</title>
+<meta name="description" content="Magic of David Copperfield">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Magic of David Copperfield</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The well-known magician David Copperfield loves to show the following trick: a square with
+<i>N</i> rows and <i>N</i> columns of different pictures appears on a TV screen. Let us number all
+the pictures in the following order:
+
+<p>
+<div align="CENTER">
+<table cellpadding="3" border="1">
+<tr><td align="CENTER">1</td>
+<td align="CENTER">2</td>
+<td align="CENTER"><img width="25" height="15" align="BOTTOM" border="0" src="769img1.gif" alt="$\dots$"></td>
+<td align="CENTER"><i>N</i></td>
+</tr>
+<tr><td align="CENTER"><img width="9" height="27" align="BOTTOM" border="0" src="769img2.gif" alt="$\vdots$"></td>
+<td align="CENTER"><img width="9" height="27" align="BOTTOM" border="0" src="769img2.gif" alt="$\vdots$"></td>
+<td align="CENTER"><img width="25" height="28" align="BOTTOM" border="0" src="769img3.gif" alt="$\ddots$"></td>
+<td align="CENTER"><img width="9" height="27" align="BOTTOM" border="0" src="769img2.gif" alt="$\vdots$"></td>
+</tr>
+<tr><td align="CENTER"><i>N</i>*(<i>N</i>-1)+1</td>
+<td align="CENTER"><i>N</i>*(<i>N</i>-1)+2</td>
+<td align="CENTER"><img width="25" height="15" align="BOTTOM" border="0" src="769img1.gif" alt="$\dots$"></td>
+<td align="CENTER"><i>N</i>*<i>N</i></td>
+</tr>
+</table></div>
+
+<p>
+Each member of the audience is asked to put a finger on the upper left picture (i.e., picture number
+one) and The Magic begins: the magician tells the audience to move the finger <i>k</i><sub>1</sub> times through the
+pictures (each move is a shift of the finger to the adjacent picture up, down, left or right provided
+that there is a picture to move to), then with a slight movement of his hand he removes some of the
+pictures with an exclamation ``<em>You are not there!</em>", and ... it is true - your finger is not pointing to
+any of the pictures removed. Then again, he tells the audience to make <i>k</i><sub>2</sub> moves, and so on. At the
+end he removes all the pictures but one and smiling triumphantly declares, ``<em>I've caught you</em>"
+(applause).
+
+<p>
+
+<p>
+<br>
+Just now, David is trying to repeat this trick. Unfortunately, he had a hard day before, and you
+know how hard to conjure with a headache. You have to write a program that will help David to
+make his trick.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<p>
+<b>
+The input begins with a single positive integer on a line by itself indicating 
+the number of the cases following, each of them as described below. 
+This line is followed by a blank line, and there is also a blank line between 
+two consecutive inputs.
+</b>
+<p>
+Each test case consists of a single integer number <i>N</i> (
+
+<img width="102" height="32" align="MIDDLE" border="0" src="769img4.gif" alt="$2 \le N \le 100$">).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<p>
+<b>
+For each test case, the output must follow the description below. 
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+<p>
+Your program should write the following lines with numbers to the output file:
+
+<p>
+
+<p>
+<br>
+
+
+
+<img width="167" height="32" align="MIDDLE" border="0" src="769img5.gif" alt="$k_1 \ x_{1,1} \ x_{1,2} \ \dots \ x_{1,m1}$">
+
+<p>
+
+
+
+<img width="167" height="32" align="MIDDLE" border="0" src="769img6.gif" alt="$k_2 \ x_{2,1} \ x_{2,2} \ \dots \ x_{2,m2}$">
+
+<p>
+
+<img width="25" height="15" align="BOTTOM" border="0" src="769img1.gif" alt="$\dots$">
+
+<p>
+
+
+
+<img width="164" height="32" align="MIDDLE" border="0" src="769img7.gif" alt="$k_e \ x_{e,1} \ x_{e,2} \ \dots \ x_{e,me}$">
+
+<p>
+
+<p>
+<br>
+where <i>k</i><sub><i>i</i></sub> is a number of moves the audience should make on the <i>i</i>-th turn (
+
+<img width="129" height="32" align="MIDDLE" border="0" src="769img8.gif" alt="$2N \le k \le 10000$">).
+All <i>k</i><sub><i>i</i></sub>
+should be different (i.e. 
+
+<i>k</i><sub><i>i</i></sub> &lt;&gt; <i>k</i><sub><i>j</i></sub> when <i>i</i> &lt;&gt; <i>j</i>). 
+
+<img width="138" height="30" align="MIDDLE" border="0" src="769img9.gif" alt="$x_{i,1}, x_{i,2}, \dots, x_{i,mi}$">
+are the numbers of the pictures
+David should remove after the audience will make <i>k</i><sub><i>i</i></sub> moves (the number of the pictures removed is
+arbitrary, but each picture should be listed only once, and at least one picture should be removed on
+each turn).
+
+<p>
+
+<p>
+<br>
+A description of the every next turn should begin with a new line. All numbers on each line should
+be separated by one or more spaces. After <i>e</i> iterations, all pictures except one should be removed.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+3
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+8     4 6
+13    9
+10    7 1
+7     8
+11    3 5
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+

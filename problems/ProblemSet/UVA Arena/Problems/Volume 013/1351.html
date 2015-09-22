@@ -1,0 +1,69 @@
+<p>
+Run Length Encoding(RLE) is a simple form of compression. RLE consists of the process for searching for a repeated runs of a single character in a string to be compressed, and replacing them by a single instance of the character and a run count. For example, a string <tt>abcccddddddefgggggggggghijk</tt> is encoded into a string <tt>ab3c6def10ghijk</tt> by RLE. 
+
+<p>
+A new compression method similar to RLE is devised and the rule of the method is as follows: if a substring <span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark> is repeated <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark> times, replace <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark> copies of <span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark> by <span class="MATH"><i>k</i>(<i>S</i>)</span>
+<tex2html_verbatim_mark>. For example, <tt>letsgogogo</tt> is compressed into <tt>lets3(go)</tt>. The length of <tt>letsgogogo</tt> is 10, and the length of <tt>lets3(go)</tt> is 9. In general, the length of <span class="MATH"><i>k</i>(<i>S</i>)</span>
+<tex2html_verbatim_mark> is (number of digits in <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark>) + (length of <span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark>) + 2 (for `(' and `)'). For example, the length of <tt>123(abc)</tt> is 8. It is also possible to nest compression, so the substring <span class="MATH"><i>S</i></span>
+<tex2html_verbatim_mark> may itself be a compressed string. For example, <tt>nowletsgogogoletsgogogo</tt> could be compressed as a <tt>now2(lets3(go))</tt>, and <tt>nowletsgogogoletsgogogoandrunrunrun</tt> could be compressed as <tt>now2(lets3(go))and3(run)</tt>. 
+
+<p>
+Write a program that, for a given string, gives a shortest compressed string using the compression rules as described above. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to read from standard input. The input consists of <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> test cases. The number of test cases <span class="MATH"><i>T</i></span>
+<tex2html_verbatim_mark> is given in the first line of the input. Each test case consists of a single line containing one string of no more than 200 characters drawn from a lower case alphabet. The length of shortest input string is 1. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program is to write to standard output. Print exactly one line for each test case. For each test case, print the length of the shortest compressed string. 
+
+<p>
+The following shows sample input and output for four test cases. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4 
+ababcd 
+letsgogogo 
+nowletsgogogoletsgogogo 
+nowletsgogogoletsgogogoandrunrunrun
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6 
+9 
+15 
+24
+</pre></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

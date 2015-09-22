@@ -1,0 +1,173 @@
+
+
+<html>
+<head>
+<title>Magic</title>
+<meta name="description" content="Magic">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Magic</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A well known big computer factory is involved in a very secret project. The
+ project is so secret that we cannot tell you the name of the manufacturer,
+ but we can tell you something about the project. It is called: the
+ Non-Deterministic Magic Holistic
+ New Age Computer (NDMHNAC). It is a major breakthrough in thinking about
+computing, in that it steps away from every traditional idea in Computer
+Science and Hardware Design. One of the (many) abilities of NDMHNAC is to
+execute calculations with very large numbers very fast.
+
+<p>
+
+<p>
+<br>
+Unfortunately it has a small flaw. Its circuits are based on Magic, so its
+calculations are disturbed by magic in the same way as traditional circuits
+are disturbed by electromagnetic fields. As you know the numbers 3 and 7 have
+strong magic. Therefore these numbers should be avoided, because they will
+disturb, and eventually destroy the circuits of the machine. The algorithms
+used internally in the machine never generate offending numbers. The only
+problem is to ban offending numbers from input.
+
+<p>
+
+<p>
+<br>
+To that purpose a conventional machine is used as a pre-processor. This
+machine should transform offending numbers to admissible numbers. (You might
+wonder how a computer can give a correct answer if you jumble its input. Now
+this question shows how
+much you are tied to traditional thinking in computer
+science. A Non-Deterministic Magic Holistic New Age Computer will give
+correct answers, even if the input is wrong! (Compare this to traditional
+computers giving wrong answers, even if the input is correct!)).
+
+<p>
+
+<p>
+<br>
+Numbers are arbitrarily large, non-negative integers, in decimal
+representation. A number is offending if it has one of the following properties:
+<ul>
+<li>it is divisible by 3, or by 7 (e.g.  6, 14, 21),
+<li>a 3 or 7 occurs in its decimal representation, (e.g.  13, 27, 37),
+<li>a digit is repeated 3 or 7 times consecutively in its decimal
+representation. (e.g. 2411145, 10000000).
+</li></li></li></ul>
+
+<p>
+
+(<b>NB:</b> the number 0 turns out not to be offending).
+
+<p>
+
+<p>
+<br>
+Offending numbers are to be transformed into non-offending numbers, using
+(repeatedly) the following rules:
+<ul>
+<li>if a number is divisible by 3: divide it by 3
+<li>if a number is divisible by 7: divide it by 7
+<li>if a 3 occurs in the decimal representation: remove this 3 (remove
+if possible leading zeros)
+<li>if a 7 occurs in the decimal representation: remove this 7 (remove
+if possible leading zeros)
+<li>if a substring of 3 times the same digit occurs in the decimal
+representation: remove it (remove if possible leading zeros)
+<li>if a substring of 7 times the same digit occurs in the decimal
+representation: remove it (remove if possible leading zeros)
+<li>if eventually no digit is left, consider this as the number 0.
+</li></li></li></li></li></li></li></ul>
+
+<p>
+A traditional programmer is hired to implement these rules. After reading
+ the specification given above, he complains that it is highly ambiguous. For
+ example, the third rule is about removing a 3. Should all occurrences of 3 be
+ removed, or just any,
+ or only the first one?  Moreover, should every rule be applied repeatedly, or
+ should all rules be applied, and then all rules again, and in which order?
+ Different interpretations of the specification may give rise to thousands
+ of different answers.
+
+<p>
+
+<p>
+<br>
+The designers of the new machine declare that they do not care, as long as a
+ non-offending number is obtained. Seeing that the programmer feels really
+ uncomfortable, they say: 'OK, just give us the largest possible answer'.
+ The programmer got himself an other job.
+
+<p>
+
+<p>
+<br>
+Write a program which, given a number, generates the largest non-offending
+number that can be obtained by applying the rules given above.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The first line of the input-file contains the number of problems <i>n</i>. The
+next <i>n</i> lines contain one number each. An input line is never longer than 21
+characters (
+
+<img width="84" height="30" align="MIDDLE" border="0" src="560img2.gif" alt="$21 = 3 \times 7$">). An input line never starts with 0.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The outputfile consists of <i>n</i> lines with on each line the largest non-offending
+number that can be obtained by applying the rules given above.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+999
+273
+2331
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+11
+2
+11
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

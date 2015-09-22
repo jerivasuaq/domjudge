@@ -1,0 +1,150 @@
+
+<p>
+In the year 2xxx, an expedition team landing on a planet found strange objects made by an
+ancient species living on that planet. They are transparent boxes containing opaque solid spheres
+(Figure 12). There are also many lithographs which seem to contain positions and radiuses of
+spheres.
+
+<p>
+<div align="CENTER">
+
+<img align="BOTTOM" border="0" src="p3192a.jpg" alt="\epsfbox{p3192a.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 12: A strange object
+
+</div>
+
+<p>
+Initially their objective was unknown, but Professor Zambendorf found the cross section formed
+by a horizontal plane plays an important role. For example, the cross section of an object
+changes as in Figure 13 by sliding the plane from bottom to top.
+
+<p>
+<div align="CENTER">
+
+<img align="BOTTOM" border="0" src="p3192b.jpg" alt="\epsfbox{p3192b.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 13: Cross sections at different positions
+
+</div>
+
+<p>
+He eventually found that some information is expressed by the transition of the number of
+connected figures in the cross section, where each connected figure is a union of discs intersecting
+or touching each other, and each disc is a cross section of the corresponding solid sphere. For
+instance, in Figure 13, whose geometry is described in the first sample dataset later, the number
+of connected figures changes as 0, 1, 2, 1, 2, 3, 2, 1, and 0, at <span class="MATH"><i>z</i></span> = 0.0000, 162.0000, 167.0000,
+173.0004, 185.0000, 191.9996, 198.0000, 203.0000, and 205.0000, respectively. By assigning 1 for
+increment and 0 for decrement, the transitions of this sequence can be expressed by an 8-bit binary number 11011000.
+
+<p>
+For helping further analysis, write a program to determine the transitions when sliding the
+horizontal plane from bottom (<span class="MATH"><i>z</i> = 0</span>) to top (<span class="MATH"><i>z</i> = 36000</span>).
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of a series of datasets. Each dataset begins with a line containing a positive
+integer, which indicates the number of spheres <span class="MATH"><i>N</i></span> in the dataset. It is followed by <span class="MATH"><i>N</i></span> lines
+describing the centers and radiuses of the spheres. Each of the <span class="MATH"><i>N</i></span> lines has four positive integers
+<span class="MATH"><i>X</i><sub>i</sub></span>, <span class="MATH"><i>Y</i><sub>i</sub></span>, <span class="MATH"><i>Z</i><sub>i</sub></span>, and <span class="MATH"><i>R</i><sub>i</sub></span> (
+<span class="MATH"><i>i</i> = 1,..., <i>N</i></span>) describing the center and the radius of the <span class="MATH"><i>i</i></span>-th sphere,
+respectively.
+
+<p>
+You may assume 
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="3192img3.png" alt="$ \le$"><i>N</i><img width="18" height="30" align="MIDDLE" border="0" src="3192img3.png" alt="$ \le$">100</span>, 
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="3192img3.png" alt="$ \le$"><i>R</i><sub>i</sub><img width="18" height="30" align="MIDDLE" border="0" src="3192img3.png" alt="$ \le$">2000</span>, 
+
+<span class="MATH">0 &lt; <i>X</i><sub>i</sub> - <i>R</i><sub>i</sub> &lt; <i>X</i><sub>i</sub> + <i>R</i><sub>i</sub> &lt; 4000</span>, 
+<span class="MATH">0 &lt; <i>Y</i><sub>i</sub> - <i>R</i><sub>i</sub> &lt; <i>Y</i><sub>i</sub> + <i>R</i><sub>i</sub> &lt; 16000</span>, 
+and 
+<span class="MATH">0 &lt; <i>Z</i><sub>i</sub> - <i>R</i><sub>i</sub> &lt; <i>Z</i><sub>i</sub> + <i>R</i><sub>i</sub> &lt; 36000</span>. Each solid sphere is defined as the set of
+all points <span class="MATH">(<i>x</i>, <i>y</i>, <i>z</i>)</span> satisfying 
+<span class="MATH">(<i>x</i> - <i>X</i><sub>i</sub>)<sup>2</sup> + (<i>y</i> - <i>Y</i><sub>i</sub>)<sup>2</sup> + (<i>z</i> - <i>Z</i><sub>i</sub>)<sup>2</sup><img width="18" height="30" align="MIDDLE" border="0" src="3192img3.png" alt="$ \le$"><i>R</i><sup>2</sup><sub>i</sub></span>.
+
+<p>
+A sphere may contain other spheres. No two spheres are mutually tangent. Every 
+<span class="MATH"><i>Z</i><sub>i</sub>&#177;<i>R</i><sub>i</sub></span> and
+minimum/maximum <span class="MATH"><i>z</i></span> coordinates of a circle formed by the intersection of any two spheres differ
+from each other by at least 0.01.
+
+<p>
+The end of the input is indicated by a line with one zero.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each dataset, your program should output two lines. The first line should contain an integer
+<span class="MATH"><i>M</i></span> indicating the number of transitions. The second line should contain an <span class="MATH"><i>M</i></span>-bit binary number
+that expresses the transitions of the number of connected figures as specified above.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+95 20 180 18
+125 20 185 18
+40 27 195 10
+1
+5 5 5 4
+2
+5 5 5 4
+5 5 5 3
+2
+5 5 5 4
+5 7 5 3
+16
+2338 3465 29034 710
+1571 14389 25019 842
+1706 8015 11324 1155
+1899 4359 33815 888
+2160 10364 20511 1264
+2048 8835 23706 1906
+2598 13041 23679 618
+1613 11112 8003 1125
+1777 4754 25986 929
+2707 9945 11458 617
+1153 10358 4305 755
+2462 8450 21838 934
+1822 11539 10025 1639
+1473 11939 12924 638
+1388 8519 18653 834
+2239 7384 32729 862
+0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+8
+11011000
+2
+10
+2
+10
+2
+10
+28
+1011100100110101101000101100
+</pre> 
+
+<p>

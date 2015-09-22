@@ -1,0 +1,90 @@
+
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.76 [en] (Windows NT 5.0; U) [Netscape]">
+   <title>Problem 2 - Comment Removal</title>
+</head>
+<body>
+
+<h1>
+</h1>
+
+<center><table bgcolor="#0060F0">
+<tr>
+<td><a name="SECTION0001000000000000000000"></a><b><font color="#C0FFFF"><font size="+2">
+&nbsp;Comment removal&nbsp;</font></font></b></td>
+</tr>
+</table></center>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+The Problem</a>&nbsp;</font>
+</h2>
+Given an arbitrary, syntactically correct Pascal source program, you are to compress it according to the following guidelines,
+applied in the order listed:
+<ul>
+<li>
+Replace all sequences of blanks, except those within a string constant,
+with a single blank. Recall that string constants are delimited by single
+quotes ('), a string constant must contain at least one character, and
+that two consecutive single quotes ('') represent the single quote character.</li>
+
+<p><br>e.g.,
+<dir>the following are string constants
+<br>'this is a string constant'
+<br>'don''t you see the fun here?'</dir>
+
+<li>
+eliminate all comments - comments start with (* and are terminated with
+*) or they start with { and are terminated with }. Remove the entire comment
+including the end markers (i.e., (*, *), { and }).</li>
+
+<p><br>e.g.,
+<dir>the following are comments:
+<br>(* here is a great comment *)
+<br>{ and here is a somewhat
+<dir>longer one }</dir>
+</dir>
+
+<li>
+eliminate any totally blank lines (i.e., any lines, after removing any
+comments, which consist only of blanks and end-of-line characters - if
+when printed, or displayed, a blank line would occur, it should be eliminated.)
+You can assume there will be no tabs or other unusual non-printing characters
+within the input.</li>
+</ul>
+Compress the input file using the rules
+above. The results should result in a syntactically valid Pascal program;
+albeit it in a somewhat less stylish form.
+
+<p><b>Any presentation mismatch will be judged as "Wrong Answer".</b>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<pre>Program Test (input, output);
+{ this is a great program }
+
+Var&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X, Y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;
+
+&nbsp; begin
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; readln (X, Y);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writeln (X,&nbsp;&nbsp; '&nbsp; This is Y&nbsp;&nbsp; ',&nbsp;&nbsp;&nbsp; Y,&nbsp;&nbsp;&nbsp;&nbsp; 'Hi!')&nbsp;&nbsp; ;
+&nbsp; end.</pre>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<pre>Program Test (input, output);
+Var X, Y : integer ;
+&nbsp;begin
+&nbsp;readln (X, Y);
+&nbsp;writeln (X, '&nbsp; This is Y&nbsp;&nbsp; ', Y, 'Hi!') ;
+&nbsp;end.
+
+</pre>
+
+</body>
+</html>

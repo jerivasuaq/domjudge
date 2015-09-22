@@ -1,0 +1,81 @@
+
+<p>
+There is going to be a voting at FIPA (Federation Internationale de Programmation Association) to determine the host of the next IPWC (International Programming World Cup). Benjamin Bennett, the delegation of Diamondland to FIPA, is trying to seek other delegation's support for a vote in favor of hosting IPWC in Diamondland. Ben is trying to buy the votes by diamond gifts. He has figured out the voting price of each and every country. However, he knows that there is no need to diamond-bribe every country, since there are small poor countries that take vote orders from their respected superpowers. So, if you bribe a country, you have gained the vote of any other country under its domination (both directly and via other countries domination).  For example, if C is under domination of B, and B is under domination of A, one may get the vote of all three countries just by bribing A. Note that no country is under domination of more than one country, and the domination relationship makes no cycle. You are to help him, against a big diamond, by writing a program to find out the minimum number of diamonds needed such that at least <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark> countries vote in favor of Diamondland. Since Diamondland is a candidate, it stands out of the voting process.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of multiple test cases. Each test case starts with a line containing two integers <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="3797img1.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="3797img1.png" alt="$ \le$">200)</span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(0<img width="18" height="31" align="MIDDLE" border="0" src="3797img1.png" alt="$ \le$"><i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="3797img1.png" alt="$ \le$"><i>n</i>)</span>
+<tex2html_verbatim_mark> which are the number of countries participating in the voting process, and the number of votes Diamondland needs. The next <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> lines, each describing one country, are of the following form:
+
+<p>
+
+<p>
+<br>
+
+
+<span class="MATH"><i>CountryName</i>&nbsp;<i>DiamondCount</i>&nbsp;<i>DCName</i><sub>1</sub>&nbsp;<i>DCName</i><sub>2</sub>...</span>
+<tex2html_verbatim_mark>
+
+<p>
+
+<p>
+<br>
+
+
+<span class="MATH"><i>CountryName</i></span>
+<tex2html_verbatim_mark>, the name of the country, is a string of at least one and at most 100 letters and 
+<span class="MATH"><i>DiamondCount</i></span>
+<tex2html_verbatim_mark> is a positive integer which is the number of diamonds needed to get the vote of that country and all of the countries that their names come in the list 
+<span class="MATH"><i>DCName</i><sub>1</sub>&nbsp;<i>DCName</i><sub>2</sub>...</span>
+<tex2html_verbatim_mark> which means they are under direct domination of that country. Note that it is possible that some countries do not have any other country under domination. The end of the input is marked by a single line containing a single <code>#</code> character.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+For each test case, write a single line containing a number showing the minimum number of diamonds needed to gain the vote of at least <span class="MATH"><i>m</i></span>
+<tex2html_verbatim_mark> countries.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 2
+Aland 10
+Boland 20 Aland
+Coland 15
+#
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+20
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

@@ -1,0 +1,176 @@
+
+<p>
+Prof. Bocchan is a mathematician and a sculptor. He likes to create sculptures with mathematics.
+
+<p>
+His style to make sculptures is very unique. He uses two identical prisms. Crossing them at right
+angles, he makes a polyhedron that is their intersection as a new work. Since he finishes it up
+with painting, he needs to know the surface area of the polyhedron for estimating the amount
+of pigment needed.
+
+<p>
+For example, let us consider the two identical prisms in Figure 14. The definition of their cross
+section is given in Figure 15. The prisms are put at right angles with each other and their
+intersection is the polyhedron depicted in Figure 16. An approximate value of its surface area
+is 194.8255.
+
+<p>
+<div align="CENTER">
+
+<img align="BOTTOM" border="0" src="p3193a.jpg" alt="\epsfbox{p3193a.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 14: Two identical prisms at right angles
+
+</div>
+
+<p>
+Given the shape of the cross section of the two identical prisms, your job is to calculate the
+surface area of his sculpture.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of multiple datasets, followed by a single line containing only a zero. The
+first line of each dataset contains an integer <span class="MATH"><i>n</i></span> indicating the number of the following lines, each
+of which contains two integers <span class="MATH"><i>a</i><sub>i</sub></span> and <span class="MATH"><i>b</i><sub>i</sub></span> (
+<span class="MATH"><i>i</i> = 1,..., <i>n</i></span>).
+
+<p>
+<div align="CENTER">
+
+<img align="BOTTOM" border="0" src="p3193b.jpg" alt="\epsfbox{p3193b.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 15: Outline of the cross section
+
+</div>
+
+<p>
+<div align="CENTER">
+
+<img align="BOTTOM" border="0" src="p3193c.jpg" alt="\epsfbox{p3193c.eps}">
+</div>
+<p>
+<div align="CENTER">Figure 16: The intersection
+
+</div>
+
+<p>
+A closed path formed by the given points 
+<span class="MATH">(<i>a</i><sub>1</sub>, <i>b</i><sub>1</sub>)</span>, 
+<span class="MATH">(<i>a</i><sub>2</sub>, <i>b</i><sub>2</sub>)</span>, ..., 
+<span class="MATH">(<i>a</i><sub>n</sub>, <i>b</i><sub>n</sub>)</span>, 
+<span class="MATH">(<i>a</i><sub>n + 1</sub>, <i>b</i><sub>n + 1</sub>)</span>
+(
+<span class="MATH">= (<i>a</i><sub>1</sub>, <i>b</i><sub>1</sub>)</span>)
+indicates the outline of the cross section of the prisms. The closed path is simple, that is, it does
+not cross nor touch itself. The right-hand side of the line segment from 
+<span class="MATH">(<i>a</i><sub>i</sub>, <i>b</i><sub>i</sub>)</span> to 
+<span class="MATH">(<i>a</i><sub>i + 1</sub>, <i>b</i><sub>i + 1</sub>)</span> is
+the inside of the section.
+
+<p>
+You may assume that 
+<span class="MATH">3<img width="18" height="30" align="MIDDLE" border="0" src="3193img4.png" alt="$ \le$"><i>n</i><img width="18" height="30" align="MIDDLE" border="0" src="3193img4.png" alt="$ \le$">4</span>, 
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="3193img4.png" alt="$ \le$"><i>a</i><sub>i</sub><img width="18" height="30" align="MIDDLE" border="0" src="3193img4.png" alt="$ \le$">10</span> 
+and 
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="3193img4.png" alt="$ \le$"><i>bi</i><img width="18" height="30" align="MIDDLE" border="0" src="3193img4.png" alt="$ \le$">10</span> (
+<span class="MATH"><i>i</i> = 1,..., <i>n</i></span>).
+
+<p>
+One of the prisms is put along the <span class="MATH"><i>x</i></span>-axis so that the outline of its cross section at <span class="MATH"><i>x</i> = <img width="13" height="32" align="MIDDLE" border="0" src="3193img5.png" alt="$ \xi$"></span> is
+indicated by points 
+<span class="MATH">(<i>x</i><sub>i</sub>, <i>y</i><sub>i</sub>, <i>z</i><sub>i</sub>) = (<img width="13" height="32" align="MIDDLE" border="0" src="3193img5.png" alt="$ \xi$">, <i>a</i><sub>i</sub>, <i>b</i><sub>i</sub>)</span>
+(
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="3193img4.png" alt="$ \le$"><img width="13" height="32" align="MIDDLE" border="0" src="3193img5.png" alt="$ \xi$"><img width="18" height="30" align="MIDDLE" border="0" src="3193img4.png" alt="$ \le$">10</span>, 
+<span class="MATH"><i>i</i> = 1,..., <i>n</i></span>). The other prism is put
+along the <span class="MATH"><i>y</i></span>-axis so that its cross section at <span class="MATH"><i>y</i> = <img width="14" height="30" align="MIDDLE" border="0" src="3193img6.png" alt="$ \eta$"></span> is indicated by points 
+<span class="MATH">(<i>x</i><sub>i</sub>, <i>y</i><sub>i</sub>, <i>z</i><sub>i</sub>) = (<i>a</i><sub>i</sub>,<img width="14" height="30" align="MIDDLE" border="0" src="3193img6.png" alt="$ \eta$">, <i>b</i><sub>i</sub>)</span>
+(
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="3193img4.png" alt="$ \le$"><img width="14" height="30" align="MIDDLE" border="0" src="3193img6.png" alt="$ \eta$"><img width="18" height="30" align="MIDDLE" border="0" src="3193img4.png" alt="$ \le$">10</span>, 
+<span class="MATH"><i>i</i> = 1,..., <i>n</i></span>).
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output should consist of a series of lines each containing a single decimal fraction. Each
+number should indicate an approximate value of the surface area of the polyhedron defined by
+the corresponding dataset. The value may contain an error less than or equal to 0.0001. You
+may print any number of digits below the decimal point.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4
+5 0
+0 10
+7 5
+10 5
+4
+7 5
+10 5
+5 0
+0 10
+4
+0 10
+10 10
+10 0
+0 0
+3
+0 0
+0 10
+10 0
+4
+0 10
+10 5
+0 0
+9 5
+4
+5 0
+0 10
+5 5
+10 10
+4
+0 5
+5 10
+10 5
+5 0
+4
+7 1
+4 1
+0 1
+9 5
+0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+194.8255
+194.8255
+600.0000
+341.4214
+42.9519
+182.5141
+282.8427
+149.2470
+</pre> 
+
+<p>

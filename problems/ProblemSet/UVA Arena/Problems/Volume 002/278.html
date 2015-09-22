@@ -1,0 +1,60 @@
+
+
+<html>
+<head>
+<title>Chess</title>
+<meta name="description" content="Chess">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Chess</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Almost everyone knows the problem of putting eight queens on an  <img width="37" height="24" align="MIDDLE" alt="tex2html_wrap_inline30" src="278img1.gif"> 
+chessboard such that no Queen
+can take another Queen. Jan Timman (a famous Dutch chessplayer) wants to
+know the maximum
+number of chesspieces of one kind which can be put on an  <img width="46" height="18" align="MIDDLE" alt="tex2html_wrap_inline32" src="278img2.gif">  board
+with a certain size such that no
+piece can take another. Because it's rather difficult to find a solution
+by hand, he asks your help to solve the problem.
+<p>
+<p>
+He doesn't need to know the answer for every piece. Pawns seems rather uninteresting and he doesn't
+like Bishops anyway. He only wants to know how many Rooks, Knights, Queens or Kings can be
+placed on one board, such that one piece can't take any other.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line of input contains the number of problems. A problem is stated on one line and consists
+of one character from the following set <tt>r</tt>, <tt>k</tt>, <tt>Q</tt>, <tt>K</tt>, meaning respectively the chesspieces Rook, Knight,
+Queen or King. The character is followed by the integers <i>m</i> ( <img width="87" height="25" align="MIDDLE" alt="tex2html_wrap_inline36" src="278img3.gif"> )
+and <i>n</i> ( <img width="83" height="25" align="MIDDLE" alt="tex2html_wrap_inline40" src="278img4.gif"> ), meaning
+the number of rows and the number of columns or the board.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each problem specification in the input your program should output the maximum number of
+chesspieces which can be put on a board with the given formats so they are not in position to take any
+other piece.
+<p>
+<p>
+<p>
+<b>Note:</b>
+The bottom left square is 1, 1.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2
+r 6 7
+k 8 8</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>6
+32</pre>
+<p>
+</body>
+</html>

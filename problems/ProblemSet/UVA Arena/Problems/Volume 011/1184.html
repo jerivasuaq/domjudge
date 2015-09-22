@@ -1,0 +1,111 @@
+<p>
+Consider a town where all the streets are one-way and each street leads from one
+intersection to another. It is also known that starting from an intersection and
+walking through town's streets you can never reach the same intersection i.e. the
+town's streets form no cycles.
+
+<p>
+With these assumptions your task is to write a program that finds the minimum number
+of paratroopers that can descend on the town and visit all the intersections of this
+town in such a way that more than one paratrooper visits no intersection. Each paratrooper
+lands at an intersection and can visit other intersections following the town streets.
+There are no restrictions about the starting intersection for each paratrooper.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+Your program should read sets of data. The first line of the input file contains
+the number of the data sets. Each data set specifies the structure of a town and
+has the format:
+
+<p>
+
+<p>
+<br>
+
+
+<span class="MATH"><i>no</i><img width="30" height="32" align="MIDDLE" border="0" src="2696img1.gif" alt="$ \_of$"><img width="113" height="16" align="BOTTOM" border="0" src="2696img2.gif" alt="$ \_intersections$"></span> 
+<br>
+<span class="MATH"><i>no</i><img width="30" height="32" align="MIDDLE" border="0" src="2696img1.gif" alt="$ \_of$"><img width="64" height="16" align="BOTTOM" border="0" src="2696img3.gif" alt="$ \_streets$"></span> 
+<br><span class="MATH"><i>S</i><sub>1</sub>&nbsp;<i>E</i><sub>1</sub></span> 
+<br><span class="MATH"><i>S</i><sub>2</sub>&nbsp;<i>E</i><sub>2</sub></span> 
+<br>
+<span class="MATH">..............</span> 
+<br>
+<span class="MATH"><i>S</i><sub>no<img width="25" height="30" align="MIDDLE" border="0" src="2696img4.gif" alt="$\scriptstyle \_of$"><img width="52" height="16" align="BOTTOM" border="0" src="2696img5.gif" alt="$\scriptstyle \_streets$"></sub>&nbsp;<i>E</i><sub>no<img width="25" height="30" align="MIDDLE" border="0" src="2696img4.gif" alt="$\scriptstyle \_of$"><img width="52" height="16" align="BOTTOM" border="0" src="2696img5.gif" alt="$\scriptstyle \_streets$"></sub></span> 
+<br>
+<p>
+
+<p>
+<br>
+The first line of each data set contains a positive integer 
+<span class="MATH"><i>no</i><img width="30" height="32" align="MIDDLE" border="0" src="2696img1.gif" alt="$ \_of$"><img width="113" height="16" align="BOTTOM" border="0" src="2696img2.gif" alt="$ \_intersections$"></span>
+(greater than 0 and less or equal to 120), which is the number of intersections in the
+town. The second line contains a positive integer 
+<span class="MATH"><i>no</i><img width="30" height="32" align="MIDDLE" border="0" src="2696img1.gif" alt="$ \_of$"><img width="64" height="16" align="BOTTOM" border="0" src="2696img3.gif" alt="$ \_streets$"></span>,  which is the
+number of streets in the town. The next 
+<span class="MATH"><i>no</i><img width="30" height="32" align="MIDDLE" border="0" src="2696img1.gif" alt="$ \_of$"><img width="64" height="16" align="BOTTOM" border="0" src="2696img3.gif" alt="$ \_streets$"></span> lines, one for each street
+in the town, are randomly ordered and represent the town's streets. The line corresponding
+to street <span class="MATH"><i>k</i></span> (
+<span class="MATH"><i>k</i> <img width="18" height="30" align="MIDDLE" border="0" src="2696img6.gif" alt="$ \leq$"> <i>no</i><img width="30" height="32" align="MIDDLE" border="0" src="2696img1.gif" alt="$ \_of$"><img width="64" height="16" align="BOTTOM" border="0" src="2696img3.gif" alt="$ \_streets$"></span> ) consists of two positive integers,
+separated by one blank: <span class="MATH"><i>S</i><sub>k</sub></span> (
+<span class="MATH">1 <img width="18" height="30" align="MIDDLE" border="0" src="2696img6.gif" alt="$ \leq$"> <i>S</i><sub>k</sub> <img width="18" height="30" align="MIDDLE" border="0" src="2696img6.gif" alt="$ \leq$"> <i>no</i><img width="30" height="32" align="MIDDLE" border="0" src="2696img1.gif" alt="$ \_of$"><img width="113" height="16" align="BOTTOM" border="0" src="2696img2.gif" alt="$ \_intersections$"></span>) -- the
+number of the intersection that is the start of the street, and <span class="MATH"><i>E</i><sub>k</sub></span>
+(
+<span class="MATH">1 <img width="18" height="30" align="MIDDLE" border="0" src="2696img6.gif" alt="$ \leq$"> <i>E</i><sub>k</sub> <img width="18" height="30" align="MIDDLE" border="0" src="2696img6.gif" alt="$ \leq$"> <i>no</i><img width="30" height="32" align="MIDDLE" border="0" src="2696img1.gif" alt="$ \_of$"><img width="113" height="16" align="BOTTOM" border="0" src="2696img2.gif" alt="$ \_intersections$"></span>) -- the number of the intersection
+that is the end of the street. Intersections are represented by integers from 1 to
+
+<span class="MATH"><i>no</i><img width="30" height="32" align="MIDDLE" border="0" src="2696img1.gif" alt="$ \_of$"><img width="113" height="16" align="BOTTOM" border="0" src="2696img2.gif" alt="$ \_intersections$"></span>.
+
+<p>
+There are no blank lines between consecutive sets of data. Input data are correct.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+The result of the program is on standard output. For each input data set the program
+prints on a single line, starting from the beginning of the line, one integer: the
+minimum number of paratroopers required to visit all the intersections in the town.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+4
+3
+3 4
+1 3
+2 3
+3
+3
+1 3
+1 2
+2 3
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+1
+</pre>
+
+<p>

@@ -1,0 +1,80 @@
+
+
+<html>
+<head>
+<title>Slurpys</title>
+<meta name="description" content="Slurpys">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Slurpys</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Recognizing strings based on a set of restrictions is a common
+computational problem.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Problem Statement</a></font></h2>
+<p>
+A Slurpy is a string of characters that has certain
+properties.  Your program will read in strings of characters and output
+whether or not they are Slurpys.
+<p>
+<p>
+A <b>Slump</b> is a character string that has the following properties:
+<p>
+<ol><li> Its first character is either a 'D' or an 'E'.<li> The first character is followed by a string of one or more 'F's.<li> The string of one or more 'F's is followed by either a Slump or a 'G'.
+     The Slump or 'G' that follows the F's ends the Slump.  For example 
+     DFFEFFFG is a Slump since it has a 'D' for its first character,
+     followed by a string of two F's, and ended by the Slump 'EFFFG'.<li> Nothing else is a Slump.
+</li></li></li></li></ol>
+<p>
+A <b>Slimp</b> is a character string that has the following properties:
+<p>
+<ol><li> Its first character is an 'A'.<li> If it is a two character Slimp then its second 
+     and last character is an 'H'.<li> If it is not a two character Slimp then it is in 
+     one of these two forms:
+<dl compact=""><dt><strong>a)</strong>
+<dd> 'A' followed by 'B' followed by a Slimp 
+          followed by a 'C'.
+<dt><strong>b)</strong>
+<dd> 'A' followed by a Slump (see above) 
+          followed by a 'C'.
+<p>
+ </dd></dt></dd></dt></dl><li> Nothing else is a Slimp.
+</li></li></li></li></ol>
+<p>
+A <b>Slurpy</b> is a character string that consists of a Slimp followed by a
+Slump.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Examples</a></font></h2>
+<p>
+<p> <img width="711" height="124" align="BOTTOM" alt="tabular32" src="384img1.gif"> <p><h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Input</a></font></h2>
+<p>
+The first line contains an integer <i>N</i> between 1 and 10 describing
+how many strings of characters are represented.  The next <i>N</i> lines each
+contain a string of 1 to 60 alpha characters.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Output</a></font></h2>
+<p>
+The first line of output should read <tt>SLURPYS OUTPUT</tt>.  Each
+of the next N lines of output should consist of either <tt>YES</tt> or <tt>NO</tt>
+depending on whether or not the corresponding input line is a Slurpy.  The
+last line of output should read <tt>END OF OUTPUT</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2
+AHDFG
+DFGAH</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>SLURPYS OUTPUT
+YES
+NO
+END OF OUTPUT</pre>
+<p>
+</body>
+</html>

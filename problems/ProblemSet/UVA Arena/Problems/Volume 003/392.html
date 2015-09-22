@@ -1,0 +1,54 @@
+
+
+<html>
+<head>
+<title>Polynomial Showdown</title>
+<meta name="description" content="Polynomial Showdown">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Polynomial Showdown</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Given the coefficients of a polynomial from degree 8 down to 0, you
+are to format the polynomial in a readable format with unnecessary
+characters removed.  For instance, given the coefficients 0, 0, 0, 1,
+22, -333, 0, 1, and -1, you should generate an output line which
+displays <code>x^5 + 22x^4 - 333x^3 + x - 1</code>.
+<p>
+<p>
+The formatting rules which must be adhered to are as follows:
+<p>
+<ol><li> Terms must appear in decreasing order of degree.<li> Exponents should appear after a caret ``<code>^</code>''.<li> The constant term appears as only the constant.<li> Only terms with nonzero coefficients should appear, unless all terms
+have zero coefficients in which case the constant term should appear.<li> The only spaces should be a single space on either side of the
+binary + and - operators.<li> If the leading term is positive then no sign should precede it;
+a negative leading term should be preceded by a minus sign, as in
+<code>-7x^2 + 30x + 66</code>.<li> Negated terms should appear as a subtracted unnegated term (with
+the exception of a negative leading term which should appear as
+described above).  That is, rather than <code>x^2 + -3x</code>, the output
+should be <code>x^2 - 3x</code>.<li> The constants 1 and -1 should appear only as the constant
+term.  That is, rather than <code>-1x^3 + 1x^2 + 3x^1 - 1</code>, the output
+should appear as <code>-x^3 + x^2 + 3x - 1</code>.
+<p>
+</li></li></li></li></li></li></li></li></ol><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+The input file will contain one or more lines of coefficients
+delimited by one or more spaces.  There are nine coefficients per
+line, each coefficient being an integer with a magnitude of less than
+1000.  The output file should contain the formatted polynomials, one
+per line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>0    0    0    1   22 -333    0    1   -1
+0    0    0    0    0    0  -55    5    0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>x^5 + 22x^4 - 333x^3 + x - 1
+-55x^2 + 5x</pre>
+<p>
+</body>
+</html>

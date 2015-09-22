@@ -1,0 +1,106 @@
+
+<p>
+There are some water, milk and wine in your kitchen. Your naughty little sister made some strange drinks by mixing them together, and then adds some sugar! She wants to know whether they taste good, but she doesn't want to try them herself. She needs your help. 
+
+<p>
+Your sister knows that you don't want to drink them either (anyone wants to?), so she gives you a chance to escape: if you can guess the price of a special drink, she gives you freedom. Warning: she loves her special drink so much that you should never under-estimate its cost! That is, you're to find the most expensive possible price of it. 
+
+<p>
+The price of each drink equals to its cost. If the amounts of water, milk, wine and sugar used in the drink are 
+<span class="MATH"><i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>, <i>a</i><sub>3</sub></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>a</i><sub>4</sub></span>
+<tex2html_verbatim_mark> respectively, and the unit costs of water, milk, wine and sugar are 
+<span class="MATH"><i>c</i><sub>1</sub>, <i>c</i><sub>2</sub>, <i>c</i><sub>3</sub></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>c</i><sub>4</sub></span>
+<tex2html_verbatim_mark> respectively, then the drink costs 
+<span class="MATH"><i>a</i><sub>1</sub><i>c</i><sub>1</sub> + <i>a</i><sub>2</sub><i>c</i><sub>2</sub> + <i>a</i><sub>3</sub><i>c</i><sub>3</sub> + <i>a</i><sub>4</sub><i>c</i><sub>4</sub></span>
+<tex2html_verbatim_mark>. To give you some hope to win, she told you the costs of exactly n ordinary drinks. Furthermore, she promised that the total cost of sugar 
+<span class="MATH"><i>a</i><sub>4</sub><i>c</i><sub>4</sub></span>
+<tex2html_verbatim_mark> is always a <span class="textbf"><span class="textit">real number</span></span> in the interval <span class="MATH">[<i>L</i>, <i>R</i>]</span>
+<tex2html_verbatim_mark>, in any drink. 
+
+<p>
+Sadly, you don't know the exact price of anything (you're a programmer, not a housewife!), but you know that water is the cheapest; wine is the most expensive, i.e., 
+<span class="MATH">0<img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$"><i>c</i><sub>1</sub><img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$"><i>c</i><sub>2</sub><img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$"><i>c</i><sub>3</sub></span>
+<tex2html_verbatim_mark>. Then the best thing you can do is to assume <span class="textbf"><span class="textit">units costs can be any real numbers satisfying this inequality</span></span>. 
+
+<p>
+Write a program to find the highest possible price of the special drink. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input contains several test cases. The first line of each test case contains three positive integers <span class="MATH"><i>n</i>, <i>L</i>, <i>R</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$">100, 0<img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$"><i>L</i><img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$"><i>R</i><img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$">100)</span>
+<tex2html_verbatim_mark>. The next <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> lines each contain four non-negative integer 
+<span class="MATH"><i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>, <i>a</i><sub>3</sub></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>p</i></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(0<img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$"><i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>, <i>a</i><sub>3</sub><img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$">100, 0<img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$"><i>p</i><img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$">10000)</span>
+<tex2html_verbatim_mark>, the amount of water, milk and wine, and the price. The last line of the case contains three integers 
+<span class="MATH"><i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>, <i>a</i><sub>3</sub></span>
+<tex2html_verbatim_mark> 
+<span class="MATH">(0<img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$"><i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>, <i>a</i><sub>3</sub><img width="18" height="31" align="MIDDLE" border="0" src="4027img1.png" alt="$ \le$">100)</span>
+<tex2html_verbatim_mark>, the drink to be estimated. The last test case is followed by a single zero, which should not be processed.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, print the case number and the highest possible price to four decimal places. If the input is selfcontradictory, output ``<tt>Inconsistent data</tt>". If the price can be arbitrarily large, output ``<tt>Too expensive!</tt>".
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 3 5 
+1 2 3 10
+2 4 6 
+1 2 4 
+1 1 1 1
+1 1 1 
+1 3 8 
+0 1 0 17
+0 0 1 
+3 1 2 
+2 1 3 14
+1 5 1 15
+7 3 2 21
+4 1 6 
+2 0 2 
+45 31 53 4087
+30 16 1 1251
+11 51 34
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Case 1: 19.0000 
+Case 2: Inconsistent data 
+Case 3: Too expensive! 
+Case 4: 26.2338 
+Case 5: 3440.3088
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

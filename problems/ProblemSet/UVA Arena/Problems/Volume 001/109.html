@@ -1,0 +1,137 @@
+
+
+<html>
+<head>
+<title>SCUD Busters</title>
+<meta name="description" content="SCUD Busters">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">SCUD Busters</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Background</a></font></h2>
+<p>
+Some problems are difficult to solve but have a simplification that is
+easy to solve.  Rather than deal with the difficulties of constructing a
+model of the Earth (a somewhat oblate spheroid),
+consider a pre-Columbian flat world that is a 500 kilometer  <img width="9" height="18" align="MIDDLE" alt="tex2html_wrap_inline41" src="109img1.gif">  500
+kilometer square.
+<p>
+In the model used in this problem, the flat world consists of several
+warring kingdoms.  Though warlike, the people of the world are strict
+isolationists; each kingdom is surrounded by a high (but thin) wall
+designed to both protect the kingdom and to isolate it.  To avoid fights
+for power, each kingdom has its own electric power plant.
+<p>
+When the urge to fight becomes too great, the people of a kingdom often
+launch missiles at other kingdoms.  Each SCUD missile (Sanitary
+Cleansing Universal Destroyer) that
+lands within the walls of a kingdom destroys that kingdom's power plant
+(without loss of life).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">The Problem</a></font></h2>
+<p>
+Given coordinate locations of several kingdoms (by specifying
+the locations of houses and
+the location of the power plant in a kingdom) and missile landings you
+are to write a program that determines the total area of all kingdoms
+that are without power after an exchange of missile fire.
+<p>
+In the simple world of this problem kingdoms do not overlap.
+Furthermore, the walls surrounding each kingdom are considered to be of
+zero thickness.  The wall surrounding a kingdom is the minimal-perimeter
+wall that completely surrounds all the houses and the power station
+that comprise a kingdom;
+the area of a kingdom is the area enclosed by the minimal-perimeter thin
+wall.
+<p>
+There is exactly one power station per
+kingdom.
+<p>
+There may be empty space between kingdoms.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">The Input</a></font></h2>
+<p>
+The input is a sequence of kingdom specifications followed by a sequence
+of missile landing locations.
+<p>
+A kingdom is specified by a number <i>N</i> ( <img width="96" height="26" align="MIDDLE" alt="tex2html_wrap_inline45" src="109img2.gif"> ) on a
+single line which
+indicates the number of sites in this kingdom.  The next
+line contains the <i>x</i> and <i>y</i> coordinates of the power station,
+followed by <i>N</i>-1 lines of <i>x</i>, <i>y</i> pairs indicating the locations of
+homes served by this power station.  A value of -1 for <i>N</i> indicates
+that there are no more kingdoms.  There will be at least one kingdom
+in the data set.
+<p>
+Following the last kingdom specification will be the coordinates of
+one or more missile attacks, indicating the location of a missile
+landing.  Each missile location is on a line by itself.  You are to
+process missile attacks until you reach the end of the file.
+<p>
+Locations are specified in kilometers using coordinates on a 500 km by
+500 km grid.  All coordinates will be integers between 0 and 500
+inclusive.  Coordinates are specified as a pair of integers separated
+by white-space on a single line.  The input file will consist of up to
+20 kingdoms, followed by any number of missile attacks.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">The Output</a></font></h2>
+<p>
+The output consists of a single number representing the total area of
+all kingdoms without electricity after all missile attacks have been
+processed.  The number should be printed with (and correct to) two
+decimal places.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>12
+3 3
+4 6
+4 11
+4 8
+10 6
+5 7
+6 6
+6 3
+7 9
+10 4
+10 9
+1 7
+5
+20 20
+20 40
+40 20
+40 40
+30 30
+3
+10 10
+21 10
+21 13
+-1
+5 5
+20 12</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001006000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>70.50</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001007000000000000000">A Hint</a></font></h2>
+<p>
+You may or may not find the following formula useful.
+<p>
+Given a polygon described by the vertices  <img width="94" height="17" align="MIDDLE" alt="tex2html_wrap_inline61" src="109img3.gif">  such that  <img width="55" height="17" align="MIDDLE" alt="tex2html_wrap_inline63" src="109img4.gif"> , the signed area of the polygon is given by
+<p> <img width="354" height="45" align="BOTTOM" alt="displaymath59" src="109img5.gif"> <p>
+where  the x, y
+coordinates of  <img width="85" height="27" align="MIDDLE" alt="tex2html_wrap_inline65" src="109img6.gif"> ; the edges of the polygon are from  <img width="11" height="17" align="MIDDLE" alt="tex2html_wrap_inline67" src="109img7.gif">  to
+ <img width="29" height="18" align="MIDDLE" alt="tex2html_wrap_inline69" src="109img8.gif">  for  <img width="103" height="24" align="MIDDLE" alt="tex2html_wrap_inline71" src="109img9.gif"> .
+<p>
+If the points describing the polygon are given
+in a counterclockwise direction, the value of <i>a</i> will be positive,
+and if the points of the polygon are listed in a clockwise direction,
+the value of <i>a</i> will be negative.
+<p>
+</body>
+</html>

@@ -1,0 +1,204 @@
+
+<p>
+Suppose that <span class="MATH"><i>P</i><sub>1</sub></span> is an infinite-height prism whose axis is parallel to the <span class="MATH"><i>z</i></span>-axis, and <span class="MATH"><i>P</i><sub>2</sub></span> is also an infinite-height prism whose 
+axis is parallel to the <span class="MATH"><i>y</i></span>-axis. <span class="MATH"><i>P</i><sub>1</sub></span> is defined by the polygon <span class="MATH"><i>C</i><sub>1</sub></span> which is the cross section of <span class="MATH"><i>P</i><sub>1</sub></span> and the <span class="MATH"><i>xy</i></span>-plane, and <span class="MATH"><i>P</i><sub>2</sub></span> 
+is also defined by the polygon <span class="MATH"><i>C</i><sub>2</sub></span> which is the cross section of <span class="MATH"><i>P</i><sub>2</sub></span> and the <span class="MATH"><i>xz</i></span>-plane. 
+
+<p>
+Figure I.1 shows two cross sections which appear as the first dataset in the sample input, and Figure I.2 shows the relationship 
+between the prisms and their cross sections.
+
+<p>
+<div align="CENTER">
+
+<img width="1089" height="328" align="BOTTOM" border="0" src="p5075a.png" alt="\epsfbox{p5075a.eps}">
+</div>
+<p>
+<div align="CENTER">Figure I.1: Cross sections of Prisms
+
+</div>
+
+<p>
+<div align="CENTER">
+
+<img width="949" height="460" align="BOTTOM" border="0" src="p5075b.png" alt="\epsfbox{p5075b.eps}">
+</div>
+<p>
+<div align="CENTER">Figure I.2: Prisms and their cross sections
+
+</div>
+
+<p>
+<div align="CENTER">
+
+<img width="604" height="453" align="BOTTOM" border="0" src="p5075c.png" alt="\epsfbox{p5075c.eps}">
+</div>
+<p>
+<div align="CENTER">Figure I.3: Intersection of two prisms
+
+</div>
+
+<p>
+Figure I.3 shows the intersection of two prisms in Figure I.2, namely, <span class="MATH"><i>P</i><sub>1</sub></span> and <span class="MATH"><i>P</i><sub>2</sub></span>.
+
+<p>
+Write a program which calculates the volume of the intersection of two prisms.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input is a sequence of datasets. The number of datasets is less than 200.
+
+<p>
+Each dataset is formatted as follows.
+
+<p>
+
+<p>
+<br>
+
+
+<span class="MATH"><i>m</i>&nbsp;<i>n</i>
+<br><i>x</i><sub>11</sub>&nbsp;<i>y</i><sub>11</sub>
+<br><i>x</i><sub>12</sub>&nbsp;<i>y</i><sub>12</sub></span>
+
+<p>
+<span class="MATH"><img width="9" height="27" align="BOTTOM" border="0" src="3402img3.png" alt="$ \vdots$"></span>
+
+<p>
+
+<span class="MATH"><i>x</i><sub>1m</sub>&nbsp;<i>y</i><sub>1m</sub>
+<br><i>x</i><sub>21</sub>&nbsp;<i>z</i><sub>21</sub>
+<br><i>x</i><sub>22</sub>&nbsp;<i>z</i><sub>22</sub></span>
+
+<p>
+<span class="MATH"><img width="9" height="27" align="BOTTOM" border="0" src="3402img3.png" alt="$ \vdots$"></span>
+
+<p>
+
+
+<span class="MATH"><i>x</i><sub>2n</sub>&nbsp;<i>z</i><sub>2n</sub></span>
+
+<p>
+
+<p>
+<br>
+
+<span class="MATH"><i>m</i></span> and <span class="MATH"><i>n</i></span> are integers (
+<span class="MATH">3<img width="18" height="31" align="MIDDLE" border="0" src="5075img4.png" alt="$ \le$"><i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="5075img4.png" alt="$ \le$">100</span>, 
+<span class="MATH">3<img width="18" height="31" align="MIDDLE" border="0" src="5075img4.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="5075img4.png" alt="$ \le$">100</span>) which represent the numbers of the vertices of the polygons, <span class="MATH"><i>C</i><sub>1</sub></span> and <span class="MATH"><i>C</i><sub>2</sub></span>, 
+respectively. 
+
+<p>
+
+<p>
+<br>
+
+<span class="MATH"><i>x</i><sub>1i</sub></span>, <span class="MATH"><i>y</i><sub>1i</sub></span>, <span class="MATH"><i>x</i><sub>2j</sub></span> and <span class="MATH"><i>z</i><sub>2j</sub></span> are integers between -100 and 100, inclusive. 
+<span class="MATH">(<i>x</i><sub>1i</sub>, <i>y</i><sub>1i</sub>)</span> and 
+<span class="MATH">(<i>x</i>2<i>j</i>, <i>z</i>2<i>j</i>)</span> mean 
+the <span class="MATH"><i>i</i></span>-th and <span class="MATH"><i>j</i></span>-th vertices' positions of <span class="MATH"><i>C</i><sub>1</sub></span> and <span class="MATH"><i>C</i><sub>2</sub></span> respectively. 
+
+<p>
+
+<p>
+<br>
+The sequences of these vertex positions are given in the counterclockwise order either on the <span class="MATH"><i>xy</i></span>-plane or the <span class="MATH"><i>xz</i></span>-plane as in Figure I.1. 
+
+<p>
+You may assume that all the polygons are <span class="textit">convex</span>, that is, all the interior angles of the polygons are less than 180 degrees. 
+You may also assume that all the polygons are <span class="textit">simple</span>, that is, each polygon's boundary does not cross nor touch itself. 
+
+<p>
+The end of the input is indicated by a line containing two zeros.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each dataset, output the volume of the intersection of the two prisms, <span class="MATH"><i>P</i><sub>1</sub></span> and <span class="MATH"><i>P</i><sub>2</sub></span>, with a decimal representation in a line. 
+
+<p>
+None of the output values may have an error greater than 0.001. The output should not contain any other extra characters.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4 3
+7 2
+3 3
+0 2
+3 1
+4 2
+0 1
+8 1
+4 4
+30 2
+30 12
+2 12
+2 2
+15 2
+30 8
+13 14
+2 8
+8 5
+13 5
+21 7
+21 9
+18 15
+11 15
+6 10
+6 8
+8 5
+10 12
+5 9
+15 6
+20 10
+18 12
+3 3
+5 5
+10 3
+10 10
+20 8
+10 15
+10 8
+4 4
+-98 99
+-99 -99
+99 -98
+99 97
+-99 99
+-98 -98
+99 -99
+96 99
+0 0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4.708333333333333
+1680.0000000000005
+491.1500000000007
+0.0
+7600258.4847715655
+</pre> 
+
+<p>

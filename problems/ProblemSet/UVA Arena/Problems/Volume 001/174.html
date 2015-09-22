@@ -1,0 +1,90 @@
+
+
+<html>
+<head>
+<title>Strategy</title>
+<meta name="description" content="Strategy">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Strategy</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A well known psychology experiment involves people playing a game in
+which they can either trade with each other or attempt to cheat the
+other player. If both players TRADE then each gains one point. If one
+TRADEs and the other CHEATs then the TRADEr loses 2 points and the
+CHEATer wins 2. If both CHEAT then each loses 1 point.
+<p>
+<p>
+There are a variety of different strategies for playing this game,
+although most people are either unable to find a winning strategy, or,
+having decided on a strategy, do not stick to it. Thus it is fairer to
+attempt to evaluate these strategies by simulation on a computer. Each
+strategy is simulated by an automaton. An automaton is characterised
+by a program incorporating the strategy, a memory for previous
+encounters and a count reflecting the score of that automaton. The
+count starts at zero and is altered according to the above rules after
+each encounter. The memory is able to determine what happened on up to
+the last two encounters with each other contender.
+<p>
+<p>
+Write a program that will read in details of up to 10 different
+strategies, play each strategy against each other strategy 10 times
+and then print out the final scores. Strategies will be in the form of
+simple programs obeying the following grammar:
+<p>
+<blockquote> 
+&lt;program&gt; ::= &lt;statement&gt;. <br> 
+&lt;statement&gt; ::= &lt;command&gt;  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline45" src="174img1.gif">  &lt;ifstat&gt; <br> 
+&lt;ifstat&gt; ::= IF &lt;condition&gt; THEN &lt;statement&gt; ELSE &lt;statement&gt; <br> 
+&lt;condition&gt; ::= &lt;cond&gt;  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline45" src="174img1.gif">  &lt;cond&gt; &lt;op&gt; &lt;condition&gt; <br> 
+&lt;op&gt; ::= AND  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline45" src="174img1.gif">  OR <br> 
+&lt;cond&gt; ::= &lt;memory&gt; {=  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline45" src="174img1.gif">  #} {&lt;command&gt;  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline45" src="174img1.gif">  NULL} <br> 
+&lt;memory&gt; ::= {MY  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline45" src="174img1.gif">  YOUR} LAST {1  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline45" src="174img1.gif">  2} <br> 
+&lt;command&gt; ::= TRADE  <img width="2" height="27" align="MIDDLE" alt="tex2html_wrap_inline45" src="174img1.gif">  CHEAT
+</blockquote>
+<p>
+Note that LAST1 refers to the previous encounter between these two
+automata, LAST2 to the encounter before that and that `MY' and `YOUR'
+have the obvious meanings. Spaces and line breaks may appear anywhere
+in the program and are for legibility only. The symbol `<tt>#</tt>' means `is
+not equal to'. NULL indicates that an encounter has not ocurred.  The
+following are valid programs:
+<p>
+<pre>CHEAT.
+IF MY LAST1 = CHEAT THEN TRADE ELSE CHEAT.
+IFYOURLAST2=NULLTHENTRADEELSEIFYOURLAST1=TRADETHENTRADE
+ELSECHEAT.</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will consist of a series of programs. Each program will be no
+longer than 255 characters and may be split over several lines for
+convenience. There will be no more than 10 programs. The file will be
+terminated by a line containing only a single `<tt>#</tt>'.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output will consist of one line for each line of input. Each line will
+consist of the final score of the relevant program right justified in
+a field of width 3.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>CHEAT.
+IF MY LAST1 = CHEAT THEN TRADE ELSE CHEAT.
+IFYOURLAST2=NULLTHENTRADEELSEIFYOURLAST1=TRADETHENTRADE
+ELSECHEAT.
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>  1
+-12
+-13</pre>
+<p>
+</body>
+</html>

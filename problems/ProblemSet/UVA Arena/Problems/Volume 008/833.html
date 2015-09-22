@@ -1,0 +1,153 @@
+
+
+<html>
+<head>
+<title>Water Falls</title>
+<meta name="description" content="Water Falls">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Water Falls</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Consider the set of line segments <span class="MATH"><i>P</i>1</span>, <span class="MATH"><i>P</i>2</span> and <span class="MATH"><i>P</i>3</span> of figure 1,
+representing the side view of a set of planes. What happens if
+some water falls (in the vertical direction and ignoring
+horizontal deviations created by kinetics) from source point <span class="MATH"><i>Sa</i></span>?
+It flows over the plane <span class="MATH"><i>P</i>3</span>, to <span class="MATH"><i>P</i>1</span>, finally falling on the ground
+at the point <span class="MATH"><i>Ga</i></span>. It is easy to see that, if the water is falling
+from source point <span class="MATH"><i>Sb</i></span>, then it hits the ground at the point <span class="MATH"><i>Gb</i></span>.
+
+<p>
+<div align="CENTER">
+
+<img src="p833a.gif" alt="\epsfbox{p833a.eps}">
+</div>
+
+<p>
+Given a list of lines segments and a list of source points, the
+proposed problem is to determine the corresponding falling points
+on the ground. To simplify the problem, it is assumed that neither
+horizontal lines nor crossing lines are given. Also no
+coincidences exist in the vertical projection of all points (the x
+coordinates of the end points and of the source points are all
+different).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The input is a text file, containing several lines as follows.
+
+<p>
+The
+first line of the input contains the number <span class="MATH"><i>NP</i></span> (integer format) of
+line segments. It is followed by <span class="MATH"><i>NP</i></span> lines containing, each one,
+the coordinates of the two end points of a segment, in the
+sequence 
+<span class="MATH"><i>x</i><sub>1</sub>&nbsp;<i>y</i><sub>1</sub>&nbsp;<i>x</i><sub>2</sub>&nbsp;<i>y</i><sub>2</sub></span>, separated by single spaces. No order is
+supposed, for this case, between point 1 and point 2 and numbers
+are written in the integer format.
+
+<p>
+The next line is the number <span class="MATH"><i>NS</i></span>
+(integer format) of source points. It is followed by <span class="MATH"><i>NS</i></span> lines
+containing, each one, a pair of integer values <span class="MATH"><i>x</i>&nbsp;<i>y</i></span>, separated by a
+single space, which are the coordinates of the corresponding
+source point.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+<span class="MATH"><i>NS</i></span> lines of text containing, each one, the coordinate <span class="MATH"><i>x</i></span> (integer
+format) of the corresponding falling point <span class="MATH"><i>G</i></span>. The output values
+must keep the input order.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+1
+
+4
+14 7 3 4
+11 13 16 11
+1 10 6 7
+2 1 4 3
+3
+10 4
+14 14
+2 13
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+10
+16
+2
+</pre>
+
+<p>
+
+<p><p>
+<br>
+
+<b>Note:</b> The picture below corresponds to the sample input.
+<div align="CENTER">
+
+<img src="p833b.gif" alt="\epsfbox{p833b.eps}">
+</div>
+
+<p>
+
+
+<p>
+<br><hr>
+<address>
+A. Augusto Sousa, ACM-UP'2001
+</address>
+</body>
+</html>
+

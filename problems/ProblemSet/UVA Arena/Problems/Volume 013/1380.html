@@ -1,0 +1,166 @@
+
+<p>
+There is a set of jobs, say 
+<span class="MATH"><i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>,..., <i>x</i><sub>n</sub></span>
+<tex2html_verbatim_mark>, to be scheduled. Each job needs one day to
+complete. Your task is to schedule the jobs so that they can be nished in a minimum number
+of days. There are two types of constraints: <span class="textit">Conflict constraints</span> and <span class="textit">Precedence constraints</span>.
+
+<p>
+<span class="textbf">Conflict constraints</span>: Some pairs of jobs cannot be done on the same day. (Maybe job <span class="MATH"><i>x</i><sub>i</sub></span>
+<tex2html_verbatim_mark> and job <span class="MATH"><i>x</i><sub>j</sub></span>
+<tex2html_verbatim_mark>
+need to use the same machine. So they must be done in different dates).
+
+<p>
+<span class="textbf">Precedence constraints</span>: For some pairs of jobs, one needs to be completed before the other can start. For example, maybe job <span class="MATH"><i>x</i><sub>i</sub></span>
+<tex2html_verbatim_mark> cannot be started before job <span class="MATH"><i>x</i><sub>j</sub></span>
+<tex2html_verbatim_mark> is completed.
+
+<p>
+The scheduling needs to satisfy all the constraints.
+
+<p>
+To record the constraints, we build a graph <span class="MATH"><i>G</i></span>
+<tex2html_verbatim_mark> whose vertices are the jobs: 
+<span class="MATH"><i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>,..., <i>x</i><sub>n</sub></span>
+<tex2html_verbatim_mark>.
+Connect <span class="MATH"><i>x</i><sub>i</sub></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>x</i><sub>j</sub></span>
+<tex2html_verbatim_mark> by an undirected edge if <span class="MATH"><i>x</i><sub>i</sub></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>x</i><sub>j</sub></span>
+<tex2html_verbatim_mark> cannot be done on the same day. Connect
+<span class="MATH"><i>x</i><sub>i</sub></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>x</i><sub>j</sub></span>
+<tex2html_verbatim_mark> by a directed edge from <span class="MATH"><i>x</i><sub>i</sub></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>x</i><sub>j</sub></span>
+<tex2html_verbatim_mark> if <span class="MATH"><i>x</i><sub>i</sub></span>
+<tex2html_verbatim_mark> needs to be completed before <span class="MATH"><i>x</i><sub>j</sub></span>
+<tex2html_verbatim_mark> starts.
+
+<p>
+If the graph is complicated, the scheduling problem is very hard. Now we assume that for
+our problems, the constraints are not very complicated: The graph <span class="MATH"><i>G</i></span>
+<tex2html_verbatim_mark> we need to consider are
+always trees (after omitting the directions of the edges). Your task is to nd out the number of
+days needed in an optimal scheduling for such inputs. You can use the following result:
+
+<p>
+<span class="textit">If <span class="MATH"><i>G</i></span>
+<tex2html_verbatim_mark> is a tree, then the number of days needed is either <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark> or <span class="MATH"><i>k</i> + 1</span>
+<tex2html_verbatim_mark>, where <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark> is the maximum number of vertices contained in a directed path of <span class="MATH"><i>G</i></span>
+<tex2html_verbatim_mark>, i.e., a path 
+<span class="MATH"><i>P</i> = (<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>,..., <i>x</i><sub>k</sub>)</span>
+<tex2html_verbatim_mark>, where for each 
+<span class="MATH"><i>i</i> = 1, 2,..., <i>k</i> - 1</span>
+<tex2html_verbatim_mark>, there is a directed edge from <span class="MATH"><i>x</i><sub>i</sub></span>
+<tex2html_verbatim_mark> to <span class="MATH"><i>x</i><sub>i+1</sub></span>
+<tex2html_verbatim_mark>.</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></span>
+
+<p>
+Figure 1 below is such an example. There are six jobs: 1, 2, 3, 4, 5, 6. From this figure,
+we know that job 1 and job 2 must be done in different dates. Job 1 needs to be done before
+job 3, job 3 before job 5, job 2 before job 4 and job 4 before job 6. It is easy to verify that
+the minimum days to finish all the jobs is 4 days. In this example, the maximum number <span class="MATH"><i>k</i></span>
+<tex2html_verbatim_mark> of
+vertices contained in a directed path is 3.
+
+<p>
+<div align="CENTER">
+
+<img width="179" height="292" align="BOTTOM" border="0" src="p3683.jpg" alt="\epsfbox{p3683.eps}">
+<tex2html_verbatim_mark>
+</tex2html_verbatim_mark></div>
+<p>
+<div align="CENTER">Figure 1: Example
+
+</div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The input consists of a number of trees (whose edges may be directed or undirected), say
+
+<span class="MATH"><i>T</i><sub>1</sub>, <i>T</i><sub>2</sub>,..., <i>T</i><sub>m</sub></span>
+<tex2html_verbatim_mark>, where <span class="MATH"><i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="3683img2.png" alt="$ \le$">20</span>
+<tex2html_verbatim_mark>. Each tree has at most 200
+vertices. We represent each tree as a rooted tree (just for convenience of presentation, the root is an arbitrarily chosen vertex). Information of each of the trees are contained in a number of lines. Each line starts with a
+vertex (which is a positive integer) followed by all its sons (which are also positive integers),
+then followed by a 0. Note that 0 is not a vertex, and it indicates the end of that line. Now
+some of the edges are directed. The direction of an edge can be from father to son, and can also
+be from son to father. If the edge is from father to son, then we put a letter ``<tt>d</tt>" after that son
+(meaning that it is a downward edge). If the edge is from son to father, then we put a letter
+``<tt>u</tt>" after that son (meaning that it is an upward edge). If the edge is undirected then we do
+not put any letter after the son.
+
+<p>
+The first case of the sample input below is the example in Figure 1.
+
+<p>
+Consecutive vertices (numbers or numbers with a letter after it) in a line are separated by
+a single space. A line containing a single <tt>0</tt> means the end of that tree. The next tree starts in
+the next line. Two consecutive lines of single <tt>0</tt> means the end of the input.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+The output contains one line for each test case. Each line contains a number, which is the
+minimum number of days to finish all the jobs in that test case.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1 2 3d 0
+2 4d 0
+3 5d 0
+4 6d 0
+0 
+1 2d 3u 4 0
+0 
+1 2d 3 0
+2 4d 5d 10 0
+3 6d 7d 11 0
+6 8d 9 12 0
+0 
+1 2 3 4 0
+2 5d 0
+3 6d 0
+4 7d 0
+5 8d 0
+6 9d 0
+7 10d 0
+0 
+0
+</pre>  
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4 
+3 
+4 
+3
+</pre> 
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

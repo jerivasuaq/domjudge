@@ -1,0 +1,130 @@
+
+<p>
+There is a piece of grids land of size 
+<span class="MATH"><i>n</i> <tt>x</tt> <i>m</i></span>. Chandler and his 
+team take responsibility to guard it. There are some searchlights on 
+some pieces and each of them has a capability to lighten a distance 
+towards four directions: north, south, east and west. Different 
+searchlight has different lightening capability shown in levels. 
+Searchlight with level <span class="MATH"><i>k</i></span> means that it can lighten <span class="MATH"><i>k</i></span> grids (including 
+the gird that the searchlight stands in) along any of the four 
+directions. Shown in following figure, there is a searchlight of 
+level 3 and the shadow grids are ones that can be lightened by it. 
+Particularly, searchlight of level 1 means that it can only lighten the 
+grid in which the searchlight stands.
+
+<p>
+<div align="CENTER">
+
+<img width="430" height="430" align="BOTTOM" border="0" src="p4841.png" alt="\epsfbox{p4841.eps}">
+</div>
+<p>
+<div align="CENTER">Figure: A searchlight of Level 3
+
+</div>
+
+<p>
+Each searchlight has a maximum level. You can decrease a searchlight's 
+level to save the energy. A searchlight whose maximum level is <span class="MATH"><i>k</i></span> can be 
+turned to level <span class="MATH"><i>k</i></span>, <span class="MATH"><i>k</i> - 1</span>, <span class="MATH"><i>k</i> - 2</span>, <span class="MATH">...</span>, 1 and 0. Level 0 means 
+turning off the searchlight. 
+
+<p>
+A grid is well-guarded if and only if <span class="textbf">at least</span> one of the 
+following two conditions is satisfied: 
+
+<p>
+
+<ol>
+<li>There is a searchlight in this grid, and it is not switched to 
+level 0 (the light is on). 
+</li>
+<li>The grid is lightened by <span class="textbf">at least</span> two searchlights. One lightens 
+it in horizontal direction (east or west), and another lightens it in 
+vertical direction (north or south). 
+</li>
+</ol>
+
+<p>
+Chandler asks you to help finding 
+a solution that he can turn on some of the searchlights so that:
+
+<ol>
+<li>All the grids are well-guarded. 
+</li>
+<li>All the searchlights turned on are in a same level. 
+</li>
+<li>That same level mentioned above is as small as possible. 
+</li>
+</ol>
+
+<p>
+More specifically, if you choose a same level <span class="MATH"><i>Q</i></span>, then all the 
+searchlights whose maximum level are less than <span class="MATH"><i>Q</i></span> have to be turned off. 
+Please help him to find a solution with the minimum same level.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file contains several test cases. 
+
+<p>
+For each test case, the first 
+line is two integers <span class="MATH"><i>n</i></span> and <span class="MATH"><i>m</i></span>, representing a grids land of size 
+
+<span class="MATH"><i>n</i> <tt>x</tt> <i>m</i></span>. 
+<span class="MATH">(0 &lt; <i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4841img2.png" alt="$ \le$">100, 0 &lt; <i>m</i><img width="18" height="31" align="MIDDLE" border="0" src="4841img2.png" alt="$ \le$">10000)</span>. Following <span class="MATH"><i>n</i></span> lines describe 
+an 
+<span class="MATH"><i>n</i> <tt>x</tt> <i>m</i></span> matrix in which <span class="MATH"><i>a</i><sub>i, j</sub></span> means the maximum level of the 
+searchlight in grid <span class="MATH">(<i>i</i>, <i>j</i>)</span>. <span class="MATH"><i>a</i><sub>i, j</sub></span> can be zero, which means there 
+is no searchlight on that grid. For all the cases, 
+<span class="MATH"><i>a</i><sub>i, j</sub><img width="18" height="31" align="MIDDLE" border="0" src="4841img2.png" alt="$ \le$">10000</span>. 
+
+<p>
+The input file ends with a line containing two zeros.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, output a single line with an integer, representing 
+the minimum level you have found. If there is no such a solution, 
+output ``<tt>NO ANSWER!</tt>"
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 2 
+0 2 
+3 0 
+2 2 
+0 2 
+1 0 
+0 0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 
+NO ANSWER!
+</pre> 
+
+<p>

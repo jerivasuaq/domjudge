@@ -1,0 +1,154 @@
+<p>
+Every computer science student knows binary trees.
+Here is one of many possible definitions of binary trees.
+Binary trees are defined inductively.
+A binary tree <span class="MATH"><i>t</i></span> is either an external node (leaf) <span class="MATH"><img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$"></span>;
+or a single ordered pair 
+<span class="MATH">(<i>t</i><sub>1</sub>, <i>t</i><sub>2</sub>)</span> of two binary trees, left
+subtree <span class="MATH"><i>t</i><sub>1</sub></span> and right subtree <span class="MATH"><i>t</i><sub>2</sub></span> respectively,
+called an internal node.
+Given an integer <span class="MATH"><i>n</i></span>, <span class="MATH"><i>B</i>(<i>n</i>)</span> is the set of trees with <span class="MATH"><i>n</i></span>
+leaves. For instance, the picture below shows the two trees of
+
+<span class="MATH"><i>B</i>(3) = {(<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,(<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">)),((<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">;,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">),<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">)}</span>.
+
+<p>
+<div align="CENTER">
+
+<img align="BOTTOM" border="0" src="p2943.gif" alt="\epsfbox{p2943.eps}">
+</div>
+
+<p>
+Observe that those trees both have two internal nodes and a total
+of five nodes.
+
+<p>
+Given a tree <span class="MATH"><i>t</i></span> we define its unique integer identifier <span class="MATH"><i>N</i>(<i>t</i>)</span>:
+
+<p>
+
+<ol>
+<li>
+<span class="MATH"><i>N</i>(<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">) = 0</span>
+</li>
+<li>
+<span class="MATH"><i>N</i>(<i>t</i><sub>1</sub>, <i>t</i><sub>2</sub>) = 2<sup>n<sub>1</sub> + n<sub>2</sub></sup> + 2<sup>n<sub>2</sub></sup><i>N</i>(<i>t</i><sub>1</sub>) + <i>N</i>(<i>t</i><sub>2</sub>)</span>,
+where <span class="MATH"><i>n</i><sub>1</sub></span> and <span class="MATH"><i>n</i><sub>2</sub></span> are the number of nodes in <span class="MATH"><i>t</i><sub>1</sub></span> and <span class="MATH"><i>t</i><sub>2</sub></span>
+respectively.
+</li>
+</ol>
+
+<p>
+For instance, we have  
+<span class="MATH"><i>N</i>(<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">) = 2<sup>2</sup> + 2<sup>1</sup>&#215;0 + 0 = 4</span>,
+ 
+<span class="MATH"><i>N</i>(<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,(<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">)) = 2<sup>4</sup> + 2<sup>3</sup>&#215;0 + 4 = 20</span>
+and 
+<span class="MATH"><i>N</i>((<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">),<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">) = 2<sup>4</sup> + 2<sup>1</sup>&#215;4 + 0 = 24</span>.
+
+<p>
+The ordering <span class="MATH"><img width="18" height="30" align="MIDDLE" border="0" src="2943img3.png" alt="$ \succeq$"></span> is defined on binary trees as follows:
+<br>
+<div align="CENTER" class="mathdisplay">
+
+<table cellpadding="0" align="CENTER" width="100%">
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="13" height="30" align="MIDDLE" border="0" src="2943img4.png" alt="$\displaystyle \bullet$"></td>
+<td width="10" align="CENTER" nowrap=""><img width="18" height="30" align="MIDDLE" border="0" src="2943img5.png" alt="$\displaystyle \succeq$"></td>
+<td align="LEFT" nowrap=""><i>t</i></td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">(<i>t</i><sub>1</sub>, <i>t</i><sub>2</sub>)</td>
+<td width="10" align="CENTER" nowrap=""><img width="18" height="30" align="MIDDLE" border="0" src="2943img5.png" alt="$\displaystyle \succeq$"></td>
+<td align="LEFT" nowrap="">(<i>u</i><sub>1</sub>, <i>u</i><sub>2</sub>), when <i>t</i><sub>1</sub> <img width="18" height="30" align="MIDDLE" border="0" src="2943img5.png" alt="$\displaystyle \succeq$"> <i>u</i><sub>1</sub>, or <i>t</i><sub>1</sub> = <i>u</i><sub>1</sub> and <i>t</i><sub>2</sub> <img width="18" height="30" align="MIDDLE" border="0" src="2943img5.png" alt="$\displaystyle \succeq$"> <i>u</i><sub>2</sub></td>
+<td class="eqno" width="10" align="RIGHT">
+&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p>
+
+<p>
+Hence for instance, 
+<span class="MATH">(<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,(<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">)) <img width="18" height="30" align="MIDDLE" border="0" src="2943img3.png" alt="$ \succeq$"> ((<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">),<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">)</span>
+holds, since we have 
+<span class="MATH"><img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$"> <img width="18" height="30" align="MIDDLE" border="0" src="2943img3.png" alt="$ \succeq$"> (<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">)</span>.
+
+<p>
+
+<p>
+<br>
+Using the ordering <span class="MATH"><img width="18" height="30" align="MIDDLE" border="0" src="2943img3.png" alt="$ \succeq$"></span>, <span class="MATH"><i>B</i>(<i>n</i>)</span> can be sorted.
+Then, given a tree <span class="MATH"><i>t</i></span> in <span class="MATH"><i>B</i>(<i>n</i>)</span>,
+we define <span class="MATH"><i>S</i>(<i>t</i>)</span> as the tree that immediately
+follows <span class="MATH"><i>t</i></span> in the sorted presentation of <span class="MATH"><i>B</i>(<i>n</i>)</span>, or as the smallest
+tree in <span class="MATH"><i>B</i>(<i>n</i>)</span>, if <span class="MATH"><i>t</i></span> is maximal in <span class="MATH"><i>B</i>(<i>n</i>)</span>.
+For instance, we have 
+<span class="MATH"><i>S</i>(<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">) = (<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">)</span> and
+ 
+<span class="MATH"><i>S</i>(<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,(<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">)) = ((<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">,<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">),<img width="13" height="14" align="BOTTOM" border="0" src="2943img1.png" alt="$ \bullet$">)</span>.
+By composing the inverse of <span class="MATH"><i>N</i></span>,<span class="MATH"><i>S</i></span> and <span class="MATH"><i>N</i></span> we finally define a partial
+map on integers.
+
+<p>
+
+<p>
+<div align="CENTER" class="mathdisplay">
+<i>s</i>(<i>k</i>) = <i>N</i>(<i>S</i>(<i>N</i><sup>-1</sup>(<i>k</i>)))
+</div><p>
+
+<p>
+Write a program that computes <span class="MATH"><i>s</i>(<i>k</i>)</span>.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The first input line contains an integer <span class="MATH"><i>K</i></span>, with <span class="MATH"><i>K</i> &gt; 0</span>.
+It is followed by <span class="MATH"><i>K</i></span> lines, each specifying an integer <span class="MATH"><i>k</i><sub>i</sub></span> with
+
+<span class="MATH">1<img width="18" height="30" align="MIDDLE" border="0" src="2943img6.png" alt="$ \le$"><i>i</i><img width="18" height="30" align="MIDDLE" border="0" src="2943img6.png" alt="$ \le$"><i>K</i></span> and 
+<span class="MATH">0<img width="18" height="30" align="MIDDLE" border="0" src="2943img6.png" alt="$ \le$"><i>k</i><sub>i</sub> &lt; 2<sup>31</sup>.</span>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case, the output should consist of <span class="MATH"><i>K</i></span> lines, the <span class="MATH"><i>i</i></span>-th output line being <span class="MATH"><i>s</i>(<i>k</i><sub>i</sub>)</span>, or `<tt>NO</tt>' if <span class="MATH"><i>s</i>(<i>k</i><sub>i</sub>)</span> does not
+exist.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5
+4
+0
+20
+5
+432
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4
+0
+24
+NO
+452
+</pre>
+
+<p>

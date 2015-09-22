@@ -1,0 +1,140 @@
+
+
+<html>
+<head>
+<title>Grid Soccer</title>
+<meta name="description" content="Grid Soccer">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Grid Soccer</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+An important soccer match is about to begin between long time rival teams A and B. Team B won the toss for the ball, so a player of team B is placed exactly at the center-field position, ready for the first kick. In the defensive field of team A there is a number of players from that team in strategic positions, but no other player from team B is in that area.
+
+<p>
+At that moment, the coach for team B realizes that, if his team could move the ball really fast, the defence players of team A would have time to reach only a limited area around their original locations. Hence, if he could compute the ideal location for his players so that they could take advantage of that situation, performing the shortest sequence of kicks to reach
+the goal without entering the area covered by a player of team A, then the only important thing to consider would be the initial positions of team A players and their reachable areas.
+
+<p>
+Team B hires you to develop a computer program to help their coach in such a situation. The defensive field of team A is represented by a square area in the <i>XY</i> plane, with the center-field position at location (0, 0), and the mid-field line coinciding with the <i>X</i> axis as described in Figure 1. This square area is partitioned into a grid with 2<i>s</i> squares in each
+dimension (<i>s</i> is given), and the goal towards which team B attacks is on the <i>Y</i> = 2<i>s</i> line, occupying <i>g</i> squares to each side of the <i>Y</i> axis.
+
+<p>
+<div align="CENTER">
+
+<img src="p747.gif">
+
+<p>
+
+<p>
+<br>
+Figure 1: Defensive field of team A.
+</div>
+
+<p>
+Team A players are located at grid intersections, and each one can intercept the ball if and only if it enters any square within <i>p</i> around its position, stopping the play (that is, each player covers an area of (2<i>p</i>)<sup>2</sup>). No team player from team A will be at a position to cover the center-field, (0, 0).
+
+<p>
+Your program should identify if there is a possibility of placing up to <i>n</i> players from team B (<em>not</em> including the center-field one) in grid intersections, in order to move the ball from the center field position to the goal of team A, avoiding any square of the grid reachable by a team A player. Assume that the ball can move only parallel to the <i>X</i> or <i>Y</i> axis. If
+it is not possible, notify saying: ``<tt>Situation Impossible</tt>''. If there is a solution, then your program should output the solution that uses the minimum number of players (identifying the position of the players). If there are more than one possible solutions, your program
+should output any solution where the ball runs the shortest distance.
+
+<p>
+Assume that the ball can move over the border of the field, even over the border opposite to the center field (if these borders are not covered by players of team A, of course).
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input consists of a sequence of scenarios followed by a line starting with <tt>0</tt>, which must not be processed. Each scenario consists of one line containing four integers <i>s</i>, <i>g</i>, <i>p</i> and <i>n</i>, where
+
+<p>
+<ul>
+<li><i>s</i> is the number of grid squares, in each side of the <i>Y</i> axis; assume 
+
+0 &lt; <i>s</i> &lt; 10.
+<li><i>g</i> is the size of the goal, in number of grid squares in each side of the <i>Y</i> axis; assume 0 &lt; <i>g</i> &lt; <i>s</i>.
+<li><i>p</i> is a player's reach, in number of grid squares; assume 0 &lt; <i>p</i> &lt; <i>s</i>.
+<li><i>n</i> is the number of team A players in the defense field of team A; assume 
+
+<img width="96" height="30" align="MIDDLE" border="0" src="747img1.gif" alt="$0 \leY n < 100$">.
+</li></li></li></li></ul>
+
+<p>
+These four integers are followed by a sequence of <i>n</i> pairs of integers defining the positions of team A players in the defense field of team A. There may be any number of blank spaces (at least one) between the numbers in the input.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output consists of a line identifying the scenario followed by a line saying either
+
+<p>
+<ul>
+<li><tt>Situation Impossible</tt>, or
+<li><tt>Goal with </tt><i>k</i><tt> kicks:</tt> 
+
+<img width="231" height="34" align="MIDDLE" border="0" src="747img3.gif" alt="$(x_1, y_1)(x_2, y_2) \dots (x_{k+1}, y_{k+1})$">,
+where 
+
+(<i>x</i><sub><i>i</i></sub>, <i>y</i><sub><i>i</i></sub>), <img width="43" height="32" align="MIDDLE" border="0" src="747img4.gif" alt="$i \leY k$">,
+indicates
+the position of the <i>i</i>-th player of team B to kick the ball to accomplish the goal in <i>k</i> plays, and 
+
+(<i>x</i><sub><i>k</i>+1</sub>, <i>y</i><sub><i>k</i>+1</sub>) is the final point the ball reaches (which should be over the goal line). Note that <i>x</i><sub>1</sub> = 0 and <i>y</i><sub>1</sub> = 0, and 
+
+<i>y</i><sub><i>k</i>+1</sub>= 2<i>s</i>.
+</li></li></ul>
+
+<p>
+A blank line separates the output of two scenarios.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+4 2 1 2    -2 8 1 8
+7 2 3 3     0 7 6 10 0 9
+9 3 3 1    -5 9
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Scenario 1.
+Situation Impossible
+
+Scenario 2.
+Goal with 3 kicks: (0,0)(-4,0)(-4,14)(-2,14)
+
+Scenario 3.
+Goal with 1 kicks: (0,0)(0,18)
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

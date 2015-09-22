@@ -1,0 +1,131 @@
+
+
+<html>
+<head>
+<title>Commedia dell' arte</title>
+<meta name="description" content="Commedia dell' arte">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Commedia dell' arte</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+So called <em>commedia dell' arte</em> is a theater genre first
+played at Italy in the beginning of the sixteenth century. It was inspired
+with the Roman Theater. The play had no fixed script and the actors (also
+called <em>performers</em>) had to improvise a lot. There were only a simple
+directions by the author like "enter the stage and make something funny" or
+``everyone comes on stage and everything is resolved happily". You can see it
+might be very interesting to play the commedia dell' arte. Therefore
+the ACM want to put a new play on a stage, which was completely unknown
+before. The main hero has a puzzle that takes a very important role in the
+play and gives an opportunity of many improvisations.
+
+<p>
+
+<p>
+<br>
+The puzzle is the worldwide known <em>Lloyd's Fifteen Puzzle</em>. ACM wants
+to make the play more interesting so they want to replace the
+``standard" puzzle with a three-dimensional one. The puzzle consists
+of a cube containing <i>M</i><sup>3</sup> slots. Each slot except one
+contains a cubic tile (one position is free).
+The tiles are numbered from 1 to <i>M</i><sup>3</sup>-1.
+The goal of the puzzle is to get the original ordering of
+the tiles after they have been randomly reshuffled.  The only allowed
+moves are sliding a neighbouring tile into the free position along one
+of the three principal directions. Original configuration is when slot
+with coordinates (<i>x</i>,<i>y</i>,<i>z</i>) from 
+
+<img width="126" height="37" align="MIDDLE" border="0" src="716img1.gif" alt="$\{0, \dots ,M-1\}^3$">
+contains tile number 
+
+<i>z</i>.<i>M</i><sup>2</sup>+<i>y</i>.<i>M</i>+<i>x</i>+1 and slot
+
+
+(<i>M</i>-1,<i>M</i>-1,<i>M</i>-1) is free.
+
+<p>
+
+<p>
+<br>
+Your are to write a program to determine whether it is possible 
+to solve the puzzle or not.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of <i>N</i> cases. The first line of the input
+contains only positive integer <i>N</i>. Then follow the cases. The
+first line of each case contains only one integer <i>M</i>, 
+
+<img width="105" height="32" align="MIDDLE" border="0" src="716img2.gif" alt="$1 \le
+M \le 100$">.
+It is the size of 3D puzzle cube.  Then follow
+<i>M</i> lines, each contains exactly <i>M</i><sup>2</sup> numbers
+on the tiles for one layer. First is the layer on the top of the cube and
+the last one on the bottom. In each layer numbers are arranged from the left
+top corner linewise to the right bottom corner of the layer. In other words,
+slot with coordinates (<i>x</i>,<i>y</i>,<i>z</i>) is described by the
+(<i>x</i>+<i>M</i>.<i>y</i>+1)-th number on the (<i>z</i>+1)-th line.
+Numbers are separated by space.  Number <tt>0</tt> means free position.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each case, print exactly one line. 
+If the original configuration can be reached by sliding the tiles,
+print the sentence `<tt>Puzzle can be solved.</tt>'. Otherwise, print the
+sentence `<tt>Puzzle is unsolvable.</tt>'.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+2
+2
+1 2 3 4
+5 7 6 0
+2
+2 1 3 5
+4 6 0 7
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Puzzle is unsolvable.
+Puzzle can be solved.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-15</i>
+</address>
+</body>
+</html>
+

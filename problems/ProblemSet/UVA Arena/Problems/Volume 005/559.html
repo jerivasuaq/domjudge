@@ -1,0 +1,158 @@
+
+
+<html>
+<head>
+<title>Squares (II)</title>
+<meta name="description" content="Squares (II)">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Squares (II)</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The game of <em>Squares</em>  is not well known in our region, but there are some
+fanatics who spend their whole day playing Squares, using boards as large
+as they can find. However, recently the <em>International Squares Federation</em>
+decided that the sides of a Squares board may not be larger than 1000 .
+
+<p>
+
+<p>
+<br>
+
+<em>Squares</em>  is played by two players on a rectangular board, similar to a very big chess board. The fields are numbered from (1,1) at the bottom left
+corner, to (1,<i>w</i>) at the bottom right corner and (<i>h</i>,<i>w</i>) at the top right
+corner, where <i>h</i> and <i>w</i> are the height and width of the board. Usually, one of
+the players decides the size of the board, and the other player makes the
+first move.
+
+<p>
+
+<p>
+<br>
+A move consists of choosing a free field. This field is extended to the right
+and to the top of the board to form a square as large as possible without
+intersecting already occupied fields. The fields of this new square then
+belong to the player who
+made the move, and are no longer free. The game is finished when there are
+no free fields left. However, it is possible for the players to decide to
+end the game earlier.
+
+<p>
+
+<p>
+<br>
+The scoring rules are too complicated to explain here. The number of occupied
+fields plays a role, but also the moment in the game at which those fields
+were occupied by the player.
+
+<p>
+
+<p>
+<br>
+For beginning players, the best strategy is to try to occupy as many fields
+as possible in each move. More experienced players will sometimes occupy
+smaller squares for strategic reasons.
+
+<p>
+
+<p>
+<br>
+Write a program to support beginning players, which, given the size of the
+board and the moves already made, indicates a field that must be chosen in
+the next move to occupy a square that is as large as possible.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input starts with a line which indicates the number of games <i>g</i> to be
+analysed.
+
+<p>
+
+<p>
+<br>
+For each game, the input begins with a line with three numbers <i>h</i>, <i>w</i>,
+ and <i>m</i>, separated by a space, where <i>h</i> and <i>w</i> are the height and width of
+ the board (
+
+<img width="215" height="32" align="MIDDLE" border="0" src="559img1.gif" alt="$1 \le h \le 1000, 1 \le w \le 1000$">), and <i>m</i> is the number of moves already made (
+
+<img width="101" height="30" align="MIDDLE" border="0" src="559img2.gif" alt="$0 \le m \le 100$">)
+.
+
+<p>
+
+<p>
+<br>
+For each move, the input file contains one line with the row and
+column (
+
+<img width="162" height="32" align="MIDDLE" border="0" src="559img3.gif" alt="$1 \le r \le h, 1 \le c \le w$">)
+of the field the player has chosen,
+separated by a space. The move is legal according to the rules given
+above, i.e., the field is free.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output consists of g lines, one line for each game. If there is no legal
+move possible, the text <tt>game over</tt> should be given. Otherwise, the line should
+contain three numbers <i>r</i>, <i>c</i>, and <i>s</i>, separated by one space, where <i>r</i> and <i>c</i>
+are the row and column where a maximal square with side <i>s</i> can be formed.
+If there is more than one possible solution, the one with the smallest <i>r</i> is
+given, and if that is not decisive, the one with the smallest <i>c</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+8 8 4
+8 1
+3 6
+1 4
+2 1
+500 1000 2
+1 1
+1 501
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 2 4
+game over
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

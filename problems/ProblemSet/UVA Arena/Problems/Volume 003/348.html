@@ -1,0 +1,110 @@
+
+
+<html>
+<head>
+<title>Optimal Array Multiplication Sequence</title>
+<meta name="description" content="Optimal Array Multiplication Sequence">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Optimal Array Multiplication Sequence</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Given two arrays <i>A</i> and <i>B</i>, we can determine the array <i>C</i> = <i>A</i> <i>B</i>
+using the standard definition of matrix multiplication:
+<p>
+<center><img src="348img13.gif"></center>
+<p>
+The number of columns in the <i>A</i> array must be the same as the number of
+rows in the <i>B</i> array. Notationally, let's say that <i>rows</i>(<i>A</i>) and <i>columns</i>(<i>A</i>)
+are the number of rows and columns,
+respectively, in the <i>A</i> array. The number of individual multiplications
+required to compute the entire <i>C</i> array (which will have the same number
+of rows as <i>A</i> and the same number of
+columns as <i>B</i>) is then <i>rows</i>(<i>A</i>) <i>columns</i>(<i>B</i>) <i>columns</i>(<i>A</i>).
+For example, if <i>A</i>  is a  <img width="54" height="24" align="MIDDLE" alt="tex2html_wrap_inline67" src="348img1.gif">  array, and <i>B</i> is a  <img width="55" height="24" align="MIDDLE" alt="tex2html_wrap_inline71" src="348img2.gif">  array, it will take  <img width="93" height="24" align="MIDDLE" alt="tex2html_wrap_inline73" src="348img3.gif"> , or 3000 multiplications to compute the <i>C</i>  array.
+<p>
+<p>
+To perform multiplication of more than two arrays we have a choice of how
+to proceed. For example, if <i>X</i>, <i>Y</i>, and <i>Z</i> are arrays, then to
+compute <i>X</i> <i>Y</i> <i>Z</i> we could either compute (<i>X</i> <i>Y</i>) <i>Z</i>
+or <i>X</i> (<i>Y</i> <i>Z</i>). Suppose <i>X</i> is a  <img width="46" height="24" align="MIDDLE" alt="tex2html_wrap_inline103" src="348img4.gif">  array, <i>Y</i> is a  <img width="54" height="24" align="MIDDLE" alt="tex2html_wrap_inline67" src="348img1.gif">  array, and <i>Z</i> is a  <img width="54" height="24" align="MIDDLE" alt="tex2html_wrap_inline111" src="348img5.gif">  array. Let's look at the number of multiplications
+required to compute the product using the two different sequences:
+<p>
+<p>
+<p>
+(<i>X</i> <i>Y</i>) <i>Z</i>
+<p>
+<ul><li>  <img width="143" height="24" align="MIDDLE" alt="tex2html_wrap_inline119" src="348img6.gif">  multiplications to determine the
+product (<i>X Y</i>), a  <img width="46" height="24" align="MIDDLE" alt="tex2html_wrap_inline123" src="348img7.gif">  array.<li> Then  <img width="143" height="24" align="MIDDLE" alt="tex2html_wrap_inline125" src="348img8.gif">  multiplications to determine
+the final result.<li> Total multiplications: 4500.
+</li></li></li></ul>
+<p>
+<p>
+<p>
+<i>X</i> (<i>Y</i> <i>Z</i>)
+<p>
+<ul><li>  <img width="151" height="24" align="MIDDLE" alt="tex2html_wrap_inline133" src="348img9.gif">  multiplications to determine the
+product (<i>Y</i> <i>Z</i>), a  <img width="55" height="24" align="MIDDLE" alt="tex2html_wrap_inline139" src="348img10.gif">  array.<li> Then  <img width="142" height="24" align="MIDDLE" alt="tex2html_wrap_inline141" src="348img11.gif">  multiplications to determine the
+final result.<li> Total multiplications: 8750.
+</li></li></li></ul>
+<p>
+Clearly we'll be able to compute (<i>X</i> <i>Y</i>) <i>Z</i> using fewer individual
+multiplications.
+<p>
+<p>
+Given the size of each array in a sequence of arrays to be multiplied, you
+are to determine an optimal computational sequence. Optimality, for this
+problem, is relative to the number of individual multiplications required.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+For each array in the multiple sequences of arrays to be multiplied you
+will be given only the dimensions of the array. Each sequence will consist
+of an integer <i>N</i> which indicates the
+number of arrays to be multiplied, and then <i>N</i> pairs of integers, each
+pair giving the number of rows and columns in an array; the order in which
+the dimensions are given is the same as
+the order in which the arrays are to be multiplied. A value of zero
+for <i>N</i> indicates the end of the input. <i>N</i> will be no larger than 10.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Assume the arrays are named  <img width="109" height="25" align="MIDDLE" alt="tex2html_wrap_inline157" src="348img12.gif"> . Your output for each input
+case is to be a line containing a parenthesized expression clearly
+indicating the order in which the arrays are to
+be multiplied. Prefix the output for each case with the case number
+(they are sequentially numbered, starting with 1). Your output should
+strongly resemble that shown in the samples
+shown below. If, by chance, there are multiple correct sequences, any
+of these will be accepted as a valid answer.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3
+1 5
+5 20
+20 1
+3
+5 10
+10 20
+20 35
+6
+30 35
+35 15
+15 5
+5 10
+10 20
+20 25
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Case 1: (A1 x (A2 x A3))
+Case 2: ((A1 x A2) x A3)
+Case 3: ((A1 x (A2 x A3)) x ((A4 x A5) x A6))</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,171 @@
+
+
+<html>
+<head>
+<title>Roman Numerals</title>
+<meta name="description" content="Roman Numerals">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Roman Numerals</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The original system of writing numbers used by the early Romans was
+simple but cumbersome. Various letters were used to represent
+important numbers, and these were then strung together to represent
+other numbers with the values decreasing monotonically from left to
+right. The letters they used and the numbers that were represented are
+given in the following table.
+
+<p>
+<div align="CENTER">
+<table cellpadding="3">
+<tr><td align="LEFT">I</td>
+<td align="RIGHT">1</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td align="LEFT">V</td>
+<td align="RIGHT">5</td>
+</tr>
+<tr><td align="LEFT">X</td>
+<td align="RIGHT">10</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td align="LEFT">L</td>
+<td align="RIGHT">50</td>
+</tr>
+<tr><td align="LEFT">C</td>
+<td align="RIGHT">100</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td align="LEFT">D</td>
+<td align="RIGHT">500</td>
+</tr>
+<tr><td align="LEFT">M</td>
+<td align="RIGHT">1000</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td align="LEFT">&nbsp;</td>
+<td align="RIGHT">&nbsp;</td>
+</tr>
+</table></div>
+
+<p>
+Thus 1993 was written as <tt>MDCCCCLXXXXIII</tt>. This system was then
+superseded by a partially place-oriented system, whereby if the above
+rule of decreasing values was broken, it meant that the immediately
+preceding (lower) value was deemed to be `negative' and was subtracted
+from the higher (out of place) value. In this system 1993 was usually
+written as <tt>MCMXCIII</tt>. There is still some controversy as to which
+letters could precede which other letters, but for the purposes of
+this problem we will assume the following restrictions: 
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>A letter from the left column can never appear more than three
+times in a row, and there can never be more than one other
+    occurrence of that letter.
+
+<p>
+<dt>2.
+<dd>A letter from the right column can never appear more than
+    once.
+
+<p>
+<dt>3.
+<dd>Once a letter has been used in a `negative' position, all
+    subsequent characters (apart from the one immediately following)
+    may not be greater than that character.
+</dd></dt></dd></dt></dd></dt></dl>
+
+<p>
+Thus we could write <tt>MXMIII</tt> for 1993 or <tt>CCXCIV</tt> for 294, however we
+could not write <tt>ILV</tt> for 54, nor could we write <tt>LIL</tt> for 99. Note that
+299 could be written as <tt>CCXCIX</tt> or <tt>CCIC</tt>
+
+<p>
+
+<p>
+<br>
+Given a Roman sum, we can either interpret it as such or as an
+encoding of an Arabic sum. Thus <tt>V+V=X</tt> could be interpreted as an
+ambiguous encoding of an Arabic sum with <tt>V</tt> <img width="16" height="30" align="MIDDLE" border="0" src="185img1.gif" alt="$\in$">
+{1, 2, 3, 4}
+and <tt>X = 2 * V</tt>. Similarly, <tt>X+X=XX</tt> could be interpreted as a correct
+Roman sum but an impossible Arabic encoding (apart from the trivial
+encoding <tt>X</tt> = 0) and <tt>XX+XX=MXC</tt> as an incorrect Roman sum, but a valid
+encoding with <tt>M</tt> = 1, <tt>X</tt> = 9, and <tt>C</tt> = 8.
+
+<p>
+
+<p>
+<br>
+Write a program that will read in sums in Roman numerals and determine
+whether or not they are correct as Roman sums and also whether they
+are impossible, ambiguous or valid as Arabic encodings. Assume that
+zero will never appear on its own or as a leading digit, and that no
+two Roman numerals map onto the same Arabic digit.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input will consist of a series of lines, each line consisting of an
+apparent Roman sum, i.e. a valid Roman number, a plus sign (<tt>+</tt>),
+another valid Roman number, an equal sign (<tt>=</tt>) and another valid Roman
+number. No Roman number will contain more than 9 letters. The file
+will be terminated by a line consisting of a single <tt>#</tt>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output will consist of a series of lines, one for each line of the
+input, and each containing two words. The first word will be one of
+(<tt>Correct, Incorrect</tt>) depending on whether the Roman sum is or is not
+correct. The second word will be separated from the first by exactly
+one space and will be one of the set (impossible, ambiguous, valid)
+depending on the Arabic sum.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+V+V=X
+X+X=XX
+XX+XX=MXC
+#
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+Correct ambiguous
+Correct impossible
+Incorrect valid
+</pre>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-02-15</i>
+</address>
+</body>
+</html>
+

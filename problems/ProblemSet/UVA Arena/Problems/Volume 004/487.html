@@ -1,0 +1,103 @@
+
+
+<html>
+<head>
+<title>Boggle Blitz</title>
+<meta name="description" content="Boggle Blitz">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center></center></h1>
+ <table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Boggle Blitz</a></font>&nbsp;</b></td></tr></table>
+<p>
+In the game of Boggle, you are presented with an  <img width="51" height="24" align="MIDDLE" alt="tex2html_wrap_inline43" src="487img1.gif">  table of letters. The object is to find words
+in the mix of letters. A word may be started anywhere in the table and is constructed by forming a chain of adjacent letters. Adjacent means diagonal, vertical or horizontal. A word cannot use any character from the table more than once.
+<p>
+<p>
+Here is an example of a  <img width="38" height="24" align="MIDDLE" alt="tex2html_wrap_inline45" src="487img2.gif">  table:
+<tt>bile</tt> <br> 
+<tt>tglp</tt> <br> 
+<tt>aest</tt> <br> 
+<tt>here</tt>
+<p>
+<p>
+The following is a partial list of legal words that can be found using the above rules:
+<pre>bill
+gates
+slept
+here</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below. This line is
+followed by a blank line, and there is also a blank line between two consecutive
+inputs.
+<p>
+In ``Boggle Blitz'' you will be given an integer number, <i>N</i>, on a single line. <i>N</i> is the number of characters on each side of the table, giving a total of  <img width="21" height="14" align="BOTTOM" alt="tex2html_wrap_inline51" src="487img3.gif">  characters. <i>N</i> can range from 1 to 20. <i>N</i>
+lines of <i>N</i> characters each will follow giving you the arrangement of the table.
+<p>
+Your task is to find
+all the legal words in the table. <tt>Be sure that your program is efficient!</tt>
+<p>
+In case you forgot to bring a dictionary, you are in luck because we are not using English words.
+Instead, we have redefined ``word'' to mean an increasing (by ASCII value) chain of characters
+from length 3 to length  <img width="21" height="14" align="BOTTOM" alt="tex2html_wrap_inline51" src="487img3.gif"> . ``<tt>ABCDE</tt>'' is a legal five letter word. ``<tt>MICROSOFT</tt>'' is <b>not legal</b>
+because the sequence is not increasing. ``<tt>BILL</tt>'' is also illegal because <tt>L</tt> is not greater than <tt>L</tt>.
+``<tt>BIL</tt>'', however, is legal.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Output</a></font></h2>
+<p>
+For each test case, the output must follow the description below. The outputs of
+two consecutive cases will be separated by a blank line.
+<p>
+Your program should output the list of unique words sorted according to the following
+criteria:
+<ol><li> Shorter words are before longer words<li> Words are sorted
+    lexigraphically by ASCII value
+</li></li></ol>
+<p>
+Add no blank lines or spaces. If no legal words can be found, print nothing.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>2
+
+3
+one
+top
+dog
+
+4
+abcd
+bcda
+cdab
+dabc</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>dop
+dot
+eno
+enp
+ent
+eop
+eot
+gop
+got
+nop
+not
+enop
+enot
+
+abc
+abd
+acd
+bcd
+abcd</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<p>
+Here is a game played on a cycle by two players. The rule of this game is as follows: At first, a cycle is given
+  and each edge is assigned a non-negative integer. Among those integers, at least one is zero. Further a coin is
+  put  on  a  vertex  of  the  cycle.  From  this  vertex,  the  game  starts  and  proceeds  with  two  players'
+  alternating moves with the following series of choices:
+
+<p>
+
+<p>
+<br>
+ <table cols="2">
+<col align="CENTER"><col align="LEFT">
+<tr><td valign="BASELINE" align="CENTER" nowrap="">
+ (1) </td><td valign="BASELINE" align="LEFT" nowrap=""> Choose an edge  incident with the vertex having the coin, </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+ (2) </td><td valign="BASELINE" align="LEFT" nowrap=""> Decrease the value of this edge to any non-negative integer strictly, </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+ (3) </td><td valign="BASELINE" align="LEFT" nowrap=""> Move the coin to the adjacent vertex along this edge.
+</td></tr>
+</table>
+
+<p>
+
+<p>
+<br>
+The game ends when a player on his turn cannot move because the value of each edge incident with the vertex
+ having the coin is equal to zero. Then, that player is the loser.
+
+<p>
+
+<p>
+<br>
+Figure 1 illustrates an actual game. In this game, Alice is the first player and Bob is the second player.
+ In the starting position in Figure 1 (a), Alice cannot but choose the right edge of the vertex having the coin.
+ Alice then decreases its value from 2 to 0, and moves the coin along this edge, which makes (a) into (b). Next,
+ Bob cannot but choose the down edge of the vertex having the coin; he then decreases its value from 5 to 1,
+ which makes (b) into (c). In Figure 1 (c), Alice chooses the up edge of the vertex having the coin and decreases
+ its value  from  1  to  0,  which  makes  (c)  into  (d).  Finally,  in  Figure  1  (d),  Bob  has  no  move
+ since  each  edge incident with the vertex having the coin is assigned to zero. Then, Alice wins this game.
+
+<p>
+<div align="CENTER">
+
+<img align="BOTTOM" border="0" src="p2813.jpg" alt="\epsfbox{p2813.eps}">
+</div>
+<p>
+<div align="CENTER"></div>
+<p>
+<br>
+<div align="CENTER">Figure 1: An example of cycle game (A coin is put on the black vertex)
+
+</div>
+
+<p>
+In fact, whenever the game starts as shown in Figure 1 (a), the first player can always win for any second
+  player's move. In other words, in the starting position in Figure 1 (a), the first player has a winning strategy.
+
+<p>
+In this problem, you should determine whether or not the first player has a winning strategy from a given
+ starting position.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of <span class="MATH"><i>T</i></span> test cases. The number of test cases <span class="MATH">(<i>T</i>)</span> is given on the first line of the
+input file. Each test case starts with a line containing an integer  <span class="MATH"><i>N</i></span> 
+<span class="MATH">(3<img width="18" height="30" align="MIDDLE" border="0" src="2813img2.png" alt="$ \le$"><i>N</i><img width="18" height="30" align="MIDDLE" border="0" src="2813img2.png" alt="$ \le$">20)</span> , where  <span class="MATH"><i>N</i></span> is
+the number of vertices in a cycle. On the next line, there are the  <span class="MATH"><i>N</i></span> non-negative integers assigned to the
+edges of the cycle. The  <span class="MATH"><i>N</i></span> integers  are  given  in  clockwise order starting  from  the vertex having  the
+coin and  they  are  separated by  a single space. Note that at least one integer value among the  <span class="MATH"><i>N</i></span> integers
+must be zero and that the value of no integer can be larger than 30.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+Print exactly one line for each test case. The line is to contain `<tt>YES</tt>' if the first player has a
+winning strategy from  the  starting  position.  Otherwise,  the  line  is  to  contain  `<tt>NO</tt>'.
+The  following  shows  sample  input  and output for two test cases. The following shows sample input and
+output for two test cases.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+4
+2 5 3 0
+3
+0 0 0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+YES
+NO
+</pre>
+
+<p>

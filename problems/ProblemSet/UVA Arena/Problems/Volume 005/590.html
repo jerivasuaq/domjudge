@@ -1,0 +1,147 @@
+
+
+<html>
+<head>
+<title>Always on the run</title>
+<meta name="description" content="Always on the run">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Always on the run</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Screeching tires. Searching lights. Wailing sirens. Police cars everywhere. Trisha Quickfinger
+did it again! Stealing the `Mona Lisa' had been more difficult than planned, but being the world's best
+art thief means expecting the unexpected. So here she is, the wrapped frame tucked firmly under her
+arm, running to catch the northbound metro to Charles-de-Gaulle airport.
+
+<p>
+But even more important than actually stealing the painting is to shake off the police that will soon
+be following her. Trisha's plan is simple: for several days she will be flying from one city to another,
+making one flight per day. When she is reasonably sure that the police has lost her trail, she will fly
+to Atlanta and meet her `customer' (known only as Mr. P.) to deliver the painting.
+
+<p>
+Her plan is complicated by the fact that nowadays, even when you are stealing expensive art, you
+have to watch your spending budget. Trisha therefore wants to spend the least money possible on her
+escape flights. This is not easy, since airlines prices and flight availability vary from day to day. The
+price and availability of an airline connection depends on the two cities involved and the day of travel.
+Every pair of cities has a `flight schedule' which repeats every few days. The length of the period may
+be different for each pair of cities and for each direction.
+
+<p>
+Although Trisha is a good at stealing paintings, she easily gets confused when booking airline
+flights. This is where you come in.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains the descriptions of several scenarios in which Trisha tries to escape. Every
+description starts with a line containing two integers <i>n</i> and <i>k</i>. <i>n</i> is the number of cities through which
+Trisha's escape may take her, and <i>k</i> is the number of flights she will take. The cities are numbered 
+
+<img width="79" height="30" align="MIDDLE" border="0" src="590img1.gif" alt="$1, 2, \dots, n$">,
+where 1 is Paris, her starting point, and <i>n</i> is Atlanta, her final destination. The numbers will
+satisfy 
+
+<img width="88" height="30" align="MIDDLE" border="0" src="590img2.gif" alt="$2 \leY n \leY 10$">
+and 
+
+<img width="104" height="32" align="MIDDLE" border="0" src="590img3.gif" alt="$1 \leY k \leY 1000$">.
+
+<p>
+Next you are given <i>n</i>(<i>n</i> - 1) flight schedules, one per line, describing the connection between
+every possible pair of cities. The first <i>n</i> - 1 flight schedules correspond to the flights from city 1 to all
+other cities (
+
+<img width="79" height="30" align="MIDDLE" border="0" src="590img4.gif" alt="$2, 3, \dots, n$">), the next <i>n</i> - 1 lines to those from city 2 to all others (
+
+<img width="95" height="30" align="MIDDLE" border="0" src="590img5.gif" alt="$1, 3, 4, \dots, n$">), and so on.
+
+<p>
+The description of the flight schedule itself starts with an integer <i>d</i>, the length of the period in
+days, with 
+
+<img width="86" height="32" align="MIDDLE" border="0" src="590img6.gif" alt="$1 \leY d \leY 30$">.
+Following this are <i>d</i> non-negative integers, representing the cost of the flight
+between the two cities on days 
+
+<img width="77" height="32" align="MIDDLE" border="0" src="590img7.gif" alt="$1, 2, \dots, d$">.
+A cost of 0 means that there is no flight between the two cities on that day.
+
+<p>
+So, for example, the flight schedule ``<tt>3 75 0 80</tt>'' means that on the first day the flight costs 75,
+on the second day there is no flight, on the third day it costs 80, and then the cycle repeats: on the
+fourth day the flight costs 75, there is no flight on the fifth day, etc.
+
+<p>
+The input is terminated by a scenario having <i>n</i> = <i>k</i> = 0.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each scenario in the input, first output the number of the scenario, as shown in the sample output. If
+it is possible for Trisha to travel <i>k</i> days, starting in city 1, each day flying to a different city than the day
+before, and finally (after <i>k</i> days) arriving in city <i>n</i>, then print ``<tt>The best flight costs </tt><i>x</i>.'',
+where <i>x</i> is the least amount that the <i>k</i> flights can cost.
+
+<p>
+If it is not possible to travel in such a way, print ``<tt>No flight possible.</tt>''.
+
+<p>
+Print a blank line after each scenario.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+3 6
+2 130 150
+3 75 0 80
+7 120 110 0 100 110 120 0
+4 60 70 60 50
+3 0 135 140
+2 70 80
+2 3
+2 0 70
+1 80
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Scenario #1
+The best flight costs 460.
+
+Scenario #2
+No flight possible.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

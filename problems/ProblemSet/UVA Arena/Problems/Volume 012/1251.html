@@ -1,0 +1,148 @@
+
+<p>
+Do you know ``sed,`` a tool provided with Unix? Its most popular use is to substitute every 
+occurrence of a string <span class="MATH"><img width="16" height="18" align="BOTTOM" border="0" src="4637img1.png" alt="$ \alpha$"></span> contained in the input string (actually each input line) with 
+another string <span class="MATH"><img width="15" height="34" align="MIDDLE" border="0" src="4637img2.png" alt="$ \beta$"></span>. More precisely, it proceeds as follows. 
+
+<p>
+
+<ol>
+<li>Within the input string, every non-overlapping (but possibly adjacent) occurrences of 
+<span class="MATH"><img width="16" height="18" align="BOTTOM" border="0" src="4637img1.png" alt="$ \alpha$"></span> are marked. If there is more than one possibility for non-overlapping matching, the 
+leftmost one is chosen. 
+</li>
+<li>Each of the marked occurrences is substituted with <span class="MATH"><img width="15" height="34" align="MIDDLE" border="0" src="4637img2.png" alt="$ \beta$"></span> to obtain the output string; 
+other parts of the input string remain intact. 
+</li>
+</ol>
+
+<p>
+For example, when <span class="MATH"><img width="16" height="18" align="BOTTOM" border="0" src="4637img1.png" alt="$ \alpha$"></span> is ``<tt>aa</tt>`` and <span class="MATH"><img width="15" height="34" align="MIDDLE" border="0" src="4637img2.png" alt="$ \beta$"></span> is ``<tt>bca</tt>``, an input string 
+``<tt>aaxaaa</tt>`` will produce ``<tt>bcaxbcaa</tt>``, but not ``<tt>aaxbcaa</tt>`` nor 
+``<tt>bcaxabca</tt>``. Further application of the same substitution 
+to the string ``<tt>bcaxbcaa</tt>`` will result in ``<tt>bcaxbcbca</tt>``, but this is 
+another substitution, which is counted as the second one. 
+
+<p>
+In this problem, a set of substitution pairs (
+<span class="MATH"><img width="21" height="31" align="MIDDLE" border="0" src="4637img3.png" alt="$ \alpha_{{i}}^{}$"></span>, <span class="MATH"><img width="20" height="34" align="MIDDLE" border="0" src="4637img4.png" alt="$ \beta_{{i}}^{}$"></span>) 
+
+<span class="MATH">(<i>i</i> = 1, 2,..., <i>n</i>)</span>, an initial string <span class="MATH"><img width="14" height="31" align="MIDDLE" border="0" src="4637img5.png" alt="$ \gamma$"></span>, and a final string <span class="MATH"><img width="13" height="15" align="BOTTOM" border="0" src="4637img6.png" alt="$ \delta$"></span> are 
+given, and you must investigate how to produce <span class="MATH"><img width="13" height="15" align="BOTTOM" border="0" src="4637img6.png" alt="$ \delta$"></span> from <span class="MATH"><img width="14" height="31" align="MIDDLE" border="0" src="4637img5.png" alt="$ \gamma$"></span> with a minimum 
+number of substitutions. A single substitution 
+<span class="MATH">(<img width="21" height="31" align="MIDDLE" border="0" src="4637img3.png" alt="$ \alpha_{{i}}^{}$">,<img width="20" height="34" align="MIDDLE" border="0" src="4637img4.png" alt="$ \beta_{{i}}^{}$">)</span> here means 
+simultaneously substituting all the non-overlapping occurrences 
+of 
+<span class="MATH"><img width="21" height="31" align="MIDDLE" border="0" src="4637img3.png" alt="$ \alpha_{{i}}^{}$"></span>, in the sense described above, with <span class="MATH"><img width="20" height="34" align="MIDDLE" border="0" src="4637img4.png" alt="$ \beta_{{i}}^{}$"></span>. 
+
+<p>
+You may use a specific substitution 
+<span class="MATH">(<img width="21" height="31" align="MIDDLE" border="0" src="4637img3.png" alt="$ \alpha_{{i}}^{}$">,<img width="20" height="34" align="MIDDLE" border="0" src="4637img4.png" alt="$ \beta_{{i}}^{}$">)</span> multiple times, including zero 
+times.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input consists of multiple datasets, each in the following format. 
+
+<p>
+
+<p>
+<br>
+
+
+<span class="MATH"><i>n</i>
+<br><img width="23" height="31" align="MIDDLE" border="0" src="4637img7.png" alt="$ \alpha_{{1}}^{}$">&nbsp;<img width="22" height="34" align="MIDDLE" border="0" src="4637img8.png" alt="$ \beta_{{1}}^{}$">
+<br><img width="23" height="31" align="MIDDLE" border="0" src="4637img9.png" alt="$ \alpha_{{2}}^{}$">&nbsp;<img width="22" height="34" align="MIDDLE" border="0" src="4637img10.png" alt="$ \beta_{{2}}^{}$"></span>
+
+<p>
+&vellip#vdots;
+
+
+<span class="MATH"><img width="24" height="31" align="MIDDLE" border="0" src="4637img11.png" alt="$ \alpha_{{n}}^{}$">&nbsp;<img width="23" height="34" align="MIDDLE" border="0" src="4637img12.png" alt="$ \beta_{{n}}^{}$">
+<br><img width="14" height="31" align="MIDDLE" border="0" src="4637img5.png" alt="$ \gamma$">
+<br><img width="13" height="15" align="BOTTOM" border="0" src="4637img6.png" alt="$ \delta$"></span>
+
+<p>
+
+<p>
+<br>
+
+<span class="MATH"><i>n</i></span> is a positive integer indicating the number of pairs. 
+<span class="MATH"><img width="21" height="31" align="MIDDLE" border="0" src="4637img3.png" alt="$ \alpha_{{i}}^{}$"></span> and <span class="MATH"><img width="20" height="34" align="MIDDLE" border="0" src="4637img4.png" alt="$ \beta_{{i}}^{}$"></span> are 
+separated by a single space. You may assume that 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4637img13.png" alt="$ \le$">|<img width="21" height="31" align="MIDDLE" border="0" src="4637img3.png" alt="$ \alpha_{{i}}^{}$">| &lt; |<img width="20" height="34" align="MIDDLE" border="0" src="4637img4.png" alt="$ \beta_{{i}}^{}$">|<img width="18" height="31" align="MIDDLE" border="0" src="4637img13.png" alt="$ \le$">10</span> 
+for any <span class="MATH"><i>i</i></span> (<span class="MATH">| <i>s</i>|</span> means the length of the string <span class="MATH"><i>s</i></span>), 
+<span class="MATH"><img width="21" height="31" align="MIDDLE" border="0" src="4637img3.png" alt="$ \alpha_{{i}}^{}$"> <img width="18" height="34" align="MIDDLE" border="0" src="4637img14.png" alt="$ \neq$"> <img width="22" height="31" align="MIDDLE" border="0" src="4637img15.png" alt="$ \alpha_{{j}}^{}$"></span> for any 
+<span class="MATH"><i>i</i> <img width="18" height="34" align="MIDDLE" border="0" src="4637img14.png" alt="$ \neq$"> <i>j</i></span>, <span class="MATH"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4637img13.png" alt="$ \le$">10</span> and 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4637img13.png" alt="$ \le$">|<img width="14" height="31" align="MIDDLE" border="0" src="4637img5.png" alt="$ \gamma$">| &lt; |<img width="13" height="15" align="BOTTOM" border="0" src="4637img6.png" alt="$ \delta$">|<img width="18" height="31" align="MIDDLE" border="0" src="4637img13.png" alt="$ \le$">10</span>. All the strings consist solely of 
+lowercase letters. The end of the input is indicated by a line containing a single zero.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each dataset, output the minimum number of substitutions to obtain <span class="MATH"><img width="13" height="15" align="BOTTOM" border="0" src="4637img6.png" alt="$ \delta$"></span> from <span class="MATH"><img width="14" height="31" align="MIDDLE" border="0" src="4637img5.png" alt="$ \gamma$"></span>. 
+If <span class="MATH"><img width="13" height="15" align="BOTTOM" border="0" src="4637img6.png" alt="$ \delta$"></span> cannot be produced from <span class="MATH"><img width="14" height="31" align="MIDDLE" border="0" src="4637img5.png" alt="$ \gamma$"></span> with the given set of substitutions, output `<tt>-1</tt>'.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2 
+a bb 
+b aa 
+a 
+bbbbbbbb 
+1 
+a aa 
+a 
+aaaaa 
+3 
+ab aab 
+abc aadc 
+ad dee 
+abc 
+deeeeeeeec 
+10 
+a abc 
+b bai 
+c acf 
+d bed 
+e abh 
+f fag 
+g abe 
+h bag 
+i aaj 
+j bbb 
+a 
+abacfaabe 
+0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 
+-1 
+7 
+4
+</pre>
+
+<p>

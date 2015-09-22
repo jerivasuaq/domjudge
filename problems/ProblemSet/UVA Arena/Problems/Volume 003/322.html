@@ -1,0 +1,93 @@
+
+
+<html>
+<head>
+<title>Ships</title>
+<meta name="description" content="Ships">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Ships</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Probably everyone who ever attended school knows the game where two
+opposing players place a set of ships on a sheet of paper and try to
+eliminate each other's ships by guessing their location.
+<p>
+<p>
+In our version of the game, your opponent has distributed the following
+seven ship patterns over a rectangular grid of squares:
+<p>
+<pre>                      xx   xx     xx   x       x    x
+                      xx    xx   xx    xxx   xxx   xxx   xxxx</pre>
+<p>
+Each ship pattern covers exactly four squares. The patterns may be
+rotated but not mirrored. All patterns are guaranteed to be placed
+completely within the boundaries of the rectangle and not to overlap each
+other, whereas touching another pattern or the border is allowed.
+<p>
+<p>
+We assume that we are in the middle of the game and that several
+squares have already been uncovered. You will be given a rectangular grid of
+squares representing your current knowledge about the positions of your
+enemy's ships. Every square is marked by one of the following characters:
+<p>
+<ul><li> <tt>`x'</tt> if a ship covers the square<li> <tt>`o'</tt> if no ship covers the square<li> <tt>`.'</tt> if the square has not yet been uncovered
+</li></li></li></ul>
+<p>
+Given that information, you are to decide whether you can determine all
+remaining <tt>`x'</tt> squares with at most one miss, i.e. whether you
+could uncover the <tt>`.'</tt> squares without
+getting more than one <tt>`o'</tt> square before you had all <tt>`x'</tt>
+squares uncovered. This means you
+are allowed to hit a <tt>`o'</tt> if then the solution becomes unique.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file contains several game situations. Every test case starts
+with a line containing two integers <i>w</i> and <i>h</i>. These define width and
+height of the game rectangle, where  <img width="102" height="25" align="MIDDLE" alt="tex2html_wrap_inline46" src="322img1.gif"> .
+<p>
+Each of the next <i>h</i> lines contains a string of <i>w</i> characters. Each of
+these characters is either <tt>`x'</tt>, <tt>`o'</tt> or <tt>`.'</tt>, depending
+on the state of the corresponding square.
+<p>
+<p>
+A blank line separates each game from the next. The input file ends
+with a game having <i>w</i> = 0 and <i>h</i> = 0. This game should not be processed.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each test case you should first output a line containing the number
+of the game, followed by a line containing either <tt>`yes.'</tt>
+(if you can determine all <tt>`x'</tt> with at most one miss) or
+<tt>`no.'</tt> (if you cannot determine all <tt>`x'</tt> without at least two misses).
+<p>
+<p>
+Output a blank line after every game.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>10 10
+.x..x.....
+oooooxoooo
+oxooxxx...
+xxoooooo..
+xoooxooo..
+ooxxxxoo..
+oooooxxoox
+ooooooxoox
+ooooooooxx
+oooooooooo
+
+0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Game #1
+yes.</pre>
+<p>
+</body>
+</html>

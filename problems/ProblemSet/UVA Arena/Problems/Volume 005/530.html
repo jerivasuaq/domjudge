@@ -1,0 +1,86 @@
+
+
+<html>
+<head>
+<title>Binomial Showdown</title>
+<meta name="description" content="Binomial Showdown">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Binomial Showdown</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+In how many ways can you choose <i>k</i> elements out of <i>n</i> elements, not taking
+order into account?
+
+<p>
+Write a program to compute this number.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input Specification</a>&nbsp;</font>
+</h2>
+The input file will contain one or more test cases.
+
+<p>
+Each test case consists of one line containing two integers <i>n</i> (<img width="47" height="30" align="MIDDLE" border="0" src="530img1.gif" alt="$n \ge 1$">)
+and <i>k</i> (
+
+<img width="80" height="32" align="MIDDLE" border="0" src="530img2.gif" alt="$0 \le k \le n$">).
+
+<p>
+Input is terminated by two zeroes for <i>n</i> and <i>k</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output Specification</a>&nbsp;</font>
+</h2>
+For each test case, print one line containing the required number. This number will always fit into
+an integer, i.e. it will be less than 2<sup>31</sup>.
+
+<p>
+
+<p>
+<br>
+
+<b>Warning:</b> Don't underestimate the problem. The result will fit into an integer - but if all
+intermediate results arising during the computation will also fit into an integer depends on your
+algorithm. The test cases will go to the limit.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+4 2
+10 5
+49 6
+0 0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+6
+252
+13983816
+</pre>
+
+<p>
+
+<p>
+</body>
+</html>

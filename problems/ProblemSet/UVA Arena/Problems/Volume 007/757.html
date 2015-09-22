@@ -1,0 +1,137 @@
+
+
+<html>
+<head>
+<title>Gone Fishing</title>
+<meta name="description" content="Gone Fishing">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Gone Fishing</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+John is going on a fishing trip. He has <i>h</i> hours available (
+
+<img width="87" height="32" align="MIDDLE" border="0" src="757img1.gif" alt="$1 \leY h \leY 16$">), and there are <i>n</i> lakes in the
+area (
+
+<img width="88" height="30" align="MIDDLE" border="0" src="757img2.gif" alt="$2 \leY n \leY 25$">)
+all reachable along a single, one-way road. John starts at lake 1, but he can finish
+at any lake he wants. He can only travel from one lake to the next one, but he does not have to stop
+at any lake unless he wishes to. For each 
+
+<img width="122" height="31" align="MIDDLE" border="0" src="757img3.gif" alt="$i = 1, \dots, n- 1$">,
+the number of 5-minute intervals it takes to
+travel from lake <i>i</i> to lake <i>i</i> + 1 is denoted <i>t</i><sub><i>i</i></sub>
+(
+
+<img width="98" height="30" align="MIDDLE" border="0" src="757img4.gif" alt="$0 < t_i \leY 192$">). For example, <i>t</i><sub>3</sub> = 4 means that it takes 20
+minutes to travel from lake 3 to lake 4.
+
+<p>
+
+<p>
+<br>
+To help plan his fishing trip, John has gathered some information about the lakes. For each lake <i>i</i>, the
+number of fish expected to be caught in the initial 5 minutes, denoted <i>f</i><sub><i>i</i></sub>
+(
+
+<img width="50" height="32" align="MIDDLE" border="0" src="757img5.gif" alt="$f_i \ge- 0$">), is known. Each 5
+minutes of fishing decreases the number of fish expected to be caught in the next 5-minute interval by a constant rate of <i>d</i><sub><i>i</i></sub> (
+
+<img width="51" height="32" align="MIDDLE" border="0" src="757img6.gif" alt="$d_i \ge- 0$">). If the number of fish expected to be caught in an interval is less than
+or equal to <i>d</i><sub><i>i</i></sub>, there will be no more fish left in the lake in the next interval. To simplify the planning,
+John assumes that no one else will be fishing at the lakes to affect the number of fish he expects to catch.
+
+<p>
+
+<p>
+<br>
+Write a program to help John plan his fishing trip to maximize the number of fish expected to be
+caught. The number of minutes spent at each lake must be a multiple of 5.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+You will be given a number of cases in the input. Each case starts with a line containing <i>n</i>. This is followed by a line containing <i>h</i>. Next, there is a line of <i>n</i> integers specifying <i>f</i><sub><i>i</i></sub> (
+
+<img width="76" height="31" align="MIDDLE" border="0" src="757img7.gif" alt="$1 \leY i \leY n$">), then a line
+of <i>n</i> integers <i>d</i><sub><i>i</i></sub> (
+
+<img width="76" height="31" align="MIDDLE" border="0" src="757img7.gif" alt="$1 \leY i \leY n$">), and finally, a line of <i>n</i> - 1 integers <i>t</i><sub><i>i</i></sub> (
+
+<img width="106" height="31" align="MIDDLE" border="0" src="757img8.gif" alt="$1 \leY i Y\le n - 1$">). Input is terminated
+by a case in which <i>n</i> = 0.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each test case, print the number of minutes spent at each lake, separated by commas, for the plan
+achieving the maximum number of fish expected to be caught (you should print the entire plan on one
+line even if it exceeds 80 characters). This is followed by a line containing the number of fish expected.
+If multiple plans exist, choose the one that spends as long as possible at lake 1, even if no fish are
+expected to be caught in some intervals. If there is still a tie, choose the one that spends as long as
+possible at lake 2, and so on. Insert a blank line between cases.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+2
+1
+10 1
+2 5
+2
+4
+4
+10 15 20 17
+0 3 4 3
+1 2 3
+4
+4
+10 15 50 30
+0 3 4 3
+1 2 3
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+45, 5
+Number of fish expected: 31
+
+240, 0, 0, 0
+Number of fish expected: 480
+
+115, 10, 50, 35
+Number of fish expected: 724
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-02-09</i>
+</address>
+</body>
+</html>
+

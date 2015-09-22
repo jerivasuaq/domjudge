@@ -1,0 +1,78 @@
+
+
+<html>
+<head>
+<title>Quadtrees</title>
+<meta name="description" content="Quadtrees">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Quadtrees</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A quadtree is a representation format used to encode images. The fundamental idea
+behind the quadtree is that any image can be split into four quadrants. Each quadrant may
+again be split in four sub quadrants, etc. In the quadtree, the image is represented by a
+parent node, while the four quadrants are represented by four child nodes, in a predetermined
+order.
+<p>
+<p>
+Of course, if the whole image is a single color, it can be represented by a quadtree consisting
+of a single node. In general, a quadrant needs only to be subdivided if it consists of pixels of
+different colors. As a result, the quadtree need not be of uniform depth.
+<p>
+<p>
+A modern computer artist works with black-and-white images of  <img width="54" height="24" align="MIDDLE" alt="tex2html_wrap_inline34" src="297img1.gif"> 
+units, for a total
+of 1024 pixels per image. One of the operations he performs is adding two images together,
+to form a new image. In the resulting image a pixel is black if it was black in at least one of
+the component images, otherwise it is white.
+<p>
+<p>
+This particular artist believes in what he calls the <i>preferred fullness</i>:
+for an image to be
+interesting (i.e. to sell for big bucks) the most important property is the number of filled
+(black) pixels in the image. So, before adding two images together, he would like to know
+how many pixels will be black in the resulting image. Your job is to write a program that,
+given the quadtree representation of two images, calculates the number of pixels that are
+black in the image, which is the result of adding the two images together.
+<p>
+<p>
+In the figure, the first example is shown (from top to bottom) as image, quadtree, pre-order string (defined below) and number of pixels. The quadrant numbering is shown at the
+top of the figure.
+<p>
+<center><img src="297img2.gif"></center>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input Specification</a></font></h2>
+<p>
+The first line of input specifies the number of test cases (<i>N</i>) your program has to process.
+<p>
+The input for each test case is two strings, each string on its own line. The string is the
+pre-order representation of a quadtree, in which the letter '<tt>p</tt>' indicates a parent node, the
+letter '<tt>f</tt>' (full) a black quadrant and the letter '<tt>e</tt>' (empty) a white quadrant. It is guaranteed
+that each string represents a valid quadtree, while the depth of the tree is not more than 5
+(because each pixel has only one color).
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output Specification</a></font></h2>
+<p>
+For each test case, print on one line the text '<tt>There are <i>X</i> black pixels.</tt>', where <i>X</i> is the number of black pixels in the resulting image.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Example Input</a></font></h2>
+<p>
+<pre>3
+ppeeefpffeefe
+pefepeefe
+peeef
+peefe
+peeef
+peepefefe</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Example Output</a></font></h2>
+<p>
+<pre>There are 640 black pixels.
+There are 512 black pixels.
+There are 384 black pixels.</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+
+<html>
+<head>
+<title>Word-Search Wonder</title>
+<meta name="description" content="Word-Search Wonder">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Word-Search Wonder</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The Pyrates Restaurant was starting to fill up as Valentine McKee walked in.
+She scanned the
+crowd for her sister, brother-in-law, and nephew. Seeing her sister waving
+from the far end of
+the restaurant, she made her way back to their booth. ``Hi, Valentine,'' her
+sister and brother-in-law, Niki and Dennis Chapman, greeted her.
+<p>
+``Hi, guys,'' she replied. ``What are you doing, Wade?'' she asked her
+nephew. He was busy
+working on one of the restaurant's activity sheets with a crayon.
+<p>
+``I'm doing a word search game,'' Wade explained. ``I have to find all of
+these words in this
+big mess of letters. This is really hard.'' Wade looked intently at the
+paper in front of him.
+<p>
+``Can I help?'' asked Valentine, looking across the table at the activity sheet.
+<p>
+``Sure. These are the words we're looking for. They're the names of different
+kinds of Planes, Trains, and Automobiles.''
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The first line of input will specify the length (in characters) of the
+sides of the letter matrix (the
+matrix of letters will be square). The length, <i>l</i>, will be in the
+range  <img width="85" height="26" align="MIDDLE" alt="tex2html_wrap_inline28" src="422img1.gif"> . The next <i>l</i> lines of input will
+be the matrix itself, each line will contain <i>l</i> uppercase letters.
+<p>
+A list of words will follow. Each word will be on a line by itself; there
+will be 100 or fewer
+words. Each word will be 100 or fewer characters long, and will only
+contain uppercase letters.
+<p>
+The final line of input will contain a single zero character.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Your program should attempt to find each word from the word list in the
+puzzle. A word is
+``found'' if all the characters in the word can be traced in a
+single (unidirectional) horizontal,
+vertical, or diagonal line in the letter matrix. Words may
+not ``wrap around'' rows or columns,
+but horizontal and diagonal words may proceed from right to
+left (``backwards''). For each
+word that is found, your program should print the coordinates of its
+first and last letters in the
+matrix on a single line, separated by a single space. Coordinates are
+pairs of comma-separated
+integers (indexed from 1), where the first integer specifies the row
+number and the second integer specifies the column number.
+<p>
+If a word is not found, the string ``<tt>Not found</tt>'' should be output
+instead of a pair of coordinates.
+<p>
+Each word from the input can be ``found'' at most once in the puzzle.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5
+EDEEE
+DISKE
+ESEEE
+ECEEE
+EEEEE
+DISC
+DISK
+DISP
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>1,2 4,2
+2,1 2,4
+Not found</pre>
+<p>
+</body>
+</html>

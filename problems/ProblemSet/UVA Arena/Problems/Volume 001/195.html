@@ -1,0 +1,80 @@
+
+
+<html>
+<head>
+<title>Anagram</title>
+<meta name="description" content="Anagram">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Anagram</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You are to write a program that has to generate all possible words from
+a given set of letters.
+<p>
+<p>
+<p>
+<b>Example:</b>
+Given the word &quot;<tt>abc</tt>&quot;, your program should - by exploring all different
+combination of the three letters - output the words &quot;<tt>abc</tt>&quot;, &quot;<tt>acb</tt>&quot;,
+&quot;<tt>bac</tt>&quot;, &quot;<tt>bca</tt>&quot;, &quot;<tt>cab</tt>&quot; and &quot;<tt>cba</tt>&quot;.
+<p>
+<p>
+In the word taken from the input file, some letters may appear more than
+once. For a given word, your program should not produce the same word more
+than once, and the words should be output in alphabetically ascending order.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file consists of several words. The first line contains a number
+giving the number of words to follow. Each following line contains one word.
+A word consists of uppercase or lowercase letters from A to Z. Uppercase
+and lowercase letters are to be considered different.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each word in the input file, the output file should contain all different
+words that can be generated with the letters of the given word. The words
+generated from the same input word should be output in alphabetically ascending
+order. An upper case letter goes before the corresponding lower case letter.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3
+aAb
+abc
+acba</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>
+Aab
+Aba
+aAb
+abA
+bAa
+baA
+abc
+acb
+bac
+bca
+cab
+cba
+aabc
+aacb
+abac
+abca
+acab
+acba
+baac
+baca
+bcaa
+caab
+caba
+cbaa</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,101 @@
+
+
+<html>
+<head>
+<title>Word Index</title>
+<meta name="description" content="Word Index">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Word Index</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Encoding schemes are often used in situations requiring encryption or
+information storage/transmission
+economy. Here, we develop a simple encoding scheme that encodes particular
+types of words with five or fewer (lower case) letters as integers.
+<p>
+<p>
+Consider the English alphabet {<tt>a,b,c,...,z</tt>}. Using this alphabet, a set
+of <i>valid</i> words are to be formed that
+are in a strict lexicographic order. In this set of <i>valid</i> words, the
+successive letters of a word are in a strictly
+ascending order; that is, later letters in a valid word are always <i>after</i>
+previous letters with respect to their
+positions in the alphabet list {<tt>a,b,c,...,z</tt>}. For example,
+<p>
+<p>
+<tt>abc aep gwz</tt>
+<p>
+<p>
+<p>
+are all <i>valid</i> three-letter words, whereas
+<p>
+<p>
+<tt>aab are cat</tt>
+<p>
+<p>
+<p>
+are not.
+<p>
+<p>
+For each <i>valid</i> word associate an integer which gives the position of
+the word in the alphabetized list of words. That is:
+<p>
+<pre>    a -&gt; 1
+    b -&gt; 2
+    .
+    .
+    z -&gt; 26
+    ab -&gt; 27
+    ac -&gt; 28
+    .
+    .
+    az -&gt; 51
+    bc -&gt; 52
+    .
+    .
+    vwxyz -&gt; 83681</pre>
+<p>
+Your program is to read a series of input lines. Each input line will have
+a single word on it, that will be
+from one to five letters long. For each word read, if the word is <i>invalid</i>
+give the number 0. If the word read
+is <i>valid</i>, give the word's position index in the above alphabetical list.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input consists of a series of single words, one per line. The words are
+at least one letter long and no
+more that five letters. Only the lower case alphabetic {<tt>a,b,...,z</tt>}
+characters will be used as input. The first
+letter of a word will appear as the first character on an input line.
+<p>
+<p>
+The input will be terminated by end-of-file.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output is a single integer, greater than or equal to zero (0) and less
+than or equal 83681. The first digit
+of an output value should be the first character on a line. There is
+one line of output for each input line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>z
+a
+cat
+vwxyz</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>26
+1
+0
+83681</pre>
+<p>
+</body>
+</html>

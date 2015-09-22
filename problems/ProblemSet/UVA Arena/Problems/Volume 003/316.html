@@ -1,0 +1,130 @@
+
+
+<html>
+<head>
+<title>Stars</title>
+<meta name="description" content="Stars">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Stars</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+On a clear moon-less night, you can see millions of stars glimmering in
+the sky. Faced with this overwhelming number, the Greeks started
+nearly 2,000 years ago to bring some order to the chaos. They identified
+groups of stars, called constellations, and gave them names, mostly
+from the Greek mythology, that are still in use today. Examples
+are ``Ursa Minor'', ``Pisces'', ``Cancer'', and many others.
+<p>
+<p>
+Given a sketch of the constellation, it is not easy for the amateur to
+actually find the constellation in the sky. Moreover, simple constellations,
+such as ``Triangulum'' (triangle,) which consists of only three stars, may
+appear several times in the sky. Again, singling out the ``correct''
+occurrence is not easy.
+<p>
+Traditionally, maps were printed for just this purpose. But in this
+problem, we will see how the computer can help us find constellations
+in the sky.
+<p>
+<p>
+You will be given a star map; for simplicity this will be a collection
+of points in the plane, each having a certain brightness associated with it.
+Then, given a constellation, also as a set of points in the plane,
+you are to determine:
+<p>
+<ul><li> the number of occurrences of the constellation in the star map, and<li>  the position of the brightest occurrence, if one exists. (The
+rationale behind this is as follows: if a constellation seems to
+appear several times in the sky, the brightest one is
+most likely to be the real one, since it is the most eye-catching one.)
+</li></li></ul>
+<p>
+An occurrence is a subset of stars from the map that forms a (possibly)
+arbitrarily rotated and/or scaled copy of the stars in the constellation.
+<p>
+The brightness of an occurrence is the average brightness of the stars
+it consists of, i.e. the sum of individual brightnesses divided by the
+number of stars in the constellation.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file contains the descriptions of several star maps. Each map
+starts with a line containing a single integer <i>n</i>, specifying the
+number of stars in the map ( <img width="99" height="25" align="MIDDLE" alt="tex2html_wrap_inline33" src="316img1.gif"> ).
+The following <i>n</i> lines contain three integers each, namely the <i>x</i>-
+and <i>y</i>-coordinates and the brightness of every star. The larger
+the value, the brighter the star shines.
+<p>
+The next line contains a single integer <i>m</i>, the number of constellations
+to follow ( <img width="82" height="25" align="MIDDLE" alt="tex2html_wrap_inline43" src="316img2.gif"> ). Each constellation description starts with a
+line containing an integer  <img width="11" height="17" align="MIDDLE" alt="tex2html_wrap_inline45" src="316img3.gif"> , the number of stars in constellation <i>i</i>,
+and a string  <img width="18" height="25" align="MIDDLE" alt="tex2html_wrap_inline49" src="316img4.gif"> , the name of the constellation. ( <img width="18" height="25" align="MIDDLE" alt="tex2html_wrap_inline49" src="316img4.gif">  will consist of
+no more than 40 characters and contain no blanks.) The following  <img width="11" height="17" align="MIDDLE" alt="tex2html_wrap_inline45" src="316img3.gif"> 
+lines then contain the coordinates of the constellation, again as <i>x</i>/<i>y</i>-pairs.
+<p>
+<p>
+A blank line separates the star map from the next map. The input file
+ends with an empty map (having <i>n</i> = 0), which should not be processed.
+<p>
+<p>
+<p>
+<b>N.B.:</b> Since all star coordinates are integer numbers, you can easily
+rule out any rotated or scaled constellation whose points do not
+fall on integer coordinates.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each star map first output the number of the map (<tt>`Map #1'</tt>,
+<tt>`Map #2'</tt>, etc.) on a line of its own.
+<p>
+For each constellation, in the same order as in the input, output first
+its name and how many times it occurs in the map on one line, as shown
+in the output sample.
+<p>
+If there is at least one occurrence, output the position of the brightest
+occurrence by listing the positions of the stars that form the brightest
+occurrence. The star positions have to be printed in ascending <i>x</i>-order.
+Positions having the same <i>x</i>-coordinates must be sorted
+in ascending <i>y</i>-order. If there are several equally bright solutions,
+output only one of them. Adhere to the format shown in the sample output.
+<p>
+Output a blank line before each constellation and a line of 5
+dashes (<tt>`-----'</tt>) after every star map.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>6
+1 2 1
+2 1 4
+2 4 3
+3 2 1
+4 1 5
+4 3 2
+2
+3 Triangulum
+1 1
+3 1
+2 4
+4 Cancer
+1 3
+4 3
+6 1
+7 5
+
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Map #1
+
+Triangulum occurs 2 time(s) in the map.
+Brightest occurrence: (1,2) (4,1) (4,3)
+
+Cancer occurs 0 time(s) in the map.
+-----</pre>
+<p>
+</body>
+</html>

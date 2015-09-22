@@ -1,0 +1,224 @@
+
+
+<html>
+<head>
+<title>Integral Determinant</title>
+<meta name="description" content="Integral Determinant">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Integral Determinant</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Write a program to find the determinant of an integral square matrix. Note that the
+determinant of a square matrix can be defined recursively as follows: the determinant
+of a 1<img width="18" height="30" align="MIDDLE" border="0" src="684img1.gif" alt="$\times$">1 matrix 
+
+<i>M</i> = (<i>a</i><sub>1,1</sub>) is just the value 
+
+|<i>M</i>| = <i>a</i><sub>1,1</sub>;
+further, the determinant of an 
+
+<img width="47" height="30" align="MIDDLE" border="0" src="684img2.gif" alt="$n \times n$">
+matrix is 
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="193" height="55" src="684img3.gif" alt="\begin{displaymath}\vert M\vert = \sum_{i=1}^n (-1)^{i+1} \cdot \vert M_{1,j}\vert.
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+Here the notation <i>M</i><sub>1,<i>i</i></sub> is the 
+
+<img width="134" height="34" align="MIDDLE" border="0" src="684img4.gif" alt="$(n-1) \times (n-1)$">
+matrix
+by removing the first row and the <i>i</i><sup><i>th</i></sup> column of the original 
+
+
+<img width="47" height="30" align="MIDDLE" border="0" src="684img2.gif" alt="$n \times n$">
+matrix <i>M</i>.
+
+<p>
+
+<p>
+<br>
+A straightforward method of calculating the determinant of an 
+
+<img width="47" height="30" align="MIDDLE" border="0" src="684img2.gif" alt="$n \times n$">
+matrix by the recursive method will end up with <i>n</i>! multiplications, a very
+time-consuming algorithm. To give you a feeling about this, note that 15! =
+1,307,674,368,000. To reduce the time complexity, there are two ways of
+modifying the original matrix for easier computation.
+
+<p>
+<dl compact="">
+<dt>1.
+<dd>Exchanging two columns (or rows) of a matrix will change the sign of the
+determinant; for example
+<br><p>
+<div align="CENTER">
+
+
+<img width="156" height="54" src="684img5.gif" alt="\begin{displaymath}\left\vert
+\begin{array}{cc}
+1 & 2 \\
+3 & 4
+\end{array}\rig...
+...ert
+\begin{array}{cc}
+2 & 1 \\
+4 & 3
+\end{array}\right \vert
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+<dt>2.
+<dd>Multiplying one column by any constant, and add them to another column
+will not change the value of the determinant; for example:
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="266" height="73" src="684img6.gif" alt="\begin{displaymath}\left\vert
+\begin{array}{ccc}
+2 & 1 & 3 \\
+4 & 5 & 6 \\
+7 ...
+... 4 \times 2 \\
+7 & 8 & 9 + 7 \times 2
+\end{array}\right \vert
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p></dd></dt></dd></dt></dl>
+
+<p>
+Using the above methods, you shall be able to write a program for computing the
+determinants of matrices, even for a size like 30<img width="18" height="30" align="MIDDLE" border="0" src="684img1.gif" alt="$\times$">30, very efficiently.
+Below is an example to show how this can be done:
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="511" height="73" src="684img7.gif" alt="\begin{displaymath}\left\vert
+\begin{array}{ccc}
+2 & 3 & 5 \\
+1 & 6 & 7 \\
+4 ...
+...
+1 & 1 & 2 \\
+5 & 5 & 1 \\
+1 & 4 & 4
+\end{array}\right \vert
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="513" height="73" src="684img8.gif" alt="\begin{displaymath}=-
+\left\vert
+\begin{array}{ccc}
+1 & 1-1 & 2 - 1 \times 2 \\...
+...begin{array}{cc}
+0 & -9 \\
+3 & 2
+\end{array}\right \vert
+=-27
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+Note that the answer shall be an <em>integer</em>. That is, all the operations
+needed are just integer operations; by reducing to floating numbers would
+result in the round-off errors, which will be considered as the <b>wrong</b>
+answer. Do not worry about the problem of integral overflows problem. You can
+assume that the given data set will not cause the integer overflow problem.
+What is emphasized here is the required integer precision.
+Anyway use of floating numbers is not forbidden.
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+em Several sets of integral matrices. The inputs are just a list of integers.
+Within each set, the first integer (in a single line) represents the size of
+the matrix, <i>n</i>, which can be as large as 30, indication an 
+
+<img width="47" height="30" align="MIDDLE" border="0" src="684img2.gif" alt="$n \times n$">
+matrix. After <i>n</i>, there will be <i>n</i> lines representing the <i>n</i> rows of the
+matrix; each line (row) contains exactly <i>n</i> integers. Thus, there is totally
+<i>n</i><sup>2</sup> integers for the particular matrix. These matrices will occur repeatedly
+in the input as the pattern described above. An integer <i>n</i> = <tt>0</tt> (zero)
+signifies the end of input.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each matrix of the input, calculate its (integral) determinant and output it in a line. Output a single star (<tt>*</tt>) to signify the end of outputs.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+2
+5 2
+3 4
+3
+2 3 5
+1 6 7
+4 8 9
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+14
+-27
+*
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-08-14</i>
+</address>
+</body>
+</html>
+

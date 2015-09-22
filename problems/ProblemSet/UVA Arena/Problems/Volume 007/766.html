@@ -1,0 +1,128 @@
+
+
+<html>
+<head>
+<title>Sum of powers</title>
+<meta name="description" content="Sum of powers">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Sum of powers</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A young schoolboy would like to calculate the sum
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="104" height="55" src="766img1.gif" alt="\begin{displaymath}S_k(n) = \sum_{i=1}^n {i^k}
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+for some fixed natural <i>k</i> and different natural <i>n</i>. He observed that 
+calculating <i>i</i><sup><i>k</i></sup> for
+all <i>i</i> (
+
+<img width="76" height="31" align="MIDDLE" border="0" src="766img2.gif" alt="$1 \le i \le n$">)
+and summing up results is a too slow way to do it, because the number 
+of required arithmetical
+operations increases as <i>n</i> increases. Fortunately, there is another 
+method which takes only a
+constant number of operations regardless of <i>n</i>. It is possible to show 
+that the sum <i>S</i><sub><i>k</i></sub>(<i>n</i>) is equal to
+some polynomial of degree <i>k</i>+1 in the variable n with rational 
+coefficients, i.e.,
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="363" height="42" src="766img3.gif" alt="\begin{displaymath}S_k(n) = {1 \over M} \left( a_{k+1} n^{k+1} + a_k n^k + \dots + a_1 n
++ a_0 \right)
+\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+for some integer numbers 
+
+<img width="170" height="32" align="MIDDLE" border="0" src="766img4.gif" alt="$M, a_{k+1}, a_k, \dots, a_1, a_0$">.
+
+<p>
+We require that integer <i>M</i> be positive and as small as possible. Under 
+this condition the entire set of
+such numbers (i.e. 
+
+<img width="170" height="32" align="MIDDLE" border="0" src="766img4.gif" alt="$M, a_{k+1}, a_k, \dots, a_1, a_0$">)
+will be unique for 
+the given <i>k</i>. You have to write a
+program to find such set of coefficients to help the schoolboy make his 
+calculations quicker.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file contains several datasets, each of them containing a single integer <i>k</i> (
+
+<img width="87" height="32" align="MIDDLE" border="0" src="766img5.gif" alt="$0 \le k \le 20$">).
+
+<p>The first line of the input contains the number of datasets, and it's followed by a blank line.
+There's also a blank line between datasets.
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each dataset, write integer numbers 
+
+<img width="170" height="32" align="MIDDLE" border="0" src="766img4.gif" alt="$M, a_{k+1}, a_k, \dots, a_1, a_0$">
+to the output 
+file in the given order. Numbers should
+be separated by one space. Remember that you should write the 
+answer with the smallest
+positive <i>M</i> possible.
+
+<p>Print a blank line between datasets.
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+2
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6 2 3 1 0
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2001-01-22</i>
+</address>
+</body>
+</html>
+

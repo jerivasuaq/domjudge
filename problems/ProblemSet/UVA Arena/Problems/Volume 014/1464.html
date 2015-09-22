@@ -1,0 +1,100 @@
+
+<p>
+City <span class="MATH"><i>C</i></span> is really a nightmare of all drivers for its traffic jams. To 
+solve the traffic problem, the mayor plans to build a RTQS (Real Time 
+Query System) to monitor all traffic situations. City <span class="MATH"><i>C</i></span> is made up of 
+<span class="MATH"><i>N</i></span> crossings and <span class="MATH"><i>M</i></span> roads, and each road connects two crossings. All 
+roads are bidirectional. One of the important tasks of RTQS is to 
+answer some queries about route-choice problem. Specifically, the 
+task is to find the crossings which a driver MUST pass when he is 
+driving from one given road to another given road.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+There are multiple test cases. 
+
+<p>
+For each test case: 
+
+<p>
+The first line contains two integers <span class="MATH"><i>N</i></span> and <span class="MATH"><i>M</i></span>, representing the number 
+of the crossings and roads. 
+
+<p>
+The next <span class="MATH"><i>M</i></span> lines describe the roads. In those <span class="MATH"><i>M</i></span> lines, the <span class="MATH"><i>i</i></span>-th 
+line (<span class="MATH"><i>i</i></span> starts from 1)contains two integers <span class="MATH"><i>X</i><sub>i</sub></span> and <span class="MATH"><i>Y</i><sub>i</sub></span>, 
+representing that road<span class="MATH"><sub>i</sub></span> connects crossing <span class="MATH"><i>X</i><sub>i</sub></span> and <span class="MATH"><i>Y</i><sub>i</sub></span> 
+
+<span class="MATH">(<i>X</i><sub>i</sub> <img width="18" height="34" align="MIDDLE" border="0" src="4839img1.png" alt="$ \neq$"> <i>Y</i><sub>i</sub>)</span>. 
+
+<p>
+The following line contains a single integer <span class="MATH"><i>Q</i></span>, representing the number 
+of RTQs. 
+
+<p>
+Then <span class="MATH"><i>Q</i></span> lines follows, each describing a RTQ by two integers <span class="MATH"><i>S</i></span> and 
+<span class="MATH"><i>T</i></span> 
+<span class="MATH">(<i>S</i> <img width="18" height="34" align="MIDDLE" border="0" src="4839img1.png" alt="$ \neq$"> <i>T</i>)</span> meaning that a driver is now driving on the road<span class="MATH"><sub>s</sub></span> and 
+he wants to reach road<span class="MATH"><sub>t</sub></span>. It will be always at least one way from 
+road<span class="MATH"><sub>s</sub></span> to road<span class="MATH"><sub>t</sub></span>. 
+
+<p>
+The input ends with a line of ``<tt>0 0</tt>". 
+
+<p>
+Please note that: 
+<span class="MATH">0 &lt; <i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4839img2.png" alt="$ \le$">10000</span>, 
+<span class="MATH">0 &lt; <i>M</i><img width="18" height="31" align="MIDDLE" border="0" src="4839img2.png" alt="$ \le$">100000</span>, 
+<span class="MATH">0 &lt; <i>Q</i><img width="18" height="31" align="MIDDLE" border="0" src="4839img2.png" alt="$ \le$">10000</span>, 
+
+<span class="MATH">0 &lt; <i>X</i><sub>i</sub>, <i>Y</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="4839img2.png" alt="$ \le$"><i>N</i></span>, <span class="MATH">0 &lt; <i>S</i></span>,<span class="MATH"><i>T</i><img width="18" height="31" align="MIDDLE" border="0" src="4839img2.png" alt="$ \le$"><i>M</i></span>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each RTQ prints a line containing a single integer representing 
+the number of crossings which the driver MUST pass.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 6 
+1 2 
+1 3 
+2 3 
+3 4 
+4 5 
+3 5 
+2 
+2 3 
+2 4 
+0 0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+0 
+1
+</pre> 
+
+<p>

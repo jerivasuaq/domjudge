@@ -1,0 +1,163 @@
+
+
+<html>
+<head>
+<title>Crossword Puzzles</title>
+<meta name="description" content="Crossword Puzzles">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2K.1beta">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="htmlatex.css">
+
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Crossword Puzzles</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Almost everyone is familiar with crossword puzzles.  Here you have to
+deal with a special kind of crossword puzzle that is adequate for an
+automated solver. A description of the puzzle and a list of admissible
+words (the dictionary) is given, and the goal is to find the number of
+possible solutions, if any exists, for the puzzle using the given
+dictionary.
+
+<p>
+The puzzle is represented as a grid of white and black squares. A
+solution is a subset of dictionary words that fill all the sequences
+of horizontal or vertical white squares in such a way that all the
+horizontal and vertical crossings formed are still valid dictionary
+words. One-letter sequences do not need to be in the dictionary.
+
+<p>
+An example of a crossword puzzle in which white and black squares are
+respectively represented by the `<tt>.</tt>' and `<tt>#</tt>'
+characters, a word dictionary and a solution for the puzzle is as
+follows:
+<pre>
+. . . . . . . . . .     aa ac al alao ali ap        v a r i e d a d e s
+. . . . . # . . . .     atencao atlanta camilo      e p o c a # t u l e
+. # . . . . . . # .     doar dr duo eam eis el      r # c a m i l o # n
+. . . . # . . # . .     epoca et icar ileso is      d o a r # l a # s i
+. . # # . . . # . .     la loto mal men             a a # # m e n # a l
+. . # . . . . . # #     merito mi no                d r # r e s t o # #
+. . . # . . . # . .     oaristo oo os pios          e i s # r o a # a p
+. . # . . # # . . .     resto roa roca rt           i s # m i # # a l i
+. . # . . . . . . .     sa senil si tule            r t # a t e n c a o
+. . # . . . . # . .     variedades verdadeiro       o o # l o t o # o s
+</pre>
+
+<p>
+
+<p>
+<br>
+Your task is to develop a program to solve the described crossword puzzles.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+<b>The input begins with a single positive integer on a line by itself indicating
+the number of the cases following, each of them as described below.
+This line is followed by a blank line, and there is also a blank line between
+two consecutive inputs.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The input consists of a 
+<span class="MATH">10&#215;10</span> puzzle configuration and a word
+dictionary. For the puzzle each input line is a sequence of
+`<tt>.</tt>' and `<tt>#</tt>' characters. You may assume that the
+given configuration is always correct.
+
+<p>
+The dictionary words start immediately after the last line of the
+puzzle. Each word is a sequence of lower case letters, without accents
+and separated by spaces. The dictionary terminates when the
+end-of-file is reached from the standard input.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+<b>For each test case, the output must follow the description below.
+The outputs of two consecutive cases will be separated by a blank line.
+</b>
+
+<p>
+
+<p><p>
+<br>
+
+<p>
+The program should output the number of solutions that the given crossword
+puzzle accepts.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+
+..........
+.....#....
+.#......#.
+....#..#..
+..##...#..
+..#.....##
+...#...#..
+..#..##...
+..#.......
+..#....#..
+aa ac al alao
+ali ap atencao
+atlanta camilo
+doar dr duo eam
+eis el epoca et
+icar ileso is
+la loto mal men
+merito mi no
+oaristo oo os pios
+resto roa roca rt
+sa senil si tule
+variedades verdadeiro
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+1
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+Pedro Vasconcelos, ACM-UP'2000
+</address>
+</body>
+</html>
+

@@ -1,0 +1,124 @@
+
+
+<html>
+<head>
+<title>Mirror, Mirror</title>
+<meta name="description" content="Mirror, Mirror">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Mirror, Mirror</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A square pattern of light and dark cells is shown in its original
+state and a transformed state. Write a program that will recognize the
+minimum transformation that has been applied to the original pattern
+given the following list of possible transformations:
+<p>
+<dl><dt><strong>90 Degree Rotation:</strong>
+<dd> The pattern was rotated to the right 90 degrees.
+  <dt><strong>180 Degree Rotation:</strong>
+<dd> The pattern was rotated to the right 180 degrees.
+  <dt><strong>270 Degree Rotation:</strong>
+<dd> The pattern was rotated to the right 270 degrees.
+  <dt><strong>Vertical Reflection:</strong>
+<dd> The pattern was reflected through a
+horizontal mirror positioned above the pattern.
+  <dt><strong>Combination:</strong>
+<dd> The pattern was subjected to a vertical
+reflection <em>followed</em> by one of the rotations.
+  <dt><strong>Preservation:</strong>
+<dd> The original pattern was preserved (the new
+pattern is identical to the original).
+  <dt><strong>Improper:</strong>
+<dd> The new pattern was not obtained via any of these treansformations.
+<p>
+ </dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dd></dt></dl><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file will consist of an unknown number of pattern datasets
+on the standard input. Each pattern dataset will consist of an integer
+on a line by itself, which gives the dimensions of the square
+containing the pattern (the size will range from 1 to 10). The
+following lines will contain each line of the original and new
+(transformed) patterns in a side-by-side format, separated by a space.
+Light squares will be indicated by a dot (period), while dark squares
+will be represented with an <tt>X</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+The output from your program will be a sentence describing the
+relationship that the new pattern bears to the original.  Each
+sentence will begin with a pattern ID number (starting with 1) and end
+stating the relatinship representing the minimal amount of work
+necessary to derive the new pattern from the original. For the purpose
+of evaluating the amount of work needed, rotations are considered less
+work than reflections, and smaller rotations are less work than larger
+ones. Of course, ``preservation'' involves no work at all.
+<p>
+<p>
+Note that only the above possibilities should be considered -- there
+is no such thing as a ``360 degree rotation'' for this problem (such a
+transformation would ``preserve'' the pattern), nor is there a
+``horizontal reflection''. Also, remember that when a single rotation
+or reflection is not sufficient, your program should next consider
+rotated versions after a vertical reflection. Although a combination
+transformation might yield the same new pattern as one of the single
+transformations alone, the single transformation is the one you should
+output (the minimal transformation).  Your output should be a complete
+sentence, ending with a period.
+<p>
+<p>
+Look at the sample output below for the exact format.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5
+X...X ....X 
+.X... ...X.
+...X. .X...
+..X.X ..X..
+....X XX..X
+6
+....XX X....X
+...X.. X.X...
+XX..X. .X..X.
+..X... ...X.X
+...X.. ..X...
+..X..X ..X...
+2
+X. X.
+.X .X
+4 
+..X. ...X
+XX.. ....
+.... XX..
+...X ..X.
+5
+X.... .X...
+.X... ..X..
+.X... ..X..
+...X. ....X
+....X X....
+4
+.X.. ..X.
+.X.X X...
+.... ..XX
+..X. ....
+2
+.. XX
+XX ..</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Pattern 1 was rotated 90 degrees.
+Pattern 2 was rotated 270 degrees.
+Pattern 3 was preserved.
+Pattern 4 was reflected vertically.
+Pattern 5 was improperly transformed.
+Pattern 6 was reflected vertically and rotated 270 degrees.
+Pattern 7 was rotated 180 degrees.</pre>
+<p>
+</body>
+</html>

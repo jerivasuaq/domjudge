@@ -1,0 +1,155 @@
+
+<p>
+During this economic crisis time, Jack has started an incredible new business related to air 
+travel, a parking-lot for airplane. He bought a very large land to park airplanes. However 
+the land is very narrow, so that the only way airplanes can go in or go out of the parking 
+lot must be in the <span class="textbf">Last-In First-Out</span> fashion (see picture below). He only has spaces in the 
+parking lot so he <span class="textbf">cannot</span> take some airplane at the end out so that other airplanes can move.
+
+<p>
+<div align="CENTER">
+
+<img width="677" height="115" align="BOTTOM" border="0" src="p4712.png" alt="\epsfbox{p4712.eps}">
+</div>
+
+<p>
+Because of the limitation of the parking lot, it is not possible to accommodate all requests 
+for parking. Each request consists of the planned arrival time and planned departure time, 
+which are the times the airplane arrives at the parking lot. An example below shows a 
+request table for 4 planes. 
+
+<p>
+
+<p>
+<br>
+<div align="CENTER">
+<table cols="3" border="" frame="BOX" rules="GROUPS">
+<colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER">
+<tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">
+<span class="textbf">Airplane</span>  </td><td valign="BASELINE" align="CENTER" nowrap="">  <span class="textbf">Arrival</span> </td><td valign="BASELINE" align="CENTER" nowrap="">  <span class="textbf">Departure</span> </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">1         </td><td valign="BASELINE" align="CENTER" nowrap="">  1       </td><td valign="BASELINE" align="CENTER" nowrap="">  10 </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">  
+2         </td><td valign="BASELINE" align="CENTER" nowrap="">  2       </td><td valign="BASELINE" align="CENTER" nowrap="">  5  </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+3         </td><td valign="BASELINE" align="CENTER" nowrap="">  3       </td><td valign="BASELINE" align="CENTER" nowrap="">  7  </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+4         </td><td valign="BASELINE" align="CENTER" nowrap="">  6       </td><td valign="BASELINE" align="CENTER" nowrap="">  9  </td></tr>
+</tbody>
+</colgroup></colgroup></colgroup></table>
+
+</div>
+
+<p>
+
+<p>
+<br>
+In this case, it is possible to accommodate airplane 1, 2, and 4. But it is not possible 
+to accommodate both airplanes 2 and 3. 
+
+<p>
+It is possible that different planes plan to arrive 
+or depart the parking lot at the same time. Jack has the best crews working with him, so 
+that they will manage to arrange the plane to the parking lot in the best way that if it 
+is possible to park and take out the planes they will be able to do it. Consider another 
+example.
+
+<p>
+
+<p>
+<br>
+<div align="CENTER">
+<table cols="3" border="" frame="BOX" rules="GROUPS">
+<colgroup><col align="CENTER"><colgroup><col align="CENTER"><colgroup><col align="CENTER">
+<tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">
+<span class="textbf">Airplane</span>  </td><td valign="BASELINE" align="CENTER" nowrap="">  <span class="textbf">Arrival</span> </td><td valign="BASELINE" align="CENTER" nowrap="">  <span class="textbf">Departure</span> </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap="">5  </td><td valign="BASELINE" align="CENTER" nowrap="">  10 </td><td valign="BASELINE" align="CENTER" nowrap="">  12 </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+6  </td><td valign="BASELINE" align="CENTER" nowrap="">  10 </td><td valign="BASELINE" align="CENTER" nowrap="">  15 </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+7  </td><td valign="BASELINE" align="CENTER" nowrap="">  13 </td><td valign="BASELINE" align="CENTER" nowrap="">  17 </td></tr>
+</tbody>
+</colgroup></colgroup></colgroup></table>
+
+</div>
+
+<p>
+
+<p>
+<br>
+Although airplane 5 and 6 arrive at the same time, Jack's crews know that airplane 5 will 
+have to be out before airplane 6, so when both airplanes arrive they put airplane 6 in 
+first, following by airplane 5. 
+
+<p>
+Given a list of parking requests, you want to find the 
+maximum number of airplanes that can be parked in this parking lot, provided that they 
+can only depart in the Last-In First-Out fashion. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+The first line contains an integer <span class="MATH"><i>T</i></span>, the number of test cases 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4712img2.png" alt="$ \le$"><i>T</i><img width="18" height="31" align="MIDDLE" border="0" src="4712img2.png" alt="$ \le$">5)</span>. Each test case 
+is in the following format. 
+
+<p>
+The first line starts with an integer <span class="MATH"><i>N</i></span> 
+<span class="MATH">(1<img width="18" height="31" align="MIDDLE" border="0" src="4712img2.png" alt="$ \le$"><i>N</i><img width="18" height="31" align="MIDDLE" border="0" src="4712img2.png" alt="$ \le$">300)</span> denoting 
+the number of airplanes. The next <span class="MATH"><i>N</i></span> lines describe the request table. Each line <span class="MATH">1 + <i>i</i></span>, 
+for 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4712img2.png" alt="$ \le$"><i>i</i><img width="18" height="31" align="MIDDLE" border="0" src="4712img2.png" alt="$ \le$"><i>N</i></span>, contains two integer <span class="MATH"><i>S</i><sub>i</sub></span> and <span class="MATH"><i>T</i><sub>i</sub></span> , 
+
+<span class="MATH">(0<img width="18" height="31" align="MIDDLE" border="0" src="4712img2.png" alt="$ \le$"><i>S</i><sub>i</sub> &lt; <i>T</i><sub>i</sub><img width="18" height="31" align="MIDDLE" border="0" src="4712img2.png" alt="$ \le$">1, 000, 000, 000)</span> which are the planned arrival time and planned 
+departing time for airplane <span class="MATH"><i>i</i></span>. 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+For each test case, you program must output a single line consisting of one integer, the 
+maximum number of airplanes that can be parked in Jack's parking lot.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+<pre>
+2 
+4 
+1 10 
+2 5 
+3 7 
+6 9 
+3 
+10 12 
+10 15 
+13 17
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 
+2
+</pre>
+
+<p>

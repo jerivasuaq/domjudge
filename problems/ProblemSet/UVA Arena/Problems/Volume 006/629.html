@@ -1,0 +1,168 @@
+
+
+<html>
+<head>
+<title>Test</title>
+<meta name="description" content="Test">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Test</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Statistical analysis quite often involves questions whether differences
+between samples are meaningful. Lack of meaningful differences indicates that
+the samples do not differ with respect to studied feature. The bigger the
+number of samples the bigger are troubles we find ourselves in, because
+it is much more difficult then to delimit sets of non-differing samples.
+
+<p>
+
+<p>
+<br>
+Let's assume we have three samples P1, P2, P3. We also know that P1 differs
+meaningfully from P2, but others do not differ. Thus we have two sets of
+samples not different meaningfully. First one contains P1 and P3 (because
+they it is not stated that they differ meaningfully) and respectively the
+second one contains P2 and P3 (similar as earlier).
+
+<p>
+As you can see these
+sets are not separate. It is going to be handy to denote the belonging to
+the set with a character associated with it. In our case we
+have: P1:<tt>a</tt> P2:<tt>b</tt> P3:<tt>ab</tt>.
+
+<p>
+
+<p>
+<br>
+
+<b>Conclusions:</b>
+<ul>
+<li>if all the samples did not differ then they would belong to the same set (set <tt>a</tt>).
+<li>if all the samples DID differ from each other then each belongs to separate, one-element set (P1:<tt>a</tt> P2:<tt>b</tt> P3:<tt>c</tt> etc.)
+</li></li></ul>
+
+<p>
+Your task is to write a program which delimits sets without meaningful differences.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+A number (<i>n</i>) of samples in the first line, in ``<i>n</i>" consecutive ones an incidence
+matrix which describes the differences between samples is given. The actual
+information in the matrix is given above the primary diagonal. Symbol `<tt>*</tt>'
+depicts meaningful differences, symbol `<tt>-</tt>' depicts no meaningful differences.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each matrix ``<i>n</i>" lines (each representing one sample) enumerating sets
+to which the sample belongs, and then a line with 5 hyphens.
+
+<p>
+
+<p>
+<br>
+
+<b>Assumptions:</b>
+Number of samples in one test does not exceed 10. The most numerous set
+acquires the character ``<tt>a</tt>", the second in the line ``<tt>b</tt>" etc. In case of sets
+having the same number of elements the first one goes the one which contains
+a sample of lower number.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3
+-*-
+---
+---
+3
+-**
+--*
+---
+3
+---
+---
+---
+4
+----
+--**
+---*
+----
+9
+---*--*--
+-----*---
+------*--
+---------
+-------*-
+--------*
+---------
+---------
+---------
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+a
+b
+ab
+-----
+a
+b
+c
+-----
+a
+a
+a
+-----
+abc
+a
+b
+c
+-----
+abgh
+abcdef
+abcdghij
+cdefijkl
+acegik
+ghijkl
+efkl
+bdfhjl
+abcdef
+-----
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+</body>
+</html>
+

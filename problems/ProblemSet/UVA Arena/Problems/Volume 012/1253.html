@@ -1,0 +1,244 @@
+
+<p>
+The earth is under an attack of a deadly virus. Luckily, prompt actions of the Ministry of Health against this emergency successfully confined the spread of the infection within a square grid of areas. Recently, public health specialists found an interesting pattern with regard to the transition of infected areas. At each step in time, every area in the grid changes its infection state according to infection states of its directly (horizontally, vertically, and diagonally) adjacent areas. 
+
+<p>
+
+<p>
+<br>
+
+<ul>
+<li>An infected area continues to be infected if it has two or three adjacent infected areas. 
+</li>
+<li>An uninfected area becomes infected if it has exactly three adjacent infected areas. 
+</li>
+<li>An area becomes free of the virus, otherwise. 
+</li>
+</ul>
+
+<p>
+
+<p>
+<br>
+Your mission is to fight against the virus and disinfect all the areas. The Ministry of Health 
+lets an anti-virus vehicle prototype under your command. The functionality of the vehicle is 
+summarized as follows. 
+
+<p>
+
+<p>
+<br>
+
+<ul>
+<li>At the beginning of each time step, you move the vehicle to one of the eight adjacent 
+areas. The vehicle is not allowed to move to an infected area (to protect its operators 
+from the virus). It is not allowed to stay in the same area. 
+</li>
+<li>Following vehicle motion, all the areas, except for the area where the vehicle is in, 
+change their infection states according to the transition rules described above. 
+
+<p>
+Special functionality of the vehicle protects its area from virus infection even if the area 
+is adjacent to exactly three infected areas. Unfortunately, this virus-protection capability 
+of the vehicle does not last. Once the vehicle leaves the area, depending on the infection 
+states of the adjacent areas, the area can be infected. 
+
+<p>
+The area where the vehicle is in, which is <span class="textit">uninfected</span>, has the same effect to its 
+adjacent areas as an <span class="textit">infected</span> area as far as the transition rules are concerned. 
+</li>
+</ul>
+
+<p>
+The following series of figures illustrate a sample scenario that successfully achieves the 
+goal. 
+
+<p>
+Initially, your vehicle denoted by <code>@</code> is found at (1, 5) in a 
+<span class="MATH">5 <tt>x</tt> 5</span>-grid of 
+areas, and you see some infected areas which are denoted by <code>#</code>'s.
+
+<p>
+
+<p>
+<br>
+<div align="CENTER">
+<table cols="7" border="" rules="GROUPS">
+<col align="CENTER"><col align="CENTER"><col align="CENTER"><col align="CENTER"><col align="CENTER"><col align="CENTER"><col align="CENTER">
+<tbody>
+<tr><td></td><td valign="BASELINE" align="CENTER" nowrap="">  1-begin  </td><td valign="BASELINE" align="CENTER" nowrap="">   1-end   </td><td valign="BASELINE" align="CENTER" nowrap="">  2-begin  </td><td valign="BASELINE" align="CENTER" nowrap="">   2-end   </td><td valign="BASELINE" align="CENTER" nowrap="">  3-begin  </td><td valign="BASELINE" align="CENTER" nowrap="">   3-end </td></tr>
+</tbody><tbody>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""><tt>....@</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>.....</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>.....</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>.....</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>.#...</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>.#...</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>.....</tt> </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+<tt>##...</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>##.@.</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>##.@.</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>##@..</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>#.@..</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>#..@.</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>...@.</tt> </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+<tt>#....</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>#....</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>###..</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>###..</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>.....</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>.....</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>.....</tt> </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+<tt>...#.</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>...#.</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>#####</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>#####</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>#...#</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>#...#</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>.....</tt> </td></tr>
+<tr><td valign="BASELINE" align="CENTER" nowrap=""> 
+<tt>##.##</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>##.##</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>..###</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>..###</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>....#</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>....#</tt> </td><td valign="BASELINE" align="CENTER" nowrap=""> <tt>.....</tt>
+</td></tr>
+</tbody>
+</table>
+                    
+</div>
+<p>
+<div align="CENTER"></div>
+<p>
+<br>
+<div align="CENTER">Figure 14: A Successful Disinfection Sequence 
+
+</div>
+
+<p>
+
+<p>
+<br>
+Firstly, at the beginning of time step 1, you move your vehicle diagonally to the southwest, 
+that is, to the area (2, 4). Note that this vehicle motion was possible because this area was 
+not infected at the start of time step 1. 
+
+<p>
+Following this vehicle motion, infection state of each area changes according to the 
+transition rules. The column ``1-end" of the figure illustrates the result of such changes 
+at the end of time step 1. Note that the area (3, 3) becomes infected because there were 
+two adjacent infected areas and the vehicle was also in an adjacent area, three areas in 
+total. 
+
+<p>
+In time step 2, you move your vehicle to the west and position it at (2, 3). 
+
+<p>
+Then infection states of other areas change. Note that even if your vehicle had exactly 
+three infected adjacent areas (west, southwest, and south), the area that is being visited 
+by the vehicle is <span class="textit">not</span> infected. The result of such changes at the end of time step 
+2 is as depicted in ``2-end". 
+
+<p>
+Finally, in time step 3, you move your vehicle to the east. After the change of the 
+infection states, you see that all the areas have become virus free! This completely 
+disinfected situation is the goal. In the scenario we have seen, you have successfully 
+disinfected all the areas in three time steps by commanding the vehicle to move (1) 
+southwest, (2) west, and (3) east. 
+
+<p>
+Your mission is to find the length of the shortest sequence(s) of vehicle motion commands 
+that can successfully disinfect all the areas.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input is a sequence of datasets. The end of the input is indicated by a line 
+containing a single zero. Each dataset is formatted as follows. 
+
+<p>
+
+<p>
+<br>
+
+
+<span class="MATH"><i>n</i>
+<br><i>a</i><sub>11</sub>&nbsp;<i>a</i><sub>12</sub>&nbsp;...&nbsp;<i>a</i><sub>1n</sub>
+<br><i>a</i><sub>21</sub>&nbsp;<i>a</i><sub>22</sub>&nbsp;...&nbsp;<i>a</i><sub>2n</sub>
+<br>...
+<br><i>a</i><sub>1n</sub>&nbsp;<i>a</i><sub>2n</sub>&nbsp;...&nbsp;<i>a</i><sub>nn</sub></span>
+
+<p>
+
+<p>
+<br>
+Here, <span class="MATH"><i>n</i></span> is the size of the grid. That means that the grid is comprised of 
+<span class="MATH"><i>n</i> <tt>x</tt> <i>n</i></span> 
+areas. You may assume 
+<span class="MATH">1<img width="18" height="31" align="MIDDLE" border="0" src="4645img1.png" alt="$ \le$"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="4645img1.png" alt="$ \le$">5</span>. The rest of the dataset consists of <span class="MATH"><i>n</i></span> lines of <span class="MATH"><i>n</i></span> 
+letters. Each letter <span class="MATH"><i>a</i><sub>ij</sub></span> specifies the state of the area at the beginning: `<code>#</code>' 
+for infection, `<tt>.</tt>' for free of virus, and `<code>@</code>' for the initial location of 
+the vehicle. The only character that can appear in a line is `<code>#</code>', `<tt>.</tt>', 
+or `<code>@</code>'. Among 
+<span class="MATH"><i>n</i> <tt>x</tt> <i>n</i></span> areas, there exists exactly one area which has `<code>@</code>'.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each dataset, output the minimum number of time steps that is required to disinfect all 
+the areas. If there exists no motion command sequence that leads to complete disinfection, 
+output `<tt>-1</tt>'. The output should not contain any other extra character.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 
+... 
+.@. 
+... 
+3 
+.## 
+.#. 
+@## 
+3 
+##. 
+#.. 
+@.. 
+5 
+....@ 
+##... 
+#.... 
+...#. 
+##.## 
+5 
+#...# 
+...#. 
+#.... 
+...## 
+..@.. 
+5 
+#.... 
+..... 
+..... 
+..... 
+..@.. 
+5 
+#..#. 
+#.#.# 
+.#.#. 
+....# 
+.#@##
+5 
+..##. 
+..#.. 
+#.... 
+#.... 
+.#@.. 
+0
+</pre>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+0 
+10 
+-1 
+3 
+2 
+1 
+6 
+4
+</pre>

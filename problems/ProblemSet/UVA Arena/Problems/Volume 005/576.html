@@ -1,0 +1,125 @@
+
+
+<html>
+<head>
+<title>Haiku Review</title>
+<meta name="description" content="Haiku Review">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Haiku Review</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+<em>Haiku</em> is an ancient form of Japanese poetry. A haiku is a three-line poem
+with seventeen syllables,
+where the first line must contain five syllables, the second line must
+contain seven syllables, and
+the third line must contain five syllables. The lines do not have to rhyme.
+Here is an example,
+where slashes separate the lines:
+
+<p>
+<br><p>
+<div align="CENTER">
+
+
+
+<i>Computer programs</i>/<i>The bugs try to eat my code</i>/<i>I must not let them</i>.
+</div>
+<br clear="ALL">
+<p>
+
+<p>
+You must write a program that will review a haiku and check that each line
+contains the correct number of syllables.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input contains one or more lines, each of which contains a single haiku.
+A haiku will contain
+at least three words, and words will be separated by either a single space
+or a slash (`<tt>/</tt>'). Slashes
+also separate the three lines of a haiku, so each haiku will contain exactly
+two slashes. (The three
+lines of the haiku will be contained within one physical line of the file.)
+A haiku will contain
+only lowercase letters (`<tt>a</tt>'-`<tt>z</tt>'), forward slashes (`<tt>/</tt>'), and spaces, and will be no more than 200
+characters long (not counting the end-of-line characters).
+
+<p>
+The haiku `<tt>e/o/i</tt>' signals the end of the input.
+
+<p>
+Each haiku is guaranteed to contain three lines, and each line will contain
+at least one word.
+Your job is to determine whether each line has the correct number of
+syllables (5/7/5). For
+the purposes of this problem, every contiguous sequence of one or more
+vowels counts as one
+syllable, where the vowels are <tt>a</tt>, <tt>e</tt>, <tt>i</tt>, <tt>o</tt>, <tt>u</tt>, and <tt>y</tt>. Every word will contain at least one syllable.
+
+<p>
+
+<p>
+<br>
+
+(<b>Note</b> that this method of counting syllables does not always agree with
+English conventions. In
+the second example below, your program must consider the word `<tt>code</tt>' to
+have two syllables
+because the `<tt>o</tt>' and the `<tt>e</tt>' are not consecutive. However, in English the `<tt>e</tt>' is silent and so `<tt>code</tt>' actually has only one syllable.)
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each haiku, output a single line that contains `<tt>1</tt>' if the first line
+has the wrong number of
+syllables, `<tt>2</tt>' if the second line has the wrong number of syllables, `<tt>3</tt>' if the third line has the
+wrong number of syllables, or `<tt>Y</tt>' if all three lines have the correct number of syllables. If the
+haiku is not correct, you must output the number of the <em>first</em> line that
+has the wrong number of syllables.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+happy purple frog/eating bugs in the marshes/get indigestion
+computer programs/the bugs try to eat my code/i will not let them
+a e i o u/this is seven syllables/a e i o u y
+e/o/i
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Y
+2
+3
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1998-03-10</i>
+</address>
+</body>
+</html>
+

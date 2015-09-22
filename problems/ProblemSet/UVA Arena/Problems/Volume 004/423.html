@@ -1,0 +1,107 @@
+
+
+<html>
+<head>
+<title>MPI Maelstrom</title>
+<meta name="description" content="MPI Maelstrom">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">MPI Maelstrom</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+BIT has recently taken delivery of their new supercomputer, a 32 processor
+Apollo Odyssey
+distributed shared memory machine with a hierarchical communication
+subsystem. Valentine McKee's research advisor, Jack Swigert,
+has asked her to benchmark the new system.
+<p>
+``Since the Apollo is a distributed shared memory machine, memory access
+and communication times are not uniform,'' Valentine told Swigert.
+``Communication is fast between processors
+that share the same memory subsystem, but it is slower between processors
+that are not on the
+same subsystem. Communication between the Apollo and machines in our
+lab is slower yet.''
+<p>
+``How is Apollo's port of the Message Passing Interface (MPI) working out?''
+Swigert asked.
+<p>
+``Not so well,'' Valentine replied. ``To do a broadcast of a message from
+one processor to all
+the other <i>n</i>-1 processors, they just do a sequence of <i>n</i>-1 sends.
+That really serializes things and kills the performance.''
+<p>
+``Is there anything you can do to fix that?''
+<p>
+``Yes,'' smiled Valentine. ``There is. Once the first processor has sent
+the message to another,
+those two can then send messages to two other hosts at the same time.
+Then there will be four hosts that can send, and so on.''
+<p>
+``Ah, so you can do the broadcast as a binary tree!''
+<p>
+``Not really a binary tree -- there are some particular features of our
+network that we should
+exploit. The interface cards we have allow each processor to simultaneously
+send messages to
+any number of the other processors connected to it. However, the messages
+don't necessarily
+arrive at the destinations at the same time -- there is a communication
+cost involved. In general,
+we need to take into account the communication costs for each link in
+our network topologies
+and plan accordingly to minimize the total time required to do a broadcast.''
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input will describe the topology of a network connecting <i>n</i> processors.
+The first line of
+the input will be <i>n</i>, the number of processors, such that  <img width="90" height="25" align="MIDDLE" alt="tex2html_wrap_inline43" src="423img1.gif"> .
+<p>
+<p>
+The rest of the input defines an adjacency matrix, <i>A</i>. The adjacency matrix
+is square and
+of size  <img width="41" height="18" align="MIDDLE" alt="tex2html_wrap_inline47" src="423img2.gif"> . Each of its entries will be either an integer or
+the character <tt>x</tt>. The value of  <img width="36" height="26" align="MIDDLE" alt="tex2html_wrap_inline49" src="423img3.gif"> 
+indicates the expense of sending a message directly from node <i>i</i> to node <i>j</i>.
+A value of <tt>x</tt> for
+ <img width="36" height="26" align="MIDDLE" alt="tex2html_wrap_inline49" src="423img3.gif">  indicates that a message cannot be sent directly from
+node <i>i</i> to node <i>j</i>.
+<p>
+<p>
+Note that for a node to send a message to itself does not require network
+communication,
+so  <img width="68" height="26" align="MIDDLE" alt="tex2html_wrap_inline61" src="423img4.gif">  for  <img width="70" height="25" align="MIDDLE" alt="tex2html_wrap_inline63" src="423img5.gif"> . Also, you may assume that the network
+is undirected (messages can
+go in either direction with equal overhead), so that  <img width="98" height="26" align="MIDDLE" alt="tex2html_wrap_inline65" src="423img6.gif"> .
+Thus only the entries on the
+(strictly) lower triangular portion of <i>A</i> will be supplied.
+<p>
+<p>
+The input to your program will be the lower triangular section of <i>A</i>.
+That is, the second line
+of input will contain one entry,  <img width="39" height="26" align="MIDDLE" alt="tex2html_wrap_inline71" src="423img7.gif"> . The next line will contain
+two entries,  <img width="39" height="26" align="MIDDLE" alt="tex2html_wrap_inline73" src="423img8.gif">  and  <img width="39" height="26" align="MIDDLE" alt="tex2html_wrap_inline75" src="423img9.gif"> , and so on.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Your program should output the minimum communication time required to
+broadcast a message from the first processor to all the other processors.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>5
+50
+30 5
+100 20 50
+10 x x 10</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>35</pre>
+<p>
+</body>
+</html>

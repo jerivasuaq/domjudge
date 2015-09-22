@@ -1,0 +1,129 @@
+
+
+<html>
+<head>
+<title>Secret Research</title>
+<meta name="description" content="Secret Research">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Secret Research</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+At a certain laboratory results of secret research are thoroughly encrypted. 
+A result of a single experiment is stored as an information of its completion:
+
+<p>
+
+<p>
+<br>
+
+`positive result',
+`negative result',
+`experiment failed' or
+`experiment not completed'
+
+<p>
+
+<p>
+<br>
+The encrypted result constitutes a string of digits S, which may take 
+one of the following forms:
+
+<p>
+<pre><tt>
+<img width="13" height="16" align="BOTTOM" border="0" src="621img1.gif" alt="$\bullet$">
+positive result 		 S = 1 or S = 4 or S = 78 
+<img width="13" height="16" align="BOTTOM" border="0" src="621img1.gif" alt="$\bullet$">
+negative result 		 S = S35 
+<img width="13" height="16" align="BOTTOM" border="0" src="621img1.gif" alt="$\bullet$">
+experiment failed 		 S = 9S4 
+<img width="13" height="16" align="BOTTOM" border="0" src="621img1.gif" alt="$\bullet$">
+experiment not completed 		 S = 190S
+</tt></pre>
+
+<p>
+(A sample result S35 means that if we add digits 35 from the right hand 
+side to a digit sequence then we shall get the digit sequence corresponding 
+to a failed experiment)
+
+<p>
+
+<p>
+<br>
+You are to write a program which decrypts given sequences of digits.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+A integer <i>n</i> stating the number of encrypted results and then
+consecutive <i>n</i> lines, each containing a sequence of digits given as ASCII strings.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each analysed sequence of digits the following lines should be sent 
+to output (in separate lines):
+
+<p>
+<pre><tt>
+		 <tt>+</tt> 		  for a positive result
+		 <tt>-</tt> 		  for a negative result
+		 <tt>*</tt> 		  for a failed experiment
+		 <tt>?</tt> 		  for a not completed experiment
+</tt></pre>
+
+<p>
+In case the analysed string does not determine the experiment result, 
+a first match from the above list should be outputted.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+4
+78
+7835
+19078
+944
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
++
+-
+?
+*
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+</body>
+</html>
+

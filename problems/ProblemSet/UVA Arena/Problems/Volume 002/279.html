@@ -1,0 +1,82 @@
+
+
+<html>
+
+<head>
+<title>Spin</title>
+<meta name="description" content="Spin">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1 align="center"><br clear="ALL">
+</h1>
+<div align="center"><center>
+
+<table bgcolor="#0060F0">
+  <tr>
+    <td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Spin</a></font>&nbsp;</b></td>
+  </tr>
+</table>
+</center></div>
+
+<table>
+  <tr>
+    <td><img width="585" height="449" align="BOTTOM" alt="tex2html_wrap62" src="279img1.gif"> </td>
+    <td><img width="190" height="402" align="BOTTOM" alt="tex2html_wrap64" src="279img2.gif"> </td>
+  </tr>
+</table>
+
+<p>A disk can be rotated between horizontal and vertical only if it is positioned over the
+indentation marked `0' <em>and</em> the disk on its right is vertical . The right-most
+disk can always rotate if it is in position `0' since it has no disk on its right. </p>
+
+<p>The aim is to free the slide by moving it so its left edge aligns with the `Win' mark: </p>
+
+<p align="center"><img src="279img3.gif"> </p>
+
+<p>Your task is to write a program which will take several part-solved puzzles and compute
+the number of steps needed to move the slide to position `Win' for each puzzle. </p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+
+<p>There will be several puzzles in the input file. The first line of the file will
+contain an integer <i>n</i> specifying the number of puzzles. There will then be <i>n</i>
+lines, each of the form: </p>
+
+<p><em>length orientations position</em> </p>
+
+<p>where <i>length</i>(length &lt; 30) is an integer indicating the number of disks on the
+slide, <i>orientations</i> is a string of <i>length</i> characters from the set {<tt>h</tt>,<tt>v</tt>}
+giving the orientation of each disk from left to right, and <i>position</i> is an integer
+from 0 to <i>length</i> specifying the numbered mark which aligns with the left edge of
+the slide. </p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+
+<p>For each puzzle, your program should output one integer on a line which counts the
+minimum number of steps needed to win the puzzle. A step is either a movement of the
+slide, one unit left or right, or the rotation of a disk. </p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+
+<pre>2
+2 vv 2
+7 vhhhvhh 4</pre>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Output for the Sample
+Input</a></font></h2>
+
+<pre>7
+357</pre>
+
+<h2><font color="#0070E8"><a name="SECTION0001005000000000000000">Diagram of the 1st
+Puzzle</a></font></h2>
+
+<p align="center"><img src="279img4.gif"> </p>
+</body>
+</html>

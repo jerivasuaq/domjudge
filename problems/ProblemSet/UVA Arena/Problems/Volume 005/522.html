@@ -1,0 +1,122 @@
+
+
+<html>
+<head>
+<title>Schedule Problem</title>
+<meta name="description" content="Schedule Problem">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Schedule Problem</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+A project can be divided into several parts. Each part should be completed
+continuously. This
+means if a part should take 3 days, we should use a continuous 3 days to
+complete it. There are four
+types of constrains among these parts which are FAS, FAF, SAF and SAS.
+A constrain between
+parts is FAS if the second one should finish after the first one started.
+FAF is finish after finish,
+SAF is start after finish, and SAS is start after start. Assume there are
+enough people involved in
+the projects, which means we can do any number of parts concurrently.
+You are to write a program
+to give a schedule of a given project, which has the shortest time.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file consists a sequences of projects, with an empty line indicates
+the of input.
+
+<p>
+
+<p>
+<br>
+Each project consists the following lines:
+
+<p>
+<ul>
+<li>the count number of parts(one line)
+<li>times should be taken to complete these parts, each time occupies one line
+<li>a list of <tt>FAS</tt>, <tt>FAF</tt>, <tt>SAF</tt> or <tt>SAS</tt>
+and two part number indicates a constrain of the two parts
+<li>a line only contains a '<tt>#</tt>' indicate the end of a project
+</li></li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output should be a list of lines, each line includes a part number and
+the time it should start. Time
+should be a non-negative integer, and the start time of first part
+should be 0. If there is no answer
+for the problem, you should give a one-line output containing ``<tt>impossible</tt>".
+
+<p>
+
+<p>
+<br>
+A blank line should appear following the output for each project.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+3
+2
+3
+4
+SAF 1 2
+FAF 2 3
+#
+3
+1
+1
+1
+SAF 1 2
+SAF 2 3
+SAF 3 1
+#
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+Case 1:
+1 0
+2 2
+3 1
+
+Case 2:
+impossible
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-01-11</i>
+</address>
+</body>
+</html>
+

@@ -1,0 +1,154 @@
+
+<p>
+The configuration of three circles packed inside a triangle such that each circle is tangent 
+to the other two circles and to two of the edges of the triangle has been studied by many 
+mathematicians for more than two centuries. Existence and uniqueness of such circles for 
+an arbitrary triangle are easy to prove. Many methods of numerical calculation or geometric 
+construction of such circles from an arbitrarily given triangle have been discovered. Today, 
+such circles are called the <span class="textit">Malfatti circles</span>. 
+
+<p>
+Figure 7 illustrates an example. The Malfatti circles of the triangle with the vertices 
+(20, 80), (-40, -20) and (120, -20) are approximately 
+
+<p>
+
+<p>
+<br>
+
+<ul>
+<li>the circle with the center (24.281677, 45.219486) and the radius 21.565935, 
+</li>
+<li>the circle with the center (3.110950, 4.409005) and the radius 24.409005, and 
+</li>
+<li>the circle with the center (54.556724, 7.107493) and the radius 27.107493. 
+</li>
+</ul>
+
+<p>
+
+<p>
+<br>
+Figure 8 illustrates another example. The Malfatti circles of the triangle with the 
+vertices (20, -20), (120, -20) and (-40, 80) are approximately 
+
+<p>
+
+<p>
+<br>
+
+<ul>
+<li>the circle with the center (25.629089, -10.057956) and the radius 9.942044, 
+</li>
+<li>the circle with the center (53.225883, -0.849435) and the radius 19.150565, and 
+</li>
+<li>the circle with the center (19.701191, 19.203466) and the radius 19.913790.
+</li>
+</ul>
+
+<p>
+
+<p>
+<br>
+Your mission is to write a program to calculate the radii of the Malfatti circles of 
+the given triangles.
+
+<p>
+<div align="CENTER">
+
+<img width="1187" height="310" align="BOTTOM" border="0" src="p4642.png" alt="\epsfbox{p4642.eps}">
+</div>
+<p>
+<div align="CENTER">Figures 7 and 8: Examples of the Malfatti circles (#1 and #2).
+
+</div>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input is a sequence of datasets. A dataset is a line containing six integers <span class="MATH"><i>x</i><sub>1</sub></span>, 
+<span class="MATH"><i>y</i><sub>1</sub></span>, <span class="MATH"><i>x</i><sub>2</sub></span>, <span class="MATH"><i>y</i><sub>2</sub></span>, <span class="MATH"><i>x</i><sub>3</sub></span> and <span class="MATH"><i>y</i><sub>3</sub></span> in this order, separated by a space. 
+The coordinates of the vertices of the given triangle are (<span class="MATH"><i>x</i><sub>1</sub></span>, <span class="MATH"><i>y</i><sub>1</sub></span>), 
+
+<span class="MATH">(<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>)</span> and 
+<span class="MATH">(<i>x</i><sub>3</sub>, <i>y</i><sub>3</sub>)</span>, respectively. You can assume that the vertices 
+form a triangle counterclockwise. You can also assume that the following two conditions hold. 
+
+<p>
+
+<p>
+<br>
+
+<ul>
+<li>All of the coordinate values are greater than -1000 and less than 1000. 
+</li>
+<li>None of the Malfatti circles of the triangle has a radius less than 0.1. 
+</li>
+</ul>
+
+<p>
+The end of the input is indicated by a line containing six zeros separated by a space.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each input dataset, three decimal fractions <span class="MATH"><i>r</i><sub>1</sub></span>, <span class="MATH"><i>r</i><sub>2</sub></span> and <span class="MATH"><i>r</i><sub>3</sub></span> should be 
+printed in a line in this order separated by a space. The radii of the Malfatti circles 
+nearest to the vertices with the coordinates 
+<span class="MATH">(<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>)</span>, 
+<span class="MATH">(<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>)</span> and 
+
+<span class="MATH">(<i>x</i><sub>3</sub>, <i>y</i><sub>3</sub>)</span> should be <span class="MATH"><i>r</i><sub>1</sub></span>, <span class="MATH"><i>r</i><sub>2</sub></span> and <span class="MATH"><i>r</i><sub>3</sub></span>, respectively. 
+
+<p>
+None of the output values may have an error greater than 0.0001. No extra character 
+should appear in the output.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+20 80 -40 -20 120 -20 
+20 -20 120 -20 -40 80 
+0 0 1 0 0 1 
+0 0 999 1 -999 1 
+897 -916 847 -972 890 -925 
+999 999 -999 -998 -998 -999 
+-999 -999 999 -999 0 731 
+-999 -999 999 -464 -464 999 
+979 -436 -955 -337 157 -439 
+0 0 0 0 0 0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+21.565935 24.409005 27.107493 
+9.942044 19.150565 19.913790 
+0.148847 0.207107 0.207107 
+0.125125 0.499750 0.499750 
+0.373458 0.383897 0.100456 
+0.706768 0.353509 0.353509 
+365.638023 365.638023 365.601038 
+378.524085 378.605339 378.605339 
+21.895803 22.052921 5.895714
+</pre> 
+
+<p>

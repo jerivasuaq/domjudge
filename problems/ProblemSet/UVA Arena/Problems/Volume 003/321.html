@@ -1,0 +1,112 @@
+
+
+<html>
+<head>
+<title>The New Villa</title>
+<meta name="description" content="The New Villa">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">The New Villa</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Mr. Black recently bought a villa in the countryside. Only one thing
+bothers him: although there are light switches in most rooms, the lights
+they control are often in other rooms than the switches themselves.
+While his estate agent saw this as a feature, Mr. Black has come to
+believe that the electricians were a bit absent-minded (to put
+it mildly) when they connected the switches to the outlets.
+<p>
+One night, Mr. Black came home late. While standing in the hallway,
+he noted that the lights in all other rooms were switched off.
+Unfortunately, Mr. Black was afraid of the dark, so he never dared to enter
+a room that had its lights out and would never switch off the lights
+of the room he was in.
+<p>
+After some thought, Mr. Black was able to use the incorrectly wired
+light switches to his advantage. He managed to get to his bedroom and to
+switch off all lights except for the one in the bedroom.
+<p>
+<p>
+You are to write a program that, given a description of a villa,
+determines how to get from the hallway to the bedroom if only the hallway
+light is initially switched on. You may never enter a dark room, and after
+the last move, all lights except for the one in the bedroom must
+be switched off. If there are several paths to the bedroom, you have
+to find the one which uses the smallest number of steps,
+where ``move from one room to another'', ``switch on a light''
+and ``switch off a light'' each count as one step.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input file contains several villa descriptions. Each villa starts
+with a line containing three integers <i>r</i>, <i>d</i>, and <i>s</i>. <i>r</i> is the number of
+rooms in the villa, which will be at most 10. <i>d</i> is the number of
+doors/connections between the rooms and <i>s</i> is the number of light switches
+in the villa. The rooms are numbered from 1 to <i>r</i>; room number 1 is
+the hallway, room number <i>r</i> is the bedroom.
+<p>
+This line is followed by <i>d</i> lines containing two integers <i>i</i> and <i>j</i> each,
+specifying that room <i>i</i> is connected to room <i>j</i> by a door.
+Then follow <i>s</i> lines containing two integers <i>k</i> and <i>l</i> each,
+indicating that there is a light switch in room <i>k</i> that controls the
+light in room <i>l</i>.
+<p>
+<p>
+A blank line separates the villa description from the next one. The input
+file ends with a villa having <i>r</i> = <i>d</i> = <i>s</i> = 0, which should not be processed.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each villa, first output the number of the test
+case (<tt>`Villa #1'</tt>, <tt>`Villa #2'</tt>, etc.) in a line of its own.
+<p>
+<p>
+If there is a solution to Mr. Black's problem, output the shortest
+possible sequence of steps that leads him to his bedroom and only leaves
+the bedroom light switched on. (Output only one shortest sequence if you find
+more than one.) Adhere to the output format shown in the sample below.
+<p>
+<p>
+If there is no solution, output a line containing the statement
+<tt>`The problem cannot be solved.'</tt>
+<p>
+<p>
+Output a blank line after each test case.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>3 3 4
+1 2
+1 3
+3 2
+1 2
+1 3
+2 1
+3 2
+
+2 1 2
+2 1
+1 1
+1 2
+
+0 0 0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Villa #1
+The problem can be solved in 6 steps:
+- Switch on light in room 2.
+- Switch on light in room 3.
+- Move to room 2.
+- Switch off light in room 1.
+- Move to room 3.
+- Switch off light in room 2.
+
+Villa #2
+The problem cannot be solved.</pre>
+<p>
+</body>
+</html>

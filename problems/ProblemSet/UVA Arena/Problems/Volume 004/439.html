@@ -1,0 +1,56 @@
+
+
+<html>
+<head>
+<title>Knight Moves</title>
+<meta name="description" content="Knight Moves">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Knight Moves</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+A friend of you is doing research on the <em>Traveling Knight Problem (TKP)</em> where you are to find the shortest closed tour of knight moves that visits each square of a given set of <i>n</i> squares on a chessboard exactly once. He thinks that the most difficult part of the problem is determining the smallest number of knight moves between two given squares and that, once you have accomplished
+this, finding the tour would be easy.
+<p>
+Of course you know that it is vice versa. So you offer him to write a program that solves the &quot;difficult&quot; part.
+<p>
+<p>
+Your job is to write a program that takes two squares <i>a</i> and <i>b</i> as input and then determines the number of knight moves on a shortest route from <i>a</i> to <i>b</i>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input Specification</a></font></h2>
+<p>
+The input file will contain one or more test cases. Each test case consists of one line containing two
+squares separated by one space. A square is a string consisting of a letter (<tt>a-h</tt>) representing the
+column and a digit (<tt>1-8</tt>) representing the row on the chessboard.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output Specification</a></font></h2>
+<p>
+For each test case, print one line saying &quot;<tt>To get from <i>xx</i> to <i>yy</i> takes <i>n</i> knight moves.</tt>&quot;.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>e2 e4
+a1 b2
+b2 c3
+a1 h8
+a1 h7
+h8 a1
+b1 c3
+f6 f6</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>To get from e2 to e4 takes 2 knight moves.
+To get from a1 to b2 takes 4 knight moves.
+To get from b2 to c3 takes 2 knight moves.
+To get from a1 to h8 takes 6 knight moves.
+To get from a1 to h7 takes 5 knight moves.
+To get from h8 to a1 takes 6 knight moves.
+To get from b1 to c3 takes 1 knight moves.
+To get from f6 to f6 takes 0 knight moves.</pre>
+<p>
+</body>
+</html>

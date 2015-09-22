@@ -1,0 +1,61 @@
+
+
+<html>
+<head>
+<title>What's The Frequency, Kenneth?</title>
+<meta name="description" content="What's The Frequency, Kenneth?">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">What's The Frequency, Kenneth?</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+<pre>#include &lt;stdio.h&gt;
+
+main()
+{
+  int i;
+  char *suffix[]= { &quot;st&quot;, &quot;nd&quot;, &quot;rd&quot; };
+  char *item[]= { &quot;Unix&quot; , &quot;cat&quot;, &quot;sed&quot;, &quot;awk&quot;, &quot;grep&quot;, &quot;ed&quot;, &quot;vi&quot;};
+ 
+  printf(&quot;In the beginning, there was nothing.\n&quot;);
+  for (i= 0; i &lt; 7; i++)
+    printf(&quot;And on the %d%s day, God created %s. And it was good.\n&quot;,
+           i + 1, (i &lt; 3) ? suffix[i] : &quot;th&quot;, item[i]);
+}</pre>
+<p>
+But then God saw that <tt>vi</tt> led people into temptation. Instead of choosing the righteous ways of <tt>make</tt>,
+<tt>dbx</tt>, and <tt>RCS</tt>, people used long command lines, <tt>printf()</tt>, and tape backups.
+<p>
+So God decreed, ``I see that Engineers have thus defiled my <tt>vi</tt>. And so, I shall create <em>emacs</em>, an editor
+more powerful than words. Further, for each instantiation <tt>vi</tt> hitherto, the Engineer responsible shalt perform
+Penance. And lo, the Penance wilt be painful; there will be much wailing and gnushingof teeth. The Engineer
+will read many lines of text. For each line of text, the Engineer must tell me which letters occur the most frequently.''
+<p>
+``I charge you all with My Golden Rule: 'Friends shalt not let friends use <tt>vi</tt>'.''
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Each line of output should contain a list of letters that all occured with the highest frequency in the corresponding input line, followed by the frequency.
+<p>
+The list of letters should be an alphabetical list of upper case letters followed by an alphabetical
+list of lower case letters.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>When riding your bicycle backwards down a one-way street, if the
+wheel falls of a canoe, how many ball bearings does it take to fill
+up a water buffalo?
+Hello Howard.</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>e 6
+al 7
+a 3
+Hlo 2</pre>
+<p>
+</body>
+</html>

@@ -1,0 +1,60 @@
+
+
+<html>
+<head>
+<title>Graph Coloring</title>
+<meta name="description" content="Graph Coloring">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Graph Coloring</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+You are to write a program that tries to find an optimal coloring for a
+given graph. Colors are applied to the nodes of the graph and the only available
+colors are black and white. The coloring of the graph is called optimal
+if a maximum of nodes is black. The coloring is restricted by the rule that
+no two connected nodes may be black.
+<p>
+<p><a name="27">&#160;</a> <img align="BOTTOM" alt="figure22" src="193img1.gif"> <br>
+<strong>Figure:</strong> An optimal graph with three black nodes<br>
+<p><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+The graph is given as a set of nodes denoted by numbers  <img width="44" height="12" align="BOTTOM" alt="tex2html_wrap_inline33" src="193img2.gif"> , 
+ <img width="58" height="25" align="MIDDLE" alt="tex2html_wrap_inline35" src="193img3.gif"> ,
+and a set of undirected edges denoted by pairs of node numbers  <img width="54" height="27" align="MIDDLE" alt="tex2html_wrap_inline37" src="193img4.gif"> ,
+ <img width="60" height="17" align="MIDDLE" alt="tex2html_wrap_inline39" src="193img5.gif"> . The input file contains <i>m</i>
+graphs. The number <i>m</i> is given on the first line. The first line of
+each graph contains <i>n</i> and <i>k</i>, the number of nodes and the number
+of edges, respectively. The following <i>k</i> lines contain the edges given
+by a pair of node numbers, which are separated by a space.
+<p>
+<p>
+The output should consists of 2<i>m</i> lines, two lines for each graph
+found in the input file. The first line of should contain the maximum number
+of nodes that can be colored black in the graph. The second line should
+contain one possible optimal coloring. It is given by the list of black
+nodes, separated by a blank.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>1
+6 8
+1 2
+1 3
+2 4
+2 5
+3 4
+3 6
+4 6
+5 6</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>3
+1 4 5</pre>
+<p>
+</body>
+</html>

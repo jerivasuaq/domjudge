@@ -1,0 +1,104 @@
+
+
+<html>
+<head>
+<title>Master-Mind Hints</title>
+<meta name="description" content="Master-Mind Hints">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Master-Mind Hints</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+MasterMind is a game for two players.  One of them, <i>Designer</i>, selects a
+secret code.  The other,  <i>Breaker</i>, tries to break it.  A code is no more
+than a row of colored dots.  At the beginning of a  game, the players
+agree upon the length <i>N</i> that a code must have and upon the colors that
+may  occur in a code.
+<p>
+In order to break the code, Breaker makes a
+number of guesses, each guess itself being a code.   After each guess
+Designer gives a hint, stating to what extent the guess matches his
+secret code.
+<p>
+<p>
+In this problem you will be given a secret code
+ <img width="57" height="17" align="MIDDLE" alt="tex2html_wrap_inline35" src="340img1.gif">  and a guess  <img width="59" height="17" align="MIDDLE" alt="tex2html_wrap_inline37" src="340img2.gif"> , and are to determine the  hint. A hint consists of a pair of numbers determined as follows.
+<p>
+A <i>match</i> is a pair (<i>i</i>,<i>j</i>),  <img width="70" height="25" align="MIDDLE" alt="tex2html_wrap_inline41" src="340img3.gif">  and  <img width="73" height="25" align="MIDDLE" alt="tex2html_wrap_inline43" src="340img4.gif"> , 
+such that  <img width="49" height="17" align="MIDDLE" alt="tex2html_wrap_inline45" src="340img5.gif"> . 
+Match (<i>i</i>,<i>j</i>) is called <i>strong</i> when  <i>i</i> = <i>j</i>, and is called <i>weak</i>
+otherwise.  Two matches (<i>i</i>,<i>j</i>) and (<i>p</i>,<i>q</i>) are called <i>independent</i>
+when <i>i</i> = <i>p</i> if  and only if <i>j</i> = <i>q</i>.  A set of matches is called <i>independent</i> when all of its members are pairwise  independent.
+<p>
+<p>
+Designer chooses an independent set <i>M</i> of matches for which the total number of
+matches and the  number of strong matches are both maximal.  The hint
+then consists of the number of strong  followed by the number of weak
+matches in <i>M</i>.  Note that these numbers are uniquely determined  by the
+secret code and the guess.  If the hint turns out to be (<i>n</i>,0), then the
+guess is identical to the  secret code.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+The input will consist of data for a number of games. 
+The input for each game begins with an  integer specifying <i>N</i> (the length
+of the code).    Following these will be the secret code,  represented
+as <i>N</i> integers, which we will limit to the range 1 to 9.  There will then
+follow an  arbitrary number of guesses, each also represented as <i>N</i>
+integers, each in the range 1 to 9.   Following the last guess in each
+game will be <i>N</i> zeroes; these zeroes are not to be considered as a 
+guess.
+<p>
+<p>
+Following the data for the first game will appear data for
+the second game (if any) beginning with  a new value for <i>N</i>.  The last
+game in the input will be followed by a single zero (when a value for  <i>N</i>
+would normally be specified).  The maximum value for <i>N</i> will be 1000.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+ The output for each game should list the hints that
+would be generated for each guess, in order,  one hint per line.  Each
+hint should be represented as a pair of integers enclosed in parentheses
+ and separated by a comma.  The entire list of hints for each game
+should be prefixed by a heading  indicating the game number; games are
+numbered sequentially starting with 1.  Look at the samples below for the <em>exact</em> format.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>4
+1 3 5 5
+1 1 2 3
+4 3 3 5
+6 5 5 1
+6 1 3 5
+1 3 5 5
+0 0 0 0
+10
+1 2 2 2 4 5 6 6 6 9
+1 2 3 4 5 6 7 8 9 1
+1 1 2 2 3 3 4 4 5 5
+1 2 1 3 1 5 1 6 1 9
+1 2 2 5 5 5 6 6 6 7
+0 0 0 0 0 0 0 0 0 0
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Game 1:
+    (1,1)
+    (2,0)
+    (1,2)
+    (1,2)
+    (4,0)
+Game 2:
+    (2,4)
+    (3,2)
+    (5,0)
+    (7,0)</pre>
+<p>
+</body>
+</html>

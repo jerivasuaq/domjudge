@@ -1,0 +1,87 @@
+
+
+<html>
+<head>
+<title>Extrapolation Using a Difference Table</title>
+<meta name="description" content="Extrapolation Using a Difference Table">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Extrapolation Using a Difference Table</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+     A very old technique for extrapolating a sequence of values  is  based
+on  the  use  of   a   difference  table.  The difference table used in the
+extrapolation of a  sequence  of  4  values,  say  3,  6,   10,   and   15,
+might  be displayed as follows:
+<p>
+<center><img src="326img1.gif"></center>
+<p>
+The original sequence of values appears in the  first  column  of  the
+table.  Each  entry  in  the  second  column of the table is formed by computing the difference between the adjacent entries in  the  first   column.
+These  values  (in  the  second column) are called first differences.  Each
+entry in the third column  is  similarly  the difference between the  adjacent 
+entries in the second column; the third column entries  are  naturally
+called second differences.  Computation  of  the  last   column   in   this
+example   should   now   be   obvious   (but  beware that this value is not
+always zero).  Note that the last column will always contain only a  single
+value.   If  we begin with a sequence of <i>n</i> values, the completed difference
+table  will  have  <i>n</i> columns,   with   the   single  value  in  column  <i>n</i>
+representing the single <i>n</i>-1st difference.
+<p>
+<p>
+To extrapolate using a difference table we assume the  <i>n</i>-1st   differences  
+are  constant  (since  we  have  no additional information to refute
+that assumption).  Given that  assumption,  we   can   compute   the   next
+entry  in  the <i>n</i>-2nd difference column, the <i>n</i>-3rd difference column, and so
+forth until  we  compute  the  next  entry in the first  column  which,  of
+course,  is the next value in the  sequence.  The  table  below  shows  the
+four additional entries (in boxes) added to the table to compute  the  next
+entry   in   the   example   sequence,  which in this case is 21.  We could
+obviously  continue  this  extraolation  process  as  far  as  desired   by
+adding  additional  entries to the columns using the assumption that the 
+<i>n</i>-1st differences are constant.
+<p>
+<center><img src="326img2.gif"></center>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+     The input for this problem will be a  set  of  extraolation  requests.
+For  each   request   the   input   will  contain first an integer <i>n</i>, which
+specifies the number of values in the sequence  to  be  extended.  When   <i>n</i>
+is  zero your program should terminate.  If <i>n</i> is non-zero (it will never be
+larger than 10), it will be  followed   by   <i>n</i>  integers  representing  the
+given  elements  in  the  sequence.   The last item in the input  for  each
+extrapolation request is <i>k</i>, the number of extrapolation operations to  perform; it will always be at least 1. In  effect,  you are to add <i>k</i> entries
+to each column of the difference table, finally reporting the last value of
+the  sequence computed by such extrapolation.  More precisely,  assume  the
+first  <i>n</i>  entries  (the  given  values)  in  the sequence  are  numbered  1
+through  <i>n</i>.
+<p>
+Your   program  is  to  determine  the  <i>n</i>+<i>k</i>th  value  in  the
+sequence  by extrapolation of the original  sequence  <i>k</i>  times.
+<p>
+<p>
+<p>
+<b>Hint:</b>  no
+upper  limit  is  given  for   <i>k</i>,  and  you  might  not  be able to acquire
+enough memory to construct a complete difference table.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>4 3 6 10 15 1
+4 3 6 10 15 2
+3 2 4 6 20
+6 3 9 12 5 18 -4 10
+0</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Term 5 of the sequence is 21
+Term 6 of the sequence is 28
+Term 23 of the sequence is 46
+Term 16 of the sequence is -319268</pre>
+<p>
+</body>
+</html>

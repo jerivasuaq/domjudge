@@ -1,0 +1,120 @@
+
+
+<html>
+<head>
+<title>Nonstop Travel</title>
+<meta name="description" content="Nonstop Travel">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Nonstop Travel</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Fast Phil works the late shift and leaves his company's parking lot at
+precisely 2:00 AM every morning.  His route home is by a straight road
+which has one or more traffic signals.  Phil has always wondered if,
+given the locations and cycles of each of the traffic signals, are
+there velocities he can travel home without ever having to speed up or
+slow down on account of a red light.  You are to write a program to
+satisfy his curiosity.
+
+<p>
+
+<p>
+<br>
+Your program should find all integer speeds (in miles per hour) which
+can be used for Phil's trip home.  Each speed is a rate (in miles per
+hour) he can maintain the moment he leaves the parking lot at 2:00 AM
+until he arrives home (we assume Phil has a long driveway in which to
+decelerate) such that he never passes through a red signal.  He is
+allowed to pass throgh a signal at the exact moment it turns from
+yellow to red, or at the exact moment a red signal turns green.  Since
+Phil is a relatively law-abiding citizen, you need only consider
+speeds less than or equal to 60 mph.  Likewise, Phil isn't interested
+in travelling too slowly, so you should not consider speeds lower than
+30 mph.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+Input will consist of one or more sets of data describing a set of
+traffic signals, followed by the integer -1.  The first integer in
+each set will contain the value <i>N</i> (specifying the number of
+traffic signals).  <i>N</i> will be no larger than 6.  This value
+will be followed by <i>N</i> sets of numbers, each containing values
+(in order) for <i>L</i>, <i>G</i>, <i>Y</i> and <i>R</i>.
+<i>L</i> is a positive real number indicating the location of a
+traffic signal, in miles, from the parking lot.  <i>G</i>,
+<i>Y</i> and <i>R</i> are the lengths of time (in seconds) of the
+green, yellow, and red periods of the corresponding traffic signal's
+cycle.  Phil has learned from an informant in the Highway Department
+that all <i>N</i> traffic signals start their green period precisely
+at 2:00 AM.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+Output should consist of the input case number (starting with 1)
+followed by a list of all valid integer speeds Phil may drive to avoid
+the red signals.  Consecutive integer speeds should be specified in
+interval notation of the form <tt>L-H</tt>, where
+<tt>L</tt> and <tt>H</tt> are the lowest and
+highest speeds for the interval.  Intervals of the form
+<tt>L-L</tt> (that is, an interval of length 1) shold
+just be written as <tt>L</tt>.  Intervals should be
+separated by commas.  If there are no valid speeds, you program should
+display the phrase <tt>No acceptable speeds</tt>. The
+Expected Output below illustrates this format.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+1
+5.5  40 8 25
+
+3
+10.7  10 2 75
+12.5  12 5 57
+17.93 15 4 67
+
+-1
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>
+Case 1: 30, 32-33, 36-38, 41-45, 48-54, 59-60
+Case 2: No acceptable speeds.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>1999-03-24</i>
+</address>
+</body>
+</html>
+

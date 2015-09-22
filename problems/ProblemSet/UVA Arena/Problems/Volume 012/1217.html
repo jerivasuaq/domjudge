@@ -1,0 +1,105 @@
+
+<p>
+Superior Island is a very picturesque island and only bicycles are allowed on the island.
+Therefore, there are many one-way bicycle roads connecting the dierent best photo-shooting
+spots on the island. To help the visitors plan their trip to the island, the tourism commission
+wants to designate <span class="MATH"><i>r</i></span>
+<tex2html_verbatim_mark> different bicycle routes that go through some of the best photo-shooting
+spots on the island. Given a map of all the bicycle roads on the island and a list of the best
+photo-shooting spots to be included on each of the three planned routes (non-listed spots must
+not be included in the route), please write a program to plan each of the <span class="MATH"><i>r</i></span>
+<tex2html_verbatim_mark> routes so that the
+distance on each route is minimal. Note that each best photo-shooting spot may only appear
+at most once on the route.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+There are two parts to the input. The first part of input gives the information of the bicycle
+roads on the island. The first line contains two integer <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> and <span class="MATH"><i>r</i></span>
+<tex2html_verbatim_mark>, <span class="MATH"><i>n</i><img width="18" height="31" align="MIDDLE" border="0" src="3681img1.png" alt="$ \le$">100</span>
+<tex2html_verbatim_mark>
+and <span class="MATH"><i>r</i><img width="18" height="31" align="MIDDLE" border="0" src="3681img1.png" alt="$ \le$">10</span>
+<tex2html_verbatim_mark>, indicating that there are <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> best photo-shooting spots on the island and there are 
+<span class="MATH"><i>r</i></span>
+<tex2html_verbatim_mark> routes to be planned.
+The next <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> lines (line 2 through line <span class="MATH"><i>n</i> + 1</span>
+<tex2html_verbatim_mark>) contains 
+<span class="MATH"><i>n</i>&#215;<i>n</i></span>
+<tex2html_verbatim_mark>
+integers (<span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> lines with <span class="MATH"><i>n</i></span>
+<tex2html_verbatim_mark> integers on each line), where the <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark>-th
+integer on line <span class="MATH"><i>i</i></span>
+<tex2html_verbatim_mark> denotes the distance from best photo-shooting spot
+<span class="MATH"><i>i</i> - 1</span>
+<tex2html_verbatim_mark> to best photo-shooting spot <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark>; the distances are all between 0 and 10, where 0 indicates that
+there is no one-way road going from best photo-shooting spot <span class="MATH"><i>i</i> - 1</span>
+<tex2html_verbatim_mark> to spot <span class="MATH"><i>j</i></span>
+<tex2html_verbatim_mark>.
+
+<p>
+The second part of input has <span class="MATH"><i>r</i></span>
+<tex2html_verbatim_mark> lines, denoting the <span class="MATH"><i>r</i></span>
+<tex2html_verbatim_mark> sightseeing routes to be planed. Each
+line lists the best photo-shooting stops to be included in that route. The integers on each line
+denote the recommended photo-shooting stops on that particular sightseeing route. The first
+integer on the line is the starting point of the route and the last integer is the last stop on the
+route. However, the stops in between can be visited in any order.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2> 
+
+<p>
+Output <span class="MATH"><i>r</i></span>
+<tex2html_verbatim_mark> integers on <span class="MATH"><i>r</i></span>
+<tex2html_verbatim_mark> lines (one integer per line) indicating the distance of each of the <span class="MATH"><i>r</i></span>
+<tex2html_verbatim_mark> planned routes. If a route is not possible, output `<tt>0</tt>'.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6 3
+0 1 2 0 1 1
+1 0 1 1 1 0
+0 2 0 1 3 0
+4 3 1 0 0 0
+0 0 1 1 0 0
+1 0 0 0 0 0
+1 3 5
+6 3 2 5
+6 1 2 3 4 5
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+5 
+0 
+7
+</pre>  
+
+<p>
+</tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark></tex2html_verbatim_mark>

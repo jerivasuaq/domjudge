@@ -1,0 +1,322 @@
+
+
+<html>
+<head>
+<title>Driving in City Squares</title>
+<meta name="description" content="Driving in City Squares">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Driving in City Squares</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+The city <em>AllSquared</em> has been designed by many famous architects and engineers. 
+The city
+lays in a retangular area of 
+
+<img width="52" height="30" align="MIDDLE" border="0" src="774img1.gif" alt="$n \times m$">
+squared miles (<i>n</i> refers to the retangle 
+basis, and <i>m</i> to
+its height). The streets are horizontal divisions distributed uniformly at every one 
+mile, and
+the avenues are vertical divisions also uniformly distributed at every one mile. 
+Streets are
+numbered from north to south, starting from zero; avenues from west to east, also 
+starting
+from zero.
+
+<p>
+The figure (a) below portrays the city layout for <i>n</i> = 11 and <i>m</i> = 8. The city is also
+
+<p>
+
+<p>
+<br>
+
+<p>
+
+ 
+
+ 
+#1#2#3#4#5
+@font#1#2pt
+#3#4#5
+
+
+ 
+<br>
+<img width="675" height="249" align="BOTTOM" border="0" src="774img2.gif" alt="\begin{picture}(6525,2415)(361,-1951)
+%\linethickness{.1in}
+\thinlines
+\put(21...
+...mash{\SetFigFont{8}{9.6}{\rmdefault}{\mddefault}{\updefault}(b)}}}
+\end{picture}">
+<br>
+
+<p>
+
+<p>
+
+<p>
+<br>
+divided in horizontal and vertical strips, with the intersection of these strips 
+defining the
+city subregions (counties). Figure (b) pictures a city divided into 12 counties.
+
+<p>
+Every county is associated with a vehicle circulation fee, which should be paid every 
+time
+a car enters the county. If the car origin is a street or avenue delimiting the county, 
+there
+is no fee. For example, in the above figure a car whose origin is street = 2 and 
+avenue = 3
+and whose target is street = 2 and avenue = 9 will have to pay only the county 
+crossing fee
+relative to avenue 6.
+
+<p>
+
+<p>
+<br>
+You should write a program that has the following input:
+<ul>
+<li>two strictly positive integers <i>n</i> and <i>m</i> specifying the city dimensions;
+<li>two positive integers  <i>h</i> and <i>v</i> specifying the number of horizontal and vertical strips,
+respectively (for the city in the figure, 
+
+<i>h</i> = 4, <i>v</i> = 3);
+<li><i>h</i> - 1 integers 
+
+<img width="93" height="30" align="MIDDLE" border="0" src="774img3.gif" alt="$s_1, \dots, s_{h-1}$">
+(
+
+<img width="114" height="30" align="MIDDLE" border="0" src="774img4.gif" alt="$1 \le s_i \le n - 1$">)
+which denote the streets in which there is a
+county division line (in the previous figure, the numbers are 1, 6, and 7);
+<li><i>v</i> - 1 integers 
+
+<img width="94" height="30" align="MIDDLE" border="0" src="774img5.gif" alt="$a_1, \dots, a_{v-1}$">
+(
+
+<img width="120" height="30" align="MIDDLE" border="0" src="774img6.gif" alt="$1 \le a_i \le m - 1$">)
+which denote the avenues in which there is
+a county division line (in the the previous figure, the numbers are 3 and 6);
+<li>the circulation fees for each county in the city, i.e., <i>h</i> * <i>v</i> positive real numbers
+<br><p>
+<div align="CENTER">
+
+
+
+<img width="119" height="93" src="774img7.gif" alt="\begin{displaymath}\begin{array}{l}
+p_{11}, p_{12}, \dots, p_{1v} \\
+p_{21}, p_...
+... p_{2v} \\
+\dots \\
+p_{h1}, p_{h2}, \dots, p_{hv}
+\end{array}\end{displaymath}">
+</div>
+<br clear="ALL">
+<p>
+where <i>p</i><sub><i>ij</i></sub> is the circulation fee for the county delimited by <i>a</i><i>i</i>-1 (west),
+<i>a</i><sub><i>i</i>+1</sub>
+(east), <i>s</i><sub><i>j</i>-1</sub> (north), and <i>s</i><sub><i>j</i>+1</sub> (south);
+<li>two pairs of positive integers 
+
+<i>local</i><sub>1</sub> = (<i>str</i><sub>1</sub>, <i>av</i><sub>1</sub>) e 
+
+<i>local</i><sub>2</sub> = (<i>str</i><sub>2</sub>,<i>av</i><sub>2</sub>)</li></li></li></li></li></li></ul>
+
+<p>
+The output should be the smallest possible price to pay for going from local 1 to local 2 .
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input format may contain several instances of the problem. Each instance is terminated
+by a line starting with % (percentage symbol).
+
+<p>
+The description for one instance has the following format:
+
+<p>
+<table cellpadding="3">
+<tr><td align="CENTER"><i>n</i></td>
+<td align="CENTER"><i>m</i></td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">&nbsp;</td>
+</tr>
+<tr><td align="CENTER"><i>h</i></td>
+<td align="CENTER"><i>v</i></td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">&nbsp;</td>
+</tr>
+<tr><td align="CENTER"><i>s</i><sub>1</sub></td>
+<td align="CENTER"><i>s</i><sub>2</sub></td>
+<td align="CENTER"><img width="25" height="15" align="BOTTOM" border="0" src="774img9.gif" alt="$\dots$"></td>
+<td align="CENTER"><i>s</i><sub><i>h</i>-1</sub></td>
+</tr>
+<tr><td align="CENTER"><i>a</i><sub>1</sub></td>
+<td align="CENTER"><i>a</i><sub>2</sub></td>
+<td align="CENTER"><img width="25" height="15" align="BOTTOM" border="0" src="774img9.gif" alt="$\dots$"></td>
+<td align="CENTER"><i>a</i><sub><i>v</i>-1</sub></td>
+</tr>
+<tr><td align="CENTER"><i>p</i><sub>11</sub></td>
+<td align="CENTER"><i>p</i><sub>12</sub></td>
+<td align="CENTER"><img width="25" height="15" align="BOTTOM" border="0" src="774img9.gif" alt="$\dots$"></td>
+<td align="CENTER"><i>p</i><sub>1<i>v</i></sub></td>
+</tr>
+<tr><td align="CENTER"><i>p</i><sub>21</sub></td>
+<td align="CENTER"><i>p</i><sub>22</sub></td>
+<td align="CENTER"><img width="25" height="15" align="BOTTOM" border="0" src="774img9.gif" alt="$\dots$"></td>
+<td align="CENTER"><i>p</i><sub>2<i>v</i></sub></td>
+</tr>
+<tr><td align="CENTER"><img width="25" height="15" align="BOTTOM" border="0" src="774img9.gif" alt="$\dots$"></td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">&nbsp;</td>
+</tr>
+<tr><td align="CENTER"><i>p</i><sub><i>h</i>1</sub></td>
+<td align="CENTER"><i>p</i><sub><i>h</i>2</sub></td>
+<td align="CENTER"><img width="25" height="15" align="BOTTOM" border="0" src="774img9.gif" alt="$\dots$"></td>
+<td align="CENTER"><i>p</i><sub><i>hv</i></sub></td>
+</tr>
+<tr><td align="CENTER"><i>w</i><sub>1</sub></td>
+<td align="CENTER"><i>t</i><sub>1</sub></td>
+<td align="CENTER"><i>w</i><sub>2</sub></td>
+<td align="CENTER"><i>t</i><sub>2</sub></td>
+</tr>
+<tr><td align="CENTER"><tt> %</tt></td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">&nbsp;</td>
+</tr>
+</table>
+
+<p>
+where
+<ul>
+<li>
+
+<i>n</i>, <i>m</i>, <i>h</i>, <i>v</i> are integers such that 
+
+<img width="273" height="32" align="MIDDLE" border="0" src="774img10.gif" alt="$0 < n, 0 < m, 0 < h \le n, 0 < v \le m$">;
+<li>
+
+<img width="93" height="30" align="MIDDLE" border="0" src="774img3.gif" alt="$s_1, \dots, s_{h-1}$">
+are such that 
+
+<img width="114" height="30" align="MIDDLE" border="0" src="774img4.gif" alt="$1 \le s_i \le n - 1$">
+for 
+
+<img width="106" height="32" align="MIDDLE" border="0" src="774img11.gif" alt="$1 \le i \le h - 1$">;
+<li>
+
+<img width="94" height="30" align="MIDDLE" border="0" src="774img5.gif" alt="$a_1, \dots, a_{v-1}$">
+are such that 
+
+<img width="120" height="30" align="MIDDLE" border="0" src="774img6.gif" alt="$1 \le a_i \le m - 1$">
+for 
+
+<img width="76" height="30" align="MIDDLE" border="0" src="774img12.gif" alt="$1 \le v - 1$">;
+<li><i>p</i><sub><i>ij</i></sub> are positive real numbers;
+<li>
+
+<i>w</i><sub>1</sub>, <i>t</i><sub>1</sub>, <i>w</i><sub>2</sub>, <i>t</i><sub>2</sub> are integers such that 
+
+<img width="118" height="30" align="MIDDLE" border="0" src="774img13.gif" alt="$0 \le w_1, w_2 \le n$">
+and 
+
+<img width="110" height="30" align="MIDDLE" border="0" src="774img14.gif" alt="$0 \le t_1, t_2 \le m$">.
+ (<i>w</i><sub>1</sub>, <i>t</i><sub>1</sub>) is the
+origin and (<i>w</i><sub>2</sub>, <i>t</i><sub>2</sub>) is the target point for the problem;
+<li>there can be an arbitrary number of spaces or empty lines between the numbers in the
+file.
+</li></li></li></li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For an input file with <i>k</i> instances of the problem, the output file should follow the format:
+
+<p>
+
+<i>c</i><sub>1</sub>
+
+<p>
+
+<i>c</i><sub>2</sub>
+
+<p>
+
+<img width="25" height="15" align="BOTTOM" border="0" src="774img9.gif" alt="$\dots$">
+
+<p>
+
+<i>c</i><sub><i>k</i></sub>
+
+<p>
+where <i>c</i><sub><i>i</i></sub> is the result for the <i>i</i><sup><i>th</i></sup> instance in the input file.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+100 100
+3 4
+30 60
+10 70 80
+5 100 1 20
+1 100 1 20
+1 1 1 20
+5 5 10 75
+%
+11 8
+4 3
+1 6 7
+3 6
+10 10 10
+10 10 10
+10 10 10
+10 10 10
+2 3 2 9
+%
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+6
+10
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+

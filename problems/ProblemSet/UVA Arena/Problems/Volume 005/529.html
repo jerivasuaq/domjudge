@@ -1,0 +1,105 @@
+
+
+<html>
+<head>
+<title>Addition Chains</title>
+<meta name="description" content="Addition Chains">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Addition Chains</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+An addition chain for <i>n</i> is an integer sequence 
+
+<img width="168" height="30" align="MIDDLE" border="0" src="529img1.gif" alt="$<a_0, a_1, a_2, \dots, a_m>$">
+with the following four properties:
+
+<p>
+<ul>
+<li><i>a</i><sub>0</sub> = 1
+<li><i>a</i><sub><i>m</i></sub> = <i>n</i>
+<li>a<sub>0</sub>&lt;a<sub>1</sub>&lt;a<sub>2</sub>&lt;...&lt;a<sub>m-1</sub>&lt;a<sub>m</sub>
+
+<li>For each <i>k</i> (
+
+<img width="85" height="32" align="MIDDLE" border="0" src="529img3.gif" alt="$1 \le k \le m$">)
+there exist two (not neccessarily different) integers <i>i</i> and <i>j</i> (
+
+<img width="121" height="32" align="MIDDLE" border="0" src="529img4.gif" alt="$0 \le i, j \le k-1$">)
+with 
+
+<i>a</i><sub><i>k</i></sub> =<i>a</i><sub><i>i</i></sub> +<i>a</i><sub><i>j</i></sub></li></li></li></li></ul>
+
+<p>
+You are given an integer <i>n</i>. Your job is to construct an addition chain for <i>n</i>
+with minimal length. If
+there is more than one such sequence, any one is acceptable.
+
+<p>
+For example, &lt;1,2,3,5&gt; and &lt;1,2,4,5&gt; are both valid solutions when you are asked for an addition chain for 5.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input Specification</a>&nbsp;</font>
+</h2>
+The input file will contain one or more test cases. Each test case consists
+of one line containing one
+integer <i>n</i> (
+
+<img width="96" height="30" align="MIDDLE" border="0" src="529img6.gif" alt="$1 \le n \le 10000$">). Input is terminated by a value of zero (0) for <i>n</i>.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output Specification</a>&nbsp;</font>
+</h2>
+For each test case, print one line containing the required integer sequence. Separate the numbers by one blank.
+
+<p>
+
+<p>
+<br>
+
+<b>Hint:</b> The problem is a little time-critical, so use proper break conditions where necessary to reduce the search space.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+<pre>
+5
+7
+12
+15
+77
+0
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+<pre>
+1 2 4 5
+1 2 4 6 7
+1 2 4 8 12
+1 2 4 5 10 15
+1 2 4 8 9 17 34 68 77
+</pre>
+
+<p>
+
+<p>
+</body>
+</html>

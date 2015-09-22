@@ -1,0 +1,87 @@
+
+
+<html>
+<head>
+<title>Xenosemantics</title>
+<meta name="description" content="Xenosemantics">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Xenosemantics</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+Contact with extra-terrestrial intelligence has been made at last!! A
+stream of messages has been discovered, apparently emanating from
+Procyon IV. After intensive study by the world's best
+xenosemanticists, the following definite conclusions on the format of
+the messages have been reached. The messages are streams of bits
+divided into groups of 8. Somewhat coincidentally the meaningful parts
+of the message map onto the lower case alphabet, although other
+characters sometimes intervene. Letters are organised into words
+separated by spacer letters. The spacer letter varies within a
+message, but a word which is delimited by a particular spacer pair
+does not contain that spacer letter within it. In addition the message
+is conceptually bounded by a pair of `joker' letters or `wild spacers'
+that can match any letter. For example, a message segment <tt>
+xwrxwtx</tt> contains 3 words--<tt>wr</tt>, <tt>wt</tt>, and <tt>rx</tt>; <tt>wrxwt</tt> is
+not a word in this segment of the message. If this segment appeared at
+the start of a message then <tt>xw</tt> and <tt>xwrxw</tt> could also be
+words. The words <tt>wr</tt> and <tt>rx</tt> overlap, while <tt>wt</tt> does
+not overlap any words in this message segment. While a word contains
+the same letters each time it appears in one message, the order of the
+letters may vary in different occurrences of the same word. Each
+message contains many words which are not ``true'' words in that they
+carry no meaning (like err.., umm.., etc in English). Every true word
+in the message contains at least two and no more than 250 letters,
+overlaps with another true word, and is repeated somewhere in the
+message (possibly with the letters in a different order). In the
+example above, <tt>wr</tt> and <tt>rx</tt> would both be true words if <tt>
+wr</tt> or <tt>rw</tt>, and <tt>rx</tt> or <tt>xr</tt>, occurred as words elsewhere
+in the message. The word <tt>wt</tt> would be a true word if <tt>wt</tt> or
+<tt>tw</tt> occurred elsewhere in the message, overlapping another true
+word.
+<p>
+<p>
+Write a program that will read in messages and print out a list of the
+different true words contained in each message (using the spelling
+which occurs first), in the order the words first appear in the
+message. If the first appearances of two words overlap, then the word
+that finishes first precedes the other. Remember that both the start
+and the end of the message count as spacer letters. Your program must
+be able to process messages of up to 1000 letters.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Input will consist of one or more messages. Each message will consist
+of one or more lines. Each line will be no more than 60 characters
+long and will contain a mixture of lower case letters and other
+characters. If the last character of a line is a dash (<tt>-</tt>) then the
+message continues on the next line. All characters other than lower
+case `<tt>a</tt>' to `<tt>z</tt>' form no part of the message. The file will be
+terminated by a line consisting of a single <tt>#</tt>.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+Output will consist of the true words for each message, in the correct
+order as specified above, one word per line. Terminate the list for
+each message by a line consisting of a single *.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample input</a></font></h2>
+<p>
+<pre>dyj@ttdi%sdort^jdyt*rFnn  trlnsvkGHoalexotrjxzasvs-
+ozgpsi&lt;&gt;:pkelaovo,.;'slnxt'][-prsjlntrjo
+aaaaaaa
+#</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample output</a></font></h2>
+<p>
+<pre>dyj
+ortj
+lnsvkoalexot
+*
+*</pre>
+<p>
+</body>
+</html>

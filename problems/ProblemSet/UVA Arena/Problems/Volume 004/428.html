@@ -1,0 +1,106 @@
+
+
+<html>
+<head>
+<title>Swamp County Roofs</title>
+<meta name="description" content="Swamp County Roofs">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">Swamp County Roofs</a></font>&nbsp;</b></td></tr></table></center></h1>
+<p>
+The Swamp County Environmental Office is concerned about the number of
+structures in the county.  They have a theory that all the rain water
+landing on roofs of buildings, parking lots, roads, and highways is going
+down the sewage system instead of draining to the ecologically
+sensitive and historically important swamp land the county is famous
+for.
+<p>
+<p>
+Your team has been hired to do the analysis of rain water captured by
+building roofs.  The Planning Commission, which processes all building
+permits, and hence knows the plans of every structure in the county, will
+provide the data.  Their database contains a set of measurements for
+the roofs of every building on every lot in the county.
+<p>
+<p>
+The Engineering staff of the Planning Commission has determined that all
+the roofs in the county can be represented by one or more
+quadrilaterals.  Each quadrilateral has the following characteristics:
+<p>
+<ul><li> length of baseline, in feet;<li> length of ridgeline, in feet;<li> distance between baseline and ridgeline, in feet;<li> and inclination of the roof segment, in degrees.
+</li></li></li></li></ul>
+<p>
+The baseline is always parallel to the ridgeline.  A roof segment is
+always flat, but may be inclined.  The inclination of the segment occurs
+along the baseline or ridgeline axis.  A roof segment that is inclined
+90 degrees is a wall that is assumed to have negligible
+thickness, and hence gathers no rain--such a segment will not appear in the
+data.  Assume that the buildings are on level land, and that no
+roof segment overlaps any other.  A roof segment may have either a baseline or
+ridgeline length of zero (such a segment is actually a
+triangle).  A lot may contain one or more buildings, but your program need only
+compute the area covered by roofs on a lot-by-lot basis.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input</a></font></h2>
+<p>
+Each lot is represented by a series of numbers separated from each other
+by white space
+and/or new-lines.  The lot size, in square feet, is followed by a list
+of roof segments.  Each roof segment will consist of the length of the
+baseline, the length of the ridgeline, the distance between the
+baseline and the ridgeline, and the inclination.  Each lot description 
+including the last will end with a blank line.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Output</a></font></h2>
+<p>
+For each lot compute and print the following statistics:  the total
+roof surface area of buildings in square feet,
+the total floor space covered by roofs in square feet,
+and the percentage of rain intercepted by roofs.  Print these values in
+labeled columns, one lot per line, with two digits after the decimal point.
+Print percent signs after the percentage of rain figures.
+<p>
+<p>
+At the end of the run compute and print the following statistics:  the
+total roof surface area of all roofs in the county,
+the total floor space covered by roofs in the county,
+the overall percentage of rain intercepted by roofs,
+the average roof surface area on a lot, 
+and the average floor space covered by roofs on a lot.  Skip a line after the
+per-lot listing and print these values on separate lines with appropriate 
+labels.
+<p>
+Print each value with two digits after the decimal point.  Print a
+percent sign after the overall percentage of rain value.  Use a report format
+similar to that of the sample output below.
+<p>
+<p>
+One of the reasons Swamp County has remained so is the relative lack of
+wind in the county--you may therefore assume that all rain falls vertically.
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample Input</a></font></h2>
+<p>
+<pre>100 10 10 10 60
+10 10 10 60
+
+200 5 10.5 5 30  10 10 7.5 45</pre>
+<p>
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">Sample Output</a></font></h2>
+<p>
+<pre>Roof Area     Floor Area     % Covered
+---------     ----------     ---------
+   200.00         100.00       100.00%
+   113.75          86.59        43.30%
+ 
+Total surface area of roofs      313.75
+Total area covered by roofs      186.59
+Percentage of total area covered by roofs   62.20%
+Average roof surface area per lot          156.88
+Average floor space covered per lot         93.30</pre>
+<p>
+</body>
+</html>

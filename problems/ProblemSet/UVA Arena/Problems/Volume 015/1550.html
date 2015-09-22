@@ -1,0 +1,78 @@
+<p>
+Let 
+<span class="MATH"><i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>,..., <i>a</i><sub>n</sub></span> be <span class="MATH"><i>n</i></span> relatively prime positive integers. A positive integer <span class="MATH"><i>k</i></span> has a representation by 
+<span class="MATH"><i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>,..., <i>a</i><sub>n</sub></span> if there exist non-negative integers 
+<span class="MATH"><i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>,..., <i>x</i><sub>n</sub></span> such that 
+<span class="MATH"><i>k</i> = <i>x</i><sub>1</sub><i>a</i><sub>1</sub> + <i>x</i><sub>2</sub><i>a</i><sub>2</sub> + <sup> ... </sup> + <i>x</i><sub>n</sub><i>a</i><sub>n</sub></span>. The linear Diophantine problem of Frobenius is to determine the largest integer 
+<span class="MATH"><i>g</i>(<i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>,..., <i>a</i><sub>n</sub>)</span> with no such representation.
+
+<p>
+The linear Diophantine problem of Frobenius has very practical application. It is equivalent to the problem of coin exchange. Given sufficient supply of coins of denominations 
+<span class="MATH"><i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>,..., <i>a</i><sub>n</sub></span>, determine the largest amount which cannot be formed by means of these coins.
+
+<p>
+Mathematical problems, such as this, are usually difficult to solve. We shall consider a simple case in which <span class="MATH"><i>n</i> = 2</span>. In addition to 
+<span class="MATH"><i>g</i>(<i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>)</span>, we shall also want to find 
+<span class="MATH"><i>n</i>(<i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>)</span> the number of positive integers that cannot be represented by <span class="MATH"><i>a</i><sub>1</sub></span> and <span class="MATH"><i>a</i><sub>2</sub></span>.
+
+<p>
+Write a program to compute 
+<span class="MATH"><i>g</i>(<i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>)</span> and 
+<span class="MATH"><i>n</i>(<i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>)</span>. The following theorem may help you in designing your program.
+
+<p>
+<blockquote>
+<span class="textbf">Theorem:</span> A positive number 
+<span class="MATH"><i>k</i> = <i>qa</i><sub>1</sub> + <i>r</i></span>, <span class="MATH">0 &lt; <i>r</i> &lt; <i>a</i><sub>1</sub></span>, can be represented by 
+<span class="MATH"><i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>,..., <i>a</i><sub>n</sub></span> if and only if 
+<span class="MATH"><i>k</i><img width="18" height="31" align="MIDDLE" border="0" src="2177img1.png" alt="$ \ge$"><i>t</i><sub>r</sub></span>, where <span class="MATH"><i>t</i><sub>r</sub></span> is the smallest positive integer which has the same residue <span class="MATH"><i>r</i></span> modulo <span class="MATH"><i>a</i><sub>1</sub></span> and can be represented by 
+<span class="MATH"><i>a</i><sub>2</sub>, <i>a</i><sub>3</sub>,..., <i>a</i><sub>n</sub></span>.
+
+</blockquote>
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input file will consist of one or more cases. Each case contains two positive integers <span class="MATH"><i>a</i><sub>1</sub></span> and <span class="MATH"><i>a</i><sub>2</sub></span> in a line. The product of <span class="MATH"><i>a</i><sub>1</sub></span> and <span class="MATH"><i>a</i><sub>2</sub></span> is less than <span class="MATH">2<sup>32</sup></span>. A line containing two zeros follows the last case, and terminates the input file.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each case <span class="MATH"><i>a</i><sub>1</sub></span> and <span class="MATH"><i>a</i><sub>2</sub></span> in the input file, the output file should contain a line with two numbers 
+<span class="MATH"><i>g</i>(<i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>)</span> and 
+<span class="MATH"><i>n</i>(<i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>)</span> separated by a blank.
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+3 5
+23 20
+0 0
+</pre> 
+
+<p>
+
+<h2><font size="4" color="#ff0000"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+7 4 
+417 209
+</pre> 
+
+<p>

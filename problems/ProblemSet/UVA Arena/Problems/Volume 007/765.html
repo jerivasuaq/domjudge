@@ -1,0 +1,183 @@
+
+
+<html>
+<head>
+<title>References</title>
+<meta name="description" content="References">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="STYLESHEET" href="htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+References</a>&nbsp;</font></b></td></tr></table></center>
+</h1>
+
+<p>
+Editors of an electronic magazine make draft versions of the documents in 
+the form of text files.
+However, publications should meet some requirements, in particular, 
+concerning the rules of
+reference use. Unfortunately, lots of the draft articles violate some 
+rules. It is desirable to develop a
+computer program that will make a publication satisfy all the rules 
+from a draft version.
+
+<p>
+
+<p>
+<br>
+Let's call a ``paragraph" a set of lines in the article going one after 
+another, so that paragraphs are
+separated by at least one empty line (an ``empty line" is a line that 
+containing no characters different
+from spaces). Any paragraph can contain an arbitrary number of references. 
+A reference is a
+positive integer not greater than 999 enclosed in square brackets 
+(for example: [23]). There will be
+no spaces between the brackets and the number. The square brackets 
+are not used in any other
+context but reference.
+
+<p>
+
+<p>
+<br>
+There can be two types of paragraph - ``regular" and 
+``reference description". Reference description
+differs from the regular paragraph because it begins with the 
+reference it describes, for example:
+
+<p>
+<pre>
+[23] It is the description ...
+</pre>
+
+<p>
+The opening square bracket will be at the first position of the
+first line of the ``reference description" paragraph (i.e. there
+will be no spaces before it). No reference description paragraph
+will contain references inside itself.
+
+<p>
+Each reference will have
+exactly one corresponding description and each description will
+have at least one reference to it.
+
+<p>
+To convert a draft version to a
+publication you have to use the following rules.
+
+<p>
+<ul>
+<li>References should
+be renumbered by the successive integer numbers starting from one
+in the order of their first appearance in the regular paragraphs
+of the source draft version of the document.
+<li>Reference
+descriptions should be placed at the end of the article ordered by
+their number.
+<li>The order of ``regular" paragraphs in the document
+should be preserved.
+<li>Your program should not make any other
+changes to the paragraphs.
+</li></li></li></li></ul>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The input file will be a text file containing a draft article your program 
+should process. All lines
+will be no more than 80 characters long. Any reference description will 
+contain no more than 3
+lines. The input file will contain up to 40000 lines.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+The output file contains the result of processing. All paragraphs should 
+be separated by one ``true"
+empty line (i.e. a line that contains no characters at all). There should 
+be no empty lines before the
+first paragraph.
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample input</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+[5] Brownell, D, "Dynamic Reverse Address Resolution Protocol
+    (DRARP)", Work in Progress.
+
+The Reverse Address Resolution Protocol (RARP) [10] (through the extensions
+defined in the Dynamic RARP (DRARP) [5]) explicitly addresses the problem of
+network address discovery, and includes an automatic IP address assignment
+mechanism.
+
+[10] Finlayson, R., Mann, T., Mogul, J., and M. Theimer, "A Reverse
+        Address Resolution Protocol", RFC 903, Stanford, June 1984.
+
+[16] Postel, J., "Internet Control Message Protocol", STD 5, RFC 792,
+        USC/Information Sciences Institute, September 1981.
+
+The Trivial File Transfer Protocol (TFTP) [20] provides for transport of a boot
+image from a boot server. The Internet Control Message Protocol (ICMP) [16] provides 
+for informing hosts of additional routers via "ICMP redirect" messages.
+
+[20] Sollins, K., "The TFTP Protocol (Revision 2)", RFC 783, NIC, June 1981.
+
+Works [10], [16] and [20] can be obtained via Internet.
+</pre>
+
+<p>
+
+<h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+<pre>
+The Reverse Address Resolution Protocol (RARP) [1] (through the extensions
+defined in the Dynamic RARP (DRARP) [2]) explicitly addresses the problem of
+network address discovery, and includes an automatic IP address assignment
+mechanism.
+
+The Trivial File Transfer Protocol (TFTP) [3] provides for transport of a boot
+image from a boot server. The Internet Control Message Protocol (ICMP) [4] provides 
+for informing hosts of additional routers via "ICMP redirect" messages.
+
+Works [1], [4] and [3] can be obtained via Internet.
+
+[1] Finlayson, R., Mann, T., Mogul, J., and M. Theimer, "A Reverse
+        Address Resolution Protocol", RFC 903, Stanford, June 1984.
+
+[2] Brownell, D, "Dynamic Reverse Address Resolution Protocol
+    (DRARP)", Work in Progress.
+
+[3] Sollins, K., "The TFTP Protocol (Revision 2)", RFC 783, NIC, June 1981.
+
+[4] Postel, J., "Internet Control Message Protocol", STD 5, RFC 792,
+        USC/Information Sciences Institute, September 1981.
+</pre>
+
+<p>
+
+<p>
+<br><hr>
+<address>
+<i>Miguel Revilla</i>
+<br><i>2000-12-30</i>
+</address>
+</body>
+</html>
+
