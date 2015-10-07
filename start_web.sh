@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTAINER_IMAGE=domjudge_web
+CONTAINER_IMAGE=jerivas/domjudge_web
 CONTAINER_DB=domjudge_db
 CONTAINER_WEB=domjudge_web
 
@@ -16,9 +16,14 @@ echo ""
 echo ""
 sleep 1
 
-docker run -ti --rm -p $WEB_PORT:80 --name $CONTAINER_WEB --link $CONTAINER_DB:$CONTAINER_DB \
+docker run \
+    --rm \
+    -p $WEB_PORT:80 \
+    --name $CONTAINER_WEB \
+    --link $CONTAINER_DB:$CONTAINER_DB \
     -v `pwd`/web/src/:/var/www/html \
     -v `pwd`/web/Dockerfile/30-domjudge.ini:/etc/php5/apache2/conf.d/30-domjudge.ini \
     $CONTAINER_IMAGE $@
      
+#    -ti \
 

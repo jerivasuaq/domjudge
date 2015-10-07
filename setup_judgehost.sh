@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_NAME=domjudge_judgehost
+IMAGE_NAME=jerivas/domjudge_judgehost
 
 echo "building $IMAGE_NAME image..."
 

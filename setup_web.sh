@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_NAME=domjudge_web
+IMAGE_NAME=jerivas/domjudge_web
 
 echo "building webing_web image..."
 
