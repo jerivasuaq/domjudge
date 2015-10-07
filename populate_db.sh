@@ -2,7 +2,7 @@
 
 DBUSER=domjudge
 DBPASSWD=domjudge
-DBPORT=49154
+DBPORT=49254
 DBHOST=127.0.0.1
 DBNAME=domjudge
 

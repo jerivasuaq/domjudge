@@ -1,0 +1,13 @@
+[Unit]
+Description=Domjudge DB container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/home/jerivas/workspace/domjudge_docker/start_db.sh
+ExecStop=/usr/bin/docker stop -t 2 domjudge_db
+
+[Install]
+WantedBy=local.target
+

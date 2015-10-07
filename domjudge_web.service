@@ -1,0 +1,13 @@
+[Unit]
+Description=Domjudge WEB container
+Requires=domjudge_db.service
+After=domjudge_db.service
+
+[Service]
+Restart=always
+ExecStart=/home/jerivas/workspace/domjudge_docker/start_web.sh
+ExecStop=/usr/bin/docker stop -t 2 domjudge_web
+
+[Install]
+WantedBy=local.target
+

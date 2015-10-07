@@ -4,7 +4,7 @@ CONTAINER_IMAGE=domjudge_web
 CONTAINER_DB=domjudge_db
 CONTAINER_WEB=domjudge_web
 
-WEB_PORT=49155
+WEB_PORT=49255
 
 echo ""
 echo ""
