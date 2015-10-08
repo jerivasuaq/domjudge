@@ -21,6 +21,7 @@ docker run \
     -p $WEB_PORT:80 \
     --name $CONTAINER_WEB \
     --link $CONTAINER_DB:$CONTAINER_DB \
+    -v `pwd`/web/Dockerfile/domserver.dbconfig.php:/etc/domjudge/domserver.dbconfig.php \
     -v `pwd`/web/src/:/var/www/html \
     -v `pwd`/web/Dockerfile/30-domjudge.ini:/etc/php5/apache2/conf.d/30-domjudge.ini \
     $CONTAINER_IMAGE $@

@@ -1,0 +1,14 @@
+[Unit]
+Description=Domjudge judgehost client
+Requires=domjudge_web.service
+After=domjudge_web.service
+
+[Service]
+Restart=always
+ExecStart=/var/containers/domjudge_docker/start_judgehost.sh
+ExecStop=/usr/bin/docker stop -t 2 domjudge_judgehost
+WorkingDirectory=/var/containers/domjudge_docker/
+
+[Install]
+WantedBy=local.target
+
