@@ -5,8 +5,9 @@ After=docker.service
 
 [Service]
 Restart=always
-ExecStart=/home/jerivas/workspace/domjudge_docker/start_db.sh
+ExecStart=/var/containers/domjudge_docker/start_db.sh
 ExecStop=/usr/bin/docker stop -t 2 domjudge_db
+WorkingDirectory=/var/containers/domjudge_docker/
 
 [Install]
 WantedBy=local.target
